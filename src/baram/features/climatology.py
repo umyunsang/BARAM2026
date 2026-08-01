@@ -4,7 +4,7 @@ from dataclasses import dataclass
 
 import pandas as pd
 
-from baram.contracts.hashing import canonical_sha256
+from baram.contracts.hashing import sha256_dataframe
 from baram.exceptions import DataQualityError, LeakageError
 
 
@@ -25,8 +25,8 @@ def fit_climatology(train: pd.DataFrame, fold_id: str) -> ClimatologyState:
     clean = train[required].dropna(subset=["actual_kwh"]).copy()
     if clean.empty:
         raise DataQualityError("climatology has no observed training targets")
-    row_hash = canonical_sha256(
-        clean.sort_values(["forecast_id", "group_id"], kind="stable").to_dict("records")
+    row_hash = sha256_dataframe(
+        clean.sort_values(["forecast_id", "group_id"], kind="stable").reset_index(drop=True)
     )
     return ClimatologyState(
         fold_id=fold_id,

@@ -6,7 +6,7 @@ from dataclasses import dataclass
 import numpy as np
 import pandas as pd
 
-from baram.contracts.hashing import canonical_sha256
+from baram.contracts.hashing import sha256_dataframe
 from baram.exceptions import LeakageError, ModelError
 
 
@@ -32,12 +32,11 @@ def fit_feature_pipeline(
         name: float(train[name].median()) if train[name].notna().any() else 0.0
         for name in feature_names
     }
-    serializable = train.astype(object).where(train.notna(), None).to_dict("records")
     return FeaturePipelineState(
         fold_id=fold_id,
         feature_names=feature_names,
         medians=medians,
-        training_rows_sha256=canonical_sha256(serializable),
+        training_rows_sha256=sha256_dataframe(train),
     )
 
 

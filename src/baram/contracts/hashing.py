@@ -8,6 +8,9 @@ from enum import Enum
 from pathlib import Path
 from typing import Any
 
+import numpy as np
+import pandas as pd
+
 
 def sha256_file(path: Path) -> str:
     digest = hashlib.sha256()
@@ -45,3 +48,23 @@ def canonical_sha256(value: Any) -> str:
         allow_nan=False,
     )
     return hashlib.sha256(payload.encode("utf-8")).hexdigest()
+
+
+def sha256_dataframe(frame: pd.DataFrame) -> str:
+    """Hash an ordered DataFrame without materializing one Python dict per row."""
+    schema = json.dumps(
+        {
+            "columns": [str(column) for column in frame.columns],
+            "dtypes": [str(dtype) for dtype in frame.dtypes],
+            "row_count": len(frame),
+        },
+        ensure_ascii=False,
+        sort_keys=True,
+        separators=(",", ":"),
+    )
+    digest = hashlib.sha256(schema.encode("utf-8"))
+    row_hashes = pd.util.hash_pandas_object(frame, index=False, categorize=True).to_numpy(
+        dtype=np.uint64
+    )
+    digest.update(row_hashes.astype("<u8", copy=False).tobytes())
+    return digest.hexdigest()
