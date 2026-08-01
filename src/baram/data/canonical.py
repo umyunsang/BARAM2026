@@ -138,12 +138,8 @@ def load_canonical_tables(path: Path) -> CanonicalTables:
         raise ContractError("GFS train/test schemas differ")
     if list(ldaps_train.columns) != list(ldaps_test.columns):
         raise ContractError("LDAPS train/test schemas differ")
-    scada_vestas = _canonicalize_scada(
-        read_csv_member(path, "train/scada_vestas_train.csv")
-    )
-    scada_unison = _canonicalize_scada(
-        read_csv_member(path, "train/scada_unison_train.csv")
-    )
+    scada_vestas = _canonicalize_scada(read_csv_member(path, "train/scada_vestas_train.csv"))
+    scada_unison = _canonicalize_scada(read_csv_member(path, "train/scada_unison_train.csv"))
     return CanonicalTables(
         labels_long=labels,
         submission_keys=sample,
