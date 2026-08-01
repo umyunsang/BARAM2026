@@ -64,6 +64,7 @@ _NON_FEATURES = {
     "group_id",
     "capacity_kwh",
 }
+_RF_DETERMINISTIC_JOBS = 1
 
 
 @dataclass(frozen=True)
@@ -382,7 +383,7 @@ def _backtest_controls(config: ProjectConfig, run_id: str) -> WorkflowResult:
         architecture="group_specific",
         params={},
         seed=config.seed,
-        n_jobs=config.n_jobs,
+        n_jobs=_RF_DETERMINISTIC_JOBS,
     ).predictions
     rf_repeat = generate_oof(
         features,
@@ -393,7 +394,7 @@ def _backtest_controls(config: ProjectConfig, run_id: str) -> WorkflowResult:
         architecture="group_specific",
         params={},
         seed=config.seed,
-        n_jobs=config.n_jobs,
+        n_jobs=_RF_DETERMINISTIC_JOBS,
     ).predictions
     repeat_match = sha256_dataframe(rf) == sha256_dataframe(rf_repeat)
     if not repeat_match:
@@ -832,6 +833,7 @@ def run_select(args: Namespace) -> WorkflowResult:
         "feature_names": tuple(controls.get("feature_names", ())),
         "params": {},
         "seed": config.seed,
+        "n_jobs": _RF_DETERMINISTIC_JOBS if control_name == "random_forest" else config.n_jobs,
     }
     tree_spec: dict[str, Any] = {
         "family": "lightgbm",
@@ -949,7 +951,7 @@ def _base_fold_prediction(
         architecture=architecture,  # type: ignore[arg-type]
         params=params,
         seed=int(spec.get("seed", config.seed)),
-        n_jobs=config.n_jobs,
+        n_jobs=int(spec.get("n_jobs", config.n_jobs)),
     ).predictions
 
 
@@ -1216,6 +1218,7 @@ def _fit_full_base(
     if not names or not isinstance(params, dict):
         raise ContractError("final tree base has an invalid feature/parameter contract")
     seed = int(spec.get("seed", config.seed))
+    n_jobs = int(spec.get("n_jobs", config.n_jobs))
     if architecture == "group_specific":
         bundles = {}
         for group_id, capacity in config.capacities.items():
@@ -1229,7 +1232,7 @@ def _fit_full_base(
                     group_id,  # type: ignore[arg-type]
                     capacity,
                     seed,
-                    config.n_jobs,
+                    n_jobs,
                 )
             else:
                 bundle = fit_lgbm_bundle(
@@ -1242,7 +1245,7 @@ def _fit_full_base(
                     capacity,
                     params,
                     seed,
-                    config.n_jobs,
+                    n_jobs,
                 )
             bundles[group_id] = bundle
         lineage = {str(group): asdict(bundle.manifest) for group, bundle in bundles.items()}
@@ -1267,7 +1270,7 @@ def _fit_full_base(
             1.0,
             params,
             seed,
-            config.n_jobs,
+            n_jobs,
         )
         return {
             "kind": "base",
