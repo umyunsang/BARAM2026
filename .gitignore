@@ -9,7 +9,7 @@ __pycache__/
 .DS_Store
 
 # Competition-derived data and generated artifacts stay local.
-data/
+/data/
 artifacts/cache/
 artifacts/models/
 artifacts/predictions/
