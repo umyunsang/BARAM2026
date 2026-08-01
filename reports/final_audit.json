@@ -1,0 +1,67 @@
+{
+  "status": "PASS_LOCAL_REPRODUCED_CANDIDATE",
+  "authority": "IP@v1",
+  "implementation_and_receipts_commit": "66701ad6eeb33e8ea535ed91e54c29e96d8022ac",
+  "source_sha256": "920be0c458d820e855bf79dd25723146f52ce1736138aedba5e6bc853f1f720b",
+  "baseline_notebook_sha256": "712b26f4d2748860c94cff1e0100c23810468c983173f8e9ef8d009fe82df48c",
+  "lockbox": {
+    "consumed_once": true,
+    "consumed_receipt_sha256": "866f22dcd88c8bcbb1841b55d989a9af43b6f9e133606b47bb7378b1b97ace1f",
+    "evaluation_receipt_sha256": "3c4c7a9fc09f6bb2e5a54a49f6ae2443331bac3d6c7554c840946c0f7871844a",
+    "champion_candidate_id": "tree-calibrated",
+    "total": 0.6276054065728833,
+    "one_minus_nmae": 0.8745583925223209,
+    "ficr": 0.38065242062344584,
+    "post_lockbox_tuning": false
+  },
+  "final_model": {
+    "receipt_sha256": "05fa76b8575a23e33dcf8cde478284334b021b90ef740a7e04b74fc877e14935",
+    "artifact_sha256": "e3484f8060a420b54ad5f59e8b4aa8f8c2e7a2b0438c43a46e7ae5572290d10d",
+    "lineage_sha256": "d29470e4e0f1e6ed93de1e0ef40160acf2347b9dc8d23c75feae578b5519f1ed"
+  },
+  "submission_candidate": {
+    "path": "artifacts/submissions/final_candidate.csv",
+    "receipt_sha256": "3af154985fa765175878c71a8986baed8a80a0db52eddf61a1e044bfe4380e48",
+    "csv_sha256": "f3285a4d370bbe0282cdfcd70589d2f530669fe2fb7e5623c6978eb7ffb049da",
+    "rows": 8760,
+    "encoding": "utf-8-sig",
+    "cap_modes": {
+      "1": "nonnegative_only",
+      "2": "nonnegative_only",
+      "3": "nonnegative_only"
+    },
+    "minimum_prediction_kwh": {
+      "1": 432.0,
+      "2": 432.0,
+      "3": 420.0
+    },
+    "maximum_prediction_kwh": {
+      "1": 21933.43645592685,
+      "2": 21843.213048340785,
+      "3": 20117.834989456504
+    }
+  },
+  "reproduction": {
+    "receipt_sha256": "9f459071513c7b8d556f5193231e8080d6496c7c13d1901554436b24025188af",
+    "gate": "P5",
+    "accepted": true,
+    "model_lineage_exact": true,
+    "csv_byte_exact": true
+  },
+  "verification": {
+    "locked_project_environment": true,
+    "ruff_scope": "src tests",
+    "ruff_passed": true,
+    "pytest_scope": "full local suite",
+    "pytest_passed": 123,
+    "submission_validator_passed_with_frozen_cap_modes": true,
+    "finite_nonnegative_predictions": true,
+    "artifact_total_kib": 184600,
+    "artifact_budget_gib": 10,
+    "git_worktree_clean_before_audit_receipt": true,
+    "configured_git_remotes": 0
+  },
+  "audit_correction": "an independent capacity-cap check used the wrong cap mode and was rejected; rerun used the frozen nonnegative_only policies and passed",
+  "scope_of_pass": "local 2024 lockbox and reproducible 2025 candidate only; no Dacon upload, leaderboard score, or competition rank",
+  "external_actions": []
+}
