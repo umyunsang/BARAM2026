@@ -18,3 +18,5 @@ Only rows with actual generation at least 10% of group capacity are scored. FICR
 ## Operator workflow
 
 After dependency synchronization, use `python -m baram.cli --help`. The closed workflow is audit, prepare, split-build, backtest, select, lockbox, fit-final, build-submission, and reproduce. Every mutating stage writes hashes and receipts under `reports/` or `artifacts/`.
+
+The development ladder must finish and write `artifacts/manifests/candidate_freeze.json` before `lockbox` is called. The lockbox command atomically consumes its one-use local receipt before reading 2024 labels; a failed or interrupted attempt is still consumed. `build-submission` only creates and validates a local UTF-8-BOM CSV. It never opens a browser or uploads to Dacon.

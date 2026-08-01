@@ -134,9 +134,6 @@ def apply_blend(
     model_ids, canonical = _validated_inputs(predictions)
     if set(model_ids) != set(policy.input_prediction_hashes):
         raise ContractError("blend policy parents do not match supplied predictions")
-    for model_id in model_ids:
-        if _hash_prediction(canonical[model_id]) != policy.input_prediction_hashes[model_id]:
-            raise ContractError("blend parent prediction hash does not match the frozen policy")
 
     result = canonical[model_ids[0]][_KEYS].copy()
     result["prediction_kwh"] = np.nan

@@ -50,3 +50,25 @@ def test_blend_rejects_key_mismatch() -> None:
     predictions["b"] = predictions["b"].iloc[:-1]
     with pytest.raises(ContractError, match="keys"):
         fit_two_model_blend(predictions, labels, CAPACITIES, "1" * 64, "2" * 64)
+
+
+def test_frozen_blend_applies_to_future_matching_parent_models() -> None:
+    """Catches OOF evidence hashes being mistaken for future-row prediction hashes."""
+    predictions, labels = _prediction_frames()
+    policy = fit_two_model_blend(
+        predictions,
+        labels,
+        CAPACITIES,
+        "1" * 64,
+        "2" * 64,
+    )
+    future = {
+        model_id: frame.assign(
+            forecast_id="future-" + frame["forecast_id"],
+            forecast_kst_dtm=frame["forecast_kst_dtm"] + pd.Timedelta(365, unit="D"),
+        )
+        for model_id, frame in predictions.items()
+    }
+    result = apply_blend(policy, future)
+    assert len(result) == len(labels)
+    assert result["forecast_id"].str.startswith("future-").all()
