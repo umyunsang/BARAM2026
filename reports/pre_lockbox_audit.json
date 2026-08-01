@@ -1,0 +1,38 @@
+{
+  "status": "PASS_FOR_ONE_TIME_LOCKBOX",
+  "authority": "IP@v1",
+  "implementation_commit": "b1e294a5cec8c370671631e542cdd8ccc612ff60",
+  "source_sha256": "920be0c458d820e855bf79dd25723146f52ce1736138aedba5e6bc853f1f720b",
+  "baseline_notebook_sha256": "712b26f4d2748860c94cff1e0100c23810468c983173f8e9ef8d009fe82df48c",
+  "uv_lock_sha256": "2c2e95c238d84c8dcaad3b9055c9553d6508f26a69368cfed230ddcf45cef1a5",
+  "challenger_manifest": {
+    "file_sha256": "b919880fb6b0a6dedf0cdc406dabaffab83f374741c364406c671a02c4124e09",
+    "canonical_sha256": "4fb6c824891a0db6c898a26d7ba65e3412fcf100215fffef83904b1554408ef6",
+    "configuration_slots_used_cumulative": 24,
+    "configuration_slots_remaining": 0
+  },
+  "candidate_freeze": {
+    "file_sha256": "f7ccd3791b47e3fae0b0999a226f58c5a103a0d4330d4a05fb77894c863ef7f6",
+    "canonical_sha256": "334978b7194ea2e2fb399526d9fc6a4ee5601946f7014f9cca3642ca50aa04b0",
+    "freeze_id": "f25afd46c98560e7280d4625e3e7aa283c508eaa3d7966de42ad6c43299de35f",
+    "candidate_count": 3,
+    "candidate_ids": [
+      "control-random_forest",
+      "tree-calibrated",
+      "catboost-shared-b1e92b1d786fa958"
+    ]
+  },
+  "verification": {
+    "ruff_scope": "src tests",
+    "ruff_passed": true,
+    "pytest_scope": "full local suite",
+    "pytest_passed": 123,
+    "candidate_freeze_repeat_file_hash_match": true,
+    "challenger_manifest_repeat_file_hash_match": true,
+    "git_diff_check_passed": true,
+    "lockbox_consumed_receipt_present": false,
+    "deep_tier_status": "DEFERRED_REQUIRES_AMENDMENT"
+  },
+  "scope_of_pass": "local precondition audit only; no 2024 score, final model, submission, upload, or leaderboard result",
+  "external_actions": []
+}
