@@ -59,18 +59,6 @@ def _with_known_vectors(
     return result
 
 
-def _q10(values: pd.Series) -> float:
-    return float(values.quantile(0.1))
-
-
-def _q50(values: pd.Series) -> float:
-    return float(values.quantile(0.5))
-
-
-def _q90(values: pd.Series) -> float:
-    return float(values.quantile(0.9))
-
-
 def aggregate_weather(frame: pd.DataFrame, prefix: str) -> pd.DataFrame:
     """Aggregate all numeric grid fields without averaging raw angular fields."""
     keys = ["forecast_kst_dtm", "data_available_kst_dtm"]
@@ -84,19 +72,37 @@ def aggregate_weather(frame: pd.DataFrame, prefix: str) -> pd.DataFrame:
     if not numeric:
         raise ContractError("weather aggregation has no numeric value columns")
     grouped = frame.groupby(keys, sort=True, dropna=False)
-    aggregated = grouped[numeric].agg(["mean", "std", "min", "max", _q10, _q50, _q90])
-    rename_stat = {"_q10": "q10", "_q50": "q50", "_q90": "q90"}
+    basic = grouped[numeric].agg(["mean", "std", "min", "max"])
+    quantiles = grouped[numeric].quantile([0.1, 0.5, 0.9]).unstack(level=-1)
+    quantile_names = {0.1: "q10", 0.5: "q50", 0.9: "q90"}
+    quantiles.columns = pd.MultiIndex.from_tuples(
+        [(column, quantile_names[float(level)]) for column, level in quantiles.columns]
+    )
+    aggregated = pd.concat([basic, quantiles], axis=1).reindex(
+        columns=pd.MultiIndex.from_tuples(
+            [
+                (column, statistic)
+                for column in numeric
+                for statistic in ("mean", "std", "min", "max", "q10", "q50", "q90")
+            ]
+        )
+    )
     aggregated.columns = [
-        f"{prefix}__{column}__{rename_stat.get(stat, stat)}" for column, stat in aggregated.columns
+        f"{prefix}__{column}__{statistic}" for column, statistic in aggregated.columns
     ]
     result = aggregated.reset_index()
     std_columns = [name for name in result if name.endswith("__std")]
     result[std_columns] = result[std_columns].fillna(0.0)
-    missing_cells = grouped[numeric].apply(lambda part: int(part.isna().sum().sum()))
     grid_count = grouped.size()
-    result[f"{prefix}__missing_cell_count"] = missing_cells.to_numpy(dtype="int32")
-    result[f"{prefix}__grid_count"] = grid_count.to_numpy(dtype="int16")
-    return result
+    observed_cells = grouped[numeric].count().sum(axis=1)
+    missing_cells = grid_count * len(numeric) - observed_cells
+    metadata = pd.DataFrame(
+        {
+            f"{prefix}__missing_cell_count": missing_cells.to_numpy(dtype="int32"),
+            f"{prefix}__grid_count": grid_count.to_numpy(dtype="int16"),
+        }
+    )
+    return pd.concat([result, metadata], axis=1).copy()
 
 
 def _calendar_features(frame: pd.DataFrame) -> pd.DataFrame:

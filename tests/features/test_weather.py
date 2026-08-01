@@ -36,9 +36,27 @@ def test_weather_aggregation_uses_literal_spatial_statistics() -> None:
     assert result.loc[0, "toy__scalar__mean"] == pytest.approx(2.5)
     assert result.loc[0, "toy__scalar__min"] == 1.0
     assert result.loc[0, "toy__scalar__max"] == 4.0
+    assert result.loc[0, "toy__scalar__q10"] == pytest.approx(1.3)
     assert result.loc[0, "toy__scalar__q50"] == pytest.approx(2.5)
+    assert result.loc[0, "toy__scalar__q90"] == pytest.approx(3.7)
     assert "toy__wind_speed__q90" in result
     assert all("angle" not in name for name in result.columns)
+
+
+def test_weather_aggregation_counts_missing_cells_without_fragmentation() -> None:
+    """Catches vectorized aggregation losing missingness or grid cardinality metadata."""
+    frame = pd.DataFrame(
+        {
+            "forecast_kst_dtm": pd.to_datetime(["2023-01-01 01:00"] * 2),
+            "data_available_kst_dtm": pd.to_datetime(["2022-12-31 13:00"] * 2),
+            "grid_id": [1, 2],
+            "value_a": [1.0, np.nan],
+            "value_b": [np.nan, 2.0],
+        }
+    )
+    result = aggregate_weather(frame, "toy")
+    assert result.loc[0, "toy__missing_cell_count"] == 2
+    assert result.loc[0, "toy__grid_count"] == 2
 
 
 def test_build_weather_features_replicates_groups_and_uses_operating_calendar() -> None:
