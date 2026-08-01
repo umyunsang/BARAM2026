@@ -2,9 +2,13 @@
 
 import json
 import os
+import platform
 import re
+import time
 from argparse import Namespace
 from dataclasses import asdict, dataclass
+from importlib.metadata import PackageNotFoundError
+from importlib.metadata import version as package_version
 from pathlib import Path
 from typing import Any
 
@@ -25,10 +29,13 @@ from baram.decisions.calibrate import (
     cross_fit_calibration,
     fit_group_calibration,
 )
+from baram.evaluation.failure_slices import shared_failure_slices
 from baram.evaluation.official import evaluate_official
 from baram.exceptions import ContractError
 from baram.experiments.promotion import (
+    decide_challenger_activation,
     decide_development_promotion,
+    decide_diversity,
     decide_lockbox,
     decide_reproduction,
 )
@@ -685,6 +692,324 @@ def _backtest_ablation(config: ProjectConfig, run_id: str) -> WorkflowResult:
     return WorkflowResult((manifest_path, report_path), digest)
 
 
+def _verified_prediction(
+    config: ProjectConfig,
+    record: dict[str, Any],
+    *,
+    path_key: str = "prediction_path",
+    hash_key: str = "prediction_sha256",
+) -> pd.DataFrame:
+    path = config.repo_root / str(record.get(path_key, ""))
+    if not path.is_file() or sha256_file(path) != record.get(hash_key):
+        raise ContractError(f"prediction artifact hash mismatch: {path}")
+    return pd.read_parquet(path)
+
+
+def _failure_context(features: pd.DataFrame, reference: pd.DataFrame) -> pd.DataFrame:
+    wind_name = "phys__hub117_speed"
+    missing_names = ("gfs__missing_cell_count", "ldaps__missing_cell_count")
+    required = {*_KEYS, "lead_hour", wind_name, *missing_names}
+    if not required.issubset(features):
+        missing = sorted(required - set(features))
+        raise ContractError(f"failure context features are missing: {missing}")
+    context = reference[_KEYS].merge(
+        features[[*_KEYS, "lead_hour", wind_name, *missing_names]],
+        on=_KEYS,
+        how="left",
+        validate="one_to_one",
+        sort=False,
+    )
+    context = context.rename(columns={wind_name: "wind_speed"})
+    context["nwp_missing_count"] = context[list(missing_names)].fillna(0.0).sum(axis=1)
+    return context[[*_KEYS, "lead_hour", "wind_speed", "nwp_missing_count"]]
+
+
+def _abs_residual_correlation(reference: pd.DataFrame, challenger: pd.DataFrame) -> float:
+    columns = [*_KEYS, "actual_kwh", "prediction_kwh", "fold_id"]
+    left = reference[columns].sort_values(_KEYS, kind="stable").reset_index(drop=True)
+    right = challenger[columns].sort_values(_KEYS, kind="stable").reset_index(drop=True)
+    if not left[[*_KEYS, "actual_kwh", "fold_id"]].equals(right[[*_KEYS, "actual_kwh", "fold_id"]]):
+        raise ContractError("challenger and reference OOF keys, labels, or folds differ")
+    left_residual = left["actual_kwh"].to_numpy(dtype=float) - left["prediction_kwh"].to_numpy(
+        dtype=float
+    )
+    right_residual = right["actual_kwh"].to_numpy(dtype=float) - right["prediction_kwh"].to_numpy(
+        dtype=float
+    )
+    if np.std(left_residual) <= 0.0 or np.std(right_residual) <= 0.0:
+        return 1.0
+    correlation = float(np.corrcoef(left_residual, right_residual)[0, 1])
+    return abs(correlation) if np.isfinite(correlation) else 1.0
+
+
+def _package_version(name: str) -> str:
+    try:
+        return package_version(name)
+    except PackageNotFoundError:
+        return "NOT_INSTALLED"
+
+
+def _write_deep_tier_decision(
+    config: ProjectConfig,
+    failure_analysis: dict[str, object],
+    challenger_records: list[dict[str, Any]],
+    reference_total: float,
+) -> Path:
+    diagnostic = [
+        item
+        for item in failure_analysis.get("all_slices", [])
+        if isinstance(item, dict)
+        and str(item.get("slice_id", "")).startswith(("lead_bin=", "operating_season="))
+    ]
+    best_total = max(
+        (float(item["score"]["pooled"]["total"]) for item in challenger_records),
+        default=None,
+    )
+    payload = {
+        "status": "DEFERRED_REQUIRES_AMENDMENT",
+        "authority": "IP@v1",
+        "reason": "IP@v1 excludes PyTorch, deep tiers, Colab, and GPU execution",
+        "residual_structure": {
+            "aligned_keys_sha256": failure_analysis.get("aligned_keys_sha256"),
+            "lead_and_season_slices": diagnostic,
+        },
+        "runtime_evidence": {
+            "challenger_cpu_seconds": float(
+                sum(float(item.get("training_seconds", 0.0)) for item in challenger_records)
+            ),
+            "machine": platform.machine(),
+            "xgboost_version": _package_version("xgboost"),
+            "catboost_version": _package_version("catboost"),
+            "pytorch_execution": False,
+        },
+        "gpu_evidence": {
+            "status": "NOT_EVALUATED_UNDER_CURRENT_AUTHORITY",
+            "gpu_or_colab_used": False,
+            "reason": (
+                "no GPU runtime inspection or mutation is needed for the approved classical tier"
+            ),
+        },
+        "value_evidence": {
+            "lightgbm_reference_total": reference_total,
+            "best_challenger_total": best_total,
+            "best_challenger_delta": (
+                best_total - reference_total if best_total is not None else None
+            ),
+        },
+        "amendment_required_for": [
+            "PyTorch dependency installation",
+            "TiDE or other deep time-series implementation",
+            "GPU or Colab execution",
+            "additional configuration budget",
+        ],
+        "external_actions": [],
+        "source_sha256": config.open_zip.sha256,
+    }
+    path = config.repo_root / "reports" / "deep_tier_decision.json"
+    write_json_atomic(path, payload)
+    return path
+
+
+def _backtest_challengers(config: ProjectConfig, run_id: str) -> WorkflowResult:
+    features, labels, _, folds = _load_pipeline_inputs(config)
+    lightgbm = _read_json(_stage_manifest_path(config, "lightgbm"))
+    ablation = _read_json(_stage_manifest_path(config, "ablation"))
+    stability = lightgbm.get("seed_stability")
+    promoted = lightgbm.get("promoted_full_fold_candidates")
+    if not isinstance(stability, dict) or len(stability) != 3 or not isinstance(promoted, list):
+        raise ContractError("challenger activation requires exactly three LightGBM finalists")
+    promoted_by_id = {
+        str(item.get("candidate_id")): item for item in promoted if isinstance(item, dict)
+    }
+    finalist_predictions: dict[str, pd.DataFrame] = {}
+    for candidate_id in sorted(stability):
+        record = promoted_by_id.get(candidate_id)
+        if record is None:
+            raise ContractError(f"LightGBM finalist has no promoted OOF artifact: {candidate_id}")
+        finalist_predictions[candidate_id] = _verified_prediction(config, record)
+    reference = next(iter(finalist_predictions.values()))
+    failure_analysis = shared_failure_slices(
+        finalist_predictions,
+        _failure_context(features, reference),
+        dict(config.capacities),
+        threshold=0.25,
+    )
+    selected_failure = failure_analysis.get("selected_shared_failure_slice")
+    selected_mass = (
+        float(selected_failure.get("minimum_error_mass_fraction", 0.0))
+        if isinstance(selected_failure, dict)
+        else 0.0
+    )
+    lightgbm_slots = int(lightgbm.get("configuration_slots_used", 0))
+    total_slots = 24
+    remaining_slots = max(0, total_slots - lightgbm_slots)
+    lock_path = (
+        config.repo_root / "artifacts" / "locks" / f"lockbox-{config.lockbox_year}.consumed.json"
+    )
+    activation = decide_challenger_activation(
+        remaining_slots,
+        selected_mass,
+        lock_path.exists(),
+    )
+    selected = ablation.get("selected")
+    if not isinstance(selected, dict) or not isinstance(selected.get("score"), dict):
+        raise ContractError("challenger search requires the selected ablation OOF")
+    reference_oof = _verified_prediction(config, selected)
+    reference_score = selected["score"]
+    reference_total = float(reference_score["pooled"]["total"])
+    records: list[dict[str, Any]] = []
+
+    if activation.accepted:
+        from baram.models.challengers import expand_challenger_grid
+
+        grids = expand_challenger_grid(config.repo_root / "configs" / "models" / "challengers.yaml")
+        if sum(len(items) for items in grids.values()) != 8:
+            raise ContractError("approved challenger grid must consume exactly eight slots")
+        feature_names = tuple(str(item) for item in selected.get("feature_names", ()))
+        if not feature_names:
+            raise ContractError("selected ablation family has no feature names")
+        artifact_root = config.repo_root / "artifacts" / "backtests" / "challengers" / run_id
+        for family in ("xgboost", "catboost"):
+            for params in grids[family]:
+                candidate_id = f"{family}-shared-{canonical_sha256(params)[:16]}"
+                prediction_path = artifact_root / f"{candidate_id}-oof.parquet"
+                artifact_receipt_path = artifact_root / f"{candidate_id}.json"
+                lineage_sha = canonical_sha256(
+                    {
+                        "source": config.open_zip.sha256,
+                        "folds": [asdict(fold) for fold in folds],
+                        "feature_names": feature_names,
+                        "family": family,
+                        "architecture": "shared",
+                        "params": params,
+                        "seed": config.seed,
+                        "n_jobs": config.n_jobs,
+                    }
+                )
+                cached = False
+                training_seconds = 0.0
+                if prediction_path.is_file() and artifact_receipt_path.is_file():
+                    artifact_receipt = _read_json(artifact_receipt_path)
+                    cached = artifact_receipt.get(
+                        "lineage_sha256"
+                    ) == lineage_sha and artifact_receipt.get("prediction_sha256") == sha256_file(
+                        prediction_path
+                    )
+                    if cached:
+                        prediction = pd.read_parquet(prediction_path)
+                        training_seconds = float(artifact_receipt.get("training_seconds", 0.0))
+                if not cached:
+                    started = time.perf_counter()
+                    prediction = generate_oof(
+                        features,
+                        labels,
+                        folds,
+                        feature_names,
+                        family=family,  # type: ignore[arg-type]
+                        architecture="shared",
+                        params=params,
+                        seed=config.seed,
+                        n_jobs=config.n_jobs,
+                    ).predictions
+                    training_seconds = time.perf_counter() - started
+                    prediction_sha = _write_parquet_atomic(prediction, prediction_path)
+                    write_json_atomic(
+                        artifact_receipt_path,
+                        {
+                            "candidate_id": candidate_id,
+                            "lineage_sha256": lineage_sha,
+                            "prediction_sha256": prediction_sha,
+                            "training_seconds": training_seconds,
+                        },
+                    )
+                prediction_sha = sha256_file(prediction_path)
+                score = _score_payload(prediction, dict(config.capacities))
+                reference_folds = _fold_total_scores(reference_score)
+                challenger_folds = _fold_total_scores(score)
+                fold_deltas = [
+                    challenger_folds[fold_id] - reference_folds[fold_id]
+                    for fold_id in sorted(reference_folds)
+                ]
+                pooled_delta = float(score["pooled"]["total"]) - reference_total
+                p2 = decide_development_promotion(pooled_delta, fold_deltas, True)
+                residual_correlation = _abs_residual_correlation(reference_oof, prediction)
+                p3 = decide_diversity(residual_correlation, pooled_delta)
+                spec = {
+                    "family": family,
+                    "architecture": "shared",
+                    "feature_names": feature_names,
+                    "params": params,
+                    "seed": config.seed,
+                    "n_jobs": config.n_jobs,
+                }
+                records.append(
+                    {
+                        "candidate_id": candidate_id,
+                        "spec": spec,
+                        "params_sha256": canonical_sha256(params),
+                        "score": score,
+                        "fold_deltas": fold_deltas,
+                        "pooled_delta": pooled_delta,
+                        "abs_residual_correlation": residual_correlation,
+                        "P2": asdict(p2),
+                        "P3": asdict(p3),
+                        "accepted": p2.accepted and p3.accepted,
+                        "prediction_path": str(prediction_path.relative_to(config.repo_root)),
+                        "prediction_sha256": prediction_sha,
+                        "training_seconds": training_seconds,
+                        "checkpoint_reusable": True,
+                    }
+                )
+
+    accepted = sorted(
+        (item for item in records if item["accepted"]),
+        key=lambda item: (-float(item["score"]["pooled"]["total"]), item["candidate_id"]),
+    )
+    deep_path = _write_deep_tier_decision(
+        config,
+        failure_analysis,
+        records,
+        reference_total,
+    )
+    payload = {
+        "run_id": run_id,
+        "stage": "challengers",
+        "status": "ACTIVATED" if activation.accepted else "NOT_ACTIVATED",
+        "source_sha256": config.open_zip.sha256,
+        "activation": asdict(activation),
+        "configuration_slots_total": total_slots,
+        "configuration_slots_used_before": lightgbm_slots,
+        "configuration_slots_used": len(records),
+        "configuration_slots_used_cumulative": lightgbm_slots + len(records),
+        "configuration_slots_remaining": remaining_slots - len(records),
+        "failure_analysis": failure_analysis,
+        "reference": {
+            "candidate_id": f"lightgbm-{ablation.get('selected_family', 'selected')}",
+            "score": reference_score,
+            "prediction_path": selected.get("prediction_path"),
+            "prediction_sha256": selected.get("prediction_sha256"),
+        },
+        "results": records,
+        "accepted_challenger_ids": [item["candidate_id"] for item in accepted],
+        "champion": accepted[0] if accepted else None,
+        "environment": {
+            "machine": platform.machine(),
+            "xgboost_version": _package_version("xgboost"),
+            "catboost_version": _package_version("catboost"),
+            "uv_lock_sha256": sha256_file(config.repo_root / "uv.lock"),
+            "worker_cap": min(config.n_jobs, 6),
+            "cpu_only": True,
+        },
+        "lockbox_consumed": lock_path.exists(),
+        "deep_tier_decision_path": str(deep_path.relative_to(config.repo_root)),
+    }
+    manifest_path = _stage_manifest_path(config, "challengers")
+    digest = write_json_atomic(manifest_path, payload)
+    report_path = config.repo_root / "reports" / "challenger_activation.json"
+    write_json_atomic(report_path, payload)
+    return WorkflowResult((manifest_path, report_path, deep_path), digest)
+
+
 def run_backtest(args: Namespace) -> WorkflowResult:
     config = _config_from_args(args)
     run_id = _run_id(args)
@@ -695,14 +1020,7 @@ def run_backtest(args: Namespace) -> WorkflowResult:
     if args.stage == "ablation":
         return _backtest_ablation(config, run_id)
     if args.stage == "challengers":
-        payload = {
-            "run_id": run_id,
-            "status": "NOT_ACTIVATED",
-            "reason": "challenger activation is evaluated only after frozen development residuals",
-        }
-        path = config.repo_root / "reports" / "challenger_activation.json"
-        digest = write_json_atomic(path, payload)
-        return WorkflowResult((path,), digest)
+        return _backtest_challengers(config, run_id)
     raise ContractError(f"unsupported backtest stage: {args.stage}")
 
 
@@ -850,10 +1168,8 @@ def run_select(args: Namespace) -> WorkflowResult:
             "policy_sha256": canonical_sha256(spec),
         }
 
-    candidates = [
-        frozen_candidate(f"control-{control_name}", control_spec),
-        frozen_candidate("tree-raw", {"kind": "base", "base": tree_spec}),
-    ]
+    control_candidate = frozen_candidate(f"control-{control_name}", control_spec)
+    raw_tree_candidate = frozen_candidate("tree-raw", {"kind": "base", "base": tree_spec})
     decision_options: list[tuple[float, dict[str, Any]]] = []
     if calibration_decision.accepted:
         spec = {
@@ -876,10 +1192,40 @@ def run_select(args: Namespace) -> WorkflowResult:
         decision_options.append(
             (float(blend_score["pooled"]["total"]), frozen_candidate("tree-control-blend", spec))
         )
-    if decision_options:
-        candidates.append(
-            max(decision_options, key=lambda item: (item[0], item[1]["candidate_id"]))[1]
-        )
+
+    challenger_manifest_path = _stage_manifest_path(config, "challengers")
+    challenger_manifest: dict[str, Any] | None = None
+    challenger_candidate: dict[str, Any] | None = None
+    if challenger_manifest_path.is_file():
+        challenger_manifest = _read_json(challenger_manifest_path)
+        if challenger_manifest.get("source_sha256") != config.open_zip.sha256:
+            raise ContractError("challenger manifest source differs from the configured source")
+        champion = challenger_manifest.get("champion")
+        if challenger_manifest.get("status") == "ACTIVATED" and champion is not None:
+            if not isinstance(champion, dict) or not champion.get("accepted"):
+                raise ContractError("challenger manifest champion is not an accepted candidate")
+            champion_spec = champion.get("spec")
+            if not isinstance(champion_spec, dict):
+                raise ContractError("challenger champion has no frozen specification")
+            challenger_candidate = frozen_candidate(
+                str(champion["candidate_id"]),
+                {"kind": "base", "base": champion_spec},
+            )
+
+    best_decision_candidate = (
+        max(decision_options, key=lambda item: (item[0], item[1]["candidate_id"]))[1]
+        if decision_options
+        else raw_tree_candidate
+    )
+    candidates = [control_candidate]
+    if challenger_candidate is None:
+        candidates.append(raw_tree_candidate)
+        if decision_options:
+            candidates.append(best_decision_candidate)
+    else:
+        candidates.extend([best_decision_candidate, challenger_candidate])
+    if len(candidates) > 3:
+        raise ContractError("candidate freeze may contain at most three candidates")
 
     split_payload = _read_json(_split_manifest_path(config))
     lineages = {
@@ -889,13 +1235,23 @@ def run_select(args: Namespace) -> WorkflowResult:
         "lightgbm": canonical_sha256(lightgbm),
         "ablation": canonical_sha256(ablation),
     }
+    if challenger_manifest is not None:
+        lineages["challengers"] = canonical_sha256(challenger_manifest)
+    challenger_slots = (
+        int(challenger_manifest.get("configuration_slots_used", 0))
+        if challenger_manifest is not None
+        else 0
+    )
+    configuration_slots_used = int(lightgbm.get("configuration_slots_used", 0)) + challenger_slots
     freeze_id = canonical_sha256({"candidates": candidates, "lineages": lineages, "run_id": run_id})
     payload = {
         "freeze_id": freeze_id,
         "run_id": run_id,
         "source_sha256": config.open_zip.sha256,
         "lineage_hashes": lineages,
-        "configuration_slots_used": int(lightgbm.get("configuration_slots_used", 0)),
+        "configuration_slots_total": 24,
+        "configuration_slots_used": configuration_slots_used,
+        "configuration_slots_remaining": 24 - configuration_slots_used,
         "finalist_seed_runs": sum(
             len(item.get("seed_scores", {})) for item in lightgbm.get("seed_stability", {}).values()
         ),
@@ -908,6 +1264,23 @@ def run_select(args: Namespace) -> WorkflowResult:
                 "score": calibration_score,
             },
             "blend": {"decision": asdict(blend_decision), "score": blend_score},
+            "challenger": {
+                "status": (
+                    challenger_manifest.get("status")
+                    if challenger_manifest is not None
+                    else "NOT_EVALUATED"
+                ),
+                "champion_candidate_id": (
+                    challenger_candidate["candidate_id"]
+                    if challenger_candidate is not None
+                    else None
+                ),
+                "manifest_sha256": (
+                    canonical_sha256(challenger_manifest)
+                    if challenger_manifest is not None
+                    else None
+                ),
+            },
             "utility": {"status": "NOT_ACTIVATED", "reason": "no quantile distribution parent"},
         },
         "lockbox_consumed": False,
@@ -931,7 +1304,7 @@ def _base_fold_prediction(
     family = str(spec.get("family"))
     if family in {"climatology", "physics"}:
         return _manual_control_oof(features, labels, (fold,), family)
-    if family not in {"random_forest", "lightgbm"}:
+    if family not in {"random_forest", "lightgbm", "xgboost", "catboost"}:
         raise ContractError(f"unsupported frozen base family: {family}")
     architecture = str(spec.get("architecture", "group_specific"))
     if architecture not in {"group_specific", "shared"}:
@@ -1210,7 +1583,7 @@ def _fit_full_base(
             "models": proxies,
             "lineage": {"training_rows_sha256": sha256_dataframe(observed[[*_KEYS, "actual_kwh"]])},
         }
-    if family not in {"random_forest", "lightgbm"}:
+    if family not in {"random_forest", "lightgbm", "xgboost", "catboost"}:
         raise ContractError(f"unsupported final base family: {family}")
     architecture = str(spec.get("architecture", "group_specific"))
     names = tuple(str(item) for item in spec.get("feature_names", ()))
@@ -1234,8 +1607,24 @@ def _fit_full_base(
                     seed,
                     n_jobs,
                 )
-            else:
+            elif family == "lightgbm":
                 bundle = fit_lgbm_bundle(
+                    group[list(names)],
+                    group["actual_kwh"],
+                    group["issuance_batch"],
+                    names,
+                    "final-full",
+                    group_id,  # type: ignore[arg-type]
+                    capacity,
+                    params,
+                    seed,
+                    n_jobs,
+                )
+            else:
+                from baram.models.challengers import fit_challenger_bundle
+
+                bundle = fit_challenger_bundle(
+                    family,  # type: ignore[arg-type]
                     group[list(names)],
                     group["actual_kwh"],
                     group["issuance_batch"],
@@ -1257,21 +1646,38 @@ def _fit_full_base(
             "models": bundles,
             "lineage": lineage,
         }
-    if architecture == "shared" and family == "lightgbm":
+    if architecture == "shared" and family in {"lightgbm", "xgboost", "catboost"}:
         shared_names = (*names, "group_id", "capacity_kwh")
         normalized = observed["actual_kwh"] / observed["capacity_kwh"]
-        bundle = fit_lgbm_bundle(
-            observed[list(shared_names)],
-            normalized,
-            observed["issuance_batch"],
-            shared_names,
-            "final-full",
-            None,
-            1.0,
-            params,
-            seed,
-            n_jobs,
-        )
+        if family == "lightgbm":
+            bundle = fit_lgbm_bundle(
+                observed[list(shared_names)],
+                normalized,
+                observed["issuance_batch"],
+                shared_names,
+                "final-full",
+                None,
+                1.0,
+                params,
+                seed,
+                n_jobs,
+            )
+        else:
+            from baram.models.challengers import fit_challenger_bundle
+
+            bundle = fit_challenger_bundle(
+                family,  # type: ignore[arg-type]
+                observed[list(shared_names)],
+                normalized,
+                observed["issuance_batch"],
+                shared_names,
+                "final-full",
+                None,
+                1.0,
+                params,
+                seed,
+                n_jobs,
+            )
         return {
             "kind": "base",
             "family": family,

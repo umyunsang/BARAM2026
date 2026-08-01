@@ -1,8 +1,31 @@
 """Pure P0-P6 candidate promotion decisions."""
 
+import math
 from collections.abc import Mapping, Sequence
 
 from baram.contracts.types import PromotionDecision
+
+
+def decide_challenger_activation(
+    configuration_slots_remaining: int,
+    shared_failure_mass: float,
+    lockbox_consumed: bool,
+) -> PromotionDecision:
+    """Apply the approved conditional-search gate without inspecting the lockbox."""
+    enough_slots = configuration_slots_remaining >= 8
+    named_failure = math.isfinite(shared_failure_mass) and shared_failure_mass >= 0.25
+    accepted = enough_slots and named_failure and not lockbox_consumed
+    reasons = (
+        f"configuration_slots_remaining={configuration_slots_remaining}",
+        f"shared_failure_mass={shared_failure_mass:.12f}",
+        f"lockbox_consumed={lockbox_consumed}",
+    )
+    return PromotionDecision(
+        accepted,
+        "ACTIVATION",
+        reasons,
+        {"shared_failure_mass": shared_failure_mass},
+    )
 
 
 def decide_contract(checks: Mapping[str, bool]) -> PromotionDecision:

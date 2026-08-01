@@ -11,8 +11,10 @@ __pycache__/
 # Competition-derived data and generated artifacts stay local.
 /data/
 artifacts/cache/
+artifacts/backtests/
 artifacts/models/
 artifacts/predictions/
+artifacts/reproduction/
 artifacts/submissions/*.csv
 artifacts/locks/
 *.joblib

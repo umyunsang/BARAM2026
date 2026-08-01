@@ -17,6 +17,8 @@ Only rows with actual generation at least 10% of group capacity are scored. FICR
 
 ## Operator workflow
 
-After dependency synchronization, use `python -m baram.cli --help`. The closed workflow is audit, prepare, split-build, backtest, select, lockbox, fit-final, build-submission, and reproduce. Every mutating stage writes hashes and receipts under `reports/` or `artifacts/`.
+Synchronize the approved local runtime with `uv sync --extra dev --extra challenger`, then use `uv run python -m baram.cli --help`. The closed workflow is audit, prepare, split-build, backtest, select, lockbox, fit-final, build-submission, and reproduce. The challenger extra is only exercised when the post-LightGBM activation gate passes. Every mutating stage writes hashes and receipts under `reports/` or `artifacts/`.
+
+The development stages are `controls`, `lightgbm`, `ablation`, and conditionally `challengers`. Run `select` after all activated development stages to freeze at most three candidates. Do not invoke `lockbox` until the frozen manifest, source hashes, tests, and configuration budget have been independently checked.
 
 The development ladder must finish and write `artifacts/manifests/candidate_freeze.json` before `lockbox` is called. The lockbox command atomically consumes its one-use local receipt before reading 2024 labels; a failed or interrupted attempt is still consumed. `build-submission` only creates and validates a local UTF-8-BOM CSV. It never opens a browser or uploads to Dacon.

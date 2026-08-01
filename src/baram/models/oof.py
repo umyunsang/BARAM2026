@@ -88,6 +88,22 @@ def _fit_bundle(
             seed,
             n_jobs,
         )
+    if family in {"xgboost", "catboost"}:
+        from baram.models.challengers import fit_challenger_bundle
+
+        return fit_challenger_bundle(
+            family,  # type: ignore[arg-type]
+            features,
+            target,
+            batches,
+            feature_names,
+            fold_id,
+            group_id,  # type: ignore[arg-type]
+            capacity,
+            params,
+            seed,
+            n_jobs,
+        )
     raise ModelError(f"unsupported OOF model family: {family}")
 
 
@@ -96,7 +112,7 @@ def generate_oof(
     labels: pd.DataFrame,
     folds: tuple[FoldSpec, ...],
     feature_names: tuple[str, ...],
-    family: Literal["random_forest", "lightgbm"],
+    family: Literal["random_forest", "lightgbm", "xgboost", "catboost"],
     architecture: Literal["group_specific", "shared"],
     params: dict[str, object],
     seed: int,

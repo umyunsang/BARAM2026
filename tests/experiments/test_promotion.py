@@ -1,5 +1,6 @@
 from baram.experiments.promotion import (
     decide_baseline,
+    decide_challenger_activation,
     decide_contract,
     decide_development_promotion,
     decide_diversity,
@@ -7,6 +8,20 @@ from baram.experiments.promotion import (
     decide_reproduction,
     decide_submission,
 )
+
+
+def test_challenger_activation_requires_slots_shared_failure_and_unopened_lockbox() -> None:
+    """Catches an optional search running outside its approved three-part gate."""
+    accepted = decide_challenger_activation(
+        configuration_slots_remaining=8,
+        shared_failure_mass=0.25,
+        lockbox_consumed=False,
+    )
+    assert accepted.accepted is True
+    assert accepted.gate == "ACTIVATION"
+    assert not decide_challenger_activation(7, 0.25, False).accepted
+    assert not decide_challenger_activation(8, 0.249999, False).accepted
+    assert not decide_challenger_activation(8, 0.25, True).accepted
 
 
 def test_development_promotion_requires_pooled_and_majority_gain() -> None:

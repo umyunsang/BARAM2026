@@ -1,0 +1,23 @@
+xgboost:
+  fixed:
+    objective: reg:absoluteerror
+    n_estimators: 1500
+    subsample: 0.9
+    colsample_bytree: 0.9
+    reg_lambda: 1.0
+    tree_method: hist
+    early_stopping_rounds: 100
+  grid:
+    learning_rate: [0.03, 0.05]
+    max_depth: [4, 7]
+catboost:
+  fixed:
+    loss_function: MAE
+    iterations: 1500
+    l2_leaf_reg: 5.0
+    allow_writing_files: false
+    verbose: false
+    early_stopping_rounds: 100
+  grid:
+    learning_rate: [0.03, 0.05]
+    depth: [6, 8]
