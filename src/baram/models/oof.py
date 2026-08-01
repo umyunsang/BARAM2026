@@ -19,6 +19,36 @@ class OOFResult:
     training_forecast_ids: Mapping[str, frozenset[str]]
 
 
+def filter_complete_validation_rows(
+    frame: pd.DataFrame,
+    eligible_groups: tuple[int, ...],
+) -> pd.DataFrame:
+    """Keep only timestamps with one observed label for every eligible group."""
+    required = {"forecast_id", "forecast_kst_dtm", "group_id", "actual_kwh"}
+    if not required.issubset(frame.columns):
+        raise ModelError(
+            f"validation completeness requires: {sorted(required - set(frame.columns))}"
+        )
+    eligible = frame.loc[frame["group_id"].isin(eligible_groups)].copy()
+    summary = eligible.groupby(["forecast_id", "forecast_kst_dtm"], sort=False).agg(
+        row_count=("group_id", "size"),
+        group_count=("group_id", "nunique"),
+        observed_count=("actual_kwh", "count"),
+    )
+    complete = summary.loc[
+        summary["row_count"].eq(len(eligible_groups))
+        & summary["group_count"].eq(len(eligible_groups))
+        & summary["observed_count"].eq(len(eligible_groups))
+    ].index
+    result = eligible.set_index(["forecast_id", "forecast_kst_dtm"]).loc[
+        lambda indexed: indexed.index.isin(complete)
+    ]
+    result = result.reset_index()
+    if result.empty:
+        raise ModelError("validation fold has no complete all-group label timestamps")
+    return result
+
+
 def _fit_bundle(
     family: str,
     features: pd.DataFrame,
@@ -95,9 +125,7 @@ def generate_oof(
         training_ids[fold.fold_id] = frozenset(train["forecast_id"].unique())
         if set(train["forecast_id"]) & set(valid["forecast_id"]):
             raise ModelError("OOF validation key appears in its training set")
-        valid = valid.loc[valid["group_id"].isin(fold.eligible_groups)]
-        if valid["actual_kwh"].isna().any():
-            raise ModelError("OOF validation labels contain missing eligible targets")
+        valid = filter_complete_validation_rows(valid, fold.eligible_groups)
 
         if architecture == "group_specific":
             for group in fold.eligible_groups:

@@ -43,7 +43,7 @@ from baram.models.baselines import (
     predict_physics_proxy,
 )
 from baram.models.lightgbm import expand_lgbm_grid, fit_lgbm_bundle
-from baram.models.oof import generate_oof
+from baram.models.oof import filter_complete_validation_rows, generate_oof
 from baram.submission.build import build_submission
 from baram.submission.validate import validate_submission
 from baram.validation.splits import (
@@ -333,8 +333,7 @@ def _manual_control_oof(
             merged["issuance_batch"].isin(fold.validation_batches)
             & merged["group_id"].isin(fold.eligible_groups)
         ].copy()
-        if validation["actual_kwh"].isna().any():
-            raise ContractError(f"control validation labels are missing: {fold.fold_id}")
+        validation = filter_complete_validation_rows(validation, fold.eligible_groups)
         if family == "climatology":
             state = fit_climatology(training, fold.fold_id)
             predicted = apply_climatology(state, validation, fold.fold_id)["clim_median"]

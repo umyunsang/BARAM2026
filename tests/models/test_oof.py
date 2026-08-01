@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 
 from baram.contracts.types import FoldSpec
-from baram.models.oof import generate_oof
+from baram.models.oof import filter_complete_validation_rows, generate_oof
 
 
 def _synthetic_frames() -> tuple[pd.DataFrame, pd.DataFrame, FoldSpec]:
@@ -96,3 +96,17 @@ def test_shared_model_one_fold_smoke_preserves_all_groups() -> None:
     assert set(result.predictions["group_id"]) == {1, 2, 3}
     assert np.isfinite(result.predictions["prediction_kwh"]).all()
     assert (result.predictions["prediction_kwh"] >= 0.0).all()
+
+
+def test_incomplete_validation_timestamp_is_removed_for_every_group() -> None:
+    """Catches sparse labels creating unequal group keys in official fold evaluation."""
+    features, labels, fold = _synthetic_frames()
+    missing_id = features.loc[features["issuance_batch"].eq("b4"), "forecast_id"].iloc[0]
+    labels.loc[labels["forecast_id"].eq(missing_id) & labels["group_id"].eq(1), "actual_kwh"] = (
+        np.nan
+    )
+    validation = features.merge(labels, on=["forecast_id", "forecast_kst_dtm", "group_id"])
+    validation = validation.loc[validation["issuance_batch"].isin(fold.validation_batches)]
+    complete = filter_complete_validation_rows(validation, fold.eligible_groups)
+    assert missing_id not in set(complete["forecast_id"])
+    assert complete.groupby("forecast_id")["group_id"].nunique().eq(3).all()
