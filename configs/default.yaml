@@ -1,0 +1,15 @@
+repo_root: /Users/um-yunsang/BARAM2026
+open_zip:
+  path: /Users/um-yunsang/Downloads/open.zip
+  sha256: 920be0c458d820e855bf79dd25723146f52ce1736138aedba5e6bc853f1f720b
+baseline_notebook:
+  path: /Users/um-yunsang/Downloads/baseline.ipynb
+  sha256: 712b26f4d2748860c94cff1e0100c23810468c983173f8e9ef8d009fe82df48c
+capacities:
+  1: 21600.0
+  2: 21600.0
+  3: 21000.0
+seed: 20260801
+n_jobs: 6
+artifact_budget_gib: 10
+lockbox_year: 2024
