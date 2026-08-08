@@ -1,0 +1,31 @@
+{
+ "stage": "D1",
+ "category": "전처리",
+ "name": "data preprocessing",
+ "queries": [
+  "wind power forecasting NWP preprocessing pipeline grid interpolation temporal alignment",
+  "numerical weather prediction wind speed bias correction quantile mapping downscaling",
+  "wind turbine SCADA cleaning curtailment stoppage power curve filtering"
+ ],
+ "prior_stage_results": {},
+ "contract": {
+  "each_finding_requires": [
+   "claim",
+   "source locator",
+   "evidence tag",
+   "relevance to this project"
+  ],
+  "valid_tags": [
+   "contradicts_premise",
+   "directly_supported",
+   "insufficient",
+   "near_match_only"
+  ],
+  "actionable_tags": [
+   "contradicts_premise",
+   "directly_supported",
+   "near_match_only"
+  ],
+  "note": "a finding tagged insufficient may be recorded but may not spawn a node"
+ }
+}

@@ -1,0 +1,44 @@
+{
+ "archive_sha256": "920be0c458d820e855bf79dd25723146f52ce1736138aedba5e6bc853f1f720b",
+ "dacon_upload": false,
+ "external_actions": [],
+ "level_summary": {
+  "(0.099, 0.25]": {
+   "n": 3202,
+   "obs": 0.17515100816495335,
+   "pred": 0.1709297662535655,
+   "ratio": 1.0246957683492404
+  },
+  "(0.25, 0.45]": {
+   "n": 2485,
+   "obs": 0.15340160128762015,
+   "pred": 0.2694411860908625,
+   "ratio": 0.5693324154084194
+  },
+  "(0.45, 0.7]": {
+   "n": 2743,
+   "obs": 0.12351213216421998,
+   "pred": 0.2517376851323531,
+   "ratio": 0.490638229628919
+  },
+  "(0.7, 1.1]": {
+   "n": 3054,
+   "obs": 0.1244899829203089,
+   "pred": 0.12682981180180505,
+   "ratio": 0.9815514282623665
+  }
+ },
+ "lockbox_reopened": false,
+ "merged_rows": 11484,
+ "model_fits": 0,
+ "new_2024_evaluation": false,
+ "point_policy": "T1_G0",
+ "scada_use": "diagnostic only; no inference feature created",
+ "schema_version": 1,
+ "sigma_v_ms": {
+  "1": 2.810982808699259,
+  "2": 3.0523515099564937,
+  "3": 3.1391748660790575
+ },
+ "stage": "M270_PHYSICAL_CEILING_ANALYSIS"
+}

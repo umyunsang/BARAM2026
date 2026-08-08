@@ -1,0 +1,39 @@
+{
+  "event_type": "CLOSED",
+  "cycle_id": "S17-N22_M115_TERRAIN_SX300_H8_STRICT_PREQUENTIAL_COMPARISON",
+  "stage_id": "S8",
+  "node_id": "S17-N22_M115_TERRAIN_SX300_H8_STRICT_PREQUENTIAL_COMPARISON",
+  "actor": "root",
+  "occurred_at": "2026-08-08T23:39:33.823380+09:00",
+  "body": {
+    "predeclared_event_sha256": "c17c0526076ee539310d6da0bcb30aa558a743596db980bcc5fef26c3e1e71ad",
+    "receipt_path": "reports/s17_n22_m115_terrain_strict_receipt.json",
+    "receipt_sha256": "ce88d091256c40bf72709de952dd80700e006d4003bc18e922a5926e79fefa17",
+    "code_sha256": "cb2314de4f3458983505823d8351b99ed2bedd2738b6f57c7746fb87037fb537",
+    "config_sha256": "d0458e634d975f931868899c574daa961a343d52b369bc8143e5b7f6b6bb3c00",
+    "data_sha256": "ea970aa6875bbda905415781e522cbfaa3b6b9ce947082144a6b94799cadcf3c",
+    "router_sha256": "80e37561a32fb2928d1a7505b652bb822f5b6989e73b6d7106afb0ae62041b43",
+    "policy_ids": [
+      "FIXED_T0.75_G2_M115_CONTROL",
+      "FIXED_T0.75_G2_TERRAIN_MEAN16"
+    ],
+    "row_alignment_keys": [
+      "fold_id",
+      "group_id",
+      "forecast_kst_dtm"
+    ],
+    "evidence_class": "diagnostic",
+    "weights_fit": "fixed",
+    "result_status": "INCONCLUSIVE",
+    "score_bearing": false,
+    "comparison_index": null,
+    "official_total": null,
+    "stage_evidence_status": "INSUFFICIENT",
+    "next_handoff": [
+      "S17-N22A_M115_TERRAIN_NO_REFIT_TYPED_PROVENANCE_RECOVERY"
+    ],
+    "lockbox_2024_used": false,
+    "dacon_actions": [],
+    "pre_score_gate_failed": true
+  }
+}

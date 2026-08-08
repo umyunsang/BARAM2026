@@ -1,0 +1,277 @@
+{
+ "dacon_upload": false,
+ "decided_utc": "2026-08-04T18:29:14.752266+00:00",
+ "external_actions": [],
+ "lane": "L2",
+ "lockbox_reopened": false,
+ "model_fits": 0,
+ "new_2024_evaluation": false,
+ "node": "C1N50_NONNEGATIVE_WEIGHTS",
+ "report_sha256": "121f30aef87ebaf0f630295e110734c5d8788710644289c36a65f449b910ed62",
+ "result": {
+  "acceptance_frontier_constrained": [
+   {
+    "all_groups_feasible": true,
+    "binding_group": 1,
+    "binding_max_rho": 0.99,
+    "max_rho_by_group": {
+     "1": 0.99,
+     "2": 0.99,
+     "3": 0.99
+    },
+    "q": 0.6
+   },
+   {
+    "all_groups_feasible": true,
+    "binding_group": 1,
+    "binding_max_rho": 0.99,
+    "max_rho_by_group": {
+     "1": 0.99,
+     "2": 0.99,
+     "3": 0.99
+    },
+    "q": 0.65
+   },
+   {
+    "all_groups_feasible": true,
+    "binding_group": 1,
+    "binding_max_rho": 0.99,
+    "max_rho_by_group": {
+     "1": 0.99,
+     "2": 0.99,
+     "3": 0.99
+    },
+    "q": 0.7
+   },
+   {
+    "all_groups_feasible": true,
+    "binding_group": 1,
+    "binding_max_rho": 0.99,
+    "max_rho_by_group": {
+     "1": 0.99,
+     "2": 0.99,
+     "3": 0.99
+    },
+    "q": 0.75
+   },
+   {
+    "all_groups_feasible": true,
+    "binding_group": 2,
+    "binding_max_rho": 0.68,
+    "max_rho_by_group": {
+     "1": 0.99,
+     "2": 0.68,
+     "3": 0.99
+    },
+    "q": 0.8
+   },
+   {
+    "all_groups_feasible": true,
+    "binding_group": 2,
+    "binding_max_rho": 0.505,
+    "max_rho_by_group": {
+     "1": 0.99,
+     "2": 0.505,
+     "3": 0.99
+    },
+    "q": 0.85
+   },
+   {
+    "all_groups_feasible": true,
+    "binding_group": 2,
+    "binding_max_rho": 0.4,
+    "max_rho_by_group": {
+     "1": 0.695,
+     "2": 0.4,
+     "3": 0.755
+    },
+    "q": 0.9
+   },
+   {
+    "all_groups_feasible": true,
+    "binding_group": 2,
+    "binding_max_rho": 0.315,
+    "max_rho_by_group": {
+     "1": 0.585,
+     "2": 0.315,
+     "3": 0.63
+    },
+    "q": 0.95
+   },
+   {
+    "all_groups_feasible": true,
+    "binding_group": 2,
+    "binding_max_rho": 0.245,
+    "max_rho_by_group": {
+     "1": 0.5,
+     "2": 0.245,
+     "3": 0.54
+    },
+    "q": 1.0
+   },
+   {
+    "all_groups_feasible": true,
+    "binding_group": 2,
+    "binding_max_rho": 0.19,
+    "max_rho_by_group": {
+     "1": 0.43,
+     "2": 0.19,
+     "3": 0.47
+    },
+    "q": 1.05
+   },
+   {
+    "all_groups_feasible": true,
+    "binding_group": 2,
+    "binding_max_rho": 0.14,
+    "max_rho_by_group": {
+     "1": 0.375,
+     "2": 0.14,
+     "3": 0.415
+    },
+    "q": 1.1
+   },
+   {
+    "all_groups_feasible": true,
+    "binding_group": 2,
+    "binding_max_rho": 0.095,
+    "max_rho_by_group": {
+     "1": 0.325,
+     "2": 0.095,
+     "3": 0.36
+    },
+    "q": 1.15
+   },
+   {
+    "all_groups_feasible": true,
+    "binding_group": 2,
+    "binding_max_rho": 0.055,
+    "max_rho_by_group": {
+     "1": 0.28,
+     "2": 0.055,
+     "3": 0.315
+    },
+    "q": 1.2
+   },
+   {
+    "all_groups_feasible": true,
+    "binding_group": 2,
+    "binding_max_rho": 0.02,
+    "max_rho_by_group": {
+     "1": 0.24,
+     "2": 0.02,
+     "3": 0.275
+    },
+    "q": 1.25
+   },
+   {
+    "all_groups_feasible": false,
+    "binding_group": null,
+    "binding_max_rho": null,
+    "max_rho_by_group": {
+     "1": 0.205,
+     "2": null,
+     "3": 0.24
+    },
+    "q": 1.3
+   }
+  ],
+  "cycle47_revalidation": {
+   "1": {
+    "at": {
+     "q": 0.8,
+     "rho": 0.6,
+     "w1": 0.2352941176470588
+    },
+    "best_sigma_constrained": 1.6756301262510174,
+    "feasible": true,
+    "margin": 0.19536987374898263,
+    "requirement": 1.871
+   },
+   "2": {
+    "at": {
+     "q": 0.8,
+     "rho": 0.6,
+     "w1": 0.23529411764705893
+    },
+    "best_sigma_constrained": 1.837837952275317,
+    "feasible": true,
+    "margin": 0.03316204772468301,
+    "requirement": 1.871
+   },
+   "3": {
+    "at": {
+     "q": 0.8,
+     "rho": 0.6,
+     "w1": 0.23529411764705893
+    },
+    "best_sigma_constrained": 1.6523467062475294,
+    "feasible": true,
+    "margin": 0.21865329375247056,
+    "requirement": 1.871
+   }
+  },
+  "defect": "사이클 36 의 optimal_pair_sigma 는 제약 없는 최적가중이라 rho > q 에서 음수 가중을 낸다. 두 소스를 차분해 오차를 상쇄한다는 외삽이며 배포 불가",
+  "gate_touched": false,
+  "impact": {
+   "cycle36": "결론(요구치 0.571 에서 만족 0 개)은 음수가중이 상황을 좋게 만드는 방향이므로 보수적이라 유지",
+   "cycle47": "현실범위가 음수가중 경계(rho=q) 안쪽이라 재확인 대상 — 이 노드 H3",
+   "cycle49": "rho 를 0.99 까지 스캔해 오염. 이 노드가 대체"
+  },
+  "negative_weight_diagnosis": [
+   {
+    "constrained_sigma_at_rho099": 1.5112999999999999,
+    "first_negative_weight_rho": 0.705,
+    "matches_rho_equals_q": true,
+    "q": 0.7,
+    "unconstrained_sigma_at_rho099": 0.6610899437743819
+   },
+   {
+    "constrained_sigma_at_rho099": 1.7271999999999998,
+    "first_negative_weight_rho": 0.805,
+    "matches_rho_equals_q": true,
+    "q": 0.8,
+    "unconstrained_sigma_at_rho099": 1.0296156947410726
+   },
+   {
+    "constrained_sigma_at_rho099": 1.9430999999999998,
+    "first_negative_weight_rho": 0.905,
+    "matches_rho_equals_q": true,
+    "q": 0.9,
+    "unconstrained_sigma_at_rho099": 1.638108539476891
+   },
+   {
+    "constrained_sigma_at_rho099": 2.153595736204917,
+    "first_negative_weight_rho": null,
+    "matches_rho_equals_q": false,
+    "q": 1.0,
+    "unconstrained_sigma_at_rho099": 2.153595736204917
+   }
+  ],
+  "no_collection": true,
+  "no_training": true,
+  "node": "C1N50_NONNEGATIVE_WEIGHTS",
+  "parent_node": "C1N49_RHO_ACCEPTANCE",
+  "predeclared_check": {
+   "H1_expectation": "비제약식이 rho > q 에서 음수가중",
+   "H1_held": false,
+   "H2_expectation": "제약식 허용 rho 가 q 에 단조",
+   "H2_held": true,
+   "H3_expectation": "사이클 47 결론이 제약식에서도 유지",
+   "H3_held": true,
+   "H4_expectation": "q=0.85 에서 허용 rho >= 0.6",
+   "H4_held": false,
+   "H4_measured": 0.505,
+   "frozen": "이 수용선은 새 소스 측정 결과를 보고 변경하지 않는다",
+   "verdict": "AXIS_SURVIVES_UNDER_NONNEGATIVE_WEIGHTS"
+  },
+  "requirements": {
+   "primary": 1.871,
+   "secondary": 1.817
+  },
+  "supersedes": "C1N49_RHO_ACCEPTANCE"
+ },
+ "schema_version": 1,
+ "script_sha256": "8dc110dcd7dde675ed76c5d69daf14b3583574746237bf59d94781dfe7e7b2dc",
+ "stage": "M271_P4_CYCLE50_NONNEGATIVE_WEIGHTS"
+}

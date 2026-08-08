@@ -1,0 +1,112 @@
+{
+ "dacon_upload": false,
+ "decided_utc": "2026-08-04T05:55:59.411560+00:00",
+ "external_actions": [
+  "web search (read-only, anomaly research)"
+ ],
+ "lane": "L2",
+ "lockbox_reopened": false,
+ "model_fits": 0,
+ "new_2024_evaluation": false,
+ "node": "C1N2_COLLIDER_CORRECTED",
+ "parent_node": "C1N1_TOPRATE_MECHANISM",
+ "report_sha256": "0e4cd147bdc34adee8d011654caa93975c7034ed3860b92ea271cecc06061c7d",
+ "result": {
+  "direction": {
+   "applicability": "directly_supported",
+   "direction_id": "dir::C5::anomaly::L2::collider",
+   "mechanism": "사이클 1 의 부호 역전은 y 를 통제한 collider bias 다",
+   "sources": [
+    {
+     "applicability": "directly_supported",
+     "claim": "공통 결과(collider)를 통제하면 그 원인들 사이에 없던 연관이 생기며, 전형적으로 가짜 음의 상관이 나타난다.",
+     "id": "src::collider_bias",
+     "origin": "Nature Communications 11:5749 (2020); Berkson (1946)"
+    }
+   ]
+  },
+  "input_hashes": {
+   "open_zip_sha256": "920be0c458d820e855bf79dd25723146f52ce1736138aedba5e6bc853f1f720b"
+  },
+  "measurement": {
+   "by_group": [
+    {
+     "H1_abs_err_given_wind": -0.07545072065319541,
+     "H1_sigma": 4.77311539886061,
+     "H2_sigma": 18.19189512006561,
+     "H2_signed_err_given_wind": -0.2875672348470666,
+     "approx_se": 0.01580743693546698,
+     "collider_abs_err_given_y": -0.07252711388165918,
+     "collider_signed_err_given_y": -0.07376321294632147,
+     "group": 1,
+     "idle_hour_fraction": 0.34431960049937577,
+     "mean_producing_fraction": 0.9386253294492994,
+     "rows": 4005
+    },
+    {
+     "H1_abs_err_given_wind": -0.07549255110335777,
+     "H1_sigma": 4.772777358368612,
+     "H2_sigma": 15.74251406906184,
+     "H2_signed_err_given_wind": -0.24900439694094648,
+     "approx_se": 0.01581732090875531,
+     "collider_abs_err_given_y": -0.018354876660193642,
+     "collider_signed_err_given_y": -0.027273543919744934,
+     "group": 2,
+     "idle_hour_fraction": 0.352,
+     "mean_producing_fraction": 0.9379930555555556,
+     "rows": 4000
+    },
+    {
+     "H1_abs_err_given_wind": -0.19014253012340537,
+     "H1_sigma": 11.213574103170556,
+     "H2_sigma": 22.934572771671537,
+     "H2_signed_err_given_wind": -0.3888891850165767,
+     "approx_se": 0.016956460837017517,
+     "collider_abs_err_given_y": -0.21610061414283877,
+     "collider_signed_err_given_y": -0.23824437749545543,
+     "group": 3,
+     "idle_hour_fraction": 0.4691180695202528,
+     "mean_producing_fraction": 0.8873471018338057,
+     "rows": 3481
+    }
+   ],
+   "predeclared_check": {
+    "H1_all_negative": true,
+    "H1_expectation": "고정 NWP 풍속에서 생산비율과 |오차| 는 음의 관계",
+    "H1_partials": [
+     -0.07545072065319541,
+     -0.07549255110335777,
+     -0.19014253012340537
+    ],
+    "H2_all_negative": true,
+    "H2_expectation": "고정 NWP 풍속에서 생산비율과 부호오차는 음의 관계",
+    "H2_partials": [
+     -0.2875672348470666,
+     -0.24900439694094648,
+     -0.3888891850165767
+    ],
+    "collider_comparison_h1": [
+     -0.07252711388165918,
+     -0.018354876660193642,
+     -0.21610061414283877
+    ],
+    "sign_flipped_by_control": [
+     false,
+     false,
+     false
+    ],
+    "verdict": "AVAILABILITY_MECHANISM_SURVIVES"
+   },
+   "rows": 11486
+  },
+  "predeclaration": {
+   "H1": "partial(|err|, producing | nwp_ws10) < 0",
+   "H2": "partial(signed_err, producing | nwp_ws10) < 0",
+   "expected_sign": -1
+  }
+ },
+ "routed_by": "C5_anomaly",
+ "schema_version": 1,
+ "script_sha256": "e622589b5f773f956bf8a0214bce89aac5f144870736dcb2ec1a29c2f775c75c",
+ "stage": "M271_P4_CYCLE2_COLLIDER"
+}

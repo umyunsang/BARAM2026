@@ -1,0 +1,39 @@
+{
+  "candidate_csv_sha256": "06fe135a22b2eff0b66303b87090f43a2b3c99ec688f4eb84cadac0c874e0730",
+  "candidate_id": "M252",
+  "codex_external_actions": [],
+  "evidence": {
+    "leaderboard_image_path": "reports/evidence/dacon_m252_leaderboard_2026-08-03.png",
+    "leaderboard_image_sha256": "45f6cc558b213fb0b77852a523fe5863296f8dbdac1715d0867b20043516c665",
+    "submission_image_path": "reports/evidence/dacon_m252_submission_2026-08-03.png",
+    "submission_image_sha256": "60d5678301130a8605d4ebc5b9ef2065418a9cc0385957a07624f774536d2f2c"
+  },
+  "external_action_actor": "user",
+  "filename": "submission_M252.csv",
+  "memo": "m252",
+  "online_result": {
+    "ficr": 0.3878534938,
+    "one_minus_nmae": 0.8659033246,
+    "rank": 657,
+    "submission_count": 3,
+    "submission_id": 1509527,
+    "submitted_at_kst": "2026-08-03 14:47:25",
+    "total": 0.6268784092
+  },
+  "previous_selected_result": {
+    "ficr": 0.3742673379,
+    "one_minus_nmae": 0.8730574493,
+    "total": 0.6236623936
+  },
+  "result_deltas": {
+    "ficr": 0.0135861559,
+    "one_minus_nmae": -0.0071541247,
+    "total": 0.0032160156
+  },
+  "schema_version": 1,
+  "state": "ONLINE_TARGET_MISSED_LOCAL_LOOP_ACTIVE",
+  "target": {
+    "gap_to_strict_threshold": 0.0331215908,
+    "strict_total_greater_than": 0.66
+  }
+}

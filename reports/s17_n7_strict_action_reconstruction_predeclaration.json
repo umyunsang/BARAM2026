@@ -1,0 +1,140 @@
+{
+  "schema_version": 1,
+  "node_id": "S17-N7_STRICT_ACTION_PROVENANCE_RECONSTRUCTION",
+  "stage": "S8_검증전략",
+  "kind": "past_only_action_cube_reconstruction_non_score_bearing",
+  "predeclared_at": "2026-08-08T20:04:45.426521+09:00",
+  "parent": "S17-N6_COST5_SPO_PLUS_PREQUENTIAL",
+  "evidence": [
+    {
+      "path": "reports/s17_n6_cost5_spo_plus_receipt.json",
+      "sha256": "6577e98f92b4f7d46569f4fddf5d6bd61a680589c9972e4696da8c82207181a4"
+    },
+    {
+      "path": "reports/s17_n3_prequential_eval_receipt.json",
+      "sha256": "6f25b5bdff627de2a1bcebe537204d91e0be0bf5be63cc8018193c1754c0a080"
+    },
+    {
+      "path": "research/rwa_eval_research.md",
+      "sha256": "2b418c28ecd4f9e3a27e30176d9d76298961b37cffc613447b7c36e5eb34b84c"
+    }
+  ],
+  "purpose": "Construct a distinct strict saved-action cube by a structural one-operating-day origin shift, Q2-only fixed iteration/policy selection, and complete-day filtering, without fitting or inspecting Q3/Q4 scores.",
+  "input_bundle": {
+    "sha256": "2aaf7db0b3a26438071ac7c1d03b7645e494f740b21c53d7087187b73872315d",
+    "files": {
+      "research/nodes/S7-N8_D_keys.parquet": "f1e647ba5eb7529f8ff9e69e818dfb7697044c19b15839e05f97e89cea83a010",
+      "research/nodes/S7-N8_D_prob.npy": "e567109f8a86c37411e84fab0329af8465788988112ece114035753e60c52f0e",
+      "research/nodes/s7_savemembers.py": "5a86baf85a631e070da29124b2c6c0f6c77aa8bf0a0f1d4024b4ae988a02fdbd",
+      "research/nodes/loop_lib.py": "f20e566fa57821e86acf41b399f233fe9ecdde515f834d84db818b0b882cf02f",
+      "artifacts/cache/harness/6e2a1e3f3bb5782ec35a2454/MANIFEST.json": "45397afeb0af9c7797fa20ade2fd1107396b1c15279f4de8ef44dd58635b1ae7",
+      "artifacts/cache/harness/6e2a1e3f3bb5782ec35a2454/dev-2023-Q2__train.parquet": "5ce7fe5fa653b999ec2d366e3adb3373342d6fe896343e4f598b925abb127ccb",
+      "artifacts/cache/harness/6e2a1e3f3bb5782ec35a2454/dev-2023-Q3__train.parquet": "a9a91223966d9dc74dcbf522bd5d319b4e4b36559141b8e4c434a297898b1753",
+      "artifacts/cache/harness/6e2a1e3f3bb5782ec35a2454/dev-2023-Q4__train.parquet": "96bc474a7d0b87ad1c5692836ea35c57bc6d22c416d0c65f3b685c0c0755f29f",
+      "artifacts/backtests/metric-aligned-probe/M102_TOP100-dev-2023-Q2-policies.parquet": "edeced928847332711e5b2f62a0e8bc6df2f64dc779224621735fbc13eb0dd7a",
+      "artifacts/backtests/metric-aligned-probe/M102_TOP100-dev-2023-Q2.json": "17f7ea69f4eca3e1c9500ae2df6f6c2361a6eeca9d8a953551825f476d5b06eb",
+      "artifacts/backtests/metric-aligned-probe/M102_TOP100_I60-dev-2023-Q3-policies.parquet": "ba67e7147c09795e3b214910ca7917bec5972487c39a8c1db4a7355fc5a6a1e8",
+      "artifacts/backtests/metric-aligned-probe/M102_TOP100_I60-dev-2023-Q3.json": "3a0534a6a0292c825ba9ca03e323da312f73ddb715a6e565a9d294e99053cf37",
+      "artifacts/backtests/metric-aligned-probe/M102_TOP100-dev-2023-Q4-policies.parquet": "4f271f254c55275c43256f0b855388ec4120935391d281c07cc6ec65f8e7bf93",
+      "artifacts/backtests/metric-aligned-probe/M102_TOP100-dev-2023-Q4.json": "8cb7b96656d7773594ed50c99de92b071c1baa4eaaad242cb299c63a5724b79e",
+      "artifacts/backtests/metric-aligned-probe/M113_LGBM_DART-dev-2023-Q2-policies.parquet": "dddd4fcbbb4555737b51f152173d73bc84a372edeb6879e218fa5a853557c02d",
+      "artifacts/backtests/metric-aligned-probe/M113_LGBM_DART-dev-2023-Q2.json": "cd449c73b0761032aa2a84a2a1dbbc2fe70537130d6ce7425cd86cbf38cdea63",
+      "artifacts/backtests/metric-aligned-probe/M113_LGBM_DART-dev-2023-Q3-policies.parquet": "a9b94a32393b42b180b113129d4be68c06879da0f070193defca4ab877d63c5c",
+      "artifacts/backtests/metric-aligned-probe/M113_LGBM_DART-dev-2023-Q3.json": "2ba18a45ba9713b8f53c6e4df7e2322865c5920e72da85f9e758105c902ea410",
+      "artifacts/backtests/metric-aligned-probe/M113_LGBM_DART-dev-2023-Q4-policies.parquet": "97ed67d6f52994bacc942162bdbd8df304956c6cb866e7ec4c4ae7c45c192771",
+      "artifacts/backtests/metric-aligned-probe/M113_LGBM_DART-dev-2023-Q4.json": "3b440ab995b46eb107bcf4cdb4afdc40bd2cc87b67d2fc4be8147ac0a4b4385c",
+      "artifacts/backtests/metric-aligned-probe/M115_XGBOOST-dev-2023-Q2-policies.parquet": "4ad669071fc8010c15713f014e320dcffb1cdb5c142a05fa426fd21f7f306ade",
+      "artifacts/backtests/metric-aligned-probe/M115_XGBOOST-dev-2023-Q2.json": "917d2c741fa85aa68a264f3f75bd230517276a5ebd4a5e397890756707b19cf6",
+      "artifacts/backtests/metric-aligned-probe/M115_XGBOOST-dev-2023-Q3-policies.parquet": "951793f696a5599b2dd52684fac22b72949a90380e0437761ea397c1bffc520b",
+      "artifacts/backtests/metric-aligned-probe/M115_XGBOOST-dev-2023-Q3.json": "f2ca31f9c00ecc88b2af5b50fec7bd38824601bc6b2ddeb69ae498d4b3ce6748",
+      "artifacts/backtests/metric-aligned-probe/M115_XGBOOST-dev-2023-Q4-policies.parquet": "8913ab0cb6ce6de9b87d0eb79c79d541971b5f930c27da4647df7ee5caba3867",
+      "artifacts/backtests/metric-aligned-probe/M115_XGBOOST-dev-2023-Q4.json": "7dd4e5a2fde1d2b8ca7f583560dd861c7778c78d3a2264f10d4e98b9dd0829b3"
+    }
+  },
+  "fixed_reconstruction": {
+    "folds": [
+      "dev-2023-Q2",
+      "dev-2023-Q3",
+      "dev-2023-Q4"
+    ],
+    "drop_first_operating_day_each_fold": true,
+    "reason": "Batch fits include targets through prior operating-day 00:00; the shifted first basis at 14:00 makes fit_label_max strictly past. This is key-only and not outcome-selected.",
+    "expected_fit_max_and_shifted_basis": {
+      "dev-2023-Q2": [
+        "2023-04-01 00:00",
+        "2023-04-01 14:00"
+      ],
+      "dev-2023-Q3": [
+        "2023-07-01 00:00",
+        "2023-07-01 14:00"
+      ],
+      "dev-2023-Q4": [
+        "2023-10-01 00:00",
+        "2023-10-01 14:00"
+      ]
+    },
+    "complete_day_rule": "After exact key intersection, keep only days with 72 unique group-hours; expected retained days Q2/Q3/Q4=90/89/91.",
+    "D_grid": {
+      "temperatures": [
+        0.4,
+        0.5,
+        0.6,
+        0.75,
+        0.85,
+        1.0,
+        1.2
+      ],
+      "gammas": [
+        0.0,
+        0.2,
+        0.35,
+        0.5,
+        0.75,
+        1.0,
+        1.5,
+        2.0
+      ]
+    },
+    "dependent_iteration": {
+      "M102_TOP100": 60,
+      "M113_LGBM_DART": 140,
+      "M115_XGBOOST": 100
+    },
+    "M102_Q3_source": "M102_TOP100_I60-dev-2023-Q3-policies.parquet",
+    "policy_selection": "For each base action, maximize exact Q2 retained-day official Total only; tie break by lexicographically smallest policy id. Freeze one policy through Q3/Q4.",
+    "selection_label_max": "2023-07-01 00:00 < shifted Q3 first basis 2023-07-01 14:00",
+    "champion": "0.30*D + 0.70*mean(M102,M113,M115), fixed prior weight; no fit."
+  },
+  "outputs": {
+    "script": "scripts/reconstruct_strict_actions.py",
+    "action_cube": "artifacts/backtests/s17_n7_strict_actions/actions.parquet",
+    "provenance": "artifacts/backtests/s17_n7_strict_actions/procedure_provenance.parquet",
+    "family_manifest": "artifacts/backtests/s17_n7_strict_actions/family_manifest.json",
+    "receipt": "reports/s17_n7_strict_action_reconstruction_receipt.json"
+  },
+  "hard_checks": [
+    "all 26 input hashes exact",
+    "selected iteration is Q2-frozen across all folds",
+    "fit and selection maxima strictly precede each shifted basis",
+    "retained atom counts exactly 90/89/91 and every atom 72 cells",
+    "all actual columns agree on aligned rows within 1e-9",
+    "two exact reruns reproduce output hashes",
+    "no Q3/Q4 official metric/component/oracle calculation"
+  ],
+  "actions": {
+    "model_fits": 0,
+    "assessment_score_calls": 0,
+    "inner_Q2_policy_evaluations": 245,
+    "comparison_index": null
+  },
+  "forbidden": [
+    "Q3/Q4 score or component inspection",
+    "candidate fit",
+    "2024/test/rejected ECMWF",
+    "future-fold selection",
+    "post-hoc origin/missing-day rule",
+    "Dacon/account",
+    "dependency change"
+  ],
+  "pass_label": "PASS_STRICT_ACTION_CUBE_ONLY_NOT_CANDIDATE_SCORE"
+}

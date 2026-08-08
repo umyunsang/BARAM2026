@@ -1,0 +1,81 @@
+{
+ "dacon_upload": false,
+ "decided_utc": "2026-08-04T06:21:00.747976+00:00",
+ "external_actions": [],
+ "lane": "L2",
+ "lockbox_reopened": false,
+ "model_fits": 0,
+ "new_2024_evaluation": false,
+ "node": "C1N6_WIND50_MIDPOINT",
+ "report_sha256": "cacc0e171a9280c6a5fd76e73bd3f6ee27381e778cf8c8d990bdc8ee980c5910",
+ "result": {
+  "comparisons": [
+   {
+    "group": 1,
+    "rows": 26304,
+    "wind10_speed__r": 0.7957196327282781,
+    "wind10_speed__residual_std": 2.0382891344931844,
+    "wind50_range__r": -0.00981809951574478,
+    "wind50_range__residual_std": 3.365210815528127,
+    "wind50_speed_avg__r": 0.7902029550569389,
+    "wind50_speed_avg__residual_std": 2.0624528419114636,
+    "wind50max_speed__r": 0.7973949581219026,
+    "wind50max_speed__residual_std": 2.0308605007963454,
+    "wind50mid_speed__r": 0.7904338568882855,
+    "wind50mid_speed__residual_std": 2.061450496491317,
+    "wind50min_speed__r": 0.7610790000142219,
+    "wind50min_speed__residual_std": 2.1829801670324724
+   },
+   {
+    "group": 2,
+    "rows": 26304,
+    "wind10_speed__r": 0.7904223260053752,
+    "wind10_speed__residual_std": 2.361892528957208,
+    "wind50_range__r": -0.0024235237422829837,
+    "wind50_range__residual_std": 3.855747686138026,
+    "wind50_speed_avg__r": 0.7857052841733763,
+    "wind50_speed_avg__residual_std": 2.3851764077682214,
+    "wind50max_speed__r": 0.7926176139922769,
+    "wind50max_speed__residual_std": 2.3509297141505137,
+    "wind50mid_speed__r": 0.7858695992764081,
+    "wind50mid_speed__residual_std": 2.384371483330176,
+    "wind50min_speed__r": 0.7570123526384436,
+    "wind50min_speed__residual_std": 2.5193551141566113
+   },
+   {
+    "group": 3,
+    "rows": 17537,
+    "wind10_speed__r": 0.7979009124484863,
+    "wind10_speed__residual_std": 2.1735271708165302,
+    "wind50_range__r": 0.021600105646110618,
+    "wind50_range__residual_std": 3.604945338677867,
+    "wind50_speed_avg__r": 0.7931331048078932,
+    "wind50_speed_avg__residual_std": 2.1960983378149024,
+    "wind50max_speed__r": 0.8008796615627538,
+    "wind50max_speed__residual_std": 2.1592363278657003,
+    "wind50mid_speed__r": 0.7925967571663094,
+    "wind50mid_speed__residual_std": 2.198614537568999,
+    "wind50min_speed__r": 0.7618651680757325,
+    "wind50min_speed__residual_std": 2.3355965106256233
+   }
+  ],
+  "input_hashes": {
+   "open_zip_sha256": "920be0c458d820e855bf79dd25723146f52ce1736138aedba5e6bc853f1f720b"
+  },
+  "predeclared_check": {
+   "H1_expectation": "중점 속력이 wind10_speed 보다 나셀과 더 강하게 상관",
+   "H1_held": false,
+   "H2_expectation": "중점 속력이 wind50max / wind50min 각각보다 더 강하게 상관",
+   "H2_held": false,
+   "midpoint_r": [
+    0.7904338568882855,
+    0.7858695992764081,
+    0.7925967571663094
+   ],
+   "verdict": "FEATURE_GAP_REJECTED"
+  }
+ },
+ "schema_version": 1,
+ "script_sha256": "b2b91fac7530b3d586328941b14cfe4c8c60d059855bb32729334ae57fea3be6",
+ "stage": "M271_P4_CYCLE6_WIND50_MIDPOINT"
+}

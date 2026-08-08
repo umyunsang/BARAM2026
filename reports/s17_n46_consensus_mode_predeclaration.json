@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "node_id": "S17-N46_CONSENSUS_MODE",
+  "stage_id": "S8",
+  "deficit": "FD17",
+  "created_at": "2026-08-09T06:22:41.271386+09:00",
+  "score_bearing": false,
+  "question": "The session established that FICR is earned by a concentrated mode and destroyed by averaging. Does replacing the weighted MEAN of member actions with the settlement-optimal MODE of the weighted member ensemble raise Total?",
+  "method": "Zero-fit operator on the frozen member actions: treat the four weighted member actions as a discrete belief and pick the grid action maximising weighted expected settlement instead of the weighted mean.",
+  "degrees_of_freedom": 0,
+  "trial_budget": 1
+}

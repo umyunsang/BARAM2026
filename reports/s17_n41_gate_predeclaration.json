@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "node_id": "S17-N41_CONDITIONAL_MEMBER_GATE",
+  "stage_id": "S7",
+  "deficit": "FD14",
+  "created_at": "2026-08-09T06:01:29.000326+09:00",
+  "score_bearing": false,
+  "question": "Is the per-row member-optimality signal learnable by a strictly past-only gate, and does learning it convert into official Total?",
+  "method": "Train a four-class gate on strictly earlier folds truncated so every training label was available before the target fold first basis time; apply hard pick, soft probability mixture and a 50/50 shrink toward the deployed blend.",
+  "chronology_contract": "training rows require label_available <= first basis time of the target fold",
+  "degrees_of_freedom": 1,
+  "trial_budget": 1
+}

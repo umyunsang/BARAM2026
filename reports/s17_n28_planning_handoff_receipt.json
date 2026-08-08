@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "status": "CURRENT_HANDOFF_RECORDED",
+  "created_at": "2026-08-09T04:29:18.128774+09:00",
+  "terminal_receipt": {
+    "path": "reports/s17_n28_evidence_exhausted_target_not_reached_receipt.json",
+    "sha256": "1003c7ecbd44f5758f29b470b04466a9898d3e9e0c6d8e48b48d0f3677cc66c0"
+  },
+  "planning_files": {
+    ".planning/2026-08-01-leaderboard-top-4-loop/task_plan.md": "c1fd0f6b162f39e828750a8c0eb1bcf7219cad808a9b3192155967cc7dc4f156",
+    ".planning/2026-08-01-leaderboard-top-4-loop/progress.md": "4e1b0caec4c52bc0074e0fce1194bed86075cd34c37687a5fc276ab57005837e",
+    ".planning/2026-08-01-leaderboard-top-4-loop/findings.md": "5c1b4ff453da4acfbb6810ddfb0f09e6d2c3c08d9448ea7de95b197f0fa78736"
+  },
+  "markers": {
+    "task_plan": "S17 post-halt full-text closure — 2026-08-09",
+    "progress": "S17 post-halt N27/N28 closure — 2026-08-09",
+    "findings": "S17-N27/N28 scalar-gradient findings — 2026-08-09"
+  },
+  "marker_counts": {
+    "task_plan": 1,
+    "progress": 1,
+    "findings": 1
+  },
+  "eventstore_head": {
+    "sequence": 158,
+    "event_sha256": "1f92bedddaff46aec17470ef69634967cabfbdb4ce30f57dc54a4d31ec566eee",
+    "digest": "6710ac311c64532d744cf0776e8dbbcb5b6a26f90044b060077ff3f6400e4a38",
+    "halt": "HALT_ALLOWED_EXHAUSTED",
+    "pending": [],
+    "frontier": []
+  },
+  "goal_interpretation": "Objective not achieved; no goal.complete call."
+}

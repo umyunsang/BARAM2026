@@ -1,0 +1,37 @@
+{
+  "event_type": "CLOSED",
+  "cycle_id": "S17-N16_R4_SOURCE_SEPARATED_VS_CONCAT_PREREQUISITE_AUDIT",
+  "stage_id": "S6",
+  "node_id": "S17-N16_R4_SOURCE_SEPARATED_VS_CONCAT_PREREQUISITE_AUDIT",
+  "actor": "root",
+  "occurred_at": "2026-08-08T21:45:21.615111+09:00",
+  "body": {
+    "predeclared_event_sha256": "1c7e7ba15809ebfc682ca8514684bd3bab31f6e082d397428aa2c574249fa9a8",
+    "receipt_path": "reports/s17_n16_r4_source_separation_prerequisite_receipt.json",
+    "receipt_sha256": "9951f2419feb33ced371786727dc8abde2cc90f3552c0afcd80a05798a24ec61",
+    "code_sha256": "9e766d7c2e8db39c02903acd890e7591e8ca566dd9bf6852f6d90fcb4f1afefd",
+    "config_sha256": "6d4a0208dae9e689b66e61a9b657fe718d04d50bc7cac0fd089ca9c9ac4aca23",
+    "data_sha256": "27921fdf67a53bc371818d4b7a614705b8aa359b5ba83e833ec4215045b34aec",
+    "router_sha256": "80e37561a32fb2928d1a7505b652bb822f5b6989e73b6d7106afb0ae62041b43",
+    "policy_ids": [
+      "N16_R4_PREREQUISITE_AUDIT"
+    ],
+    "row_alignment_keys": [
+      "fold_id",
+      "group_id",
+      "forecast_kst_dtm"
+    ],
+    "evidence_class": "diagnostic",
+    "weights_fit": "fixed",
+    "result_status": "SUPPORTED",
+    "score_bearing": false,
+    "comparison_index": null,
+    "official_total": null,
+    "stage_evidence_status": "RESEARCHED",
+    "next_handoff": [
+      "S17-N17_R4_NO_REFIT_STRICT_SOURCE_SEPARATION_COMPARISON"
+    ],
+    "lockbox_2024_used": false,
+    "dacon_actions": []
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "status": "PASS_LIVE_READONLY_NO_NEW_SUBMISSION",
+  "observed_at": "2026-08-03T13:26:33+09:00",
+  "scope": "Authenticated Chrome read-only inspection of the Dacon public leaderboard and the user's submission-history table; no upload, final-save, form entry, or account mutation.",
+  "competition_id": "236727",
+  "urls": {
+    "leaderboard": "https://dacon.io/competitions/official/236727/leaderboard",
+    "my_submission": "https://dacon.io/competitions/official/236727/mysubmission"
+  },
+  "authenticated_user": {
+    "identity_redacted": true,
+    "public_rank": 703,
+    "best_total_display": 0.62366,
+    "best_one_minus_nmae_display": 0.87305,
+    "best_ficr_display": 0.37426,
+    "submission_count": 2
+  },
+  "submission_history": [
+    {
+      "submission_id": 1503631,
+      "submitted_at_display": "2026-07-28 05:16:34",
+      "total": 0.6236623936,
+      "one_minus_nmae": 0.8730574493,
+      "ficr": 0.3742673379
+    },
+    {
+      "submission_id": 1503170,
+      "submitted_at_display": "2026-07-27 19:23:58",
+      "total": 0.6236623936,
+      "one_minus_nmae": 0.8730574493,
+      "ficr": 0.3742673379
+    }
+  ],
+  "top_rank_landmarks": [
+    {"rank": 1, "total": 0.67365, "one_minus_nmae": 0.87964, "ficr": 0.46767},
+    {"rank": 20, "total": 0.66010, "one_minus_nmae": 0.87345, "ficr": 0.44675},
+    {"rank": 21, "total": 0.66006, "one_minus_nmae": 0.87655, "ficr": 0.44356},
+    {"rank": 24, "total": 0.65971, "one_minus_nmae": 0.87991, "ficr": 0.43952}
+  ],
+  "completion_contract": {
+    "user_final_total_target": "strictly greater than 0.66000",
+    "finals_team_limit": 20,
+    "current_rank_20_total": 0.66010,
+    "practical_external_threshold": "at least 0.66010 at this observation; cutoff may move",
+    "components_are_diagnostics_not_separate_completion_gates": true
+  },
+  "result": {
+    "new_user_side_upload_detected": false,
+    "m252_online_score_available": false,
+    "goal_complete": false,
+    "gap_from_best_exact_total_to_rank_20": 0.0364376064
+  },
+  "prohibited_actions_confirmed_absent": [
+    "file upload",
+    "submission button click",
+    "final-save click",
+    "memo entry",
+    "account mutation"
+  ]
+}
+

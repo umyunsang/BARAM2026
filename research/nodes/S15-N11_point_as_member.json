@@ -1,0 +1,81 @@
+{
+ "D+DEPAVG (champion, 1 dof)": {
+  "total": 0.6361842493883538,
+  "one_minus_nmae": 0.8618657013604555,
+  "ficr": 0.4105027974162521,
+  "picks": {
+   "dev-2023-Q2": [
+    0.3,
+    0.7
+   ],
+   "dev-2023-Q3": [
+    0.3,
+    0.7
+   ],
+   "dev-2023-Q4": [
+    0.3,
+    0.7
+   ]
+  }
+ },
+ "COMP+DEPAVG (1 dof)": {
+  "total": 0.6325337914369615,
+  "one_minus_nmae": 0.8573717586007839,
+  "ficr": 0.4076958242731392,
+  "picks": {
+   "dev-2023-Q2": [
+    0.05,
+    0.95
+   ],
+   "dev-2023-Q3": [
+    0.0,
+    1.0
+   ],
+   "dev-2023-Q4": [
+    0.05,
+    0.95
+   ]
+  }
+ },
+ "D+DEPAVG+COMP (2 dof)": {
+  "total": 0.6361842493883538,
+  "one_minus_nmae": 0.8618657013604555,
+  "ficr": 0.4105027974162521,
+  "picks": {
+   "dev-2023-Q2": [
+    0.3,
+    0.7,
+    -0.0
+   ],
+   "dev-2023-Q3": [
+    0.3,
+    0.7,
+    -0.0
+   ],
+   "dev-2023-Q4": [
+    0.3,
+    0.7,
+    -0.0
+   ]
+  },
+  "arb": {
+   "point_cand": 0.6361842493883538,
+   "point_champ": 0.6361842493883538,
+   "paired_mean": 0.0,
+   "paired_sd": 1.111613410924048e-17,
+   "p_better": 0.005,
+   "ci95": [
+    0.0,
+    0.0
+   ],
+   "n_rep": 400,
+   "block_days": 7,
+   "point_delta": 0.0,
+   "min_effect": 0.001,
+   "p_required_unadjusted": 0.9,
+   "p_required_adjusted": 0.9,
+   "n_comparisons_so_far": 1,
+   "took_champion": false
+  }
+ }
+}

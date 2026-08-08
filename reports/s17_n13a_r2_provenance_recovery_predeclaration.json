@@ -1,0 +1,159 @@
+{
+  "schema_version": 1,
+  "node_id": "S17-N13A_R2_NO_REFIT_TYPED_PROVENANCE_RECOVERY",
+  "stage": "S6_피처구성",
+  "kind": "score_bearing_no_refit_typed_provenance_recovery",
+  "predeclared_at": "2026-08-08T21:14:26.504394+09:00",
+  "parent": "S17-N13_R2_TWO_COMPONENT_VERTICAL_PCA_STRICT_PREQUENTIAL",
+  "comparison_index": 2,
+  "input_bundle": {
+    "sha256": "8089f093df13bc2583fa1737b33d741f03bd501bd25f854cad922520862f25d5",
+    "files": {
+      "reports/s17_n13_r2_vertical_pca_predeclaration.json": "db53b395560056fd54d6ffd42b5cd5264db667621cf268e3bdbef3063047dc7b",
+      "reports/s17_n13_r2_vertical_pca_receipt.json": "925d4ab05233994c4b2050cb20fd95bcd26bd79f3ff8590ab0910ff7270c4167",
+      "artifacts/backtests/s17_n13_r2_vertical_pca/PARTIAL_PRE_SCORE.json": "f74330d7e4eff297830d8fd19b09ec831791a1811ee0becec045aff780918ea7",
+      "artifacts/backtests/s17_n13_r2_vertical_pca/family_manifest.json": "fa569eaebdfe2f1b2cfd7ecca4390fdbe7abd0ad669a87b9a30679766db4875b",
+      "artifacts/backtests/s17_n13_r2_vertical_pca/predictions.parquet": "e8281588924710f26efd8585269fea1cf2cef921f3aed8c1907cf85ea8900d2b",
+      "artifacts/backtests/s17_n13_r2_vertical_pca/procedure_provenance.parquet": "1bd392ab84e355035bc50a52ad81724e134cd7617da247dd69cc8769d11cf4d0",
+      "artifacts/backtests/s17_n13_r2_vertical_pca/fit_details.json": "404b37485b33a168a7285879864afd332d9b40c1255438bbbc3b806faf1965d4",
+      "artifacts/backtests/s17_n13_r2_vertical_pca/pca_loadings.json": "fdc650ba154985e7b510f17288f492a4882ff2065d0b2855cb4c658db0b60761",
+      "src/baram/evaluation/prequential.py": "a4cd12d30b3cf79ac339f1a5dbcc009f5b85ba10a30ef6614346a6309703b35b",
+      "src/baram/evaluation/official.py": "5701ddfc5a6254e89cbc49451cd3f4bbddd437cff451a4596a86e7c68ff42cba",
+      "src/baram/constants.py": "f4fbf5c6772d021436f9b40459a2587f8223d597045d7fe9c48c9428e1702843",
+      "artifacts/backtests/s17_n9_cost5_recovery/family_manifest.json": "205d624c5d6d30a9a862a94fed1748a6d78d82e733049dc67ee0aa11c5c1b0b1"
+    }
+  },
+  "frozen_partial": {
+    "family_manifest_sha256": "fa569eaebdfe2f1b2cfd7ecca4390fdbe7abd0ad669a87b9a30679766db4875b",
+    "prediction_vectors": {
+      "CHAMPION": {
+        "dev-2023-Q3": "0ba9fa5ed439e845ba5dd360aeb4834810d57ca237a8ca4b8e21d976741e0ae2",
+        "dev-2023-Q4": "a33252445beb3afcdfe25cd2e16fe6de2010678cfbb4c634bb2957b168392e1b"
+      },
+      "R2_CONTROL_ZERO4": {
+        "dev-2023-Q3": "b9abb4865c5a3ccfb836f7668396fa325dc5b7aa5a245d6dd7889236ab34f964",
+        "dev-2023-Q4": "a4ead14cb2dc55904711f57fface724b31dd536990ff90dfeef07fe9f8897d8f"
+      },
+      "R2_VERTICAL_PCA2X2": {
+        "dev-2023-Q3": "74eaa5db617371811fb71b6ba9d080663032d8630409cde3e1aecf63fcc317f4",
+        "dev-2023-Q4": "000c1e81f62d4a30fcd96b9cd2fdf755f51302b149cb214aeeb4cbfde5277dc4"
+      }
+    },
+    "model_fits_already_completed": 12,
+    "official_score_calls_so_far": 0,
+    "comparison_index_consumed": null
+  },
+  "recovery": {
+    "model_or_optimizer_fits": 0,
+    "prediction_operation": "byte-copy original predictions.parquet",
+    "fit_and_loading_operation": "byte-copy original JSON artifacts",
+    "provenance_operation": "replace only weights_fit enum past_only_expanding_with_past_calibration_tail -> past_only_expanding for R2_CONTROL_ZERO4 and R2_VERTICAL_PCA2X2; all other cells and champion rows unchanged",
+    "semantic_justification": "Each preliminary calibration model and final assessment model used only the expanding past of its test fold; the extra phrase described the calibration implementation but is not a different weight surface.",
+    "new_family_manifest": true
+  },
+  "family": {
+    "incumbent": "CHAMPION",
+    "control": "R2_CONTROL_ZERO4",
+    "candidate": "R2_VERTICAL_PCA2X2",
+    "row_keys": [
+      "fold_id",
+      "group_id",
+      "forecast_kst_dtm"
+    ],
+    "assessment_manifest": "S17-N7 90/89/91 complete days, 19440 rows; Q2 burn-in; Q3+Q4 outer 12960 rows"
+  },
+  "learner": {
+    "target": "actual_kwh / CAPACITIES_KWH[group_id]",
+    "architecture": "one pooled LightGBM L2 regressor per arm and fold; preliminary model for strict 90-day calibration tail plus final expanding model",
+    "model_fit_count": 12,
+    "parameters": {
+      "objective": "l2",
+      "n_estimators": 900,
+      "learning_rate": 0.035,
+      "num_leaves": 63,
+      "min_child_samples": 40,
+      "subsample": 0.85,
+      "subsample_freq": 1,
+      "colsample_bytree": 0.4,
+      "reg_lambda": 3.0,
+      "random_state": 20260801,
+      "n_jobs": 6,
+      "verbose": -1,
+      "deterministic": true,
+      "force_col_wise": true
+    },
+    "sample_weight": "cf when cf>=0.1 else 0.05; clip cf to [0,1.2]",
+    "prediction_clip": [
+      0.0,
+      1.05
+    ]
+  },
+  "calibration": {
+    "preliminary_train": "labels <= fit_max-90d",
+    "residual_tail": "fit_max-90d < labels <= fit_max, predicted only by preliminary past model",
+    "quantiles": "81 equally spaced 0.01..0.99 per group",
+    "minimum_residuals_per_group": 240
+  },
+  "decision_policy": {
+    "id": "FIXED_T0.5_G1.5_DIRECT_CF_RESID81",
+    "action_grid_cf": "0.05..1.08 inclusive step 0.0025",
+    "soft_caps_cf": {
+      "1": 0.985,
+      "2": 0.989,
+      "3": 1.005
+    },
+    "temperature": 0.5,
+    "density_bins": 15,
+    "gamma": 1.5,
+    "band_units": "4 if |a-y|<=0.06; 3 if <=0.08; else 0",
+    "mean_generation": "past-only final training CF mean per group",
+    "selection": "structural policy frozen from Q2 lineage; no Q3/Q4 power score or component inspected during materialization"
+  },
+  "evaluation": {
+    "protocol": "S17-N3 run_prequential_protocol",
+    "outer_folds": [
+      "dev-2023-Q3",
+      "dev-2023-Q4"
+    ],
+    "n_rep": 4999,
+    "seed": 20260808,
+    "block_lengths_days": [
+      3,
+      7,
+      14
+    ],
+    "joint_family_resampling": true,
+    "margin_vs_incumbent_total": 0.001635,
+    "mechanism_min_candidate_minus_control_total": 0.00357236259,
+    "target_total": 0.66,
+    "comparison_count_before": 1,
+    "comparison_count_after": 2,
+    "evidence_label": "retrospective_chronology_repaired_multiplicity_aware_not_fresh_holdout"
+  },
+  "promotion_gate": [
+    "candidate delta vs CHAMPION >=0.001635",
+    "candidate-control Total delta >=0.00357236259",
+    "candidate promotion stable for 3/7/14-day blocks",
+    "S17-N3 inference SUPPORTED",
+    "candidate outer Total >=0.660000 for goal delivery"
+  ],
+  "phases": {
+    "materialize": "zero refits/scores, exact copy and enum normalization, freeze new family SHA",
+    "evaluate": "one S17-N3 protocol plus three explicit outer official score calls; comparison index2 once"
+  },
+  "outputs": {
+    "script": "scripts/recover_r2_vertical_pca_provenance.py",
+    "directory": "artifacts/backtests/s17_n13a_r2_provenance_recovery",
+    "receipt": "reports/s17_n13a_r2_provenance_recovery_receipt.json"
+  },
+  "forbidden": [
+    "prediction/refit/recalibration/PCA/policy/hyperparameter changes",
+    "score before new family freeze",
+    "future-fold data",
+    "2024/test/rejected ECMWF",
+    "Dacon/account",
+    "remote inference",
+    "dependency change"
+  ],
+  "pass_label": "RETROSPECTIVE_STRICT_PREQUENTIAL_SCORE_BEARING_NO_REFIT_NOT_FRESH_HOLDOUT"
+}

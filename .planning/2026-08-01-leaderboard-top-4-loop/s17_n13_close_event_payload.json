@@ -1,0 +1,38 @@
+{
+  "event_type": "CLOSED",
+  "cycle_id": "S17-N13_R2_TWO_COMPONENT_VERTICAL_PCA_STRICT_PREQUENTIAL",
+  "stage_id": "S6",
+  "node_id": "S17-N13_R2_TWO_COMPONENT_VERTICAL_PCA_STRICT_PREQUENTIAL",
+  "actor": "root",
+  "occurred_at": "2026-08-08T21:13:26.683193+09:00",
+  "body": {
+    "predeclared_event_sha256": "9b1ec7823b0f71b775f7d1cd667f9bcc320e0d5122fcaaaabe636cf95cd91ce4",
+    "receipt_path": "reports/s17_n13_r2_vertical_pca_receipt.json",
+    "receipt_sha256": "925d4ab05233994c4b2050cb20fd95bcd26bd79f3ff8590ab0910ff7270c4167",
+    "code_sha256": "4b7f8ca976ed68b35980e88aaadc7398082bbbc7d2d24518e970202619e11293",
+    "config_sha256": "db53b395560056fd54d6ffd42b5cd5264db667621cf268e3bdbef3063047dc7b",
+    "data_sha256": "534c31de5071ce2421a925701c7c302903fd1ee5e558dd75bf4d187976fa1598",
+    "router_sha256": "80e37561a32fb2928d1a7505b652bb822f5b6989e73b6d7106afb0ae62041b43",
+    "policy_ids": [
+      "R2_VERTICAL_PCA2X2_ONE_SHOT",
+      "STOP_PRE_SCORE_TYPED_PROVENANCE_ENUM"
+    ],
+    "row_alignment_keys": [
+      "fold_id",
+      "group_id",
+      "forecast_kst_dtm"
+    ],
+    "evidence_class": "diagnostic",
+    "weights_fit": "fixed",
+    "result_status": "INCONCLUSIVE",
+    "score_bearing": false,
+    "comparison_index": null,
+    "pre_score_gate_failed": true,
+    "stage_evidence_status": "INSUFFICIENT",
+    "next_handoff": [
+      "S17-N13A_R2_NO_REFIT_TYPED_PROVENANCE_RECOVERY"
+    ],
+    "lockbox_2024_used": false,
+    "dacon_actions": []
+  }
+}

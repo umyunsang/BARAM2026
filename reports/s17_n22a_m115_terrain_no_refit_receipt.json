@@ -1,0 +1,350 @@
+{
+  "schema_version": 1,
+  "node_id": "S17-N22A_M115_TERRAIN_NO_REFIT_TYPED_PROVENANCE_RECOVERY",
+  "closed_at": "2026-08-08T23:46:52.874782+09:00",
+  "predeclaration": {
+    "path": "reports/s17_n22a_m115_terrain_no_refit_predeclaration.json",
+    "sha256": "9bdff17b0e6eb54cf56e20b3cc563bd861e93124eff165430770db23406e7934",
+    "event_sha256": "80d91af19ed929b198813cff1a1df8deb378853cd41d4536a2987da542e61c95"
+  },
+  "recovery_spec": {
+    "path": "reports/s17_n22a_no_refit_recovery_spec.json",
+    "sha256": "07ef6b7fec59e2ffac6e233d95b4ba6ee7fe6f488c80d0dce491d69329b1b0d8"
+  },
+  "code": {
+    "path": "scripts/recover_m115_terrain_no_refit.py",
+    "recovery_and_failed_assessment_sha256": "2d5b2b0a612815720fca4e03301484fc080a0e15d72d7d68c69a84aad32d1b43",
+    "successful_assessment_sha256": "dec5b423be13c53fa2efef11244c934e115c05550375b6a6f42d5b0e59ad007e",
+    "py_compile": "PASS",
+    "ruff": "PASS"
+  },
+  "recovery": {
+    "started_at": "2026-08-08T23:45:03.050406+09:00",
+    "ended_at": "2026-08-08T23:45:04.291849+09:00",
+    "returncode": 0,
+    "family_manifest_sha256": "c9c9ece7cade68656b1f178a2c66b738e803d5ed43c93cf32e8ffc13b9f37607",
+    "artifact_hashes": {
+      "procedure_provenance.parquet": "f10b7d24273ef3dfd5be8362e14c7517b384cfa1d86a4be7ba4bcd100786c216",
+      "family_manifest.json": "c9c9ece7cade68656b1f178a2c66b738e803d5ed43c93cf32e8ffc13b9f37607",
+      "typed_recovery.json": "5f2a0fc3fa49735957206018f3dea79feab77a04ab946e138f219c1dd065d1c8",
+      "materialization_details.json": "6c2d73829f47546106747d6ee537192d70b5a5471fe56768a1b781903f17f454",
+      "predictions.parquet": "ccb1ae4fe0fcf6f1828ee0b7db128d487b733f81f9da80d4e6e67b9827a30e25",
+      "evaluation.json": "c1cac9d812eeeb1a2b341b99f9a8d7ca83ab243f8c2bb15cc7cc5caec9387552"
+    },
+    "guards": {
+      "source_hashes_exact": true,
+      "predictions_byte_copy_exact": true,
+      "details_byte_copy_exact": true,
+      "inherited_materialization_all_pass": true,
+      "new_fits_zero": true,
+      "new_predict_calls_zero": true,
+      "action_max_abs_change_zero": true,
+      "rows_19440_unique": true,
+      "family_finite": true,
+      "control_max_abs_kwh_zero": true,
+      "zero_outer_max_abs_kwh_zero": true,
+      "q2_family_equal": true,
+      "typed_provenance_roundtrip_exact": true,
+      "assessment_actual_values_read_zero": true,
+      "score_calls_zero": true
+    },
+    "new_fits": 0,
+    "new_predict_calls": 0,
+    "maximum_action_change": 0.0,
+    "assessment_actual_values_read": 0
+  },
+  "assessment_attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-08-08T23:45:20.801051+09:00",
+      "ended_at": "2026-08-08T23:45:22.957167+09:00",
+      "returncode": 1,
+      "failure": "S17-N3 MCS rejected duplicate identical CHAMPION/M115_REFIT_ZERO loss columns. Actual was joined and protocol computation began, so comparison index 4 is treated as consumed; no result artifact was written.",
+      "method_change": false
+    },
+    {
+      "attempt": 2,
+      "started_at": "2026-08-08T23:46:48.724990+09:00",
+      "ended_at": "2026-08-08T23:46:52.874782+09:00",
+      "elapsed_seconds": 4.149548124987632,
+      "returncode": 0,
+      "repair": "Excluded the value/hash-identical M115_REFIT_ZERO column only from MCS/protocol, as required by mcs_tr; all three official scores remain reported. No prediction, model, policy, margin, seed, block, or comparison index changed.",
+      "evaluation_path": "artifacts/backtests/s17_n22a_m115_terrain_recovery/evaluation.json",
+      "evaluation_sha256": "c1cac9d812eeeb1a2b341b99f9a8d7ca83ab243f8c2bb15cc7cc5caec9387552"
+    }
+  ],
+  "strict_results": {
+    "validation_label": "retrospective_chronology_repaired_multiplicity_aware",
+    "comparison_index": 4,
+    "scores": {
+      "CHAMPION": {
+        "total": 0.6314827308346854,
+        "one_minus_nmae": 0.8584802239958174,
+        "ficr": 0.40448523767355354
+      },
+      "M115_REFIT_ZERO": {
+        "total": 0.6314827308346854,
+        "one_minus_nmae": 0.8584802239958174,
+        "ficr": 0.40448523767355354
+      },
+      "TERRAIN_SX300_H8_M115_REPLACED": {
+        "total": 0.6318460412370778,
+        "one_minus_nmae": 0.8585714646849466,
+        "ficr": 0.405120617789209
+      }
+    },
+    "deltas_vs_champion": {
+      "M115_REFIT_ZERO": 0.0,
+      "TERRAIN_SX300_H8_M115_REPLACED": 0.00036331040239234724
+    },
+    "outer_fold_point_deltas": {
+      "3": {
+        "dev-2023-Q3": -0.00019549951248284264,
+        "dev-2023-Q4": 0.0005588099148751968
+      },
+      "7": {
+        "dev-2023-Q3": -0.00019549951248284264,
+        "dev-2023-Q4": 0.0005588099148751968
+      },
+      "14": {
+        "dev-2023-Q3": -0.00019549951248284264,
+        "dev-2023-Q4": 0.0005588099148751968
+      }
+    },
+    "joint_max_t": {
+      "3": {
+        "method": "centered_joint_max_t",
+        "family_alpha": 0.05,
+        "margin_total": 0.001635,
+        "critical_value": 1.653458108782887,
+        "family_statistic": -3.3351506953656305,
+        "family_pvalue": 0.9996,
+        "monte_carlo_standard_error": 0.0002827861382741226,
+        "candidates": {
+          "TERRAIN_SX300_H8_M115_REPLACED": {
+            "observed_delta_total": 0.0003633104023923541,
+            "bootstrap_standard_error_total": 0.0003812989917891046,
+            "simultaneous_lower_total": -0.00026715150745208033,
+            "margin_shifted_max_t_pvalue": 0.9996
+          }
+        }
+      },
+      "7": {
+        "method": "centered_joint_max_t",
+        "family_alpha": 0.05,
+        "margin_total": 0.001635,
+        "critical_value": 1.6877271143649337,
+        "family_statistic": -3.6238656126883844,
+        "family_pvalue": 1.0,
+        "monte_carlo_standard_error": 0.0,
+        "candidates": {
+          "TERRAIN_SX300_H8_M115_REPLACED": {
+            "observed_delta_total": 0.0003633104023923541,
+            "bootstrap_standard_error_total": 0.00035092073865957633,
+            "simultaneous_lower_total": -0.00022894804323638374,
+            "margin_shifted_max_t_pvalue": 1.0
+          }
+        }
+      },
+      "14": {
+        "method": "centered_joint_max_t",
+        "family_alpha": 0.05,
+        "margin_total": 0.001635,
+        "critical_value": 1.6762307802397174,
+        "family_statistic": -4.107153513308955,
+        "family_pvalue": 1.0,
+        "monte_carlo_standard_error": 0.0,
+        "candidates": {
+          "TERRAIN_SX300_H8_M115_REPLACED": {
+            "observed_delta_total": 0.0003633104023923541,
+            "bootstrap_standard_error_total": 0.0003096279682477953,
+            "simultaneous_lower_total": -0.0001556975284076863,
+            "margin_shifted_max_t_pvalue": 1.0
+          }
+        }
+      }
+    },
+    "promotion_stable_all_blocks": {
+      "TERRAIN_SX300_H8_M115_REPLACED": false
+    },
+    "protocol_inference": "SUPPORTED",
+    "promotion_supported": false,
+    "goal_total_0p66_reached": false
+  },
+  "decision": {
+    "verdict": "REFUTED",
+    "reason": "Observed strict delta +0.00036331040239234724 is below preregistered +0.001635 margin; Q3 delta is negative, every block promotion gate is false, and Total 0.6318460412370778 is below 0.660000.",
+    "champion_unchanged": true,
+    "authoritative_champion_total": 0.6314827308346854,
+    "candidate_gap_to_target": 0.02815395876292226,
+    "gap_closing_credit": 0.0,
+    "evidence_label": "multiplicity-aware retrospective chronology-safe evidence; reused 2023 is not a fresh holdout"
+  },
+  "execution_accounting": {
+    "inherited_n22_fits": 6,
+    "new_n22a_fits": 0,
+    "new_predict_calls": 0,
+    "new_policy_or_tuning_calls": 0,
+    "successful_outer_official_calls": 3,
+    "successful_protocol_calls": 1,
+    "failed_duplicate_protocol_attempts": 1,
+    "assessment_actual_values_read_per_attempt": 19440,
+    "comparison_index_consumed": 4,
+    "comparison_count_after_close": 4,
+    "2024_values_exposed": 0,
+    "test_access": false,
+    "external_requests": 0,
+    "rejected_ecmwf_access": false,
+    "quarantined_n10_access": false,
+    "dependency_changes": false,
+    "lockbox_2024_used": false,
+    "dacon_actions": []
+  },
+  "next_handoff": [
+    "S17-N23_POST_TERRAIN_FRONTIER_RESEARCH_INTAKE"
+  ],
+  "preclose_snapshot": {
+    "pending": [
+      "S17-N22A_M115_TERRAIN_NO_REFIT_TYPED_PROVENANCE_RECOVERY"
+    ],
+    "closed": [
+      "S17-N10B_ISSUANCE_CUBE_2022_2023_CORRECTED_AUDIT",
+      "S17-N10_ISSUANCE_CUBE_TIMING_AND_MISSINGNESS_AUDIT",
+      "S17-N11A_FOUR_MAPPING_10MIN_SCADA_CORRECTED_DIAGNOSTIC",
+      "S17-N11_FOUR_MAPPING_TRAINING_WIND_DIAGNOSTIC",
+      "S17-N12_VERTICAL_PROFILE_TERRAIN_PREREQUISITE_AUDIT",
+      "S17-N13A_R2_NO_REFIT_TYPED_PROVENANCE_RECOVERY",
+      "S17-N13_R2_TWO_COMPONENT_VERTICAL_PCA_STRICT_PREQUENTIAL",
+      "S17-N14_R3_HEIGHT_ONLY_TERRAIN_PREREQUISITE_AUDIT",
+      "S17-N15A_R3_CORRECTED_PRIMARY_FORMULA_IDENTIFIABILITY_GATE",
+      "S17-N15_R3_COPERNICUS_GLO30_STATIC_EXTRACTION_AND_FORMULA_FREEZE",
+      "S17-N16_R4_SOURCE_SEPARATED_VS_CONCAT_PREREQUISITE_AUDIT",
+      "S17-N17_R4_NO_REFIT_STRICT_SOURCE_SEPARATION_COMPARISON",
+      "S17-N18_POST_RWA_FRONTIER_RESEARCH_INTAKE",
+      "S17-N19_TERRAIN_SX300_H8_NO_BODY_PREREQUISITE_AUDIT",
+      "S17-N20A_TERRAIN_SX300_H8_NO_NODATA_TAG_RECOVERY",
+      "S17-N20_TERRAIN_SX300_H8_STATIC_LOOKUP_EXTRACTION",
+      "S17-N21_TERRAIN_SX300_H8_MODEL_FAMILY_PREREQUISITE_AUDIT",
+      "S17-N22_M115_TERRAIN_SX300_H8_STRICT_PREQUENTIAL_COMPARISON",
+      "S17-N2_EVENT_LEDGER_ENVELOPE",
+      "S17-N3_STRICT_PREQUENTIAL_EVALUATION_REPAIR",
+      "S17-N4_ECMWF_18Z_FIXED_LEAD_AUDIT",
+      "S17-N5_ECMWF_18Z_2023_EXTRACTION",
+      "S17-N5_ECMWF_18Z_2023_INNOVATION_PROBE",
+      "S17-N6A_FAIL_CLOSED_SCORE_CLASS_REPAIR",
+      "S17-N6_COST5_SPO_PLUS_PREQUENTIAL",
+      "S17-N7_STRICT_ACTION_PROVENANCE_RECONSTRUCTION",
+      "S17-N8_COST5_SPO_PLUS_STRICT_PREQUENTIAL_COMPARISON",
+      "S17-N9_COST5_NO_REFIT_MATERIALIZATION_RECOVERY"
+    ],
+    "legacy": [
+      "C1N100_NOVEL_MEMBER_PROBE",
+      "C1N101_PHYSICAL_MEMBER_PROBE",
+      "C1N102_RETRIEVAL_MEMBER",
+      "C1N103_EXTERNAL_NWP_MEMBER",
+      "C1N104_M244_KEY_RECOVERED",
+      "C1N105_M244_RECIPE_READ",
+      "C1N10_BLEND_LOCALITY",
+      "C1N11_V2_REPRESENTATION",
+      "C1N12_G3_HISTORY",
+      "C1N13_ENSEMBLE_VARIANCE",
+      "C1N14_SHRINKBLEND",
+      "C1N15_WALKFORWARD",
+      "C1N16_ROBUSTNESS_AUDIT",
+      "C1N17_METRIC_ALIGNED_COMBINER",
+      "C1N18_SPREAD_SKILL",
+      "C1N19_ENVELOPE_ORACLE",
+      "C1N1_TOPRATE_MECHANISM",
+      "C1N20_ALPHA_ENDPOINT",
+      "C1N21_MOS_BIAS_CORRECTION",
+      "C1N22_GLOBAL_SHIFT",
+      "C1N23_ELIGIBLE_MOS",
+      "C1N24_MEMBER_COUNT_REOPEN",
+      "C1N25_ENVELOPE_LAMBDA",
+      "C1N26_POOL_WIDTH_SCREEN",
+      "C1N27_RESIDUAL_SIGNAL",
+      "C1N28_PERGRID_SIGNAL",
+      "C1N29_CHAMPION_AUDIT",
+      "C1N2_COLLIDER_CORRECTED",
+      "C1N30_TEMPORAL_SIGNAL",
+      "C1N31_SPACE_TIME",
+      "C1N32_LOCKBOX_OPERATOR",
+      "C1N33_SINGLE_VS_ENSEMBLE",
+      "C1N34_SHRINK_TO_BEST",
+      "C1N35_FIXED_POLICY_CORRECTION",
+      "C1N36_SOURCE_SENSITIVITY",
+      "C1N37_BAND_ALIGNED_LOSS",
+      "C1N38_BAND_LOSS_FIXED",
+      "C1N39_ARCHITECTURE_GAP",
+      "C1N3_MASS_AXIS_WIND_SECTOR",
+      "C1N40_BAND_CLASSIFIER",
+      "C1N41_BAND_CLASSIFIER_CAPACITY",
+      "C1N42_TEACHER_RESTORED",
+      "C1N43_EFFECT_TREND",
+      "C1N44_SHARPENED_DECISION",
+      "C1N45_SUBMISSION_DECISION",
+      "C1N46_CLOSURE_FALSIFICATION",
+      "C1N47_EXTERNAL_NWP_REVIVED",
+      "C1N48_MODEL_VALIDATION",
+      "C1N49_RHO_ACCEPTANCE",
+      "C1N4_BAND_CONDITIONAL_POLICY_ORACLE",
+      "C1N50_NONNEGATIVE_WEIGHTS",
+      "C1N51_EXTERNAL_SOURCE_PROBE",
+      "C1N52_EXTERNAL_CLOSURE",
+      "C1N53_SUPPLIED_EXTRACTION",
+      "C1N54_SCATTER_CEILING",
+      "C1N55_TURBINE_CORRELATION",
+      "C1N56_MEASURED_POWERCURVE",
+      "C1N57B_VARIANCE_LAW",
+      "C1N57_FICR_CEILING",
+      "C1N58_TEACHER_OOF_SPLIT",
+      "C1N59_PERFECT_PROG_BOUND",
+      "C1N5_SPATIAL_INTERPOLATION",
+      "C1N60_LEVEL_TEMPERATURE",
+      "C1N61_GRID_BOUNDARY",
+      "C1N62_MONTH_MECHANISM",
+      "C1N64_BAND_AVOIDANCE",
+      "C1N65_WIND_LIMITED_BOUND",
+      "C1N66_HETEROSCEDASTIC_WIND",
+      "C1N67_EXACT_CURVE_PROPAGATION",
+      "C1N69_SKILL_RESPONSE",
+      "C1N6_WIND50_MIDPOINT",
+      "C1N70_BASELINE_CORRECTION",
+      "C1N71_TEACHER_WEIGHT",
+      "C1N72_CURVE_BLEND",
+      "C1N74_BLOCK_LENGTH",
+      "C1N75_DAILY_GATE_ESTIMAND",
+      "C1N7_POLICY_FROZEN_GATE",
+      "C1N81_CYCLE_CONTRACT_ENFORCED",
+      "C1N8_ORACLE_LADDER",
+      "C1N92_METRIC_ALIGNED_LOSS",
+      "C1N93_ORDINAL_REPRESENTATION",
+      "C1N94_CDF_REJUDGE",
+      "C1N95_RECONSTRUCTION_GAP",
+      "C1N96_GAP_REJUDGE",
+      "C1N97_BOOSTING_ROUNDS",
+      "C1N98_REPRODUCIBILITY_ADJUDICATION",
+      "C1N99_ENSEMBLE_EXHAUSTIVE",
+      "C1N9_GATE_POWER"
+    ],
+    "comparison_count": 3,
+    "stage_coverage": [
+      "S1",
+      "S2",
+      "S3",
+      "S5",
+      "S6",
+      "S7",
+      "S8",
+      "S9",
+      "S10",
+      "S11"
+    ],
+    "frontier": [
+      "S17-N22A_M115_TERRAIN_NO_REFIT_TYPED_PROVENANCE_RECOVERY"
+    ],
+    "evidence_complete_cycles": 28,
+    "accounted_cycles": 117,
+    "digest": "958dc92b2c4d86ecfb93157e1e1ae64c673f71a44400e1391ff4eb827b014171"
+  }
+}

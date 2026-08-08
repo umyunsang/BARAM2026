@@ -1,0 +1,50 @@
+{
+ "dacon_upload": false,
+ "decided_utc": "2026-08-04T06:45:23.149073+00:00",
+ "external_actions": [],
+ "lane": "L2",
+ "lockbox_reopened": false,
+ "model_fits": 0,
+ "new_2024_evaluation": false,
+ "node": "C1N10_BLEND_LOCALITY",
+ "report_sha256": "3be8fd810be4bd1be59546ff46c9e7e411c1b9bd7abd8e2549f926d76ff7c356",
+ "result": {
+  "cells_analysed": 98,
+  "high_excess_cells": 60,
+  "input_hashes": {
+   "open_zip_sha256": "920be0c458d820e855bf79dd25723146f52ce1736138aedba5e6bc853f1f720b"
+  },
+  "low_excess_cells": 38,
+  "per_group": [
+   {
+    "cells": 33,
+    "group": 1,
+    "overall_reduction": 0.0037017789476677665
+   },
+   {
+    "cells": 33,
+    "group": 2,
+    "overall_reduction": 0.0010053158874612222
+   },
+   {
+    "cells": 32,
+    "group": 3,
+    "overall_reduction": 0.0014556377011580857
+   }
+  ],
+  "predeclared_check": {
+   "H1_expectation": "블렌딩 이득이 고초과 셀에서 더 크다",
+   "H1_held": true,
+   "approx_se": 0.10259783520851541,
+   "difference": 0.006694267228668071,
+   "excess_vs_reduction_corr": 0.11282274436649006,
+   "high_excess_mean_reduction": 0.005072660511491878,
+   "low_excess_mean_reduction": -0.0016216067171761933,
+   "sigma_multiple": 1.0996600867571327,
+   "verdict": "BLEND_GAIN_IS_LOCALISED"
+  }
+ },
+ "schema_version": 1,
+ "script_sha256": "2b01c8e7af9aade6ac95335239414e6dad166a8f22b8ae34de3e40b9821693dc",
+ "stage": "M271_P4_CYCLE10_BLEND_LOCALITY"
+}

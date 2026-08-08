@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "node_id": "S17-N1_LOOP_CONTRACT_REPAIR",
+  "stage": "S11_분석방법적절성",
+  "kind": "workflow_contract_non_score_bearing",
+  "predeclared_at": "2026-08-08T18:12:32.288335+09:00",
+  "parent": "S16_밴드적중_조건화 + S11-FLOOR",
+  "purpose": "Make the durable recursive engine enforce the already-authorized foundation-to-depth evidence/experiment workflow before selecting another model node.",
+  "baseline": {
+    "loop_source_sha256": {
+      "src/baram/loop/__init__.py": "d52aeb593229ef58728bcad20160d6bdc008224608b5af45cbe63fc7cb270d05",
+      "src/baram/loop/graph.py": "d1d4a91b309edbe25615c828e269787e9f399ce834071a5371cab2701fdbe06a",
+      "src/baram/loop/graph_staged.py": "4744b98c020c548e867fff12e9f88053d4838e47e637a0e59476fa89882620c6",
+      "src/baram/loop/ontology.py": "c60cb96f477cebb2c89fbf689993a0cdb293c31f6b4db7286da4044dec0600ce",
+      "src/baram/loop/registry.py": "5f797a2247c7e5bbbaa15657748b21cbfffe1ba7d98c78649c13772a57bdcfaf",
+      "src/baram/loop/research.py": "39bf39c7091d9d788fd350d33b6191bbdb34b0763f852e9374bef624dc9e144d",
+      "src/baram/loop/router.py": "4ef1cc704852c2c9b80b2c043036f110b2361ca42649e366bd66693c2b7c1a86",
+      "src/baram/loop/stages.py": "d0eaa41263b6fd2cc38d107f33ebac50e8c1cf94e524fc8363b1fb332941719e",
+      "src/baram/loop/state.py": "f9d9a238fe02791d26d4c1e427b3b7c2986e949c7804802b503adbb970e1341e"
+    },
+    "pytest": "156 passed, 144 warnings",
+    "ruff": "19 errors in src/baram/loop",
+    "dedicated_loop_tests": 0,
+    "current_local_observed": 0.6361842493883538,
+    "current_local_seed_adjusted_expectation": 0.634573,
+    "target": 0.66
+  },
+  "defects_frozen_before_edit": [
+    "near_match_only and contradicts_premise can spawn executable nodes",
+    "only D1-D5 stages exist rather than S1-S11",
+    "blocked candidate is dispatched instead of its prerequisite",
+    "base research node cannot hand off and halt cleanly",
+    "empty emission or MISS_NO_RUNNER can close a stage",
+    "staged graph can deliver below target",
+    "scalar LADDER_ETA acceptance omits project evidence contract",
+    "no contradiction-driven invalidation/re-entry",
+    "registry persistence is non-atomic and generic registration overwrites",
+    "declared recursion limit unused and no tests import loop package"
+  ],
+  "validation_invariants": {
+    "V1": "only directly_supported findings may emit executable nodes",
+    "V2": "contradicts_premise yields REVISION_REQUIRED and emits zero nodes",
+    "V3": "S1-S11 are explicit, ordered, and dependency-valid",
+    "V4": "blocked specs cannot dispatch; eligible prerequisite specs are preferred",
+    "V5": "MISS_NO_RUNNER preserves candidate and returns EXECUTION_REQUIRED",
+    "V6": "empty evidence cannot silently complete a stage; explicit unknown/blocked state is required",
+    "V7": "best_score < target can never return successful deliver",
+    "V8": "score-bearing acceptance requires strict chronology, fold-outside, exact row keys, single-policy/source policy, no lockbox/Dacon action, multiplicity-aware promotion receipt",
+    "V9": "contradiction/closure-premise invalidation reopens the affected stage/spec deterministically",
+    "V10": "registry save is atomic and deterministic; adjudicated outcomes are not overwritten by bookkeeping misses",
+    "V11": "targeted loop tests pass and full suite remains green",
+    "V12": "Ruff is clean on src/tests"
+  },
+  "implementation_boundary": {
+    "allowed": [
+      "tests/loop contract tests",
+      "targeted edits inside src/baram/loop",
+      "reviewer-facing receipt/report"
+    ],
+    "forbidden": [
+      "model fit",
+      "official score call",
+      "2024 data/score access",
+      "Dacon/account action",
+      "dependency change",
+      "external data action",
+      "changes outside loop engine/tests except planning receipts"
+    ]
+  },
+  "stop_rule": "Stop repair when V1-V12 pass or a compatibility contradiction with persisted registry/checkpoint is found; do not tune any model during this node.",
+  "pass_label": "PASS_LOOP_CONTRACT_ONLY_NOT_MODEL_SCORE"
+}

@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "node_id": "S17-N16_R4_SOURCE_SEPARATED_VS_CONCAT_PREREQUISITE_AUDIT",
+  "created_at": "2026-08-08T21:43:08.127246+09:00",
+  "purpose": "Audit whether frozen legacy D/DL/DG probability artifacts can support a no-refit, strict-past-only S17 R4 comparison without treating legacy scores as evidence.",
+  "input_bundle": {
+    "files": {
+      "research/nodes/s12_n3_source_split.py": "8b54c5932bf1e363002ad1f89b8a65d91f1a3c3e90f9934354e2c570eaed0f86",
+      "research/nodes/loop_lib.py": "f20e566fa57821e86acf41b399f233fe9ecdde515f834d84db818b0b882cf02f",
+      "research/nodes/S12-N3_columns.json": "3708cae5f7ff51133dbbfb880243451f6926bbf9e40aa435680da07a87a35679",
+      "research/nodes/registry.json": "23e20a52e2467f647a0fb4729534ec4ae9df89aa2ae3c03d4a35d7644babdc78",
+      "reports/s17_legacy_cycle_manifest.json": "c6c3f4b5bba9ef4742d4b2225cb4987b36e4bc774b398330e59084e46893ba74",
+      "reports/s17_n7_strict_action_reconstruction_receipt.json": "f4d56d97532fbe4d681061dfff773f951c4be01b26081dda3c0ff77720e973fc",
+      "reports/s17_n3_prequential_eval_receipt.json": "6f25b5bdff627de2a1bcebe537204d91e0be0bf5be63cc8018193c1754c0a080",
+      "research/nodes/S7-N8_D_keys.parquet": "f1e647ba5eb7529f8ff9e69e818dfb7697044c19b15839e05f97e89cea83a010",
+      "research/nodes/S7-N8_D_prob.npy": "e567109f8a86c37411e84fab0329af8465788988112ece114035753e60c52f0e",
+      "research/nodes/S7-N8_DL_keys.parquet": "f1e647ba5eb7529f8ff9e69e818dfb7697044c19b15839e05f97e89cea83a010",
+      "research/nodes/S7-N8_DL_prob.npy": "0f34fd630ef33983cb1c7b5abfa349e53c43f5359050d3b6acfd0abbef041da6",
+      "research/nodes/S7-N8_DG_keys.parquet": "f1e647ba5eb7529f8ff9e69e818dfb7697044c19b15839e05f97e89cea83a010",
+      "research/nodes/S7-N8_DG_prob.npy": "ccb229fd427a5760a85f7e6490d372d947150ff6b1af581b94a496ab6c5d434b",
+      "research/rwa_data_feature_research.md": "16351bb387dfebf0dc7ccdc6ef0e8ec77406964bf3d0b40c52fcdc3496284504"
+    },
+    "sha256": "27921fdf67a53bc371818d4b7a614705b8aa359b5ba83e833ec4215045b34aec"
+  },
+  "known_outcome_exposure": "The legacy registry already records DL/DG solo 0.608847/0.612159 and a negative equal-average conclusion, and root has read it. Any later strict result is retrospective confirmation, never a fresh holdout or independent discovery.",
+  "frozen_checks": {
+    "artifact_integrity": "D, DL, DG key and probability files exist with exact frozen hashes, identical key tables, finite probability arrays, identical shape and per-row probability sum 1 within tolerance. No action or official score is calculated.",
+    "architecture": "s12_n3_source_split.py must use the same teacher/classifier hyperparameters and outer fit masks for DL/DG, with only source-specific column sets changed relative to D lineage.",
+    "source_purity": "DL excludes GFS/cross-source columns and DG excludes LDAPS/cross-source columns; common columns are source agnostic.",
+    "chronology": "Outer fit is idx < fold start; as in N7, dropping the first operating day must make fit-label availability strictly earlier than each first retained basis.",
+    "prior_adjudication": "Legacy S12-N3 is non-score-bearing in the S17 ledger, has no immutable predeclaration/current protocol, and future-other-fold policy selection cannot qualify.",
+    "handoff": "If all artifact/architecture/purity/chronology checks pass and no exact S17 comparison exists, READY_NO_REFIT_STRICT_R4_MATERIALIZATION; otherwise BLOCKED."
+  },
+  "scope": {
+    "probability_values_allowed_only_for_finiteness_and_normalization": true,
+    "action_calculation": false,
+    "official_score_calls": 0,
+    "model_fits": 0,
+    "labels_used_for_score_or_selection": false,
+    "test_or_2024": false
+  },
+  "non_score_bearing": true,
+  "comparison_index": null,
+  "forbidden": [
+    "action optimization",
+    "official score/component calculation",
+    "Q3/Q4 outcome inspection beyond the disclosed legacy registry text",
+    "model refit",
+    "future-fold selection",
+    "2024/test/rejected ECMWF",
+    "Dacon actions"
+  ],
+  "handoff_if_ready": [
+    "S17-N17_R4_NO_REFIT_STRICT_SOURCE_SEPARATION_COMPARISON"
+  ]
+}

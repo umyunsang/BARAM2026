@@ -6,7 +6,7 @@ from dataclasses import dataclass
 import numpy as np
 import pandas as pd
 
-from baram.contracts.hashing import sha256_dataframe
+from baram.contracts.hashing import canonical_sha256, sha256_dataframe
 from baram.exceptions import LeakageError, ModelError
 
 
@@ -17,12 +17,18 @@ class FeaturePipelineState:
     medians: Mapping[str, float]
     training_rows_sha256: str
     spatial_mode: str = "global_only"
+    variable_allowlist_sha256: str = ""
+    grid_weight_sha256: str = ""
 
 
 def fit_feature_pipeline(
     train: pd.DataFrame,
     feature_names: tuple[str, ...],
     fold_id: str,
+    *,
+    spatial_mode: str = "global_only",
+    variable_allowlist_sha256: str | None = None,
+    grid_weight_sha256: str | None = None,
 ) -> FeaturePipelineState:
     if tuple(train.columns) != feature_names:
         raise ModelError("training feature columns/order do not match the declared contract")
@@ -37,6 +43,11 @@ def fit_feature_pipeline(
         feature_names=feature_names,
         medians=medians,
         training_rows_sha256=sha256_dataframe(train),
+        spatial_mode=spatial_mode,
+        variable_allowlist_sha256=(
+            variable_allowlist_sha256 or canonical_sha256(("global_only",))
+        ),
+        grid_weight_sha256=grid_weight_sha256 or canonical_sha256(("global_only",)),
     )
 
 

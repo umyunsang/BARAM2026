@@ -1,0 +1,163 @@
+{
+ "bootstrap_draws": 10000,
+ "bootstrap_seed": 20260804,
+ "dacon_upload": false,
+ "deployed_monthly": [
+  {
+   "ficr": 0.4226121116760644,
+   "month": "2023-04",
+   "one_minus_nmae": 0.854729818437391,
+   "rows": 2157,
+   "scorable": true,
+   "total": 0.6386709650567277
+  },
+  {
+   "ficr": 0.3808589207892215,
+   "month": "2023-05",
+   "one_minus_nmae": 0.8693573093636665,
+   "rows": 2232,
+   "scorable": true,
+   "total": 0.625108115076444
+  },
+  {
+   "ficr": 0.4177541355623727,
+   "month": "2023-06",
+   "one_minus_nmae": 0.8608955807547195,
+   "rows": 2160,
+   "scorable": true,
+   "total": 0.6393248581585461
+  },
+  {
+   "ficr": 0.3105030045712311,
+   "month": "2023-07",
+   "one_minus_nmae": 0.8318446015469939,
+   "rows": 2217,
+   "scorable": true,
+   "total": 0.5711738030591125
+  },
+  {
+   "ficr": 0.33576472683668185,
+   "month": "2023-08",
+   "one_minus_nmae": 0.8650059810851122,
+   "rows": 2232,
+   "scorable": true,
+   "total": 0.600385353960897
+  },
+  {
+   "ficr": 0.41091405332786796,
+   "month": "2023-09",
+   "one_minus_nmae": 0.889615556348054,
+   "rows": 2160,
+   "scorable": true,
+   "total": 0.650264804837961
+  },
+  {
+   "ficr": 0.32849031822059355,
+   "month": "2023-10",
+   "one_minus_nmae": 0.8440198118072721,
+   "rows": 2232,
+   "scorable": true,
+   "total": 0.5862550650139329
+  },
+  {
+   "ficr": 0.4360253441854444,
+   "month": "2023-11",
+   "one_minus_nmae": 0.8552135186900786,
+   "rows": 2160,
+   "scorable": true,
+   "total": 0.6456194314377615
+  },
+  {
+   "ficr": 0.4647525911398704,
+   "month": "2023-12",
+   "one_minus_nmae": 0.8434119985304838,
+   "rows": 2232,
+   "scorable": true,
+   "total": 0.6540822948351771
+  },
+  {
+   "ficr": NaN,
+   "month": "2024-01",
+   "one_minus_nmae": NaN,
+   "rows": 3,
+   "scorable": false,
+   "total": NaN
+  }
+ ],
+ "exact_metric_vs_deployed": {
+  "block_bootstrap_positive_fraction": 0.0,
+  "block_bootstrap_q05": -0.01795251776169971,
+  "max_total_delta": 0.0015066344131228204,
+  "mean_total_delta": -0.010221240962942364,
+  "median_total_delta": -0.005638846508981832,
+  "min_total_delta": -0.03929854238807062,
+  "months_excluded": [
+   "2024-01"
+  ],
+  "months_scored": 9,
+  "per_month": {
+   "2023-04": {
+    "ficr": -0.00941558503988943,
+    "one_minus_nmae": -0.004742425842828579,
+    "total": -0.0070790054413589765
+   },
+   "2023-05": {
+    "ficr": -0.004022557534732907,
+    "one_minus_nmae": -0.007255135483230646,
+    "total": -0.005638846508981832
+   },
+   "2023-06": {
+    "ficr": -0.03907146178684184,
+    "one_minus_nmae": -0.01668455389830481,
+    "total": -0.027878007842573327
+   },
+   "2023-07": {
+    "ficr": -0.002701516805455162,
+    "one_minus_nmae": -0.005335933543726523,
+    "total": -0.004018725174590787
+   },
+   "2023-08": {
+    "ficr": -0.0074381665844713285,
+    "one_minus_nmae": -0.010866768355306755,
+    "total": -0.00915246746988907
+   },
+   "2023-09": {
+    "ficr": -0.0609218156914586,
+    "one_minus_nmae": -0.017675269084682532,
+    "total": -0.03929854238807062
+   },
+   "2023-10": {
+    "ficr": 0.0038241491642256875,
+    "one_minus_nmae": -0.0008108803379800467,
+    "total": 0.0015066344131228204
+   },
+   "2023-11": {
+    "ficr": 0.00259811027187562,
+    "one_minus_nmae": -0.0011978876224468804,
+    "total": 0.0007001113247143698
+   },
+   "2023-12": {
+    "ficr": -5.193832340522064e-05,
+    "one_minus_nmae": -0.0022127008343024723,
+    "total": -0.0011323195788538465
+   }
+  },
+  "positive_fraction": 0.2222222222222222,
+  "positive_months": 2,
+  "sign_test_p_greater": 0.98046875
+ },
+ "external_actions": [],
+ "inputs_sha256": {
+  "M269_PROBE_TOP100-dev-2023-Q2-policies.parquet": "bf7c199834909b1e4ec6681f2ca29eb3be230b617ddd923c4354e1918b469aa7",
+  "M269_PROBE_TOP100-dev-2023-Q3-policies.parquet": "fc12e48c506fc02be01f3ddcb7de25c16160933018301766df921fc8cebb0177",
+  "M269_PROBE_TOP100-dev-2023-Q4-policies.parquet": "1cf4b10ac75d9ec164ce5baa9b5708178c5bcb1ba27aa0e022e34b6fbd51343e"
+ },
+ "is_refit": false,
+ "lockbox_reopened": false,
+ "min_eligible_rows_per_group": 50,
+ "model_fits": 0,
+ "new_2024_evaluation": false,
+ "schema_version": 1,
+ "stage": "M270_FINDING3_MONTHLY_BLOCK_VALIDATION",
+ "training_origin": "quarterly (unchanged)"
+}

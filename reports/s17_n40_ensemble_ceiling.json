@@ -1,0 +1,26 @@
+{
+ "Q2": {
+  "oracle_convex_best_total": 0.6456490888983795,
+  "weights": [
+   0.5,
+   0.15,
+   0.05,
+   0.3
+  ],
+  "deployed_total": 0.6440251957593686
+ },
+ "OUTER": {
+  "oracle_convex_best_total": 0.6330386825446288,
+  "weights": [
+   0.4,
+   0.3,
+   0.0,
+   0.3
+  ],
+  "deployed_total": 0.6314827308346854
+ },
+ "per_row_oracle_pick": {
+  "total": 0.7255568523319222,
+  "note": "ORACLE, uses labels to pick the best member per row; not achievable"
+ }
+}

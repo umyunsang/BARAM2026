@@ -1,0 +1,348 @@
+{
+  "node_id": "C1N63_CEILING_REBASE",
+  "lane": "L8",
+  "parent": "C1N57B_VARIANCE_LAW",
+  "candidate": false,
+  "diagnostic_only": true,
+  "method": "SKILL_VS_POTENTIAL (Murphy 1988; Jolliffe & Stephenson 2012)",
+  "sources": {
+    "a7": "m271_n0_deficit_init_receipt.json",
+    "c57b": "m271_cycle57b_variance_law_receipt.json",
+    "a7_total": 0.6286045208903154
+  },
+  "checks": {
+    "V1_identity_reproduced": true,
+    "V1_max_residual": 0.0,
+    "V2_overshoot_fraction": 0.027777777777777776,
+    "V2_transfer_valid": true
+  },
+  "totals": {
+    "recoverable_peer": 0.04875044667051587,
+    "headroom_ceiling": 0.1813292771184997,
+    "gap_to_target": 0.029689999999999994
+  },
+  "spearman_recoverable_vs_headroom": 0.5300914029831395,
+  "group_share": {
+    "headroom": {
+      "1": 0.33944035773361997,
+      "2": 0.4136702866863641,
+      "3": 0.2468893555800159
+    },
+    "recoverable": {
+      "1": 0.22742415331738794,
+      "2": 0.32078365267596703,
+      "3": 0.451792194006645
+    }
+  },
+  "band_headroom": {
+    "(0.1, 0.25]": 0.018867999350277775,
+    "(0.7, 1.1]": 0.03740020334478201,
+    "(0.25, 0.45]": 0.048622684143017535,
+    "(0.45, 0.7]": 0.0764383902804224
+  },
+  "top_headroom": [
+    {
+      "key": "group_id=2|month=2023-11|y_band=(0.45, 0.7]",
+      "group_id": 2,
+      "month": "2023-11",
+      "y_band": "(0.45, 0.7]",
+      "w_gen": 0.04632782338580263,
+      "realised_unit": 0.13637558461468666,
+      "ceiling_unit": 0.9161902924352976,
+      "over_ceiling": false,
+      "recoverable_peer": 0.0023527961292865154,
+      "headroom_ceiling": 0.006021186342927424
+    },
+    {
+      "key": "group_id=2|month=2023-11|y_band=(0.7, 1.1]",
+      "group_id": 2,
+      "month": "2023-11",
+      "y_band": "(0.7, 1.1]",
+      "w_gen": 0.12214329835960865,
+      "realised_unit": 0.6460556224910294,
+      "ceiling_unit": 0.8801844972349989,
+      "over_ceiling": false,
+      "recoverable_peer": 0.0,
+      "headroom_ceiling": 0.004766212167075351
+    },
+    {
+      "key": "group_id=1|month=2023-11|y_band=(0.45, 0.7]",
+      "group_id": 1,
+      "month": "2023-11",
+      "y_band": "(0.45, 0.7]",
+      "w_gen": 0.05121812597160776,
+      "realised_unit": 0.2971861368523468,
+      "ceiling_unit": 0.8360624235393016,
+      "over_ceiling": false,
+      "recoverable_peer": 0.0009103641262419459,
+      "headroom_ceiling": 0.004600038922440777
+    },
+    {
+      "key": "group_id=2|month=2023-10|y_band=(0.45, 0.7]",
+      "group_id": 2,
+      "month": "2023-10",
+      "y_band": "(0.45, 0.7]",
+      "w_gen": 0.037636477006528044,
+      "realised_unit": 0.22601750108437776,
+      "ceiling_unit": 0.9161902924352976,
+      "over_ceiling": false,
+      "recoverable_peer": 0.0013199547024790035,
+      "headroom_ceiling": 0.004329278732035029
+    },
+    {
+      "key": "group_id=2|month=2023-07|y_band=(0.45, 0.7]",
+      "group_id": 2,
+      "month": "2023-07",
+      "y_band": "(0.45, 0.7]",
+      "w_gen": 0.037248437615198346,
+      "realised_unit": 0.22127098251172544,
+      "ceiling_unit": 0.9161902924352976,
+      "over_ceiling": false,
+      "recoverable_peer": 0.0012622532244723633,
+      "headroom_ceiling": 0.004314109760547477
+    },
+    {
+      "key": "group_id=3|month=2023-12|y_band=(0.45, 0.7]",
+      "group_id": 3,
+      "month": "2023-12",
+      "y_band": "(0.45, 0.7]",
+      "w_gen": 0.05504533208485173,
+      "realised_unit": 0.18243391793008795,
+      "ceiling_unit": 0.6462884786959537,
+      "over_ceiling": false,
+      "recoverable_peer": 0.002380424986020573,
+      "headroom_ceiling": 0.004255504722738353
+    },
+    {
+      "key": "group_id=1|month=2023-12|y_band=(0.45, 0.7]",
+      "group_id": 1,
+      "month": "2023-12",
+      "y_band": "(0.45, 0.7]",
+      "w_gen": 0.04161355416785571,
+      "realised_unit": 0.2609303982647917,
+      "ceiling_unit": 0.8360624235393016,
+      "over_ceiling": false,
+      "recoverable_peer": 0.0010677146564703028,
+      "headroom_ceiling": 0.003988881281238229
+    },
+    {
+      "key": "group_id=2|month=2023-12|y_band=(0.7, 1.1]",
+      "group_id": 2,
+      "month": "2023-12",
+      "y_band": "(0.7, 1.1]",
+      "w_gen": 0.1219381010507708,
+      "realised_unit": 0.6845672478866149,
+      "ceiling_unit": 0.8801844972349989,
+      "over_ceiling": false,
+      "recoverable_peer": 0.0,
+      "headroom_ceiling": 0.003975532653052846
+    },
+    {
+      "key": "group_id=3|month=2023-11|y_band=(0.45, 0.7]",
+      "group_id": 3,
+      "month": "2023-11",
+      "y_band": "(0.45, 0.7]",
+      "w_gen": 0.05504187176257735,
+      "realised_unit": 0.22367593964892415,
+      "ceiling_unit": 0.6462884786959537,
+      "over_ceiling": false,
+      "recoverable_peer": 0.0019078370241846828,
+      "headroom_ceiling": 0.0038768975299139684
+    },
+    {
+      "key": "group_id=1|month=2023-10|y_band=(0.45, 0.7]",
+      "group_id": 1,
+      "month": "2023-10",
+      "y_band": "(0.45, 0.7]",
+      "w_gen": 0.04509351689015666,
+      "realised_unit": 0.33218280609103457,
+      "ceiling_unit": 0.8360624235393016,
+      "over_ceiling": false,
+      "recoverable_peer": 0.0005337157955504332,
+      "headroom_ceiling": 0.0037869506733348504
+    },
+    {
+      "key": "group_id=2|month=2023-12|y_band=(0.45, 0.7]",
+      "group_id": 2,
+      "month": "2023-12",
+      "y_band": "(0.45, 0.7]",
+      "w_gen": 0.03308176948565485,
+      "realised_unit": 0.24723651051894802,
+      "ceiling_unit": 0.9161902924352976,
+      "over_ceiling": false,
+      "recoverable_peer": 0.0010441151798538772,
+      "headroom_ceiling": 0.00368836246831895
+    },
+    {
+      "key": "group_id=2|month=2023-04|y_band=(0.45, 0.7]",
+      "group_id": 2,
+      "month": "2023-04",
+      "y_band": "(0.45, 0.7]",
+      "w_gen": 0.03270173799685376,
+      "realised_unit": 0.24811755868488322,
+      "ceiling_unit": 0.9161902924352976,
+      "over_ceiling": false,
+      "recoverable_peer": 0.0010186955065057059,
+      "headroom_ceiling": 0.0036411899169913153
+    }
+  ],
+  "top_recoverable": [
+    {
+      "key": "group_id=3|month=2023-12|y_band=(0.45, 0.7]",
+      "group_id": 3,
+      "month": "2023-12",
+      "y_band": "(0.45, 0.7]",
+      "w_gen": 0.05504533208485173,
+      "realised_unit": 0.18243391793008795,
+      "ceiling_unit": 0.6462884786959537,
+      "over_ceiling": false,
+      "recoverable_peer": 0.002380424986020573,
+      "headroom_ceiling": 0.004255504722738353
+    },
+    {
+      "key": "group_id=2|month=2023-11|y_band=(0.45, 0.7]",
+      "group_id": 2,
+      "month": "2023-11",
+      "y_band": "(0.45, 0.7]",
+      "w_gen": 0.04632782338580263,
+      "realised_unit": 0.13637558461468666,
+      "ceiling_unit": 0.9161902924352976,
+      "over_ceiling": false,
+      "recoverable_peer": 0.0023527961292865154,
+      "headroom_ceiling": 0.006021186342927424
+    },
+    {
+      "key": "group_id=3|month=2023-07|y_band=(0.7, 1.1]",
+      "group_id": 3,
+      "month": "2023-07",
+      "y_band": "(0.7, 1.1]",
+      "w_gen": 0.05394285113527725,
+      "realised_unit": 0.1889226974837276,
+      "ceiling_unit": 0.36438009469467614,
+      "over_ceiling": false,
+      "recoverable_peer": 0.002225358191451735,
+      "headroom_ceiling": 0.001577445376388901
+    },
+    {
+      "key": "group_id=3|month=2023-11|y_band=(0.45, 0.7]",
+      "group_id": 3,
+      "month": "2023-11",
+      "y_band": "(0.45, 0.7]",
+      "w_gen": 0.05504187176257735,
+      "realised_unit": 0.22367593964892415,
+      "ceiling_unit": 0.6462884786959537,
+      "over_ceiling": false,
+      "recoverable_peer": 0.0019078370241846828,
+      "headroom_ceiling": 0.0038768975299139684
+    },
+    {
+      "key": "group_id=3|month=2023-10|y_band=(0.25, 0.45]",
+      "group_id": 3,
+      "month": "2023-10",
+      "y_band": "(0.25, 0.45]",
+      "w_gen": 0.02544010559748546,
+      "realised_unit": 0.16762440779669247,
+      "ceiling_unit": 0.7516705183060364,
+      "over_ceiling": false,
+      "recoverable_peer": 0.0013277270051301837,
+      "headroom_ceiling": 0.002476365787526395
+    },
+    {
+      "key": "group_id=3|month=2023-04|y_band=(0.45, 0.7]",
+      "group_id": 3,
+      "month": "2023-04",
+      "y_band": "(0.45, 0.7]",
+      "w_gen": 0.047947759151701186,
+      "realised_unit": 0.26002408550672407,
+      "ceiling_unit": 0.6462884786959537,
+      "over_ceiling": false,
+      "recoverable_peer": 0.0013273154383763915,
+      "headroom_ceiling": 0.003086752015585865
+    },
+    {
+      "key": "group_id=2|month=2023-10|y_band=(0.45, 0.7]",
+      "group_id": 2,
+      "month": "2023-10",
+      "y_band": "(0.45, 0.7]",
+      "w_gen": 0.037636477006528044,
+      "realised_unit": 0.22601750108437776,
+      "ceiling_unit": 0.9161902924352976,
+      "over_ceiling": false,
+      "recoverable_peer": 0.0013199547024790035,
+      "headroom_ceiling": 0.004329278732035029
+    },
+    {
+      "key": "group_id=1|month=2023-12|y_band=(0.25, 0.45]",
+      "group_id": 1,
+      "month": "2023-12",
+      "y_band": "(0.25, 0.45]",
+      "w_gen": 0.021318812283952496,
+      "realised_unit": 0.18258490851784334,
+      "ceiling_unit": 0.8847921422662917,
+      "over_ceiling": false,
+      "recoverable_peer": 0.001305472450724406,
+      "headroom_ceiling": 0.00249503736678612
+    },
+    {
+      "key": "group_id=3|month=2023-12|y_band=(0.25, 0.45]",
+      "group_id": 3,
+      "month": "2023-12",
+      "y_band": "(0.25, 0.45]",
+      "w_gen": 0.0196612714054547,
+      "realised_unit": 0.1302466016090995,
+      "ceiling_unit": 0.7516705183060364,
+      "over_ceiling": false,
+      "recoverable_peer": 0.0012897473867981033,
+      "headroom_ceiling": 0.002036330714003191
+    },
+    {
+      "key": "group_id=3|month=2023-07|y_band=(0.45, 0.7]",
+      "group_id": 3,
+      "month": "2023-07",
+      "y_band": "(0.45, 0.7]",
+      "w_gen": 0.03471885214956986,
+      "realised_unit": 0.21425901947182494,
+      "ceiling_unit": 0.6462884786959537,
+      "over_ceiling": false,
+      "recoverable_peer": 0.0012734144242344714,
+      "headroom_ceiling": 0.0024999278198435245
+    },
+    {
+      "key": "group_id=2|month=2023-07|y_band=(0.45, 0.7]",
+      "group_id": 2,
+      "month": "2023-07",
+      "y_band": "(0.45, 0.7]",
+      "w_gen": 0.037248437615198346,
+      "realised_unit": 0.22127098251172544,
+      "ceiling_unit": 0.9161902924352976,
+      "over_ceiling": false,
+      "recoverable_peer": 0.0012622532244723633,
+      "headroom_ceiling": 0.004314109760547477
+    },
+    {
+      "key": "group_id=2|month=2023-12|y_band=(0.25, 0.45]",
+      "group_id": 2,
+      "month": "2023-12",
+      "y_band": "(0.25, 0.45]",
+      "w_gen": 0.013445578834154525,
+      "realised_unit": 0.08387513123023659,
+      "ceiling_unit": 0.9606102870361127,
+      "over_ceiling": false,
+      "recoverable_peer": 0.0011111906136063077,
+      "headroom_ceiling": 0.001964701942343776
+    }
+  ],
+  "hypotheses": {
+    "H1_rankings_differ": true,
+    "H2_g3_share_lower_under_ceiling": true,
+    "H3_headroom_covers_gap": true,
+    "H4_top_band_still_mid": true
+  },
+  "verdict": "PEER_BASELINE_MISATTRIBUTES_HARD_PHYSICS_AS_RECOVERABLE",
+  "no_training": true,
+  "no_collection": true,
+  "dacon_upload": false,
+  "lockbox_used": false,
+  "generated_at": "2026-08-05T10:29:39.010187+00:00",
+  "digest": "d1aa1ec578877fa5"
+}

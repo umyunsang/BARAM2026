@@ -1,0 +1,26 @@
+{
+  "event_type": "PREDECLARED",
+  "cycle_id": "S17-N20_TERRAIN_SX300_H8_STATIC_LOOKUP_EXTRACTION",
+  "stage_id": "S7",
+  "node_id": "S17-N20_TERRAIN_SX300_H8_STATIC_LOOKUP_EXTRACTION",
+  "actor": "root",
+  "occurred_at": "2026-08-08T22:50:40.852993+09:00",
+  "body": {
+    "preregistration_sha256": "fca14c87ef44bbe7dddcbb4fd4754a9d826cd38b3a148e20966fed2a530bb5ce",
+    "parent_ids": [
+      "S17-N19_TERRAIN_SX300_H8_NO_BODY_PREREQUISITE_AUDIT"
+    ],
+    "mechanism": "The exact published Sx-300/H=8 formula becomes a deployable static lookup only after the one eligible COG body is identity-frozen, decoded with typed GeoTIFF semantics, and independently reproduced for all 1,152 entries.",
+    "treatment": "One full GET of the exact N37/E128 Copernicus GLO-30 COG followed by one fixed 16x72 lookup materialization.",
+    "control": "No other tile, DEM, formula variant, weather row, fit, policy, score or comparison.",
+    "metric": "Boolean object identity, decode, coverage, formula, independent parity, finiteness and determinism gates.",
+    "min_effect": 0.0,
+    "score_bearing": false,
+    "novelty_signature": "TERRAIN_SX300_H8_LDAPS16_STATIC_LOOKUP_EXTRACTION_V1",
+    "basis_evidence_ids": [
+      "N19_NO_BODY_PREREQUISITE_PASS",
+      "N14_COPDEM_LICENSE_TIME_METADATA",
+      "N18_P2_SX_FORMULA"
+    ]
+  }
+}

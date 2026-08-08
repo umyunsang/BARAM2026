@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "artifact": "IP@v2",
+  "approved_at": "2026-08-02T00:00:00+09:00",
+  "exact_message": "IP@v2 승인",
+  "status": "IMPLEMENTATION_APPROVED_AND_ACTIVE",
+  "preapproval_sha256": "d2db84fa1f31051fabd18b611a7d17d9f52556515b5c2143e88e8ae4b751fa62",
+  "approved_artifact": {
+    "path": ".planning/2026-08-01-leaderboard-top-4-loop/IP_v2.md",
+    "lines": 460,
+    "sha256": "0834d30c65e149423db3ea5214ab839fd3df2738b2d86ed1071abbeb3e33c8fd",
+    "state": "IMPLEMENTATION_APPROVED_AND_ACTIVE(IP@v2)"
+  },
+  "approved_scope": {
+    "run_id": "baram-v2-20260801-01",
+    "tasks": ["T0", "T1", "T2", "T3", "T4", "T5", "T6", "T7", "T8"],
+    "execution_topology": "single_root_sequential",
+    "worker_cap": 6,
+    "full_chronology_candidate_ceiling": 46,
+    "artifact_budget_gib": 10
+  },
+  "live_preflight": {
+    "repository_head": "383265af810eee24129de2d7ce99457bb8a757ef",
+    "open_zip_sha256": "920be0c458d820e855bf79dd25723146f52ce1736138aedba5e6bc853f1f720b",
+    "baseline_notebook_sha256": "712b26f4d2748860c94cff1e0100c23810468c983173f8e9ef8d009fe82df48c",
+    "consumed_lock_sha256": "866f22dcd88c8bcbb1841b55d989a9af43b6f9e133606b47bb7378b1b97ace1f",
+    "python": "3.12.0",
+    "artifact_mebibytes_before_execution": 180,
+    "available_disk_gib_before_execution": 92
+  },
+  "not_authorized": [
+    "Dacon upload or account mutation",
+    "external data or pretrained weights",
+    "remote inference or compute",
+    "remote Git or deployment",
+    "system dependency changes",
+    "TFT, NGBoost, or deep execution",
+    "new 2024 evaluation or selection",
+    "subagents, worktrees, or background sessions",
+    "deletion of existing artifacts"
+  ]
+}

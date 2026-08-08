@@ -1,0 +1,26 @@
+{
+  "event_type": "PREDECLARED",
+  "cycle_id": "S17-N6A_FAIL_CLOSED_SCORE_CLASS_REPAIR",
+  "stage_id": "S11",
+  "node_id": "S17-N6A_FAIL_CLOSED_SCORE_CLASS_REPAIR",
+  "actor": "root",
+  "occurred_at": "2026-08-08T19:59:44.814241+09:00",
+  "body": {
+    "preregistration_sha256": "cdde865e195abb73382a7ef8f486f5b3fd8c2c85408ed667a8c6324891e56769",
+    "parent_ids": [
+      "S17-N2_EVENT_LEDGER_ENVELOPE",
+      "S17-N6_COST5_SPO_PLUS_PREQUENTIAL"
+    ],
+    "mechanism": "The ledger must distinguish planned score eligibility from realized score-bearing evidence when an immutable pre-score gate fails.",
+    "treatment": "Explicit pre_score_gate_failed downgrade contract for REFUTED/INCONCLUSIVE diagnostic closures.",
+    "control": "Current exact score-class equality contract.",
+    "metric": "Event contract tests and unchanged comparison_count.",
+    "min_effect": 0.0,
+    "score_bearing": false,
+    "novelty_signature": "EVENT_SCORE_CLASS_FAIL_CLOSED_DOWNGRADE_V1",
+    "basis_evidence_ids": [
+      "S17_N2_LEDGER",
+      "S17_N6_G0_FAILURE"
+    ]
+  }
+}

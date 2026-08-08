@@ -1,0 +1,164 @@
+{
+ "dacon_upload": false,
+ "decided_utc": "2026-08-05T04:19:45.580549+00:00",
+ "external_actions": [
+  {
+   "host": "previous-runs-api.open-meteo.com",
+   "kind": "http_get",
+   "permitted_by": "AGENTS.md 2026-08-05 갱신 조항 (외부 공개데이터 허용)",
+   "purpose": "아카이브된 과거 예보(ICON, ECMWF IFS) 100m 풍속 취득"
+  }
+ ],
+ "lane": "L2",
+ "lockbox_reopened": false,
+ "model_fits": 0,
+ "new_2024_evaluation": false,
+ "node": "C1N51_EXTERNAL_SOURCE_PROBE",
+ "reads_2024_scada_not_labels": true,
+ "report_sha256": "03644657e058f77498008a1a7090b919ff37058d7719d5a8f0d30ada1e01f3ce",
+ "result": {
+  "acceptance_from": "C1N50_NONNEGATIVE_WEIGHTS (실행 전 동결)",
+  "external_source": {
+   "cache_dir": "artifacts/external/open-meteo-previous-runs",
+   "endpoint": "https://previous-runs-api.open-meteo.com/v1/forecast",
+   "is_reanalysis": false,
+   "is_remote_inference": false,
+   "licence": "Open-Meteo, free for non-commercial use (CC-BY 4.0 data)",
+   "models": [
+    "icon_global",
+    "ecmwf_ifs025"
+   ],
+   "provider": "Open-Meteo Previous Runs API",
+   "retrieved_utc": "2026-08-05T04:19:45.580079+00:00",
+   "variable": "wind_speed_100m_previous_day2"
+  },
+  "lead_time_discipline": "우리 리드 16~39h. previous_day1(24h)은 24h 초과 행에서 누출이므로 previous_day2(48h)만 사용 — 9~32h 핸디캡의 보수적 선택",
+  "node": "C1N51_EXTERNAL_SOURCE_PROBE",
+  "parent_node": "C1N50_NONNEGATIVE_WEIGHTS",
+  "per_group": {
+   "1": {
+    "rho_between_new_sources": 0.774196740670022,
+    "rho_gfs_ldaps": 0.7717885618924404,
+    "rows_usable": 7173,
+    "sigma_cur_formula": 1.9173908995074695,
+    "sigma_cur_realised": 1.9173908995074698,
+    "sigma_gfs": 2.171622646469401,
+    "sigma_ldaps": 1.9565542394353903,
+    "sources": {
+     "ecmwf_ifs025": {
+      "allowed_rho_at_q": 0.92,
+      "combined_sigma": 1.8013705656731775,
+      "inside_acceptance": true,
+      "margin": 0.06962943432682245,
+      "meets_requirement": true,
+      "q": 0.9919281983680477,
+      "rho_vs_current": 0.7799154079713949,
+      "sigma_new": 1.901914100515735,
+      "w_current_in_combo": 0.48159018219033844
+     },
+     "icon_global": {
+      "allowed_rho_at_q": 0.66,
+      "combined_sigma": 1.9173908995074698,
+      "inside_acceptance": false,
+      "margin": -0.046390899507469774,
+      "meets_requirement": false,
+      "q": 1.202589680986721,
+      "rho_vs_current": 0.8357676900106801,
+      "sigma_new": 2.3058345101655298,
+      "w_current_in_combo": 1.0
+     }
+    },
+    "w_gfs_in_mix": 0.27642438456248153
+   },
+   "2": {
+    "rho_between_new_sources": 0.7713765639621206,
+    "rho_gfs_ldaps": 0.7509830725928972,
+    "rows_usable": 7173,
+    "sigma_cur_formula": 2.095648267063499,
+    "sigma_cur_realised": 2.095648267063499,
+    "sigma_gfs": 2.4934956454677155,
+    "sigma_ldaps": 2.1189871415672257,
+    "sources": {
+     "ecmwf_ifs025": {
+      "allowed_rho_at_q": 0.555,
+      "combined_sigma": 1.9883974846768533,
+      "inside_acceptance": false,
+      "margin": -0.11739748467685329,
+      "meets_requirement": false,
+      "q": 1.0248403499017917,
+      "rho_vs_current": 0.759080617256687,
+      "sigma_new": 2.1477049032884397,
+      "w_current_in_combo": 0.5508649014944185
+     },
+     "icon_global": {
+      "allowed_rho_at_q": 0.315,
+      "combined_sigma": 2.095648267063499,
+      "inside_acceptance": false,
+      "margin": -0.22464826706349905,
+      "meets_requirement": false,
+      "q": 1.2566816255237152,
+      "rho_vs_current": 0.8076130203949368,
+      "sigma_new": 2.6335626707793147,
+      "w_current_in_combo": 1.0
+     }
+    },
+    "w_gfs_in_mix": 0.1883848650503296
+   },
+   "3": {
+    "rho_between_new_sources": 0.7646412603610249,
+    "rho_gfs_ldaps": 0.7264135871391704,
+    "rows_usable": 7167,
+    "sigma_cur_formula": 1.9121661765134152,
+    "sigma_cur_realised": 1.9121661765134152,
+    "sigma_gfs": 2.340589306442563,
+    "sigma_ldaps": 1.9318933027757785,
+    "sources": {
+     "ecmwf_ifs025": {
+      "allowed_rho_at_q": 0.815,
+      "combined_sigma": 1.8367090984622032,
+      "inside_acceptance": true,
+      "margin": 0.03429090153779679,
+      "meets_requirement": true,
+      "q": 1.0654351327384324,
+      "rho_vs_current": 0.7456193874084585,
+      "sigma_new": 2.0372890240915114,
+      "w_current_in_combo": 0.623689960385004
+     },
+     "icon_global": {
+      "allowed_rho_at_q": 0.61,
+      "combined_sigma": 1.9121661765134152,
+      "inside_acceptance": false,
+      "margin": -0.041166176513415254,
+      "meets_requirement": false,
+      "q": 1.2843216203308647,
+      "rho_vs_current": 0.7833605085064237,
+      "sigma_new": 2.455836362161584,
+      "w_current_in_combo": 1.0
+     }
+    },
+    "w_gfs_in_mix": 0.1694433600008935
+   }
+  },
+  "predeclared_check": {
+   "H1_expectation": "그룹당 유효행 >= 2000",
+   "H1_held": true,
+   "H2_expectation": "두 소스 모두 수용 영역 안",
+   "H2_held": false,
+   "H3_expectation": "적어도 하나가 수용 영역 안",
+   "H3_held": false,
+   "H3_passing": [],
+   "H4_note": "두 새 소스 상호 rho 보고 (3-소스 결합 판단용)",
+   "verdict": "EXTERNAL_NWP_CLOSED_BY_MEASUREMENT"
+  },
+  "requirement_sigma": 1.871,
+  "surface": {
+   "lockbox_note": "2024 이나 라벨(actual_kwh)을 읽지 않는다. lockbox 가 보호하는 것은 라벨 기반 점수이며 기상 소스 품질 측정은 점수가 아니다",
+   "truth": "scada_ws (나셀 풍속계)",
+   "uses_actual_kwh": false,
+   "year": 2024
+  }
+ },
+ "schema_version": 1,
+ "script_sha256": "30acc46ca323a689951f561979be556ed24860d4d2747667fb69af5d04394b00",
+ "stage": "M271_P4_CYCLE51_EXTERNAL_SOURCE_PROBE"
+}

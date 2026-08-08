@@ -1,0 +1,193 @@
+{
+  "schema_version": 1,
+  "node_id": "S17-N3_STRICT_PREQUENTIAL_EVALUATION_REPAIR",
+  "generated_at": "2026-08-08T18:56:47.480555+09:00",
+  "predeclaration": {
+    "path": "reports/s17_n3_prequential_eval_predeclaration.json",
+    "sha256": "252abd1f2caec1323de88f7a4b2316fcf4b064e48d4913847daa914ff2885e79",
+    "event_sha256": "d2dbbb95082051cd46128c3db570597896cff6c5d1add0ba8dee6da41b05d410"
+  },
+  "evidence": {
+    "rwa_eval": {
+      "path": "research/rwa_eval_research.md",
+      "sha256": "2b418c28ecd4f9e3a27e30176d9d76298961b37cffc613447b7c36e5eb34b84c"
+    },
+    "parent_commit": {
+      "path": "reports/s17_n2_event_commit_receipt.json",
+      "sha256": "0b1e9c97b2a0de840c2781b7c7cf1e0548d9f477f702b09b81928e1268f7c0e3"
+    }
+  },
+  "implementation_sha256": {
+    "src/baram/evaluation/prequential.py": "a4cd12d30b3cf79ac339f1a5dbcc009f5b85ba10a30ef6614346a6309703b35b",
+    "src/baram/evaluation/__init__.py": "2595ab788aaf633f874d577ae2f3146e1f0b2e7faedec1d43e1723046d6e07e3",
+    "research/engine/arbiter.py": "442bf987796104ba2692e65e5bb212ef6ae04c35ca300f403228e41f5ca9ccad"
+  },
+  "implementation_bundle_sha256": "5b48356b5b7035170bb81ea798e1126a20cc57dad06d0f0e0889a7c617e152d7",
+  "test_sha256": {
+    "tests/evaluation/test_prequential.py": "9a5db626ec810776cfc51afa8ddf6f379dc9cf1822903b7db0cedefa2116a8d8"
+  },
+  "legacy_arbiter_before_sha256": "9b69f0e63517f58a960b197c063cac27f4913cc3da020044ecf34d098cdb7ba6",
+  "checks": {
+    "P1_72_cell_operating_day_midnight_unsplit": true,
+    "P2_fit_selection_and_label_availability_strictly_before_basis": true,
+    "P3_daily_loss_exact_total_reproduction_1e_12": true,
+    "P4_politis_romano_geometric_stationary_bootstrap": true,
+    "P5_frozen_family_manifest_and_joint_draws": true,
+    "P6_eventstore_comparison_count_required": true,
+    "P7_centered_joint_max_t_and_MCS_TR": true,
+    "P8_blocks_3_7_14_fixed": true,
+    "P9_additive_vs_resampled_exact_total_agreement_gate": true,
+    "P10_retrospective_label_only": true,
+    "P11_legacy_arbiter_promotion_calls_fail_closed": true,
+    "P12_tests_lint": {
+      "targeted": "11 passed",
+      "full": "205 passed, 144 pre-existing warnings",
+      "ruff": "All checks passed on src tests and retired arbiter"
+    }
+  },
+  "independent_synthetic_crosscheck": {
+    "library": "arch 8.0.0 MCS(method=R)",
+    "ours_included": [
+      "good"
+    ],
+    "reference_included": [
+      "good"
+    ],
+    "ours_excluded": [
+      "bad",
+      "inc"
+    ],
+    "reference_excluded": [
+      "bad",
+      "inc"
+    ],
+    "note": "Cross-check only; production reducer retains fold-stratified joint day draws."
+  },
+  "protocol_constraints": [
+    "burn-in fold excluded from assessment",
+    "last prior operating day excluded when its labels arrive after next basis",
+    "every model/fold carries fit/selection/policy/predeclaration/prediction provenance",
+    "identical loss aliases must be deduplicated before MCS",
+    "no formal fresh-holdout or stationary-coverage claim"
+  ],
+  "preclose_snapshot": {
+    "accounted_cycles": 90,
+    "closed": [
+      "S17-N2_EVENT_LEDGER_ENVELOPE"
+    ],
+    "comparison_count": 0,
+    "digest": "651d8183b1760ec1a78cf4da027c55fa72dbb540e967e604a84dedd2a1b3373c",
+    "evidence_complete_cycles": 1,
+    "frontier": [
+      "S17-N3_STRICT_PREQUENTIAL_EVALUATION_REPAIR"
+    ],
+    "legacy": [
+      "C1N100_NOVEL_MEMBER_PROBE",
+      "C1N101_PHYSICAL_MEMBER_PROBE",
+      "C1N102_RETRIEVAL_MEMBER",
+      "C1N103_EXTERNAL_NWP_MEMBER",
+      "C1N104_M244_KEY_RECOVERED",
+      "C1N105_M244_RECIPE_READ",
+      "C1N10_BLEND_LOCALITY",
+      "C1N11_V2_REPRESENTATION",
+      "C1N12_G3_HISTORY",
+      "C1N13_ENSEMBLE_VARIANCE",
+      "C1N14_SHRINKBLEND",
+      "C1N15_WALKFORWARD",
+      "C1N16_ROBUSTNESS_AUDIT",
+      "C1N17_METRIC_ALIGNED_COMBINER",
+      "C1N18_SPREAD_SKILL",
+      "C1N19_ENVELOPE_ORACLE",
+      "C1N1_TOPRATE_MECHANISM",
+      "C1N20_ALPHA_ENDPOINT",
+      "C1N21_MOS_BIAS_CORRECTION",
+      "C1N22_GLOBAL_SHIFT",
+      "C1N23_ELIGIBLE_MOS",
+      "C1N24_MEMBER_COUNT_REOPEN",
+      "C1N25_ENVELOPE_LAMBDA",
+      "C1N26_POOL_WIDTH_SCREEN",
+      "C1N27_RESIDUAL_SIGNAL",
+      "C1N28_PERGRID_SIGNAL",
+      "C1N29_CHAMPION_AUDIT",
+      "C1N2_COLLIDER_CORRECTED",
+      "C1N30_TEMPORAL_SIGNAL",
+      "C1N31_SPACE_TIME",
+      "C1N32_LOCKBOX_OPERATOR",
+      "C1N33_SINGLE_VS_ENSEMBLE",
+      "C1N34_SHRINK_TO_BEST",
+      "C1N35_FIXED_POLICY_CORRECTION",
+      "C1N36_SOURCE_SENSITIVITY",
+      "C1N37_BAND_ALIGNED_LOSS",
+      "C1N38_BAND_LOSS_FIXED",
+      "C1N39_ARCHITECTURE_GAP",
+      "C1N3_MASS_AXIS_WIND_SECTOR",
+      "C1N40_BAND_CLASSIFIER",
+      "C1N41_BAND_CLASSIFIER_CAPACITY",
+      "C1N42_TEACHER_RESTORED",
+      "C1N43_EFFECT_TREND",
+      "C1N44_SHARPENED_DECISION",
+      "C1N45_SUBMISSION_DECISION",
+      "C1N46_CLOSURE_FALSIFICATION",
+      "C1N47_EXTERNAL_NWP_REVIVED",
+      "C1N48_MODEL_VALIDATION",
+      "C1N49_RHO_ACCEPTANCE",
+      "C1N4_BAND_CONDITIONAL_POLICY_ORACLE",
+      "C1N50_NONNEGATIVE_WEIGHTS",
+      "C1N51_EXTERNAL_SOURCE_PROBE",
+      "C1N52_EXTERNAL_CLOSURE",
+      "C1N53_SUPPLIED_EXTRACTION",
+      "C1N54_SCATTER_CEILING",
+      "C1N55_TURBINE_CORRELATION",
+      "C1N56_MEASURED_POWERCURVE",
+      "C1N57B_VARIANCE_LAW",
+      "C1N57_FICR_CEILING",
+      "C1N58_TEACHER_OOF_SPLIT",
+      "C1N59_PERFECT_PROG_BOUND",
+      "C1N5_SPATIAL_INTERPOLATION",
+      "C1N60_LEVEL_TEMPERATURE",
+      "C1N61_GRID_BOUNDARY",
+      "C1N62_MONTH_MECHANISM",
+      "C1N64_BAND_AVOIDANCE",
+      "C1N65_WIND_LIMITED_BOUND",
+      "C1N66_HETEROSCEDASTIC_WIND",
+      "C1N67_EXACT_CURVE_PROPAGATION",
+      "C1N69_SKILL_RESPONSE",
+      "C1N6_WIND50_MIDPOINT",
+      "C1N70_BASELINE_CORRECTION",
+      "C1N71_TEACHER_WEIGHT",
+      "C1N72_CURVE_BLEND",
+      "C1N74_BLOCK_LENGTH",
+      "C1N75_DAILY_GATE_ESTIMAND",
+      "C1N7_POLICY_FROZEN_GATE",
+      "C1N81_CYCLE_CONTRACT_ENFORCED",
+      "C1N8_ORACLE_LADDER",
+      "C1N92_METRIC_ALIGNED_LOSS",
+      "C1N93_ORDINAL_REPRESENTATION",
+      "C1N94_CDF_REJUDGE",
+      "C1N95_RECONSTRUCTION_GAP",
+      "C1N96_GAP_REJUDGE",
+      "C1N97_BOOSTING_ROUNDS",
+      "C1N98_REPRODUCIBILITY_ADJUDICATION",
+      "C1N99_ENSEMBLE_EXHAUSTIVE",
+      "C1N9_GATE_POWER"
+    ],
+    "pending": [
+      "S17-N3_STRICT_PREQUENTIAL_EVALUATION_REPAIR"
+    ],
+    "stage_coverage": [
+      "S11"
+    ]
+  },
+  "actions": {
+    "model_fits": 0,
+    "project_candidate_score_calls": 0,
+    "lockbox_2024_access": false,
+    "dacon_actions": [],
+    "dependency_changes": false,
+    "data_actions": false
+  },
+  "narrow_verdict": "PASS_EVALUATION_PROTOCOL_ONLY_NOT_CANDIDATE_SCORE",
+  "next_handoff": [
+    "S17-N4_ECMWF_18Z_FIXED_LEAD_AUDIT"
+  ]
+}

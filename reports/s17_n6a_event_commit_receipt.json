@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "node_id": "S17-N6A_FAIL_CLOSED_SCORE_CLASS_REPAIR",
+  "committed_at": "2026-08-08T19:58:53.564568+09:00",
+  "result_receipt": {
+    "path": "reports/s17_n6a_fail_closed_score_class_receipt.json",
+    "sha256": "bda56305d9d50de0fefb4a7393df5fbc770b2ccf55c6a7c0a302f6e61a5a762a"
+  },
+  "closed_event_sha256": "1d96dba87a91a527a18a26b0c36ea03713c87b01b80ab82a33de2633ce8cef4c",
+  "event_sequence": 101,
+  "event_store": {
+    "path": "artifacts/registry/loop_events_s17.sqlite",
+    "chain_verified_after_subsequent_n6_close": true
+  },
+  "verdict": "COMMITTED_NON_SCORE_CONTRACT_REPAIR"
+}

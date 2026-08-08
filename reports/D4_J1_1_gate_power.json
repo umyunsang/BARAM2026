@@ -1,0 +1,114 @@
+{
+ "node": "D4_J1_1",
+ "stage": "D4",
+ "gate_version": "M270_MONTHLY_GATE_v1_frozen_2026-08-04",
+ "base_total": 0.6283370227786943,
+ "injections": [
+  {
+   "k": 1.0,
+   "delta": 0.0,
+   "passed": false,
+   "conditions": {
+    "G1 sign-test p <= 0.1 (p=1.0000, 0/9)": false,
+    "G2 median delta > 0 (median=+0.000000)": false,
+    "G3 bootstrap q05 > 0 (q05=+0.000000)": false,
+    "G4 worst month >= -0.010 (worst=+0.000000)": true
+   }
+  },
+  {
+   "k": 0.995,
+   "delta": 0.0009717095491678096,
+   "passed": true,
+   "conditions": {
+    "G1 sign-test p <= 0.1 (p=0.0020, 9/9)": true,
+    "G2 median delta > 0 (median=+0.000967)": true,
+    "G3 bootstrap q05 > 0 (q05=+0.000781)": true,
+    "G4 worst month >= -0.010 (worst=+0.000350)": true
+   }
+  },
+  {
+   "k": 0.99,
+   "delta": 0.002181700548708587,
+   "passed": true,
+   "conditions": {
+    "G1 sign-test p <= 0.1 (p=0.0020, 9/9)": true,
+    "G2 median delta > 0 (median=+0.001916)": true,
+    "G3 bootstrap q05 > 0 (q05=+0.001807)": true,
+    "G4 worst month >= -0.010 (worst=+0.001414)": true
+   }
+  },
+  {
+   "k": 0.98,
+   "delta": 0.004305569110246599,
+   "passed": true,
+   "conditions": {
+    "G1 sign-test p <= 0.1 (p=0.0020, 9/9)": true,
+    "G2 median delta > 0 (median=+0.004189)": true,
+    "G3 bootstrap q05 > 0 (q05=+0.003815)": true,
+    "G4 worst month >= -0.010 (worst=+0.003170)": true
+   }
+  },
+  {
+   "k": 0.97,
+   "delta": 0.006200666848432346,
+   "passed": true,
+   "conditions": {
+    "G1 sign-test p <= 0.1 (p=0.0020, 9/9)": true,
+    "G2 median delta > 0 (median=+0.005952)": true,
+    "G3 bootstrap q05 > 0 (q05=+0.005443)": true,
+    "G4 worst month >= -0.010 (worst=+0.004562)": true
+   }
+  },
+  {
+   "k": 0.96,
+   "delta": 0.00814890270108315,
+   "passed": true,
+   "conditions": {
+    "G1 sign-test p <= 0.1 (p=0.0020, 9/9)": true,
+    "G2 median delta > 0 (median=+0.007985)": true,
+    "G3 bootstrap q05 > 0 (q05=+0.007475)": true,
+    "G4 worst month >= -0.010 (worst=+0.006174)": true
+   }
+  },
+  {
+   "k": 0.95,
+   "delta": 0.010082382753729857,
+   "passed": true,
+   "conditions": {
+    "G1 sign-test p <= 0.1 (p=0.0020, 9/9)": true,
+    "G2 median delta > 0 (median=+0.009571)": true,
+    "G3 bootstrap q05 > 0 (q05=+0.009329)": true,
+    "G4 worst month >= -0.010 (worst=+0.008511)": true
+   }
+  },
+  {
+   "k": 0.93,
+   "delta": 0.015056608514423142,
+   "passed": true,
+   "conditions": {
+    "G1 sign-test p <= 0.1 (p=0.0020, 9/9)": true,
+    "G2 median delta > 0 (median=+0.015350)": true,
+    "G3 bootstrap q05 > 0 (q05=+0.014580)": true,
+    "G4 worst month >= -0.010 (worst=+0.013385)": true
+   }
+  },
+  {
+   "k": 0.9,
+   "delta": 0.02275757010656443,
+   "passed": true,
+   "conditions": {
+    "G1 sign-test p <= 0.1 (p=0.0020, 9/9)": true,
+    "G2 median delta > 0 (median=+0.021412)": true,
+    "G3 bootstrap q05 > 0 (q05=+0.021131)": true,
+    "G4 worst month >= -0.010 (worst=+0.020132)": true
+   }
+  }
+ ],
+ "minimum_detectable_delta": 0.0009717095491678096,
+ "nominal_threshold": 0.001013,
+ "verdict": "GATE_POWER_CONSISTENT_WITH_NOMINAL",
+ "origin": "research://Hewamalage-2022-PMC9718476 [directly_supported]",
+ "model_fits": 0,
+ "dacon_upload": false,
+ "gate_modified": false
+}

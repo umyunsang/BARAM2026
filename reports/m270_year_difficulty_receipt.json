@@ -1,0 +1,80 @@
+{
+ "band_settlement_2023": {
+  "(0.099, 0.25]": 0.5470615517163352,
+  "(0.25, 0.45]": 0.23433130807612387,
+  "(0.45, 0.7]": 0.2654217260940525,
+  "(0.7, 1.1]": 0.523340023951982
+ },
+ "dacon_upload": false,
+ "external_actions": [],
+ "level_edges": [
+  0.1,
+  0.25,
+  0.45,
+  0.7,
+  1.1
+ ],
+ "lockbox_reopened": false,
+ "model_fits": 0,
+ "new_2024_evaluation": false,
+ "note": "2025 difficulty is unobservable; this measures spread across observable years",
+ "schema_version": 1,
+ "sigma_by_year": [
+  {
+   "group_id": 1,
+   "n": 8658,
+   "sigma_v": 2.1025682745380374,
+   "year": 2022
+  },
+  {
+   "group_id": 2,
+   "n": 8664,
+   "sigma_v": 2.4150323056707617,
+   "year": 2022
+  },
+  {
+   "group_id": 1,
+   "n": 8753,
+   "sigma_v": 2.197860885360219,
+   "year": 2023
+  },
+  {
+   "group_id": 2,
+   "n": 8756,
+   "sigma_v": 2.3953235096919534,
+   "year": 2023
+  },
+  {
+   "group_id": 3,
+   "n": 8753,
+   "sigma_v": 2.1749461080126764,
+   "year": 2023
+  }
+ ],
+ "skill_reference": "2023 dev folds, deployed policy",
+ "stage": "M270_YEAR_DIFFICULTY",
+ "year_table": [
+  {
+   "eligible_rate": 0.6265004616805171,
+   "eligible_rows": 10856,
+   "implied_ficr": 0.40250533646577535,
+   "mean_y": 0.5050550878119968,
+   "share_(0.099, 0.25]": 0.07716413065836576,
+   "share_(0.25, 0.45]": 0.14158401831592393,
+   "share_(0.45, 0.7]": 0.316945807687637,
+   "share_(0.7, 1.1]": 0.4643060433380732,
+   "year": 2022
+  },
+  {
+   "eligible_rate": 0.6024967648626018,
+   "eligible_rows": 15830,
+   "implied_ficr": 0.4099567068892,
+   "mean_y": 0.4964342696850131,
+   "share_(0.099, 0.25]": 0.0870679560999467,
+   "share_(0.25, 0.45]": 0.1474205634148407,
+   "share_(0.45, 0.7]": 0.28242615928978465,
+   "share_(0.7, 1.1]": 0.4830853211954279,
+   "year": 2023
+  }
+ ]
+}

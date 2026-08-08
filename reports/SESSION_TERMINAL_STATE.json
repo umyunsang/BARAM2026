@@ -1,0 +1,13 @@
+{
+ "session": "2026-08-06",
+ "terminal": true,
+ "best_online_measured": 0.6374708505,
+ "best_verified_candidate_pred": 0.63917,
+ "target": 0.66,
+ "gap": 0.022529149500000067,
+ "required_error_reduction": 0.108,
+ "predeclared_experiments": 30,
+ "deployable_net_gain": 0.0,
+ "open_action": "user uploads grade-A/B candidates; agent never uploads",
+ "stop_reason": "every axis closed with measured bounds; max verified improvement +0.0017 against a +0.0225 requirement"
+}

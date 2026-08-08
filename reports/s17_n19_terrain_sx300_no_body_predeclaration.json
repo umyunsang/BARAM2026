@@ -1,0 +1,126 @@
+{
+  "schema_version": 1,
+  "node_id": "S17-N19_TERRAIN_SX300_H8_NO_BODY_PREREQUISITE_AUDIT",
+  "created_at": "2026-08-08T22:39:59.443810+09:00",
+  "parent_id": "S17-N18_POST_RWA_FRONTIER_RESEARCH_INTAKE",
+  "purpose": "Execute the single N18-selected no-fit/no-body prerequisite audit for the published Sx-300/H=8 m direction-dependent terrain lookup before any Copernicus DEM value byte is acquired.",
+  "input_bundle": {
+    "files": {
+      "AGENTS.md": "91a11f95f94e8de86f5c84b204e1893830b3ed5693e3d7ede7f2e351e9891e9c",
+      "reports/s17_n18_post_rwa_frontier_intake_receipt.json": "c2c272f2d1f755855d3e46b45ac117240e47df027cb2f67c766e6e7378e8595b",
+      "research/lanes/s17_n18_terrain_sx.md": "fc7e3aba702214274fe08b3f6041164cb63774eb293591d5d144581c73e3a1cd",
+      "artifacts/audits/s17_n14_r3_terrain_prerequisite.json": "59a2e8dc16af789a1f334a2b2d7e90a677035bf65036f37414c345da2fca2b86",
+      "reports/s17_n14_r3_terrain_prerequisite_receipt.json": "c576917f22522cc3a08bb014cb9809d9113295e42a01a6fa7b248a71121922e7",
+      "artifacts/audits/s17_n12_vertical_profile_prerequisites.json": "e6c829a7dd77a59179b949d3fb18cda02816ee55f6a9aed4365a13b6f50d9f87",
+      "reports/s17_n12_vertical_profile_prerequisite_receipt.json": "5f6d35ccc7193e683180b55b76ceca8c702be1ecc1257d682d93808a7d76bebe",
+      "artifacts/external/copdem_n14_prerequisite_sources/License-COPDEM-30.pdf": "9cd37d37ea654bbcaf0a2e059e6a3a5b5f76072824d8dd860ccf274ada8951bd",
+      "artifacts/external/copdem_n14_prerequisite_sources/cop_dem_product.html": "f1e566e63f7e256d7ae4f5c78b13fc0c253252f219d7dfc617b8736540fb8a1c",
+      "artifacts/external/copdem_n14_prerequisite_sources/aws_readme.html": "922461d55070e3c7e0cf2903ec54190d69e3773da2dc9e776a3f03566cfd56d2",
+      "uv.lock": "2521843b78485fd444fa4bfd4126198c6e5b79928b8680626c85859749358c04",
+      "pyproject.toml": "1d42fe3512b11750563c756a4a57e536a6b3027b6636b2284e47c0216e9f2217",
+      "reports/s17_n19_terrain_sx300_lineage_input_manifest.json": "cc4c01853b7dce5ae0a3b120f817b78b1a146002a9a402b9260621b6218d4099",
+      "reports/s17_n19_terrain_sx300_formula_manifest.json": "ca1022d8236acdefa2b886c20945029a060f3dddecb4d879cb4c6e5a99cf6b80",
+      "inputs/competition/open_wind_236727.zip": "920be0c458d820e855bf79dd25723146f52ce1736138aedba5e6bc853f1f720b"
+    },
+    "sha256": "338d3c3ed73165bcbc6e1c21dc3859b7cdd6e716ce30b8d1e1cd15538151380e"
+  },
+  "frozen_formula_manifest": {
+    "path": "reports/s17_n19_terrain_sx300_formula_manifest.json",
+    "sha256": "ca1022d8236acdefa2b886c20945029a060f3dddecb4d879cb4c6e5a99cf6b80"
+  },
+  "frozen_lineage_universe": {
+    "path": "reports/s17_n19_terrain_sx300_lineage_input_manifest.json",
+    "sha256": "cc4c01853b7dce5ae0a3b120f817b78b1a146002a9a402b9260621b6218d4099",
+    "bundle_sha256": "26dd02b9429f128ed454011e301ae1af66efc3edaa45cd39fad060ada3a125f4",
+    "files": 138
+  },
+  "gates": {
+    "source_and_schema": {
+      "exact_ldaps_grids": 16,
+      "unique_finite_coordinates": true,
+      "required_header_names": [
+        "heightAboveGround_10_10u",
+        "heightAboveGround_10_10v"
+      ],
+      "weather_rows_read": 0
+    },
+    "tile_geometry_and_head": {
+      "buffer_radius_m": 300.0,
+      "expected_tile_ids": [
+        "N37_E128"
+      ],
+      "methods": [
+        "geometric enumeration",
+        "HTTP HEAD"
+      ],
+      "require_status": 200,
+      "require_pre_cutoff_last_modified": true,
+      "body_bytes": 0
+    },
+    "formula_and_direction": {
+      "formula_manifest_hash_exact": true,
+      "cardinals": {
+        "u0_vminus1": 0.0,
+        "u1_v0": 270.0
+      },
+      "no_u_hc_or_wind_magnitude_or_fit": true
+    },
+    "independent_parity": {
+      "cases": [
+        "flat",
+        "planar_slope",
+        "single_upwind_obstacle",
+        "all_negative_horizon",
+        "shared_corner_ray"
+      ],
+      "cell_sets_identical": true,
+      "max_abs_sx_deg": 1e-12
+    },
+    "synthetic_decoder": {
+      "interpreter": "project .venv only",
+      "pillow_version": "12.3.0",
+      "uv_lock_required": true,
+      "libtiff_and_zlib_required": true,
+      "synthetic_float32_geotiff_roundtrip": true,
+      "required_tags": [
+        33550,
+        33922,
+        34735,
+        42113
+      ],
+      "temporary_file_removed": true
+    },
+    "nonduplication": {
+      "verify_all_frozen_lineage_hashes": true,
+      "implementation_definitions_or_materialized_feature_names": 0,
+      "research_reference_only_hits_allowed": [
+        "research/nodes/s9_n4_upwind_projection.py"
+      ],
+      "binary_or_generated_bodies_read": 0
+    }
+  },
+  "verdict_rule": {
+    "ready": "All gates pass -> READY_STATIC_LOOKUP_EXTRACTION and hand off one separately predeclared DEM-body extraction; no score/model claim.",
+    "blocked": "Any metadata/decoder/coverage gate fails -> BLOCKED_NO_DEM_GET and hand off post-terrain research intake.",
+    "closed_duplicate": "Materialized equivalent found -> CLOSED_DUPLICATE_NO_DEM_GET and hand off post-terrain research intake."
+  },
+  "outputs": [
+    "scripts/audit_terrain_sx300_no_body.py",
+    "artifacts/audits/s17_n19_terrain_sx300_no_body.json",
+    "reports/s17_n19_terrain_sx300_no_body_receipt.json"
+  ],
+  "forbidden_actions": [
+    "DEM GET/Range/body or value access",
+    "weather forecast rows or feature values",
+    "label, target, or SCADA access",
+    "model or optimizer fit",
+    "official/component/strict score call",
+    "2024/test/rejected ECMWF/quarantined N10 access",
+    "new dependency or system command fallback",
+    "Dacon/account/remote mutation"
+  ],
+  "score_bearing": false,
+  "comparison_index": null,
+  "comparison_count_before": 3,
+  "lockbox_2024_used": false
+}

@@ -1,0 +1,9 @@
+{
+ "prefers_ours_share": 1.0,
+ "verdict": "OBJECTIVE",
+ "mean_J_gap": -6.036366495118239,
+ "total_ours": 0.6256687137857624,
+ "total_oracle_action": 0.9996864110841914,
+ "q_at_ours": 0.26896118257347296,
+ "q_at_star": 0.09992399664982217
+}

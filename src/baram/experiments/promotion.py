@@ -2,8 +2,147 @@
 
 import math
 from collections.abc import Mapping, Sequence
+from dataclasses import dataclass
+from pathlib import Path
+from typing import Any
+
+import yaml
 
 from baram.contracts.types import PromotionDecision
+from baram.exceptions import ContractError
+
+
+@dataclass(frozen=True)
+class V2PromotionThresholds:
+    material_total_delta_min: float
+    finalist_seed_total_range_max: float
+    pooled_one_minus_nmae_delta_min: float
+    per_group_component_total_delta_min: float
+    group3_component_total_delta_min_for_decision_ensemble: float
+    decision_ficr_delta_min: float
+    absolute_residual_correlation_max_exclusive: float
+
+
+def load_v2_promotion_thresholds(path: Path) -> V2PromotionThresholds:
+    try:
+        raw: dict[str, Any] = yaml.safe_load(path.read_text(encoding="utf-8"))
+        if raw.get("all_later_fold_total_deltas_positive") is not True:
+            raise ContractError("v2 promotion requires every later fold delta to be positive")
+        return V2PromotionThresholds(
+            material_total_delta_min=float(raw["material_total_delta_min"]),
+            finalist_seed_total_range_max=float(raw["finalist_seed_total_range_max"]),
+            pooled_one_minus_nmae_delta_min=float(raw["pooled_one_minus_nmae_delta_min"]),
+            per_group_component_total_delta_min=float(
+                raw["per_group_component_total_delta_min"]
+            ),
+            group3_component_total_delta_min_for_decision_ensemble=float(
+                raw["group3_component_total_delta_min_for_decision_ensemble"]
+            ),
+            decision_ficr_delta_min=float(raw["decision_ficr_delta_min"]),
+            absolute_residual_correlation_max_exclusive=float(
+                raw["absolute_residual_correlation_max_exclusive"]
+            ),
+        )
+    except (OSError, TypeError, KeyError, ValueError, yaml.YAMLError) as error:
+        raise ContractError(f"cannot read v2 promotion thresholds: {error}") from error
+
+
+def decide_v2_candidate(
+    pooled_total_delta: float,
+    fold_total_deltas: Sequence[float],
+    one_minus_nmae_delta: float,
+    group_component_total_deltas: Mapping[int, float],
+    seed_total_range: float,
+    thresholds: V2PromotionThresholds,
+) -> PromotionDecision:
+    checks = {
+        "material_total": pooled_total_delta >= thresholds.material_total_delta_min,
+        "all_later_folds_positive": bool(fold_total_deltas)
+        and all(value > 0.0 for value in fold_total_deltas),
+        "nmae_guardrail": one_minus_nmae_delta
+        >= thresholds.pooled_one_minus_nmae_delta_min,
+        "group_guardrails": set(group_component_total_deltas) == {1, 2, 3}
+        and all(
+            value >= thresholds.per_group_component_total_delta_min
+            for value in group_component_total_deltas.values()
+        ),
+        "seed_range": seed_total_range <= thresholds.finalist_seed_total_range_max,
+    }
+    failed = tuple(name for name, passed in checks.items() if not passed)
+    return PromotionDecision(
+        not failed,
+        "V2_CANDIDATE",
+        failed,
+        {
+            "total": pooled_total_delta,
+            "one_minus_nmae": one_minus_nmae_delta,
+            "seed_range": seed_total_range,
+        },
+    )
+
+
+def decide_v2_decision(
+    pooled_total_delta: float,
+    fold_total_deltas: Sequence[float],
+    one_minus_nmae_delta: float,
+    ficr_delta: float,
+    group_component_total_deltas: Mapping[int, float],
+    thresholds: V2PromotionThresholds,
+) -> PromotionDecision:
+    base = decide_v2_candidate(
+        pooled_total_delta,
+        fold_total_deltas,
+        one_minus_nmae_delta,
+        group_component_total_deltas,
+        0.0,
+        thresholds,
+    )
+    failed = list(base.reasons)
+    if ficr_delta < thresholds.decision_ficr_delta_min:
+        failed.append("ficr_materiality")
+    if group_component_total_deltas.get(3, -math.inf) < (
+        thresholds.group3_component_total_delta_min_for_decision_ensemble
+    ):
+        failed.append("group3_guardrail")
+    return PromotionDecision(
+        not failed,
+        "V2_DECISION",
+        tuple(failed),
+        {**base.deltas, "ficr": ficr_delta},
+    )
+
+
+def decide_v2_ensemble(
+    pooled_total_delta: float,
+    fold_total_deltas: Sequence[float],
+    one_minus_nmae_delta: float,
+    group_component_total_deltas: Mapping[int, float],
+    abs_residual_correlation: float,
+    thresholds: V2PromotionThresholds,
+) -> PromotionDecision:
+    base = decide_v2_candidate(
+        pooled_total_delta,
+        fold_total_deltas,
+        one_minus_nmae_delta,
+        group_component_total_deltas,
+        0.0,
+        thresholds,
+    )
+    failed = list(base.reasons)
+    if group_component_total_deltas.get(3, -math.inf) < (
+        thresholds.group3_component_total_delta_min_for_decision_ensemble
+    ):
+        failed.append("group3_guardrail")
+    if not abs_residual_correlation < (
+        thresholds.absolute_residual_correlation_max_exclusive
+    ):
+        failed.append("residual_diversity")
+    return PromotionDecision(
+        not failed,
+        "V2_ENSEMBLE",
+        tuple(failed),
+        {**base.deltas, "abs_residual_correlation": abs_residual_correlation},
+    )
 
 
 def decide_challenger_activation(

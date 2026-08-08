@@ -1,0 +1,34 @@
+{
+  "event_type": "CLOSED",
+  "cycle_id": "S17-N26_S4_OFFICIAL_METRIC_AND_ACTION_APPROPRIATENESS_AUDIT",
+  "stage_id": "S4",
+  "node_id": "S17-N26_S4_OFFICIAL_METRIC_AND_ACTION_APPROPRIATENESS_AUDIT",
+  "actor": "root",
+  "occurred_at": "2026-08-09T01:04:18.777243+09:00",
+  "body": {
+    "predeclared_event_sha256": "f4751c8c100c5dca0cdf00973bd065fb8e192ba5b6101013e80725d5950fcd2d",
+    "receipt_path": "reports/s17_n26_s4_metric_action_audit_receipt.json",
+    "receipt_sha256": "1b42d6323efe92528d8a40f300d4b5ef2ef0c7a31042a68a74ca6f2c55452313",
+    "code_sha256": "9c92a4fdebe4e67d3043555f8955816b404fb791b38bc64a0e3ebfa2d1d62f77",
+    "config_sha256": "09a4e38106939cab7afdb792826b41fdcc86e11be1f815a0d8612ccd44c2152c",
+    "data_sha256": "0a2c9cfa52754b1a46ef8bd0f04a5b03de3974af61447cb7e3ac0835fe986c3d",
+    "router_sha256": "80e37561a32fb2928d1a7505b652bb822f5b6989e73b6d7106afb0ae62041b43",
+    "policy_ids": [
+      "N26_S4_METRIC_ACTION_APPROPRIATENESS_NO_SCORE"
+    ],
+    "row_alignment_keys": [
+      "fold_id",
+      "group_id",
+      "forecast_kst_dtm"
+    ],
+    "evidence_class": "evaluation",
+    "weights_fit": "fixed",
+    "result_status": "SUPPORTED",
+    "score_bearing": false,
+    "comparison_index": null,
+    "stage_evidence_status": "RESEARCHED",
+    "next_handoff": [],
+    "lockbox_2024_used": false,
+    "dacon_actions": []
+  }
+}

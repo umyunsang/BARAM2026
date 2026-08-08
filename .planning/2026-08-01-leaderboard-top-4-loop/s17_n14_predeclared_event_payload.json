@@ -1,0 +1,27 @@
+{
+  "event_type": "PREDECLARED",
+  "cycle_id": "S17-N14_R3_HEIGHT_ONLY_TERRAIN_PREREQUISITE_AUDIT",
+  "stage_id": "S5",
+  "node_id": "S17-N14_R3_HEIGHT_ONLY_TERRAIN_PREREQUISITE_AUDIT",
+  "actor": "root",
+  "occurred_at": "2026-08-08T21:27:45.891246+09:00",
+  "body": {
+    "preregistration_sha256": "94f5b8d4d565d979d166cc0c9c2e6754a4d991b8ca4819bab057cfeee4703352",
+    "parent_ids": [
+      "S17-N13A_R2_NO_REFIT_TYPED_PROVENANCE_RECOVERY"
+    ],
+    "mechanism": "A zero-fit KMAPP height correction is admissible only if an eligible pre-cutoff static DEM, supplied turbine coordinates, and basis-safe LDAPS grid orography jointly expose every formula input without target or test access.",
+    "treatment": "Static license/time/tile-availability and 2022-2023 LDAPS orography prerequisite audit.",
+    "control": "Current uncorrected LDAPS spatial weather surface.",
+    "metric": "Five Boolean eligibility, time, availability, model-orography, and formula-input gates; no model score.",
+    "min_effect": 0.0,
+    "score_bearing": false,
+    "novelty_signature": "R3_HEIGHT_ONLY_TERRAIN_PREREQUISITE_AUDIT_V1",
+    "basis_evidence_ids": [
+      "RWA_DATA_R3",
+      "S13_S5_N4_KMAPP",
+      "S17_N12_STATIC_METADATA",
+      "S17_N10B_ISSUANCE_AUDIT"
+    ]
+  }
+}

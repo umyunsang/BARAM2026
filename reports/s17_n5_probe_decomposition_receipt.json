@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "node_id": "S17-N5_ECMWF_18Z_2023_INNOVATION_PROBE",
+  "generated_at": "2026-08-08T19:07:42.961809+09:00",
+  "predeclaration": {
+    "path": "reports/s17_n5_probe_decomposition_predeclaration.json",
+    "sha256": "aeceeb6eb873c912b89ced01394e31076c43a4609afc6592d3083ea71d99dc96",
+    "event_sha256": "f2779fab352b76d4c91aa5caa98fa8a4f6d377afaadaa0c340916e12a3ce4e7b"
+  },
+  "resolved_to": {
+    "path": "reports/s17_n5_ecmwf_18z_extraction_predeclaration.json",
+    "sha256": "306d70bc23986f569aac4bda21da7fd5578410b8e70d3cb9926b75854ffd3d31",
+    "active_event_sha256": "fa1506dcf9ac1115aff2d0479bd286b6707baa0d7af2d1c1af1a63ced1d11222"
+  },
+  "reason": "The N4 broad innovation handoff has a mandatory data-extraction prerequisite. This event resolves identity without rewriting either committed event.",
+  "actions": {
+    "model_fits": 0,
+    "scores": 0,
+    "data_bytes": 0,
+    "lockbox": false
+  },
+  "verdict": "SUPPORTED_WORKFLOW_DECOMPOSITION_NOT_EVIDENCE"
+}

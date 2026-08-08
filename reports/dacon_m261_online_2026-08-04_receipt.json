@@ -1,0 +1,42 @@
+{
+ "candidate_csv_sha256": "fb937f77dfe501b4d7f8e52da098f07f79b1924dace347d3020da405b660773b",
+ "candidate_id": "M261_FULL_HISTORY_STRICT_TEMPORAL_CHAMPION",
+ "caveat": "n=1 anchor; cannot separate training-data advantage from year difficulty",
+ "claude_external_actions": [],
+ "external_action_actor": "user",
+ "filename": "submission_M261.csv",
+ "gap_to_target_online": 0.023472567300000025,
+ "implied_local_target": 0.6534455673,
+ "improvement_over_previous_best": 0.009649023499999965,
+ "local_counterpart": {
+  "ficr": 0.403142,
+  "one_minus_nmae": 0.856805,
+  "policy": "M107/M102 Q2-frozen champion on the M269 corrected surface",
+  "surface": "2023 Q2-Q4 chronology-safe OOF",
+  "total": 0.629973
+ },
+ "lockbox_reopened": false,
+ "measured_offset_online_minus_local": {
+  "ficr": 0.012027492299999998,
+  "one_minus_nmae": 0.0010803729999999678,
+  "total": 0.006554432700000001
+ },
+ "new_2024_evaluation": false,
+ "online_result": {
+  "ficr": 0.4151694923,
+  "filename": "submission_M261.csv",
+  "memo": "m261 edit",
+  "one_minus_nmae": 0.857885373,
+  "submitted_at_kst": "2026-08-04 05:27:41",
+  "total": 0.6365274327
+ },
+ "predeclaration_held": true,
+ "predeclared_before_result": "online should exceed local; magnitude unknown",
+ "previous_best_online": {
+  "candidate_id": "M252",
+  "total": 0.6268784092
+ },
+ "schema_version": 1,
+ "significance": "first same-lineage local-to-online anchor in this project",
+ "state": "ONLINE_ANCHOR_ESTABLISHED_TARGET_NOT_REACHED"
+}

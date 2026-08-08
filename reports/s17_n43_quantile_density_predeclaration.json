@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "node_id": "S17-N43_SHARPER_CONDITIONAL_DENSITY",
+  "stage_id": "S7",
+  "deficit": "FD12",
+  "created_at": "2026-08-09T06:11:06.675650+09:00",
+  "score_bearing": false,
+  "question": "Does a genuine quantile-function conditional density, combined with the exact expected-settlement action, beat the binned-softmax density with tuned sharpening?",
+  "treatment": "39-level LightGBM quantile regression on the same 100 features, monotonised, then exact expected settlement maximised over the action grid with G=1",
+  "control": "The deployed binned-softmax member with T0.75_G2",
+  "degrees_of_freedom": 1,
+  "trial_budget": 1
+}

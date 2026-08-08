@@ -1,0 +1,135 @@
+{
+  "schema_version": 1,
+  "node_id": "S17-N22_M115_TERRAIN_SX300_H8_STRICT_PREQUENTIAL_COMPARISON",
+  "created_at": "2026-08-08T23:22:10.988396+09:00",
+  "parent_id": "S17-N21_TERRAIN_SX300_H8_MODEL_FAMILY_PREREQUISITE_AUDIT",
+  "purpose": "Execute exactly one six-fit M115 matched-control terrain augmentation. Materialization is score-blind and must reproduce the frozen control under a bounded 2022-2023 loader before comparison index 4 can be consumed by the S17-N3 protocol.",
+  "input_bundle": {
+    "files": {
+      "AGENTS.md": "91a11f95f94e8de86f5c84b204e1893830b3ed5693e3d7ede7f2e351e9891e9c",
+      "reports/s17_n22_m115_terrain_family_spec.json": "d0458e634d975f931868899c574daa961a343d52b369bc8143e5b7f6b6bb3c00",
+      "reports/s17_n21_terrain_model_family_prerequisite_receipt.json": "165c67271f6cdcf37719320a595afa8fbbdcdf10c17e96b08f9bac4b98d29f61",
+      "artifacts/audits/s17_n21_terrain_model_family_prerequisite.json": "73dc743b24a14927336bbb7c5298a7f089dd9fd6658f5ee168f8d5d873ed3157",
+      "research/lanes/s17_n21_terrain_model_integration.md": "4befd9c72215ec37405942184f0c5b312b66975b5a551d14376143a94e0d5316",
+      "reports/s17_n20a_terrain_sx300_no_nodata_recovery_receipt.json": "8edf4d13ba12c9035048e1902111ecd672501c46cb554f0cc1043f171d5826a9",
+      "artifacts/external/copdem_s17_n20/recovery_manifest.json": "5b2f6918b22e0b4f8168367b15355d6eec6603d3d08538d5989a97dae076ab0e",
+      "artifacts/external/copdem_s17_n20/lookup.npy": "8861028407290dd536a011eac9bc80fdd1121da9742c8cf4e910d88855823ee5",
+      "artifacts/external/copdem_s17_n20/lookup.parquet": "8f292c97193a15accd03d8289833a60c6b6db8d53d00ffc2a3cb86cd9b5d7996",
+      "artifacts/backtests/s17_n7_strict_actions/family_manifest.json": "972ed2922260bec2000cb9bc0d97098ae533652ab16daf9d5ca6d90601daa046",
+      "artifacts/backtests/s17_n7_strict_actions/actions.parquet": "6041a7bf6f242c4da7958dc43d3487cdc468cc39301086bf3a5e6df5fb87f290",
+      "artifacts/backtests/s17_n7_strict_actions/procedure_provenance.parquet": "12666e4e61d962e74e0168e41a40f13b13acc006808bd7bd09dd837fa6cf9cae",
+      "reports/s17_n7_strict_action_reconstruction_receipt.json": "f4d56d97532fbe4d681061dfff773f951c4be01b26081dda3c0ff77720e973fc",
+      "scripts/reconstruct_strict_actions.py": "8d656bdb91a63b96b1e207d796e130796de47004a0c1293e5800fdffdf14abcd",
+      "reports/s17_n3_prequential_eval_receipt.json": "6f25b5bdff627de2a1bcebe537204d91e0be0bf5be63cc8018193c1754c0a080",
+      "src/baram/evaluation/prequential.py": "a4cd12d30b3cf79ac339f1a5dbcc009f5b85ba10a30ef6614346a6309703b35b",
+      "src/baram/evaluation/official.py": "5701ddfc5a6254e89cbc49451cd3f4bbddd437cff451a4596a86e7c68ff42cba",
+      "src/baram/evaluation/__init__.py": "2595ab788aaf633f874d577ae2f3146e1f0b2e7faedec1d43e1723046d6e07e3",
+      "src/baram/constants.py": "f4fbf5c6772d021436f9b40459a2587f8223d597045d7fe9c48c9428e1702843",
+      "src/baram/loop/events.py": "9c05e7cb40f76dcc759630ee9463dd29ffd5f8efd2d744e7b596def3390b5044",
+      "artifacts/backtests/s17_n17_r4_source_separation/evaluation.json": "42957c873adbac86ab2847432b238ee2e8f9ce0b15ea27284ac625ad2fdda9a2",
+      "reports/s17_n17_r4_source_separation_receipt.json": "09264ee9a9de839a2927b085e827b163c5d41b32e279f9f1ce654ecd12e5508b",
+      ".planning/2026-08-01-leaderboard-top-4-loop/run_alternative_booster_classifier.py": "94b0fd79746fbbda8d1a32542d1d74e8e4b94f72cbe7e104df8e2badcdf06e22",
+      ".planning/2026-08-01-leaderboard-top-4-loop/run_sequence_classifier.py": "eb4ebf8bcfaaf2f7b46931cfa3ad81ccd204a5e7f89a12d5756f849c17f84d31",
+      ".planning/2026-08-01-leaderboard-top-4-loop/run_site_wind_classifier.py": "a97193a84970b07c7d55c795688ab27a92fc219247e8e9cc08724cbcc91ce5ef",
+      ".planning/2026-08-01-leaderboard-top-4-loop/run_site_wind_teacher.py": "8749791de2ed005396f238131acf8f53033c61c95a5178c8b1020db2e6faa43b",
+      ".planning/2026-08-01-leaderboard-top-4-loop/run_consensus_classifier.py": "3914606f96af750bc02a7ce689a3ed4986fe4202a88d805a802f2f32021dacbd",
+      "uv.lock": "2521843b78485fd444fa4bfd4126198c6e5b79928b8680626c85859749358c04",
+      "pyproject.toml": "1d42fe3512b11750563c756a4a57e536a6b3027b6636b2284e47c0216e9f2217",
+      "artifacts/manifests/prepare.json": "ca4908d7f98639b13da80febcd071cd805369e8e044bb4d7b97f793d2703ca46",
+      "inputs/competition/open_wind_236727.zip": "920be0c458d820e855bf79dd25723146f52ce1736138aedba5e6bc853f1f720b",
+      "inputs/notebooks/baseline.ipynb": "712b26f4d2748860c94cff1e0100c23810468c983173f8e9ef8d009fe82df48c",
+      "artifacts/cache/920be0c458d820e855bf79dd25723146f52ce1736138aedba5e6bc853f1f720b/train_features.parquet": "fec1b0369f6d1c63a3d9e113190c45bb2b84d1c6500098b957c96a6b1d2128e7",
+      "artifacts/cache/920be0c458d820e855bf79dd25723146f52ce1736138aedba5e6bc853f1f720b/train_grid_pivot.parquet": "aee0a4e934a23fa058063e4271135eef0add23563ae84296a3226701d1587996",
+      "artifacts/cache/920be0c458d820e855bf79dd25723146f52ce1736138aedba5e6bc853f1f720b/train_geometric.parquet": "765b3c3c4d9998d58f61c47698b7de272631c489f48cd5d8f30f14743c60b709",
+      "artifacts/cache/920be0c458d820e855bf79dd25723146f52ce1736138aedba5e6bc853f1f720b/labels_long.parquet": "880a6f9368023d1fdab541fb82a7133f18b15c3974d0fd7528c08e6ff8badab2",
+      "artifacts/backtests/metric-aligned-probe/M102_TOP100-dev-2023-Q2.json": "17f7ea69f4eca3e1c9500ae2df6f6c2361a6eeca9d8a953551825f476d5b06eb",
+      "artifacts/backtests/metric-aligned-probe/M115_XGBOOST-dev-2023-Q2.json": "917d2c741fa85aa68a264f3f75bd230517276a5ebd4a5e397890756707b19cf6",
+      "artifacts/backtests/metric-aligned-probe/M115_XGBOOST-dev-2023-Q2-policies.parquet": "4ad669071fc8010c15713f014e320dcffb1cdb5c142a05fa426fd21f7f306ade",
+      "artifacts/backtests/metric-aligned-probe/M64B_ALLWEATHER_SITEWIND_CLASS-dev-2023-Q2-sitewind-features.npz": "ef37ea3bf4d59f855e5938bf2ba6319fe9d549fc40da4bbb24f9c26f2d55bd9a",
+      "artifacts/backtests/metric-aligned-probe/M64B_ALLWEATHER_SITEWIND_CLASS-dev-2023-Q2.json": "853122a6952d0995c2f7894797d58e330caded3ff66ec7493910d14713c60ca0",
+      "artifacts/backtests/metric-aligned-probe/M102_TOP100-dev-2023-Q3.json": "21fca4ab64433f27f1d26a7f0dee5040d085aeed13a76ab8d055610d30f2b484",
+      "artifacts/backtests/metric-aligned-probe/M115_XGBOOST-dev-2023-Q3.json": "f2ca31f9c00ecc88b2af5b50fec7bd38824601bc6b2ddeb69ae498d4b3ce6748",
+      "artifacts/backtests/metric-aligned-probe/M115_XGBOOST-dev-2023-Q3-policies.parquet": "951793f696a5599b2dd52684fac22b72949a90380e0437761ea397c1bffc520b",
+      "artifacts/backtests/metric-aligned-probe/M64B_ALLWEATHER_SITEWIND_CLASS-dev-2023-Q3-sitewind-features.npz": "e8571f126bd0aa4748b5531efc3eb9a943a4dc3e6d8324d07eb1351738686c0d",
+      "artifacts/backtests/metric-aligned-probe/M64B_ALLWEATHER_SITEWIND_CLASS-dev-2023-Q3.json": "c8a1445e0a29d23b23b7ba1ccbced4684dba15bea03c338e2a86139da3ec6162",
+      "artifacts/backtests/metric-aligned-probe/M102_TOP100-dev-2023-Q4.json": "8cb7b96656d7773594ed50c99de92b071c1baa4eaaad242cb299c63a5724b79e",
+      "artifacts/backtests/metric-aligned-probe/M115_XGBOOST-dev-2023-Q4.json": "7dd4e5a2fde1d2b8ca7f583560dd861c7778c78d3a2264f10d4e98b9dd0829b3",
+      "artifacts/backtests/metric-aligned-probe/M115_XGBOOST-dev-2023-Q4-policies.parquet": "8913ab0cb6ce6de9b87d0eb79c79d541971b5f930c27da4647df7ee5caba3867",
+      "artifacts/backtests/metric-aligned-probe/M64B_ALLWEATHER_SITEWIND_CLASS-dev-2023-Q4-sitewind-features.npz": "e2a55b5eb87b4573ca707c0bde4b39ff9297048950d391b25cd6484bb39a0f57",
+      "artifacts/backtests/metric-aligned-probe/M64B_ALLWEATHER_SITEWIND_CLASS-dev-2023-Q4.json": "c69f4b37933ad94761bc8db194d86bf053d3c5a5abe10fc6e9aa53bf3b6e902f"
+    },
+    "sha256": "ea970aa6875bbda905415781e522cbfaa3b6b9ce947082144a6b94799cadcf3c"
+  },
+  "family_spec": {
+    "path": "reports/s17_n22_m115_terrain_family_spec.json",
+    "sha256": "d0458e634d975f931868899c574daa961a343d52b369bc8143e5b7f6b6bb3c00"
+  },
+  "phases": {
+    "materialize": {
+      "assessment_actual_read": false,
+      "model_fits": 6,
+      "predict_calls": 6,
+      "policy_search_calls": 0,
+      "score_calls": 0,
+      "hard_gate": "all family_spec pre_score_hard_gates; failure closes diagnostic comparison null"
+    },
+    "freeze": {
+      "family_manifest_hash_before_actual": true,
+      "prediction_and_provenance_hashes_frozen": true
+    },
+    "assess": {
+      "only_if_materialization_passes": true,
+      "join_actual_on": [
+        "fold_id",
+        "group_id",
+        "forecast_kst_dtm"
+      ],
+      "protocol": "S17-N3",
+      "comparison_index": 4,
+      "official_total_calls": "protocol plus three disclosed outer scores",
+      "n_rep": 4999,
+      "seed": 20260808,
+      "blocks": [
+        3,
+        7,
+        14
+      ]
+    }
+  },
+  "support_rule": {
+    "SUPPORTED": "TERRAIN delta vs Champion >=0.001635, promotion stable at 3/7/14 days, protocol inference SUPPORTED.",
+    "GOAL": "SUPPORTED and outer strict official Total >=0.660000.",
+    "REFUTED": "Assessment runs but support/goal rule fails.",
+    "DIAGNOSTIC_INCONCLUSIVE": "Any pre-score control/chronology/bounded-access gate fails; comparison remains 3."
+  },
+  "outputs": [
+    "scripts/run_m115_terrain_sx300_strict.py",
+    "artifacts/backtests/s17_n22_m115_terrain/family_manifest.json",
+    "artifacts/backtests/s17_n22_m115_terrain/predictions.parquet",
+    "artifacts/backtests/s17_n22_m115_terrain/procedure_provenance.parquet",
+    "artifacts/backtests/s17_n22_m115_terrain/materialization_details.json",
+    "artifacts/backtests/s17_n22_m115_terrain/evaluation.json",
+    "reports/s17_n22_m115_terrain_strict_receipt.json"
+  ],
+  "resource_limits": {
+    "model_workers": 6,
+    "fits": 6,
+    "external_requests": 0,
+    "new_dependencies": 0
+  },
+  "forbidden_actions": [
+    "unbounded _surface or NPZ np.load",
+    "decode/materialize any 2024/test value",
+    "assessment actual before frozen materialization gates",
+    "any feature/policy/hyperparameter/iteration choice",
+    "more or fewer than six fits if materialization proceeds",
+    "external request/data/weight",
+    "rejected ECMWF/quarantined N10 access",
+    "lockbox 2024",
+    "Dacon/account/remote mutation"
+  ],
+  "score_bearing_if_gate_passes": true,
+  "comparison_index_if_gate_passes": 4,
+  "comparison_count_before": 3,
+  "lockbox_2024_used": false
+}

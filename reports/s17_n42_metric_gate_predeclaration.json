@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "node_id": "S17-N42_METRIC_ALIGNED_GATE",
+  "stage_id": "S7",
+  "deficit": "FD15",
+  "created_at": "2026-08-09T06:03:31.375499+09:00",
+  "score_bearing": false,
+  "question": "Does a combiner trained on the exact per-row settlement value, rather than error rank, convert the oracle per-row headroom into Total?",
+  "value_definition": "v(a) = -|a-y|/C + (y/C)*unit(|a-y|/C)/(4*mean_generation_g), the exact per-row Total gradient in capacity-fraction units",
+  "candidates": [
+    "D",
+    "M102_TOP100",
+    "M113_LGBM_DART",
+    "M115_XGBOOST",
+    "BLEND"
+  ],
+  "chronology_contract": "training rows require label_available <= first basis time of the target fold",
+  "degrees_of_freedom": 1,
+  "trial_budget": 1
+}

@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "node_id": "S17-N15A_R3_CORRECTED_PRIMARY_FORMULA_IDENTIFIABILITY_GATE",
+  "created_at": "2026-08-08T21:37:50.284738+09:00",
+  "purpose": "Correct N15 transcription and adjudicate whether the exact printed zero-fit KMAPP height correction is dimensionally and observationally identified before any DEM value retrieval.",
+  "input_bundle": {
+    "files": {
+      "reports/s17_n15_r3_formula_identifiability_receipt.json": "e448e86fa1ae95994edad6f9570da69ac7dae920ca4dd61459df39678aa2836b",
+      "reports/s17_n14_r3_terrain_prerequisite_receipt.json": "c576917f22522cc3a08bb014cb9809d9113295e42a01a6fa7b248a71121922e7",
+      "reports/s17_n12_vertical_profile_prerequisite_receipt.json": "5f6d35ccc7193e683180b55b76ceca8c702be1ecc1257d682d93808a7d76bebe",
+      "research/sources/kim_lee_et_al_2021_kmapp_28740.pdf": "29f2015af66453f6a041b41fa147836ec2c9edccf908b722e152782f63c2d139"
+    },
+    "sha256": "8d1602558e6ef7e96d30b24fb67768fdb029f7d005b5374dace2f2dc33234c9f"
+  },
+  "frozen_exact_printed_equations": {
+    "equation_2": "delta_u_HC(z) = u(h_HC) * exp(-kappa*z) * delta_H_HC",
+    "equation_3": "h_HC = 1/kappa",
+    "equation_4": "kappa = pi * (A_over_S) / (H_over_2)",
+    "delta_height_unit": "metre",
+    "u_unit": "metre_per_second",
+    "kappa_unit": "inverse_metre"
+  },
+  "frozen_gates": {
+    "dimensional_consistency": "RHS of printed Eq.2 must have velocity units without inserting an unprinted factor.",
+    "u_hhc_observability": "A same-source LDAPS mean horizontal wind vector at h_HC must be supplied or an exact reconstruction must be prescribed in the primary paper. 5/10m vectors do not bracket h_HC; 50m component extrema are forbidden.",
+    "decision": "Both gates must pass before any DEM body retrieval. Failure of either closes R3 exact published treatment as REFUTED/UNIDENTIFIED."
+  },
+  "scope": {
+    "dem_tile_get_range_body_requests": 0,
+    "archive_weather_value_rows": 0,
+    "labels_or_scada": false,
+    "test_members": false,
+    "lockbox_2024": false
+  },
+  "non_score_bearing": true,
+  "comparison_index": null,
+  "model_fits": 0,
+  "official_score_calls": 0,
+  "forbidden": [
+    "insert unprinted kappa multiplier",
+    "substitute u10 for u(h_HC)",
+    "relabel 50m extrema",
+    "cross-source GFS substitution",
+    "fit/extrapolate a vertical profile",
+    "DEM tile body request",
+    "target/SCADA/test/2024 access",
+    "model fit",
+    "score call",
+    "Dacon action"
+  ],
+  "handoff_on_refutation": [
+    "S17-N16_R4_SOURCE_SEPARATED_VS_CONCAT_PREREQUISITE_AUDIT"
+  ]
+}

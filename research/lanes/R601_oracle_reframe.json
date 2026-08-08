@@ -1,0 +1,84 @@
+{
+ "node": "R601_ORACLE_REFRAME",
+ "date": "2026-08-07",
+ "local_convention_verified": {
+  "definition": "pooled dev-2023-Q2+Q3+Q4, single policy, official metric once",
+  "check": "M102_TOP100 T0.5_G1.5 pooled = 0.6298962296336882 == reports/n523 insample"
+ },
+ "findings": {
+  "vestas_power_columns_are_scrambled": {
+   "corr_power_vs_own_ws": 0.02,
+   "usable": false
+  },
+  "vestas_ws_columns_valid": {
+   "corr_hourly_mean_ws_vs_label_g1": 0.9273
+  },
+  "unison_power_valid": {
+   "corr_power_vs_own_ws_range": [
+    0.8,
+    0.86
+   ],
+   "hourly_sum_reproduces_label_g3": {
+    "corr": 0.9966,
+    "mae_kwh": 294.5
+   }
+  },
+  "oracle_measured_wind": {
+   "ALL17_per_turbine_stats": {
+    "total": 0.880689,
+    "one_minus_nmae": 0.954092,
+    "ficr": 0.807285
+   },
+   "group_mean_ws_scalar_only": {
+    "total": 0.830031,
+    "one_minus_nmae": 0.947326,
+    "ficr": 0.712736
+   }
+  },
+  "stageA_current_wind_skill_rmse_ms": {
+   "g1": [
+    1.4947,
+    1.5273,
+    1.5379
+   ],
+   "g2": [
+    1.5537,
+    1.5936,
+    1.7239
+   ],
+   "g3": [
+    1.6617,
+    1.6128,
+    1.7774
+   ]
+  },
+  "noise_sweep_sigma_to_total": {
+   "0.0": 0.829654,
+   "0.25": 0.811452,
+   "0.5": 0.758979,
+   "0.75": 0.719154,
+   "1.0": 0.678969,
+   "1.25": 0.642895,
+   "1.5": 0.617004,
+   "1.75": 0.590756,
+   "2.0": 0.570305,
+   "2.5": 0.539338
+  }
+ },
+ "overturns": "SESSION_FINAL_2026-08-06 section 2(c): 'bottleneck is output dispersion at the same wind speed / AVAILABILITY_UNKNOWABLE'. Measured: same-wind-speed dispersion still permits 0.8807 local; the binding constraint is NWP->hub-height wind error.",
+ "required_target": {
+  "local_total": 0.66,
+  "implied_wind_rmse_ms": [
+   1.1,
+   1.15
+  ],
+  "current_rmse_ms": 1.55,
+  "required_reduction_pct": [
+   26,
+   29
+  ]
+ },
+ "model_fits": "root session only",
+ "dacon_upload": false,
+ "lockbox_touched": false
+}

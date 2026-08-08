@@ -1,0 +1,193 @@
+{
+  "node_id": "C1N68_EMPIRICAL_DECOMPOSITION",
+  "lane": "L6",
+  "parent": "C1N67_EXACT_CURVE_PROPAGATION",
+  "candidate": false,
+  "diagnostic_only": true,
+  "method": "REFERENCE_FORECAST_DECOMPOSITION (Murphy 1988; Jolliffe & Stephenson 2012)",
+  "surface": {
+    "spec_digest": "1736a900bafdc14213634fba",
+    "probability_digest": "8141403f56cd7eba",
+    "from_cache": true
+  },
+  "rows": 11486,
+  "coverage": 1.0,
+  "overall_hit": {
+    "model": 0.3067212258401532,
+    "curve_teacher": 0.28974403621800454,
+    "curve_oracle": 0.7591850948981369
+  },
+  "cells": [
+    {
+      "group_id": 1,
+      "band": "(0.10,0.25]",
+      "band_index": 0,
+      "rows": 1096,
+      "model": 0.416970802919708,
+      "curve_teacher": 0.38047445255474455,
+      "curve_oracle": 0.9406934306569343,
+      "model_minus_teacher": 0.03649635036496346,
+      "oracle_minus_model": 0.5237226277372263,
+      "oracle_minus_teacher": 0.5602189781021898
+    },
+    {
+      "group_id": 1,
+      "band": "(0.25,0.45]",
+      "band_index": 1,
+      "rows": 889,
+      "model": 0.23284589426321708,
+      "curve_teacher": 0.23959505061867267,
+      "curve_oracle": 0.8796400449943758,
+      "model_minus_teacher": -0.006749156355455588,
+      "oracle_minus_model": 0.6467941507311586,
+      "oracle_minus_teacher": 0.6400449943757031
+    },
+    {
+      "group_id": 1,
+      "band": "(0.45,0.70]",
+      "band_index": 2,
+      "rows": 985,
+      "model": 0.30761421319796955,
+      "curve_teacher": 0.2152284263959391,
+      "curve_oracle": 0.7319796954314721,
+      "model_minus_teacher": 0.09238578680203047,
+      "oracle_minus_model": 0.42436548223350257,
+      "oracle_minus_teacher": 0.516751269035533
+    },
+    {
+      "group_id": 1,
+      "band": "(0.70,1.10]",
+      "band_index": 3,
+      "rows": 1035,
+      "model": 0.25507246376811593,
+      "curve_teacher": 0.3314009661835749,
+      "curve_oracle": 0.5603864734299517,
+      "model_minus_teacher": -0.07632850241545897,
+      "oracle_minus_model": 0.3053140096618358,
+      "oracle_minus_teacher": 0.22898550724637684
+    },
+    {
+      "group_id": 2,
+      "band": "(0.10,0.25]",
+      "band_index": 0,
+      "rows": 1049,
+      "model": 0.41754051477597715,
+      "curve_teacher": 0.40610104861773116,
+      "curve_oracle": 0.9456625357483317,
+      "model_minus_teacher": 0.011439466158245981,
+      "oracle_minus_model": 0.5281220209723545,
+      "oracle_minus_teacher": 0.5395614871306005
+    },
+    {
+      "group_id": 2,
+      "band": "(0.25,0.45]",
+      "band_index": 1,
+      "rows": 800,
+      "model": 0.195,
+      "curve_teacher": 0.205,
+      "curve_oracle": 0.905,
+      "model_minus_teacher": -0.009999999999999981,
+      "oracle_minus_model": 0.71,
+      "oracle_minus_teacher": 0.7000000000000001
+    },
+    {
+      "group_id": 2,
+      "band": "(0.45,0.70]",
+      "band_index": 2,
+      "rows": 949,
+      "model": 0.24025289778714437,
+      "curve_teacher": 0.19599578503688092,
+      "curve_oracle": 0.8177028451001054,
+      "model_minus_teacher": 0.04425711275026345,
+      "oracle_minus_model": 0.5774499473129611,
+      "oracle_minus_teacher": 0.6217070600632244
+    },
+    {
+      "group_id": 2,
+      "band": "(0.70,1.10]",
+      "band_index": 3,
+      "rows": 1202,
+      "model": 0.40931780366056575,
+      "curve_teacher": 0.42013311148086524,
+      "curve_oracle": 0.85108153078203,
+      "model_minus_teacher": -0.010815307820299491,
+      "oracle_minus_model": 0.4417637271214642,
+      "oracle_minus_teacher": 0.43094841930116473
+    },
+    {
+      "group_id": 3,
+      "band": "(0.10,0.25]",
+      "band_index": 0,
+      "rows": 1058,
+      "model": 0.43100189035916825,
+      "curve_teacher": 0.3799621928166352,
+      "curve_oracle": 0.8412098298676749,
+      "model_minus_teacher": 0.05103969754253307,
+      "oracle_minus_model": 0.41020793950850665,
+      "oracle_minus_teacher": 0.4612476370510397
+    },
+    {
+      "group_id": 3,
+      "band": "(0.25,0.45]",
+      "band_index": 1,
+      "rows": 797,
+      "model": 0.22082810539523212,
+      "curve_teacher": 0.20200752823086573,
+      "curve_oracle": 0.6587202007528231,
+      "model_minus_teacher": 0.018820577164366387,
+      "oracle_minus_model": 0.437892095357591,
+      "oracle_minus_teacher": 0.45671267252195735
+    },
+    {
+      "group_id": 3,
+      "band": "(0.45,0.70]",
+      "band_index": 2,
+      "rows": 809,
+      "model": 0.20395550061804696,
+      "curve_teacher": 0.18170580964153277,
+      "curve_oracle": 0.5067985166872683,
+      "model_minus_teacher": 0.02224969097651419,
+      "oracle_minus_model": 0.3028430160692213,
+      "oracle_minus_teacher": 0.3250927070457355
+    },
+    {
+      "group_id": 3,
+      "band": "(0.70,1.10]",
+      "band_index": 3,
+      "rows": 817,
+      "model": 0.2215422276621787,
+      "curve_teacher": 0.18604651162790697,
+      "curve_oracle": 0.32558139534883723,
+      "model_minus_teacher": 0.035495716034271735,
+      "oracle_minus_model": 0.10403916768665852,
+      "oracle_minus_teacher": 0.13953488372093026
+    }
+  ],
+  "band_mean_model_minus_teacher": {
+    "0": 0.03299183802191417,
+    "1": 0.0006904736029702726,
+    "2": 0.05296419684293604,
+    "3": -0.017216031400495574
+  },
+  "checks": {
+    "V1_coverage": 1.0,
+    "V1_pass": true,
+    "V2_unrestricted_hit": 0.3067212258401532,
+    "V2_restricted_hit": 0.3067212258401532,
+    "V2_pass": true
+  },
+  "g2_mid_oracle_gap_rank": 9,
+  "hypotheses": {
+    "H1_oracle_bounds_model_everywhere": true,
+    "H2_model_beats_curve_teacher": true,
+    "H3_surplus_max_in_low_band": false,
+    "H4_g2_mid_little_room_left": false
+  },
+  "limitation": "\ub098\uc140 \ud48d\uc18d\uacc4\ub294 \ub85c\ud130 \ub4a4\ub77c \uc790\uc720\uc720\uc785\ud48d\uc18d\uc774 \uc544\ub2c8\ub2e4(A5; IEC 61400-12-1). `CURVE_ORACLE` \uc740 \uc704\ucabd\uc73c\ub85c \ud3b8\ud5a5\ub41c \uc0c1\ud55c\uc774\uba70 \uadf8\ub807\uac8c\ub9cc \uc77d\ub294\ub2e4. \ub2e4\ub9cc C59 \uc640 \ub2ec\ub9ac \ud559\uc2b5\uc774 \uc5c6\uace0 \ucee4\ube0c \ud55c \ubc88 \ud1b5\uacfc\uc774\ubbc0\ub85c \uc6b4\uc804\uc0c1\ud0dc\uac00 **\ud53c\ucc98\ub85c** \uc0c8\ub294 \uacbd\ub85c\ub294 \uc5c6\ub2e4.",
+  "verdict": "MODEL_SURPLUS_NOT_LOW_BAND_CONCENTRATED",
+  "no_training": true,
+  "dacon_upload": false,
+  "lockbox_used": false,
+  "generated_at": "2026-08-05T11:44:56.295533+00:00",
+  "digest": "abc6cabc1548effe"
+}

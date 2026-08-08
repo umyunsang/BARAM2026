@@ -1,0 +1,184 @@
+{
+  "schema_version": 1,
+  "node_id": "S17-N24_SECONDARY_FRONTIER_RESEARCH_INTAKE",
+  "status": "CLOSED_INCONCLUSIVE_NO_READY_CANDIDATE_FAIL_CLOSED",
+  "created_at": "2026-08-09T00:35:29.212906+09:00",
+  "predeclaration": {
+    "path": "reports/s17_n24_secondary_frontier_intake_predeclaration.json",
+    "sha256": "c8f7a8dc3c861aaaf417b952c8411c246949364f8b95e5b874ca3330d716ba24",
+    "event_sha256": "c6218732b686f81238750ee7bc3aa41c17c46f7681487bc32020d83975c265e1",
+    "input_bundle_sha256": "fb469daa495ca33ab7113137ee99ec94eb2b17c17f56aebc11d117cca967fc29",
+    "input_hashes_reverified_unchanged": true,
+    "input_file_count": 20
+  },
+  "authoritative_state": {
+    "champion_total": 0.6314827308346854,
+    "target_total": 0.66,
+    "gap": 0.0285172691653146,
+    "comparison_count_before": 4,
+    "comparison_count_after": 4,
+    "next_score_bearing_comparison_index": 5,
+    "lockbox_2024_used": false,
+    "dacon_actions": []
+  },
+  "lane_artifacts": [
+    {
+      "id": "ISSUED_SCHEMA_COVERAGE",
+      "path": "research/lanes/s17_n24_issued_schema_coverage.md",
+      "sha256": "a7cc2db5b9ffcf39e7ada7e21d27e7c56316086579ec349a4e3baec312d708eb",
+      "verdict": "FREEZE_NONE_SCOPE_BREACH: all 35 GFS and 30 LDAPS payload variables are represented; five omitted string/identity literals are group-static, duplicate, or have no unique semantics."
+    },
+    {
+      "id": "PHYSICAL_STABILITY_HUB_WIND",
+      "path": "research/lanes/s17_n24_physical_stability_hub_wind.md",
+      "sha256": "aa61193d58c5174f69b095bba58474134c25d1c8e18bbbd0b917ce5bd9e11ff0",
+      "verdict": "NONE_READY: the coefficient-complete whole-boundary-layer profile requires absent friction velocity, roughness and Obukhov-length/flux state; existing hub transfers are duplicates."
+    },
+    {
+      "id": "CFSV2_EXACT_TREATMENT",
+      "path": "research/lanes/s17_n24_cfsv2_exact_treatment.md",
+      "sha256": "7c9257d20b0659b030686e780b2c22d84b26845d0f2442c35dfbe7d6f7e334bc",
+      "verdict": "NOT_READY_PREREQUISITE_ONLY / NONE: one frozen D-2 00Z four-member 10 m treatment is written, but latency, continuity, anonymous route, literal GRIB/grid/time semantics and provider support for engineering choices remain unverified; external-NWP axis is already closed."
+    },
+    {
+      "id": "CURTAILMENT_MARKET_FORECAST",
+      "path": "research/lanes/s17_n24_curtailment_market_forecast.md",
+      "sha256": "200395700f6ac311c40ec0498cb6d5d6ce89f238b5a81b544400aa937910a797",
+      "verdict": "NONE_READY: public planned maintenance/outage near matches lack commercial licence, electrical farm/group mapping and a zero-choice impact formula; plant-specific plans are after basis/non-public; public API is late/system-level."
+    },
+    {
+      "id": "OPEN_TERRAIN_FLOW_RUNTIME",
+      "path": "research/lanes/s17_n24_open_terrain_flow_runtime.md",
+      "sha256": "2bdda85de015d1664a22c34a3ea93e84932b8062ac17c26d1f752b5415809e25",
+      "verdict": "NONE_READY: root-independent reconstruction found WindNinja/WindMapper/GWOCSS/Helbig/WindSeer have absent runtimes and/or many unresolved physical/domain/group choices; no install prerequisite cures them."
+    }
+  ],
+  "lane_bundle_sha256": "31f588f7e4da984c452cf3965861d6a86e0414804a6023bdf90bf8e529fd3a9e",
+  "root_audit": {
+    "ready_executable_or_prerequisite_candidate_count": 0,
+    "selected_candidate": null,
+    "decision": "INCONCLUSIVE_NONE_READY",
+    "issued_schema_reproduction": {
+      "prepare_feature_count": 820,
+      "documented_gfs_payload_count": 35,
+      "documented_ldaps_payload_count": 30,
+      "required_statistics": [
+        "mean",
+        "std",
+        "min",
+        "max",
+        "q10",
+        "q50",
+        "q90"
+      ],
+      "missing_required_feature_names": {
+        "gfs": [],
+        "ldaps": []
+      },
+      "result": "NO_UNUSED_NUMERIC_PAYLOAD"
+    },
+    "near_match_dispositions": [
+      {
+        "id": "CFSV2_D2_00Z_M01TO04_VECTOR_MEAN_WND10M_BILINEAR_LINEAR6H_SPEED",
+        "status": "NOT_SELECTED",
+        "reasons": [
+          "formula contains provider-unprescribed engineering choices",
+          "issue-level availability/continuity/access/schema unverified",
+          "external operational-NWP source family is closed on existing correlation/value evidence"
+        ]
+      },
+      {
+        "id": "KPX_PLANNED_OUTAGES",
+        "status": "NOT_SELECTED",
+        "reasons": [
+          "no exact electrical crosswalk to the farm/groups",
+          "no provider impact coefficient/formula",
+          "commercial and immutable transport incomplete"
+        ]
+      },
+      {
+        "id": "OPEN_TERRAIN_FLOW",
+        "status": "NOT_SELECTED",
+        "reasons": [
+          "unchanged Apple-M1 runtime absent",
+          "multiple substantive configuration choices",
+          "N23 site/group mapping blockers uncured"
+        ]
+      }
+    ],
+    "decision_basis": [
+      "No lane completes the directly-supported chronology/licence/deployment/formula/nonduplication chain.",
+      "A frozen analyst specification does not turn unverified provider semantics into direct support.",
+      "Selecting NONE consumes no comparison and prevents scope-exposed or near-match evidence from driving execution."
+    ]
+  },
+  "scope_accounting": {
+    "research_children_spawned": 5,
+    "designated_lane_files_present": 5,
+    "child_authored_lane_files": 4,
+    "root_reconstructed_lane_files": 1,
+    "external_data_catalogue_or_object_queries": 0,
+    "external_data_or_weight_bodies": 0,
+    "external_inference_calls": 0,
+    "model_fits": 0,
+    "prediction_calls": 0,
+    "policy_calls": 0,
+    "metric_or_score_calls": 0,
+    "actual_kwh_or_raw_label_reads": 0,
+    "raw_2024_or_test_dataset_value_reads": 0,
+    "dependency_changes": 0,
+    "dacon_or_account_actions": [],
+    "scope_incident_count": 2,
+    "scope_incidents": [
+      {
+        "lane": "ISSUED_SCHEMA_COVERAGE",
+        "description": "The child rendered permitted N24/N23 JSON files in full and thereby exposed aggregate model-score fields contrary to the content-level lane restriction.",
+        "raw_row_or_label_values_exposed": false,
+        "used_for_decision": false,
+        "containment": "child selected NONE; root independently reproduced the 35/30 manifest coverage from source/feature names; breached score fields grant no evidence credit."
+      },
+      {
+        "lane": "ROOT_DISCOVERY",
+        "description": "One broad discovery grep printed pre-existing development-result narrative lines while checking a physical-feature name.",
+        "raw_row_or_label_values_exposed": false,
+        "2024_or_test_values_exposed": false,
+        "used_for_decision": false,
+        "containment": "output discarded; root relied only on the predeclared RWA closed-axis input and whitelisted source/manifest checks."
+      }
+    ],
+    "delivery_incident": {
+      "lane": "OPEN_TERRAIN_FLOW_RUNTIME",
+      "description": "Child timed out/completed before a durable designated file.",
+      "containment": "root independently re-fetched six project/official documentation pages, reproduced local runtime absence, authored the fail-closed lane, and used no child conclusion as authority."
+    },
+    "fail_closed_effect": "No candidate, fit, acquisition prerequisite, comparison or score was authorized."
+  },
+  "validation": {
+    "pytest": {
+      "command": ".venv/bin/python -m pytest -q",
+      "result": "PASS",
+      "tests_passed": 217,
+      "warnings": 144,
+      "stdout_sha256": "aa7907a2275a599a62cd950173c129aa987b610134587011b28c9c25472b49f8"
+    },
+    "ruff": {
+      "command": ".venv/bin/ruff check src tests scripts/recover_m115_terrain_no_refit.py scripts/run_m115_terrain_sx300_strict.py",
+      "result": "PASS",
+      "stdout_sha256": "5b196eb3a6acb50d3fa398d04ca284985cc1ffec870e940264b00780bfd2c971"
+    },
+    "immutable_inputs": {
+      "competition_zip_sha256": "920be0c458d820e855bf79dd25723146f52ce1736138aedba5e6bc853f1f720b",
+      "baseline_notebook_sha256": "712b26f4d2748860c94cff1e0100c23810468c983173f8e9ef8d009fe82df48c"
+    }
+  },
+  "comparison": {
+    "score_bearing": false,
+    "comparison_index": null,
+    "official_total": null,
+    "champion_changed": false
+  },
+  "next_handoff": [
+    "S17-N25_TERTIARY_FRONTIER_RESEARCH_INTAKE"
+  ],
+  "success": false
+}

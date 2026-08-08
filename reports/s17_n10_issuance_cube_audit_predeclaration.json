@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "node_id": "S17-N10_ISSUANCE_CUBE_TIMING_AND_MISSINGNESS_AUDIT",
+  "stage": "S3_데이터정밀분석",
+  "kind": "train_weather_metadata_audit_non_score_bearing",
+  "predeclared_at": "2026-08-08T20:24:29.681389+09:00",
+  "parent": "S17-N9_COST5_NO_REFIT_MATERIALIZATION_RECOVERY",
+  "evidence": [
+    {
+      "path": "research/rwa_data_feature_research.md",
+      "sha256": "16351bb387dfebf0dc7ccdc6ef0e8ec77406964bf3d0b40c52fcdc3496284504"
+    },
+    {
+      "path": "reports/s17_n9_cost5_recovery_receipt.json",
+      "sha256": "792545c5ce7127452b18f19b077657e1f9c1ba4e257eef05e5c82c072542a9e0"
+    }
+  ],
+  "purpose": "Materialize the source/run/availability/valid/lead/grid/variable metadata that can be proven from supplied training NWP, count source/run missingness, and decide whether current hourly support is validated or requires the frozen four-mapping R1 diagnostic.",
+  "input_bundle": {
+    "sha256": "a54a05bc4026c5b0fd7ffaf6c23b3c22d1cb2ff0c84b9f9d6c0f2e9abde2d582",
+    "files": {
+      "inputs/competition/open_wind_236727.zip": "920be0c458d820e855bf79dd25723146f52ce1736138aedba5e6bc853f1f720b",
+      "src/baram/data/canonical.py": "868a2d460d99f1a6bd71e900b20fb977a682090ae8f1c6d31a009992ad50ad34",
+      "src/baram/data/quality.py": "5992c93bcd2a4a87b885b2ff1d4c328b3e69001d106742f04a1093619c4f71ab",
+      "research/rwa_data_feature_research.md": "16351bb387dfebf0dc7ccdc6ef0e8ec77406964bf3d0b40c52fcdc3496284504",
+      "artifacts/manifests/prepare.json": "ca4908d7f98639b13da80febcd071cd805369e8e044bb4d7b97f793d2703ca46"
+    }
+  },
+  "scope": {
+    "archive_members": [
+      "train/gfs_train.csv",
+      "train/ldaps_train.csv"
+    ],
+    "years": [
+      2022,
+      2023
+    ],
+    "forbidden_members": [
+      "test/*",
+      "train/train_labels.csv",
+      "train/scada_*"
+    ],
+    "read_values_only_for_finite_missingness_counts": true
+  },
+  "cube_contract": {
+    "key": [
+      "source",
+      "data_available_kst_dtm",
+      "forecast_kst_dtm",
+      "lead_hour",
+      "grid_id",
+      "variable"
+    ],
+    "derived_operating_day": "(forecast_kst_dtm-1h).normalize",
+    "basis": "operating_day-1d+14h",
+    "required_availability": "data_available_kst_dtm <= basis",
+    "expected_hours_per_issue": 24,
+    "expected_leads": "derive, do not assume",
+    "duplicate_rule": "unique source/availability/valid/grid row",
+    "missing_states": [
+      "entire source/issue absent",
+      "variable absent",
+      "grid absent",
+      "isolated nonfinite value"
+    ]
+  },
+  "audit_questions": [
+    "Does supplied metadata distinguish forecast reference/run from actual availability?",
+    "Does it define instant versus interval/accumulation support for each variable?",
+    "Are LDAPS/GFS issue timestamps and leads identical and basis-safe?",
+    "Are all expected source/issue/hour/grid rows present?",
+    "What are per-variable nonfinite rates and whole-source/issue gaps?",
+    "Does current canonical code preserve source, reference, temporal support and quality state?"
+  ],
+  "tri_state": {
+    "VALIDATED": "reference/cycle and temporal support are explicit and current mapping matches",
+    "AMBIGUOUS": "availability/valid are safe but reference or temporal support is absent; hand off exactly t,t-1,mean(t-1,t),mean(t,t+1)",
+    "INVALID": "basis violation, cross-run join, duplicate, or material source/run gap invalidates current pipeline"
+  },
+  "outputs": {
+    "script": "scripts/audit_issuance_cube.py",
+    "report": "artifacts/audits/s17_n10_issuance_cube.json",
+    "receipt": "reports/s17_n10_issuance_cube_audit_receipt.json"
+  },
+  "actions": {
+    "model_fits": 0,
+    "target_or_scada_access": false,
+    "official_score_calls": 0,
+    "comparison_index": null
+  },
+  "forbidden": [
+    "test data",
+    "power labels/SCADA",
+    "model fit/score",
+    "2024 lockbox",
+    "Dacon/account",
+    "remote inference",
+    "dependency change",
+    "post-hoc mapping choice"
+  ],
+  "pass_label": "PASS_METADATA_AUDIT_ONLY_NOT_MODEL_SCORE"
+}

@@ -1,0 +1,514 @@
+{
+ "queries": [
+  {
+   "q": "noaa-gefs-pds AWS Open Data Registry GEFS",
+   "r": "Results for query \"noaa-gefs-pds AWS Open Data Registry GEFS\":\n\nResult 0: NOAA Global Ensemble Forecast System (GEFS)\nURL: https://registry.opendata.aws/noaa-gefs/\nThe Global Ensemble Forecast System (GEFS), is a weather forecast model made up of 21 separate forecasts, or ensemble members.\n\n---\n\nResult 1: NOAA Global Ensemble Forecast System (GEFS) - AWS\nURL: https://aws.amazon.com/marketplace/pp/prodview-qumzmkzc2acri\nThe Global Ensemble Forecast System (GEFS), previously known as the GFS Global ENSemble (GENS), is a weather forecast model made up of 21 separate forecasts ...\n\n---\n\nResult 2: open-data-registry/datasets/noaa-gefs-reforecast.yaml at ...\nURL: https://github.com/awslabs/open-data-registry/blob/main/datasets/noaa-gefs-reforecast.yaml\nA registry of publicly available datasets on AWS. NOAA Global Ensemble Forecast System (GEFS) generated a multi-decadal reanalysis and reforecast data set - ...\n\n---\n\nResult 3: GEFS Reforecast V2 Project - Physical Sciences Laboratory\nURL: https://psl.noaa.gov/forecasts/reforecast2/\nGEFSv12 reforecasts spanning 2000-2019 are available via Amazon Web Services for free download, at https://noaa-gefs-retrospective.s3.amazonaws.com/index.html.\n\n---\n\nResult 4: NOAA Global Ensemble Forecast System (GEFS) Re-forecast\nURL: https://aws.amazon.com/marketplace/pp/prodview-ae4rze4k5yi74\nNOAA has generated a multi-decadal reanalysis and reforecast data set to accompany the next-generation version of its ensemble prediction system, the Global ...",
+   "t": "2026-08-07T17:40:42"
+  },
+  {
+   "q": "GEFS pgrb2s p25 variables list 100 m wind UGRD 100 m above ground GEFS 0.25 degree",
+   "r": "Results for query \"GEFS pgrb2s p25 variables list 100 m wind UGRD 100 m above ground GEFS 0.25 degree\":\n\nResult 0: NOAA GEFS analysis · dynamical.org\nURL: https://source.coop/dynamical/noaa-gefs-analysis\nGlobal Spatial resolution 0.25 degrees (~20km) _u_100m 100 metre ・ source data is available at 0.25-degree resolution ・ 100m wind components ...\n\n---\n\nResult 1: Grib Filter gfs_0p25\nURL: https://nomads.ncep.noaa.gov/gribfilter.php?ds=gfs_0p25\nGFS Forecasts (0.25 degree grid) 100 m above ground 1000 … download all variables. To get data for these variables, click on \"all\" variables.\n\n---\n\nResult 2: GEFS — Herbie 2026.3.1.dev35+g0e27359f2 documentation\nURL: https://herbie.readthedocs.io/en/latest/gallery/noaa_models/gefs.html\nThe GEFS model product could be any of the following: 'atmos.5' - Half degree atmos PRIMARY fields (pgrb2ap5); ~83 most common variables.\n\n---\n\nResult 3: NOAA AIGEFS Surface Forecast API\nURL: https://gribstream.com/models/aigefssfc\nCurrent selectors include 10 m and 100 m U/V wind components, 2 m dew point, 2 m specific humidity, 2 m temperature, mean sea-level pressure, surface pressure, ...\n\n---\n\nResult 4: Reforecast Data Storage Information The GEFSv12 system ...\nURL: https://noaa-gefs-retrospective.s3.amazonaws.com/Description_of_reforecast_data.pdf\nFor most grib2 files, the data are provided on a grid with a 0.25-degree grid spacing, archived every 3 hours for the first 10 days of the forecast; Archived ...",
+   "t": "2026-08-07T17:41:03"
+  },
+  {
+   "q": "GEFS v12 output variables 80 m above ground UGRD VGRD pgrb2a pgrb2b inventory",
+   "r": "Results for query \"GEFS v12 output variables 80 m above ground UGRD VGRD pgrb2a pgrb2b inventory\":\n\nResult 0: NCEP Data Products GEFS - NCEP Central Operations - NOAA\nURL: https://www.nco.ncep.noaa.gov/pmb/products/gens/\nGEFS - Atmos - pgrb2a (longitude-latitude grid) (0.5 degree resolution) Most commonly used parameters. Filename, Inventory. Control, gec00.tCCz.\n\n---\n\nResult 1: GEFS — Herbie 2026.3.1.dev35+g0e27359f2 documentation\nURL: https://herbie.readthedocs.io/en/latest/gallery/noaa_models/gefs.html\nThe GEFS model product could be any of the following: 'atmos.5' - Half degree atmos PRIMARY fields (pgrb2ap5); ~83 most common variables.\n\n---\n\nResult 2: Meteorological data - FALL3D User Guide\nURL: https://fall3d-suite.gitlab.io/fall3d/hands-on/session1.html\nLet's see how to get weather forecast data from GFS using the scripts gfs.py and gefs.py included in the FALL3D distribution under the folder Other/Meteo/Utils ...\n\n---\n\nResult 3: NOUS41 KWBC 171325 AAD\nURL: https://www.weather.gov/media/notification/tins/tin15-43gefs_aad.pdf\nGEFS product data files, 166 new variables will be added. UGRD: 300, 400mb VGRD: including UGRD and VGRD wind components\n\n---\n\nResult 4: Reforecast Data Storage Information The GEFSv12 system ...\nURL: https://noaa-gefs-retrospective.s3.amazonaws.com/Description_of_reforecast_data.pdf\nAt this site you will find information on accessing. NOAA GEFSv12 reforecast data on ​Amazon Web Services​ and on NOAA's “rzdm” server, available at ftp://ftp.\n\n---\n\nPeople Also Ask:\nQ: What is the Gefs model?\nQ: What time does the GFS model come out?\nQ: What is Gefs?",
+   "t": "2026-08-07T17:41:04"
+  },
+  {
+   "q": "ECMWF open data real-time forecasts licence CC-BY-4.0 Creative Commons Attribution 4.0",
+   "r": "Results for query \"ECMWF open data real-time forecasts licence CC-BY-4.0 Creative Commons Attribution 4.0\":\n\nResult 0: Open data\nURL: https://www.ecmwf.int/en/forecasts/datasets/open-data\nECMWF Open Data provides access to real-time forecast data on a rolling archive basis. Data are retained for the most recent 12 forecast runs,\n\n---\n\nResult 1: ECMWF makes its entire Real-time Catalogue open to all\nURL: https://www.ecmwf.int/en/about/media-centre/news/2025/ecmwf-makes-its-entire-real-time-catalogue-open-all\nAccess the full catalogue and attribution. The entire ECMWF Real-time Catalogue is available under a Creative Commons CC-BY-4.0 licence ...\n\n---\n\nResult 2: Use of data accessed via this service - Forecasts - ECMWF\nURL: https://apps.ecmwf.int/datasets/licences/general/\nLicence Statement: This ECMWF data is published under a Creative Commons Attribution 4.0 International (CC BY 4.0). https://creativecommons.org/licenses/by/4.0/ ...\n\n---\n\nResult 3: In a landmark move, ECMWF is poised to announce a new ...\nURL: https://www.eurekalert.org/news-releases/1100113\nECMWF has chosen the Creative Commons CC-BY-4.0 licence for all of its open data. Under the CC-BY-4.0 licence, attribution is a legal ...\n\n---\n\nResult 4: ECMWF Open Data (real-time) - Planetary Computer - Microsoft\nURL: https://planetarycomputer.microsoft.com/dataset/ecmwf-forecast\nLicense Statement: This ECMWF data is published under a Creative Commons Attribution 4.0 International (CC BY 4.0). https://creativecommons.org/licenses/by/4.0/ ...",
+   "t": "2026-08-07T17:42:22"
+  },
+  {
+   "q": "ecmwf-forecasts AWS open data registry ECMWF real-time open data",
+   "r": "Results for query \"ecmwf-forecasts AWS open data registry ECMWF real-time open data\":\n\nResult 0: ECMWF real-time forecasts - Registry of Open Data on AWS\nURL: https://registry.opendata.aws/ecmwf-forecasts/\nThese products are a subset of the ECMWF real-time forecast data and are made available to the public free of charge. They are based on the medium-range (high- ...\n\n---\n\nResult 1: AWS Marketplace: ECMWF real-time forecasts - Amazon.com\nURL: https://aws.amazon.com/marketplace/pp/prodview-ykwikoqdzpamo\nThese products are a subset of the ECMWF real-time forecast data and are made available to the public free of charge. They are based on the medium-range ...\n\n---\n\nResult 2: Open data\nURL: https://www.ecmwf.int/en/forecasts/datasets/open-data\nRolling archive and data availability: ECMWF Open Data provides access to real-time forecast data on a rolling archive basis. Data are retained for the most ...\n\n---\n\nResult 3: ECMWF makes its entire Real-time Catalogue open to all\nURL: https://www.ecmwf.int/en/about/media-centre/news/2025/ecmwf-makes-its-entire-real-time-catalogue-open-all\nECMWF has made its Real-time Catalogue open, advancing its open data strategy and supporting global efforts to improve early warnings and ...\n\n---\n\nResult 4: open-data-registry/datasets/ecmwf-forecasts.yaml at main\nURL: https://github.com/awslabs/open-data-registry/blob/main/datasets/ecmwf-forecasts.yaml\nThese products are a subset of the ECMWF real-time forecast data and are made available to the public free of charge. They are based on the medium-range (high- ...",
+   "t": "2026-08-07T17:42:24"
+  },
+  {
+   "q": "noaa-oar-mlwp-data AWS open data registry machine learning weather prediction FourCastNet Pangu GraphCast",
+   "r": "Results for query \"noaa-oar-mlwp-data AWS open data registry machine learning weather prediction FourCastNet Pangu GraphCast\":\n\nResult 0: AI Weather Prediction (AIWP) Model Reforecasts\nURL: https://registry.opendata.aws/aiwp/\nThis is an archive of pure AI-based weather prediction reforecasts. Pangu-Weather, and GraphCast are included, available from 10/2020 to present, while ...\n\n---\n\nResult 1: AI Weather Prediction (AIWP) Model Reforecasts - AWS\nURL: https://aws.amazon.com/marketplace/pp/prodview-cjmveqlu2ttkk\nFourCastNetv2-small and Pangu-Weather are available from 10/2020 to present, while GraphCast is available from 01/2022 to present. -oar-mlwp-data\n\n---\n\nResult 2: Accelerating Community-Wide Evaluation of AI Models for ...\nURL: https://journals.ametsoc.org/view/journals/bams/106/1/BAMS-D-24-0057.1.pdf\nby JT Radford · 2025 · Cited by 19 — FourCastNet v2-small, Pangu-Weather, and GraphCast Operational is now available via an Amazon Simple Storage Service (S3) bucket through NOAA's Open Data ...\n\n---\n\nResult 3: Accelerating Community-Wide Evaluation of AI Models for ...\nURL: https://par.nsf.gov/servlets/purl/10596341\nby JT Radford · 2025 · Cited by 20 — FourCastNet v2-small, Pangu-Weather, and GraphCast Operational is now available via an Amazon Simple Storage Service (S3) bucket through NOAA's Open Data ...\n\n---\n\nResult 4: open-data-registry/datasets/noaa-nws-fourcastnetgfs.yaml ...\nURL: https://github.com/awslabs/open-data-registry/blob/main/datasets/noaa-nws-fourcastnetgfs.yaml\nThe FourCastNetGFS system is an experimental weather forecast model built upon the pre-trained Nvidia's FourCastNet Machine Learning Weather Prediction (MLWP) ...",
+   "t": "2026-08-07T17:43:48"
+  },
+  {
+   "q": "AWS open data registry Meteo-France ARPEGE AROME s3 bucket open data",
+   "r": "Results for query \"AWS open data registry Meteo-France ARPEGE AROME s3 bucket open data\":\n\nResult 0: AWS Marketplace: Atmospheric Models from Météo-France\nURL: https://aws.amazon.com/marketplace/pp/prodview-powejeffft672\nAROME France covers France at a base horizontal resolution of 0.025° (~2.5km) between grid points, it predicts weather out up to 42 hours in the future.\n\n---\n\nResult 1: Atmospheric Models from Météo-France\nURL: https://registry.opendata.aws/meteo-france-models/\nRegistry of Open Data on AWS Registry. AROME France covers France at a base horizontal resolution of 0.025° (~2.5km) between grid points, it predicts weather ...\n\n---\n\nResult 2: open-data-registry/datasets/meteo-france-models.yaml at ...\nURL: https://github.com/awslabs/open-data-registry/blob/main/datasets/meteo-france-models.yaml\nA registry of publicly available datasets on AWS. AROME France covers France at a base horizontal resolution of 0.025° (~2.5km) between grid points, it ...\n\n---\n\nResult 3: AWS Marketplace: Open-Meteo Weather API Database\nURL: https://aws.amazon.com/marketplace/pp/prodview-xuxpchnliaxda\nAROME France covers France at a base horizontal resolution of 0.025° (~2.5km) between grid points, it predicts weather out up to 42 hours in the future.\n\n---\n\nResult 4: 66 new or updated datasets available on the Registry of ...\nURL: https://aws.amazon.com/blogs/publicsector/66-new-or-updated-datasets-available-on-the-registry-of-open-data-on-aws/\nThrough the AWS Open Data Sponsorship Program, customers are making over 300 PB of high-value, cloud-optimized data available for public use.",
+   "t": "2026-08-07T17:43:51"
+  },
+  {
+   "q": "Meteo-France open data ARPEGE archive meteo.data.gouv.fr historique archives 2023",
+   "r": "Results for query \"Meteo-France open data ARPEGE archive meteo.data.gouv.fr historique archives 2023\":\n\nResult 0: Données Publiques de Météo-France - Accueil\nURL: https://donneespubliques.meteofrance.fr/\nMétéo France. Données Publiques de Météo-France. Retrouvez-y informations, documents et ressources utiles. OPEN DATA METEO-FRANCE. Données climatologiques et ...\n\n---\n\nResult 1: Météo-France\nURL: https://www.data.gouv.fr/organizations/meteo-france\nLes paquets de données des Prévisions Numériques du Temps sont archivés 14 jours et mis à disposition sur une plateforme dédiée disponible ici. Vous pouvez y ...\n\n---\n\nResult 2: Météo-France Open Data\nURL: https://www.r-bloggers.com/2023/12/meteo-france-open-data/\nMétéo-France has started to widen its open archive data. Get some information about the available files for the daily data (Données ...\n\n---\n\nResult 3: Guide données météorologiques | Guides sur les données\nURL: https://guides.data.gouv.fr/guides/reutiliser-des-donnees/prise-en-main-des-donnees-meteorologiques\nPassez par data.gouv.fr ; · Cherchez l'organisation Météo-France et rendez-vous sur sa page ; · Allez dans l'onglet \"Informations\" ;.\n\n---\n\nResult 4: https://www.data.gouv.fr/api/1/organizations/meteo...\nURL: https://www.data.gouv.fr/api/1/organizations/meteo-france/datasets.csv\n\";\"Météo-France\";\"534fff8ba3a7292c64a77ed4\";\"\";\"\";\"La. Les données sont disponibles à partir du 28/11/2022. Pour les données antérieures, consultez public. ...",
+   "t": "2026-08-07T17:45:01"
+  },
+  {
+   "q": "mf-models-on-aws.org documentation ARPEGE world archive retention how long data kept",
+   "r": "Results for query \"mf-models-on-aws.org documentation ARPEGE world archive retention how long data kept\":\n\nResult 0: Data retention - Amazon Bedrock\nURL: https://docs.aws.amazon.com/bedrock/latest/userguide/data-retention.html\nuser prompts and completions are shared with Anthropic and retained for up to 30 days for trust and safety purposes.\n\n---\n\nResult 1: Enforce zero data retention on Amazon Bedrock with ...\nURL: https://aws.amazon.com/blogs/security/enforce-zero-data-retention-on-amazon-bedrock-with-bedrock-projects-and-service-control-policies/\nData is shared with the model provider and retained for up to 30 days for trust and safety. Yes. Understanding mode as a ceiling, not a floor.\n\n---\n\nResult 2: Data Archiving in AWS | Amazon Web Services\nURL: https://aws.amazon.com/archive/\nAWS offers archive storage solutions for long term retention, retrieval in minutes or free bulk retrievals in 5-12 hours. This webinar reviews the AWS archive ...\n\n---\n\nResult 3: Minimum required data storage duration for AWS Capacity ...\nURL: https://forums.veeam.com/viewtopic.php?f=52&t=85239&start=0\nGFS restore points with a retention longer than 180 days can be moved. Your weekly backups only have a retention of 4 weeks, the minimum required retention time\n\n---\n\nResult 4: AWS Bedrock to require sharing data with Anthropic ...\nURL: https://www.reddit.com/r/aws/comments/1u1yt4k/aws_bedrock_to_require_sharing_data_with/\nAnthropic will require 30-day retention for all traffic on Mythos-class models. After 30 days, the data is deleted automatically, except in the ...",
+   "t": "2026-08-07T17:45:03"
+  },
+  {
+   "q": "Open-Meteo AWS open data registry s3 openmeteo bucket weather api database",
+   "r": "Results for query \"Open-Meteo AWS open data registry s3 openmeteo bucket weather api database\":\n\nResult 0: Open-Meteo Weather API Database\nURL: https://registry.opendata.aws/open-meteo/\nDescription. Open-Meteo integrates weather models from reputable national weather services, offering a swift and efficient weather API.\n\n---\n\nResult 1: AWS Marketplace: Open-Meteo Weather API Database\nURL: https://aws.amazon.com/marketplace/pp/prodview-xuxpchnliaxda\nThrough Open-Meteo on AWS Open Data, you can download the Open-Meteo weather database and analysis weather data locally. Docker images are provided to download ...\n\n---\n\nResult 2: Open-Meteo on AWS Open Data\nURL: https://github.com/open-meteo/open-data\nOpen-Meteo provides a free API for quick data retrieval without the need to download from the AWS bucket. However, there are two primary scenarios where ...\n\n---\n\nResult 3: open-data-registry/datasets/open-meteo.yaml at main\nURL: https://github.com/awslabs/open-data-registry/blob/main/datasets/open-meteo.yaml\nThrough Open-Meteo on AWS Open Data, you can download the Open-Meteo weather database and analysis weather data locally. Docker images are provided to download ...\n\n---\n\nResult 4: Open-Meteo Weather API Database\nURL: https://scigantic.com/archive/a6046263-7268-580c-bad6-37b1ab93aec3\nThrough Open-Meteo on AWS Open Data, you can download the Open-Meteo weather database and analysis weather data locally. Docker images are provided to download ...\n\n---\n\nPeople Also Ask:\nQ: Is Open-Meteo weather API free?\nA: Open-Meteo is an open-source weather API and offers free access for non-commercial use. No API key is required. You can use it immediately!\nQ: What is Open-Meteo Weather_api?\nQ: Where does Open-Meteo get its data from?\nA: Weather datasets are sourced from the following national weather services: Forecast: NOAA NCEP, DWD, ECMWF, Environment Canada, MeteoFrance, JMA, BOM, CMA, Met Norway, DMI, KNMI, KMA, ItaliaMeteo, MeteoSwiss. Marine Weather: ECMWF, MeteoFrance, Copernicus Marine, DWD, NOAA NCEP. Air Quality: CAMS.",
+   "t": "2026-08-07T17:45:43"
+  },
+  {
+   "q": "Open-Meteo Historical Forecast API license terms CC BY 4.0 commercial use",
+   "r": "Results for query \"Open-Meteo Historical Forecast API license terms CC BY 4.0 commercial use\":\n\nResult 0: Pricing\nURL: https://open-meteo.com/en/pricing\nOpen-Meteo relies on open data that is licenced under Attribution 4.0 International (CC BY 4.0). This licence mandates giving appropriate credit\n\n---\n\nResult 1: ‍⚖️ Licence\nURL: https://open-meteo.com/en/licence\nLicence API data are offered under Attribution 4.0 International (CC BY 4.0) You are free to share: copy and redistribute the material in any medium or format ...\n\n---\n\nResult 2: ‍⚖️ Terms\nURL: https://open-meteo.com/en/terms\nYou may only use the free API services for non-commercial purposes. You accept to the CC-BY 4.0 licence, as specified in the licence conditions. We reserve ...\n\n---\n\nResult 3: Open-Meteo.com: 🌤️ Free Open-Source Weather API\nURL: https://open-meteo.com/\nAll data served by the API is licenced under CC BY 4.0 — free to use and redistribute, including for commercial purposes, with attribution.\n\n---\n\nResult 4: ️ Features\nURL: https://open-meteo.com/en/features\nOpen-Meteo provides free weather forecast and historical weather APIs with global coverage, up to 1 km resolution, and 80+ years of reanalysis data.",
+   "t": "2026-08-07T17:45:44"
+  },
+  {
+   "q": "ECMWF open data dissemination schedule availability time HRES 00 UTC real-time open data delay",
+   "r": "Results for query \"ECMWF open data dissemination schedule availability time HRES 00 UTC real-time open data delay\":\n\nResult 0: Open data\nURL: https://www.ecmwf.int/en/forecasts/datasets/open-data\nECMWF Open Data provides access to real-time forecast data on a rolling archive basis. Data are retained for the corresponding to approximately 2–3 days of ...\n\n---\n\nResult 1: Real-time data delivery\nURL: https://www.ecmwf.int/en/forecasts/access-forecasts/data-delivery\nReal-time data can be delivered to users either ​directly by ECMWF or via the chosen Member or Co-operating State National Meteorological Service.\n\n---\n\nResult 2: ECMWF real-time forecasts - Registry of Open Data on AWS\nURL: https://registry.opendata.aws/ecmwf-forecasts/\nIFS data is published according to the real-time dissemination schedule, while AIFS data is published as soon as it is available for dissemination. License.\n\n---\n\nResult 3: ECMWF Transitions to Open Data - by Patrick Zippenfenig\nURL: https://openmeteo.substack.com/p/ecmwf-transitions-to-open-data\nECMWF's open-data stream was limited … reduced time resolution and an additional 2 hours delay.\n\n---\n\nResult 4: ECMWF IFS 15-day Forecast (open) | Arraylake Marketplace\nURL: https://app.earthmover.io/marketplace/6971be98fc964a0d0fb66e04\nForecasts are run from initial conditions valid at 00 and 12 UTC, Forecasts become available to users several hours after these times. fixed time every ...\n\n---\n\nPeople Also Ask:\nQ: What is ECMWF HRES?\nA: The deterministic model of the European Center for Medium-Range Weather Forecast (ECMWF), is a global, atmospheric and hydrostatic numerical forecast model. The official name of the model is HRES-IFS, which stands for High Resolution Integrated Forecast System.\nQ: Is ECMWF transitioned to open data?\nA: Transition to Open Data\n\nECMWF achieved a fully open data status on 01 October 2025. All products in the ECMWF Real-time Catalogue are now under a CC-BY-4.0 licence with no Information Cost.\nQ: What time does ECMWF update?",
+   "t": "2026-08-07T17:47:44"
+  },
+  {
+   "q": "NCEP production suite schedule GEFS 00Z availability time pgrb2b",
+   "r": "Results for query \"NCEP production suite schedule GEFS 00Z availability time pgrb2b\":\n\nResult 0: Current Status of NCEP Model Production\nURL: https://www.nco.ncep.noaa.gov/pmb/nwprod/prodstat/\nCURRENT STATUS OF THE NCEP PRODUCTION SUITE AT 30 Jul 2026 19:42 GMT ... 20:00:46, SCHEDULED, ON-TIME. 36hr PRODUCTS, 20:01:34, 20:11:05, SCHEDULED, ON-TIME.\n\n---\n\nResult 1: NCEP Data Products GEFS - NCEP Central Operations - NOAA\nURL: https://www.nco.ncep.noaa.gov/pmb/products/gens/\nGEFS - Atmos - pgrb2a (longitude-latitude grid) (0.5 degree resolution) 840(00Z only) Available in GRIB2 via FTP. Available in GRIB2 via FTP\n\n---\n\nResult 2: NOUS41 KWBC 171325 AAD\nURL: https://www.weather.gov/media/notification/tins/tin15-43gefs_aad.pdf\nThere will be several changes in the 1-degree GEFS product data files, affects files with names pgrb2a/pgrb2b. The GEFS products disseminated.\n\n---\n\nResult 3: NCEP Data Products GFS and GDAS\nURL: https://www.nco.ncep.noaa.gov/pmb/products/gfs/\nGlobal Data Assimilation System (GDAS) Click to view what is available. Available in GRIB2 via ftp. Available in GRIB2 via ftp … pgrb2.0p50 and ...\n\n---\n\nResult 4: NOAA GEFS forecast, 35 day · dynamical.org\nURL: https://source.coop/dynamical/noaa-gefs-forecast-35-day\nThis dataset contains only the 00 hour UTC initialization times which produce the full-length, 35-day forecast.\n\n---\n\nPeople Also Ask:\nQ: What is the difference between GEFS and GFS?\nQ: What time do updated weather models come out?\nQ: What is the NOAA GEFS model?\nA: The Global Ensemble Forecast System (GEFS) is a weather model created by the National Centers for Environmental Prediction (NCEP) that generates 21 separate forecasts (ensemble members) to address underlying uncertainties in the input data such limited coverage, instruments or observing systems biases, and the ...",
+   "t": "2026-08-07T17:47:46"
+  },
+  {
+   "q": "Open-Meteo Historical Forecast API documentation data availability start date ERA5 reanalysis fill archive 2022",
+   "r": "Results for query \"Open-Meteo Historical Forecast API documentation data availability start date ERA5 reanalysis fill archive 2022\":\n\nResult 0: ️ Historical Weather API\nURL: https://open-meteo.com/en/docs/historical-weather-api\nGap-free and consistent historical weather data using weather reanalysis from ERA5 (0.25°, from 1940) access past weather data dating back to 1940 in 0.1 or 0. ...\n\n---\n\nResult 1: Historical Forecast API\nURL: https://open-meteo.com/en/docs/historical-forecast-api\nCoverage starts around 2022. Depending on the model and public archive availability, data is available starting from 2021 or 2022. ERA5 reanalysis at\n\n---\n\nResult 2: Introducing the Historical Forecast API - Open-Meteo\nURL: https://openmeteo.substack.com/p/introducing-the-historical-forecast\nThe \"Historical Weather API\" is based on reanalysis weather models, particularly ERA5. It offers data from 1940 onwards with consistent quality ...\n\n---\n\nResult 3: ️ Features\nURL: https://open-meteo.com/en/features\nOpen-Meteo provides free weather forecast and historical weather APIs with global coverage, up to 1 km resolution, and 80+ years of reanalysis data.\n\n---\n\nResult 4: open-data/README.md at main · open-meteo/open-data\nURL: https://github.com/open-meteo/open-data/blob/main/README.md\nWith Open-Meteo on AWS Open Data, you can download temperature data for the past 80 years using the Copernicus ERA5-Land dataset.",
+   "t": "2026-08-07T17:49:16"
+  },
+  {
+   "q": "気象庁 数値予報GPV MSM 京都大学 RISH アーカイブ 利用条件 商用 気象業務支援センター",
+   "r": "Results for query \"気象庁 数値予報GPV MSM 京都大学 RISH アーカイブ 利用条件 商用 気象業務支援センター\":\n\nResult 0: メソ数値予報モデルGPV（MSM）\nURL: https://www.jmbsc.or.jp/jp/online/file/f-online10200.html\n2006(平成18)年3月から、計算の格子間隔を5kmメッシュに細分化するとともに、運用回数を1日4回から8回としました。\n\n---\n\nResult 1: 生存圏データベース - 京都大学\nURL: https://database.rish.kyoto-u.ac.jp/\n気象業務支援センターを通して提供される気象庁作成の数値予報・観測データを公開しています。\n\n---\n\nResult 2: 気象データの全体像 ＋ 気象データの⼊⼿⽅法\nURL: https://www.wxbc.jp/wp-content/uploads/2019/01/seminar_180130_00.pdf\n気象庁のスーパーコンピュータシステム等で作成されたGPVデータ（格⼦点データ）や. 気象レーダー等の気象データがファイルとして分岐配信されます。 気象庁の地震活動等 ...\n\n---\n\nResult 3: QGISで気象データを扱ってみよう！〜気象庁GPV ...\nURL: https://qgis.mierune.co.jp/posts/usecase_jma-weather-data\nGPVデータの取得 ... 気象庁が提供しているGPVは通常、「気象業務支援センター」より有償で受け取ることができるほか、民間の気象会社などから購入も可能 ...\n\n---\n\nResult 4: GPVサンプルデータの一覧\nURL: https://www.data.jma.go.jp/developer/gpv_sample.html\nソ数値予報モデルGPV (MSM) 解析データから統計手法を用いて作成する、天気、降水量、降水確率などの予報要素を直接示す予測資料。\n\n---\n\nPeople Also Ask:\nQ: MSM気象モデルとは何ですか？\nA: 日本メソスケールモデル (MSM) は、気象庁 (JMA) により開発され運用されている高解像度の数値気象予報 (NWP) モデルのことです。 MSMは、特に豪雨、暴風雨、その他の局所的気象現象などの詳細な短期予報を提供する目的で作成されています。\nQ: 気象業務支援センターのファイル形式は？\nA: 概要 ファイル形式データ配信サービスは、気象庁から提供されるGPV（Grid Point Value, 格子点値）等のデータを、当センターの配信システムで分岐配信するものです。 データはFTP(put)、SFTP(put)方式で配信します。May 28, 2026\nQ: 全球数値予報モデルGPVとは何ですか？\nA: 全球数値予報モデルGPV及び観測・解析データから統計手法を用いて作成する、天気、降水量、降水確率などの予報要素を直接示す予測資料。Mar 29, 2024",
+   "t": "2026-08-07T17:51:42"
+  },
+  {
+   "q": "ECMWF real-time dissemination schedule HRES 00 UTC delivery complete 06:55 UTC ensemble 08:20",
+   "r": "Results for query \"ECMWF real-time dissemination schedule HRES 00 UTC delivery complete 06:55 UTC ensemble 08:20\":\n\nResult 0: IFS Medium-range Control forecast (formerly HRES) and ...\nURL: https://www.ecmwf.int/en/forecasts/datasets/set-i\nECMWF's highest-resolution model IFS Medium range Control forecast offers 4 forecast runs per day (00/06/12/18) (see dissemination schedule for details) Hourly ...\n\n---\n\nResult 1: Real-time data delivery\nURL: https://www.ecmwf.int/en/forecasts/access-forecasts/data-delivery\nReal-time data can be delivered to users either ​directly by ECMWF or via the chosen Member or Co-operating State National Meteorological Service.\n\n---\n\nResult 2: Open data\nURL: https://www.ecmwf.int/en/forecasts/datasets/open-data\nECMWF Open Data provides access to real-time forecast data on a rolling archive basis. IFS cycles (00, 06, 12 and 18 UTC).\n\n---\n\nResult 3: ECMWF IFS 15-day Forecast (open) | Arraylake Marketplace\nURL: https://app.earthmover.io/marketplace/6971be98fc964a0d0fb66e04\nForecasts are run from initial conditions valid at 00 and 12 UTC, as well as shorter supplementary forecasts from 06 and 18 UTC. Forecasts become available to ...\n\n---\n\nResult 4: Medium-range forecasts\nURL: https://www.ecmwf.int/en/forecasts/documentation-and-support/medium-range-forecasts\nForecasts are run from initial conditions valid at 00 and 12 UTC, and there are also shorter supplementary forecasts run from 06 and 18 UTC.\n\n---\n\nPeople Also Ask:\nQ: What is ECMWF HRES?\nA: The deterministic model of the European Center for Medium-Range Weather Forecast (ECMWF), is a global, atmospheric and hydrostatic numerical forecast model. The official name of the model is HRES-IFS, which stands for High Resolution Integrated Forecast System.\nQ: Is ECMWF a free service?\nA: A subset of ECMWF real-time forecast data from the IFS and AIFS models is made available to the public free of charge.\nQ: What is the most accurate European weather model?",
+   "t": "2026-08-07T17:53:31"
+  },
+  {
+   "q": "opendata.dwd.de ICON numerical weather prediction data availability retention deleted after 24 hours archive",
+   "r": "Results for query \"opendata.dwd.de ICON numerical weather prediction data availability retention deleted after 24 hours archive\":\n\nResult 0: Our services - NWP forecast data\nURL: https://www.dwd.de/EN/ourservices/nwp_forecast_data/nwp_forecast_data.html\nThe ICON-EU forecasts are available up to +120 hours. ICON-D2 provides new 48-hour forecasts every 3 hours. our free DWD Open Data Server, Data E-mail opendata ...\n\n---\n\nResult 1: openclimatefix/dwd-icon-global · Datasets at Hugging Face\nURL: https://huggingface.co/datasets/openclimatefix/dwd-icon-global\nNote: The raw files are deleted after 24 hours, and there is no long-term archive available publicly. Uses. This data is intended for use in renewable energy ...\n\n---\n\nResult 2: ICON (Icosahedral Nonhydrostatic) Model\nURL: https://www.dwd.de/EN/research/weatherforecasting/num_modelling/01_num_weather_prediction_modells/icon_description.html\nICON needs about 8 minutes wallclock time per forecast day on DWD's supercomputer and produces about 900 GB of data per 7-day forecast.\n\n---\n\nResult 3: DWD ICON Weather Model Archive · dynamical.org\nURL: https://source.coop/dynamical/dwd-icon-grib\nDWD maintains only a 24-hour rolling window of files on their servers, some of which we archive here. The files are in GRIB (GRIdded Binary) ...\n\n---\n\nResult 4: Our services - Open Data Server\nURL: https://www.dwd.de/EN/ourservices/opendata/opendata.html\nThe climate data of the DWD will continue to be provided on the server of DWD's Climate Data Center (CDC) at https://opendata.dwd.de/climate_environment/CDC/.",
+   "t": "2026-08-07T17:53:33"
+  },
+  {
+   "q": "Pangu-Weather GitHub 198808xc license BY-NC-SA pretrained weights commercial use",
+   "r": "Results for query \"Pangu-Weather GitHub 198808xc license BY-NC-SA pretrained weights commercial use\":\n\nResult 0: 198808xc/Pangu-Weather: An official implementation of ...\nURL: https://github.com/198808xc/Pangu-Weather\nThe trained parameters of Pangu-Weather were made available under the terms of the BY-NC-SA 4.0 license. You. The commercial use of these models is forbidden.\n\n---\n\nResult 1: ecmwf-lab/ai-models-panguweather\nURL: https://github.com/ecmwf-lab/ai-models-panguweather\nThe trained parameters of Pangu-Weather are made available under the terms of the BY-NC-SA 4.0 license. The commercial use of these models is forbidden.\n\n---\n\nResult 2: zhaoshan2/pangu-pytorch: Weather forecast at 24- ...\nURL: https://github.com/zhaoshan2/pangu-pytorch\nOur implementation closely adheres to the pseudocode provided in the GitHub repository at https://github.com/198808xc/Pangu-Weather. ... pretrained weights ...\n\n---\n\nResult 3: Helmholtz-AI-Energy/pangu_weather\nURL: https://github.com/Helmholtz-AI-Energy/pangu_weather\nThis repository implements the Pangu-Weather model [1] based on the official pseudocode [2] in pytorch with support for batch sizes > 1. Usage. Installation.\n\n---\n\nResult 4: Releases · 198808xc/Pangu-Weather\nURL: https://github.com/198808xc/Pangu-Weather/releases\nAn official implementation of Pangu-Weather. Contribute to 198808xc/Pangu-Weather development by creating an account on GitHub.\n\n---\n\nPeople Also Ask:\nQ: What is Pangu Weather AI?\nA: Pangu-Weather can generate a global weather forecast within seconds, with all factors taken into consideration, such as geopotential, humidity, wind speed, temperature, and sea-level pressure.",
+   "t": "2026-08-07T17:54:29"
+  },
+  {
+   "q": "GraphCast google-deepmind license CC BY-NC-SA 4.0 model weights commercial use prohibited",
+   "r": "Results for query \"GraphCast google-deepmind license CC BY-NC-SA 4.0 model weights commercial use prohibited\":\n\nResult 0: weights license - use of graphcast · Issue #59\nURL: https://github.com/google-deepmind/graphcast/issues/59\nAs an employee with the US Government (National Weather Service), we're not going to directly use graphcast weights for commercial purposes.\n\n---\n\nResult 1: GenCast predicts weather and the risks of extreme ...\nURL: https://deepmind.google/blog/gencast-predicts-weather-and-the-risks-of-extreme-conditions-with-sota-accuracy/\nNew AI model advances the prediction of weather uncertainties and risks, delivering faster, more accurate forecasts up to 15 days ahead.\n\n---\n\nResult 2: shermansiu/dm_graphcast_small\nURL: https://huggingface.co/shermansiu/dm_graphcast_small\nThe model weights are made available for use under the terms of the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC ...\n\n---\n\nResult 3: Google DeepMind GraphCast and GenCast\nURL: https://github.com/google-deepmind/weathernext\nThe model weights are made available for use under the terms of the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0).\n\n---\n\nResult 4: Learning skillful medium-range global weather forecasting\nURL: https://www.youtube.com/watch?v=lZlm1YSdQ9E\nGraphCast, a machine learning–based method trained directly from reanalysis data. It predicts hundreds of weather variables for the next 10 ...\n\n---\n\nPeople Also Ask:\nQ: What is the difference between GenCast and GraphCast?\nA: Meanwhile, GraphCast is limited to a 10-day prediction horizon, which restricts its usefulness for long-term planning . The extended prediction capability of GenCast enables more strategic decision-making and risk assessment in various critical areas .\nQ: Is Google DeepMind better than Ecmwf?\nA: Google DeepMind's GraphCast outperformed ECMWF's flagship HRES model on 90% of 1,380 verification targets in a head-to-head benchmark (Science, December 2023). Huawei's Pangu-Weather ran 10,000× faster than conventional ensemble models in peer-reviewed tests (Nature, July 2023).Jul 14, 2026\nQ: How accurate is Google DeepMind?\nA: Trained on 40 years of historical data from the European Centre for Medium-Range Weather Forecasts (ECMWF), this AI model has proven its ability to predict weather more accurately than ECMWF's industry- standard ENS forecast 97.4% of the time overall and an impressive 99.8% for forecasts beyond 36 hours.Dec 7, 2024",
+   "t": "2026-08-07T17:54:31"
+  },
+  {
+   "q": "dynamical.org catalog noaa gefs forecast 35 day 100m wind variable data availability 2020 zarr",
+   "r": "Results for query \"dynamical.org catalog noaa gefs forecast 35 day 100m wind variable data availability 2020 zarr\":\n\nResult 0: NOAA GEFS forecast, 35 day\nURL: https://dynamical.org/catalog/noaa-gefs-forecast-35-day/\nSource data is available at both 0.25-degree and 0.5-degree resolutions. All variables except the 100m wind components are derived from a 0.25-degree grid for ...\n\n---\n\nResult 1: NOAA GEFS analysis\nURL: https://dynamical.org/catalog/noaa-gefs-analysis/\nThe Global Ensemble Forecast System (GEFS) NOAA GEFS forecast, 35 day - time-optimized Examples ・ to present forecasts are available every 6 hours ・ 100m ...\n\n---\n\nResult 2: NOAA GEFS analysis · dynamical.org\nURL: https://source.coop/dynamical/noaa-gefs-analysis\nWeather analysis from the Global Ensemble Forecast System (GEFS) model operated by NOAA NWS NCEP, transformed into Zarr format by dynamical.org.\n\n---\n\nResult 3: noaa-gefs-forecast-35-day.ipynb\nURL: https://colab.research.google.com/github/dynamical-org/notebooks/blob/main/noaa-gefs-forecast-35-day.ipynb\nA brief introduction to the NOAA GEFS forecast dataset transformed into an analysis-ready, cloud-optimized format by dynamical.org.\n\n---\n\nResult 4: AWS Marketplace: NOAA GEFS - dynamical.org Icechunk Zarr\nURL: https://aws.amazon.com/marketplace/pp/prodview-vly24egvcnss6\nThese datasets have been translated to cloud-optimized Icechunk Zarr format by [dynamical.org](https://dynamical.org). - [NOAA GEFS forecast, 35 day](https:// ...",
+   "t": "2026-08-07T17:55:02"
+  },
+  {
+   "q": "NCEP GEFS 00Z model run completion time production schedule available UTC pgrb2b 0.5 degree",
+   "r": "Results for query \"NCEP GEFS 00Z model run completion time production schedule available UTC pgrb2b 0.5 degree\":\n\nResult 0: Global Ensemble Forecast System (GEFS)\nURL: https://www.ncei.noaa.gov/products/weather-climate-models/global-ensemble-forecast\nThe Global Ensemble Forecast System (GEFS) is a weather model created by the National Centers for Environmental Prediction (NCEP) that generates 21 separate ...\n\n---\n\nResult 1: NOAA GEFS forecast, 35 day · dynamical.org\nURL: https://source.coop/dynamical/noaa-gefs-forecast-35-day\nThis dataset contains only the 00 hour UTC initialization times which produce the full-length, 35-day forecast.\n\n---\n\nResult 2: NCEP Data Products GEFS - NCEP Central Operations - NOAA\nURL: https://www.nco.ncep.noaa.gov/pmb/products/gens/\nInformation about the GEFS Model NN is the number (name) of ensemble members (c00, p01-p30) CC is the current cycle (00, 06, 12, 18)\n\n---\n\nResult 3: NCEP GFS 0.25 Degree Global Forecast Grids Historical ...\nURL: https://data.ucar.edu/dataset/ncep-gfs-0-25-degree-global-forecast-grids-historical-archive\nModel forecast runs occur at 00, 06, 12, and 18 UTC daily. For real-time data access please use the NCEP data server [http://www.nco.ncep.noaa.gov/pmb ...\n\n---\n\nResult 4: NOUS41 KWBC 201455\nURL: https://www.weather.gov/media/notification/pdf2/scn20-75gefs_v12_changes.pdf\nGEFS will have its time window expanded from approximately one hour to about three hours, starting about one hour earlier and finishing about ...\n\n---\n\nPeople Also Ask:\nQ: What is the Gefs model?\nQ: How often does the GFS model run?\nA: GFS (Global Forecast System) Forecast Model\n\nThis model replaced the AVN and MRF models and gives forecast information out to 384 hours, and are updated once every 6 hours by roughly 04:00 and 10:00 PST.\nQ: What is NCEP GFS?\nA: The Global Forecast System (GFS) is a weather forecast model produced by the National Centers for Environmental Prediction (NCEP). Dozens of atmospheric and land-soil variables are available through this dataset, from temperatures, winds, and precipitation to soil moisture and atmospheric ozone concentration.",
+   "t": "2026-08-07T17:55:04"
+  },
+  {
+   "q": "NCEP production suite schedule GEFS \"available\" time chart nco pmb prodstat GEFS 00Z 05:00 UTC",
+   "r": "Results for query \"NCEP production suite schedule GEFS \"available\" time chart nco pmb prodstat GEFS 00Z 05:00 UTC\":\n\nResult 0: NCEP Data Products GFS and GDAS\nURL: https://www.nco.ncep.noaa.gov/pmb/products/gfs/\nUse as a guide when selecting specific parameters from NOMADS. Click to view what is available. DESCRIPTION, NCEP FTP/HTTP SERVER File Name, NWS ...",
+   "t": "2026-08-07T17:55:33"
+  },
+  {
+   "q": "KMA 기상청 API 허브 수치예보모델 GDPS LDPS 과거 자료 제공 기간 archive 2023",
+   "r": "Results for query \"KMA 기상청 API 허브 수치예보모델 GDPS LDPS 과거 자료 제공 기간 archive 2023\":\n\nResult 0: 기상청 API허브\nURL: https://apihub.kma.go.kr/\n예특보. 초단기, 단기, 중기예보의 기온, 바람, 강수량 등 데이터를 제공하며, 폭염, 한파, 호우 등 10종의 기상특보(주의보, 경보) 데이터를 제공합니다.\n\n---\n\nResult 1: 기상청 수치모델자료(경량화) 조회서비스\nURL: https://data.edmgr.kr/dataView.do?id=www-data-go-kr-data-openapi-15043588\n날씨예측, 예보자료 생산을 위해 수치예보시스템에서 생산된 수치예보모델 자료입니다. (전지구, 지역, 국지, 초단기, 파랑, 폭풍해일, 해구별 예측정보, 기후 모델 등).\n\n---\n\nResult 2: 기상청_수치예보모델 조회서비스\nURL: https://www.data.go.kr/data/15139467/openapi.do?recommendDataYn=Y\n현재 기상청에서는 GDAPS 예측자료를 GRIB2형식과 이미지형태로 생산, 제공하고 있습니다. (국지) 국지예보모델(LDAPS,)은 3시간 간격으로 전지구 예보모델로부터 경계 ...\n\n---\n\nResult 3: 기상청 데이터 다운로드하는 방법! - 네이버 블로그\nURL: https://m.blog.naver.com/kma_131/223984885065\n대상 자료는 레이더, 위성, 수치모델이며 FTP를 통해 제공하고 있습니다. 해당 자료는 즉시 다운로드를 할 수 없고 신청하고 일정 시간이 지난 후에 ...\n\n---\n\nResult 4: 기상청 API허브\nURL: https://esac.jejunu.ac.kr/data/51672651-5fe8-4622-9fb8-a2eedae5147c\n예특보: 초단기, 단기, 중기예보의 기온, 바람, 강수량 등 데이터를 제공하며, 폭염, 한파, 호우 등 10종의 기상특보(주의보, 경보) 데이터를 제공합니다.",
+   "t": "2026-08-07T17:55:34"
+  },
+  {
+   "q": "FourCastNet v2 small license NVIDIA modulus weights terms commercial use ai-models fourcastnetv2",
+   "r": "Results for query \"FourCastNet v2 small license NVIDIA modulus weights terms commercial use ai-models fourcastnetv2\":\n\nResult 0: Earth-2 FourCastNet - NGC Catalog - NVIDIA\nURL: https://catalog.ngc.nvidia.com/orgs/nim/teams/nvidia/containers/fourcastnet\nThe container components are ready for commercial/non-commercial use. License/Terms of Use governed by the NVIDIA AI Product Agreement;\n\n---\n\nResult 1: Modulus Checkpoints: FourCastNet V2 Small | NVIDIA NGC\nURL: https://catalog.ngc.nvidia.com/orgs/nvidia/teams/modulus/models/modulus_fcnv2_sm\nFourCastNet V2 is a deep learning model for weather prediction that uses Spherical Harmonics Neural Operators. Download.\n\n---\n\nResult 2: NVlabs/FourCastNet: Initial public release of code, data, ...\nURL: https://github.com/NVlabs/FourCastNet\nWe discuss how data-driven deep learning models such as FourCastNet are a valuable addition to the meteorology toolkit to aid and augment NWP models.\n\n---\n\nResult 3: fourcastnet Model by NVIDIA\nURL: https://build.nvidia.com/nvidia/fourcastnet/modelcard\nFourCastNet is a data-driven model. This model is ready for commercial use. This model is licensed under the NVIDIA AI Product Agreement. License Terms of Use\n\n---\n\nResult 4: (EXPERIMENTAL) NOAA FourCastNet Global Forecast ...\nURL: https://registry.opendata.aws/noaa-nws-fourcastnetgfs/\nThe FourCastNetGFS system is an experimental weather forecast model built upon the pre-trained Nvidia's FourCastNet Machine Learning Weather Prediction (MLWP) ...",
+   "t": "2026-08-07T17:56:09"
+  },
+  {
+   "q": "CaSPAr archive Environment Canada GDPS HRDPS numerical weather prediction archive registration license",
+   "r": "Results for query \"CaSPAr archive Environment Canada GDPS HRDPS numerical weather prediction archive registration license\":\n\nResult 0: (PDF) The Canadian Surface Prediction Archive (CaSPAr)\nURL: https://www.researchgate.net/publication/337134920_The_Canadian_Surface_Prediction_Archive_CaSPAr_A_Platform_to_Enhance_Environmental_Modeling_in_Canada_and_Globally\nThe Canadian Surface Prediction Archive (CaSPAr) is an archive of numerical weather predictions issued by Environment and Climate Change Canada.\n\n---\n\nResult 1: The Canadian Surface Prediction Archive (CaSPAr)\nURL: https://scispace.com/pdf/the-canadian-surface-prediction-archive-caspar-a-platform-to-1eek6dgwio.pdf\nThe Canadian Surface Prediction Archive (CaSPAr) is an archive of numerical weather predictions issued by Environment and Climate Change Canada.\n\n---\n\nResult 2: ECCC HRDPS Weather Model Archive · dynamical.org\nURL: https://source.coop/dynamical/eccc-hrdps-grib\nECCC HRDPS Weather Model Archive ; Visibility: Public ; Created: 10 Jul 2026 ; Last Updated: 3 Aug 2026.\n\n---\n\nResult 3: The Canadian Surface Prediction Archive (CaSPAr)\nURL: https://ui.adsabs.harvard.edu/abs/2020BAMS..101E.341M/abstract\nby J Mai · 2020 · Cited by 61 — The Canadian Surface Prediction Archive (CaSPAr) is an archive of numerical weather predictions issued by Environment and Climate Change Canada.\n\n---\n\nResult 4: MSC Open Data FAQ\nURL: https://eccc-msc.github.io/open-data/faq/readme_en/\nEnvironment and Climate Change Canada does not have an online service to retrieve archived data. We charge 118$/hour, with a minimum charge of 118$, to ...\n\n---\n\nPeople Also Ask:\nQ: Does Canada have a NOAA equivalent?\nQ: What is HRDPS?\nA: The High Resolution Deterministic Prediction System (HRDPS) carries out physics calculations to arrive at deterministic predictions of atmospheric elements from the current day out to 48 hours into the future.\nQ: What is GDPS weather?\nA: The Global Deterministic Prediction System (GDPS) is a coupled atmosphere (GEM), ocean and sea ice (NEMO-CICE) deterministic numerical weather prediction model. Forecasts are carried out twice a day for 10 days lead time.",
+   "t": "2026-08-07T17:56:11"
+  },
+  {
+   "q": "気象庁 数値予報GPV 利用 著作権 二次利用 商用利用 可能 気象庁ホームページ利用規約",
+   "r": "Results for query \"気象庁 数値予報GPV 利用 著作権 二次利用 商用利用 可能 気象庁ホームページ利用規約\":\n\nResult 0: 気象庁ホームページについて\nURL: https://www.jma.go.jp/jma/kishou/info/coment.html\n利用規約; 気象庁ホームページへのウェブ広告掲載について; リンクについて; 個人情報保護について; 気象庁ホームページにおける気象情報の配色について; 利用環境 ...\n\n---\n\nResult 1: 気象データ高度利用ポータルサイト\nURL: https://www.data.jma.go.jp/developer/index.html\n気象庁が作成・提供する数値予報や観測、予報に関するデータには、規則正しい格子点(Grid Point)に区切って計算をしているものがあります。\n\n---\n\nResult 2: 気象庁クラウド環境\nURL: https://www.jmbsc.or.jp/jp/online/x-online0.html\n気象庁クラウドからのみ提供するデータ(オンライン配信 局地数値予報モデル(LFM)GPV モデル面データ, (2026/3/17提供開始)\n\n---\n\nResult 3: 気象研究所ホームページについて\nURL: https://www.mri-jma.go.jp/Information/info_general.html\n当所ホームページにおける以下の項目について、「気象庁ホームページについて」に記載の内容を準用します。 ・利用規約 ・リンクについて ・個人情報保護について\n\n---\n\nResult 4: 【初心者向け】 気象データの基礎知識 資料 （統合版）\nURL: https://www.wxbc.jp/wp-content/uploads/2019/08/resume-data_all.pdf\n1 気象データの概要・特徴・データ形式. 2 主な気象データの紹介（地上気象観測）. 3 主な気象データの紹介（レーダー気象観測）. 4 主な気象データの紹介（気象衛星観測）.\n\n---\n\nPeople Also Ask:\nQ: 気象庁のデータは著作権で保護されますか？\nA: A 気象や地震などのデータは、それ自体では著作物に当たりません。 そのデータを「図表」や「編集物(データベース)」に表現したものであれば、著作物として保護される可能性があります。 著作権法による保護を受けるためには、「思想又は感情」が表現されたものでなければなりません。Jun 26, 2025\nQ: 気象庁のAPIは商用利用できますか？\nQ: 天気予報は違法ですか？\nA: 日本では、天気予報業務を行う場合、気象庁長官の「許可」を受けることが法律（気象業務法第17条）で義務付けられています。 誤った予報が社会に流れることは、人命や経済活動に直結する大きな混乱を招く恐れがあります。Apr 24, 2026",
+   "t": "2026-08-07T17:59:33"
+  },
+  {
+   "q": "ECMWF open data 2022 launch CC-BY-4.0 0.4 degree real-time forecasts free January 2022 announcement",
+   "r": "Results for query \"ECMWF open data 2022 launch CC-BY-4.0 0.4 degree real-time forecasts free January 2022 announcement\":\n\nResult 0: Open data\nURL: https://www.ecmwf.int/en/forecasts/datasets/open-data\nECMWF Open Data provides access to real-time forecast data on a rolling archive basis. Data are retained for the most recent 12 forecast runs,\n\n---\n\nResult 1: ECMWF makes its entire Real-time Catalogue open to all\nURL: https://www.ecmwf.int/en/about/media-centre/news/2025/ecmwf-makes-its-entire-real-time-catalogue-open-all\nOpen means that ECMWF no longer restricts access to its forecast products: they are licensed under Creative Commons (CC-BY-4.0) and can be ...\n\n---\n\nResult 2: 1. Introduction\nURL: https://arxiv.org/html/2605.21673v1\nThis article describes ECMWF's transition (2020–2025) from a restricted licensing model to open access under CC BY 4.0, implemented through a tiered model that ...\n\n---\n\nResult 3: In a landmark move, ECMWF is poised to announce a new ...\nURL: https://www.eurekalert.org/news-releases/1100113\nFrom 1 October, ECMWF will make its forecast data free and open at a 25 km resolution in real time with what we call no latency - no delay.\n\n---\n\nResult 4: ECMWF real-time forecasts - Registry of Open Data on AWS\nURL: https://registry.opendata.aws/ecmwf-forecasts/\nDescription. These products are a subset of the ECMWF real-time forecast data and are made available to the public free of charge.",
+   "t": "2026-08-07T17:59:34"
+  },
+  {
+   "q": "기상자료개방포털 수치모델 과거 자료 다운로드 LDAPS GDAPS GRIB 제공 기간",
+   "r": "Results for query \"기상자료개방포털 수치모델 과거 자료 다운로드 LDAPS GDAPS GRIB 제공 기간\":\n\nResult 0: 단·중기예측:국지예보모델(LDAPS) - 기상자료개방포털\nURL: https://data.kma.go.kr/data/rmt/rmtList.do?code=340&pgmNo=65\n1. 검색을 통해 조회된 결과 목록에서 다운로드 받을 자료 선택 후 담기 버튼 선택합니다. 2. '마이페이지 > 대용량자료신청대기목록'에서 다운로드를 신청합니다. ※ 최대 ...\n\n---\n\nResult 1: 수치모델:단·중기예측:지역예보모델(RDAPS) - 기상자료개방포털\nURL: https://data.kma.go.kr/data/rmt/rmtList.do?code=312&pgmNo=64\n... 제공(제공기간/방법: 2021.1.~/웹 다운로드). * 1회 최대 신청용량 100GB. * 최근 1년 자료까지만 제공. ※ 2026년 3월 중 통합모델(UM) 자료가 제공 중단 예정입니다.\n\n---\n\nResult 2: 수치모델\nURL: https://apihub.kma.go.kr/apiList.do?seqApi=9\n(국지) 국지예보모델(LDAPS, Local Data Assimilation and Prediction System)은 3시간 간격으로 전지구 예보모델로부터 경계장을 제공받아 1일 4회 예측을 수행하는 수치 ...\n\n---\n\nResult 3: 기상청 데이터 다운로드하는 방법! - 네이버 블로그\nURL: https://m.blog.naver.com/kma_131/223984885065\n기상자료개방포털에서는 해당 자료를 특정 기간 동안 조회해서 다운받는 방식으로 제공하고 있습니다. 자료 조회를 위한 검색 조건 설정 화면.\n\n---\n\nResult 4: 메타데이터:수치예보모델:변수별 설명 - 기상자료개방포털\nURL: https://data.kma.go.kr/tmeta/selectNumericalModelList.do?pgmNo=745\n기상자료개방포털. 상,12시간) 분석일기도(지상,3시간) 지역예보모델(RDAPS) 국지예보모델(LDAPS) 분석(KL05)자료 파랑모델 … 압/고도 바람 강수량 구름",
+   "t": "2026-08-07T17:59:36"
+  },
+  {
+   "q": "KMA API Hub 수치모델 자료 제공 기간 최근 며칠 과거자료 신청 FTP",
+   "r": "Results for query \"KMA API Hub 수치모델 자료 제공 기간 최근 며칠 과거자료 신청 FTP\":\n\nResult 0: 기상청 API허브\nURL: https://apihub.kma.go.kr/\n수치모델. 통합모델(UM)과 한국형수치예보모델(KIM)로 생산한 전구·지역·국지예보모델 예측데이터를 영상자료와 데이터파일로 제공합니다.\n\n---\n\nResult 1: 기상청 데이터 다운로드하는 방법! - 네이버 블로그\nURL: https://m.blog.naver.com/kma_131/223984885065\n대상 자료는 레이더, 위성, 수치모델이며 FTP를 통해 제공하고 있습니다. 해당 자료는 즉시 다운로드를 할 수 없고 신청하고\n\n---\n\nResult 2: 기상청 대용량데이터 활용방법 안내.pdf\nURL: https://www.kwra.or.kr/!/download/?path=/media/17/board/2024/05/02/%EA%B8%B0%EC%83%81%EC%B2%AD_%EB%8C%80%EC%9A%A9%EB%9F%89%EB%8D%B0%EC%9D%B4%ED%84%B0_%ED%99%9C%EC%9A%A9%EB%B0%A9%EB%B2%95_%EC%95%88%EB%82%B4.pdf&filename=%EA%B8%B0%EC%83%81%EC%B2%AD%20%EB%8C%80%EC%9A%A9%EB%9F%89%EB%8D%B0%EC%9D%B4%ED%84%B0%20%ED%99%9C%EC%9A%A9%EB%B0%A9%EB%B2%95%20%EC%95%88%EB%82%B4.pdf&ct=76&oi=19146\n※ API로 개발되어 있지 않은 데이터의 제공 신청 시 별도의 개발기간이 소요. 사용: 로그인 없이 전달 받은 인증키와 호출URL로 신청한 데이터 API로 획득 ...\n\n---\n\nResult 3: 기상청 지상(종관, ASOS) 일자료 조회서비스\nURL: https://data.edmgr.kr/dataView.do?id=www-data-go-kr-data-openapi-15059093\n예보시스템에서 생산된 수치자료 및 관측자료를 이용하여 기상 변수들에 대한 기호와 등치선 등으로 이루어진 일기도를 제공합니다.기상관측을 … 하게 분석한 일기도를 서 ...\n\n---\n\nResult 4: 기상청_수치예보모델 그래픽 조회서비스\nURL: https://www.data.go.kr/data/15139468/openapi.do?recommendDataYn=Y\n수치분석일기도는 수치예보시스템에서 생산된 수치자료 및 관측자료를 이용하여 기상 변수들에 대한 기호와 등치선 등으로 이루어진 일기도를 뜻하며, 일기예보를 ...",
+   "t": "2026-08-07T17:59:38"
+  }
+ ],
+ "http_probes": {
+  "https://registry.opendata.aws/noaa-gefs/": {
+   "status": 200,
+   "len": 8861
+  },
+  "https://noaa-gefs-pds.s3.amazonaws.com/gefs.20230601/00/atmos/pgrb2sp25/geavg.t00z.pgrb2s.0p25.f003.idx": {
+   "status": 200,
+   "len": 2516
+  },
+  "https://noaa-gefs-pds.s3.amazonaws.com/gefs.20230601/00/atmos/pgrb2ap5/geavg.t00z.pgrb2a.0p50.f003.idx": {
+   "status": 200,
+   "len": 5122
+  },
+  "https://noaa-gefs-pds.s3.amazonaws.com/gefs.20230601/00/atmos/pgrb2bp5/gec00.t00z.pgrb2b.0p50.f003.idx": {
+   "status": 200,
+   "len": 36886
+  },
+  "https://noaa-gefs-pds.s3.amazonaws.com/gefs.20230601/00/atmos/pgrb2bp5/gep01.t00z.pgrb2b.0p50.f018.idx": {
+   "status": 200,
+   "len": 32888
+  },
+  "https://ecmwf-forecasts.s3.amazonaws.com/20230601/00z/0p4-beta/oper/20230601000000-24h-oper-fc.index": {
+   "status": 200,
+   "len": 18155
+  },
+  "https://mf-nwp-models.s3.amazonaws.com/README.txt": {
+   "status": 200,
+   "len": 410
+  },
+  "https://noaa-oar-mlwp-data.s3.amazonaws.com/README.txt": {
+   "status": 200,
+   "len": 6544
+  },
+  "https://registry.opendata.aws/aiwp/": {
+   "status": 200,
+   "len": 16952
+  },
+  "https://mf-models-on-aws.org/en/doc/license": {
+   "error": "[Errno 8] nodename nor servname provided, or not known"
+  },
+  "https://noaa-oar-mlwp-data.s3.amazonaws.com/parquet/FOUR_v200_GFS_combined_all.parq/.zmetadata": {
+   "status": 200,
+   "len": 5203
+  },
+  "https://registry.opendata.aws/open-meteo/": {
+   "status": 200,
+   "len": 9539
+  },
+  "https://raw.githubusercontent.com/open-meteo/open-data/main/README.md": {
+   "status": 200,
+   "len": 24965
+  },
+  "https://openmeteo.s3.amazonaws.com/data/dwd_icon/static/meta.json": {
+   "status": 200,
+   "len": 595
+  },
+  "https://openmeteo.s3.amazonaws.com/data/jma_msm/static/meta.json": {
+   "status": 200,
+   "len": 592
+  },
+  "https://openmeteo.s3.amazonaws.com/data/ukmo_global_deterministic_10km/static/meta.json": {
+   "status": 200,
+   "len": 602
+  },
+  "https://openmeteo.s3.amazonaws.com/data/ecmwf_ifs025/static/meta.json": {
+   "status": 200,
+   "len": 596
+  },
+  "https://openmeteo.s3.amazonaws.com/data/cmc_gem_gdps/static/meta.json": {
+   "status": 200,
+   "len": 596
+  },
+  "https://openmeteo.s3.amazonaws.com/data/ncep_gfs025/static/meta.json": {
+   "status": 200,
+   "len": 595
+  },
+  "https://historical-forecast-api.open-meteo.com/v1/forecast?latitude=36.0&longitude=126.5&start_date=2023-06-01&end_date=2023-06-01&hourly=wind_speed_80m&models=icon_global&timezone=UTC": {
+   "status": 200,
+   "len": 813
+  },
+  "https://historical-forecast-api.open-meteo.com/v1/forecast?latitude=36.0&longitude=126.5&start_date=2023-06-01&end_date=2023-06-01&hourly=wind_speed_10m&models=jma_msm&timezone=UTC": {
+   "status": 200,
+   "len": 816
+  },
+  "https://historical-forecast-api.open-meteo.com/v1/forecast?latitude=36.0&longitude=126.5&start_date=2023-03-01&end_date=2023-03-01&hourly=wind_speed_10m&models=ukmo_global_deterministic_10km&timezone=UTC": {
+   "status": 200,
+   "len": 839
+  },
+  "https://historical-forecast-api.open-meteo.com/v1/forecast?latitude=36.0&longitude=126.5&start_date=2023-06-01&end_date=2023-06-01&hourly=wind_speed_80m&models=gem_global&timezone=UTC": {
+   "status": 200,
+   "len": 835
+  },
+  "https://historical-forecast-api.open-meteo.com/v1/forecast?latitude=36.0&longitude=126.5&start_date=2024-06-01&end_date=2024-06-01&hourly=wind_speed_100m&models=ecmwf_ifs025&timezone=UTC": {
+   "status": 200,
+   "len": 832
+  },
+  "https://historical-forecast-api.open-meteo.com/v1/forecast?latitude=36.0&longitude=126.5&start_date=2023-01-01&end_date=2023-01-01&hourly=wind_speed_80m&models=icon_global&timezone=UTC": {
+   "status": 200,
+   "len": 836
+  },
+  "https://historical-forecast-api.open-meteo.com/v1/forecast?latitude=36.0&longitude=126.5&start_date=2023-05-26&end_date=2023-05-26&hourly=wind_speed_80m&models=icon_global&timezone=UTC": {
+   "status": 200,
+   "len": 828
+  },
+  "https://historical-forecast-api.open-meteo.com/v1/forecast?latitude=36.0&longitude=126.5&start_date=2023-06-15&end_date=2023-06-15&hourly=wind_speed_80m&models=icon_global&timezone=UTC": {
+   "status": 200,
+   "len": 822
+  },
+  "https://historical-forecast-api.open-meteo.com/v1/forecast?latitude=36.0&longitude=126.5&start_date=2023-01-01&end_date=2023-01-01&hourly=wind_speed_10m&models=jma_msm&timezone=UTC": {
+   "status": 200,
+   "len": 833
+  },
+  "https://historical-forecast-api.open-meteo.com/v1/forecast?latitude=36.0&longitude=126.5&start_date=2023-05-13&end_date=2023-05-13&hourly=wind_speed_10m&models=jma_msm&timezone=UTC": {
+   "status": 200,
+   "len": 819
+  },
+  "https://historical-forecast-api.open-meteo.com/v1/forecast?latitude=36.0&longitude=126.5&start_date=2022-03-01&end_date=2022-03-01&hourly=wind_speed_10m&models=ukmo_global_deterministic_10km&timezone=UTC": {
+   "status": 200,
+   "len": 831
+  },
+  "https://historical-forecast-api.open-meteo.com/v1/forecast?latitude=36.0&longitude=126.5&start_date=2023-01-01&end_date=2023-01-01&hourly=wind_speed_10m&models=ukmo_global_deterministic_10km&timezone=UTC": {
+   "status": 200,
+   "len": 836
+  },
+  "https://historical-forecast-api.open-meteo.com/v1/forecast?latitude=36.0&longitude=126.5&start_date=2024-06-01&end_date=2024-06-01&hourly=wind_speed_10m&models=ukmo_global_deterministic_10km&timezone=UTC": {
+   "status": 200,
+   "len": 835
+  },
+  "https://historical-forecast-api.open-meteo.com/v1/forecast?latitude=36.0&longitude=126.5&start_date=2023-05-21&end_date=2023-05-21&hourly=wind_speed_80m&models=gem_global&timezone=UTC": {
+   "status": 200,
+   "len": 835
+  },
+  "https://historical-forecast-api.open-meteo.com/v1/forecast?latitude=36.0&longitude=126.5&start_date=2023-01-01&end_date=2023-01-01&hourly=wind_speed_80m&models=gem_global&timezone=UTC": {
+   "status": 200,
+   "len": 842
+  },
+  "https://open-meteo.com/en/docs/historical-forecast-api": {
+   "status": 200,
+   "len": 489415
+  },
+  "https://previous-runs-api.open-meteo.com/v1/forecast?latitude=36.0&longitude=126.5&start_date=2023-06-01&end_date=2023-06-01&hourly=wind_speed_10m,wind_speed_10m_previous_day1,wind_speed_10m_previous_day2&models=jma_msm&timezone=UTC": {
+   "status": 200,
+   "len": 1182
+  },
+  "https://previous-runs-api.open-meteo.com/v1/forecast?latitude=36.0&longitude=126.5&start_date=2024-06-01&end_date=2024-06-01&hourly=wind_speed_10m,wind_speed_10m_previous_day1,wind_speed_10m_previous_day2&models=jma_msm&timezone=UTC": {
+   "status": 200,
+   "len": 1214
+  },
+  "https://previous-runs-api.open-meteo.com/v1/forecast?latitude=36.0&longitude=126.5&start_date=2018-06-01&end_date=2018-06-01&hourly=wind_speed_10m,wind_speed_10m_previous_day1,wind_speed_10m_previous_day2&models=jma_msm&timezone=UTC": {
+   "status": 200,
+   "len": 1204
+  },
+  "https://previous-runs-api.open-meteo.com/v1/forecast?latitude=36.0&longitude=126.5&start_date=2023-06-01&end_date=2023-06-01&hourly=wind_speed_10m,wind_speed_10m_previous_day1,wind_speed_10m_previous_day2&models=gfs_global&timezone=UTC": {
+   "status": 200,
+   "len": 1208
+  },
+  "https://previous-runs-api.open-meteo.com/v1/forecast?latitude=36.0&longitude=126.5&start_date=2023-06-01&end_date=2023-06-01&hourly=wind_speed_10m,wind_speed_10m_previous_day1,wind_speed_10m_previous_day2&models=icon_global&timezone=UTC": {
+   "status": 200,
+   "len": 1195
+  },
+  "https://previous-runs-api.open-meteo.com/v1/forecast?latitude=36.0&longitude=126.5&start_date=2024-06-01&end_date=2024-06-01&hourly=wind_speed_10m,wind_speed_10m_previous_day1,wind_speed_10m_previous_day2&models=icon_global&timezone=UTC": {
+   "status": 200,
+   "len": 1176
+  },
+  "https://previous-runs-api.open-meteo.com/v1/forecast?latitude=36.0&longitude=126.5&start_date=2019-06-01&end_date=2019-06-01&hourly=wind_speed_10m_previous_day1,wind_speed_10m_previous_day3&models=jma_msm&timezone=UTC": {
+   "status": 200,
+   "len": 1051
+  },
+  "https://previous-runs-api.open-meteo.com/v1/forecast?latitude=36.0&longitude=126.5&start_date=2021-06-01&end_date=2021-06-01&hourly=wind_speed_10m_previous_day1,wind_speed_10m_previous_day3&models=jma_msm&timezone=UTC": {
+   "status": 200,
+   "len": 1052
+  },
+  "https://previous-runs-api.open-meteo.com/v1/forecast?latitude=36.0&longitude=126.5&start_date=2022-06-01&end_date=2022-06-01&hourly=wind_speed_10m_previous_day1,wind_speed_10m_previous_day3&models=jma_msm&timezone=UTC": {
+   "status": 200,
+   "len": 1051
+  },
+  "https://previous-runs-api.open-meteo.com/v1/forecast?latitude=36.0&longitude=126.5&start_date=2023-01-01&end_date=2023-01-01&hourly=wind_speed_10m_previous_day1,wind_speed_10m_previous_day3&models=jma_msm&timezone=UTC": {
+   "status": 200,
+   "len": 1051
+  },
+  "https://previous-runs-api.open-meteo.com/v1/forecast?latitude=36.0&longitude=126.5&start_date=2023-06-01&end_date=2023-06-01&hourly=wind_speed_10m_previous_day1,wind_speed_10m_previous_day3&models=gfs025&timezone=UTC": {
+   "status": 200,
+   "len": 1055
+  },
+  "https://previous-runs-api.open-meteo.com/v1/forecast?latitude=36.0&longitude=126.5&start_date=2023-06-01&end_date=2023-06-01&hourly=wind_speed_10m_previous_day1,wind_speed_10m_previous_day3&models=gfs_seamless&timezone=UTC": {
+   "status": 200,
+   "len": 1060
+  },
+  "https://previous-runs-api.open-meteo.com/v1/forecast?latitude=36.0&longitude=126.5&start_date=2022-06-01&end_date=2022-06-01&hourly=wind_speed_10m_previous_day1,wind_speed_10m_previous_day3&models=gfs_global&timezone=UTC": {
+   "status": 200,
+   "len": 1061
+  },
+  "https://open-meteo.com/en/docs/previous-runs-api": {
+   "status": 200,
+   "len": 585392
+  },
+  "https://previous-runs-api.open-meteo.com/v1/forecast?latitude=36.0&longitude=126.5&start_date=2023-01-01&end_date=2023-01-01&hourly=wind_speed_10m_previous_day2&models=jma_msm&timezone=UTC": {
+   "status": 200,
+   "len": 860
+  },
+  "https://previous-runs-api.open-meteo.com/v1/forecast?latitude=36.0&longitude=126.5&start_date=2022-12-01&end_date=2022-12-01&hourly=wind_speed_10m_previous_day1,wind_speed_10m_previous_day2&models=jma_msm&timezone=UTC": {
+   "status": 200,
+   "len": 1046
+  },
+  "https://previous-runs-api.open-meteo.com/v1/forecast?latitude=36.0&longitude=126.5&start_date=2024-12-31&end_date=2024-12-31&hourly=wind_speed_10m_previous_day1,wind_speed_10m_previous_day2&models=jma_msm&timezone=UTC": {
+   "status": 200,
+   "len": 1043
+  },
+  "https://previous-runs-api.open-meteo.com/v1/forecast?latitude=36.0&longitude=126.5&start_date=2023-06-01&end_date=2023-06-01&hourly=wind_speed_10m,wind_speed_10m_previous_day1&models=kma_ldps&timezone=UTC": {
+   "status": 200,
+   "len": 1034
+  },
+  "https://previous-runs-api.open-meteo.com/v1/forecast?latitude=36.0&longitude=126.5&start_date=2023-06-01&end_date=2023-06-01&hourly=wind_speed_10m,wind_speed_10m_previous_day1&models=kma_gdps&timezone=UTC": {
+   "status": 200,
+   "len": 1033
+  },
+  "http://database.rish.kyoto-u.ac.jp/arch/jmadata/": {
+   "status": 200,
+   "len": 8278
+  },
+  "https://ecmwf-forecasts.s3.amazonaws.com/20240601/00z/ifs/0p25/oper/20240601000000-24h-oper-fc.index": {
+   "status": 200,
+   "len": 31671
+  },
+  "https://www.ecmwf.int/en/forecasts/datasets/open-data": {
+   "status": 200,
+   "len": 106947
+  },
+  "https://www.ecmwf.int/en/forecasts/documentation-and-support/data-delivery/dissemination-schedule": {
+   "status": 404,
+   "len": 37824
+  },
+  "https://huggingface.co/datasets/openclimatefix/dwd-icon-global": {
+   "status": 200,
+   "len": 113841
+  },
+  "https://source.coop/dynamical/dwd-icon-grib": {
+   "status": 200,
+   "len": 207202
+  },
+  "https://huggingface.co/api/datasets/openclimatefix/dwd-icon-global": {
+   "status": 200,
+   "len": 146336
+  },
+  "https://huggingface.co/api/datasets/openclimatefix/dwd-icon-global/tree/main/data": {
+   "status": 200,
+   "len": 295
+  },
+  "https://huggingface.co/api/datasets/openclimatefix/dwd-icon-global/tree/main/data/2023": {
+   "status": 200,
+   "len": 1004
+  },
+  "https://source.coop/dynamical/noaa-gefs-analysis": {
+   "status": 200,
+   "len": 331783
+  },
+  "https://huggingface.co/api/datasets/openclimatefix/dwd-icon-global/tree/main/data/2023/6": {
+   "status": 200,
+   "len": 3082
+  },
+  "https://huggingface.co/api/datasets/openclimatefix/dwd-icon-global/tree/main/data/2023/6/1": {
+   "status": 200,
+   "len": 1293
+  },
+  "https://source.coop/dynamical/noaa-gefs-forecast-35-day": {
+   "status": 200,
+   "len": 319462
+  },
+  "https://data.dynamical.org/noaa/gefs/forecast/latest.zarr/zarr.json": {
+   "status": 404,
+   "len": 0
+  },
+  "https://data.dynamical.org/noaa/gefs/forecast/latest.zarr/wind_u_100m/zarr.json": {
+   "status": 404,
+   "len": 0
+  },
+  "https://data.dynamical.org/noaa/gefs/forecast-35-day/latest.zarr/zarr.json": {
+   "status": 200,
+   "len": 77747
+  },
+  "https://data.dynamical.org/noaa/gefs/forecast-35-day/latest.zarr/.zmetadata": {
+   "status": 404,
+   "len": 0
+  },
+  "https://data.dynamical.org/noaa/gefs/forecast-35-day/latest.zarr/wind_u_100m/zarr.json": {
+   "status": 200,
+   "len": 1757
+  },
+  "https://data.dynamical.org/noaa/gefs/forecast-35-day/latest.zarr/wind_u_100m/.zarray": {
+   "status": 404,
+   "len": 0
+  },
+  "https://dynamical.org/catalog/noaa-gefs-forecast-35-day/": {
+   "status": 200,
+   "len": 50879
+  },
+  "https://www.nco.ncep.noaa.gov/pmb/products/gens/": {
+   "status": 200,
+   "len": 52394
+  },
+  "https://www.nco.ncep.noaa.gov/pmb/nwprod/prodstat/": {
+   "status": 200,
+   "len": 65996
+  },
+  "https://www.ecmwf.int/en/forecasts/access-forecasts/data-delivery/dissemination-schedule": {
+   "status": 404,
+   "len": 37806
+  },
+  "https://confluence.ecmwf.int/display/DAC/Dissemination+schedule": {
+   "status": 200,
+   "len": 110971
+  },
+  "https://eccc-msc.github.io/open-data/faq/readme_en/": {
+   "status": 200,
+   "len": 53311
+  },
+  "https://open-meteo.com/en/terms": {
+   "status": 200,
+   "len": 37401
+  },
+  "https://noaa-gefs-pds.s3.amazonaws.com/gefs.20230101/00/atmos/pgrb2bp5/gep15.t00z.pgrb2b.0p50.f024.idx": {
+   "status": 200,
+   "len": 33375
+  },
+  "https://noaa-gefs-pds.s3.amazonaws.com/gefs.20230701/00/atmos/pgrb2bp5/gep15.t00z.pgrb2b.0p50.f024.idx": {
+   "status": 200,
+   "len": 33382
+  },
+  "https://noaa-gefs-pds.s3.amazonaws.com/gefs.20240101/00/atmos/pgrb2bp5/gep15.t00z.pgrb2b.0p50.f024.idx": {
+   "status": 200,
+   "len": 33375
+  },
+  "https://noaa-gefs-pds.s3.amazonaws.com/gefs.20240630/00/atmos/pgrb2bp5/gep15.t00z.pgrb2b.0p50.f024.idx": {
+   "status": 200,
+   "len": 33389
+  },
+  "https://noaa-gefs-pds.s3.amazonaws.com/gefs.20241231/00/atmos/pgrb2bp5/gep15.t00z.pgrb2b.0p50.f024.idx": {
+   "status": 200,
+   "len": 33373
+  },
+  "https://data.kma.go.kr/data/rmt/rmtList.do?code=340&pgmNo=65": {
+   "status": 200,
+   "len": 149738
+  },
+  "https://data.kma.go.kr/data/rmt/rmtList.do?code=312&pgmNo=64": {
+   "status": 200,
+   "len": 150122
+  },
+  "https://ecmwf-forecasts.s3.amazonaws.com/20230601/12z/0p4-beta/oper/20230601120000-36h-oper-fc.index": {
+   "status": 200,
+   "len": 18155
+  },
+  "https://ecmwf-forecasts.s3.amazonaws.com/20240601/12z/ifs/0p25/oper/20240601120000-36h-oper-fc.index": {
+   "status": 200,
+   "len": 31670
+  },
+  "https://build.nvidia.com/nvidia/fourcastnet/modelcard": {
+   "status": 202,
+   "len": 0
+  },
+  "https://ecmwf-forecasts.s3.amazonaws.com/20230601/12z/0p4-beta/enfo/20230601120000-36h-enfo-ef.index": {
+   "status": 200,
+   "len": 999481
+  }
+ }
+}

@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "node_id": "S17-N44_BAND_MASS_OBJECTIVE",
+  "stage_id": "S7",
+  "deficit": "FD12",
+  "score_bearing": false,
+  "comparison_index": null,
+  "result_status": "REFUTED",
+  "results": {
+    "dev-2023-Q2": {
+      "raw_total": 0.5755666215650241,
+      "raw_1_nmae": 0.8523018098367796,
+      "raw_ficr": 0.2988314332932687,
+      "train_rows": 15190
+    },
+    "dev-2023-Q3": {
+      "raw_total": 0.5727295926382513,
+      "raw_1_nmae": 0.85407415032231,
+      "raw_ficr": 0.2913850349541925,
+      "train_rows": 19060
+    },
+    "dev-2023-Q4": {
+      "raw_total": 0.5815753162517915,
+      "raw_1_nmae": 0.8456196998318024,
+      "raw_ficr": 0.3175309326717805,
+      "train_rows": 21919
+    },
+    "pooled_outer_champion": {
+      "total": 0.6314827308346854,
+      "one_minus_nmae": 0.8584802239958174,
+      "ficr": 0.40448523767355354
+    },
+    "pooled_outer_bandmass_blended": {
+      "total": 0.6231944153231286,
+      "one_minus_nmae": 0.8613466312500808,
+      "ficr": 0.38504219939617634
+    }
+  },
+  "findings": [
+    "The direct band-mass objective is the worst result of the session: pooled outer blended Total 0.6231944 against the champion 0.6314827, a loss of -0.0082883.",
+    "Raw arm Totals are 0.5727296 on Q3 and 0.5815753 on Q4, well below the deployed member.",
+    "The component signature is identical to N43: 1-NMAE rises to 0.8613466 while FICR falls to 0.3850422.",
+    "Diagnosis: with a smoothing scale of 0.01 the derivative of the smoothed step reward is negligible except within a narrow shell around the 6 and 8 percent boundaries, so the absolute-error term dominates the gradient almost everywhere and the learner degenerates into an L1 point regression, that is, a conditional median."
+  ],
+  "consolidated_mechanism": "Three independent routes now produce the same failure with the same component signature. A quantile function (N43), a smoothed decision-focused surrogate (N44), and the exact plug-in Bayes rule (N38) all move the action toward the conditional median, raise 1-NMAE and lose more FICR than they gain. FICR is earned by betting on a concentrated MODE, and any method that collapses the predictive object to a single well-behaved point estimate destroys that. The deployed architecture, a discrete conditional distribution plus temperature sharpening plus settlement-weighted argmax, is the correct family and is already at its grid optimum.",
+  "residual_deficit": "FD16: inside the correct family the density resolution has never been varied. The class bins are 0.02 wide in capacity fraction while the paying band is only 0.06 wide, so the mode is located to within three bins at best.",
+  "spawned_children": [
+    "S17-N45_BIN_RESOLUTION"
+  ],
+  "selected_disposition": "DEEPEN_S7",
+  "lockbox_2024_used": false,
+  "dacon_actions": [],
+  "closed_at": "2026-08-09T06:13:32.689185+09:00"
+}

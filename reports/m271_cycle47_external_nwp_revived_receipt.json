@@ -1,0 +1,271 @@
+{
+ "dacon_upload": false,
+ "decided_utc": "2026-08-04T16:38:00.504013+00:00",
+ "external_actions": [],
+ "lane": "L2",
+ "lockbox_reopened": false,
+ "model_fits": 0,
+ "new_2024_evaluation": false,
+ "node": "C1N47_EXTERNAL_NWP_REVIVED",
+ "report_sha256": "bf2c0e204a51912ff8c2c062675d06237f4b7ca66ebac3300280ba0cec6950f7",
+ "result": {
+  "error_found": "사이클 36 은 요구치를 급경사 **점별** 밴드 적중 기준(0.571 m/s)으로 잡았다. FICR 은 발전량가중 평균이라 평탄 구간에서도 점수를 주므로 실제 요구치는 사이클 46 역산으로 1.817 m/s — **3.2 배 관대**하다",
+  "flips_premise": "EXTERNAL_NWP_PHYSICALLY_INSUFFICIENT",
+  "gate_touched": false,
+  "no_collection": true,
+  "no_training": true,
+  "node": "C1N47_EXTERNAL_NWP_REVIVED",
+  "parent_node": "C1N46_CLOSURE_FALSIFICATION",
+  "per_group": {
+   "1": {
+    "cycle36_pointwise": {
+     "examples": [],
+     "feasible_anywhere": false,
+     "feasible_in_realistic_window": false,
+     "margin": -1.1046301262510172,
+     "realistic_best_sigma": 1.6756301262510171,
+     "realistic_feasible_count": 0,
+     "required": 0.571
+    },
+    "leader_ficr_local_equiv": {
+     "examples": [
+      {
+       "q": 0.8,
+       "rho": 0.6,
+       "sigma": 1.6756301262510171
+      },
+      {
+       "q": 0.8,
+       "rho": 0.65,
+       "sigma": 1.6945055609233033
+      },
+      {
+       "q": 0.8,
+       "rho": 0.7,
+       "sigma": 1.7105116859268477
+      },
+      {
+       "q": 0.8,
+       "rho": 0.75,
+       "sigma": 1.7222861920345083
+      },
+      {
+       "q": 0.8,
+       "rho": 0.8,
+       "sigma": 1.7271999999999996
+      },
+      {
+       "q": 0.85,
+       "rho": 0.6,
+       "sigma": 1.7516139316909847
+      }
+     ],
+     "feasible_anywhere": true,
+     "feasible_in_realistic_window": true,
+     "margin": 0.1413698737489828,
+     "realistic_best_sigma": 1.6756301262510171,
+     "realistic_feasible_count": 9,
+     "required": 1.817
+    },
+    "local_total_066": {
+     "examples": [
+      {
+       "q": 0.8,
+       "rho": 0.6,
+       "sigma": 1.6756301262510171
+      },
+      {
+       "q": 0.8,
+       "rho": 0.65,
+       "sigma": 1.6945055609233033
+      },
+      {
+       "q": 0.8,
+       "rho": 0.7,
+       "sigma": 1.7105116859268477
+      },
+      {
+       "q": 0.8,
+       "rho": 0.75,
+       "sigma": 1.7222861920345083
+      },
+      {
+       "q": 0.8,
+       "rho": 0.8,
+       "sigma": 1.7271999999999996
+      },
+      {
+       "q": 0.85,
+       "rho": 0.6,
+       "sigma": 1.7516139316909847
+      }
+     ],
+     "feasible_anywhere": true,
+     "feasible_in_realistic_window": true,
+     "margin": 0.19536987374898285,
+     "realistic_best_sigma": 1.6756301262510171,
+     "realistic_feasible_count": 12,
+     "required": 1.871
+    },
+    "rho_gfs_ldaps": 0.799,
+    "sigma_current": 2.159
+   },
+   "2": {
+    "cycle36_pointwise": {
+     "examples": [],
+     "feasible_anywhere": false,
+     "feasible_in_realistic_window": false,
+     "margin": -1.2668379522753166,
+     "realistic_best_sigma": 1.8378379522753165,
+     "realistic_feasible_count": 0,
+     "required": 0.571
+    },
+    "leader_ficr_local_equiv": {
+     "examples": [],
+     "feasible_anywhere": true,
+     "feasible_in_realistic_window": false,
+     "margin": -0.020837952275316596,
+     "realistic_best_sigma": 1.8378379522753165,
+     "realistic_feasible_count": 0,
+     "required": 1.817
+    },
+    "local_total_066": {
+     "examples": [
+      {
+       "q": 0.8,
+       "rho": 0.6,
+       "sigma": 1.8378379522753165
+      },
+      {
+       "q": 0.8,
+       "rho": 0.65,
+       "sigma": 1.8585406059594176
+      }
+     ],
+     "feasible_anywhere": true,
+     "feasible_in_realistic_window": true,
+     "margin": 0.03316204772468345,
+     "realistic_best_sigma": 1.8378379522753165,
+     "realistic_feasible_count": 2,
+     "required": 1.871
+    },
+    "rho_gfs_ldaps": 0.771,
+    "sigma_current": 2.368
+   },
+   "3": {
+    "cycle36_pointwise": {
+     "examples": [],
+     "feasible_anywhere": false,
+     "feasible_in_realistic_window": false,
+     "margin": -1.081346706247529,
+     "realistic_best_sigma": 1.652346706247529,
+     "realistic_feasible_count": 0,
+     "required": 0.571
+    },
+    "leader_ficr_local_equiv": {
+     "examples": [
+      {
+       "q": 0.8,
+       "rho": 0.6,
+       "sigma": 1.652346706247529
+      },
+      {
+       "q": 0.8,
+       "rho": 0.65,
+       "sigma": 1.6709598606788851
+      },
+      {
+       "q": 0.8,
+       "rho": 0.7,
+       "sigma": 1.686743575423001
+      },
+      {
+       "q": 0.8,
+       "rho": 0.75,
+       "sigma": 1.6983544709779843
+      },
+      {
+       "q": 0.8,
+       "rho": 0.8,
+       "sigma": 1.7031999999999996
+      },
+      {
+       "q": 0.85,
+       "rho": 0.6,
+       "sigma": 1.7272746922510915
+      }
+     ],
+     "feasible_anywhere": true,
+     "feasible_in_realistic_window": true,
+     "margin": 0.16465329375247095,
+     "realistic_best_sigma": 1.652346706247529,
+     "realistic_feasible_count": 11,
+     "required": 1.817
+    },
+    "local_total_066": {
+     "examples": [
+      {
+       "q": 0.8,
+       "rho": 0.6,
+       "sigma": 1.652346706247529
+      },
+      {
+       "q": 0.8,
+       "rho": 0.65,
+       "sigma": 1.6709598606788851
+      },
+      {
+       "q": 0.8,
+       "rho": 0.7,
+       "sigma": 1.686743575423001
+      },
+      {
+       "q": 0.8,
+       "rho": 0.75,
+       "sigma": 1.6983544709779843
+      },
+      {
+       "q": 0.8,
+       "rho": 0.8,
+       "sigma": 1.7031999999999996
+      },
+      {
+       "q": 0.85,
+       "rho": 0.6,
+       "sigma": 1.7272746922510915
+      }
+     ],
+     "feasible_anywhere": true,
+     "feasible_in_realistic_window": true,
+     "margin": 0.218653293752471,
+     "realistic_best_sigma": 1.652346706247529,
+     "realistic_feasible_count": 15,
+     "required": 1.871
+    },
+    "rho_gfs_ldaps": 0.739,
+    "sigma_current": 2.129
+   }
+  },
+  "predeclared_check": {
+   "H1_expectation": "정정 요구치 1.817 하에 현실범위 만족 조합 존재 (그룹1)",
+   "H1_held": true,
+   "H2_expectation": "세 그룹 모두 존재",
+   "H2_held": false,
+   "H3_expectation": "로컬 Total 0.66 요구치 1.871 하에도 존재",
+   "H3_held": true,
+   "H4_expectation": "사이클 36 요구치 0.571 하에는 여전히 부존재 (36 의 계산은 옳았음을 확인)",
+   "H4_held": true,
+   "premise_flipped": false,
+   "verdict": "STILL_CLOSED_UNDER_CORRECTED_REQUIREMENT"
+  },
+  "requirements": {
+   "cycle36_pointwise": 0.571,
+   "leader_ficr_local_equiv": 1.817,
+   "local_total_066": 1.871
+  },
+  "revives": "AXIS_EXTERNAL_NWP_SOURCE"
+ },
+ "schema_version": 1,
+ "script_sha256": "40e3a2c1401e64102910ea28f3eccd45e800b89d55f6bc36fdcb57d351ed86cc",
+ "stage": "M271_P4_CYCLE47_EXTERNAL_NWP_REVIVED"
+}

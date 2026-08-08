@@ -23,3 +23,18 @@ def test_feature_pipeline_rejects_fold_or_order_skew() -> None:
         transform_features(state, train, "fold-b")
     with pytest.raises(ModelError, match="feature columns"):
         transform_features(state, train[["b", "a"]], "fold-a")
+
+
+def test_feature_pipeline_freezes_spatial_lineage_hashes() -> None:
+    train = pd.DataFrame({"a": [1.0], "b": [2.0]})
+    state = fit_feature_pipeline(
+        train,
+        ("a", "b"),
+        "fold-a",
+        spatial_mode="spatial_v2",
+        variable_allowlist_sha256="a" * 64,
+        grid_weight_sha256="b" * 64,
+    )
+    assert state.spatial_mode == "spatial_v2"
+    assert state.variable_allowlist_sha256 == "a" * 64
+    assert state.grid_weight_sha256 == "b" * 64

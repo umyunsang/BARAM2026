@@ -1,0 +1,226 @@
+{
+ "lane": "S15_sota_model",
+ "date": "2026-08-09",
+ "n_queries": 97,
+ "queries": [
+  "TabArena living benchmark tabular NeurIPS 2025 results CatBoost RealMLP normalized score",
+  "RealMLP better by default improved defaults for neural networks and GBDTs benchmark results table",
+  "TabM efficient ensembling MLP tabular ICLR 2025 results comparison GBDT",
+  "McElfresh when do neural nets outperform boosted trees light hyperparameter tuning effect size",
+  "Grinsztajn why tree-based models outperform deep learning tabular uninformative features experiment",
+  "selection bias in split variable selection decision trees Loh Shih unbiased splits",
+  "Strobl 2007 bias in random forest variable importance measures number of categories",
+  "greedy split selection optimism noise features maximum of many split candidates overfitting bound",
+  "extremely randomized trees extra trees random cut points reduce variance selection bias Geurts",
+  "adding noise features degrades gradient boosting performance experiment number of features",
+  "LightGBM extra_trees parameter random threshold each feature deal with over-fitting documentation",
+  "Hothorn Hornik Zeileis unbiased recursive partitioning conditional inference framework Bonferroni p-value split selection",
+  "conditional inference trees ctree avoid variable selection bias multiple testing correction benchmark accuracy",
+  "honest trees sample splitting Wager Athey honesty reduces bias generalized random forests",
+  "LightGBM max_bin lower value reduce overfitting effect measured",
+  "model-X knockoffs power simulation n samples p features FDR control empirical power gradient boosting",
+  "deep knockoffs power comparison second-order knockoffs empirical power FDR nominal level",
+  "knockoff filter real data power low compared to marginal screening criticism",
+  "hidimstat package desparsified lasso knockoffs aggregation statistical inference python",
+  "conditional randomization test distilled CRT power computational cost Liu Katsevich Janson",
+  "Boruta all-relevant feature selection shadow features Bonferroni power benchmark comparison",
+  "null importance feature selection permutation target shadow features Kaggle measured improvement",
+  "Whiteout when do fixed-X knockoffs fail correlated features power loss",
+  "knockoffs low power highly correlated covariates simulation autocorrelated design rho 0.9",
+  "recursive feature elimination vs knockoffs vs Boruta empirical comparison tabular regression accuracy",
+  "Dirichlet calibration multiclass beyond temperature scaling Kull NeurIPS 2019 results ECE improvement",
+  "vector scaling matrix scaling temperature scaling multiclass calibration Guo 2017 measured ECE",
+  "conformal predictive distributions Vovk definition validity efficiency regression",
+  "Venn-Abers predictors calibration probabilistic regression measured improvement log loss",
+  "quantile recalibration Kuleshov accurate uncertainties deep learning regression isotonic recalibration results",
+  "Calibrating Predictions to Decisions multi-class calibration decision calibration Zhao Ma Ermon NeurIPS 2021",
+  "decision calibration loss aware calibration expected loss correct for all decision rules results",
+  "distribution calibration regression GP-Beta Song Diethe Kull Flach ICML 2019 results",
+  "Beyond pinball loss quantile methods calibrated uncertainty quantification sharpness Chung 2021",
+  "sharpness calibration tradeoff post-hoc recalibration degrades sharpness measured",
+  "group distributionally robust optimization GroupDRO Sagawa worst group accuracy overparameterized regularization",
+  "importance weighting sample weights imbalanced groups regression measured improvement worst group",
+  "sample reweighting to match evaluation metric group averaged metric unequal group sizes machine learning",
+  "multilevel model partial pooling small number of groups three groups shrinkage unstable variance estimate",
+  "mixed effects gradient boosting GPBoost random effects grouped data measured improvement over GBM",
+  "XGBoostLSS LightGBMLSS distributional gradient boosting probabilistic forecasting results CRPS comparison",
+  "isotonic distributional regression IDR Henzi Ziegel Gneiting results wind gust precipitation CRPS",
+  "CatBoost MultiQuantile loss multiple quantiles simultaneously performance",
+  "distributional random forest Cevid Meinshausen CRPS multivariate comparison quantile regression forest",
+  "NGBoost natural gradient boosting probabilistic prediction benchmark NLL RMSE comparison table",
+  "CORP reliability diagram consistency resampling pool-adjacent-violators Dimitriadis Gneiting Jordan PNAS 2021 MCB DSC UNC decomposition",
+  "miscalibration component MCB Brier score decomposition upper bound recalibration gain",
+  "isotonic recalibration score decomposition how much can recalibration improve Brier score empirical",
+  "CatBoost unbiased boosting prediction shift ordered boosting target leakage measured improvement logloss",
+  "prediction shift gradient boosting bias residuals same data ordered target statistics theorem",
+  "LightGBM MAE objective vs L2 objective regression which better conditional median comparison",
+  "gradient boosting quantile regression median objective versus squared error MAE evaluation empirical",
+  "CatBoost vs LightGBM vs XGBoost tuned comparison large study win rate measured difference",
+  "Hierarchical shrinkage post-hoc regularization tree ensembles Agarwal ICML 2022 improves random forest measured",
+  "hierarchical shrinkage HS imodels leaf shrink toward ancestor mean results R2 improvement",
+  "Grinsztajn tree-based models uninformative features removing features accuracy drop numbers figure 4",
+  "McElfresh 2023 GBDT light hyperparameter tuning 30 iterations improvement over default normalized accuracy",
+  "RealMLP default parameters benchmark score improvement over LightGBM default meta-train meta-test",
+  "Accounting for Variance in Machine Learning Benchmarks Bouthillier 2021 seed variance standard deviation performance",
+  "random seed variance gradient boosting test metric standard deviation how many seeds needed benchmark",
+  "Ng 2004 feature selection L1 versus L2 regularization rotational invariance sample complexity logarithmic irrelevant features",
+  "multi-task learning small number of tasks negative transfer when to share parameters regression tasks",
+  "James-Stein estimator fails when number of groups less than three shrinkage requires p >= 3",
+  "hierarchical model few groups five or fewer groups Gelman recommendation fixed effects",
+  "task embedding shared model plus group specific residual correction two stage boosting group",
+  "global versus local models forecasting pooled cross-learning Montero-Manso Hyndman principles",
+  "Mondrian conformal prediction group conditional coverage taxonomy validity per category",
+  "conformal predictive systems wind power forecasting probabilistic calibration measured CRPS pinball",
+  "Gomes 2022 fewer than five levels grouping factor random effects simulation results bias",
+  "GEFCom2014 wind track winning solution pinball loss improvement over benchmark quantiles",
+  "probabilistic wind power forecasting benchmark CRPS comparison quantile regression forest gradient boosting neural network measured",
+  "Jonkers 2024 day-ahead regional probabilistic wind power forecasting conformal predictive system Applied Energy results CRPS improvement",
+  "Jonkers novel day-ahead regional probabilistic wind power forecasting conformal arxiv preprint",
+  "TabM tabular deep learning results table rank RMSE comparison XGBoost CatBoost datasets openreview",
+  "Holzmuller RealMLP benchmark score improvement percent over LightGBM tuned meta-test datasets",
+  "model-X knockoffs power n larger than p low dimensional setting empirical power 0.8 simulation gradient boosting importance",
+  "knockoff filter with random forest importance statistic power simulation results FDR nominal 0.1",
+  "hidimstat python package dependencies scikit-learn version requirements install",
+  "Sagawa group DRO worst group accuracy improvement percentage points CelebA waterbirds numbers",
+  "sample weighting equalize group contribution to macro averaged metric gradient boosting effective sample size",
+  "correlated redundant features hurt gradient boosting performance splitting importance dilution measured experiment",
+  "Quantifying the impact of uninformative features on the performance of supervised classification regression algorithms 2023 results",
+  "isotonic regression calibration overfitting small calibration set sample size requirement 1000 Niculescu-Mizil",
+  "beta calibration versus isotonic versus Platt small sample calibration error comparison measured",
+  "LightGBM linear_tree piecewise linear regression tree accuracy improvement benchmark",
+  "Probst tunability hyperparameters machine learning algorithms measured tunability xgboost gains over defaults",
+  "Optuna hyperparameter tuning LightGBM number of trials diminishing returns measured improvement 100 trials",
+  "CatBoost langevin stochastic gradient langevin boosting improvement small data",
+  "multiclass softmax versus ordinal regression discretized target regression number of bins effect accuracy",
+  "conformal prediction under exchangeability violation temporal distribution shift time series coverage loss wind",
+  "cross-validation ensembling versus single fit gradient boosting variance reduction measured wind energy",
+  "TabReD temporal split industrial tabular benchmark GBDT best results deep learning gap numbers",
+  "feature selection with time-based validation temporal shift feature drift tabular selection harms",
+  "quantile crossing multi-quantile regression monotonic rearrangement Chernozhukov improvement",
+  "ordinal classification cumulative link versus multiclass softmax discretized regression measured comparison bins",
+  "sample size 20000 rows 1000 features gradient boosting overfitting number of features rule of thumb",
+  "Venn-Abers predictors implementation inductive cross venn abers computational cost calibration set size"
+ ],
+ "fetched": {
+  "https://arxiv.org/pdf/2506.16791": [
+   200,
+   1964941
+  ],
+  "https://hal.science/hal-04641923v2/file/paper_tabular_neurips_camera-ready.pdf": [
+   200,
+   12608
+  ],
+  "https://arxiv.org/html/2502.16758v2": [
+   200,
+   1319456
+  ],
+  "https://www.sciencedirect.com/science/article/pii/S2772508126000037": [
+   403,
+   832806
+  ],
+  "https://arxiv.org/html/2607.01417v1": [
+   200,
+   860391
+  ],
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC8128453/": [
+   403,
+   134
+  ],
+  "https://arxiv.org/html/2511.20851v1": [
+   200,
+   312615
+  ],
+  "https://papers.neurips.cc/paper/9397-beyond-temperature-scaling-obtaining-well-calibrated-multi-class-probabilities-with-dirichlet-calibration.pdf": [
+   200,
+   375419
+  ],
+  "https://proceedings.neurips.cc/paper/2021/file/bbc92a647199b832ec90d7cf57074e9e-Paper.pdf": [
+   200,
+   957387
+  ],
+  "https://proceedings.mlr.press/v97/zhao19b/zhao19b.pdf": [
+   200,
+   915296
+  ],
+  "https://arxiv.org/html/2412.14916v1": [
+   200,
+   1461798
+  ],
+  "https://arxiv.org/pdf/1909.03725": [
+   200,
+   1243571
+  ],
+  "https://www.pnas.org/doi/10.1073/pnas.2016191118": [
+   403,
+   5761
+  ],
+  "https://arxiv.org/pdf/2008.03033": [
+   200,
+   492403
+  ],
+  "https://arxiv.org/pdf/1706.09516": [
+   200,
+   723079
+  ],
+  "https://proceedings.mlr.press/v162/agarwal22b/agarwal22b.pdf": [
+   200,
+   4546671
+  ],
+  "https://hal.science/hal-03723551v1/file/neurips_2022.pdf": [
+   200,
+   12607
+  ],
+  "https://lightgbm.readthedocs.io/en/latest/Parameters.html": [
+   429,
+   5788
+  ],
+  "https://raw.githubusercontent.com/microsoft/LightGBM/master/docs/Parameters.rst": [
+   200,
+   81978
+  ],
+  "https://arxiv.org/pdf/2207.08815": [
+   200,
+   26436552
+  ],
+  "https://icml.cc/Conferences/2004/proceedings/papers/354.pdf": [
+   200,
+   174127
+  ],
+  "https://proceedings.mlsys.org/paper_files/paper/2021/file/0184b0cd3cfb185989f858a1d9f5c1eb-Paper.pdf": [
+   200,
+   891227
+  ],
+  "https://arxiv.org/pdf/2008.00444": [
+   200,
+   733526
+  ],
+  "https://proceedings.mlr.press/v204/althoff23a/althoff23a.pdf": [
+   200,
+   332527
+  ],
+  "https://arxiv.org/pdf/2407.04491": [
+   200,
+   4338379
+  ],
+  "https://raw.githubusercontent.com/mind-inria/hidimstat/main/pyproject.toml": [
+   200,
+   6775
+  ],
+  "https://pubs.aip.org/aip/aml/article/1/4/046118/2928862/Quantifying-the-impact-of-uninformative-features": [
+   403,
+   5971
+  ],
+  "https://arxiv.org/html/2601.19944v1": [
+   200,
+   475645
+  ],
+  "https://www.jmlr.org/papers/volume20/18-444/18-444.pdf": [
+   200,
+   948921
+  ],
+  "https://arxiv.org/html/2406.19380v4": [
+   200,
+   237009
+  ]
+ }
+}

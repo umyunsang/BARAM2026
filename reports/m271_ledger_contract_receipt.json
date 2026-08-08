@@ -1,0 +1,59 @@
+{
+  "node_id": "C1N79_LEDGER_CONTRACT",
+  "lane": "L8",
+  "parent": "C1N78_LOOP_ENGINE_C10",
+  "triggered_by": "C10 이 지목한 근본 결함",
+  "contract_version": "M271_LEDGER_CONTRACT_v1",
+  "history_path": "artifacts/registry/m271_ledger_history.json",
+  "before": {
+    "events": 2,
+    "stall_counter": 1,
+    "recoverable_mass": 0.04875044667051586,
+    "cells_attributed": 0
+  },
+  "backfill": {
+    "baseline": null,
+    "ceiling_attribution": null,
+    "cells_updated": 0
+  },
+  "apply": {
+    "cells_in_history": 19,
+    "cells_applied": 19
+  },
+  "after": {
+    "contract_version": "M271_LEDGER_CONTRACT_v1",
+    "events": 2,
+    "stall_counter": 1,
+    "refresh_due": true,
+    "recoverable_mass": 0.04875044667051586,
+    "cells_attributed": 19,
+    "cells_total": 108,
+    "unrecorded_cycles": 76,
+    "unrecorded_sample": [
+      "C1N10_BLEND_LOCALITY",
+      "C1N11_V2_REPRESENTATION",
+      "C1N12_G3_HISTORY",
+      "C1N13_ENSEMBLE_VARIANCE",
+      "C1N14_SHRINKBLEND",
+      "C1N15_WALKFORWARD",
+      "C1N16_ROBUSTNESS_AUDIT",
+      "C1N17_METRIC_ALIGNED_COMBINER"
+    ]
+  },
+  "raw_recoverable_mass": 0.04875044667051587,
+  "at_ceiling_cells": [],
+  "checks": {
+    "V1_apply_idempotent": true,
+    "V2_ceiling_cells_excluded": true,
+    "V3_stall_derived_not_asserted": true
+  },
+  "ledger_baseline_policy_total": 0.6286045208903154,
+  "current_champion_total": 0.63031,
+  "deployed_local_total": 0.629973,
+  "refresh_due": true,
+  "note": "refresh_due 를 자동으로 해소하지 않는다. 원장을 현 챔피언으로 다시 계산하려면 A7 분해를 챔피언 예측 위에서 재실행해야 하고 그것은 별도 노드의 일이다. 여기서는 '원장이 낡았다' 를 라우터가 볼 수 있게 만드는 데까지 한다.",
+  "dacon_upload": false,
+  "lockbox_used": false,
+  "generated_at": "2026-08-05T15:24:50.280552+00:00",
+  "digest": "fa18f0549c838591"
+}

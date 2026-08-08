@@ -1,0 +1,220 @@
+{
+ "dacon_upload": false,
+ "decided_utc": "2026-08-04T07:12:16.418260+00:00",
+ "external_actions": [],
+ "lane": "L4",
+ "lockbox_reopened": false,
+ "model_fits": 0,
+ "new_2024_evaluation": false,
+ "node": "C1N16_ROBUSTNESS_AUDIT",
+ "report_sha256": "bfd8db8debf2e8d3413bd906af41b9ce3dcb7119d0933216595d54e8ce53859b",
+ "result": {
+  "candidate": {
+   "delta_total": 0.003900340278284342,
+   "ficr": 0.4051965412115282,
+   "group_ficr": {
+    "1": 0.41235550101943114,
+    "2": 0.4657178278621079,
+    "3": 0.3375162947530456
+   },
+   "group_nmae": {
+    "1": 0.1322875369550896,
+    "2": 0.13593615007166385,
+    "3": 0.15233676959623282
+   },
+   "name": "M271_SHRINKBLEND_A05",
+   "one_minus_nmae": 0.8598131811256713,
+   "recipe": "0.5 * T0.5_G1.5 + 0.5 * mean(M102_TOP100, M244_RARE_EVENT_CORRECTED_ANALOG_Q234, M113_LGBM_DART, M115_XGBOOST)",
+   "total": 0.6325048611685997
+  },
+  "gate_modified": false,
+  "gate_version": "M270_MONTHLY_GATE_v1_frozen_2026-08-04",
+  "leave_one_month_out": [
+   {
+    "bootstrap_q05": 0.0030092091870913967,
+    "dropped_month": "2023-04",
+    "gate": {
+     "G1": true,
+     "G2": true,
+     "G3": true,
+     "G4": true
+    },
+    "months_scored": 8,
+    "passed": true,
+    "positive_months": 7,
+    "sign_test_p": 0.03515625
+   },
+   {
+    "bootstrap_q05": 0.003633395874008072,
+    "dropped_month": "2023-05",
+    "gate": {
+     "G1": true,
+     "G2": true,
+     "G3": true,
+     "G4": true
+    },
+    "months_scored": 8,
+    "passed": true,
+    "positive_months": 8,
+    "sign_test_p": 0.00390625
+   },
+   {
+    "bootstrap_q05": 0.0028343040714041007,
+    "dropped_month": "2023-06",
+    "gate": {
+     "G1": true,
+     "G2": true,
+     "G3": true,
+     "G4": true
+    },
+    "months_scored": 8,
+    "passed": true,
+    "positive_months": 7,
+    "sign_test_p": 0.03515625
+   },
+   {
+    "bootstrap_q05": 0.0022926388770537947,
+    "dropped_month": "2023-07",
+    "gate": {
+     "G1": true,
+     "G2": true,
+     "G3": true,
+     "G4": true
+    },
+    "months_scored": 8,
+    "passed": true,
+    "positive_months": 7,
+    "sign_test_p": 0.03515625
+   },
+   {
+    "bootstrap_q05": 0.002001990293555994,
+    "dropped_month": "2023-08",
+    "gate": {
+     "G1": true,
+     "G2": true,
+     "G3": true,
+     "G4": true
+    },
+    "months_scored": 8,
+    "passed": true,
+    "positive_months": 7,
+    "sign_test_p": 0.03515625
+   },
+   {
+    "bootstrap_q05": 0.001983676312081184,
+    "dropped_month": "2023-09",
+    "gate": {
+     "G1": true,
+     "G2": true,
+     "G3": true,
+     "G4": true
+    },
+    "months_scored": 8,
+    "passed": true,
+    "positive_months": 7,
+    "sign_test_p": 0.03515625
+   },
+   {
+    "bootstrap_q05": 0.0021820983230279173,
+    "dropped_month": "2023-10",
+    "gate": {
+     "G1": true,
+     "G2": true,
+     "G3": true,
+     "G4": true
+    },
+    "months_scored": 8,
+    "passed": true,
+    "positive_months": 7,
+    "sign_test_p": 0.03515625
+   },
+   {
+    "bootstrap_q05": 0.00247458366160612,
+    "dropped_month": "2023-11",
+    "gate": {
+     "G1": true,
+     "G2": true,
+     "G3": true,
+     "G4": true
+    },
+    "months_scored": 8,
+    "passed": true,
+    "positive_months": 7,
+    "sign_test_p": 0.03515625
+   },
+   {
+    "bootstrap_q05": 0.0027633693147612326,
+    "dropped_month": "2023-12",
+    "gate": {
+     "G1": true,
+     "G2": true,
+     "G3": true,
+     "G4": true
+    },
+    "months_scored": 8,
+    "passed": true,
+    "positive_months": 7,
+    "sign_test_p": 0.03515625
+   }
+  ],
+  "parent": {
+   "ficr": 0.40246401063156667,
+   "group_ficr": {
+    "1": 0.409551299643159,
+    "2": 0.46073846269466673,
+    "3": 0.33710226955687433
+   },
+   "group_nmae": {
+    "1": 0.13617589715402054,
+    "2": 0.14227310586805572,
+    "3": 0.15731590353073155
+   },
+   "one_minus_nmae": 0.8547450311490641,
+   "policy": "T0.5_G1.5",
+   "total": 0.6286045208903154
+  },
+  "per_group": [
+   {
+    "ficr_candidate": 0.41235550101943114,
+    "ficr_delta": 0.0028042013762721307,
+    "ficr_improved": true,
+    "ficr_parent": 0.409551299643159,
+    "group": 1,
+    "nmae_delta": -0.0038883601989309347,
+    "nmae_improved": true
+   },
+   {
+    "ficr_candidate": 0.4657178278621079,
+    "ficr_delta": 0.004979365167441185,
+    "ficr_improved": true,
+    "ficr_parent": 0.46073846269466673,
+    "group": 2,
+    "nmae_delta": -0.006336955796391874,
+    "nmae_improved": true
+   },
+   {
+    "ficr_candidate": 0.3375162947530456,
+    "ficr_delta": 0.00041402519617128597,
+    "ficr_improved": true,
+    "ficr_parent": 0.33710226955687433,
+    "group": 3,
+    "nmae_delta": -0.004979133934498725,
+    "nmae_improved": true
+   }
+  ],
+  "predeclared_check": {
+   "H1_expectation": "세 그룹 모두 FICR 개선",
+   "H1_held": true,
+   "H2_expectation": "어느 달을 빼도 동결 게이트 통과",
+   "H2_failing_when_dropped": [],
+   "H2_held": true,
+   "H3_expectation": "같은 사양으로 두 번 만든 예측이 바이트 일치",
+   "H3_held": true,
+   "prediction_digest": "c2fba86d9655fafbe0ae64e14c3995b94f213eb494c90a4e11ab1e10cd6aed22",
+   "verdict": "PROMOTION_CANDIDATE"
+  }
+ },
+ "schema_version": 1,
+ "script_sha256": "cd0fbbe1561caf2786214d8e4e36aad997e5cff55809c44f521c2600799bfc0e",
+ "stage": "M271_P4_CYCLE16_ROBUSTNESS"
+}

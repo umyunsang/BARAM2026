@@ -1,0 +1,14 @@
+{
+ "node": "N517_LOCAL_BLEND_CURVE",
+ "rows": 19782,
+ "analog_col": "prediction_kwh",
+ "classifier_col": "prediction_kwh",
+ "endpoint_analog": 0.6057596789867304,
+ "endpoint_classifier": 0.6305886378922547,
+ "best_w": 0.9,
+ "best_total": 0.6306829033747415,
+ "exceeds_both": true,
+ "model_fits": 0,
+ "lockbox_reopened": false,
+ "dacon_upload": false
+}

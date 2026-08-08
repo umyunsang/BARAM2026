@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "node_id": "S17-N22A_M115_TERRAIN_NO_REFIT_TYPED_PROVENANCE_RECOVERY",
+  "created_at": "2026-08-08T23:42:49.808488+09:00",
+  "parent_id": "S17-N22_M115_TERRAIN_SX300_H8_STRICT_PREQUENTIAL_COMPARISON",
+  "purpose": "Recover the already materialized N22 family without any refit or action change by normalizing the mixed provenance time column into an explicitly all-string schema, freeze copied predictions before actual access, then execute the unchanged S17-N3 comparison index 4.",
+  "input_bundle": {
+    "files": {
+      "AGENTS.md": "91a11f95f94e8de86f5c84b204e1893830b3ed5693e3d7ede7f2e351e9891e9c",
+      "reports/s17_n22a_no_refit_recovery_spec.json": "07ef6b7fec59e2ffac6e233d95b4ba6ee7fe6f488c80d0dce491d69329b1b0d8",
+      "reports/s17_n22_m115_terrain_strict_receipt.json": "ce88d091256c40bf72709de952dd80700e006d4003bc18e922a5926e79fefa17",
+      "reports/s17_n22_m115_terrain_strict_predeclaration.json": "1ebd3acd2573189037d8597715ac4297988f0325ec91156fd834911a05d11046",
+      "reports/s17_n22_m115_terrain_family_spec.json": "d0458e634d975f931868899c574daa961a343d52b369bc8143e5b7f6b6bb3c00",
+      "scripts/run_m115_terrain_sx300_strict.py": "cb2314de4f3458983505823d8351b99ed2bedd2738b6f57c7746fb87037fb537",
+      "artifacts/backtests/s17_n22_m115_terrain/predictions.parquet": "ccb1ae4fe0fcf6f1828ee0b7db128d487b733f81f9da80d4e6e67b9827a30e25",
+      "artifacts/backtests/s17_n22_m115_terrain/materialization_details.json": "6c2d73829f47546106747d6ee537192d70b5a5471fe56768a1b781903f17f454",
+      "artifacts/backtests/s17_n7_strict_actions/actions.parquet": "6041a7bf6f242c4da7958dc43d3487cdc468cc39301086bf3a5e6df5fb87f290",
+      "artifacts/backtests/s17_n7_strict_actions/procedure_provenance.parquet": "12666e4e61d962e74e0168e41a40f13b13acc006808bd7bd09dd837fa6cf9cae",
+      "artifacts/backtests/s17_n7_strict_actions/family_manifest.json": "972ed2922260bec2000cb9bc0d97098ae533652ab16daf9d5ca6d90601daa046",
+      "src/baram/evaluation/prequential.py": "a4cd12d30b3cf79ac339f1a5dbcc009f5b85ba10a30ef6614346a6309703b35b",
+      "src/baram/evaluation/official.py": "5701ddfc5a6254e89cbc49451cd3f4bbddd437cff451a4596a86e7c68ff42cba",
+      "src/baram/constants.py": "f4fbf5c6772d021436f9b40459a2587f8223d597045d7fe9c48c9428e1702843",
+      "src/baram/loop/events.py": "9c05e7cb40f76dcc759630ee9463dd29ffd5f8efd2d744e7b596def3390b5044",
+      "reports/s17_n3_prequential_eval_receipt.json": "6f25b5bdff627de2a1bcebe537204d91e0be0bf5be63cc8018193c1754c0a080",
+      "uv.lock": "2521843b78485fd444fa4bfd4126198c6e5b79928b8680626c85859749358c04",
+      "pyproject.toml": "1d42fe3512b11750563c756a4a57e536a6b3027b6636b2284e47c0216e9f2217"
+    },
+    "sha256": "5a8ac193b259cc1d1223d7c1cfe39512b1e481344f2dd5d89a11f2a16468571f"
+  },
+  "recovery_spec": {
+    "path": "reports/s17_n22a_no_refit_recovery_spec.json",
+    "sha256": "07ef6b7fec59e2ffac6e233d95b4ba6ee7fe6f488c80d0dce491d69329b1b0d8"
+  },
+  "frozen_partial": {
+    "predictions_sha256": "ccb1ae4fe0fcf6f1828ee0b7db128d487b733f81f9da80d4e6e67b9827a30e25",
+    "materialization_details_sha256": "6c2d73829f47546106747d6ee537192d70b5a5471fe56768a1b781903f17f454",
+    "inherited_fits": 6,
+    "new_fits": 0,
+    "new_predict_calls": 0,
+    "maximum_action_change": 0.0
+  },
+  "phases": {
+    "recover_and_freeze": {
+      "actual_values_read": 0,
+      "fits": 0,
+      "predict_calls": 0,
+      "policy_calls": 0,
+      "score_calls": 0
+    },
+    "assess": {
+      "conditional_on_all_recovery_gates": true,
+      "comparison_index": 4,
+      "protocol": "S17-N3",
+      "n_rep": 4999,
+      "seed": 20260808,
+      "blocks": [
+        3,
+        7,
+        14
+      ]
+    }
+  },
+  "support_rule": {
+    "SUPPORTED": "TERRAIN delta vs Champion >=0.001635, promotion stable at 3/7/14 days, protocol inference SUPPORTED.",
+    "GOAL": "SUPPORTED and outer strict official Total >=0.660000.",
+    "REFUTED": "Assessment runs but support/goal rule fails.",
+    "DIAGNOSTIC_INCONCLUSIVE": "Any pre-score control/chronology/bounded-access gate fails; comparison remains 3."
+  },
+  "outputs": [
+    "scripts/recover_m115_terrain_no_refit.py",
+    "artifacts/backtests/s17_n22a_m115_terrain_recovery/predictions.parquet",
+    "artifacts/backtests/s17_n22a_m115_terrain_recovery/materialization_details.json",
+    "artifacts/backtests/s17_n22a_m115_terrain_recovery/procedure_provenance.parquet",
+    "artifacts/backtests/s17_n22a_m115_terrain_recovery/typed_recovery.json",
+    "artifacts/backtests/s17_n22a_m115_terrain_recovery/family_manifest.json",
+    "artifacts/backtests/s17_n22a_m115_terrain_recovery/evaluation.json",
+    "reports/s17_n22a_m115_terrain_no_refit_receipt.json"
+  ],
+  "resource_limits": {
+    "new_model_fits": 0,
+    "new_predict_calls": 0,
+    "model_workers": 0,
+    "external_requests": 0,
+    "new_dependencies": 0
+  },
+  "forbidden_actions": [
+    "refit or predict",
+    "any action/prediction/policy/calibration change",
+    "actual access before recovery/family hash freeze",
+    "2024/test/rejected ECMWF/quarantined N10",
+    "external requests",
+    "dependency/Dacon/account mutation"
+  ],
+  "score_bearing_if_gate_passes": true,
+  "comparison_index_if_gate_passes": 4,
+  "comparison_count_before": 3,
+  "lockbox_2024_used": false
+}

@@ -1,0 +1,318 @@
+{
+  "contract_version": "M271_LEDGER_CONTRACT_v1",
+  "events": [
+    {
+      "ts": "2026-08-05T15:24:18.714468+00:00",
+      "node_id": "A7_deficit_init",
+      "kind": "BASELINE",
+      "champion_total": 0.6286045208903154,
+      "total_recoverable": 0.04875044667051586,
+      "cell_updates": {},
+      "note": "A7 이 정책 T0.5_G1.5 를 채점해 원장을 세웠다. 이후 어떤 사이클도 갱신하지 않았고, 그것이 stall 77 의 원인이다."
+    },
+    {
+      "ts": "2026-08-05T15:24:18.725186+00:00",
+      "node_id": "C1N63_CEILING_REBASE",
+      "kind": "CELL_ATTRIBUTION",
+      "champion_total": 0.6286045208903154,
+      "total_recoverable": 0.04875044667051586,
+      "cell_updates": {
+        "group_id=2|month=2023-11|y_band=(0.45, 0.7]": {
+          "status": "EXPLAINED",
+          "mechanism": "HEADROOM_MEASURED_AGAINST_C57B_CEILING",
+          "owner": "C1N63_CEILING_REBASE",
+          "recoverable_estimate": 0.006021186342927424
+        },
+        "group_id=2|month=2023-11|y_band=(0.7, 1.1]": {
+          "status": "EXPLAINED",
+          "mechanism": "HEADROOM_MEASURED_AGAINST_C57B_CEILING",
+          "owner": "C1N63_CEILING_REBASE",
+          "recoverable_estimate": 0.004766212167075351
+        },
+        "group_id=1|month=2023-11|y_band=(0.45, 0.7]": {
+          "status": "EXPLAINED",
+          "mechanism": "HEADROOM_MEASURED_AGAINST_C57B_CEILING",
+          "owner": "C1N63_CEILING_REBASE",
+          "recoverable_estimate": 0.004600038922440777
+        },
+        "group_id=2|month=2023-10|y_band=(0.45, 0.7]": {
+          "status": "EXPLAINED",
+          "mechanism": "HEADROOM_MEASURED_AGAINST_C57B_CEILING",
+          "owner": "C1N63_CEILING_REBASE",
+          "recoverable_estimate": 0.004329278732035029
+        },
+        "group_id=2|month=2023-07|y_band=(0.45, 0.7]": {
+          "status": "EXPLAINED",
+          "mechanism": "HEADROOM_MEASURED_AGAINST_C57B_CEILING",
+          "owner": "C1N63_CEILING_REBASE",
+          "recoverable_estimate": 0.004314109760547477
+        },
+        "group_id=3|month=2023-12|y_band=(0.45, 0.7]": {
+          "status": "EXPLAINED",
+          "mechanism": "HEADROOM_MEASURED_AGAINST_C57B_CEILING",
+          "owner": "C1N63_CEILING_REBASE",
+          "recoverable_estimate": 0.004255504722738353
+        },
+        "group_id=1|month=2023-12|y_band=(0.45, 0.7]": {
+          "status": "EXPLAINED",
+          "mechanism": "HEADROOM_MEASURED_AGAINST_C57B_CEILING",
+          "owner": "C1N63_CEILING_REBASE",
+          "recoverable_estimate": 0.003988881281238229
+        },
+        "group_id=2|month=2023-12|y_band=(0.7, 1.1]": {
+          "status": "EXPLAINED",
+          "mechanism": "HEADROOM_MEASURED_AGAINST_C57B_CEILING",
+          "owner": "C1N63_CEILING_REBASE",
+          "recoverable_estimate": 0.003975532653052846
+        },
+        "group_id=3|month=2023-11|y_band=(0.45, 0.7]": {
+          "status": "EXPLAINED",
+          "mechanism": "HEADROOM_MEASURED_AGAINST_C57B_CEILING",
+          "owner": "C1N63_CEILING_REBASE",
+          "recoverable_estimate": 0.0038768975299139684
+        },
+        "group_id=1|month=2023-10|y_band=(0.45, 0.7]": {
+          "status": "EXPLAINED",
+          "mechanism": "HEADROOM_MEASURED_AGAINST_C57B_CEILING",
+          "owner": "C1N63_CEILING_REBASE",
+          "recoverable_estimate": 0.0037869506733348504
+        },
+        "group_id=2|month=2023-12|y_band=(0.45, 0.7]": {
+          "status": "EXPLAINED",
+          "mechanism": "HEADROOM_MEASURED_AGAINST_C57B_CEILING",
+          "owner": "C1N63_CEILING_REBASE",
+          "recoverable_estimate": 0.00368836246831895
+        },
+        "group_id=2|month=2023-04|y_band=(0.45, 0.7]": {
+          "status": "EXPLAINED",
+          "mechanism": "HEADROOM_MEASURED_AGAINST_C57B_CEILING",
+          "owner": "C1N63_CEILING_REBASE",
+          "recoverable_estimate": 0.0036411899169913153
+        },
+        "group_id=3|month=2023-07|y_band=(0.7, 1.1]": {
+          "status": "EXPLAINED",
+          "mechanism": "HEADROOM_MEASURED_AGAINST_C57B_CEILING",
+          "owner": "C1N63_CEILING_REBASE",
+          "recoverable_estimate": 0.001577445376388901
+        },
+        "group_id=3|month=2023-10|y_band=(0.25, 0.45]": {
+          "status": "EXPLAINED",
+          "mechanism": "HEADROOM_MEASURED_AGAINST_C57B_CEILING",
+          "owner": "C1N63_CEILING_REBASE",
+          "recoverable_estimate": 0.002476365787526395
+        },
+        "group_id=3|month=2023-04|y_band=(0.45, 0.7]": {
+          "status": "EXPLAINED",
+          "mechanism": "HEADROOM_MEASURED_AGAINST_C57B_CEILING",
+          "owner": "C1N63_CEILING_REBASE",
+          "recoverable_estimate": 0.003086752015585865
+        },
+        "group_id=1|month=2023-12|y_band=(0.25, 0.45]": {
+          "status": "EXPLAINED",
+          "mechanism": "HEADROOM_MEASURED_AGAINST_C57B_CEILING",
+          "owner": "C1N63_CEILING_REBASE",
+          "recoverable_estimate": 0.00249503736678612
+        },
+        "group_id=3|month=2023-12|y_band=(0.25, 0.45]": {
+          "status": "EXPLAINED",
+          "mechanism": "HEADROOM_MEASURED_AGAINST_C57B_CEILING",
+          "owner": "C1N63_CEILING_REBASE",
+          "recoverable_estimate": 0.002036330714003191
+        },
+        "group_id=3|month=2023-07|y_band=(0.45, 0.7]": {
+          "status": "EXPLAINED",
+          "mechanism": "HEADROOM_MEASURED_AGAINST_C57B_CEILING",
+          "owner": "C1N63_CEILING_REBASE",
+          "recoverable_estimate": 0.0024999278198435245
+        },
+        "group_id=2|month=2023-12|y_band=(0.25, 0.45]": {
+          "status": "EXPLAINED",
+          "mechanism": "HEADROOM_MEASURED_AGAINST_C57B_CEILING",
+          "owner": "C1N63_CEILING_REBASE",
+          "recoverable_estimate": 0.001964701942343776
+        }
+      },
+      "note": "C1N63 이 108 셀에 물리 천장 대비 여유를 계산했다. 천장을 넘은 셀은 AT_CEILING 으로 회수가능질량에서 제외한다 — 동류 평균 기준으로는 회수 가능해 보이지만 물리적으로 아니다."
+    },
+    {
+      "ts": "2026-08-05T16:48:59.179420+00:00",
+      "node_id": "PRE_CONTRACT_AUDIT",
+      "kind": "AUDIT",
+      "champion_total": 0.63031,
+      "total_recoverable": 0.04875044667051586,
+      "cell_updates": {},
+      "note": "계약 도입 이전 79 개 사이클이 원장에 아무것도 쓰지 않았다. 사이클별 챔피언 이력은 재구성할 수 없으므로 가짜 사건을 지어내지 않고 감사된 사실 하나로 덮는다. 이 사이클들도 실제로 일어난 매크로스텝이므로 `cycles_covered` 로 정체 길이에 그대로 반영된다.",
+      "cycles_covered": 79
+    },
+    {
+      "ts": "2026-08-05T16:48:59.180850+00:00",
+      "node_id": "C1N77_PER_SOURCE_STACK",
+      "kind": "CYCLE",
+      "champion_total": 0.63031,
+      "total_recoverable": 0.04875044667051586,
+      "cell_updates": {},
+      "note": "계약 강제 시점에 소급 기록. 근거 m271_cycle77_per_source_stack_receipt.json",
+      "cycles_covered": 1
+    },
+    {
+      "ts": "2026-08-05T16:48:59.181557+00:00",
+      "node_id": "C1N78_LOOP_ENGINE_C10",
+      "kind": "CYCLE",
+      "champion_total": 0.63031,
+      "total_recoverable": 0.04875044667051586,
+      "cell_updates": {},
+      "note": "계약 강제 시점에 소급 기록. 근거 m271_c10_loop_engine_receipt.json",
+      "cycles_covered": 1
+    },
+    {
+      "ts": "2026-08-05T16:48:59.182327+00:00",
+      "node_id": "C1N79_LEDGER_CONTRACT",
+      "kind": "CYCLE",
+      "champion_total": 0.63031,
+      "total_recoverable": 0.04875044667051586,
+      "cell_updates": {},
+      "note": "계약 강제 시점에 소급 기록. 근거 m271_ledger_contract_receipt.json",
+      "cycles_covered": 1
+    },
+    {
+      "ts": "2026-08-05T16:48:59.185225+00:00",
+      "node_id": "C1N80_FUSION_ANOMALY",
+      "kind": "CYCLE",
+      "champion_total": 0.63031,
+      "total_recoverable": 0.04875044667051586,
+      "cell_updates": {},
+      "note": "계약 강제 시점에 소급 기록. 근거 m271_c5_fusion_anomaly_receipt.json",
+      "cycles_covered": 1
+    },
+    {
+      "ts": "2026-08-05T16:49:46.613823+00:00",
+      "node_id": "C1N68_EMPIRICAL_DECOMPOSITION",
+      "kind": "CYCLE",
+      "champion_total": 0.63031,
+      "total_recoverable": 0.04875044667051586,
+      "cell_updates": {},
+      "note": "계약 강제 시점에 소급 기록. 근거 m271_cycle68_empirical_decomposition_receipt.json",
+      "cycles_covered": 1
+    },
+    {
+      "ts": "2026-08-05T16:49:46.614332+00:00",
+      "node_id": "C1N73_GROUP_BLEND_GATE",
+      "kind": "CYCLE",
+      "champion_total": 0.63031,
+      "total_recoverable": 0.04875044667051586,
+      "cell_updates": {},
+      "note": "계약 강제 시점에 소급 기록. 근거 m271_cycle73_group_blend_gate_receipt.json",
+      "cycles_covered": 1
+    },
+    {
+      "ts": "2026-08-05T16:49:46.614776+00:00",
+      "node_id": "C1N76_CIRCULAR_BLOCK",
+      "kind": "CYCLE",
+      "champion_total": 0.63031,
+      "total_recoverable": 0.04875044667051586,
+      "cell_updates": {},
+      "note": "계약 강제 시점에 소급 기록. 근거 m271_cycle76_circular_block_receipt.json",
+      "cycles_covered": 1
+    },
+    {
+      "ts": "2026-08-06T00:31:39.879631+00:00",
+      "node_id": "C1N82_TEACHER_SCALEUP",
+      "kind": "CYCLE",
+      "champion_total": 0.63031,
+      "total_recoverable": 0.04875044667051586,
+      "cell_updates": {},
+      "note": "계약 강제 시점에 소급 기록. 근거 m271_c7_teacher_scaleup_receipt.json",
+      "cycles_covered": 1
+    },
+    {
+      "ts": "2026-08-06T00:31:39.880214+00:00",
+      "node_id": "C1N83_TEACHER_SCALEUP_REJUDGED",
+      "kind": "CYCLE",
+      "champion_total": 0.63031,
+      "total_recoverable": 0.04875044667051586,
+      "cell_updates": {},
+      "note": "계약 강제 시점에 소급 기록. 근거 m271_c7b_rejudge_receipt.json",
+      "cycles_covered": 1
+    },
+    {
+      "ts": "2026-08-06T00:31:39.880996+00:00",
+      "node_id": "C1N84_TEACHER_CHRONOLOGICAL",
+      "kind": "CYCLE",
+      "champion_total": 0.63031,
+      "total_recoverable": 0.04875044667051586,
+      "cell_updates": {},
+      "note": "계약 강제 시점에 소급 기록. 근거 m271_c7c_chronological_receipt.json",
+      "cycles_covered": 1
+    },
+    {
+      "ts": "2026-08-06T01:27:14.324674+00:00",
+      "node_id": "C1N85_C16_RECHECK",
+      "kind": "CYCLE",
+      "champion_total": 0.63031,
+      "total_recoverable": 0.04875044667051586,
+      "cell_updates": {},
+      "note": "계약 강제 시점에 소급 기록. 근거 m271_c16_recheck_receipt.json",
+      "cycles_covered": 1
+    },
+    {
+      "ts": "2026-08-06T01:27:14.325248+00:00",
+      "node_id": "C1N86_LANE_EXPAND",
+      "kind": "CYCLE",
+      "champion_total": 0.63031,
+      "total_recoverable": 0.04875044667051586,
+      "cell_updates": {},
+      "note": "계약 강제 시점에 소급 기록. 근거 m271_c6_lane_expand_receipt.json",
+      "cycles_covered": 1
+    },
+    {
+      "ts": "2026-08-06T01:27:14.325764+00:00",
+      "node_id": "C1N87_CURTAILMENT_CLEAN_TARGET",
+      "kind": "CYCLE",
+      "champion_total": 0.63031,
+      "total_recoverable": 0.04875044667051586,
+      "cell_updates": {},
+      "note": "계약 강제 시점에 소급 기록. 근거 m271_n1_curtailment_clean_receipt.json",
+      "cycles_covered": 1
+    },
+    {
+      "ts": "2026-08-06T03:38:52.591299+00:00",
+      "node_id": "C1N88_N2_PROBE_L5_OPEN",
+      "kind": "CYCLE",
+      "champion_total": 0.63031,
+      "total_recoverable": 0.04875044667051586,
+      "cell_updates": {},
+      "note": "계약 강제 시점에 소급 기록. 근거 m271_n2_probe_l5_open_receipt.json",
+      "cycles_covered": 1
+    },
+    {
+      "ts": "2026-08-06T03:38:52.592055+00:00",
+      "node_id": "C1N89_ANOMALY_CLEAN_TARGET",
+      "kind": "CYCLE",
+      "champion_total": 0.63031,
+      "total_recoverable": 0.04875044667051586,
+      "cell_updates": {},
+      "note": "계약 강제 시점에 소급 기록. 근거 m271_n2_anomaly_clean_receipt.json",
+      "cycles_covered": 1
+    },
+    {
+      "ts": "2026-08-06T03:50:14.602902+00:00",
+      "node_id": "C1N90_WITHIN_BIN_INTEGRATION",
+      "kind": "CYCLE",
+      "champion_total": 0.63031,
+      "total_recoverable": 0.04875044667051586,
+      "cell_updates": {},
+      "note": "계약 강제 시점에 소급 기록. 근거 m271_n4_within_bin_receipt.json",
+      "cycles_covered": 1
+    },
+    {
+      "ts": "2026-08-06T03:50:14.603685+00:00",
+      "node_id": "C1N91_WITHIN_BIN_ESTABLISHED",
+      "kind": "CYCLE",
+      "champion_total": 0.63031,
+      "total_recoverable": 0.04875044667051586,
+      "cell_updates": {},
+      "note": "계약 강제 시점에 소급 기록. 근거 m271_n4b_establish_receipt.json",
+      "cycles_covered": 1
+    }
+  ]
+}

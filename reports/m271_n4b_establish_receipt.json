@@ -1,0 +1,106 @@
+{
+  "node_id": "C1N91_WITHIN_BIN_ESTABLISHED",
+  "lane": "L4",
+  "parent": "C1N90_WITHIN_BIN_INTEGRATION",
+  "candidate": false,
+  "diagnostic_only": true,
+  "method": "CIRCULAR_BLOCK_BOOTSTRAP (Politis & Romano 1992), C1N76 과 동일",
+  "surface": {
+    "spec_digest": "195531818b8ab2b7c1e59965",
+    "probability_digest": "8141403f56cd7eba",
+    "from_cache": true
+  },
+  "days": 228,
+  "draws": 4000,
+  "seed": 20260805,
+  "pooled_delta": 0.0018657103749247783,
+  "n4_best_gain": 0.0018896436040550801,
+  "daily_mean": 1.074661419080745e-05,
+  "daily_sd": 0.02546233399236828,
+  "positive_days": 104,
+  "positive_fraction": 0.45614035087719296,
+  "bootstrap": {
+    "1": {
+      "mean": -2.1134794529504304e-06,
+      "bias": -1.286009364375788e-05,
+      "q05": -0.0027035243496380825,
+      "q95": 0.002787376117945452,
+      "excludes_zero": false
+    },
+    "2": {
+      "mean": -3.5104582717506526e-05,
+      "bias": -4.585119690831397e-05,
+      "q05": -0.0028155673028338038,
+      "q95": 0.0028501680062356844,
+      "excludes_zero": false
+    },
+    "3": {
+      "mean": 1.39234505541184e-05,
+      "bias": 3.1768363633109506e-06,
+      "q05": -0.002682510399330633,
+      "q95": 0.002756750725571282,
+      "excludes_zero": false
+    },
+    "5": {
+      "mean": -2.9567431720139428e-05,
+      "bias": -4.031404591094688e-05,
+      "q05": -0.002763335375017412,
+      "q95": 0.002761551810101885,
+      "excludes_zero": false
+    },
+    "7": {
+      "mean": -3.898678297589177e-06,
+      "bias": -1.4645292488396626e-05,
+      "q05": -0.0027336466683235785,
+      "q95": 0.002760514079336044,
+      "excludes_zero": false
+    },
+    "10": {
+      "mean": 4.818975193844486e-05,
+      "bias": 3.7443137747637414e-05,
+      "q05": -0.0026474897836426302,
+      "q95": 0.002577558175492949,
+      "excludes_zero": false
+    },
+    "14": {
+      "mean": 2.1706159094276248e-05,
+      "bias": 1.0959544903468799e-05,
+      "q05": -0.0026024881283683455,
+      "q95": 0.0023562300757986013,
+      "excludes_zero": false
+    },
+    "21": {
+      "mean": -6.923188883204403e-06,
+      "bias": -1.766980307401185e-05,
+      "q05": -0.002449623659794663,
+      "q95": 0.002266497191052131,
+      "excludes_zero": false
+    },
+    "30": {
+      "mean": -1.123629695404707e-06,
+      "bias": -1.1870243886212156e-05,
+      "q05": -0.0025953419750535706,
+      "q95": 0.0022812265653466995,
+      "excludes_zero": false
+    }
+  },
+  "checks": {
+    "V1_unbiased": true,
+    "V2_pooled_matches_n4": true
+  },
+  "hypotheses": {
+    "H1_daily_mean_positive": true,
+    "H2_excludes_zero_at_L7": false,
+    "H3_excludes_zero_at_L30": false,
+    "H4_majority_days_positive": false
+  },
+  "comparison": {
+    "c60_level_temperature": "전 블록길이에서 0 포함",
+    "c73_group_blend": "전 블록길이에서 0 포함"
+  },
+  "verdict": "EFFECT_NOT_ESTABLISHED",
+  "dacon_upload": false,
+  "lockbox_used": false,
+  "generated_at": "2026-08-06T03:49:29.059514+00:00",
+  "digest": "9566ca018d81d725"
+}

@@ -1,0 +1,140 @@
+{
+  "node_id": "C1N86_LANE_EXPAND",
+  "lane": "L1",
+  "parent": "C1N85_C16_RECHECK",
+  "candidate": false,
+  "materialization_only": true,
+  "research": {
+    "performed_at": "2026-08-06",
+    "trigger": "레인 확장 강제 (C6 은 LIVE==0 을 요구해 자연 발화하지 않으나 실질 기아)",
+    "sources": [
+      {
+        "url": "https://doi.org/10.3390/s25175329",
+        "class": "peer_reviewed",
+        "lane": "L1",
+        "finding": "SCADA 의 감발·센서결함 이상을 iForest/LOF/DBSCAN 으로 탐지하고 파워커브 모델링과 공동 최적화",
+        "applicability": "directly_supported"
+      },
+      {
+        "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12431095/",
+        "class": "peer_reviewed",
+        "lane": "L1",
+        "finding": "데이터 정제가 감발의 영향을 제거해 이상치를 없앤다",
+        "applicability": "directly_supported"
+      },
+      {
+        "url": "https://arxiv.org/pdf/2501.14805",
+        "class": "peer_reviewed",
+        "lane": "L5",
+        "finding": "확률예보 오차의 순차적 보정",
+        "applicability": "near_match_only"
+      }
+    ]
+  },
+  "lane_census": {
+    "L1": {
+      "name": "데이터전처리",
+      "live": 2,
+      "pruned": 3,
+      "total": 5
+    },
+    "L2": {
+      "name": "피처구성",
+      "live": 8,
+      "pruned": 16,
+      "total": 24
+    },
+    "L3": {
+      "name": "모델링방법",
+      "live": 6,
+      "pruned": 11,
+      "total": 17
+    },
+    "L4": {
+      "name": "검증전략",
+      "live": 3,
+      "pruned": 8,
+      "total": 11
+    },
+    "L5": {
+      "name": "예측성능우수성",
+      "live": 2,
+      "pruned": 1,
+      "total": 3
+    },
+    "L6": {
+      "name": "문제해결접근",
+      "live": 8,
+      "pruned": 4,
+      "total": 12
+    },
+    "L7": {
+      "name": "모델개선전략",
+      "live": 5,
+      "pruned": 7,
+      "total": 12
+    },
+    "L8": {
+      "name": "분석방법적절성",
+      "live": 30,
+      "pruned": 1,
+      "total": 31
+    }
+  },
+  "starved_lanes": [
+    "L5",
+    "L1"
+  ],
+  "largest_lane_total": 31,
+  "detection_threshold": 0.001013,
+  "f1_as_sigma_reduction": 0.006176829268292682,
+  "candidates": [
+    {
+      "id": "N1_CURTAILMENT_CLEAN_TEACHER_TARGET",
+      "lane": "L1",
+      "what": "감발 구간을 teacher **학습 표적에서 제외**한다. 라벨은 그대로 둔다",
+      "why_deployable": "감발은 예보시점에 알 수 없어 피처로 못 쓰지만, 학습 표적에서 빼는 것은 학습기간 SCADA 만 쓰므로 배포 가능하다",
+      "evidence_in_our_data": "A5 §5 가 '운전로그가 없어 로그 기반 필터링을 통계적 대체로 수행했고 표준 준수가 아니다' 라고 기록. C1N57B 의 g3 theta 0.775 대 g1·g2 0.5, A5 의 UNISON 포화비 0.89~0.95 대 VESTAS 0.99",
+      "expected_sigma_reduction_low": 0.01,
+      "expected_sigma_reduction_high": 0.03,
+      "priority": 1
+    },
+    {
+      "id": "N2_JOINT_ANOMALY_POWERCURVE",
+      "lane": "L1",
+      "what": "iForest/LOF/DBSCAN 을 파워커브 적합과 공동 최적화 (문헌 표준 틀)",
+      "why_deployable": "학습기간 SCADA 전처리이므로 배포 가능",
+      "evidence_in_our_data": "N1 과 같은 결함군이나 범위가 넓다",
+      "expected_sigma_reduction_low": null,
+      "expected_sigma_reduction_high": null,
+      "priority": 3,
+      "gate": "N1 이 F1 을 넘을 때만 착수한다 — 그 전에는 크기를 주장할 근거가 없다"
+    },
+    {
+      "id": "N3_SEQUENTIAL_ERROR_CORRECTION",
+      "lane": "L5",
+      "what": "확률예보 오차의 순차적 보정",
+      "why_deployable": "후처리이므로 배포 가능",
+      "evidence_in_our_data": "L5 가 굶었다는 것 외에 우리 자료의 직접 근거 없음",
+      "expected_sigma_reduction_low": null,
+      "expected_sigma_reduction_high": null,
+      "priority": 4,
+      "risk": "C1N60·C1N73 결정층 계열과 같은 이웃 — C17 신규성 기각 위험"
+    }
+  ],
+  "hypotheses": {
+    "H1_l1_l5_starved": true,
+    "H2_n1_grounded_in_our_data": true,
+    "H3_n1_low_estimate_clears_f1": true,
+    "H4_n3_novelty_risk": true
+  },
+  "verdict": "LANE_EXPANDED_N1_WORTH_EXECUTING",
+  "next_action": "N1 을 실행 노드로 만든다. 감발 판정 규칙을 실행 전에 동결하고, teacher sigma_v 를 시간분할 test 행에서 재어 F1 을 넘는지 본다.",
+  "dacon_upload": false,
+  "external_actions": [
+    "WebSearch"
+  ],
+  "lockbox_used": false,
+  "generated_at": "2026-08-06T00:41:26.121019+00:00",
+  "digest": "36076f469aca0403"
+}

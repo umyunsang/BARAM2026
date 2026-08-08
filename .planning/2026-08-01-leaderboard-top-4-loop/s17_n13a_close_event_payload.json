@@ -1,0 +1,39 @@
+{
+  "event_type": "CLOSED",
+  "cycle_id": "S17-N13A_R2_NO_REFIT_TYPED_PROVENANCE_RECOVERY",
+  "stage_id": "S6",
+  "node_id": "S17-N13A_R2_NO_REFIT_TYPED_PROVENANCE_RECOVERY",
+  "actor": "root",
+  "occurred_at": "2026-08-08T21:17:41.633240+09:00",
+  "body": {
+    "predeclared_event_sha256": "2aacf4549a5a61141715bd91ade30784d78c2847769748a8276fd6e6c5449b32",
+    "receipt_path": "reports/s17_n13a_r2_provenance_recovery_receipt.json",
+    "receipt_sha256": "d9d3ab4075a6104a22e3b4c5ef1124a169867d60aa8d666e2d738c084f9234be",
+    "code_sha256": "5cba6f0dd29d7ccebc64e888c3660a2fdfa564615ca9d81d648496487fda192b",
+    "config_sha256": "060f2df3b53a0dff240b7d8e83405bc4e120170e96098e2a547930fb2655e60d",
+    "data_sha256": "8089f093df13bc2583fa1737b33d741f03bd501bd25f854cad922520862f25d5",
+    "router_sha256": "80e37561a32fb2928d1a7505b652bb822f5b6989e73b6d7106afb0ae62041b43",
+    "policy_ids": [
+      "CHAMPION_FIXED_SHIFTED",
+      "R2_CONTROL_ZERO4",
+      "R2_VERTICAL_PCA2X2"
+    ],
+    "row_alignment_keys": [
+      "fold_id",
+      "group_id",
+      "forecast_kst_dtm"
+    ],
+    "evidence_class": "foldoutside",
+    "weights_fit": "fold_outside",
+    "result_status": "REFUTED",
+    "score_bearing": true,
+    "comparison_index": 2,
+    "official_total": 0.5633804254945118,
+    "stage_evidence_status": "RESEARCHED",
+    "next_handoff": [
+      "S17-N14_R3_HEIGHT_ONLY_TERRAIN_PREREQUISITE_AUDIT"
+    ],
+    "lockbox_2024_used": false,
+    "dacon_actions": []
+  }
+}

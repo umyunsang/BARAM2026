@@ -1,0 +1,27 @@
+{
+  "event_type": "PREDECLARED",
+  "cycle_id": "S17-N19_TERRAIN_SX300_H8_NO_BODY_PREREQUISITE_AUDIT",
+  "stage_id": "S6",
+  "node_id": "S17-N19_TERRAIN_SX300_H8_NO_BODY_PREREQUISITE_AUDIT",
+  "actor": "root",
+  "occurred_at": "2026-08-08T22:39:59.443810+09:00",
+  "body": {
+    "preregistration_sha256": "d19f06510863fe259cd755b6f7524f688dae70555c7976e5047af9e41db09f02",
+    "parent_ids": [
+      "S17-N18_POST_RWA_FRONTIER_RESEARCH_INTAKE"
+    ],
+    "mechanism": "A published Sx-300/H=8 m direction-dependent high-resolution terrain lookup is identifiable without KMAPP u(h_HC), but must pass exact geometry, metadata, decoder, formula-parity and nonduplication gates before any DEM value byte.",
+    "treatment": "No-body prerequisite audit of the single frozen 16-cell Sx formula and environment.",
+    "control": "No DEM value/body, fit, score, feature value or comparison.",
+    "metric": "Boolean exact input, tile HEAD, formula/direction, independent parity, synthetic GeoTIFF decoder and nonduplication gates.",
+    "min_effect": 0.0,
+    "score_bearing": false,
+    "novelty_signature": "TERRAIN_SX300_H8_LDAPS16_NO_BODY_PREREQUISITE_V1",
+    "basis_evidence_ids": [
+      "N18_TERRAIN_SX_PRIMARY_FORMULA",
+      "N14_COPDEM_LICENSE_TIME_TILE_METADATA",
+      "N15A_KMAPP_UNIDENTIFIED",
+      "N12_LDAPS_DIRECTION_SCHEMA"
+    ]
+  }
+}

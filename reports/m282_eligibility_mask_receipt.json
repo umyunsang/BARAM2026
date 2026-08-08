@@ -1,0 +1,71 @@
+{
+ "node": "M282_ELIGIBILITY_MASK",
+ "v1_reproduction": true,
+ "results": {
+  "PLAIN": [
+   0.6280801997237008,
+   0.8565814621416383,
+   0.39957893730576327
+  ],
+  "MASKED": [
+   0.6280801997237008,
+   0.8565814621416383,
+   0.39957893730576327
+  ]
+ },
+ "policies": {
+  "PLAIN": {
+   "dev-2023-Q2": [
+    0.6,
+    0.2
+   ],
+   "dev-2023-Q3": [
+    0.5,
+    0.2
+   ],
+   "dev-2023-Q4": [
+    0.5,
+    0.2
+   ]
+  },
+  "MASKED": {
+   "dev-2023-Q2": [
+    0.6,
+    0.2
+   ],
+   "dev-2023-Q3": [
+    0.5,
+    0.2
+   ],
+   "dev-2023-Q4": [
+    0.5,
+    0.2
+   ]
+  }
+ },
+ "foldwise": {
+  "PLAIN": {
+   "dev-2023-Q2": 0.633554283402306,
+   "dev-2023-Q3": 0.5975078708975153,
+   "dev-2023-Q4": 0.6366233494787807
+  },
+  "MASKED": {
+   "dev-2023-Q2": 0.633554283402306,
+   "dev-2023-Q3": 0.5975078708975153,
+   "dev-2023-Q4": 0.6366233494787807
+  }
+ },
+ "gain": 0.0,
+ "threshold": 0.001013,
+ "hypotheses": {
+  "H1": false,
+  "H2": false,
+  "H3": false,
+  "H4": false
+ },
+ "verdict": "ELIGIBILITY_MASK_INSUFFICIENT",
+ "model_fits": 0,
+ "lockbox_reopened": false,
+ "dacon_upload": false,
+ "external_actions": []
+}

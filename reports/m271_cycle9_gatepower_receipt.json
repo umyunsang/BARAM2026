@@ -1,0 +1,213 @@
+{
+ "dacon_upload": false,
+ "decided_utc": "2026-08-04T06:33:58.832768+00:00",
+ "external_actions": [],
+ "lane": "L4",
+ "lockbox_reopened": false,
+ "model_fits": 0,
+ "new_2024_evaluation": false,
+ "node": "C1N9_GATE_POWER",
+ "report_sha256": "ddd97ff969dd458e6d0bf3b2db61ebafbab207509d0cd5145195f166d8ad4b11",
+ "result": {
+  "deployed_pooled": {
+   "ficr": 0.40246401063156667,
+   "one_minus_nmae": 0.8547450311490641,
+   "total": 0.6286045208903154
+  },
+  "gate_modified": false,
+  "gate_version": "M270_MONTHLY_GATE_v1_frozen_2026-08-04",
+  "ladder": [
+   {
+    "bootstrap_q05": 0.0,
+    "gate": {
+     "G1": false,
+     "G2": false,
+     "G3": false,
+     "G4": true
+    },
+    "k": 1.0,
+    "median_delta": 0.0,
+    "min_delta": 0.0,
+    "months_scored": 9,
+    "passed": false,
+    "pooled_total": 0.6286045208903154,
+    "positive_months": 0,
+    "sign_test_p": 1.0,
+    "true_gain": 0.0
+   },
+   {
+    "bootstrap_q05": 0.0008246342034372781,
+    "gate": {
+     "G1": true,
+     "G2": true,
+     "G3": true,
+     "G4": true
+    },
+    "k": 0.995,
+    "median_delta": 0.0009667553882553026,
+    "min_delta": 0.0005336674054018387,
+    "months_scored": 9,
+    "passed": true,
+    "pooled_total": 0.629617572189441,
+    "positive_months": 9,
+    "sign_test_p": 0.001953125,
+    "true_gain": 0.0010130512991256557
+   },
+   {
+    "bootstrap_q05": 0.0018369884371569624,
+    "gate": {
+     "G1": true,
+     "G2": true,
+     "G3": true,
+     "G4": true
+    },
+    "k": 0.99,
+    "median_delta": 0.0019198683699538366,
+    "min_delta": 0.001411317928260547,
+    "months_scored": 9,
+    "passed": true,
+    "pooled_total": 0.6308212690825278,
+    "positive_months": 9,
+    "sign_test_p": 0.001953125,
+    "true_gain": 0.0022167481922124033
+   },
+   {
+    "bootstrap_q05": 0.0038071626326130602,
+    "gate": {
+     "G1": true,
+     "G2": true,
+     "G3": true,
+     "G4": true
+    },
+    "k": 0.98,
+    "median_delta": 0.004200522646973015,
+    "min_delta": 0.0031128627827211597,
+    "months_scored": 9,
+    "passed": true,
+    "pooled_total": 0.6329002754314107,
+    "positive_months": 9,
+    "sign_test_p": 0.001953125,
+    "true_gain": 0.00429575454109532
+   },
+   {
+    "bootstrap_q05": 0.0053789958595520555,
+    "gate": {
+     "G1": true,
+     "G2": true,
+     "G3": true,
+     "G4": true
+    },
+    "k": 0.97,
+    "median_delta": 0.005946861653904789,
+    "min_delta": 0.0045017443692007,
+    "months_scored": 9,
+    "passed": true,
+    "pooled_total": 0.6347397243442108,
+    "positive_months": 9,
+    "sign_test_p": 0.001953125,
+    "true_gain": 0.006135203453895399
+   },
+   {
+    "bootstrap_q05": 0.007337886896701523,
+    "gate": {
+     "G1": true,
+     "G2": true,
+     "G3": true,
+     "G4": true
+    },
+    "k": 0.96,
+    "median_delta": 0.007936790214417622,
+    "min_delta": 0.006000170961285578,
+    "months_scored": 9,
+    "passed": true,
+    "pooled_total": 0.6366614283197449,
+    "positive_months": 9,
+    "sign_test_p": 0.001953125,
+    "true_gain": 0.00805690742942955
+   },
+   {
+    "bootstrap_q05": 0.009223844072032767,
+    "gate": {
+     "G1": true,
+     "G2": true,
+     "G3": true,
+     "G4": true
+    },
+    "k": 0.95,
+    "median_delta": 0.00952040066349047,
+    "min_delta": 0.008327504764512383,
+    "months_scored": 9,
+    "passed": true,
+    "pooled_total": 0.638647294096635,
+    "positive_months": 9,
+    "sign_test_p": 0.001953125,
+    "true_gain": 0.010042773206319633
+   },
+   {
+    "bootstrap_q05": 0.01442484213903358,
+    "gate": {
+     "G1": true,
+     "G2": true,
+     "G3": true,
+     "G4": true
+    },
+    "k": 0.93,
+    "median_delta": 0.015239033666857082,
+    "min_delta": 0.013295609345998716,
+    "months_scored": 9,
+    "passed": true,
+    "pooled_total": 0.6435458730741361,
+    "positive_months": 9,
+    "sign_test_p": 0.001953125,
+    "true_gain": 0.014941352183820755
+   },
+   {
+    "bootstrap_q05": 0.021034707755215935,
+    "gate": {
+     "G1": true,
+     "G2": true,
+     "G3": true,
+     "G4": true
+    },
+    "k": 0.9,
+    "median_delta": 0.021315426926216574,
+    "min_delta": 0.019608580833609057,
+    "months_scored": 9,
+    "passed": true,
+    "pooled_total": 0.6512055028379047,
+    "positive_months": 9,
+    "sign_test_p": 0.001953125,
+    "true_gain": 0.022600981947589305
+   },
+   {
+    "bootstrap_q05": 0.034325161177138665,
+    "gate": {
+     "G1": true,
+     "G2": true,
+     "G3": true,
+     "G4": true
+    },
+    "k": 0.85,
+    "median_delta": 0.03471660171089308,
+    "min_delta": 0.03161361280196906,
+    "months_scored": 9,
+    "passed": true,
+    "pooled_total": 0.6644140722674153,
+    "positive_months": 9,
+    "sign_test_p": 0.001953125,
+    "true_gain": 0.03580955137709996
+   }
+  ],
+  "predeclared_check": {
+   "H1_expectation": "게이트는 +0.005 Total 개선을 통과시킨다",
+   "H1_held": true,
+   "detectable_near_target": true,
+   "detection_threshold_total": 0.0010130512991256557,
+   "g1_detection_threshold_total": 0.0010130512991256557,
+   "verdict": "GATE_HAS_POWER"
+  }
+ },
+ "schema_version": 1,
+ "script_sha256": "d7209e21daf1f5d831d00b15920a00b977ca5efb966b143f9b177f7abc338018",
+ "stage": "M271_P4_CYCLE9_GATE_POWER"
+}

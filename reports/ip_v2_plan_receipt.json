@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "artifact": "IP@v2",
+  "created_at": "2026-08-01T00:00:00+09:00",
+  "status": "IMPLEMENTATION_PLAN_PENDING_APPROVAL",
+  "approval_request": "IP@v2 승인",
+  "approved_design": {
+    "id": "DS@v3",
+    "sha256": "64ace304cd91a78e4d7c3bc9e0ef8574fbda16fe19c75995c679ff8155c5e87c"
+  },
+  "plan": {
+    "path": ".planning/2026-08-01-leaderboard-top-4-loop/IP_v2.md",
+    "lines": 458,
+    "sha256": "d2db84fa1f31051fabd18b611a7d17d9f52556515b5c2143e88e8ae4b751fa62",
+    "planned_run_id": "baram-v2-20260801-01"
+  },
+  "repository": {
+    "git_head": "383265af810eee24129de2d7ce99457bb8a757ef",
+    "execution_topology": "single_root",
+    "worker_cap": 6,
+    "artifact_budget_gib": 10
+  },
+  "lockbox_guard": {
+    "path": "artifacts/locks/lockbox-2024.consumed.json",
+    "sha256": "866f22dcd88c8bcbb1841b55d989a9af43b6f9e133606b47bb7378b1b97ace1f",
+    "new_evaluation_allowed": false
+  },
+  "full_chronology_candidate_ceiling": {
+    "contract_parity": 2,
+    "spatial_physical_features": 8,
+    "deterministic_point_models": 10,
+    "distribution_bundles": 8,
+    "expected_utility_policies": 10,
+    "ensembles": 6,
+    "final_reproduction": 2,
+    "total": 46
+  },
+  "fixed_promotion_thresholds": {
+    "material_total_delta_min": 0.0035,
+    "finalist_seed_total_range_max": 0.0035,
+    "all_later_fold_total_deltas_positive": true,
+    "pooled_one_minus_nmae_delta_min": -0.001,
+    "per_group_component_total_delta_min": -0.001,
+    "group3_component_total_delta_min_for_decision_ensemble": 0.0,
+    "decision_ficr_delta_min": 0.007,
+    "absolute_residual_correlation_max_exclusive": 0.995
+  },
+  "primary_path_requires_new_dependencies": false,
+  "conditional_tiers_excluded": ["TFT", "NGBoost", "new deep dependencies", "GPU or Colab"],
+  "actions_performed": {
+    "source_implementation": false,
+    "model_training": false,
+    "dependency_installation": false,
+    "Dacon_upload_or_account_mutation": false,
+    "remote_compute_or_Git": false,
+    "new_2024_evaluation": false,
+    "subagents_spawned": 0
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "status": "EVIDENCE_EXHAUSTED_TARGET_NOT_REACHED",
+  "created_at": "2026-08-09T01:06:05.322648+09:00",
+  "objective": {
+    "strict_chronology_safe_oof_target_total": 0.66,
+    "authoritative_champion_total": 0.6314827308346854,
+    "gap": 0.0285172691653146,
+    "target_reached": false,
+    "goal_id": "bcf9f998-9f87-4d44-9173-a1231e9f9ef9",
+    "goal_status": "active_not_completed"
+  },
+  "authoritative_ledger": {
+    "path": "artifacts/registry/loop_events_s17.sqlite",
+    "head_sequence": 154,
+    "head_event_sha256": "7d30989a25349e1d8245c54b3cb1825e5b19ee9cc7b22cb771ad1c9843a0cf76",
+    "previous_sha256": "f4751c8c100c5dca0cdf00973bd065fb8e192ba5b6101013e80725d5950fcd2d",
+    "snapshot_digest": "d9dbcb50738f9f067b6c2297e0d62cab630abacabb12b6b86c6767e84cb4928c",
+    "accounted_cycles": 121,
+    "evidence_complete_cycles": 33,
+    "comparison_count": 4,
+    "pending": [],
+    "frontier": [],
+    "stage_coverage": [
+      "S1",
+      "S2",
+      "S3",
+      "S4",
+      "S5",
+      "S6",
+      "S7",
+      "S8",
+      "S9",
+      "S10",
+      "S11"
+    ],
+    "chain_verification": "PASS",
+    "halt_eligibility": "HALT_ALLOWED_EXHAUSTED"
+  },
+  "terminal_chain": [
+    {
+      "node_id": "S17-N25_TERTIARY_FRONTIER_RESEARCH_INTAKE",
+      "role": "final tertiary distinct-information intake",
+      "receipt_path": "reports/s17_n25_tertiary_frontier_intake_receipt.json",
+      "receipt_sha256": "9c90cbc24852e66571f3794d22a31e32660ca5c29f62f37e57ef214940f6bdc0",
+      "closed_sequence": 152,
+      "closed_event_sha256": "34c7baad446889d8b55cfd8835414fcc5e2489d9fcf0078a3c848e4fb3ad41fd",
+      "ready_candidate_count": 0,
+      "outcome": "EVIDENCE_EXHAUSTED_TARGET_NOT_REACHED"
+    },
+    {
+      "node_id": "S17-N26_S4_OFFICIAL_METRIC_AND_ACTION_APPROPRIATENESS_AUDIT",
+      "role": "formal missing-S4 coverage repair",
+      "audit_path": "reports/s17_n26_s4_metric_action_audit.json",
+      "audit_sha256": "9c92a4fdebe4e67d3043555f8955816b404fb791b38bc64a0e3ebfa2d1d62f77",
+      "receipt_path": "reports/s17_n26_s4_metric_action_audit_receipt.json",
+      "receipt_sha256": "1b42d6323efe92528d8a40f300d4b5ef2ef0c7a31042a68a74ca6f2c55452313",
+      "closed_sequence": 154,
+      "closed_event_sha256": "7d30989a25349e1d8245c54b3cb1825e5b19ee9cc7b22cb771ad1c9843a0cf76",
+      "outcome": "S4_RESEARCHED_SUPPORTED_NO_CANDIDATE"
+    }
+  ],
+  "n25_lane_hashes": {
+    "research/lanes/s17_n25_farm_submitted_forecast_archive.md": "ecd38106a84e7fc3336d71dda0e4c4582fa008f2ac9a179a19c656a3ca763ee1",
+    "research/lanes/s17_n25_regional_renewable_forecast.md": "27cd8ac7d70d01de3d1b855a8567720099eb4c97406b96da75e9a3808c565fb9",
+    "research/lanes/s17_n25_grid_topology_outage_crosswalk.md": "3fbf6178355646900c9ce93026e49c73fba03aa1396ef62f76f34a9c30fb3453",
+    "research/lanes/s17_n25_pretrained_microscale_checkpoint.md": "ccb50279417e4eae82ed3409823846e5b9549b097b0b20983f3f80ea36b4db33",
+    "research/lanes/s17_n25_icing_availability_physics.md": "10dc756aaf4d575794c014ba7eb7a081b03e8baa9968eae87d464091e4e595ee"
+  },
+  "terminal_interpretation": {
+    "formal_loop_halt": true,
+    "success_delivery": false,
+    "claim_scope": "The approved current frontier is exhausted under the frozen chronology, licence, deployment, exact-mapping, zero-choice, and nonduplication gates. This is not a universal proof against future newly published or newly licensed information.",
+    "why_no_more_recursion": "N23-N25 exhausted distinct remaining source/representation classes; every identified item has a binding gate failure and variants would reopen closed axes or invent analyst choices.",
+    "why_goal_not_completed": "The strict target is not reached, so the active thread goal must remain uncompleted despite formal evidence-exhausted halt."
+  },
+  "reopen_conditions": [
+    "a genuinely new directly supported pre-cutoff fixed-issue information source",
+    "independent cure of licence/access/runtime plus exact three-group mapping and one source-prescribed treatment",
+    "a new chronology-safe model premise that is nonduplicate and does not use 2024/test outcomes",
+    "explicit human authority that changes a hard scope boundary"
+  ],
+  "reopen_contract": {
+    "next_score_bearing_comparison_index": 5,
+    "immutable_predeclaration_required": true,
+    "strict_past_only_required": true,
+    "lockbox_2024_score_or_slice_selection_forbidden": true,
+    "dacon_action_requires_separate_authority": true
+  },
+  "validation": {
+    "full_pytest": {
+      "command": ".venv/bin/python -m pytest -q",
+      "result": "PASS",
+      "tests_passed": 217,
+      "warnings": 144,
+      "stdout_sha256": "6c96ee7ca901ca731b4122e9b7ca1182a3f307fa86e803879bcf19e7d93d6cd3"
+    },
+    "ruff": {
+      "command": ".venv/bin/ruff check src tests scripts/recover_m115_terrain_no_refit.py scripts/run_m115_terrain_sx300_strict.py",
+      "result": "PASS",
+      "stdout_sha256": "5b196eb3a6acb50d3fa398d04ca284985cc1ffec870e940264b00780bfd2c971"
+    },
+    "immutable_inputs": {
+      "competition_zip_sha256": "920be0c458d820e855bf79dd25723146f52ce1736138aedba5e6bc853f1f720b",
+      "baseline_notebook_sha256": "712b26f4d2748860c94cff1e0100c23810468c983173f8e9ef8d009fe82df48c",
+      "official_metric_notebook_sha256": "0a3ab5a57dba0705dbdbda73cd723be37ef39cce388fcb22b1a220ce523a70f9"
+    }
+  },
+  "scope_accounting": {
+    "additional_2024_lockbox_use": false,
+    "raw_2024_or_test_value_read_in_n25_n26": false,
+    "dacon_or_account_actions": [],
+    "n26_model_fits": 0,
+    "n26_predictions": 0,
+    "n26_project_metric_calls": 0,
+    "n26_external_calls": 0,
+    "dependency_changes": 0
+  },
+  "success": false
+}

@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "node_id": "S17-N38_ACTION_LANDSCAPE",
+  "stage_id": "S8",
+  "deficit": "FD5",
+  "created_at": "2026-08-09T05:55:54.726036+09:00",
+  "score_bearing": false,
+  "question": "At a fixed predictive distribution, how much Total is attributable to the action rule (temperature T and settlement gain G) versus the distribution itself, and is the deployed T0.75_G2 heuristic above or below the exact plug-in Bayes rule T1_G1?",
+  "method": "One refit per fold, then 25 action rules evaluated on the same frozen probability output. Selection is read only on the Q2 burn-in fold; outer folds are reported, not selected on.",
+  "no_new_features": true,
+  "degrees_of_freedom": 0,
+  "trial_budget": 1
+}

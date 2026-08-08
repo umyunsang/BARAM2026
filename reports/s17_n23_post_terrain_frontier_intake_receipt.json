@@ -1,0 +1,156 @@
+{
+  "schema_version": 1,
+  "node_id": "S17-N23_POST_TERRAIN_FRONTIER_RESEARCH_INTAKE",
+  "status": "CLOSED_INCONCLUSIVE_NO_READY_CANDIDATE_FAIL_CLOSED",
+  "created_at": "2026-08-09T00:14:01.058165+09:00",
+  "predeclaration": {
+    "path": "reports/s17_n23_post_terrain_frontier_intake_predeclaration.json",
+    "sha256": "d0939ba03683d39ae6c56186323bb83888698966eb877796c2f75ae4bff52148",
+    "event_sha256": "a2ffa6b0941b24104b26939f41aba15d54059eb49afb818d1fc9483e9bd188ba",
+    "input_bundle_sha256": "714be6b43509f1a6b4f2f8e75d707509814d5c8735c63f7e5c42fb11258d7a22",
+    "input_hashes_reverified_unchanged": true,
+    "input_file_count": 25
+  },
+  "authoritative_state": {
+    "champion_total": 0.6314827308346854,
+    "target_total": 0.66,
+    "gap": 0.0285172691653146,
+    "comparison_count_before": 4,
+    "comparison_count_after": 4,
+    "next_score_bearing_comparison_index": 5,
+    "lockbox_2024_used": false,
+    "dacon_actions": []
+  },
+  "lane_artifacts": [
+    {
+      "id": "SITE_MAPPED_TERRAIN",
+      "path": "research/lanes/s17_n23_site_mapped_terrain.md",
+      "sha256": "9a491086b8cb4b098772cffa0e89c82552f3c211a347108e2ea1babb053351b8",
+      "verdict": "NONE: point-local Sx is source-supported, but no directly supported group reducer/weights, h=8 is not hub-applicable, and the frozen lookup has no turbine-site rows."
+    },
+    {
+      "id": "LANDCOVER_ROUGHNESS",
+      "path": "research/lanes/s17_n23_landcover_roughness.md",
+      "sha256": "c0ecda2a510b42c5168ad3234913f951e1eb13c3dbd5d12c52c4b68e0a311b21",
+      "verdict": "NOT_READY: WorldCover v200 source/licence pass, but static log-law roughness is duplicate/negative near-match evidence and the distinct roughness-rose treatment lacks a licensed self-contained zero-variant implementation."
+    },
+    {
+      "id": "POWER_WAKE_STATIC",
+      "path": "research/lanes/s17_n23_power_wake_static.md",
+      "sha256": "a58f2f0b245ee71a285a96ae0ab336395b3c5aacda72aaf4ec03ee4273cc08c6",
+      "verdict": "BLOCKED: exact all-fleet power/CT curves and coefficient-complete wake treatment with eligible licence/chronology do not exist in the frozen evidence; existing static/wake/curve axes are duplicate or variant-closed."
+    },
+    {
+      "id": "REPO_MECHANISM",
+      "path": "research/lanes/s17_n23_repo_mechanism.md",
+      "sha256": "f9d3bac2a09a672e7068298d8faf32319fff15a511be1e36cdba9611e3126518",
+      "verdict": "REJECTED_SCOPE_BREACH_NONE: delegated conclusions were discarded; root-independent source/schema audit found only an unfrozen circular SCADA-direction teacher gap, not an executable zero-variant treatment."
+    },
+    {
+      "id": "OPERATIONAL_NWP",
+      "path": "research/lanes/s17_n23_operational_nwp.md",
+      "sha256": "a38571290fcdeeb37a400ad44c21ce22ac0adf8924fafa8dcd0d8d51dda99bf7",
+      "verdict": "NONE_READY: GEFS is archive-unsafe in current prose and non-novel under prior frozen GEFS VOI evidence; CFSv2 is a novel near match but lacks latency, continuity, anonymous historical-route, exact-body/decode, and frozen-treatment proof; other archives fail access/runtime/history gates."
+    }
+  ],
+  "lane_bundle_sha256": "3cdd9802afa9eb4ea85c66f2875475753000616096849411a0857619f5eceb0f",
+  "root_audit": {
+    "ready_executable_candidate_count": 0,
+    "selected_candidate": null,
+    "decision": "INCONCLUSIVE_NONE_READY",
+    "decision_basis": [
+      "Every executable candidate must have a complete directly-supported chain; unverified/derived/near-match evidence grants no execution authority.",
+      "All repository-native and static-physics proposals are duplicate, variant-closed, incompletely specified, or not available from the frozen artifact.",
+      "No operational archive established archive continuity, basis-time publication, anonymous reproducibility, literal fields, and unchanged-environment decoding simultaneously.",
+      "Selecting NONE is fail-closed and consumes no comparison."
+    ],
+    "root_verified_official_cfs_metadata": {
+      "ncei_url": "https://www.ncei.noaa.gov/products/weather-climate-models/climate-forecast-system",
+      "ncei_content_sha256": "e151d647dc3c906d698e694c456a42767e3f5fc9da656253545e1bb98e09bc3d",
+      "nco_url": "https://www.nco.ncep.noaa.gov/pmb/products/cfs/",
+      "nco_content_sha256": "ffdf8e9e9099bd057e4f027e979b28fb6a96031d15d6da75d811b077a4d1ff43",
+      "directly_supported_facts": [
+        "NCEI separates CFSv2 operational forecasts from analysis/reforecast/reanalysis and states April 2011-present GRIB2 coverage with four cycles/day.",
+        "NCO names an initialization date and members 01-04 and inventories 10 m and pressure-level wind products."
+      ],
+      "insufficient_facts": [
+        "No official worst-case publication latency bound was found.",
+        "No all-date continuity or exact 2022-2023 object receipt was made.",
+        "No data body or unchanged-environment decode was performed."
+      ],
+      "disposition": "NEAR_MATCH_ONLY_NOT_SELECTED"
+    },
+    "closed_axis_checks": {
+      "gefs": "NOT_NOVEL_AND_NO_REPEAT: frozen input research/rwa_external_eligibility.md directly records the prior root-owned M270 spread VOI probe as negative.",
+      "ecmwf": "N5 rejected availability lineage was not reopened.",
+      "terrain_mean16": "N22A weak-positive but preregistered-refuted lineage was not retuned.",
+      "wake_power_curve": "existing encoded axes were not repackaged."
+    },
+    "deferred_prerequisite_observations": [
+      {
+        "id": "CFSV2_OPERATIONAL_FORECAST_METADATA",
+        "status": "UNSELECTED_NEAR_MATCH",
+        "missing": [
+          "one exact zero-variant BARAM treatment",
+          "all-date fixed-run object continuity",
+          "basis-time latency evidence",
+          "anonymous immutable historical route",
+          "literal schema and local decode receipt"
+        ]
+      }
+    ]
+  },
+  "scope_accounting": {
+    "research_children_spawned": 5,
+    "children_stopped_after_integration": 5,
+    "designated_lane_files_present": 5,
+    "external_data_or_weight_bodies": 0,
+    "external_inference_calls": 0,
+    "model_fits": 0,
+    "prediction_calls": 0,
+    "policy_calls": 0,
+    "metric_or_score_calls": 0,
+    "actual_kwh_or_raw_label_reads": 0,
+    "raw_2024_or_test_dataset_value_reads": 0,
+    "dependency_changes": 0,
+    "dacon_or_account_actions": [],
+    "scope_incident_count": 1,
+    "scope_incident": {
+      "lane": "REPO_MECHANISM",
+      "description": "The delegated reader opened one pre-existing narrative containing prohibited 2024/test aggregate statements; a bounded root transcript preview necessarily exposed that narrative class.",
+      "raw_row_or_label_values_exposed": false,
+      "substantive_child_conclusions_used": false,
+      "containment": "child stopped; no child file/write existed; root independently authored the lane from allowed source/schema artifacts; incident evidence granted no candidate or execution authority."
+    },
+    "predeclared_zero_aggregate_exposure_limit_met": false,
+    "fail_closed_effect": "Node closes diagnostic/INCONCLUSIVE with zero candidate and zero comparison; no downstream treatment may cite the breached narrative."
+  },
+  "validation": {
+    "pytest": {
+      "command": ".venv/bin/python -m pytest -q",
+      "result": "PASS",
+      "tests_passed": 217,
+      "warnings": 144,
+      "stdout_sha256": "711d20bb74772da0642cd0e76f4d37d76f52c3df40aab3e5f3f62bee241efdb9"
+    },
+    "ruff": {
+      "command": ".venv/bin/ruff check src tests scripts/recover_m115_terrain_no_refit.py scripts/run_m115_terrain_sx300_strict.py",
+      "result": "PASS",
+      "stdout_sha256": "5b196eb3a6acb50d3fa398d04ca284985cc1ffec870e940264b00780bfd2c971"
+    },
+    "immutable_inputs": {
+      "competition_zip_sha256": "920be0c458d820e855bf79dd25723146f52ce1736138aedba5e6bc853f1f720b",
+      "baseline_notebook_sha256": "712b26f4d2748860c94cff1e0100c23810468c983173f8e9ef8d009fe82df48c"
+    }
+  },
+  "comparison": {
+    "score_bearing": false,
+    "comparison_index": null,
+    "official_total": null,
+    "champion_changed": false
+  },
+  "next_handoff": [
+    "S17-N24_SECONDARY_FRONTIER_RESEARCH_INTAKE"
+  ],
+  "success": false
+}

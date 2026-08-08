@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "node_id": "S17-N21_TERRAIN_SX300_H8_MODEL_FAMILY_PREREQUISITE_AUDIT",
+  "created_at": "2026-08-08T23:08:49.318085+09:00",
+  "parent_id": "S17-N20A_TERRAIN_SX300_H8_NO_NODATA_TAG_RECOVERY",
+  "purpose": "Audit whether the frozen 16x72 terrain lookup can enter exactly one reproducible, chronology-typed, Champion-matched model family before comparison index 4 is spent. No fit, probability prediction, policy evaluation, or score is allowed.",
+  "input_bundle": {
+    "files": {
+      "AGENTS.md": "91a11f95f94e8de86f5c84b204e1893830b3ed5693e3d7ede7f2e351e9891e9c",
+      "reports/s17_n20a_terrain_sx300_no_nodata_recovery_receipt.json": "8edf4d13ba12c9035048e1902111ecd672501c46cb554f0cc1043f171d5826a9",
+      "artifacts/external/copdem_s17_n20/recovery_manifest.json": "5b2f6918b22e0b4f8168367b15355d6eec6603d3d08538d5989a97dae076ab0e",
+      "artifacts/external/copdem_s17_n20/lookup.npy": "8861028407290dd536a011eac9bc80fdd1121da9742c8cf4e910d88855823ee5",
+      "artifacts/external/copdem_s17_n20/lookup.parquet": "8f292c97193a15accd03d8289833a60c6b6db8d53d00ffc2a3cb86cd9b5d7996",
+      "artifacts/backtests/s17_n7_strict_actions/family_manifest.json": "972ed2922260bec2000cb9bc0d97098ae533652ab16daf9d5ca6d90601daa046",
+      "artifacts/backtests/s17_n7_strict_actions/procedure_provenance.parquet": "12666e4e61d962e74e0168e41a40f13b13acc006808bd7bd09dd837fa6cf9cae",
+      "artifacts/backtests/s17_n7_strict_actions/actions.parquet": "6041a7bf6f242c4da7958dc43d3487cdc468cc39301086bf3a5e6df5fb87f290",
+      "reports/s17_n7_strict_action_reconstruction_receipt.json": "f4d56d97532fbe4d681061dfff773f951c4be01b26081dda3c0ff77720e973fc",
+      "scripts/reconstruct_strict_actions.py": "8d656bdb91a63b96b1e207d796e130796de47004a0c1293e5800fdffdf14abcd",
+      "reports/s17_n3_prequential_eval_receipt.json": "6f25b5bdff627de2a1bcebe537204d91e0be0bf5be63cc8018193c1754c0a080",
+      "src/baram/evaluation/prequential.py": "a4cd12d30b3cf79ac339f1a5dbcc009f5b85ba10a30ef6614346a6309703b35b",
+      ".planning/2026-08-01-leaderboard-top-4-loop/run_alternative_booster_classifier.py": "94b0fd79746fbbda8d1a32542d1d74e8e4b94f72cbe7e104df8e2badcdf06e22",
+      ".planning/2026-08-01-leaderboard-top-4-loop/run_sequence_classifier.py": "eb4ebf8bcfaaf2f7b46931cfa3ad81ccd204a5e7f89a12d5756f849c17f84d31",
+      ".planning/2026-08-01-leaderboard-top-4-loop/run_site_wind_classifier.py": "a97193a84970b07c7d55c795688ab27a92fc219247e8e9cc08724cbcc91ce5ef",
+      ".planning/2026-08-01-leaderboard-top-4-loop/run_site_wind_teacher.py": "8749791de2ed005396f238131acf8f53033c61c95a5178c8b1020db2e6faa43b",
+      ".planning/2026-08-01-leaderboard-top-4-loop/run_consensus_classifier.py": "3914606f96af750bc02a7ce689a3ed4986fe4202a88d805a802f2f32021dacbd",
+      "artifacts/manifests/prepare.json": "ca4908d7f98639b13da80febcd071cd805369e8e044bb4d7b97f793d2703ca46",
+      "artifacts/cache/920be0c458d820e855bf79dd25723146f52ce1736138aedba5e6bc853f1f720b/train_grid_pivot.parquet": "aee0a4e934a23fa058063e4271135eef0add23563ae84296a3226701d1587996",
+      "artifacts/backtests/metric-aligned-probe/M102_TOP100-dev-2023-Q2.json": "17f7ea69f4eca3e1c9500ae2df6f6c2361a6eeca9d8a953551825f476d5b06eb",
+      "artifacts/backtests/metric-aligned-probe/M115_XGBOOST-dev-2023-Q2.json": "917d2c741fa85aa68a264f3f75bd230517276a5ebd4a5e397890756707b19cf6",
+      "artifacts/backtests/metric-aligned-probe/M115_XGBOOST-dev-2023-Q2-policies.parquet": "4ad669071fc8010c15713f014e320dcffb1cdb5c142a05fa426fd21f7f306ade",
+      "artifacts/backtests/metric-aligned-probe/M64B_ALLWEATHER_SITEWIND_CLASS-dev-2023-Q2-sitewind-features.npz": "ef37ea3bf4d59f855e5938bf2ba6319fe9d549fc40da4bbb24f9c26f2d55bd9a",
+      "artifacts/backtests/metric-aligned-probe/M102_TOP100-dev-2023-Q3.json": "21fca4ab64433f27f1d26a7f0dee5040d085aeed13a76ab8d055610d30f2b484",
+      "artifacts/backtests/metric-aligned-probe/M115_XGBOOST-dev-2023-Q3.json": "f2ca31f9c00ecc88b2af5b50fec7bd38824601bc6b2ddeb69ae498d4b3ce6748",
+      "artifacts/backtests/metric-aligned-probe/M115_XGBOOST-dev-2023-Q3-policies.parquet": "951793f696a5599b2dd52684fac22b72949a90380e0437761ea397c1bffc520b",
+      "artifacts/backtests/metric-aligned-probe/M64B_ALLWEATHER_SITEWIND_CLASS-dev-2023-Q3-sitewind-features.npz": "e8571f126bd0aa4748b5531efc3eb9a943a4dc3e6d8324d07eb1351738686c0d",
+      "artifacts/backtests/metric-aligned-probe/M102_TOP100-dev-2023-Q4.json": "8cb7b96656d7773594ed50c99de92b071c1baa4eaaad242cb299c63a5724b79e",
+      "artifacts/backtests/metric-aligned-probe/M115_XGBOOST-dev-2023-Q4.json": "7dd4e5a2fde1d2b8ca7f583560dd861c7778c78d3a2264f10d4e98b9dd0829b3",
+      "artifacts/backtests/metric-aligned-probe/M115_XGBOOST-dev-2023-Q4-policies.parquet": "8913ab0cb6ce6de9b87d0eb79c79d541971b5f930c27da4647df7ee5caba3867",
+      "artifacts/backtests/metric-aligned-probe/M64B_ALLWEATHER_SITEWIND_CLASS-dev-2023-Q4-sitewind-features.npz": "e2a55b5eb87b4573ca707c0bde4b39ff9297048950d391b25cd6484bb39a0f57"
+    },
+    "sha256": "4f212b859c78e18c57d62551b0c74fd6540f9a8410ead3a66ef2d79385eb49dd"
+  },
+  "research_lane": {
+    "output": "research/lanes/s17_n21_terrain_model_integration.md",
+    "maximum_elapsed_minutes": 25,
+    "maximum_local_source_packages": 31,
+    "external_web_requests": 0,
+    "allowed_operations": "Read frozen code/JSON and binary schema/metadata only; saved action columns may be read solely for algebra/identity checks.",
+    "forbidden": "fit, predict_proba, policy/metric call, label/actual read, weather feature value read, 2024/test/rejected/quarantined access, write outside the one lane file"
+  },
+  "candidate_gate": {
+    "base_family": "M115_XGBOOST exact alternative-booster runner only",
+    "runner_requirements": [
+      "complete exact source/dependency chain",
+      "M64B Q2/Q3/Q4 sitewind caches uniquely identify the cache id",
+      "100 M102-selected feature names per fold",
+      "XGBoost parameters and fixed iteration 100 identifiable",
+      "fixed policy T0.75_G2 from the N7 Q2-only freeze",
+      "train/test rows defined strictly by fold start"
+    ],
+    "terrain_feature": "For each timestamp, compute from the 16 frozen LDAPS grid pairs u10/v10: direction=atan2(-u,-v) mod 360, nearest-five half-ties clockwise, table lookup by exact grid id, then arithmetic mean of exactly 16 finite Sx values. Append only terrain__sx300_h8_mean16.",
+    "matched_control": "Refit the unchanged 100-feature M115 arm. Before any assessment score, its Q3/Q4 T0.75_G2 actions must reproduce the frozen N7 M115 action vector at max_abs<=1e-6; and CHAMPION must reproduce 0.30*D+0.70*mean(M102,M113,M115) at max_abs<=1e-9. Failure is diagnostic and consumes no comparison.",
+    "candidate_action": "On Q3/Q4 only, replace the M115 term inside frozen Champion algebra: CHAMPION + (0.70/3)*(M115_TERRAIN-M115_CONTROL). Q2 remains unchanged Champion burn-in. Clip only to group capacity bounds already used by deployment.",
+    "fits_if_later_executed": {
+      "control": 3,
+      "terrain": 3,
+      "total": 6,
+      "max_workers": 6
+    },
+    "policy_search_if_later_executed": 0,
+    "new_feature_count": 1,
+    "parameter_variants": 0
+  },
+  "audit_gates": {
+    "schema": "train_grid_pivot has exactly grid01..grid16 u10/v10 and unique timestamp schema; lookup exact 16x72 finite",
+    "nonduplication": "terrain feature absent from all 100-feature M115 contracts and materialized action lineage",
+    "chronology": "feature uses only issued NWP, static pre-cutoff DEM, no magnitude/label/SCADA; training rows timestamp<fold start",
+    "control": "exact generator and saved-vector guard are implementable before score",
+    "comparison_contract": "S17-N3 protocol, unchanged Champion, matched M115 control, candidate; comparison index exactly 4 only after materialization guard"
+  },
+  "verdict_rule": {
+    "ready": "All gates pass -> predeclare one S17-N22 strict materialization/comparison.",
+    "blocked": "Any gate fails -> close terrain model axis without fit/score and hand off new frontier research intake."
+  },
+  "outputs": [
+    "research/lanes/s17_n21_terrain_model_integration.md",
+    "artifacts/audits/s17_n21_terrain_model_family_prerequisite.json",
+    "reports/s17_n21_terrain_model_family_prerequisite_receipt.json"
+  ],
+  "forbidden_actions": [
+    "model/optimizer fit or prediction",
+    "official/component/strict score call",
+    "weather or label/actual feature-value read",
+    "new external request/data/body/weight",
+    "feature/policy/hyperparameter search",
+    "2024/test/rejected ECMWF/quarantined N10 access",
+    "dependency change",
+    "Dacon/account/remote mutation"
+  ],
+  "score_bearing": false,
+  "comparison_index": null,
+  "comparison_count_before": 3,
+  "lockbox_2024_used": false
+}

@@ -1,0 +1,233 @@
+{
+  "schema_version": 1,
+  "node_id": "S17-N14_R3_HEIGHT_ONLY_TERRAIN_PREREQUISITE_AUDIT",
+  "closed_at": "2026-08-08T21:31:35.355678+09:00",
+  "predeclaration": {
+    "path": "reports/s17_n14_r3_terrain_prerequisite_predeclaration.json",
+    "sha256": "94f5b8d4d565d979d166cc0c9c2e6754a4d991b8ca4819bab057cfeee4703352",
+    "event_sha256": "9e9a1be34768e4f04e47c23c1fb68e4f590d55bdf132aba1e014fbc78d8d00d0"
+  },
+  "implementation": {
+    "path": "scripts/audit_height_only_terrain_prerequisites.py",
+    "sha256": "d0de98a994c798f9e4ea09b6882e1fdbd6ea79b038779fa1be4e5e2eb8a7778d"
+  },
+  "input_bundle_sha256": "a33e275ceb21a5bbe547f52ba8664bede00c241afc62baf22870f19551871d38",
+  "artifact": {
+    "path": "artifacts/audits/s17_n14_r3_terrain_prerequisite.json",
+    "sha256": "59a2e8dc16af789a1f334a2b2d7e90a677035bf65036f37414c345da2fca2b86",
+    "reproduction_sha256": "59a2e8dc16af789a1f334a2b2d7e90a677035bf65036f37414c345da2fca2b86",
+    "byte_identical": true
+  },
+  "source_receipts": {
+    "license": {
+      "url": "https://documentation.dataspace.copernicus.eu/APIs/SentinelHub/Data/DEM/resources/license/License-COPDEM-30.pdf",
+      "sha256": "9cd37d37ea654bbcaf0a2e059e6a3a5b5f76072824d8dd860ccf274ada8951bd",
+      "bytes": 113786
+    },
+    "product": {
+      "url": "https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM",
+      "sha256": "f1e566e63f7e256d7ae4f5c78b13fc0c253252f219d7dfc617b8736540fb8a1c",
+      "bytes": 110532
+    },
+    "aws_readme": {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/readme.html",
+      "sha256": "922461d55070e3c7e0cf2903ec54190d69e3773da2dc9e776a3f03566cfd56d2",
+      "bytes": 8536
+    },
+    "tile_head_only": {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N37_00_E128_00_DEM/Copernicus_DSM_COG_10_N37_00_E128_00_DEM.tif",
+      "method": "HEAD",
+      "body_bytes": 0
+    }
+  },
+  "findings": {
+    "license_rights": {
+      "worldwide_unlimited_time": true,
+      "reproduction": true,
+      "distribution": true,
+      "public_communication": true,
+      "adaptation_modification_combination": true,
+      "free_of_charge": true,
+      "noncommercial_restriction_absent": true,
+      "attribution_obligation_captured": true
+    },
+    "time_evidence": {
+      "source_acquired_2011_2015": true,
+      "available_for_use_2019": true,
+      "glo30_global_30m": true,
+      "aws_free_general_public": true
+    },
+    "tile_head": {
+      "status": 200,
+      "content_length": 45141829,
+      "last_modified": "Mon, 09 May 2022 14:19:30 GMT",
+      "etag": "\"70b5a10cfcfa45d800f3d7d8b31b026f\"",
+      "body_bytes": 0
+    },
+    "ldaps_grid_count": 16,
+    "ldaps_rows_2022_2023": 280320,
+    "out_of_scope_rows_skipped": 140544,
+    "gates": {
+      "license": true,
+      "time": true,
+      "availability": true,
+      "model_orography": true,
+      "formula_inputs": true
+    }
+  },
+  "adjudication": "READY_STATIC_DEM_EXTRACTION. The official GLO-30 licence grants worldwide unlimited-time reproduction, distribution, communication, adaptation/modification/combination free of charge without a non-commercial restriction; the product was acquired 2011-2015 and available from 2019. Exact N37/E128 tile HEAD is 200, 45,141,829 bytes, Last-Modified 2022-05-09. All 16 LDAPS grids have finite, time-constant surface_0_h through 2023. This is an eligibility/prerequisite result only: no DEM body or values were read.",
+  "execution_accounting": {
+    "initial_fetch_run": "retrieved three documentation bodies and HEAD-only tile metadata; then failed after allowed LDAPS scan on N12 receipt key mismatch",
+    "corrected_runs": "two byte-identical offline runs",
+    "dem_tile_body_bytes": 0,
+    "model_fits": 0,
+    "official_score_calls": 0,
+    "target_or_scada_access": false,
+    "test_member_access": false,
+    "lockbox_2024": false,
+    "dacon_actions": []
+  },
+  "verification": {
+    "compile": "pass",
+    "ruff": "All checks passed",
+    "deterministic_offline_reproduction": true,
+    "event_chain_verified": true
+  },
+  "preclose_snapshot": {
+    "pending": [
+      "S17-N14_R3_HEIGHT_ONLY_TERRAIN_PREREQUISITE_AUDIT"
+    ],
+    "closed": [
+      "S17-N10B_ISSUANCE_CUBE_2022_2023_CORRECTED_AUDIT",
+      "S17-N10_ISSUANCE_CUBE_TIMING_AND_MISSINGNESS_AUDIT",
+      "S17-N11A_FOUR_MAPPING_10MIN_SCADA_CORRECTED_DIAGNOSTIC",
+      "S17-N11_FOUR_MAPPING_TRAINING_WIND_DIAGNOSTIC",
+      "S17-N12_VERTICAL_PROFILE_TERRAIN_PREREQUISITE_AUDIT",
+      "S17-N13A_R2_NO_REFIT_TYPED_PROVENANCE_RECOVERY",
+      "S17-N13_R2_TWO_COMPONENT_VERTICAL_PCA_STRICT_PREQUENTIAL",
+      "S17-N2_EVENT_LEDGER_ENVELOPE",
+      "S17-N3_STRICT_PREQUENTIAL_EVALUATION_REPAIR",
+      "S17-N4_ECMWF_18Z_FIXED_LEAD_AUDIT",
+      "S17-N5_ECMWF_18Z_2023_EXTRACTION",
+      "S17-N5_ECMWF_18Z_2023_INNOVATION_PROBE",
+      "S17-N6A_FAIL_CLOSED_SCORE_CLASS_REPAIR",
+      "S17-N6_COST5_SPO_PLUS_PREQUENTIAL",
+      "S17-N7_STRICT_ACTION_PROVENANCE_RECONSTRUCTION",
+      "S17-N8_COST5_SPO_PLUS_STRICT_PREQUENTIAL_COMPARISON",
+      "S17-N9_COST5_NO_REFIT_MATERIALIZATION_RECOVERY"
+    ],
+    "legacy": [
+      "C1N100_NOVEL_MEMBER_PROBE",
+      "C1N101_PHYSICAL_MEMBER_PROBE",
+      "C1N102_RETRIEVAL_MEMBER",
+      "C1N103_EXTERNAL_NWP_MEMBER",
+      "C1N104_M244_KEY_RECOVERED",
+      "C1N105_M244_RECIPE_READ",
+      "C1N10_BLEND_LOCALITY",
+      "C1N11_V2_REPRESENTATION",
+      "C1N12_G3_HISTORY",
+      "C1N13_ENSEMBLE_VARIANCE",
+      "C1N14_SHRINKBLEND",
+      "C1N15_WALKFORWARD",
+      "C1N16_ROBUSTNESS_AUDIT",
+      "C1N17_METRIC_ALIGNED_COMBINER",
+      "C1N18_SPREAD_SKILL",
+      "C1N19_ENVELOPE_ORACLE",
+      "C1N1_TOPRATE_MECHANISM",
+      "C1N20_ALPHA_ENDPOINT",
+      "C1N21_MOS_BIAS_CORRECTION",
+      "C1N22_GLOBAL_SHIFT",
+      "C1N23_ELIGIBLE_MOS",
+      "C1N24_MEMBER_COUNT_REOPEN",
+      "C1N25_ENVELOPE_LAMBDA",
+      "C1N26_POOL_WIDTH_SCREEN",
+      "C1N27_RESIDUAL_SIGNAL",
+      "C1N28_PERGRID_SIGNAL",
+      "C1N29_CHAMPION_AUDIT",
+      "C1N2_COLLIDER_CORRECTED",
+      "C1N30_TEMPORAL_SIGNAL",
+      "C1N31_SPACE_TIME",
+      "C1N32_LOCKBOX_OPERATOR",
+      "C1N33_SINGLE_VS_ENSEMBLE",
+      "C1N34_SHRINK_TO_BEST",
+      "C1N35_FIXED_POLICY_CORRECTION",
+      "C1N36_SOURCE_SENSITIVITY",
+      "C1N37_BAND_ALIGNED_LOSS",
+      "C1N38_BAND_LOSS_FIXED",
+      "C1N39_ARCHITECTURE_GAP",
+      "C1N3_MASS_AXIS_WIND_SECTOR",
+      "C1N40_BAND_CLASSIFIER",
+      "C1N41_BAND_CLASSIFIER_CAPACITY",
+      "C1N42_TEACHER_RESTORED",
+      "C1N43_EFFECT_TREND",
+      "C1N44_SHARPENED_DECISION",
+      "C1N45_SUBMISSION_DECISION",
+      "C1N46_CLOSURE_FALSIFICATION",
+      "C1N47_EXTERNAL_NWP_REVIVED",
+      "C1N48_MODEL_VALIDATION",
+      "C1N49_RHO_ACCEPTANCE",
+      "C1N4_BAND_CONDITIONAL_POLICY_ORACLE",
+      "C1N50_NONNEGATIVE_WEIGHTS",
+      "C1N51_EXTERNAL_SOURCE_PROBE",
+      "C1N52_EXTERNAL_CLOSURE",
+      "C1N53_SUPPLIED_EXTRACTION",
+      "C1N54_SCATTER_CEILING",
+      "C1N55_TURBINE_CORRELATION",
+      "C1N56_MEASURED_POWERCURVE",
+      "C1N57B_VARIANCE_LAW",
+      "C1N57_FICR_CEILING",
+      "C1N58_TEACHER_OOF_SPLIT",
+      "C1N59_PERFECT_PROG_BOUND",
+      "C1N5_SPATIAL_INTERPOLATION",
+      "C1N60_LEVEL_TEMPERATURE",
+      "C1N61_GRID_BOUNDARY",
+      "C1N62_MONTH_MECHANISM",
+      "C1N64_BAND_AVOIDANCE",
+      "C1N65_WIND_LIMITED_BOUND",
+      "C1N66_HETEROSCEDASTIC_WIND",
+      "C1N67_EXACT_CURVE_PROPAGATION",
+      "C1N69_SKILL_RESPONSE",
+      "C1N6_WIND50_MIDPOINT",
+      "C1N70_BASELINE_CORRECTION",
+      "C1N71_TEACHER_WEIGHT",
+      "C1N72_CURVE_BLEND",
+      "C1N74_BLOCK_LENGTH",
+      "C1N75_DAILY_GATE_ESTIMAND",
+      "C1N7_POLICY_FROZEN_GATE",
+      "C1N81_CYCLE_CONTRACT_ENFORCED",
+      "C1N8_ORACLE_LADDER",
+      "C1N92_METRIC_ALIGNED_LOSS",
+      "C1N93_ORDINAL_REPRESENTATION",
+      "C1N94_CDF_REJUDGE",
+      "C1N95_RECONSTRUCTION_GAP",
+      "C1N96_GAP_REJUDGE",
+      "C1N97_BOOSTING_ROUNDS",
+      "C1N98_REPRODUCIBILITY_ADJUDICATION",
+      "C1N99_ENSEMBLE_EXHAUSTIVE",
+      "C1N9_GATE_POWER"
+    ],
+    "comparison_count": 2,
+    "stage_coverage": [
+      "S1",
+      "S2",
+      "S3",
+      "S5",
+      "S6",
+      "S7",
+      "S8",
+      "S9",
+      "S10",
+      "S11"
+    ],
+    "frontier": [
+      "S17-N14_R3_HEIGHT_ONLY_TERRAIN_PREREQUISITE_AUDIT"
+    ],
+    "evidence_complete_cycles": 17,
+    "accounted_cycles": 106,
+    "digest": "57d485c268103cf4161c11ec568aa127cf3bd5b909bb908402577a62dcd52602"
+  },
+  "verdict": "PASS_READY_STATIC_DEM_EXTRACTION_PREREQUISITE_NOT_MODEL_SCORE",
+  "next_handoff": [
+    "S17-N15_R3_COPERNICUS_GLO30_STATIC_EXTRACTION_AND_FORMULA_FREEZE"
+  ]
+}

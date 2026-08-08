@@ -1,0 +1,159 @@
+{
+  "schema_version": 1,
+  "node_id": "S17-N25_TERTIARY_FRONTIER_RESEARCH_INTAKE",
+  "status": "CLOSED_EVIDENCE_EXHAUSTED_TARGET_NOT_REACHED",
+  "created_at": "2026-08-09T00:50:00.595681+09:00",
+  "predeclaration": {
+    "path": "reports/s17_n25_tertiary_frontier_intake_predeclaration.json",
+    "sha256": "c6a6984240691b9b1f6f15f5ccbe2d05a4323c3867632bca40c3f55a7886d191",
+    "event_sha256": "9f78a6924bb47de05798d1cc3d72c048225c059273e43cc958246beffc650ec4",
+    "input_bundle_sha256": "b2f039cfeebc0282195f9932f130bf7f4aa388042697660f4958cfcd1ab96f74",
+    "input_hashes_reverified_unchanged": true,
+    "input_file_count": 12
+  },
+  "authoritative_state": {
+    "champion_total": 0.6314827308346854,
+    "target_total": 0.66,
+    "gap": 0.0285172691653146,
+    "comparison_count_before": 4,
+    "comparison_count_after": 4,
+    "next_score_bearing_comparison_index_if_reopened": 5,
+    "lockbox_2024_used": false,
+    "dacon_actions": []
+  },
+  "lane_artifacts": [
+    {
+      "id": "FARM_SUBMITTED_FORECAST_ARCHIVE",
+      "path": "research/lanes/s17_n25_farm_submitted_forecast_archive.md",
+      "sha256": "ecd38106a84e7fc3336d71dda0e4c4582fa008f2ac9a179a19c656a3ca763ee1",
+      "verdict": "FAIL_CLOSED: market rules prove private participant submissions at 10:00/17:00 but no public fixed-issue archive, anonymous/commercial access, participation continuity, or three-group crosswalk."
+    },
+    {
+      "id": "REGIONAL_RENEWABLE_FORECAST",
+      "path": "research/lanes/s17_n25_regional_renewable_forecast.md",
+      "sha256": "27cd8ac7d70d01de3d1b855a8567720099eb4c97406b96da75e9a3808c565fb9",
+      "verdict": "NONE: direct wind forecast near matches lack complete historical issued archives, basis/licence/access, and exact group mapping; reusable sources are ex-post or solar/generic meteorology."
+    },
+    {
+      "id": "GRID_TOPOLOGY_OUTAGE_CROSSWALK",
+      "path": "research/lanes/s17_n25_grid_topology_outage_crosswalk.md",
+      "sha256": "3fbf6178355646900c9ce93026e49c73fba03aa1396ef62f76f34a9c30fb3453",
+      "verdict": "NONE: official project identities do not expose group-to-substation/line/bay topology, and outage rules prescribe conditional adjustment rather than a fixed hourly impact coefficient."
+    },
+    {
+      "id": "PRETRAINED_MICROSCALE_CHECKPOINT",
+      "path": "research/lanes/s17_n25_pretrained_microscale_checkpoint.md",
+      "sha256": "ccb50279417e4eae82ed3409823846e5b9549b097b0b20983f3f80ea36b4db33",
+      "verdict": "NONE: closest FuXi-CFD checkpoint is CC BY-NC and lacks exact 117 m/preprocessing/runtime contract; WindSeer/TerraWind/CorrDiff fail checkpoint/input/domain/runtime gates."
+    },
+    {
+      "id": "ICING_AVAILABILITY_PHYSICS",
+      "path": "research/lanes/s17_n25_icing_availability_physics.md",
+      "sha256": "10dc756aaf4d575794c014ba7eb7a081b03e8baa9968eae87d464091e4e595ee",
+      "verdict": "NONE: physical icing needs absent cloud liquid/rainwater, droplet/MVD and turbine-state inputs; production-loss transfer is fitted/site-specific and not V126+U136 exact; standardized alternative is ex-post SCADA."
+    }
+  ],
+  "lane_bundle_sha256": "d7ca3a81f85ff2d228b49543134413e4c16a3f7f5809e0678eff2cfb18d48c4c",
+  "root_audit": {
+    "ready_executable_or_prerequisite_candidate_count": 0,
+    "selected_candidate": null,
+    "decision": "EVIDENCE_EXHAUSTED_TARGET_NOT_REACHED",
+    "closest_rejected_items": [
+      {
+        "id": "PRIVATE_KPX_FARM_FORECAST",
+        "direct_fact": "two rule-defined submissions at D-1 10:00 and 17:00",
+        "fatal_gates": [
+          "no public historical archive",
+          "participant/account access",
+          "commercial redistribution restriction",
+          "no exact three-group crosswalk"
+        ]
+      },
+      {
+        "id": "60HERTZ_PUBLIC_FORECAST_SERVICE",
+        "direct_fact": "provider describes public future solar/wind generation forecast viewing",
+        "fatal_gates": [
+          "no immutable 2022-2023 issue archive",
+          "no reuse licence or stable machine interface",
+          "no exact group crosswalk",
+          "remote inference prohibited"
+        ]
+      },
+      {
+        "id": "FUXI_CFD_V1",
+        "direct_fact": "pinned ONNX model with terrain/roughness and coarse 100 m wind inputs",
+        "fatal_gates": [
+          "CC BY-NC 4.0",
+          "no literal 117 m level/preprocessing contract",
+          "ONNX runtime absent"
+        ]
+      },
+      {
+        "id": "DAVIS_ICEBLADE_CHAIN",
+        "direct_fact": "published physical icing plus statistical loss system",
+        "fatal_gates": [
+          "required hydrometeors/drop physics absent",
+          "fitted decision-tree/GAM and site thresholds",
+          "wrong turbine population",
+          "SCADA alternative ex-post"
+        ]
+      }
+    ],
+    "exhaustion_scope": "This is not a proof that no future public source or newly licensed asset can ever work. It is a fail-closed halt of the approved current frontier: all directly identified distinct classes lack at least one mandatory execution gate, so further variants would be speculative or duplicate.",
+    "reopen_only_if": [
+      "new directly supported pre-cutoff fixed-issue information becomes available",
+      "commercial licence/access/runtime blocker is independently cured",
+      "exact farm/group mapping and zero-choice treatment are supplied without using 2024/test outcomes",
+      "a new predeclaration preserves comparison index 5 and all chronology contracts"
+    ]
+  },
+  "scope_accounting": {
+    "research_children_spawned": 5,
+    "children_stopped_after_integration": 5,
+    "designated_lane_files_present": 5,
+    "scope_incident_count": 0,
+    "external_documentation_or_publication_pages_only": true,
+    "external_data_catalogue_or_object_queries": 0,
+    "external_data_or_weight_bodies": 0,
+    "external_inference_calls": 0,
+    "model_fits": 0,
+    "prediction_calls": 0,
+    "policy_calls": 0,
+    "metric_or_score_calls": 0,
+    "model_result_score_reads_by_children": 0,
+    "actual_kwh_or_raw_label_reads": 0,
+    "raw_2024_or_test_dataset_value_reads": 0,
+    "dependency_changes": 0,
+    "accounts_or_dacon_actions": []
+  },
+  "validation": {
+    "pytest": {
+      "command": ".venv/bin/python -m pytest -q",
+      "result": "PASS",
+      "tests_passed": 217,
+      "warnings": 144,
+      "stdout_sha256": "9b987756a4b53f02df20a8a1bd38f19e95bcf77f03e3f2b265c380a5ab848d6b"
+    },
+    "ruff": {
+      "command": ".venv/bin/ruff check src tests scripts/recover_m115_terrain_no_refit.py scripts/run_m115_terrain_sx300_strict.py",
+      "result": "PASS",
+      "stdout_sha256": "5b196eb3a6acb50d3fa398d04ca284985cc1ffec870e940264b00780bfd2c971"
+    },
+    "immutable_inputs": {
+      "competition_zip_sha256": "920be0c458d820e855bf79dd25723146f52ce1736138aedba5e6bc853f1f720b",
+      "baseline_notebook_sha256": "712b26f4d2748860c94cff1e0100c23810468c983173f8e9ef8d009fe82df48c"
+    }
+  },
+  "comparison": {
+    "score_bearing": false,
+    "comparison_index": null,
+    "official_total": null,
+    "champion_changed": false
+  },
+  "halt": {
+    "next_handoff": [],
+    "reason": "EVIDENCE_EXHAUSTED_TARGET_NOT_REACHED",
+    "goal_completion_allowed": false
+  },
+  "success": false
+}

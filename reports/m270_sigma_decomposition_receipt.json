@@ -1,0 +1,47 @@
+{
+ "calibration_note": "two parameters per group fitted in-sample; mildly optimistic",
+ "dacon_upload": false,
+ "external_actions": [],
+ "gfs_column": "gfs_spatial__idw__wind100_speed",
+ "ldaps_column": "ldaps_spatial__idw__wind50max_speed",
+ "lockbox_reopened": false,
+ "model_fits": 0,
+ "new_2024_evaluation": false,
+ "per_group": [
+  {
+   "group_id": 1,
+   "n": 17413,
+   "rho_errors": 0.7989567732354774,
+   "sigma_floor_infinite_sources": 2.058764600107923,
+   "sigma_gfs": 2.43709842640362,
+   "sigma_ldaps": 2.1694436914450868,
+   "sigma_mean_blend": 2.1592869458151136,
+   "sigma_three_sources": 2.143368138249827
+  },
+  {
+   "group_id": 2,
+   "n": 17422,
+   "rho_errors": 0.7706597175386106,
+   "sigma_floor_infinite_sources": 2.2816780241072974,
+   "sigma_gfs": 2.83007825509883,
+   "sigma_ldaps": 2.36812223335162,
+   "sigma_mean_blend": 2.406396641177576,
+   "sigma_three_sources": 2.3921699557040945
+  },
+  {
+   "group_id": 3,
+   "n": 8753,
+   "rho_errors": 0.7392503230625388,
+   "sigma_floor_infinite_sources": 2.047639492040148,
+   "sigma_gfs": 2.6341604063334403,
+   "sigma_ldaps": 2.1289180064574316,
+   "sigma_mean_blend": 2.1749461080126764,
+   "sigma_three_sources": 2.1646696414867765
+  }
+ ],
+ "required_sigma_peak_slope": 0.39473684210526316,
+ "required_sigma_typical_slope": 0.5714285714285714,
+ "scada_use": "diagnostic only; no inference feature created",
+ "schema_version": 1,
+ "stage": "M270_SIGMA_SOURCE_DECOMPOSITION"
+}

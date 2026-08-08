@@ -1,0 +1,65 @@
+{
+ "dacon_upload": false,
+ "decided_utc": "2026-08-04T14:05:49.948652+00:00",
+ "external_actions": [],
+ "lane": "L3",
+ "lockbox_reopened": false,
+ "model_fits": 0,
+ "new_2024_evaluation": false,
+ "node": "C1N43_EFFECT_TREND",
+ "report_sha256": "4ea96410c24736a4fd4eaf6dfb66aa4fbf57a9f6bbc2dc7ed89bc8edef30cf07",
+ "result": {
+  "extrapolation": {
+   "effect_at_deployed": -0.015581164714628226,
+   "effect_at_m115_fixed": -0.01660789188535755,
+   "effect_zero_at_control": 0.6027306620105108
+  },
+  "fit": {
+   "intercept": 0.3629559808315742,
+   "n_points": 3,
+   "pearson_r": -0.9921930461464554,
+   "slope": -0.6021860238881371
+  },
+  "gate_touched": false,
+  "lockbox_used": false,
+  "mechanism": "정산모양 soft target 은 밴드 안 여러 빈에 질량을 퍼뜨려 **암묵적 정규화**로 작동한다. one-hot 은 표적이 뾰족해 과적합에 취약하다. 모형이 잘못 지정될수록 이득이 크고 잘 지정될수록 줄어든다",
+  "no_training": true,
+  "node": "C1N43_EFFECT_TREND",
+  "observations": [
+   {
+    "control": 0.567875,
+    "cycle": 41,
+    "effect": 0.02149,
+    "setting": "leaves 31 / 500 rounds (과적합)"
+   },
+   {
+    "control": 0.584468,
+    "cycle": 40,
+    "effect": 0.009772,
+    "setting": "leaves 15 / 200 rounds"
+   },
+   {
+    "control": 0.595919,
+    "cycle": 42,
+    "effect": 0.004827,
+    "setting": "leaves 15 / 200 rounds + teacher 복원"
+   }
+  ],
+  "parent_node": "C1N42_TEACHER_RESTORED",
+  "predeclared_check": {
+   "H1_expectation": "상관 음수이고 |r| >= 0.9",
+   "H1_held": true,
+   "H1_measured": -0.9921930461464554,
+   "H2_expectation": "외삽 영점 < 배포 품질 0.628605",
+   "H2_held": true,
+   "H2_measured": 0.6027306620105108,
+   "H3_expectation": "세 효과 모두 양수 (기전 재현 유지)",
+   "H3_held": true,
+   "extrapolation_warning": "관측 범위는 CONTROL in [0.567875, 0.595919] 이고 배포 0.628605 은 **범위 밖**이다. 외삽은 측정이 아니다",
+   "verdict": "BAND_TARGET_IS_REGULARISER_VANISHES_AT_FRONTIER"
+  }
+ },
+ "schema_version": 1,
+ "script_sha256": "8af795552f519620681d51307df20cb7d2770181fd317f5e63625ff7550674d1",
+ "stage": "M271_P4_CYCLE43_EFFECT_TREND"
+}

@@ -1,0 +1,26 @@
+{
+  "event_type": "PREDECLARED",
+  "cycle_id": "S17-N11A_FOUR_MAPPING_10MIN_SCADA_CORRECTED_DIAGNOSTIC",
+  "stage_id": "S5",
+  "node_id": "S17-N11A_FOUR_MAPPING_10MIN_SCADA_CORRECTED_DIAGNOSTIC",
+  "actor": "root",
+  "occurred_at": "2026-08-08T20:42:04.433578+09:00",
+  "body": {
+    "preregistration_sha256": "908c0532c2740c6bce1c4be613ccfd441acb82181a6fe85bf79ab1e71954f8fb",
+    "parent_ids": [
+      "S17-N11_FOUR_MAPPING_TRAINING_WIND_DIAGNOSTIC"
+    ],
+    "mechanism": "A genuine NWP interval offset must improve fixed same-run mappings against correctly hour-ended 10-minute SCADA wind across sources, heights, farms and years.",
+    "treatment": "Corrected 10-minute SCADA aggregation plus four frozen NWP mappings and joint day bootstrap.",
+    "control": "Current t mapping.",
+    "metric": "Equal-panel Fisher-z wind correlation with simultaneous lower bound, 12-stratum votes, source signs and coverage; no power score.",
+    "min_effect": 0.01,
+    "score_bearing": false,
+    "novelty_signature": "FOUR_MAPPING_10MIN_SCADA_CORRECTED_R1_V1",
+    "basis_evidence_ids": [
+      "RWA_DATA_R1",
+      "S17_N11_PRE_SCORE_GATE",
+      "LOCAL_SCADA_FREQUENCY_AUDIT"
+    ]
+  }
+}

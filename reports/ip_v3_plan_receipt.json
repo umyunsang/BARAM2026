@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "id": "IP_V3_PLAN",
+  "created_at": "2026-08-09T05:21:47.393923+09:00",
+  "status": "IMPLEMENTATION_PLAN_PENDING_APPROVAL(IP@v3)",
+  "path": ".planning/2026-08-01-leaderboard-top-4-loop/IP_v3.md",
+  "sha256": "913bed28a85d89a8617deb32db9df883f6b71ab3a2b426f743c30d4ccd059f18",
+  "design_sha256": "7d49fe2c02b8b4c9275e4ba6b73c8ad20cc6ac9de2377482a4902ce98c8cc38f",
+  "design_approval_sha256": "bcc331389b3e4076516d0cf870045298328e4f77f6c19d2b6962e24c2fd623f7",
+  "foundation_map_sha256": "393ee74bf53251037547fc52bc92c554a4aa207e2288f194766d836675512b35",
+  "work_packages": 14,
+  "approval_phrase": "IP@v3 승인",
+  "exact_human_approval_found": false,
+  "baseline": {
+    "eventstore_sha256": "5881b48f39ad8e8a334f11dd30abee1f893547da34aed55dc1979f1e476f0e12",
+    "eventstore_sequence": 158,
+    "registry_sha256": "88402768b5b1276c953d44d1b7333e2c93c39e86421f82f7a930c509f307e190",
+    "registry_schema_version": 1,
+    "registry_specs": 47,
+    "comparison_count": 4,
+    "next_comparison_index": 5,
+    "champion_total": 0.6314827308346854,
+    "target": 0.66
+  }
+}

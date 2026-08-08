@@ -1,0 +1,110 @@
+{
+ "node": "N508_BIN_GAP",
+ "policy": [
+  0.5,
+  1.5
+ ],
+ "g1_bins": {
+  "5.0": {
+   "mu": 0.095,
+   "weight": 0.005,
+   "sigma": 0.0224,
+   "ceiling_hit": 0.907,
+   "actual_hit": 0.4846938775510204,
+   "n": 392
+  },
+  "6.0": {
+   "mu": 0.188,
+   "weight": 0.028,
+   "sigma": 0.0347,
+   "ceiling_hit": 0.914,
+   "actual_hit": 0.47406340057636887,
+   "n": 694
+  },
+  "7.0": {
+   "mu": 0.307,
+   "weight": 0.048,
+   "sigma": 0.0463,
+   "ceiling_hit": 0.88,
+   "actual_hit": 0.22429906542056074,
+   "n": 642
+  },
+  "8.0": {
+   "mu": 0.458,
+   "weight": 0.067,
+   "sigma": 0.0562,
+   "ceiling_hit": 0.796,
+   "actual_hit": 0.2224168126094571,
+   "n": 571
+  },
+  "9.0": {
+   "mu": 0.601,
+   "weight": 0.077,
+   "sigma": 0.0545,
+   "ceiling_hit": 0.761,
+   "actual_hit": 0.2407766990291262,
+   "n": 515
+  },
+  "10.0": {
+   "mu": 0.726,
+   "weight": 0.082,
+   "sigma": 0.0679,
+   "ceiling_hit": 0.582,
+   "actual_hit": 0.3383084577114428,
+   "n": 402
+  },
+  "11.0": {
+   "mu": 0.812,
+   "weight": 0.062,
+   "sigma": 0.0845,
+   "ceiling_hit": 0.476,
+   "actual_hit": 0.4128113879003559,
+   "n": 281
+  },
+  "12.0": {
+   "mu": 0.876,
+   "weight": 0.049,
+   "sigma": 0.0851,
+   "ceiling_hit": 0.431,
+   "actual_hit": 0.4125874125874126,
+   "n": 143
+  },
+  "13.0": {
+   "mu": 0.886,
+   "weight": 0.034,
+   "sigma": 0.0753,
+   "ceiling_hit": 0.62,
+   "actual_hit": 0.58,
+   "n": 100
+  },
+  "14.0": {
+   "mu": 0.926,
+   "weight": 0.024,
+   "sigma": 0.0484,
+   "ceiling_hit": 0.763,
+   "actual_hit": 0.46835443037974683,
+   "n": 79
+  },
+  "15.0": {
+   "mu": 0.939,
+   "weight": 0.014,
+   "sigma": 0.0453,
+   "ceiling_hit": 0.918,
+   "actual_hit": 0.3869047619047619,
+   "n": 168
+  },
+  "16.0": {
+   "mu": 0.938,
+   "weight": 0.008,
+   "sigma": 0.0514,
+   "ceiling_hit": 0.846,
+   "actual_hit": 0.3333333333333333,
+   "n": 18
+  }
+ },
+ "weighted_hit_gap_g1": 0.16916144552445248,
+ "model_fits": 0,
+ "lockbox_reopened": false,
+ "dacon_upload": false,
+ "external_actions": []
+}

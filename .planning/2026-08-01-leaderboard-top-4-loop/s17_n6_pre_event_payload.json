@@ -1,0 +1,28 @@
+{
+  "event_type": "PREDECLARED",
+  "cycle_id": "S17-N6_COST5_SPO_PLUS_PREQUENTIAL",
+  "stage_id": "S7",
+  "node_id": "S17-N6_COST5_SPO_PLUS_PREQUENTIAL",
+  "actor": "root",
+  "occurred_at": "2026-08-08T19:54:26.725604+09:00",
+  "body": {
+    "preregistration_sha256": "e7b708d25ff1de103395682698fed15ef08456c3cbf12a19e1f2641b73b3fb03",
+    "parent_ids": [
+      "S17-N5_ECMWF_18Z_2023_EXTRACTION",
+      "S17-N3_STRICT_PREQUENTIAL_EVALUATION_REPAIR"
+    ],
+    "mechanism": "Conditional selection among weakly correlated band-hit actions can improve exact settlement utility even when their continuous errors are highly correlated.",
+    "treatment": "Deterministic five-action linear SPO+ selector trained only on label-available expanding past.",
+    "control": "Fixed 0.30 D plus 0.70 mean of the three dependent saved actions.",
+    "metric": "Exact official Total under S17-N3 issuance-day joint prequential protocol.",
+    "min_effect": 0.001635,
+    "score_bearing": true,
+    "novelty_signature": "COST5_SPO_PLUS__5_FIXED_ACTIONS__PAST_ONLY__NO_SWEEP__STRICT_G0",
+    "basis_evidence_ids": [
+      "RWA_MODEL_COST5",
+      "RWA_EVAL_STRICT_PREQUENTIAL",
+      "S16_N2_HIT_COMPLEMENTARITY",
+      "S17_N3_PROTOCOL"
+    ]
+  }
+}

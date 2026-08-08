@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "node_id": "S17-N40_ENSEMBLE_RECONSTRUCTION",
+  "stage_id": "S8",
+  "deficit": "FD13",
+  "score_bearing": false,
+  "comparison_index": null,
+  "result_status": "REFUTED",
+  "champion_decomposition": {
+    "formula": "CHAMPION = 0.30*D + (0.70/3)*(M102_TOP100 + M113_LGBM_DART + M115_XGBOOST)",
+    "max_abs_residual_kwh": 1.09e-11,
+    "verified": true
+  },
+  "member_totals_outer": {
+    "D": 0.6206019,
+    "M102_TOP100": 0.6289012,
+    "M113_LGBM_DART": 0.6301555,
+    "M115_XGBOOST": 0.6240958,
+    "EQUAL_3_NO_D": 0.6293162,
+    "CHAMPION": 0.6314827
+  },
+  "convex_reweighting_ceiling": {
+    "Q2": {
+      "oracle_convex_best_total": 0.6456490888983795,
+      "weights": [
+        0.5,
+        0.15,
+        0.05,
+        0.3
+      ],
+      "deployed_total": 0.6440251957593686
+    },
+    "OUTER": {
+      "oracle_convex_best_total": 0.6330386825446288,
+      "weights": [
+        0.4,
+        0.3,
+        0.0,
+        0.3
+      ],
+      "deployed_total": 0.6314827308346854
+    },
+    "per_row_oracle_pick": {
+      "total": 0.7255568523319222,
+      "note": "ORACLE, uses labels to pick the best member per row; not achievable"
+    }
+  },
+  "findings": [
+    "The champion is exactly a fixed four-member convex blend with weights 0.30 on D and 0.70/3 on each model member, reproduced to 1.1e-11 kWh.",
+    "ORACLE convex re-weighting, with the weights chosen directly on the outer evaluation folds, reaches only 0.6330387 against the deployed 0.6314827. The entire fixed-weight ensemble axis is worth at most +0.001556, which is 5.5 percent of the 0.0285173 gap.",
+    "Therefore FD13 is closed as a source of the remaining gap: no fixed re-weighting of these four action vectors can approach 0.660000, even with the answers.",
+    "By contrast, an ORACLE per-row selection of the single best of the four members reaches 0.7255569, which is 0.0940741 above the champion. The members are genuinely diverse; the information is present but is not reachable by any fixed weight.",
+    "The productive axis is therefore CONDITIONAL combination: a past-only gate that predicts, per row, which member or which local weighting is right. Capturing about 30 percent of the oracle per-row headroom would clear the target."
+  ],
+  "residual_deficit": "FD14: the champion combines members unconditionally while the member-optimality signal is strongly row-dependent. No past-only gate has ever been fitted or tested locally.",
+  "spawned_children": [
+    "S17-N41_CONDITIONAL_MEMBER_GATE"
+  ],
+  "selected_disposition": "BRANCH_TO_CONDITIONAL_COMBINATION",
+  "oracle_disclosure": "The convex ceiling and the per-row pick both use outer-fold labels. They are ceilings and diagnostics only; neither is a selection and neither may be promoted.",
+  "lockbox_2024_used": false,
+  "dacon_actions": [],
+  "closed_at": "2026-08-09T05:59:15.386643+09:00"
+}

@@ -1,0 +1,971 @@
+{
+ "artifact_hash": "1e3205b2e0fa0b76a54e7e0071e265462fe20712cf4c4defa20964975803b526",
+ "code_version": "383265af810eee24129de2d7ce99457bb8a757ef+dirty",
+ "dacon_upload": false,
+ "decided_utc": "2026-08-04T00:45:05.232443+00:00",
+ "external_actions": [],
+ "inner_loop_steps": [
+  "3_code",
+  "4_run",
+  "5_evaluate"
+ ],
+ "input_hashes": {
+  "open_zip_sha256": "920be0c458d820e855bf79dd25723146f52ce1736138aedba5e6bc853f1f720b"
+ },
+ "lockbox_reopened": false,
+ "model_fits": 0,
+ "new_2024_evaluation": false,
+ "node": "A3_spatial",
+ "parents": [],
+ "premise": null,
+ "report_sha256": "031833e9ac6a4182b5b8991195837d7896a539543c0e40757ff143fc4018db6f",
+ "result": {
+  "distance_gfs": [
+   {
+    "group_id": 1,
+    "max_km": 41.090492223450156,
+    "mean_km": 27.75723172852561,
+    "nearest_grid_id": 5,
+    "nearest_km": 5.64575940227494,
+    "second_km": 18.105773046809297,
+    "turbine_id": "VESTAS-V126-01"
+   },
+   {
+    "group_id": 1,
+    "max_km": 41.348996975616295,
+    "mean_km": 27.804640131217546,
+    "nearest_grid_id": 5,
+    "nearest_km": 5.8837442143680265,
+    "second_km": 18.068623598599565,
+    "turbine_id": "VESTAS-V126-02"
+   },
+   {
+    "group_id": 1,
+    "max_km": 41.51471295621962,
+    "mean_km": 27.832745041546254,
+    "nearest_grid_id": 5,
+    "nearest_km": 6.0242424518279885,
+    "second_km": 18.13384238588492,
+    "turbine_id": "VESTAS-V126-03"
+   },
+   {
+    "group_id": 1,
+    "max_km": 41.716983415427,
+    "mean_km": 27.865928831793976,
+    "nearest_grid_id": 5,
+    "nearest_km": 6.190502114843396,
+    "second_km": 18.329074840315613,
+    "turbine_id": "VESTAS-V126-04"
+   },
+   {
+    "group_id": 1,
+    "max_km": 41.65341598803328,
+    "mean_km": 27.8474544412656,
+    "nearest_grid_id": 5,
+    "nearest_km": 6.10629199191436,
+    "second_km": 18.6508747483699,
+    "turbine_id": "VESTAS-V126-05"
+   },
+   {
+    "group_id": 1,
+    "max_km": 41.2990306681647,
+    "mean_km": 27.77568376638608,
+    "nearest_grid_id": 5,
+    "nearest_km": 5.751833482867047,
+    "second_km": 18.811246349302753,
+    "turbine_id": "VESTAS-V126-06"
+   },
+   {
+    "group_id": 2,
+    "max_km": 41.07017997675401,
+    "mean_km": 27.729264326273476,
+    "nearest_grid_id": 5,
+    "nearest_km": 5.518958768918998,
+    "second_km": 19.02110097515863,
+    "turbine_id": "VESTAS-V126-07"
+   },
+   {
+    "group_id": 2,
+    "max_km": 40.758456889471546,
+    "mean_km": 27.668197196141918,
+    "nearest_grid_id": 5,
+    "nearest_km": 5.205196670548109,
+    "second_km": 19.29026128402507,
+    "turbine_id": "VESTAS-V126-08"
+   },
+   {
+    "group_id": 2,
+    "max_km": 40.35295966168355,
+    "mean_km": 27.59220548860214,
+    "nearest_grid_id": 5,
+    "nearest_km": 4.799712218686253,
+    "second_km": 19.47213648396689,
+    "turbine_id": "VESTAS-V126-09"
+   },
+   {
+    "group_id": 2,
+    "max_km": 40.05173249189972,
+    "mean_km": 27.537529975718932,
+    "nearest_grid_id": 5,
+    "nearest_km": 4.498678156480777,
+    "second_km": 19.58842644603543,
+    "turbine_id": "VESTAS-V126-10"
+   },
+   {
+    "group_id": 2,
+    "max_km": 39.90946907581217,
+    "mean_km": 27.51384063056763,
+    "nearest_grid_id": 5,
+    "nearest_km": 4.36302437956773,
+    "second_km": 19.47271459998202,
+    "turbine_id": "VESTAS-V126-11"
+   },
+   {
+    "group_id": 2,
+    "max_km": 39.544948702439136,
+    "mean_km": 27.454524646852075,
+    "nearest_grid_id": 5,
+    "nearest_km": 4.020573907363435,
+    "second_km": 19.43911623644379,
+    "turbine_id": "VESTAS-V126-12"
+   },
+   {
+    "group_id": 3,
+    "max_km": 40.51548901826165,
+    "mean_km": 27.62441121022799,
+    "nearest_grid_id": 5,
+    "nearest_km": 4.969246045439455,
+    "second_km": 19.16401181458946,
+    "turbine_id": "UNISON-U136-01"
+   },
+   {
+    "group_id": 3,
+    "max_km": 39.60602660319008,
+    "mean_km": 27.459351300215193,
+    "nearest_grid_id": 5,
+    "nearest_km": 4.053892651878864,
+    "second_km": 19.758101156204386,
+    "turbine_id": "UNISON-U136-02"
+   },
+   {
+    "group_id": 3,
+    "max_km": 39.17348979001179,
+    "mean_km": 27.386729858220882,
+    "nearest_grid_id": 5,
+    "nearest_km": 3.6239539629253557,
+    "second_km": 19.91495662432152,
+    "turbine_id": "UNISON-U136-03"
+   },
+   {
+    "group_id": 3,
+    "max_km": 38.84652464216308,
+    "mean_km": 27.334000769557058,
+    "nearest_grid_id": 5,
+    "nearest_km": 3.300652800229885,
+    "second_km": 20.03542023750867,
+    "turbine_id": "UNISON-U136-04"
+   },
+   {
+    "group_id": 3,
+    "max_km": 38.461427770778464,
+    "mean_km": 27.274856515438987,
+    "nearest_grid_id": 5,
+    "nearest_km": 2.925373533916848,
+    "second_km": 20.15823141762884,
+    "turbine_id": "UNISON-U136-05"
+   }
+  ],
+  "distance_ldaps": [
+   {
+    "group_id": 1,
+    "max_km": 4.049995572632702,
+    "mean_km": 2.4150337974189244,
+    "nearest_grid_id": 10,
+    "nearest_km": 0.9955106446050832,
+    "second_km": 1.0135233002443438,
+    "turbine_id": "VESTAS-V126-01"
+   },
+   {
+    "group_id": 1,
+    "max_km": 4.195271120203026,
+    "mean_km": 2.4486092684421052,
+    "nearest_grid_id": 5,
+    "nearest_km": 0.754335242024086,
+    "second_km": 1.1227905872611788,
+    "turbine_id": "VESTAS-V126-02"
+   },
+   {
+    "group_id": 1,
+    "max_km": 4.24977550041623,
+    "mean_km": 2.4689588238870783,
+    "nearest_grid_id": 5,
+    "nearest_km": 0.6211104896646134,
+    "second_km": 1.0295225709399531,
+    "turbine_id": "VESTAS-V126-03"
+   },
+   {
+    "group_id": 1,
+    "max_km": 4.275064840683761,
+    "mean_km": 2.5132550893668935,
+    "nearest_grid_id": 5,
+    "nearest_km": 0.6489470250770802,
+    "second_km": 0.8890227975161222,
+    "turbine_id": "VESTAS-V126-04"
+   },
+   {
+    "group_id": 1,
+    "max_km": 4.081170607353192,
+    "mean_km": 2.50147113328649,
+    "nearest_grid_id": 6,
+    "nearest_km": 0.6462622807061253,
+    "second_km": 0.9604812203591986,
+    "turbine_id": "VESTAS-V126-05"
+   },
+   {
+    "group_id": 1,
+    "max_km": 3.7537513252029933,
+    "mean_km": 2.3949097421792467,
+    "nearest_grid_id": 6,
+    "nearest_km": 0.3598145239304716,
+    "second_km": 1.1729618411699048,
+    "turbine_id": "VESTAS-V126-06"
+   },
+   {
+    "group_id": 2,
+    "max_km": 3.4948728645687703,
+    "mean_km": 2.351275645333732,
+    "nearest_grid_id": 6,
+    "nearest_km": 0.16196017529507953,
+    "second_km": 1.4200404669277324,
+    "turbine_id": "VESTAS-V126-07"
+   },
+   {
+    "group_id": 2,
+    "max_km": 3.5096242475552324,
+    "mean_km": 2.336874695331584,
+    "nearest_grid_id": 6,
+    "nearest_km": 0.32000911022304357,
+    "second_km": 1.29788884776471,
+    "turbine_id": "VESTAS-V126-08"
+   },
+   {
+    "group_id": 2,
+    "max_km": 3.6606257117018064,
+    "mean_km": 2.3370615612008017,
+    "nearest_grid_id": 6,
+    "nearest_km": 0.7253831065567822,
+    "second_km": 1.075485351508119,
+    "turbine_id": "VESTAS-V126-09"
+   },
+   {
+    "group_id": 2,
+    "max_km": 3.7956623975768182,
+    "mean_km": 2.359297756322162,
+    "nearest_grid_id": 11,
+    "nearest_km": 0.9625760138473413,
+    "second_km": 1.0274963124348548,
+    "turbine_id": "VESTAS-V126-10"
+   },
+   {
+    "group_id": 2,
+    "max_km": 3.7926138522314305,
+    "mean_km": 2.358908341199954,
+    "nearest_grid_id": 11,
+    "nearest_km": 0.7417855260260174,
+    "second_km": 1.0874997394804793,
+    "turbine_id": "VESTAS-V126-11"
+   },
+   {
+    "group_id": 2,
+    "max_km": 3.9862797568979578,
+    "mean_km": 2.431469019201043,
+    "nearest_grid_id": 11,
+    "nearest_km": 0.6171764763699804,
+    "second_km": 0.9255979138845816,
+    "turbine_id": "VESTAS-V126-12"
+   },
+   {
+    "group_id": 3,
+    "max_km": 3.3537671781863168,
+    "mean_km": 2.3065461327779664,
+    "nearest_grid_id": 6,
+    "nearest_km": 0.6301786085281781,
+    "second_km": 0.9367487870835527,
+    "turbine_id": "UNISON-U136-01"
+   },
+   {
+    "group_id": 3,
+    "max_km": 4.132135329748312,
+    "mean_km": 2.4345699409949058,
+    "nearest_grid_id": 12,
+    "nearest_km": 0.7479511100622692,
+    "second_km": 0.9497378189471131,
+    "turbine_id": "UNISON-U136-02"
+   },
+   {
+    "group_id": 3,
+    "max_km": 4.468635222676311,
+    "mean_km": 2.55754128794642,
+    "nearest_grid_id": 12,
+    "nearest_km": 0.4311395773724337,
+    "second_km": 1.1101573200296917,
+    "turbine_id": "UNISON-U136-03"
+   },
+   {
+    "group_id": 3,
+    "max_km": 4.732278213698849,
+    "mean_km": 2.6903231969397825,
+    "nearest_grid_id": 12,
+    "nearest_km": 0.4028939012539742,
+    "second_km": 1.255076280459196,
+    "turbine_id": "UNISON-U136-04"
+   },
+   {
+    "group_id": 3,
+    "max_km": 5.041546160259551,
+    "mean_km": 2.8902631766896234,
+    "nearest_grid_id": 12,
+    "nearest_km": 0.6688676767767958,
+    "second_km": 0.875646109191772,
+    "turbine_id": "UNISON-U136-05"
+   }
+  ],
+  "grid_counts": {
+   "gfs": 9,
+   "ldaps": 16
+  },
+  "grid_geometry": {
+   "gfs": [
+    {
+     "grid_id": 1,
+     "latitude": 37.5,
+     "longitude": 128.75,
+     "source": "gfs"
+    },
+    {
+     "grid_id": 2,
+     "latitude": 37.5,
+     "longitude": 129.0,
+     "source": "gfs"
+    },
+    {
+     "grid_id": 3,
+     "latitude": 37.5,
+     "longitude": 129.25,
+     "source": "gfs"
+    },
+    {
+     "grid_id": 4,
+     "latitude": 37.25,
+     "longitude": 128.75,
+     "source": "gfs"
+    },
+    {
+     "grid_id": 5,
+     "latitude": 37.25,
+     "longitude": 129.0,
+     "source": "gfs"
+    },
+    {
+     "grid_id": 6,
+     "latitude": 37.25,
+     "longitude": 129.25,
+     "source": "gfs"
+    },
+    {
+     "grid_id": 7,
+     "latitude": 37.0,
+     "longitude": 128.75,
+     "source": "gfs"
+    },
+    {
+     "grid_id": 8,
+     "latitude": 37.0,
+     "longitude": 129.0,
+     "source": "gfs"
+    },
+    {
+     "grid_id": 9,
+     "latitude": 37.0,
+     "longitude": 129.25,
+     "source": "gfs"
+    }
+   ],
+   "ldaps": [
+    {
+     "grid_id": 1,
+     "latitude": 37.3032,
+     "longitude": 128.9443,
+     "source": "ldaps"
+    },
+    {
+     "grid_id": 2,
+     "latitude": 37.3027,
+     "longitude": 128.9617,
+     "source": "ldaps"
+    },
+    {
+     "grid_id": 3,
+     "latitude": 37.3022,
+     "longitude": 128.979,
+     "source": "ldaps"
+    },
+    {
+     "grid_id": 4,
+     "latitude": 37.2899,
+     "longitude": 128.9263,
+     "source": "ldaps"
+    },
+    {
+     "grid_id": 5,
+     "latitude": 37.2894,
+     "longitude": 128.9437,
+     "source": "ldaps"
+    },
+    {
+     "grid_id": 6,
+     "latitude": 37.2888,
+     "longitude": 128.961,
+     "source": "ldaps"
+    },
+    {
+     "grid_id": 7,
+     "latitude": 37.2883,
+     "longitude": 128.9784,
+     "source": "ldaps"
+    },
+    {
+     "grid_id": 8,
+     "latitude": 37.2878,
+     "longitude": 128.9958,
+     "source": "ldaps"
+    },
+    {
+     "grid_id": 9,
+     "latitude": 37.276,
+     "longitude": 128.9257,
+     "source": "ldaps"
+    },
+    {
+     "grid_id": 10,
+     "latitude": 37.2755,
+     "longitude": 128.943,
+     "source": "ldaps"
+    },
+    {
+     "grid_id": 11,
+     "latitude": 37.275,
+     "longitude": 128.9604,
+     "source": "ldaps"
+    },
+    {
+     "grid_id": 12,
+     "latitude": 37.2745,
+     "longitude": 128.9778,
+     "source": "ldaps"
+    },
+    {
+     "grid_id": 13,
+     "latitude": 37.274,
+     "longitude": 128.9951,
+     "source": "ldaps"
+    },
+    {
+     "grid_id": 14,
+     "latitude": 37.2617,
+     "longitude": 128.9424,
+     "source": "ldaps"
+    },
+    {
+     "grid_id": 15,
+     "latitude": 37.2612,
+     "longitude": 128.9598,
+     "source": "ldaps"
+    },
+    {
+     "grid_id": 16,
+     "latitude": 37.2607,
+     "longitude": 128.9771,
+     "source": "ldaps"
+    }
+   ]
+  },
+  "grid_spacing_km": {
+   "gfs_min_pair": 22.054240598290466,
+   "ldaps_min_pair": 1.5311922139890348
+  },
+  "group_layout": [
+   {
+    "group": 1,
+    "group_capacity_mw": 21.6,
+    "hub_height_m": [
+     117.0
+    ],
+    "lat_range": [
+     37.28211388888889,
+     37.29116666666666
+    ],
+    "lon_range": [
+     128.94954166666668,
+     128.95693333333332
+    ],
+    "max_pair_km": 1.0597307235648268,
+    "mean_pair_km": 0.6033649828385379,
+    "models": [
+     "V126"
+    ],
+    "rotor_diameter_m": [
+     126.0
+    ],
+    "sites": [
+     "태백가덕산"
+    ],
+    "turbines": 6
+   },
+   {
+    "group": 2,
+    "group_capacity_mw": 21.6,
+    "hub_height_m": [
+     117.0
+    ],
+    "lat_range": [
+     37.27516111111111,
+     37.28783333333333
+    ],
+    "lon_range": [
+     128.95963055555555,
+     128.96782777777779
+    ],
+    "max_pair_km": 1.5667399267854965,
+    "mean_pair_km": 0.7520135484984481,
+    "models": [
+     "V126"
+    ],
+    "rotor_diameter_m": [
+     126.0
+    ],
+    "sites": [
+     "태백가덕산"
+    ],
+    "turbines": 6
+   },
+   {
+    "group": 3,
+    "group_capacity_mw": 21.0,
+    "hub_height_m": [
+     117.0
+    ],
+    "lat_range": [
+     37.268563888888885,
+     37.28325833333333
+    ],
+    "lon_range": [
+     128.96249166666666,
+     128.97657777777778
+    ],
+    "max_pair_km": 2.0550403225141003,
+    "mean_pair_km": 0.9835371036389109,
+    "models": [
+     "U136"
+    ],
+    "rotor_diameter_m": [
+     136.0
+    ],
+    "sites": [
+     "태백가덕산",
+     "태백원동"
+    ],
+    "turbines": 5
+   }
+  ],
+  "ldaps_static_fields": {
+   "columns": [
+    "grid_id",
+    "surface_0_h",
+    "surface_0_lsm"
+   ],
+   "distinct_values_per_grid": {
+    "surface_0_h": 1.0,
+    "surface_0_lsm": 1.0
+   },
+   "rows": [
+    {
+     "grid_id": 1,
+     "surface_0_h": 992.625,
+     "surface_0_lsm": 1.0
+    },
+    {
+     "grid_id": 2,
+     "surface_0_h": 936.5625,
+     "surface_0_lsm": 1.0
+    },
+    {
+     "grid_id": 3,
+     "surface_0_h": 868.8125,
+     "surface_0_lsm": 1.0
+    },
+    {
+     "grid_id": 4,
+     "surface_0_h": 926.5,
+     "surface_0_lsm": 1.0
+    },
+    {
+     "grid_id": 5,
+     "surface_0_h": 997.625,
+     "surface_0_lsm": 1.0
+    },
+    {
+     "grid_id": 6,
+     "surface_0_h": 1001.25,
+     "surface_0_lsm": 1.0
+    },
+    {
+     "grid_id": 7,
+     "surface_0_h": 934.4375,
+     "surface_0_lsm": 1.0
+    },
+    {
+     "grid_id": 8,
+     "surface_0_h": 869.4375,
+     "surface_0_lsm": 1.0
+    },
+    {
+     "grid_id": 9,
+     "surface_0_h": 889.1875,
+     "surface_0_lsm": 1.0
+    },
+    {
+     "grid_id": 10,
+     "surface_0_h": 966.6875,
+     "surface_0_lsm": 1.0
+    },
+    {
+     "grid_id": 11,
+     "surface_0_h": 999.0625,
+     "surface_0_lsm": 1.0
+    },
+    {
+     "grid_id": 12,
+     "surface_0_h": 959.75,
+     "surface_0_lsm": 1.0
+    },
+    {
+     "grid_id": 13,
+     "surface_0_h": 896.25,
+     "surface_0_lsm": 1.0
+    },
+    {
+     "grid_id": 14,
+     "surface_0_h": 956.625,
+     "surface_0_lsm": 1.0
+    },
+    {
+     "grid_id": 15,
+     "surface_0_h": 967.875,
+     "surface_0_lsm": 1.0
+    },
+    {
+     "grid_id": 16,
+     "surface_0_h": 933.75,
+     "surface_0_lsm": 1.0
+    }
+   ]
+  },
+  "turbines": [
+   {
+    "capacity_mw": 3.6,
+    "group_capacity_mw": 21.6,
+    "group_id": 1,
+    "hub_height_m": 117.0,
+    "latitude": 37.28211388888889,
+    "longitude": 128.95058333333333,
+    "manufacturer": "VESTAS",
+    "model": "V126",
+    "phase": 1,
+    "rotor_diameter_m": 126.0,
+    "site_name": "태백가덕산",
+    "turbine_id": "VESTAS-V126-01",
+    "turbine_number": 1,
+    "workbook_row": 5
+   },
+   {
+    "capacity_mw": 3.6,
+    "group_capacity_mw": 21.6,
+    "group_id": 1,
+    "hub_height_m": 117.0,
+    "latitude": 37.28445833333333,
+    "longitude": 128.94954166666668,
+    "manufacturer": "VESTAS",
+    "model": "V126",
+    "phase": 1,
+    "rotor_diameter_m": 126.0,
+    "site_name": "태백가덕산",
+    "turbine_id": "VESTAS-V126-02",
+    "turbine_number": 2,
+    "workbook_row": 6
+   },
+   {
+    "capacity_mw": 3.6,
+    "group_capacity_mw": 21.6,
+    "group_id": 1,
+    "hub_height_m": 117.0,
+    "latitude": 37.286525,
+    "longitude": 128.94971944444444,
+    "manufacturer": "VESTAS",
+    "model": "V126",
+    "phase": 1,
+    "rotor_diameter_m": 126.0,
+    "site_name": "태백가덕산",
+    "turbine_id": "VESTAS-V126-03",
+    "turbine_number": 3,
+    "workbook_row": 7
+   },
+   {
+    "capacity_mw": 3.6,
+    "group_capacity_mw": 21.6,
+    "group_id": 1,
+    "hub_height_m": 117.0,
+    "latitude": 37.28975277777778,
+    "longitude": 128.9510222222222,
+    "manufacturer": "VESTAS",
+    "model": "V126",
+    "phase": 1,
+    "rotor_diameter_m": 126.0,
+    "site_name": "태백가덕산",
+    "turbine_id": "VESTAS-V126-04",
+    "turbine_number": 4,
+    "workbook_row": 8
+   },
+   {
+    "capacity_mw": 3.6,
+    "group_capacity_mw": 21.6,
+    "group_id": 1,
+    "hub_height_m": 117.0,
+    "latitude": 37.29116666666666,
+    "longitude": 128.95432777777776,
+    "manufacturer": "VESTAS",
+    "model": "V126",
+    "phase": 1,
+    "rotor_diameter_m": 126.0,
+    "site_name": "태백가덕산",
+    "turbine_id": "VESTAS-V126-05",
+    "turbine_number": 5,
+    "workbook_row": 9
+   },
+   {
+    "capacity_mw": 3.6,
+    "group_capacity_mw": 21.6,
+    "group_id": 1,
+    "hub_height_m": 117.0,
+    "latitude": 37.28874444444444,
+    "longitude": 128.95693333333332,
+    "manufacturer": "VESTAS",
+    "model": "V126",
+    "phase": 1,
+    "rotor_diameter_m": 126.0,
+    "site_name": "태백가덕산",
+    "turbine_id": "VESTAS-V126-06",
+    "turbine_number": 6,
+    "workbook_row": 10
+   },
+   {
+    "capacity_mw": 3.6,
+    "group_capacity_mw": 21.6,
+    "group_id": 2,
+    "hub_height_m": 117.0,
+    "latitude": 37.28783333333333,
+    "longitude": 128.95963055555555,
+    "manufacturer": "VESTAS",
+    "model": "V126",
+    "phase": 1,
+    "rotor_diameter_m": 126.0,
+    "site_name": "태백가덕산",
+    "turbine_id": "VESTAS-V126-07",
+    "turbine_number": 7,
+    "workbook_row": 11
+   },
+   {
+    "capacity_mw": 3.6,
+    "group_capacity_mw": 21.6,
+    "group_id": 2,
+    "hub_height_m": 117.0,
+    "latitude": 37.28646944444444,
+    "longitude": 128.9631222222222,
+    "manufacturer": "VESTAS",
+    "model": "V126",
+    "phase": 1,
+    "rotor_diameter_m": 126.0,
+    "site_name": "태백가덕산",
+    "turbine_id": "VESTAS-V126-08",
+    "turbine_number": 8,
+    "workbook_row": 12
+   },
+   {
+    "capacity_mw": 3.6,
+    "group_capacity_mw": 21.6,
+    "group_id": 2,
+    "hub_height_m": 117.0,
+    "latitude": 37.28360277777777,
+    "longitude": 128.96595555555555,
+    "manufacturer": "VESTAS",
+    "model": "V126",
+    "phase": 1,
+    "rotor_diameter_m": 126.0,
+    "site_name": "태백가덕산",
+    "turbine_id": "VESTAS-V126-09",
+    "turbine_number": 9,
+    "workbook_row": 13
+   },
+   {
+    "capacity_mw": 3.6,
+    "group_capacity_mw": 21.6,
+    "group_id": 2,
+    "hub_height_m": 117.0,
+    "latitude": 37.281325,
+    "longitude": 128.96782777777779,
+    "manufacturer": "VESTAS",
+    "model": "V126",
+    "phase": 1,
+    "rotor_diameter_m": 126.0,
+    "site_name": "태백가덕산",
+    "turbine_id": "VESTAS-V126-10",
+    "turbine_number": 10,
+    "workbook_row": 14
+   },
+   {
+    "capacity_mw": 3.6,
+    "group_capacity_mw": 21.6,
+    "group_id": 2,
+    "hub_height_m": 117.0,
+    "latitude": 37.27913611111111,
+    "longitude": 128.96697777777777,
+    "manufacturer": "VESTAS",
+    "model": "V126",
+    "phase": 1,
+    "rotor_diameter_m": 126.0,
+    "site_name": "태백가덕산",
+    "turbine_id": "VESTAS-V126-11",
+    "turbine_number": 11,
+    "workbook_row": 15
+   },
+   {
+    "capacity_mw": 3.6,
+    "group_capacity_mw": 21.6,
+    "group_id": 2,
+    "hub_height_m": 117.0,
+    "latitude": 37.27516111111111,
+    "longitude": 128.96737222222222,
+    "manufacturer": "VESTAS",
+    "model": "V126",
+    "phase": 1,
+    "rotor_diameter_m": 126.0,
+    "site_name": "태백가덕산",
+    "turbine_id": "VESTAS-V126-12",
+    "turbine_number": 12,
+    "workbook_row": 16
+   },
+   {
+    "capacity_mw": 4.2,
+    "group_capacity_mw": 21.0,
+    "group_id": 3,
+    "hub_height_m": 117.0,
+    "latitude": 37.28325833333333,
+    "longitude": 128.96249166666666,
+    "manufacturer": "UNISON",
+    "model": "U136",
+    "phase": 2,
+    "rotor_diameter_m": 136.0,
+    "site_name": "태백가덕산",
+    "turbine_id": "UNISON-U136-01",
+    "turbine_number": 1,
+    "workbook_row": 17
+   },
+   {
+    "capacity_mw": 4.2,
+    "group_capacity_mw": 21.0,
+    "group_id": 3,
+    "hub_height_m": 117.0,
+    "latitude": 37.27789166666667,
+    "longitude": 128.97050000000002,
+    "manufacturer": "UNISON",
+    "model": "U136",
+    "phase": 2,
+    "rotor_diameter_m": 136.0,
+    "site_name": "태백원동",
+    "turbine_id": "UNISON-U136-02",
+    "turbine_number": 2,
+    "workbook_row": 18
+   },
+   {
+    "capacity_mw": 4.2,
+    "group_capacity_mw": 21.0,
+    "group_id": 3,
+    "hub_height_m": 117.0,
+    "latitude": 37.274452777777775,
+    "longitude": 128.97292777777778,
+    "manufacturer": "UNISON",
+    "model": "U136",
+    "phase": 2,
+    "rotor_diameter_m": 136.0,
+    "site_name": "태백원동",
+    "turbine_id": "UNISON-U136-03",
+    "turbine_number": 3,
+    "workbook_row": 19
+   },
+   {
+    "capacity_mw": 4.2,
+    "group_capacity_mw": 21.0,
+    "group_id": 3,
+    "hub_height_m": 117.0,
+    "latitude": 37.27182777777778,
+    "longitude": 128.974725,
+    "manufacturer": "UNISON",
+    "model": "U136",
+    "phase": 2,
+    "rotor_diameter_m": 136.0,
+    "site_name": "태백원동",
+    "turbine_id": "UNISON-U136-04",
+    "turbine_number": 4,
+    "workbook_row": 20
+   },
+   {
+    "capacity_mw": 4.2,
+    "group_capacity_mw": 21.0,
+    "group_id": 3,
+    "hub_height_m": 117.0,
+    "latitude": 37.268563888888885,
+    "longitude": 128.97657777777778,
+    "manufacturer": "UNISON",
+    "model": "U136",
+    "phase": 2,
+    "rotor_diameter_m": 136.0,
+    "site_name": "태백원동",
+    "turbine_id": "UNISON-U136-05",
+    "turbine_number": 5,
+    "workbook_row": 21
+   }
+  ]
+ },
+ "schema_version": 1,
+ "script_sha256": "3bac0b211a2da04d111920babee23542ed5ce691fab4cf6692ac096ed62905ef",
+ "seed": 20260804,
+ "spec": {
+  "depends_on": [],
+  "generation": 1,
+  "lane": "L2",
+  "method_from": null,
+  "new_dependencies": [],
+  "outputs": [
+   "info.xlsx 17터빈의 좌표/허브고/로터경/제작사/모델/그룹 매핑",
+   "LDAPS 16격자·GFS 9격자와 각 터빈의 거리 행렬",
+   "그룹별 공간 배치와 격자 커버리지",
+   "surface_0_h(지형고도), surface_0_lsm(육해 마스크)의 격자별 값"
+  ],
+  "predeclared_expectation": "없음. 기하 기술이다.",
+  "stop_condition": "매핑과 거리 행렬이 산출되면 종료.",
+  "task": "격자-터빈 기하 구조 규명"
+ },
+ "spec_hash": "15d9078de483cdf798bb79abe4e692de4f71ae7a23a588a1ce27c7fbf6286bc6",
+ "stage": "M271_N0_A3_SPATIAL",
+ "threads": 1
+}

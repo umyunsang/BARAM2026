@@ -1,0 +1,18 @@
+{
+ "deployed_blend": 0.6314827308346854,
+ "true_per_row_oracle": 0.7255568523319222,
+ "true_oracle_gain": 0.09407412149723682,
+ "null_oracle_member_cloud_mean": 0.6258726090321566,
+ "null_oracle_sd": 0.0015625513804018156,
+ "random_member_mean": 0.6261341063556972,
+ "random_member_sd": 0.001487691135136687,
+ "matched_pair": {
+  "n_pairs": 5770,
+  "D_mean_abs_diff_cf": 0.14050658275677883,
+  "floor_lower": 0.07025329137838941,
+  "floor_upper": 0.14050658275677883,
+  "current_mae_cf": 0.1409629910250622,
+  "target_mae_cf": 0.1203,
+  "verdict": "INCONCLUSIVE_BRACKET_STRADDLES_TARGET"
+ }
+}

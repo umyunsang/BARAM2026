@@ -1,7 +1,12 @@
 import pandas as pd
 import pytest
 
-from baram.decisions.blend import apply_blend, fit_two_model_blend
+from baram.decisions.blend import (
+    apply_blend,
+    apply_convex_blend,
+    fit_convex_blend,
+    fit_two_model_blend,
+)
 from baram.exceptions import ContractError
 
 CAPACITIES = {1: 21600.0, 2: 21600.0, 3: 21000.0}
@@ -72,3 +77,20 @@ def test_frozen_blend_applies_to_future_matching_parent_models() -> None:
     result = apply_blend(policy, future)
     assert len(result) == len(labels)
     assert result["forecast_id"].str.startswith("future-").all()
+
+
+def test_three_parent_convex_blend_uses_simple_parent_tie_break() -> None:
+    predictions, labels = _prediction_frames()
+    predictions["c"] = predictions["a"].copy()
+    policy = fit_convex_blend(
+        predictions,
+        labels,
+        CAPACITIES,
+        "1" * 64,
+        "2" * 64,
+        weight_step=0.05,
+    )
+    for weights in policy.weights_by_group.values():
+        assert weights == {"a": 1.0, "b": 0.0, "c": 0.0}
+    result = apply_convex_blend(policy, predictions)
+    assert result["prediction_kwh"].tolist() == labels["actual_kwh"].tolist()

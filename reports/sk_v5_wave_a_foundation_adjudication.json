@@ -1,0 +1,157 @@
+{
+  "schema_version": 1,
+  "lane_id": "V5-FOUNDATION",
+  "adjudicated_at": "2026-08-09T05:02:29.158641+09:00",
+  "artifact": {
+    "path": "research/lanes/v5_foundation_deficit.md",
+    "sha256": "b94ddbd2d61a4f03958bd917b121cce288ad1f68807b46fecdc16dff0af77c35",
+    "reported_sha256": "b94ddbd2d61a4f03958bd917b121cce288ad1f68807b46fecdc16dff0af77c35",
+    "hash_match": true
+  },
+  "scope": {
+    "declared_content_files": 30,
+    "unique_paths": 30,
+    "paths": [
+      "AGENTS.md",
+      ".planning/2026-08-01-leaderboard-top-4-loop/SK_v5.md",
+      "reports/sk_v5_approval_receipt.json",
+      "reports/sk_v5_wave_a_research_manifest.json",
+      ".planning/2026-08-01-leaderboard-top-4-loop/DS_v3.md",
+      ".planning/2026-08-01-leaderboard-top-4-loop/IP_v2.md",
+      "src/baram/evaluation/official.py",
+      "src/baram/evaluation/prequential.py",
+      "src/baram/contracts/types.py",
+      "src/baram/constants.py",
+      "src/baram/data/archive.py",
+      "src/baram/data/canonical.py",
+      "src/baram/data/quality.py",
+      "src/baram/data/turbines.py",
+      "artifacts/manifests/prepare.json",
+      "src/baram/features/pipeline.py",
+      "src/baram/features/weather.py",
+      "src/baram/features/spatial.py",
+      "src/baram/features/physics.py",
+      "src/baram/features/geometric.py",
+      "src/baram/features/sequence.py",
+      "src/baram/features/climatology.py",
+      "src/baram/evaluation/failure_slices.py",
+      "src/baram/evaluation/slices.py",
+      "reports/s17_n26_s4_metric_action_audit.json",
+      "reports/s17_n26_s4_metric_action_audit_receipt.json",
+      "research/rwa_local_audit.md",
+      "research/rwa_data_feature_research.md",
+      "research/rwa_eval_research.md",
+      "research/lanes/s17_n24_issued_schema_coverage.md"
+    ],
+    "bound_pass": true,
+    "prohibited_actions_observed": [],
+    "raw_or_result_body_reads_by_root": 0
+  },
+  "root_validation": {
+    "protocol_sha256": "b3ca2c8bf8b470695bf026c5b76f1eeb601c8b2b4fe7c9e32d25be0f64927909",
+    "validated_file_hashes": {
+      ".planning/2026-08-01-leaderboard-top-4-loop/SK_v5.md": "c2c813475ab5f0a741e6adbceab196d5b38447f2aeb02f9716a8f5be8973c820",
+      ".planning/2026-08-01-leaderboard-top-4-loop/DS_v3.md": "64ace304cd91a78e4d7c3bc9e0ef8574fbda16fe19c75995c679ff8155c5e87c",
+      ".planning/2026-08-01-leaderboard-top-4-loop/IP_v2.md": "0834d30c65e149423db3ea5214ab839fd3df2738b2d86ed1071abbeb3e33c8fd",
+      "AGENTS.md": "91a11f95f94e8de86f5c84b204e1893830b3ed5693e3d7ede7f2e351e9891e9c",
+      "reports/sk_v5_approval_receipt.json": "e827b324a23913346598d274f2ded496ffc3134243de5636033ee6a3ac387173",
+      "reports/sk_v5_wave_a_research_manifest.json": "4690826f4f2f629220c085ffc87883c1ec2fa8990f7f92430483ff4f975ae312",
+      "reports/s17_n26_s4_metric_action_audit.json": "9c92a4fdebe4e67d3043555f8955816b404fb791b38bc64a0e3ebfa2d1d62f77",
+      "src/baram/data/canonical.py": "868a2d460d99f1a6bd71e900b20fb977a682090ae8f1c6d31a009992ad50ad34",
+      "src/baram/data/quality.py": "5992c93bcd2a4a87b885b2ff1d4c328b3e69001d106742f04a1093619c4f71ab",
+      "src/baram/data/archive.py": "cf71b472699e4d6518e2ccb6f0ed5714511aa2c19d73f4f7b9dedcd2517a33d3",
+      "src/baram/data/turbines.py": "85051ef49d5820697f92dfd4ba1311fbdf7b91753a0d8fe36a636613deb1d6b1",
+      "src/baram/evaluation/official.py": "5701ddfc5a6254e89cbc49451cd3f4bbddd437cff451a4596a86e7c68ff42cba",
+      "src/baram/evaluation/prequential.py": "a4cd12d30b3cf79ac339f1a5dbcc009f5b85ba10a30ef6614346a6309703b35b",
+      "src/baram/evaluation/slices.py": "f5cf15e25ecfb4571d34db96aab80a2b086adf65c01002fe57d5b91770113600",
+      "src/baram/evaluation/failure_slices.py": "a4e360b86cb06d177511bf0a4f5a87adf34762f0f3f07b8f2f4db602bfc80d5b",
+      "src/baram/features/pipeline.py": "5a52242837418a8ba36b178b3dd3bf848744c5b141900f7631ead5cfe6e2a015",
+      "src/baram/features/weather.py": "d65a18fdf0b025d1863c783d5997f77824a3347ab87e78a4357fe2afeb2d1905",
+      "src/baram/features/spatial.py": "37c31ccb17beedc01d0b6e7e3210d821bc4dcdc6e860c76dc38fea77aa64c092",
+      "src/baram/features/sequence.py": "ca405f068abc2d48f2b07a357bd6c56cb032058ef06553674dd4d641bbafab64",
+      "src/baram/features/geometric.py": "86e977ed4167c3f9229d0ef017da678cf709fdf39fe774f908a2edc1182406d4",
+      "src/baram/features/climatology.py": "9feb21970a8c75e850f0f9bfa5da3f1a2ed1bb751afe73624b5207d8248302d3",
+      "research/rwa_local_audit.md": "a497c3a6f4725b24dfd724e7869957a9dfff4029902e3a8d249b2dd146cfe500",
+      "research/rwa_data_feature_research.md": "16351bb387dfebf0dc7ccdc6ef0e8ec77406964bf3d0b40c52fcdc3496284504",
+      "research/rwa_eval_research.md": "2b418c28ecd4f9e3a27e30176d9d76298961b37cffc613447b7c36e5eb34b84c",
+      "research/lanes/s17_n24_issued_schema_coverage.md": "a7cc2db5b9ffcf39e7ada7e21d27e7c56316086579ec349a4e3baec312d708eb",
+      "artifacts/manifests/prepare.json": "ca4908d7f98639b13da80febcd071cd805369e8e044bb4d7b97f793d2703ca46",
+      "inputs/notebooks/metric_official.ipynb": "0a3ab5a57dba0705dbdbda73cd723be37ef39cce388fcb22b1a220ce523a70f9"
+    },
+    "checks": [
+      {
+        "id": "FND-RV01",
+        "result": "PASS",
+        "fact": "prequential code constructs D-1 14:00 basis and exact 72-cell 01:00-through-00:00 operating days",
+        "locator": "src/baram/evaluation/prequential.py:55-115"
+      },
+      {
+        "id": "FND-RV02",
+        "result": "PASS",
+        "fact": "canonical weather contract derives lead and issuance_batch from data_available_kst_dtm and carries no distinct forecast-reference/cycle/support field",
+        "locator": "src/baram/data/canonical.py:99-121"
+      },
+      {
+        "id": "FND-RV03",
+        "result": "PASS",
+        "fact": "prepare feature-name projection has 820 unique names and zero geom__/seq__/clim prefix names",
+        "locator": "artifacts/manifests/prepare.json#/feature_names",
+        "projection_counts": {
+          "geom__": 0,
+          "seq__": 0,
+          "clim": 0
+        }
+      },
+      {
+        "id": "FND-RV04",
+        "result": "PASS",
+        "fact": "strict receipt schema omits integrated component/group/lead/regime/boundary diagnostics",
+        "locator": "src/baram/evaluation/prequential.py:710-740"
+      },
+      {
+        "id": "FND-RV05",
+        "result": "PASS",
+        "fact": "slice code implements boundary/tier bins while failure-slice list omits them",
+        "locator": "src/baram/evaluation/slices.py:21-100; src/baram/evaluation/failure_slices.py:12-22"
+      },
+      {
+        "id": "FND-RV06",
+        "result": "PASS",
+        "fact": "N26 exact formula/action claims match fixed audit and immutable code hashes",
+        "locator": "reports/s17_n26_s4_metric_action_audit.json#/literal_official_contract,/equivalence_audit,/action_appropriateness"
+      },
+      {
+        "id": "FND-RV07",
+        "result": "PASS",
+        "fact": "N24 report self-records receipt-score exposure and fail-closed candidate authority; only independently checked schema pointers admitted",
+        "locator": "research/lanes/s17_n24_issued_schema_coverage.md:14-23,75-77"
+      }
+    ]
+  },
+  "disposition": "ACCEPT_DIRECT_CLAIMS",
+  "admitted_conclusion": {
+    "status": "FOUNDATION_PARTIAL",
+    "s1": "FREEZABLE",
+    "s2": "NOT_FREEZABLE_TIME_AXIS_SEMANTICS",
+    "s3": "NOT_FREEZABLE_DIAGNOSTIC_LINEAGE",
+    "s4": "FORMULA_AND_PARITY_CLOSED_ACTION_ADEQUACY_OPEN"
+  },
+  "quarantine": [
+    "No N24 candidate disposition or aggregate score is admitted.",
+    "Feature-name absence proves absence only from the inspected prepare lineage, not absence from every historical artifact."
+  ],
+  "active_deficits_ranked": [
+    "forecast-reference/run/availability/valid-time/support semantics",
+    "evaluation-population and label-availability support",
+    "S3 diagnostic provenance/coverage registry",
+    "source/run missingness operational state",
+    "metric-component/boundary diagnostics integration",
+    "active lineage versus source-module presence",
+    "adaptive reuse/freshness",
+    "unobservable future operational state"
+  ],
+  "execution_authority": false,
+  "comparison_consumed": false,
+  "candidate_promoted": false,
+  "wave_b_gate": "WAIT_FOR_ALL_WAVE_A_AND_ROOT_FOUNDATION_FREEZE"
+}

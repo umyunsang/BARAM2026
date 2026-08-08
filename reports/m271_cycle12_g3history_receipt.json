@@ -1,0 +1,84 @@
+{
+ "dacon_upload": false,
+ "decided_utc": "2026-08-04T06:51:41.724630+00:00",
+ "external_actions": [],
+ "lane": "L1",
+ "lockbox_reopened": false,
+ "model_fits": 0,
+ "new_2024_evaluation": false,
+ "node": "C1N12_G3_HISTORY",
+ "report_sha256": "5b6e0fcec3785dc62f0be80a8335d3ad56619273e91f8074becb4765ce7c4d84",
+ "result": {
+  "folds": [
+   {
+    "fold": "dev-2023-Q2",
+    "g3_ficr_shortfall": 0.13419961833547817,
+    "g3_history_months": 3,
+    "g3_nmae_excess": 0.020651867303463245,
+    "group_ficr": {
+     "1": 0.4128568471156301,
+     "2": 0.49432789619381623,
+     "3": 0.319392753319245
+    },
+    "group_nmae": {
+     "1": 0.12979239760147607,
+     "2": 0.13400709445826436,
+     "3": 0.15255161333333345
+    },
+    "peer_mean_ficr": 0.45359237165472316,
+    "rows": 6552
+   },
+   {
+    "fold": "dev-2023-Q3",
+    "g3_ficr_shortfall": 0.05279326081365254,
+    "g3_history_months": 6,
+    "g3_nmae_excess": 0.00537934329916287,
+    "group_ficr": {
+     "1": 0.33191714823934865,
+     "2": 0.375046419141971,
+     "3": 0.3006885228770073
+    },
+    "group_nmae": {
+     "1": 0.13650748567913765,
+     "2": 0.14506242127828234,
+     "3": 0.14616429677787288
+    },
+    "peer_mean_ficr": 0.35348178369065986,
+    "rows": 6609
+   },
+   {
+    "fold": "dev-2023-Q4",
+    "g3_ficr_shortfall": 0.09265736371364347,
+    "g3_history_months": 9,
+    "g3_nmae_excess": 0.02321128000597586,
+    "group_ficr": {
+     "1": 0.4385776818919079,
+     "2": 0.47544328869172015,
+     "3": 0.3643531215781705
+    },
+    "group_nmae": {
+     "1": 0.14117751711071055,
+     "2": 0.14730315430396715,
+     "3": 0.1674516157133147
+    },
+    "peer_mean_ficr": 0.457010485291814,
+    "rows": 6624
+   }
+  ],
+  "predeclared_check": {
+   "H1_expectation": "g3 FICR 열세가 Q2 > Q3 > Q4 로 단조 감소",
+   "H1_held": false,
+   "H2_expectation": "Q4 열세가 Q2 의 절반 이하",
+   "H2_held": false,
+   "shortfalls": [
+    0.13419961833547817,
+    0.05279326081365254,
+    0.09265736371364347
+   ],
+   "verdict": "HISTORY_LENGTH_DOES_NOT_EXPLAIN_G3"
+  }
+ },
+ "schema_version": 1,
+ "script_sha256": "2ae224faeae32057d0dc077c9a0d27296b8e8619b1c90a0b230dcb64f42f4bae",
+ "stage": "M271_P4_CYCLE12_G3_HISTORY"
+}

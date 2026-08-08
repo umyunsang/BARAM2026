@@ -1,0 +1,262 @@
+{
+  "route_version": "M271_P4_ROUTE_v4",
+  "router_version": "M271_ROUTER_v3_frozen_2026-08-06",
+  "context": {
+    "lane_live_counts": {
+      "L1": 4,
+      "L2": 8,
+      "L3": 6,
+      "L4": 4,
+      "L5": 2,
+      "L6": 8,
+      "L7": 6,
+      "L8": 31
+    },
+    "lane_deficit_mass": {
+      "L8": 0.04875044667051586
+    },
+    "residual_mass": 0.02509234982912887,
+    "stall_counter": 97,
+    "flipped_premises": [],
+    "unexplained_cells": 89,
+    "ledger_contract": {
+      "contract_version": "M271_LEDGER_CONTRACT_v1",
+      "events": 20,
+      "stall_counter": 97,
+      "refresh_due": false,
+      "recoverable_mass": 0.04875044667051586,
+      "cells_attributed": 19,
+      "cells_total": 108,
+      "unrecorded_cycles": 81,
+      "unrecorded_sample": [
+        "C1N10_BLEND_LOCALITY",
+        "C1N11_V2_REPRESENTATION",
+        "C1N12_G3_HISTORY",
+        "C1N13_ENSEMBLE_VARIANCE",
+        "C1N14_SHRINKBLEND",
+        "C1N15_WALKFORWARD",
+        "C1N16_ROBUSTNESS_AUDIT",
+        "C1N17_METRIC_ALIGNED_COMBINER"
+      ]
+    }
+  },
+  "evidence_count": 7,
+  "decisions": [
+    {
+      "evidence_id": "C1N68",
+      "node_id": "C1N68_EMPIRICAL_DECOMPOSITION",
+      "lane": "L6",
+      "condition": "C7",
+      "action": "RESEARCH_DIRECTION",
+      "reason": "확인됨 & 잔여 질량 있음 — 같은 방향 고도화",
+      "considered": [
+        "C10_SUPPRESSED_ALREADY_SERVICED"
+      ],
+      "targets": [
+        {
+          "operator": "RESEARCH_DIRECTION",
+          "kind": "scale_up",
+          "lane": "L6",
+          "deficit_cell": null,
+          "origin_node": "C1N68_EMPIRICAL_DECOMPOSITION",
+          "scope": "확인된 방향의 고도화",
+          "inherit_direction": null
+        }
+      ],
+      "engine_events": [
+        {
+          "node_id": "C1N68_EMPIRICAL_DECOMPOSITION",
+          "kind": "RESEARCH_DIRECTION",
+          "lane": "L8",
+          "research_kind": "loop_engine"
+        },
+        {
+          "node_id": "JOIN",
+          "kind": "JOIN"
+        }
+      ],
+      "sources_opened": [
+        "dir::C1N68_EMPIRICAL_DECOMPOSITION::loop_engine::L8"
+      ]
+    },
+    {
+      "evidence_id": "C1N73",
+      "node_id": "C1N73_GROUP_BLEND_GATE",
+      "lane": "L7",
+      "condition": "TERMINATION_GUARD",
+      "action": "HALT",
+      "reason": "정체가 지속되고 C10 을 이미 1 회 거쳤는데 다른 조건이 하나도 발화하지 않는다. 계획서 종료 가드 사다리의 종료 조건이다.",
+      "considered": [
+        "C10_ALREADY_SERVICED",
+        "NO_OTHER_CONDITION"
+      ],
+      "targets": [],
+      "engine_events": [
+        {
+          "node_id": "C1N73_GROUP_BLEND_GATE",
+          "kind": "RESEARCH_DIRECTION",
+          "lane": "L8",
+          "research_kind": "loop_engine"
+        },
+        {
+          "node_id": "JOIN",
+          "kind": "JOIN"
+        }
+      ],
+      "sources_opened": [
+        "dir::C1N73_GROUP_BLEND_GATE::loop_engine::L8"
+      ]
+    },
+    {
+      "evidence_id": "C1N76",
+      "node_id": "C1N76_CIRCULAR_BLOCK",
+      "lane": "L4",
+      "condition": "C16",
+      "action": "REJECT_DIRECTION",
+      "reason": "C16 크기 게이트 (이득 0.00000 < 0.15 x 격차 0.02969)",
+      "considered": [
+        "C10_SUPPRESSED_ALREADY_SERVICED",
+        "C16"
+      ],
+      "targets": [],
+      "engine_events": [
+        {
+          "node_id": "C1N76_CIRCULAR_BLOCK",
+          "kind": "RESEARCH_DIRECTION",
+          "lane": "L8",
+          "research_kind": "loop_engine"
+        },
+        {
+          "node_id": "JOIN",
+          "kind": "JOIN"
+        }
+      ],
+      "sources_opened": [
+        "dir::C1N76_CIRCULAR_BLOCK::loop_engine::L8"
+      ]
+    },
+    {
+      "evidence_id": "C1N87",
+      "node_id": "C1N87_CURTAILMENT_CLEAN_TARGET",
+      "lane": "L1",
+      "condition": "C16",
+      "action": "REJECT_DIRECTION",
+      "reason": "C16 크기 게이트 (이득 0.00119 < 0.15 x 격차 0.02969)",
+      "considered": [
+        "C10_SUPPRESSED_ALREADY_SERVICED",
+        "C16"
+      ],
+      "targets": [],
+      "engine_events": [
+        {
+          "node_id": "C1N87_CURTAILMENT_CLEAN_TARGET",
+          "kind": "RESEARCH_DIRECTION",
+          "lane": "L8",
+          "research_kind": "loop_engine"
+        },
+        {
+          "node_id": "JOIN",
+          "kind": "JOIN"
+        }
+      ],
+      "sources_opened": [
+        "dir::C1N87_CURTAILMENT_CLEAN_TARGET::loop_engine::L8"
+      ]
+    },
+    {
+      "evidence_id": "C1N84",
+      "node_id": "C1N84_TEACHER_CHRONOLOGICAL",
+      "lane": "L6",
+      "condition": "C16",
+      "action": "REJECT_DIRECTION",
+      "reason": "C16 크기 게이트 (이득 0.00016 < 0.15 x 격차 0.02969)",
+      "considered": [
+        "C10_SUPPRESSED_ALREADY_SERVICED",
+        "C16"
+      ],
+      "targets": [],
+      "engine_events": [
+        {
+          "node_id": "C1N84_TEACHER_CHRONOLOGICAL",
+          "kind": "RESEARCH_DIRECTION",
+          "lane": "L8",
+          "research_kind": "loop_engine"
+        },
+        {
+          "node_id": "JOIN",
+          "kind": "JOIN"
+        }
+      ],
+      "sources_opened": [
+        "dir::C1N84_TEACHER_CHRONOLOGICAL::loop_engine::L8"
+      ]
+    },
+    {
+      "evidence_id": "C1N80",
+      "node_id": "C1N80_FUSION_ANOMALY",
+      "lane": "L3",
+      "condition": "C16",
+      "action": "REJECT_DIRECTION",
+      "reason": "C16 크기 게이트 (이득 0.00248 < 0.15 x 격차 0.02969)",
+      "considered": [
+        "C10_SUPPRESSED_ALREADY_SERVICED",
+        "C16"
+      ],
+      "targets": [],
+      "engine_events": [
+        {
+          "node_id": "C1N80_FUSION_ANOMALY",
+          "kind": "RESEARCH_DIRECTION",
+          "lane": "L8",
+          "research_kind": "loop_engine"
+        },
+        {
+          "node_id": "JOIN",
+          "kind": "JOIN"
+        }
+      ],
+      "sources_opened": [
+        "dir::C1N80_FUSION_ANOMALY::loop_engine::L8"
+      ]
+    },
+    {
+      "evidence_id": "C1N77",
+      "node_id": "C1N77_PER_SOURCE_STACK",
+      "lane": "L3",
+      "condition": "C16",
+      "action": "REJECT_DIRECTION",
+      "reason": "C16 크기 게이트 (이득 0.00092 < 0.15 x 격차 0.02969)",
+      "considered": [
+        "C10_SUPPRESSED_ALREADY_SERVICED",
+        "C16"
+      ],
+      "targets": [],
+      "engine_events": [
+        {
+          "node_id": "C1N77_PER_SOURCE_STACK",
+          "kind": "RESEARCH_DIRECTION",
+          "lane": "L8",
+          "research_kind": "loop_engine"
+        },
+        {
+          "node_id": "JOIN",
+          "kind": "JOIN"
+        }
+      ],
+      "sources_opened": [
+        "dir::C1N77_PER_SOURCE_STACK::loop_engine::L8"
+      ]
+    }
+  ],
+  "state_digests": [
+    "2be5ef5c0c29afc1bbc5b73a03fbd1d0d201955117794dd16712873dce23deb5",
+    "7ed70362d3200f3e0c10920cb5b1a6779c549125337a4f5c0723c9ce701dd5d0",
+    "76c0419fae47706122bb34d6bdaa52a58f166439835ec0a78f86099b445179e9",
+    "bdc2e59b3c7a759b29ed2772adee25f32e432a3b520845364ea282aa3f8c66aa",
+    "a1e71b37da3911040de8fab8a3ef970805c26294fc9e7fadfd0e2d1dcdf423d0",
+    "c363506e34cae52cb1462fd653897be20bc88d7e7b5e38badb9d65d166dd1eed",
+    "2f50c6c2a87091992cdeec89a2f23d07d71484df7800d6d85b2906328de1561f"
+  ],
+  "engine_actually_ran": true,
+  "generated_at": "2026-08-06T07:08:47.086604+00:00"
+}

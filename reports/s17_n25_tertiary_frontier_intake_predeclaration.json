@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "node_id": "S17-N25_TERTIARY_FRONTIER_RESEARCH_INTAKE",
+  "created_at": "2026-08-09T00:37:35.961658+09:00",
+  "parent_id": "S17-N24_SECONDARY_FRONTIER_RESEARCH_INTAKE",
+  "purpose": "Final tertiary distinct-information intake after issued schema, physical wind, operational NWP, market/outage, and open-flow fronts produced zero READY candidates. Audit direct farm/regional forecasts, an exact electrical outage crosswalk, pinned microscale pretrained weights, and icing/availability physics without data bodies or scores.",
+  "input_bundle": {
+    "files": {
+      "AGENTS.md": "91a11f95f94e8de86f5c84b204e1893830b3ed5693e3d7ede7f2e351e9891e9c",
+      "research/lanes/s17_n24_issued_schema_coverage.md": "a7cc2db5b9ffcf39e7ada7e21d27e7c56316086579ec349a4e3baec312d708eb",
+      "research/lanes/s17_n24_physical_stability_hub_wind.md": "aa61193d58c5174f69b095bba58474134c25d1c8e18bbbd0b917ce5bd9e11ff0",
+      "research/lanes/s17_n24_cfsv2_exact_treatment.md": "7c9257d20b0659b030686e780b2c22d84b26845d0f2442c35dfbe7d6f7e334bc",
+      "research/lanes/s17_n24_curtailment_market_forecast.md": "200395700f6ac311c40ec0498cb6d5d6ce89f238b5a81b544400aa937910a797",
+      "research/lanes/s17_n24_open_terrain_flow_runtime.md": "2bdda85de015d1664a22c34a3ea93e84932b8062ac17c26d1f752b5415809e25",
+      "artifacts/manifests/prepare.json": "ca4908d7f98639b13da80febcd071cd805369e8e044bb4d7b97f793d2703ca46",
+      "src/baram/features/weather.py": "d65a18fdf0b025d1863c783d5997f77824a3347ab87e78a4357fe2afeb2d1905",
+      "src/baram/features/physics.py": "881443f644acf802c8a222fedc7a0f7062fc2345d44580b01124bbfd9a2358bf",
+      "src/baram/data/turbines.py": "85051ef49d5820697f92dfd4ba1311fbdf7b91753a0d8fe36a636613deb1d6b1",
+      "inputs/competition/open_wind_236727.zip": "920be0c458d820e855bf79dd25723146f52ce1736138aedba5e6bc853f1f720b",
+      "inputs/notebooks/baseline.ipynb": "712b26f4d2748860c94cff1e0100c23810468c983173f8e9ef8d009fe82df48c"
+    },
+    "sha256": "b2f039cfeebc0282195f9932f130bf7f4aa388042697660f4958cfcd1ab96f74"
+  },
+  "authoritative_state": {
+    "target_total": 0.66,
+    "comparison_count": 4,
+    "next_score_bearing_comparison_index": 5,
+    "n24_candidate_count": 0
+  },
+  "lanes": [
+    {
+      "id": "FARM_SUBMITTED_FORECAST_ARCHIVE",
+      "path": "research/lanes/s17_n25_farm_submitted_forecast_archive.md",
+      "bound": "<=12 primary official KPX/Korean legal/documentation URLs; no participant system, attachment, data/API endpoint, account/application, or row body",
+      "question": "Is a plant-specific day-ahead forecast for this exact wind farm publicly archived for 2022-2023 and available by D-1 14:00 KST with commercial anonymous deployment symmetry?"
+    },
+    {
+      "id": "REGIONAL_RENEWABLE_FORECAST",
+      "path": "research/lanes/s17_n25_regional_renewable_forecast.md",
+      "bound": "<=12 primary official documentation/catalogue-metadata URLs; no data/API/catalogue endpoint or body",
+      "question": "Does an official fixed-issue regional wind/renewable forecast archive supply a basis-safe new predictor with an exact map to all three groups, distinct from ex-post observations and generic NWP?"
+    },
+    {
+      "id": "GRID_TOPOLOGY_OUTAGE_CROSSWALK",
+      "path": "research/lanes/s17_n25_grid_topology_outage_crosswalk.md",
+      "bound": "<=12 primary official public planning/topology/licence URLs; documentation/map metadata only, no GIS/file/API body",
+      "question": "Can official public electrical topology directly map the exact farm/groups to N24 planned outages with a coefficient-free hourly impact rule and commercial reproducibility?"
+    },
+    {
+      "id": "PRETRAINED_MICROSCALE_CHECKPOINT",
+      "path": "research/lanes/s17_n25_pretrained_microscale_checkpoint.md",
+      "bound": "<=12 primary project/model-card/paper URLs plus nonmutating local runtime inventory; no code/weight/data download or execution",
+      "question": "Does a pre-cutoff commercial-compatible pinned pretrained microscale wind downscaler exist with fixed issued-NWP+terrain inputs, 117 m output, Apple-M1 runtime, and no retraining/domain choices?"
+    },
+    {
+      "id": "ICING_AVAILABILITY_PHYSICS",
+      "path": "research/lanes/s17_n25_icing_availability_physics.md",
+      "bound": "whitelisted schema/source plus <=10 primary paper/official URLs; no row/data body, fit, threshold screen, or dependency",
+      "question": "Can one coefficient-complete published turbine-icing/availability correction be computed from supplied issued fields with exact fleet applicability and zero thresholds/tuning?"
+    }
+  ],
+  "evidence_tags": [
+    "[directly_supported]",
+    "[derived]",
+    "[near_match_only]",
+    "[contradicts_premise]",
+    "[unverified]"
+  ],
+  "selection_rule": {
+    "maximum_executable_or_prerequisite_candidates": 1,
+    "requirements": [
+      "literal directly_supported evidence independently verified by root",
+      "genuinely different information class with target-scale mechanism rather than a closed-axis variant",
+      "strict D-1 14:00 KST availability and past-only chronology",
+      "complete 2022-2023 fixed-issue archive and deployment symmetry",
+      "pre-2026-07-05 publication/asset availability",
+      "commercial-use-compatible licence and anonymous reproducibility",
+      "exact site/group mapping and one zero-tuning formula",
+      "unchanged Apple-M1 runtime or one bounded root-verifiable prerequisite"
+    ],
+    "forbidden_credit": [
+      "aggregate/model score narratives",
+      "derived or near-match promotion",
+      "test-period observations or ex-post operation records",
+      "generic additional NWP/source averaging",
+      "train-yourself code without pinned eligible checkpoint",
+      "threshold/radius/domain/topology choices invented by analyst"
+    ]
+  },
+  "execution_limits": {
+    "research_children": 5,
+    "repository_writes": "each child only its designated research/lanes file",
+    "model_fits": 0,
+    "predict_or_policy_calls": 0,
+    "metric_or_score_calls": 0,
+    "model_result_score_reads": 0,
+    "actual_kwh_or_raw_label_values": 0,
+    "2024_or_test_values": 0,
+    "external_data_catalogue_or_object_queries": 0,
+    "external_data_or_weight_bodies": 0,
+    "dependencies": 0,
+    "accounts_or_dacon_actions": []
+  },
+  "outputs": [
+    "research/lanes/s17_n25_farm_submitted_forecast_archive.md",
+    "research/lanes/s17_n25_regional_renewable_forecast.md",
+    "research/lanes/s17_n25_grid_topology_outage_crosswalk.md",
+    "research/lanes/s17_n25_pretrained_microscale_checkpoint.md",
+    "research/lanes/s17_n25_icing_availability_physics.md",
+    "reports/s17_n25_tertiary_frontier_intake_receipt.json"
+  ],
+  "score_bearing": false,
+  "comparison_index": null,
+  "halt_if_none": {
+    "next_handoff": [],
+    "status": "EVIDENCE_EXHAUSTED_TARGET_NOT_REACHED",
+    "goal_completion_allowed": false
+  }
+}

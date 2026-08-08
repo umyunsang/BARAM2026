@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "node_id": "S17-N5_ECMWF_18Z_2023_INNOVATION_PROBE",
+  "predeclared_at": "2026-08-08T19:07:21.815265+09:00",
+  "parent": "S17-N4_ECMWF_18Z_FIXED_LEAD_AUDIT",
+  "purpose": "Resolve the N4 broad handoff into an extraction prerequisite followed by a separately predeclared innovation diagnostic.",
+  "decision": "DECOMPOSE_TO_S17-N5_ECMWF_18Z_2023_EXTRACTION",
+  "score_bearing": false
+}

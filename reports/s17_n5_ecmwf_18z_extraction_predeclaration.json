@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "node_id": "S17-N5_ECMWF_18Z_2023_EXTRACTION",
+  "stage": "S2_데이터아키텍처",
+  "kind": "external_forecast_extraction_non_score_bearing",
+  "predeclared_at": "2026-08-08T19:06:43.585392+09:00",
+  "parent": "S17-N4_ECMWF_18Z_FIXED_LEAD_AUDIT",
+  "evidence": [
+    {
+      "path": "reports/s17_n4_ecmwf_18z_audit_receipt.json",
+      "sha256": "29d4be21be4815e6ebc4b7d149d72f6095e65fac4d32b9f9fa5ddbdf3954c1fb"
+    },
+    {
+      "path": "research/rwa_data_feature_research.md",
+      "sha256": "16351bb387dfebf0dc7ccdc6ef0e8ec77406964bf3d0b40c52fcdc3496284504"
+    }
+  ],
+  "mapping_correction": {
+    "operating_days": "2023-04-01..2023-12-31",
+    "init_dates": "2023-03-30..2023-12-29 (D-2 18Z)",
+    "note": "N4 archive count used calendar Q2-Q4; operational extraction shifts both endpoints by two days. Count and six missing init dates are unchanged; missing operating days become 2023-04-29..2023-05-04."
+  },
+  "purpose": "Extract only the four predeclared ECMWF fields at three official group centroids for the 2023 Q2-Q4 development operating days, preserving issue/availability/lead provenance.",
+  "invariants": {
+    "X1": "input archive and baseline hashes match canonical values before run",
+    "X2": "only init dates 2023-03-30..2023-12-29; never 2024/2025",
+    "X3": "only fixed steps 21..45 by 3 and fields 10u,10v,u925,v925",
+    "X4": "each range response is 206, exact indexed length, GRIB magic, hashed, decoded then discarded",
+    "X5": "spatial operation fixed to four-nearest inverse-distance-squared at official group centroids; no learned transform",
+    "X6": "hourly leads 22..45 use component-wise linear interpolation within the same 18Z run",
+    "X7": "each present operating day produces 72 unique rows and max object Last-Modified <= D-1 05:00 UTC",
+    "X8": "six declared archive-missing init days produce explicit unavailable rows, never imputation",
+    "X9": "checkpoint/retry is content-addressed and conflicting retry fails; raw GRIB messages are not retained",
+    "X10": "workers <=6, final compact Parquet/manifest/receipt hashes recorded",
+    "X11": "no model fit, power target access, official score, 2024 lockbox, test data, remote inference or Dacon action",
+    "X12": "unit/smoke/full tests and Ruff pass"
+  },
+  "fixed": {
+    "operating_start": "2023-04-01",
+    "operating_end": "2023-12-31",
+    "init_hour_utc": 18,
+    "steps": [
+      21,
+      24,
+      27,
+      30,
+      33,
+      36,
+      39,
+      42,
+      45
+    ],
+    "hourly_leads": [
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45
+    ],
+    "fields": [
+      "10u:sfc",
+      "10v:sfc",
+      "u:pl:925",
+      "v:pl:925"
+    ],
+    "centroids": {
+      "1": [
+        37.287128,
+        128.952026
+      ],
+      "2": [
+        37.282253,
+        128.965149
+      ],
+      "3": [
+        37.2752,
+        128.971451
+      ]
+    },
+    "spatial": "nearest4_idw_power2",
+    "temporal": "linear_uv_components",
+    "max_workers": 6,
+    "declared_missing_init_dates": [
+      "2023-04-27",
+      "2023-04-28",
+      "2023-04-29",
+      "2023-04-30",
+      "2023-05-01",
+      "2023-05-02"
+    ]
+  },
+  "estimated_transfer_gb_decimal": 5.898,
+  "files": {
+    "add": [
+      "src/baram/data/ecmwf_open.py",
+      "scripts/extract_ecmwf_18z.py",
+      "tests/data/test_ecmwf_open.py"
+    ],
+    "output": "artifacts/external/ecmwf_18z_2023/ecmwf_18z_q234.parquet",
+    "manifest": "artifacts/external/ecmwf_18z_2023/manifest.json",
+    "receipt": "reports/s17_n5_ecmwf_18z_extraction_receipt.json"
+  },
+  "forbidden": [
+    "2024",
+    "2025",
+    "power labels/SCADA",
+    "model fit",
+    "official score",
+    "Dacon/account",
+    "remote inference",
+    "dependency change",
+    "raw GRIB retention"
+  ],
+  "pass_label": "PASS_EXTERNAL_EXTRACTION_ONLY_NOT_VALUE_OR_SCORE"
+}

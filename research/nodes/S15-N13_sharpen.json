@@ -1,0 +1,30 @@
+{
+ "champion_narrow": 0.6361842493883538,
+ "champion_wide": 0.6361842493883538,
+ "composed_narrow": 0.632130851958971,
+ "composed_wide": 0.632130851958971,
+ "composed_per_seed_wide": [
+  0.6317889383020108,
+  0.6318413599699326,
+  0.6324511336759191
+ ],
+ "arb": {
+  "point_cand": 0.632130851958971,
+  "point_champ": 0.6361842493883538,
+  "paired_mean": -0.003952233263189203,
+  "paired_sd": 0.0015500790449269638,
+  "p_better": 0.005,
+  "ci95": [
+   -0.006986911774322943,
+   -0.000927764784165514
+  ],
+  "n_rep": 400,
+  "block_days": 7,
+  "point_delta": -0.004053397429382821,
+  "min_effect": 0.001,
+  "p_required_unadjusted": 0.9,
+  "p_required_adjusted": 0.9,
+  "n_comparisons_so_far": 1,
+  "took_champion": false
+ }
+}

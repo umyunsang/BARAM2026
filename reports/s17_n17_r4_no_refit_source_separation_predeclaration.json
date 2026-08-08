@@ -1,0 +1,160 @@
+{
+  "schema_version": 1,
+  "node_id": "S17-N17_R4_NO_REFIT_STRICT_SOURCE_SEPARATION_COMPARISON",
+  "created_at": "2026-08-08T21:47:01.782719+09:00",
+  "purpose": "One-shot no-refit strict retrospective R4 comparison of matched concat versus source-separated actions using frozen D/DL/DG probabilities.",
+  "parent": "S17-N16_R4_SOURCE_SEPARATED_VS_CONCAT_PREREQUISITE_AUDIT",
+  "known_outcome_exposure": "Legacy registry numeric outcomes and a negative equal-average conclusion are already known. This comparison is chronology-repaired, multiplicity-aware retrospective confirmation only, not a fresh holdout.",
+  "input_bundle": {
+    "files": {
+      "reports/s17_n16_r4_source_separation_prerequisite_receipt.json": "9951f2419feb33ced371786727dc8abde2cc90f3552c0afcd80a05798a24ec61",
+      "reports/s17_n7_strict_action_reconstruction_receipt.json": "f4d56d97532fbe4d681061dfff773f951c4be01b26081dda3c0ff77720e973fc",
+      "artifacts/backtests/s17_n7_strict_actions/actions.parquet": "6041a7bf6f242c4da7958dc43d3487cdc468cc39301086bf3a5e6df5fb87f290",
+      "artifacts/backtests/s17_n7_strict_actions/procedure_provenance.parquet": "12666e4e61d962e74e0168e41a40f13b13acc006808bd7bd09dd837fa6cf9cae",
+      "artifacts/backtests/s17_n7_strict_actions/family_manifest.json": "972ed2922260bec2000cb9bc0d97098ae533652ab16daf9d5ca6d90601daa046",
+      "research/nodes/s12_n3_source_split.py": "8b54c5932bf1e363002ad1f89b8a65d91f1a3c3e90f9934354e2c570eaed0f86",
+      "research/nodes/loop_lib.py": "f20e566fa57821e86acf41b399f233fe9ecdde515f834d84db818b0b882cf02f",
+      "research/nodes/S12-N3_columns.json": "3708cae5f7ff51133dbbfb880243451f6926bbf9e40aa435680da07a87a35679",
+      "research/rwa_data_feature_research.md": "16351bb387dfebf0dc7ccdc6ef0e8ec77406964bf3d0b40c52fcdc3496284504",
+      "src/baram/evaluation/prequential.py": "a4cd12d30b3cf79ac339f1a5dbcc009f5b85ba10a30ef6614346a6309703b35b",
+      "src/baram/evaluation/official.py": "5701ddfc5a6254e89cbc49451cd3f4bbddd437cff451a4596a86e7c68ff42cba",
+      "src/baram/constants.py": "f4fbf5c6772d021436f9b40459a2587f8223d597045d7fe9c48c9428e1702843",
+      "research/nodes/S7-N8_D_keys.parquet": "f1e647ba5eb7529f8ff9e69e818dfb7697044c19b15839e05f97e89cea83a010",
+      "research/nodes/S7-N8_D_prob.npy": "e567109f8a86c37411e84fab0329af8465788988112ece114035753e60c52f0e",
+      "research/nodes/S7-N8_DL_keys.parquet": "f1e647ba5eb7529f8ff9e69e818dfb7697044c19b15839e05f97e89cea83a010",
+      "research/nodes/S7-N8_DL_prob.npy": "0f34fd630ef33983cb1c7b5abfa349e53c43f5359050d3b6acfd0abbef041da6",
+      "research/nodes/S7-N8_DG_keys.parquet": "f1e647ba5eb7529f8ff9e69e818dfb7697044c19b15839e05f97e89cea83a010",
+      "research/nodes/S7-N8_DG_prob.npy": "ccb229fd427a5760a85f7e6490d372d947150ff6b1af581b94a496ab6c5d434b"
+    },
+    "sha256": "c98af5d4b88ef83bf07352de097450ad3c3eb3bdedec9eeab4d63937a36d0a25"
+  },
+  "comparison_index": 3,
+  "prior_comparison_count": 2,
+  "family": [
+    "CHAMPION",
+    "R4_CONCAT_D",
+    "R4_LDAPS_ONLY",
+    "R4_GFS_ONLY",
+    "R4_SEP_EQUAL",
+    "R4_SEP_Q2_WEIGHTED"
+  ],
+  "incumbent": "CHAMPION",
+  "mechanism_control": "R4_CONCAT_D",
+  "treatment_candidates": [
+    "R4_SEP_EQUAL",
+    "R4_SEP_Q2_WEIGHTED"
+  ],
+  "outage_fallbacks": {
+    "gfs_missing": "R4_LDAPS_ONLY",
+    "ldaps_missing": "R4_GFS_ONLY"
+  },
+  "materialization": {
+    "model_or_optimizer_fits": 0,
+    "probability_sources": [
+      "D",
+      "DL",
+      "DG"
+    ],
+    "drop_first_operating_day_each_fold": true,
+    "complete_day_rule": "retain only 72-cell operating days after exact intersection; expect Q2/Q3/Q4=90/89/91",
+    "d_policy_grid": {
+      "temperatures": [
+        0.4,
+        0.5,
+        0.6,
+        0.75,
+        0.85,
+        1.0,
+        1.2
+      ],
+      "gammas": [
+        0.0,
+        0.2,
+        0.35,
+        0.5,
+        0.75,
+        1.0,
+        1.5,
+        2.0
+      ]
+    },
+    "component_policy_selection": "For each D/DL/DG, maximize exact Q2 retained-day official Total across the frozen 56-cell policy grid; lexicographically smallest policy id breaks ties. Freeze through Q3/Q4.",
+    "separated_equal": "0.5*LDAPS_action + 0.5*GFS_action",
+    "source_weight_grid": [
+      0.0,
+      0.05,
+      0.1,
+      0.15,
+      0.2,
+      0.25,
+      0.3,
+      0.35,
+      0.4,
+      0.45,
+      0.5,
+      0.55,
+      0.6,
+      0.65,
+      0.7,
+      0.75,
+      0.8,
+      0.85,
+      0.9,
+      0.95,
+      1.0
+    ],
+    "weighted_selection": "Choose the single LDAPS weight w on Q2 only to maximize exact Total of w*LDAPS_action+(1-w)*GFS_action; smallest w breaks ties; freeze through Q3/Q4.",
+    "inner_q2_official_calls_expected": 189,
+    "q3_q4_score_or_component_calls_before_family_freeze": 0,
+    "concat_control_reproduction": "R4_CONCAT_D must equal N7 D on every retained row within 1e-12; CHAMPION is byte-aligned from N7."
+  },
+  "evaluation": {
+    "assessment_folds": [
+      "dev-2023-Q3",
+      "dev-2023-Q4"
+    ],
+    "protocol": "BARAM_STRICT_PREQUENTIAL_JOINT_v1",
+    "replicates": 4999,
+    "seed": 20260808,
+    "block_lengths_days": [
+      3,
+      7,
+      14
+    ],
+    "primary_block_days": 7,
+    "margin_vs_champion_total": 0.001635,
+    "minimum_treatment_minus_concat_total": 0.00357236259,
+    "promotion": "A treatment must meet both deltas, have SUPPORTED inference and promotion stability at all block lengths.",
+    "goal": "Only a promoted treatment with Total >= 0.660000 reaches the project goal.",
+    "evidence_label": "retrospective_chronology_repaired_multiplicity_aware_not_fresh_holdout"
+  },
+  "provenance": {
+    "fit": "frozen legacy outer models with idx < fold start, inherited no-refit",
+    "action_selection": "Q2-only fixed",
+    "source_weight": "Q2-only fixed one degree",
+    "row_alignment_keys": [
+      "fold_id",
+      "group_id",
+      "forecast_kst_dtm"
+    ],
+    "weights_fit_enum": "past_only_expanding"
+  },
+  "phase_contract": [
+    "materialize actions/provenance/fit details with Q2-only calls",
+    "freeze family_manifest SHA-256",
+    "only then run one assessment evaluation consuming comparison index 3"
+  ],
+  "forbidden": [
+    "new model/optimizer fit",
+    "Q3/Q4 score before family freeze",
+    "future-other-fold selection",
+    "per-group/per-lead/source weight",
+    "policy or weight sweep after assessment",
+    "2024/test/rejected ECMWF",
+    "Dacon actions",
+    "dependency changes"
+  ],
+  "next_if_refuted": [
+    "S17-N18_POST_RWA_FRONTIER_RESEARCH_INTAKE"
+  ]
+}

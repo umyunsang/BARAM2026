@@ -1,0 +1,88 @@
+{
+  "schema_version": 2,
+  "id": "SK5_LOCAL_CAPABILITY_CONSTRAINT",
+  "supersedes_sha256": "3209042a0ec9ddd669992e94bf6137beb79582cc5ad62fa65337bd109be700dc",
+  "revised_at": "2026-08-09T05:31:15.822630+09:00",
+  "authority_change": {
+    "instruction": "의존성 변경해도돼, 필요한 패키지나 프레임워크 등등 제한하지 않고 공식해커톤 규칙만 준수한다면 직접 설치해도 돼, 승인할게 문서내용도 변경해",
+    "effect": "DEPENDENCY_FREEZE_WITHDRAWN",
+    "rules_snapshot": {
+      "path": "inputs/rules/official_rules_2026-08-09.md",
+      "sha256": "6dcececbfb33df6761c87220ea8ce15d875d6b7afc9d90c5afe5dd827ad54ee5"
+    },
+    "agents_md_sha256": "fdf667428047bfe5be22a072a5419695814d81061a05ea28c648d945dca8f5cc"
+  },
+  "currently_installed": {
+    "lightgbm": "4.7.0",
+    "xgboost": "3.3.0",
+    "catboost": "1.2.10",
+    "scikit-learn": "1.9.0",
+    "numpy": "2.5.1",
+    "scipy": "1.18.0",
+    "pandas": "2.3.3",
+    "statsmodels": "0.14.6",
+    "pyarrow": "23.0.1",
+    "langgraph": "1.2.10"
+  },
+  "currently_absent": [
+    "torch",
+    "ngboost",
+    "mapie",
+    "crepes",
+    "venn-abers",
+    "properscoring",
+    "quantile-forest",
+    "cvxpy"
+  ],
+  "new_rule": "Absence is no longer a rejection reason. A candidate needing torch, a probabilistic-boosting package, a conformal library, or pretrained weights is now INSTALLABLE and must be judged on evidence and cost, not availability. Every install is pinned and recorded.",
+  "install_conditions": [
+    "install into the project .venv, never system packages",
+    "pin the exact resolved version in the node receipt",
+    "the pipeline must be reproducible from submitted code alone",
+    "no package may be used for remote API model inference",
+    "pretrained weights require release on or before 2026-07-05 and a licence permitting use, modification, distribution, redistribution and commercial use"
+  ],
+  "reopened_axes": [
+    {
+      "axis": "pretrained time-series foundation weights",
+      "status": "REOPENED",
+      "candidates": [
+        "amazon/chronos-bolt-base @5d9f166d69f4 (apache-2.0)",
+        "google/timesfm-2.0-500m-pytorch @dc2443792ce5 (apache-2.0)",
+        "ibm-granite/granite-timeseries-ttm-r2 @d6a79570cac0 (apache-2.0)",
+        "Datadog/Toto-Open-Base-1.0 @0411ceb27bdf (apache-2.0)",
+        "amazon/chronos-2 (apache-2.0 declared; verbatim licence UNRESOLVED)"
+      ],
+      "root_requirement": "verify verbatim licence text for redistribution and commercial use before any download"
+    },
+    {
+      "axis": "TabPFN v2 tabular foundation model",
+      "status": "REOPENED_CONDITIONAL",
+      "note": "Prior Labs License v1.1 reported as an Apache-2.0 derivative with no field-of-use restriction; root must read the verbatim licence and confirm redistribution before use. TabPFN-2.5 is INELIGIBLE (non-commercial)."
+    },
+    {
+      "axis": "neural sequence/graph architectures",
+      "status": "UNBLOCKED_BUT_DEMOTED",
+      "note": "torch is installable, but the V5-MODELS additivity argument (componentwise Bayes actions under an additive objective) independently caps what sequence/graph structure can contribute. Justify any such rung on distributional-estimation grounds, not architecture."
+    },
+    {
+      "axis": "distributional boosting and conformal libraries",
+      "status": "UNBLOCKED",
+      "note": "ngboost/lightgbmlss/xgboostlss/mapie/crepes are installable; the underlying algorithms also remain implementable in numpy."
+    },
+    {
+      "axis": "external public data with per-row basis-time availability",
+      "status": "REOPENED",
+      "note": "The withdrawn 2026-07-05 blanket cutoff for DATA no longer applies. Any public archive whose issue/publication timestamps provably precede each D-1 14:00 KST basis time is admissible, subject to licence, public access, reproducibility and the standing reanalysis/post-hoc-correction ban."
+    }
+  ],
+  "unchanged_prohibitions": [
+    "reanalysis products",
+    "post-hoc corrected observations",
+    "test-period observations and evaluation-period actuals",
+    "remote API model inference",
+    "2024 lockbox reads",
+    "Dacon/account/team/upload actions",
+    "remote compute and git push without separate authority"
+  ]
+}

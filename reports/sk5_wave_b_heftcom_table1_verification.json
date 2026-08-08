@@ -1,0 +1,24 @@
+{
+  "source": "Olauson, Viotti & Huss, HEFTCom2024 winner paper",
+  "url": "https://www.diva-portal.org/smash/get/diva2:2046959/FULLTEXT01.pdf",
+  "sha256": "54f7d9f449b85b91809a13bc10b89366c006c549c88f8480f8bbedb73a46ba21",
+  "table1_verbatim": {
+    "Stacked CatBoost": {
+      "pinball": 28.5,
+      "coverage": "100%"
+    },
+    "CatBoost (concat, lagged target)": {
+      "pinball": 28.4,
+      "coverage": "93.2%"
+    },
+    "CatBoost no target (concat)": {
+      "pinball": 28.6,
+      "coverage": "93.2%"
+    },
+    "Reference quantile regression": {
+      "pinball": 38.0,
+      "coverage": "99.6%"
+    }
+  },
+  "root_conclusion": "V5-BENCHMARKS claim confirmed verbatim: stacking bought coverage, not accuracy (28.5@100% vs 28.6@93.2% like-for-like; the concat model with a lagged target is actually better at 28.4)."
+}

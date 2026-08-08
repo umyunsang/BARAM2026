@@ -1,0 +1,248 @@
+{
+ "dacon_upload": false,
+ "decided_utc": "2026-08-04T07:52:57.533132+00:00",
+ "external_actions": [],
+ "lane": "L2",
+ "lockbox_reopened": false,
+ "model_fit_note": "진단용 fold-외 잔차 모형. 제출 후보가 아니며 2024 행 미사용",
+ "model_fits": 3,
+ "new_2024_evaluation": false,
+ "node": "C1N27_RESIDUAL_SIGNAL",
+ "report_sha256": "035c2744ca0b68f6f180daf5057aae0a9247831d2dc158d3aa0d6b83cc79cf73",
+ "result": {
+  "design": "leave-one-fold-out (2023 Q2/Q3/Q4), 학습은 유효행에서만",
+  "features": {
+   "eligible_rows": 11486,
+   "join_rows_lost": 0,
+   "n_declared": 24,
+   "n_nwp_columns": 65,
+   "rows_used": 19782
+  },
+  "gap_to_target": 0.023403172236948433,
+  "gate": {
+   "bootstrap_q05": -0.04387241202102894,
+   "flags": {
+    "G1": false,
+    "G2": false,
+    "G3": false,
+    "G4": false
+   },
+   "months_scored": 9,
+   "passed": false,
+   "positive_months": 0,
+   "sign_test_p": 1.0
+  },
+  "gate_modified": false,
+  "gate_version": "M270_MONTHLY_GATE_v1_frozen_2026-08-04",
+  "incumbent": "M271_MEDIAN4",
+  "incumbent_full_score": {
+   "ficr": 0.41320978983964385,
+   "group_ficr": {
+    "1": 0.42079521858555724,
+    "2": 0.46863045810963244,
+    "3": 0.3502036928237419
+   },
+   "group_nmae": {
+    "1": 0.13286075292051555,
+    "2": 0.13543735862877082,
+    "3": 0.151750291391336
+   },
+   "one_minus_nmae": 0.8599838656864592,
+   "total": 0.6365968277630516
+  },
+  "method_sources": [
+   {
+    "applicability": "directly_supported",
+    "cite": "Peng, Long & Ding (2005) — mRMR (max-relevance min-redundancy)",
+    "claim": "단변량 관련성 스크린은 이미 선택된 변수와 **조건부로만** 정보를 주는 상보적 변수를 놓친다",
+    "id": "peng_long_ding_2005_mrmr",
+    "use": "A2 의 단변량 MI 폐기 전제를 재검할 근거"
+   },
+   {
+    "applicability": "directly_supported",
+    "cite": "예보 검증의 잔차 진단 (표준 절차)",
+    "claim": "잔차에 공변량 구조가 남아 있으면 설명 가능한 오차가 남은 것이고, 없으면 그 공변량으로는 개선이 불가능하다",
+    "id": "residual_diagnostic",
+    "use": "표적을 y 가 아니라 챔피언 잔차로 두는 근거"
+   }
+  ],
+  "model_params": {
+   "colsample_bytree": 0.8,
+   "deterministic": true,
+   "force_row_wise": true,
+   "learning_rate": 0.05,
+   "min_child_samples": 100,
+   "n_estimators": 300,
+   "n_jobs": 1,
+   "num_leaves": 31,
+   "objective": "regression_l1",
+   "random_state": 20260804,
+   "subsample": 0.8,
+   "subsample_freq": 1,
+   "verbose": -1
+  },
+  "node": "C1N27_RESIDUAL_SIGNAL",
+  "parent_node": "C1N20_ALPHA_ENDPOINT",
+  "predeclared_check": {
+   "H1_expectation": "잔차 모형 fold-외 R^2 > 0.02",
+   "H1_held": false,
+   "H1_measured": -0.0534825887285022,
+   "H2_expectation": "보정이 M271_MEDIAN4 대비 Total 개선",
+   "H2_held": false,
+   "H3_expectation": "보정이 동결 게이트 통과",
+   "H3_held": false,
+   "H4_expectation": "이득 상위 20 중 미선언 컬럼 >= 3",
+   "H4_held": true,
+   "H4_measured": 12,
+   "a2_premise_flipped": true,
+   "verdict": "NO_RESIDUAL_SIGNAL_GRIDMEAN_NWP_CLOSED"
+  },
+  "promoted_total": 0.6365968277630516,
+  "reopens": "AXIS_UNUSED_COLUMNS",
+  "residual_model": {
+   "fits": 3,
+   "oof_pearson": 0.0699081011604122,
+   "oof_r2": -0.0534825887285022,
+   "top20_by_gain": [
+    {
+     "declared_in_spatial_v2": false,
+     "feature": "gfs__isobaricInhPa_500_v",
+     "gain": 8987.059885263443
+    },
+    {
+     "declared_in_spatial_v2": false,
+     "feature": "gfs__isobaricInhPa_700_u",
+     "gain": 8188.6058344841
+    },
+    {
+     "declared_in_spatial_v2": false,
+     "feature": "gfs__isobaricInhPa_850_u",
+     "gain": 8069.28831076622
+    },
+    {
+     "declared_in_spatial_v2": false,
+     "feature": "gfs__isobaricInhPa_700_v",
+     "gain": 7899.276120662689
+    },
+    {
+     "declared_in_spatial_v2": null,
+     "feature": "group_id",
+     "gain": 7694.797955274582
+    },
+    {
+     "declared_in_spatial_v2": false,
+     "feature": "gfs__isobaricInhPa_500_t",
+     "gain": 7540.396241426468
+    },
+    {
+     "declared_in_spatial_v2": false,
+     "feature": "gfs__isobaricInhPa_500_u",
+     "gain": 7389.087664842606
+    },
+    {
+     "declared_in_spatial_v2": false,
+     "feature": "gfs__surface_0_tp",
+     "gain": 7286.9056277275085
+    },
+    {
+     "declared_in_spatial_v2": true,
+     "feature": "ldaps__heightAboveGround_5_XBLWS",
+     "gain": 7137.212347507477
+    },
+    {
+     "declared_in_spatial_v2": false,
+     "feature": "gfs__isobaricInhPa_850_v",
+     "gain": 7085.7094848155975
+    },
+    {
+     "declared_in_spatial_v2": false,
+     "feature": "gfs__isobaricInhPa_500_gh",
+     "gain": 7052.8762402534485
+    },
+    {
+     "declared_in_spatial_v2": true,
+     "feature": "ldaps__surface_0_sp",
+     "gain": 6783.608507394791
+    },
+    {
+     "declared_in_spatial_v2": true,
+     "feature": "gfs__heightAboveGround_2_2t",
+     "gain": 6464.555653333664
+    },
+    {
+     "declared_in_spatial_v2": false,
+     "feature": "gfs__isobaricInhPa_850_r",
+     "gain": 6365.577109336853
+    },
+    {
+     "declared_in_spatial_v2": true,
+     "feature": "ldaps__heightAboveGround_50_50MUmax",
+     "gain": 5965.958530187607
+    },
+    {
+     "declared_in_spatial_v2": true,
+     "feature": "gfs__surface_0_gust",
+     "gain": 5888.196687698364
+    },
+    {
+     "declared_in_spatial_v2": true,
+     "feature": "ldaps__heightAboveGround_2_r",
+     "gain": 5846.6362221241
+    },
+    {
+     "declared_in_spatial_v2": true,
+     "feature": "gfs__heightAboveGround_10_10u",
+     "gain": 5786.011951208115
+    },
+    {
+     "declared_in_spatial_v2": false,
+     "feature": "gfs__surface_0_dlwrf",
+     "gain": 5671.228262901306
+    },
+    {
+     "declared_in_spatial_v2": false,
+     "feature": "gfs__isobaricInhPa_700_t",
+     "gain": 5603.821897268295
+    }
+   ],
+   "undeclared_in_top20": 12
+  },
+  "scope_limitation": "격자평균이므로 공간 세부는 지워진다. 음성 결과는 '격자평균 NWP 컬럼'을 닫는 것이지 '모든 공간 세부'가 아니다",
+  "scores": {
+   "base_on_joined_rows": {
+    "ficr": 0.41320978983964385,
+    "group_ficr": {
+     "1": 0.42079521858555724,
+     "2": 0.46863045810963244,
+     "3": 0.3502036928237419
+    },
+    "group_nmae": {
+     "1": 0.13286075292051555,
+     "2": 0.13543735862877082,
+     "3": 0.151750291391336
+    },
+    "one_minus_nmae": 0.8599838656864592,
+    "total": 0.6365968277630516
+   },
+   "corrected": {
+    "ficr": 0.34818586017004766,
+    "group_ficr": {
+     "1": 0.36387561650699846,
+     "2": 0.3808563326650101,
+     "3": 0.2998256313381345
+    },
+    "group_nmae": {
+     "1": 0.13668522566205568,
+     "2": 0.1362795710165388,
+     "3": 0.15678213566667681
+    },
+    "one_minus_nmae": 0.8567510225515762,
+    "total": 0.6024684413608119
+   },
+   "delta_total": -0.0341283864022397
+  }
+ },
+ "schema_version": 1,
+ "script_sha256": "41b7b6ee94a2c16a62ff96e6fb21a091e2ee52b0c83de849d74f9cafa3b2dff7",
+ "stage": "M271_P4_CYCLE27_RESIDUAL_SIGNAL"
+}

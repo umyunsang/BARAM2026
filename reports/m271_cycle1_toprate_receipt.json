@@ -1,0 +1,139 @@
+{
+ "dacon_upload": false,
+ "decided_utc": "2026-08-04T04:34:30.825846+00:00",
+ "external_actions": [
+  "web search (read-only, direction research)"
+ ],
+ "lane": "L2",
+ "lockbox_reopened": false,
+ "model_fits": 0,
+ "new_2024_evaluation": false,
+ "node": "C1N1_TOPRATE_MECHANISM",
+ "report_sha256": "5e489bb47131410379f910ee95d7ac92b0412132bdba54053da794277a02dd97",
+ "result": {
+  "direction": {
+   "applicability": "near_match_only",
+   "direction_id": "dir::C15::explain::L2::toprate",
+   "mechanism": "정격 근처 집합 출력 분산 = 터빈 가용성 + 공간 이질성",
+   "sources": [
+    {
+     "applicability": "near_match_only",
+     "claim": "개별 터빈의 curtailment 가 집합 파워커브의 **정격 구간** 분산을 키운다.",
+     "conditions_differ": "문헌은 대형 단지 대상. 우리는 그룹당 5~6 기이므로 한 기가 멈추면 집합 출력이 16~20% 떨어져 영향이 훨씬 크다.",
+     "id": "src::curtailment_rated_variance"
+    },
+    {
+     "applicability": "near_match_only",
+     "claim": "복잡지형의 흐름·전단·후류로 터빈 위치별 풍속과 파워커브가 달라지며, 그 공간 이질성이 예측오차를 만든다.",
+     "conditions_differ": "문헌은 넓은 단지 대상. 우리 단지는 2 km 안이지만 869~1001 m 산악 능선이라 고도 편차가 130 m 다.",
+     "id": "src::spatial_heterogeneity"
+    }
+   ]
+  },
+  "input_hashes": {
+   "open_zip_sha256": "920be0c458d820e855bf79dd25723146f52ce1736138aedba5e6bc853f1f720b"
+  },
+  "lineage": {
+   "addresses": [
+    "group_id=3|month=2023-11|y_band=(0.7, 1.1]"
+   ],
+   "derived_from": [
+    "src::curtailment_rated_variance",
+    "src::spatial_heterogeneity"
+   ],
+   "instantiates": [
+    "dir::C15::explain::L2::toprate"
+   ]
+  },
+  "measurement": {
+   "band": "(0.7, 1.1]",
+   "by_group": [
+    {
+     "approx_se": 0.031128640318234518,
+     "availability_sigma_multiple": 1.1953938186608462,
+     "fraction_of_hours_with_an_idle_turbine": 0.08115942028985507,
+     "group": 1,
+     "heterogeneity_sigma_multiple": 0.61237767177422,
+     "mean_abs_err_rate": 0.11420234778135606,
+     "mean_cv_load": 188.72960054613083,
+     "mean_load_spread": 339.2962705314009,
+     "mean_producing_fraction": 0.9917606011808909,
+     "partial_corr_availability": 0.03721098421973434,
+     "partial_corr_heterogeneity": -0.01906248428357757,
+     "partial_corr_spread": -0.02647343837431024,
+     "rows": 1035
+    },
+    {
+     "approx_se": 0.02887954911289539,
+     "availability_sigma_multiple": 1.4304744923957093,
+     "fraction_of_hours_with_an_idle_turbine": 0.07986688851913477,
+     "group": 2,
+     "heterogeneity_sigma_multiple": 2.774926791898707,
+     "mean_abs_err_rate": 0.08475207936617983,
+     "mean_cv_load": 102.72269542585778,
+     "mean_load_spread": 657.4138671658347,
+     "mean_producing_fraction": 0.9928129044185616,
+     "partial_corr_availability": -0.04131145835788599,
+     "partial_corr_heterogeneity": 0.08013863457132794,
+     "partial_corr_spread": 0.07758432146078251,
+     "rows": 1202
+    },
+    {
+     "approx_se": 0.03504998186163908,
+     "availability_sigma_multiple": 2.6707452226088506,
+     "fraction_of_hours_with_an_idle_turbine": 0.211750305997552,
+     "group": 3,
+     "heterogeneity_sigma_multiple": 1.872221449373316,
+     "mean_abs_err_rate": 0.13366141831322473,
+     "mean_cv_load": 0.2565419742566073,
+     "mean_load_spread": 0.6437541528239202,
+     "mean_producing_fraction": 0.9709694429151654,
+     "partial_corr_availability": 0.09360957160949944,
+     "partial_corr_heterogeneity": -0.06562132784150636,
+     "partial_corr_spread": -0.10190914482967207,
+     "rows": 817
+    }
+   ],
+   "predeclared_check": {
+    "availability_partials": [
+     0.03721098421973434,
+     -0.04131145835788599,
+     0.09360957160949944
+    ],
+    "availability_sign_as_expected": false,
+    "expectation": "가용성 편차와 출력 이질성이 |오차| 와 양의 관계",
+    "heterogeneity_partials": [
+     -0.01906248428357757,
+     0.08013863457132794,
+     -0.06562132784150636
+    ],
+    "heterogeneity_sign_as_expected": false
+   },
+   "rows": 3054
+  },
+  "predeclaration": {
+   "digest": "2d512364a788d2e16fafb2c749c3296417cc61819d86f7fadbade872e29e14f4",
+   "expected_sign": 1,
+   "node_id": "C1N1_TOPRATE_MECHANISM"
+  },
+  "spec": {
+   "method": "aggregate_variance_attribution",
+   "settings": {
+    "band": "(0.7, 1.1]",
+    "heterogeneity_metric": "cv_across_turbines",
+    "producing_threshold_of_rated": 0.05
+   },
+   "spec_id": "spec::toprate_mechanism",
+   "within_official_rules": true
+  },
+  "target_cell": {
+   "gen_weight": 0.12648212100984915,
+   "key": "group_id=3|month=2023-11|y_band=(0.7, 1.1]",
+   "loss_share": 0.012111844167991858,
+   "mean_unit": 1.9232168651910877
+  }
+ },
+ "schema_version": 1,
+ "script_sha256": "dc005e3376c0d02fb4d02219bf79db25a92fd2650f0a3190b253c698932c068f",
+ "stage": "M271_P4_CYCLE1_TOPRATE"
+}

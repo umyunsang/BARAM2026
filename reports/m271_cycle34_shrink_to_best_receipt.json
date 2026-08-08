@@ -1,0 +1,895 @@
+{
+ "dacon_upload": false,
+ "decided_utc": "2026-08-04T09:11:11.392354+00:00",
+ "external_actions": [],
+ "lane": "L7",
+ "lockbox_reopened": false,
+ "model_fits": 0,
+ "new_2024_evaluation": false,
+ "node": "C1N34_SHRINK_TO_BEST",
+ "report_sha256": "fffc71c4c9833a7498a623c08ae172f945b13dddb933e6527c77c4f2305bb03a",
+ "result": {
+  "anchor": "M115_XGBOOST",
+  "anchor_by_fold": {
+   "Q2": 0.6427655877100643,
+   "Q3": 0.6083107660440932,
+   "Q4": 0.6476913378039102
+  },
+  "anchor_score": {
+   "ficr": 0.4177798187050226,
+   "group_ficr": {
+    "1": 0.4288679430008999,
+    "2": 0.4685054214853474,
+    "3": 0.35596609162882065
+   },
+   "group_nmae": {
+    "1": 0.13464640739584785,
+    "2": 0.13567393947916678,
+    "3": 0.15255857432866865
+   },
+   "one_minus_nmae": 0.8590403595987722,
+   "total": 0.6384100891518975
+  },
+  "baseline_change": "기준선을 배포 정책(0.628605)에서 M115(0.638410)로 바꿨다. 지금까지의 결합 실험은 전부 낮은 닻에서 판정된 것이다",
+  "gap_to_local_target": 0.021589910848102578,
+  "gap_to_offset_implied_local": 0.0004709108481025792,
+  "gate_modified": false,
+  "gate_version": "M270_MONTHLY_GATE_v1_frozen_2026-08-04",
+  "ladder": [
+   {
+    "R1_improves": false,
+    "R2_gate": false,
+    "R3_all_folds": false,
+    "beta": 0.0,
+    "by_fold": {
+     "Q2": 0.6427655877100643,
+     "Q3": 0.6083107660440932,
+     "Q4": 0.6476913378039102
+    },
+    "delta_vs_anchor": 0.0,
+    "ficr": 0.4177798187050226,
+    "gate": {
+     "bootstrap_q05": 0.0,
+     "flags": {
+      "G1": false,
+      "G2": false,
+      "G3": false,
+      "G4": true
+     },
+     "min_delta": 0.0,
+     "months_scored": 9,
+     "passed": false,
+     "positive_months": 0,
+     "sign_test_p": 1.0
+    },
+    "group_ficr": {
+     "1": 0.4288679430008999,
+     "2": 0.4685054214853474,
+     "3": 0.35596609162882065
+    },
+    "group_nmae": {
+     "1": 0.13464640739584785,
+     "2": 0.13567393947916678,
+     "3": 0.15255857432866865
+    },
+    "one_minus_nmae": 0.8590403595987722,
+    "partner": "X1_median_rest3",
+    "per_fold_wins": {
+     "Q2": false,
+     "Q3": false,
+     "Q4": false
+    },
+    "qualifies": false,
+    "total": 0.6384100891518975
+   },
+   {
+    "R1_improves": true,
+    "R2_gate": false,
+    "R3_all_folds": false,
+    "beta": 0.15,
+    "by_fold": {
+     "Q2": 0.6435896602311895,
+     "Q3": 0.608127931035551,
+     "Q4": 0.647381604125713
+    },
+    "delta_vs_anchor": 8.940452474071048e-05,
+    "ficr": 0.4176229328356917,
+    "gate": {
+     "bootstrap_q05": -0.0008684391922104437,
+     "flags": {
+      "G1": false,
+      "G2": true,
+      "G3": false,
+      "G4": true
+     },
+     "min_delta": -0.0032580351314296374,
+     "months_scored": 9,
+     "passed": false,
+     "positive_months": 5,
+     "sign_test_p": 0.5
+    },
+    "group_ficr": {
+     "1": 0.4279526756125532,
+     "2": 0.46995789965015194,
+     "3": 0.35495822324436976
+    },
+    "group_nmae": {
+     "1": 0.1340634998478624,
+     "2": 0.13561285653771182,
+     "3": 0.15219548006167222
+    },
+    "one_minus_nmae": 0.8593760545175846,
+    "partner": "X1_median_rest3",
+    "per_fold_wins": {
+     "Q2": true,
+     "Q3": false,
+     "Q4": false
+    },
+    "qualifies": false,
+    "total": 0.6384994936766382
+   },
+   {
+    "R1_improves": false,
+    "R2_gate": false,
+    "R3_all_folds": false,
+    "beta": 0.3,
+    "by_fold": {
+     "Q2": 0.6415248541281255,
+     "Q3": 0.6081126749907413,
+     "Q4": 0.6476687626452543
+    },
+    "delta_vs_anchor": -0.00042332396104616254,
+    "ficr": 0.41635548643777737,
+    "gate": {
+     "bootstrap_q05": -0.0016857051365930108,
+     "flags": {
+      "G1": false,
+      "G2": false,
+      "G3": false,
+      "G4": true
+     },
+     "min_delta": -0.003947342313848523,
+     "months_scored": 9,
+     "passed": false,
+     "positive_months": 3,
+     "sign_test_p": 0.91015625
+    },
+    "group_ficr": {
+     "1": 0.4265318038410095,
+     "2": 0.4681501635863868,
+     "3": 0.35438449188593574
+    },
+    "group_nmae": {
+     "1": 0.1335938599240093,
+     "2": 0.13559616192959015,
+     "3": 0.15195584631462516
+    },
+    "one_minus_nmae": 0.8596180439439252,
+    "partner": "X1_median_rest3",
+    "per_fold_wins": {
+     "Q2": false,
+     "Q3": false,
+     "Q4": false
+    },
+    "qualifies": false,
+    "total": 0.6379867651908513
+   },
+   {
+    "R1_improves": false,
+    "R2_gate": false,
+    "R3_all_folds": false,
+    "beta": 0.5,
+    "by_fold": {
+     "Q2": 0.6398127492365913,
+     "Q3": 0.6078634836295281,
+     "Q4": 0.6462817889809862
+    },
+    "delta_vs_anchor": -0.001667874804655356,
+    "ficr": 0.4137077132092129,
+    "gate": {
+     "bootstrap_q05": -0.0034983612568593924,
+     "flags": {
+      "G1": false,
+      "G2": false,
+      "G3": false,
+      "G4": true
+     },
+     "min_delta": -0.006810389901614866,
+     "months_scored": 9,
+     "passed": false,
+     "positive_months": 3,
+     "sign_test_p": 0.91015625
+    },
+    "group_ficr": {
+     "1": 0.42183328059242,
+     "2": 0.46824016666080565,
+     "3": 0.3510496923744132
+    },
+    "group_nmae": {
+     "1": 0.13319651521859022,
+     "2": 0.13564159297615058,
+     "3": 0.15183174534944563
+    },
+    "one_minus_nmae": 0.8597767154852712,
+    "partner": "X1_median_rest3",
+    "per_fold_wins": {
+     "Q2": false,
+     "Q3": false,
+     "Q4": false
+    },
+    "qualifies": false,
+    "total": 0.6367422143472421
+   },
+   {
+    "R1_improves": false,
+    "R2_gate": false,
+    "R3_all_folds": false,
+    "beta": 0.7,
+    "by_fold": {
+     "Q2": 0.6393219045467605,
+     "Q3": 0.6084992694088892,
+     "Q4": 0.6458661336160151
+    },
+    "delta_vs_anchor": -0.0018952403438564636,
+    "ficr": 0.4132790707667276,
+    "gate": {
+     "bootstrap_q05": -0.003855852582224757,
+     "flags": {
+      "G1": false,
+      "G2": false,
+      "G3": false,
+      "G4": true
+     },
+     "min_delta": -0.0066742168985961525,
+     "months_scored": 9,
+     "passed": false,
+     "positive_months": 3,
+     "sign_test_p": 0.91015625
+    },
+    "group_ficr": {
+     "1": 0.42072543514366584,
+     "2": 0.4681635096772776,
+     "3": 0.3509482674792396
+    },
+    "group_nmae": {
+     "1": 0.1330409970715042,
+     "2": 0.1357852336697028,
+     "3": 0.1519218887107296
+    },
+    "one_minus_nmae": 0.8597506268493544,
+    "partner": "X1_median_rest3",
+    "per_fold_wins": {
+     "Q2": false,
+     "Q3": true,
+     "Q4": false
+    },
+    "qualifies": false,
+    "total": 0.636514848808041
+   },
+   {
+    "R1_improves": false,
+    "R2_gate": false,
+    "R3_all_folds": false,
+    "beta": 1.0,
+    "by_fold": {
+     "Q2": 0.6386182280505369,
+     "Q3": 0.6088410441824692,
+     "Q4": 0.645355234555506
+    },
+    "delta_vs_anchor": -0.0022874683053452083,
+    "ficr": 0.4128878955536988,
+    "gate": {
+     "bootstrap_q05": -0.004896573005731205,
+     "flags": {
+      "G1": false,
+      "G2": false,
+      "G3": false,
+      "G4": true
+     },
+     "min_delta": -0.008463056947211278,
+     "months_scored": 9,
+     "passed": false,
+     "positive_months": 3,
+     "sign_test_p": 0.91015625
+    },
+    "group_ficr": {
+     "1": 0.41720141240901715,
+     "2": 0.4709603623217489,
+     "3": 0.35050191193033037
+    },
+    "group_nmae": {
+     "1": 0.1331706779303162,
+     "2": 0.13618922951432372,
+     "3": 0.15256805413714308
+    },
+    "one_minus_nmae": 0.8593573461394057,
+    "partner": "X1_median_rest3",
+    "per_fold_wins": {
+     "Q2": false,
+     "Q3": true,
+     "Q4": false
+    },
+    "qualifies": false,
+    "total": 0.6361226208465522
+   },
+   {
+    "R1_improves": false,
+    "R2_gate": false,
+    "R3_all_folds": false,
+    "beta": 0.0,
+    "by_fold": {
+     "Q2": 0.6427655877100643,
+     "Q3": 0.6083107660440932,
+     "Q4": 0.6476913378039102
+    },
+    "delta_vs_anchor": 0.0,
+    "ficr": 0.4177798187050226,
+    "gate": {
+     "bootstrap_q05": 0.0,
+     "flags": {
+      "G1": false,
+      "G2": false,
+      "G3": false,
+      "G4": true
+     },
+     "min_delta": 0.0,
+     "months_scored": 9,
+     "passed": false,
+     "positive_months": 0,
+     "sign_test_p": 1.0
+    },
+    "group_ficr": {
+     "1": 0.4288679430008999,
+     "2": 0.4685054214853474,
+     "3": 0.35596609162882065
+    },
+    "group_nmae": {
+     "1": 0.13464640739584785,
+     "2": 0.13567393947916678,
+     "3": 0.15255857432866865
+    },
+    "one_minus_nmae": 0.8590403595987722,
+    "partner": "X2_median_all4",
+    "per_fold_wins": {
+     "Q2": false,
+     "Q3": false,
+     "Q4": false
+    },
+    "qualifies": false,
+    "total": 0.6384100891518975
+   },
+   {
+    "R1_improves": true,
+    "R2_gate": false,
+    "R3_all_folds": false,
+    "beta": 0.15,
+    "by_fold": {
+     "Q2": 0.642316554781462,
+     "Q3": 0.6080515197090082,
+     "Q4": 0.6482771354113421
+    },
+    "delta_vs_anchor": 9.362458166317644e-05,
+    "ficr": 0.4177104879860131,
+    "gate": {
+     "bootstrap_q05": -0.0007957154284066805,
+     "flags": {
+      "G1": false,
+      "G2": false,
+      "G3": false,
+      "G4": true
+     },
+     "min_delta": -0.002328775331527755,
+     "months_scored": 9,
+     "passed": false,
+     "positive_months": 4,
+     "sign_test_p": 0.74609375
+    },
+    "group_ficr": {
+     "1": 0.428067648889735,
+     "2": 0.46832341329167004,
+     "3": 0.35674040177663413
+    },
+    "group_nmae": {
+     "1": 0.13424439108158823,
+     "2": 0.13558706674904966,
+     "3": 0.15227772372603762
+    },
+    "one_minus_nmae": 0.8592969394811082,
+    "partner": "X2_median_all4",
+    "per_fold_wins": {
+     "Q2": false,
+     "Q3": false,
+     "Q4": true
+    },
+    "qualifies": false,
+    "total": 0.6385037137335606
+   },
+   {
+    "R1_improves": true,
+    "R2_gate": false,
+    "R3_all_folds": false,
+    "beta": 0.3,
+    "by_fold": {
+     "Q2": 0.643573508239601,
+     "Q3": 0.608408446100863,
+     "Q4": 0.6476457415818799
+    },
+    "delta_vs_anchor": 0.00027665434719581494,
+    "ficr": 0.4178587289284237,
+    "gate": {
+     "bootstrap_q05": -0.0008553407188119365,
+     "flags": {
+      "G1": false,
+      "G2": false,
+      "G3": false,
+      "G4": true
+     },
+     "min_delta": -0.0035558938634157045,
+     "months_scored": 9,
+     "passed": false,
+     "positive_months": 4,
+     "sign_test_p": 0.74609375
+    },
+    "group_ficr": {
+     "1": 0.4286481641319872,
+     "2": 0.4702140623073535,
+     "3": 0.35471396034593045
+    },
+    "group_nmae": {
+     "1": 0.13388289818998897,
+     "2": 0.1355195516159311,
+     "3": 0.15205327598479113
+    },
+    "one_minus_nmae": 0.859514758069763,
+    "partner": "X2_median_all4",
+    "per_fold_wins": {
+     "Q2": true,
+     "Q3": true,
+     "Q4": false
+    },
+    "qualifies": false,
+    "total": 0.6386867434990933
+   },
+   {
+    "R1_improves": false,
+    "R2_gate": false,
+    "R3_all_folds": false,
+    "beta": 0.5,
+    "by_fold": {
+     "Q2": 0.6413256317871215,
+     "Q3": 0.6095333628735681,
+     "Q4": 0.6474347272319287
+    },
+    "delta_vs_anchor": -0.0003078450591217363,
+    "ficr": 0.41646185777247124,
+    "gate": {
+     "bootstrap_q05": -0.0013593105684114321,
+     "flags": {
+      "G1": false,
+      "G2": true,
+      "G3": false,
+      "G4": true
+     },
+     "min_delta": -0.003221550260010808,
+     "months_scored": 9,
+     "passed": false,
+     "positive_months": 5,
+     "sign_test_p": 0.5
+    },
+    "group_ficr": {
+     "1": 0.4261364799566319,
+     "2": 0.46945833655048297,
+     "3": 0.35379075681029887
+    },
+    "group_nmae": {
+     "1": 0.13347289165481735,
+     "2": 0.1354543780236908,
+     "3": 0.1518448390822512
+    },
+    "one_minus_nmae": 0.8597426304130802,
+    "partner": "X2_median_all4",
+    "per_fold_wins": {
+     "Q2": false,
+     "Q3": true,
+     "Q4": false
+    },
+    "qualifies": false,
+    "total": 0.6381022440927757
+   },
+   {
+    "R1_improves": false,
+    "R2_gate": false,
+    "R3_all_folds": false,
+    "beta": 0.7,
+    "by_fold": {
+     "Q2": 0.6400136627373954,
+     "Q3": 0.6095398742408575,
+     "Q4": 0.6467283510076898
+    },
+    "delta_vs_anchor": -0.0010642712412440858,
+    "ficr": 0.414791710353494,
+    "gate": {
+     "bootstrap_q05": -0.0027143243304547093,
+     "flags": {
+      "G1": false,
+      "G2": false,
+      "G3": false,
+      "G4": true
+     },
+     "min_delta": -0.005803104721808117,
+     "months_scored": 9,
+     "passed": false,
+     "positive_months": 4,
+     "sign_test_p": 0.74609375
+    },
+    "group_ficr": {
+     "1": 0.4227073557697407,
+     "2": 0.46787723478048926,
+     "3": 0.353790540510252
+    },
+    "group_nmae": {
+     "1": 0.13315625807534381,
+     "2": 0.1354210533763263,
+     "3": 0.15172291214489173
+    },
+    "one_minus_nmae": 0.8598999254678127,
+    "partner": "X2_median_all4",
+    "per_fold_wins": {
+     "Q2": false,
+     "Q3": true,
+     "Q4": false
+    },
+    "qualifies": false,
+    "total": 0.6373458179106534
+   },
+   {
+    "R1_improves": false,
+    "R2_gate": false,
+    "R3_all_folds": false,
+    "beta": 1.0,
+    "by_fold": {
+     "Q2": 0.6396794805906179,
+     "Q3": 0.607751286338821,
+     "Q4": 0.6461123732018937
+    },
+    "delta_vs_anchor": -0.0018132613888458549,
+    "ficr": 0.41320978983964385,
+    "gate": {
+     "bootstrap_q05": -0.0039868564590812795,
+     "flags": {
+      "G1": false,
+      "G2": false,
+      "G3": false,
+      "G4": true
+     },
+     "min_delta": -0.005929004202985366,
+     "months_scored": 9,
+     "passed": false,
+     "positive_months": 3,
+     "sign_test_p": 0.91015625
+    },
+    "group_ficr": {
+     "1": 0.42079521858555724,
+     "2": 0.46863045810963244,
+     "3": 0.3502036928237419
+    },
+    "group_nmae": {
+     "1": 0.13286075292051555,
+     "2": 0.13543735862877082,
+     "3": 0.151750291391336
+    },
+    "one_minus_nmae": 0.8599838656864592,
+    "partner": "X2_median_all4",
+    "per_fold_wins": {
+     "Q2": false,
+     "Q3": false,
+     "Q4": false
+    },
+    "qualifies": false,
+    "total": 0.6365968277630516
+   },
+   {
+    "R1_improves": false,
+    "R2_gate": false,
+    "R3_all_folds": false,
+    "beta": 0.0,
+    "by_fold": {
+     "Q2": 0.6427655877100643,
+     "Q3": 0.6083107660440932,
+     "Q4": 0.6476913378039102
+    },
+    "delta_vs_anchor": 0.0,
+    "ficr": 0.4177798187050226,
+    "gate": {
+     "bootstrap_q05": 0.0,
+     "flags": {
+      "G1": false,
+      "G2": false,
+      "G3": false,
+      "G4": true
+     },
+     "min_delta": 0.0,
+     "months_scored": 9,
+     "passed": false,
+     "positive_months": 0,
+     "sign_test_p": 1.0
+    },
+    "group_ficr": {
+     "1": 0.4288679430008999,
+     "2": 0.4685054214853474,
+     "3": 0.35596609162882065
+    },
+    "group_nmae": {
+     "1": 0.13464640739584785,
+     "2": 0.13567393947916678,
+     "3": 0.15255857432866865
+    },
+    "one_minus_nmae": 0.8590403595987722,
+    "partner": "X3_mean_rest3",
+    "per_fold_wins": {
+     "Q2": false,
+     "Q3": false,
+     "Q4": false
+    },
+    "qualifies": false,
+    "total": 0.6384100891518975
+   },
+   {
+    "R1_improves": false,
+    "R2_gate": false,
+    "R3_all_folds": false,
+    "beta": 0.15,
+    "by_fold": {
+     "Q2": 0.6432732816352568,
+     "Q3": 0.6089473867153953,
+     "Q4": 0.6465039258041417
+    },
+    "delta_vs_anchor": -0.00026933324628664046,
+    "ficr": 0.4161721034727166,
+    "gate": {
+     "bootstrap_q05": -0.0008982222366328162,
+     "flags": {
+      "G1": false,
+      "G2": true,
+      "G3": false,
+      "G4": true
+     },
+     "min_delta": -0.0024611542542704035,
+     "months_scored": 9,
+     "passed": false,
+     "positive_months": 5,
+     "sign_test_p": 0.5
+    },
+    "group_ficr": {
+     "1": 0.4277495822085295,
+     "2": 0.4696004730543159,
+     "3": 0.3511662551553044
+    },
+    "group_nmae": {
+     "1": 0.13346694937421552,
+     "2": 0.13464878360406113,
+     "3": 0.1515560420062084
+    },
+    "one_minus_nmae": 0.860109408338505,
+    "partner": "X3_mean_rest3",
+    "per_fold_wins": {
+     "Q2": true,
+     "Q3": true,
+     "Q4": false
+    },
+    "qualifies": false,
+    "total": 0.6381407559056108
+   },
+   {
+    "R1_improves": false,
+    "R2_gate": false,
+    "R3_all_folds": false,
+    "beta": 0.3,
+    "by_fold": {
+     "Q2": 0.6414504823979242,
+     "Q3": 0.6096482774836195,
+     "Q4": 0.6436089757837978
+    },
+    "delta_vs_anchor": -0.0020739863000079906,
+    "ficr": 0.4116497324681075,
+    "gate": {
+     "bootstrap_q05": -0.002506865439625364,
+     "flags": {
+      "G1": false,
+      "G2": false,
+      "G3": false,
+      "G4": true
+     },
+     "min_delta": -0.00453764332946327,
+     "months_scored": 9,
+     "passed": false,
+     "positive_months": 2,
+     "sign_test_p": 0.98046875
+    },
+    "group_ficr": {
+     "1": 0.42110459503838543,
+     "2": 0.46811462950368327,
+     "3": 0.34572997286225393
+    },
+    "group_nmae": {
+     "1": 0.13244647504230578,
+     "2": 0.1337290512015731,
+     "3": 0.15075705404910691
+    },
+    "one_minus_nmae": 0.8610224732356714,
+    "partner": "X3_mean_rest3",
+    "per_fold_wins": {
+     "Q2": false,
+     "Q3": true,
+     "Q4": false
+    },
+    "qualifies": false,
+    "total": 0.6363361028518895
+   },
+   {
+    "R1_improves": false,
+    "R2_gate": false,
+    "R3_all_folds": false,
+    "beta": 0.5,
+    "by_fold": {
+     "Q2": 0.6384066724189582,
+     "Q3": 0.6098084660733144,
+     "Q4": 0.6419363543736354
+    },
+    "delta_vs_anchor": -0.0038215811279483924,
+    "ficr": 0.40716153396797816,
+    "gate": {
+     "bootstrap_q05": -0.004510726120278429,
+     "flags": {
+      "G1": false,
+      "G2": false,
+      "G3": false,
+      "G4": true
+     },
+     "min_delta": -0.006841630487957051,
+     "months_scored": 9,
+     "passed": false,
+     "positive_months": 3,
+     "sign_test_p": 0.91015625
+    },
+    "group_ficr": {
+     "1": 0.41156980674261945,
+     "2": 0.466563222916407,
+     "3": 0.343351572244908
+    },
+    "group_nmae": {
+     "1": 0.13134605352541542,
+     "2": 0.13269717463843522,
+     "3": 0.14991032559638914
+    },
+    "one_minus_nmae": 0.8620154820799201,
+    "partner": "X3_mean_rest3",
+    "per_fold_wins": {
+     "Q2": false,
+     "Q3": true,
+     "Q4": false
+    },
+    "qualifies": false,
+    "total": 0.6345885080239491
+   },
+   {
+    "R1_improves": false,
+    "R2_gate": false,
+    "R3_all_folds": false,
+    "beta": 0.7,
+    "by_fold": {
+     "Q2": 0.6367886378028852,
+     "Q3": 0.6072133998947745,
+     "Q4": 0.6397652780902277
+    },
+    "delta_vs_anchor": -0.005894220612826073,
+    "ficr": 0.4023346584806126,
+    "gate": {
+     "bootstrap_q05": -0.006437976977572689,
+     "flags": {
+      "G1": false,
+      "G2": false,
+      "G3": false,
+      "G4": false
+     },
+     "min_delta": -0.01027509082280642,
+     "months_scored": 9,
+     "passed": false,
+     "positive_months": 2,
+     "sign_test_p": 0.98046875
+    },
+    "group_ficr": {
+     "1": 0.4060805488648107,
+     "2": 0.4627373821744043,
+     "3": 0.3381860444026227
+    },
+    "group_nmae": {
+     "1": 0.13058583289787598,
+     "2": 0.13193160241781662,
+     "3": 0.14939132889171702
+    },
+    "one_minus_nmae": 0.8626970785975301,
+    "partner": "X3_mean_rest3",
+    "per_fold_wins": {
+     "Q2": false,
+     "Q3": false,
+     "Q4": false
+    },
+    "qualifies": false,
+    "total": 0.6325158685390714
+   },
+   {
+    "R1_improves": false,
+    "R2_gate": false,
+    "R3_all_folds": false,
+    "beta": 1.0,
+    "by_fold": {
+     "Q2": 0.6328063725329942,
+     "Q3": 0.6046968451369947,
+     "Q4": 0.6378881247663812
+    },
+    "delta_vs_anchor": -0.00857688859492367,
+    "ficr": 0.39651688939256324,
+    "gate": {
+     "bootstrap_q05": -0.00979330279889163,
+     "flags": {
+      "G1": false,
+      "G2": false,
+      "G3": false,
+      "G4": false
+     },
+     "min_delta": -0.01428758899536331,
+     "months_scored": 9,
+     "passed": false,
+     "positive_months": 1,
+     "sign_test_p": 0.998046875
+    },
+    "group_ficr": {
+     "1": 0.3965131716418116,
+     "2": 0.4612506211032725,
+     "3": 0.3317868754326057
+    },
+    "group_nmae": {
+     "1": 0.13007143513478545,
+     "2": 0.13124697863159213,
+     "3": 0.14923305106946907
+    },
+    "one_minus_nmae": 0.8631495117213844,
+    "partner": "X3_mean_rest3",
+    "per_fold_wins": {
+     "Q2": false,
+     "Q3": false,
+     "Q4": false
+    },
+    "qualifies": false,
+    "total": 0.6298332005569738
+   }
+  ],
+  "lockbox_used": false,
+  "node": "C1N34_SHRINK_TO_BEST",
+  "parent_node": "C1N33_SINGLE_VS_ENSEMBLE",
+  "predeclared_check": {
+   "H1_expectation": "자격을 얻는 (X, b) 조합이 적어도 하나",
+   "H1_held": false,
+   "H2_expectation": "이득이 검출문턱 0.001013 초과",
+   "H2_held": false,
+   "H3_expectation": "최적 b 가 사다리 내부 (0 < b < 1)",
+   "H3_held": false,
+   "chosen": null,
+   "multiplicity": "3 x 6 = 18 조합. 통제는 동결 게이트 자체(사이클 7 이 62 개 정책을 전부 기각)",
+   "promotion_rule_frozen_before_run": [
+    "R1 M115 대비 Total 개선",
+    "R2 M115 부모 동결 게이트 통과",
+    "R3 세 fold 각각 M115 초과",
+    "복수 자격시 b 최소, 동률시 X1<X2<X3"
+   ],
+   "verdict": "NOTHING_TO_ADD_BEST_SINGLE_STANDS"
+  },
+  "promoted": "M115_XGBOOST",
+  "promoted_total": 0.6384100891518975,
+  "qualified": []
+ },
+ "schema_version": 1,
+ "script_sha256": "c85734489d642d7efdb130468bcf2eaadabe26bb20d00496a5582ad864e8e69c",
+ "stage": "M271_P4_CYCLE34_SHRINK_TO_BEST"
+}

@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "node_id": "S17-N46_CONSENSUS_MODE",
+  "stage_id": "S8",
+  "deficit": "FD17",
+  "score_bearing": false,
+  "comparison_index": null,
+  "result_status": "REFUTED",
+  "results": {
+    "Q2": [
+      {
+        "tag": "weighted_mean_deployed",
+        "total": 0.6440251957593686,
+        "one_minus_nmae": 0.8672536328623236,
+        "ficr": 0.42079675865641347
+      },
+      {
+        "tag": "settlement_mode_consensus",
+        "total": 0.6430659152822699,
+        "one_minus_nmae": 0.8653552616242073,
+        "ficr": 0.4207765689403325
+      }
+    ],
+    "OUTER": [
+      {
+        "tag": "weighted_mean_deployed",
+        "total": 0.6314827308346854,
+        "one_minus_nmae": 0.8584802239958174,
+        "ficr": 0.40448523767355354
+      },
+      {
+        "tag": "settlement_mode_consensus",
+        "total": 0.630101668839726,
+        "one_minus_nmae": 0.8559800721128077,
+        "ficr": 0.40422326556664423
+      }
+    ]
+  },
+  "member_dispersion": {
+    "median_spread_cf": 0.0475,
+    "p75": 0.09,
+    "p90": 0.1475,
+    "fraction_spread_gt_006": 0.402,
+    "fraction_spread_gt_012": 0.156
+  },
+  "findings": [
+    "The mode operator is slightly worse on both surfaces: outer 0.6301017 against the deployed mean 0.6314827, and Q2 0.6430659 against 0.6440252.",
+    "The member disagreement is genuinely large. The spread between the highest and lowest member action has a median of 0.0475 in capacity fraction, exceeds the full 0.06 band half-width on 40.2 percent of rows and exceeds 0.12 on 15.6 percent.",
+    "That is precisely why mode seeking fails. On the 40 percent of rows where members disagree by more than the band, no member is reliably right, and averaging buys variance reduction that snapping to one cluster throws away. The mode operator loses 1-NMAE (0.8559801 against 0.8584802) while FICR is essentially unchanged (0.4042233 against 0.4044852)."
+  ],
+  "refinement_of_session_mechanism": "The mode principle holds WITHIN one predictive distribution, where sharpening a single conditional density concentrates mass and earns FICR. It does NOT extend ACROSS disagreeing experts, where the disagreement is irreducible uncertainty rather than a multimodal belief worth betting on.",
+  "residual_deficit": "No zero-fit structural operator over the existing member actions remains untested.",
+  "selected_disposition": "RESEARCH_PAUSE",
+  "lockbox_2024_used": false,
+  "dacon_actions": [],
+  "closed_at": "2026-08-09T06:22:41.272482+09:00"
+}

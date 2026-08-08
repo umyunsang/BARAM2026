@@ -1,0 +1,113 @@
+{
+  "node_id": "C1N81_CYCLE_CONTRACT_ENFORCED",
+  "lane": "L8",
+  "parent": "C1N79_LEDGER_CONTRACT",
+  "router_v3": "M271_ROUTER_v3_frozen_2026-08-06",
+  "before": {
+    "contract_version": "M271_LEDGER_CONTRACT_v1",
+    "events": 20,
+    "stall_counter": 97,
+    "refresh_due": false,
+    "recoverable_mass": 0.04875044667051586,
+    "cells_attributed": 19,
+    "cells_total": 108,
+    "unrecorded_cycles": 88,
+    "unrecorded_sample": [
+      "C1N100_NOVEL_MEMBER_PROBE",
+      "C1N101_PHYSICAL_MEMBER_PROBE",
+      "C1N102_RETRIEVAL_MEMBER",
+      "C1N103_EXTERNAL_NWP_MEMBER",
+      "C1N104_M244_KEY_RECOVERED",
+      "C1N105_M244_RECIPE_READ",
+      "C1N10_BLEND_LOCALITY",
+      "C1N11_V2_REPRESENTATION"
+    ],
+    "audit_present": true,
+    "cycles_covered_total": 98,
+    "generated_at": "2026-08-06T08:40:43.565587+00:00"
+  },
+  "audit_backfill": null,
+  "recorded_nodes": [],
+  "skipped": [
+    "C1N68_EMPIRICAL_DECOMPOSITION",
+    "C1N73_GROUP_BLEND_GATE",
+    "C1N76_CIRCULAR_BLOCK",
+    "C1N77_PER_SOURCE_STACK",
+    "C1N78_LOOP_ENGINE_C10",
+    "C1N79_LEDGER_CONTRACT",
+    "C1N80_FUSION_ANOMALY",
+    "C1N82_TEACHER_SCALEUP",
+    "C1N83_TEACHER_SCALEUP_REJUDGED",
+    "C1N84_TEACHER_CHRONOLOGICAL",
+    "C1N85_C16_RECHECK",
+    "C1N86_LANE_EXPAND",
+    "C1N87_CURTAILMENT_CLEAN_TARGET",
+    "C1N88_N2_PROBE_L5_OPEN",
+    "C1N89_ANOMALY_CLEAN_TARGET",
+    "C1N90_WITHIN_BIN_INTEGRATION",
+    "C1N91_WITHIN_BIN_ESTABLISHED"
+  ],
+  "after": {
+    "contract_version": "M271_LEDGER_CONTRACT_v1",
+    "events": 20,
+    "stall_counter": 97,
+    "refresh_due": false,
+    "recoverable_mass": 0.04875044667051586,
+    "cells_attributed": 19,
+    "cells_total": 108,
+    "unrecorded_cycles": 88,
+    "unrecorded_sample": [
+      "C1N100_NOVEL_MEMBER_PROBE",
+      "C1N101_PHYSICAL_MEMBER_PROBE",
+      "C1N102_RETRIEVAL_MEMBER",
+      "C1N103_EXTERNAL_NWP_MEMBER",
+      "C1N104_M244_KEY_RECOVERED",
+      "C1N105_M244_RECIPE_READ",
+      "C1N10_BLEND_LOCALITY",
+      "C1N11_V2_REPRESENTATION"
+    ],
+    "audit_present": true,
+    "cycles_covered_total": 98,
+    "generated_at": "2026-08-06T08:40:43.567890+00:00"
+  },
+  "c10_gating": {
+    "with_visit": {
+      "condition": "C7",
+      "action": "RESEARCH_DIRECTION",
+      "reason": "확인됨 & 잔여 질량 있음 — 같은 방향 고도화",
+      "targets": [
+        {
+          "operator": "RESEARCH_DIRECTION",
+          "kind": "scale_up",
+          "lane": "L6",
+          "deficit_cell": null,
+          "origin_node": "PROBE",
+          "scope": "확인된 방향의 고도화",
+          "inherit_direction": null
+        }
+      ],
+      "blocked_by": [
+        "C10_SUPPRESSED_ALREADY_SERVICED"
+      ],
+      "v2_would_have": {
+        "condition": "C7",
+        "action": "RESEARCH_DIRECTION"
+      },
+      "router_version": "M271_ROUTER_v3_frozen_2026-08-06"
+    },
+    "without_visit": {
+      "condition": "C10",
+      "action": "RESEARCH_DIRECTION"
+    }
+  },
+  "checks": {
+    "V1_post_contract_nodes_recorded": true,
+    "V2_unrecorded_still_refused": true,
+    "V3_stall_restored": true,
+    "V4_c10_gated_after_service": true
+  },
+  "dacon_upload": false,
+  "lockbox_used": false,
+  "generated_at": "2026-08-06T08:40:43.568469+00:00",
+  "digest": "1b5ab37623c94d9a"
+}

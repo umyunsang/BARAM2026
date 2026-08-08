@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "node_id": "S17-N37_GEOM_PLANE_GRADIENT_STRICT",
+  "stage_id": "S6",
+  "deficit": "FD11",
+  "created_at": "2026-08-09T05:49:12.797796+09:00",
+  "family": [
+    "CHAMPION",
+    "M115_REFIT_ZERO",
+    "GEOM_M115_REPLACED"
+  ],
+  "outer_folds": [
+    "dev-2023-Q3",
+    "dev-2023-Q4"
+  ],
+  "primary_metric": "official Total pooled over the outer folds",
+  "min_effect": 0.001,
+  "treatment": "append the 54-column geom__ plane-fit spatial-gradient block (d/dx, d/dy, |grad| per source-variable plus divergence and vorticity for the wind pairs) to the frozen 100 selected M115 features",
+  "control": "M115_REFIT_ZERO, the identical refit with the frozen 100 features only",
+  "deployment_rule": "CHAMPION + (0.70/3) * (arm - control), clipped to [0, 1.075*capacity]; Q2 is burn-in and is set to CHAMPION",
+  "degrees_of_freedom": 1,
+  "trial_budget": 1,
+  "policy_id": "T0.75_G2",
+  "falsifier": "pooled outer Total delta versus M115_REFIT_ZERO below +0.001, or a sign reversal across the two outer folds",
+  "inputs": {
+    "script": "4df4660c2bdfb66288d4ed26750d9854f869410312df7f6ec4812dce80653088",
+    "features": "6a8e5e202a684fb07c2b40a18388df80d6257b3fff5ebcb06127000fb4ba5da9",
+    "builder": "128dfa44b3d2e882368b47c1293511b7fc2f16bea243cade6b2f67400b70b0e2",
+    "archive": "920be0c458d820e855bf79dd25723146f52ce1736138aedba5e6bc853f1f720b"
+  },
+  "disclosure": "An identical exploratory run was executed before this predeclaration and is recorded at reports/s17_n37_exploratory_prepredeclaration_run.json. This predeclared execution is deterministic and must reproduce it exactly; the comparison is admitted only on that reproduction.",
+  "comparison_index": 5
+}

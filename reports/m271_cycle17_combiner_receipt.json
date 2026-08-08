@@ -1,0 +1,144 @@
+{
+ "dacon_upload": false,
+ "decided_utc": "2026-08-04T07:17:05.804942+00:00",
+ "external_actions": [],
+ "lane": "L7",
+ "lockbox_reopened": false,
+ "model_fits": 0,
+ "new_2024_evaluation": false,
+ "node": "C1N17_METRIC_ALIGNED_COMBINER",
+ "report_sha256": "628edb0b772e590d7f583f60bef8260a17be8bb23128c3c7f9a02681a5d0bc81",
+ "result": {
+  "alpha": 0.5,
+  "gate_modified": false,
+  "gate_version": "M270_MONTHLY_GATE_v1_frozen_2026-08-04",
+  "members": [
+   "M102_TOP100",
+   "M244_RARE_EVENT_CORRECTED_ANALOG_Q234",
+   "M113_LGBM_DART",
+   "M115_XGBOOST"
+  ],
+  "method_sources": [
+   {
+    "applicability": "directly_supported",
+    "cite": "Elliott & Timmermann (2004), J. Econometrics 122(1):47-79",
+    "claim": "일반 손실에서 최적 결합 가중치는 MSE 최적과 다르다",
+    "id": "elliott_timmermann_2004",
+    "use": "평균이 FICR 에 최적인 결합자가 아닐 수 있다는 근거"
+   },
+   {
+    "applicability": "contradicts_premise",
+    "cite": "arXiv:2503.20082 — hit/win rate loss 결합 가중치 최적화",
+    "claim": "0-1 지시 손실은 Cauchy CDF 대리함수 + 제약 최적화로 다룬다",
+    "id": "arxiv_2503_20082",
+    "use": "방법은 유효하나 가중치 적합이 선택 편향이라 **기각**. 모수 없는 연산자만 채택"
+   }
+  ],
+  "node": "C1N17_METRIC_ALIGNED_COMBINER",
+  "operators": [
+   {
+    "bootstrap_q05": 0.002712394566249417,
+    "delta_vs_deployed": 0.003900340278284342,
+    "delta_vs_mean": 0.0,
+    "ficr": 0.4051965412115282,
+    "gate": {
+     "G1": true,
+     "G2": true,
+     "G3": true,
+     "G4": true
+    },
+    "gate_passed": true,
+    "identical_to_mean": true,
+    "one_minus_nmae": 0.8598131811256713,
+    "operator": "mean",
+    "positive_months": 8,
+    "sign_test_p": 0.01953125,
+    "total": 0.6325048611685997
+   },
+   {
+    "bootstrap_q05": 0.0043707084856865995,
+    "delta_vs_deployed": 0.005705935128090034,
+    "delta_vs_mean": 0.0018055948498056917,
+    "ficr": 0.41058474241670356,
+    "gate": {
+     "G1": true,
+     "G2": true,
+     "G3": true,
+     "G4": true
+    },
+    "gate_passed": true,
+    "identical_to_mean": false,
+    "one_minus_nmae": 0.8580361696201073,
+    "operator": "median",
+    "positive_months": 8,
+    "sign_test_p": 0.01953125,
+    "total": 0.6343104560184054
+   },
+   {
+    "bootstrap_q05": 0.0035140579198418413,
+    "delta_vs_deployed": 0.004673766984716887,
+    "delta_vs_mean": 0.0007734267064325451,
+    "ficr": 0.4085707038012359,
+    "gate": {
+     "G1": true,
+     "G2": true,
+     "G3": true,
+     "G4": true
+    },
+    "gate_passed": true,
+    "identical_to_mean": false,
+    "one_minus_nmae": 0.8579858719488286,
+    "operator": "modal_window",
+    "positive_months": 8,
+    "sign_test_p": 0.01953125,
+    "total": 0.6332782878750323
+   }
+  ],
+  "parent": {
+   "ficr": 0.40246401063156667,
+   "group_ficr": {
+    "1": 0.409551299643159,
+    "2": 0.46073846269466673,
+    "3": 0.33710226955687433
+   },
+   "group_nmae": {
+    "1": 0.13617589715402054,
+    "2": 0.14227310586805572,
+    "3": 0.15731590353073155
+   },
+   "one_minus_nmae": 0.8547450311490641,
+   "policy": "T0.5_G1.5",
+   "total": 0.6286045208903154
+  },
+  "parent_node": "C1N14_SHRINKBLEND",
+  "predeclared_check": {
+   "H1_expectation": "멤버 스프레드 > 6% 용량인 행 >= 10%",
+   "H1_held": true,
+   "H1_measured": 0.6485286435660804,
+   "H2_expectation": "median 또는 modal_window 가 mean 대비 Total 개선",
+   "H2_held": true,
+   "H3_expectation": "개선한 연산자가 동결 게이트 통과",
+   "H3_held": true,
+   "verdict": "COMBINER_AXIS_OPEN"
+  },
+  "spread_diagnosis": {
+   "abs_err_median": 0.09783302875286731,
+   "asymptotic_rmse_ratio_ceiling": 0.9605945840097077,
+   "ensemble_mse_cap_units": 0.03480162496803198,
+   "frac_spread_over_12pct": 0.30489291311161415,
+   "frac_spread_over_6pct": 0.6485286435660804,
+   "fraction_of_ceiling_captured": 0.7461935311099436,
+   "implied_mean_error_correlation": 0.9227419548287833,
+   "mean_member_mse_cap_units": 0.03694218576016894,
+   "realised_rmse_ratio_K4": 0.9705959334973475,
+   "rows_eligible": 11486,
+   "spread_median": 0.08332456521787598,
+   "spread_over_err_median": 0.851701784970384,
+   "spread_p90": 0.18455753729267754,
+   "spread_p99": 0.29576598308924495
+  }
+ },
+ "schema_version": 1,
+ "script_sha256": "376b67dfaae9410ae53c27e2cf8cb6ab55f118c481c5c396863556e48e0ed7d8",
+ "stage": "M271_P4_CYCLE17_COMBINER"
+}

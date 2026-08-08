@@ -1,0 +1,26 @@
+{
+  "event_type": "PREDECLARED",
+  "cycle_id": "S17-N13A_R2_NO_REFIT_TYPED_PROVENANCE_RECOVERY",
+  "stage_id": "S6",
+  "node_id": "S17-N13A_R2_NO_REFIT_TYPED_PROVENANCE_RECOVERY",
+  "actor": "root",
+  "occurred_at": "2026-08-08T21:14:26.504394+09:00",
+  "body": {
+    "preregistration_sha256": "060f2df3b53a0dff240b7d8e83405bc4e120170e96098e2a547930fb2655e60d",
+    "parent_ids": [
+      "S17-N13_R2_TWO_COMPONENT_VERTICAL_PCA_STRICT_PREQUENTIAL"
+    ],
+    "mechanism": "The frozen R2 predictions are evaluable without scientific change once their semantically past-only expanding procedure is serialized using the S17-N3 allowed enum.",
+    "treatment": "No-refit typed-provenance normalization for the frozen R2 family.",
+    "control": "Original frozen predictions and all numeric fit/PCA artifacts, byte-identical.",
+    "metric": "Unchanged N13 S17-N3 exact Total family comparison after a new immutable family freeze.",
+    "min_effect": 0.00357236259,
+    "score_bearing": true,
+    "novelty_signature": "R2_NO_REFIT_TYPED_PROVENANCE_RECOVERY_V1",
+    "basis_evidence_ids": [
+      "S17_N13_PARTIAL_PRE_SCORE",
+      "S17_N6A_FAIL_CLOSED_CONTRACT",
+      "S17_N3_PROTOCOL"
+    ]
+  }
+}

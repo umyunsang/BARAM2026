@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "protocol_id": "SK5-WAVE-B-ROOT-ADJUDICATION",
+  "created_at": "2026-08-09T05:23:00.465094+09:00",
+  "authority": {
+    "skeleton_sha256": "c2c813475ab5f0a741e6adbceab196d5b38447f2aeb02f9716a8f5be8973c820",
+    "skeleton_approval_sha256": "e827b324a23913346598d274f2ded496ffc3134243de5636033ee6a3ac387173",
+    "design_sha256": "7d49fe2c02b8b4c9275e4ba6b73c8ad20cc6ac9de2377482a4902ce98c8cc38f",
+    "design_approval_sha256": "bcc331389b3e4076516d0cf870045298328e4f77f6c19d2b6962e24c2fd623f7",
+    "foundation_map_sha256": "393ee74bf53251037547fc52bc92c554a4aa207e2288f194766d836675512b35",
+    "wave_a_protocol_sha256": "b3ca2c8bf8b470695bf026c5b76f1eeb601c8b2b4fe7c9e32d25be0f64927909"
+  },
+  "inherits": "reports/sk_v5_wave_a_root_adjudication_protocol.json — all Wave-A checks remain in force.",
+  "lanes": {
+    "V5-PREPROCESS": {
+      "output": "research/lanes/v5_preprocess_migration.md",
+      "source_bound": 14,
+      "root_verification": [
+        "re-fetch every design-critical primary source",
+        "confirm each candidate is decidable by a metadata/key-only diagnostic before any fit",
+        "reject any candidate needing an input unavailable at D-1 14:00"
+      ],
+      "deficits": [
+        "FD1",
+        "FD4",
+        "FD6",
+        "FD8"
+      ]
+    },
+    "V5-FEATURES": {
+      "output": "research/lanes/v5_features_hypotheses.md",
+      "source_bound": 16,
+      "root_verification": [
+        "re-fetch cited primary sources",
+        "classify each feature as re-encoding the existing 820-name representation versus adding new information",
+        "require same-issuance/same-run legality proof for every neighbour, lag, rolling or gradient construction"
+      ],
+      "deficits": [
+        "FD1",
+        "FD6"
+      ]
+    },
+    "V5-MODELS": {
+      "output": "research/lanes/v5_models_ladder.md",
+      "source_bound": 16,
+      "root_verification": [
+        "re-fetch cited primary sources",
+        "check every decision-focused claim against the exact 4/3/0 band reward rather than a generic step loss",
+        "reject any rung that is the closed post-processing axis in new wording"
+      ],
+      "deficits": [
+        "FD5",
+        "FD7"
+      ]
+    },
+    "V5-BENCHMARKS": {
+      "output": "research/lanes/v5_benchmarks_migration.md",
+      "source_bound": 12,
+      "root_verification": [
+        "verify repository existence, licence file and last-release metadata by direct HTTP",
+        "verify that ablation evidence actually isolates the named component",
+        "mark INELIGIBLE any pipeline depending on data outside the BARAM boundary"
+      ],
+      "deficits": [
+        "FD3",
+        "FD6"
+      ]
+    },
+    "V5-EXTERNAL": {
+      "output": "research/lanes/v5_external_eligibility.md",
+      "source_bound": 10,
+      "root_verification": [
+        "independently re-run the five gates: pre-2026-07-05 release, commercial licence, D-1 14:00 archival availability, anonymous retrieval, deployment symmetry",
+        "require bucket listing, index file, Last-Modified or official schedule evidence, never a search snippet",
+        "an empty ELIGIBLE set is an acceptable accepted verdict"
+      ],
+      "deficits": [
+        "FD1"
+      ]
+    }
+  },
+  "cross_lane_rules": [
+    "A candidate proposed by two lanes is deduplicated to one hypothesis with the union of its scope gaps.",
+    "Any candidate matching a closed axis is rejected unless it carries a new direct source mechanism or a new local deficit; the specific novelty must be named.",
+    "No lane may consume a comparison index, promote a candidate, or grant execution authority.",
+    "Every surviving candidate must map to at least one FD deficit and to one stage in S5..S8.",
+    "Ranking across lanes uses the DS@v5 acquisition order: confirmation obligation, causal leverage on the frozen deficits, information per cost, diversity, age; ties are logged."
+  ],
+  "fan_in_outputs": [
+    "reports/sk_v5_wave_b_<lane>_adjudication.json per lane",
+    "research/nodes/sk5_migration_matrix.json",
+    "reports/sk_v5_wave_b_synthesis_receipt.json"
+  ],
+  "execution_boundary": "Wave-B research produces hypotheses only. Their execution requires IP@v3 approval and the WP12 foundation diagnostics first."
+}

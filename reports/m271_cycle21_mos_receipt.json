@@ -1,0 +1,373 @@
+{
+ "dacon_upload": false,
+ "decided_utc": "2026-08-04T07:28:36.355385+00:00",
+ "external_actions": [],
+ "lane": "L1",
+ "lockbox_reopened": false,
+ "model_fits": 0,
+ "new_2024_evaluation": false,
+ "node": "C1N21_MOS_BIAS_CORRECTION",
+ "report_sha256": "f0376a66931838884d857aaead5529e82aac3e8a7c0b43cf132e107b274c0269",
+ "result": {
+  "design": "leave-one-fold-out (2023 Q2/Q3/Q4), 층 = 그룹 x 예측대역",
+  "gap_to_target": 0.023403172236948433,
+  "gate_modified": false,
+  "gate_version": "M270_MONTHLY_GATE_v1_frozen_2026-08-04",
+  "incumbent": "M271_MEDIAN4",
+  "incumbent_score": {
+   "ficr": 0.41320978983964385,
+   "group_ficr": {
+    "1": 0.42079521858555724,
+    "2": 0.46863045810963244,
+    "3": 0.3502036928237419
+   },
+   "group_nmae": {
+    "1": 0.13286075292051555,
+    "2": 0.13543735862877082,
+    "3": 0.151750291391336
+   },
+   "one_minus_nmae": 0.8599838656864592,
+   "total": 0.6365968277630516
+  },
+  "method_sources": [
+   {
+    "applicability": "directly_supported",
+    "cite": "Glahn & Lowry (1972) — Model Output Statistics",
+    "claim": "NWP 산출의 계통 편향을 과거 관측에 맞춰 통계적으로 보정하는 표준 절차",
+    "id": "glahn_lowry_1972_mos",
+    "use": "층별 이동 보정의 근거"
+   },
+   {
+    "applicability": "near_match_only",
+    "cite": "Gneiting et al. (2005) — EMOS / NGR",
+    "claim": "앙상블 후처리의 표준이나 **CRPS(적정 채점규칙)** 를 최적화한다",
+    "id": "gneiting_2005_emos",
+    "use": "목적함수가 우리 손실(밴드 히트율)과 어긋나므로 CRPS 목적은 기각하고 지표정합 목적 M2 를 별도로 둔다"
+   },
+   {
+    "applicability": "directly_supported",
+    "cite": "풍력 편향보정 문헌 — 복잡지형·해륙대비에서 편향 증대",
+    "claim": "지형 복잡도와 해안 효과가 계통 편향을 키운다",
+    "id": "wind_bias_complex_terrain",
+    "use": "A3 가 이 사이트에서 해당 조건을 이미 확인 — 편향 존재의 사전 개연성"
+   }
+  ],
+  "methods": {
+   "median_shift": {
+    "R1_improves": false,
+    "R2_gate": false,
+    "R3_sign_stable": true,
+    "delta_vs_incumbent": -0.06364126894175737,
+    "ficr": 0.3010843952021808,
+    "gate": {
+     "bootstrap_q05": -0.08275148360175633,
+     "flags": {
+      "G1": false,
+      "G2": false,
+      "G3": false,
+      "G4": false
+     },
+     "min_delta": -0.12599572371391654,
+     "months_scored": 9,
+     "passed": false,
+     "positive_months": 0,
+     "sign_test_p": 1.0
+    },
+    "group_ficr": {
+     "1": 0.33117662063870407,
+     "2": 0.34713594940105136,
+     "3": 0.2249406155667869
+    },
+    "group_nmae": {
+     "1": 0.14810392075146914,
+     "2": 0.14567000750343373,
+     "3": 0.17174590442387389
+    },
+    "one_minus_nmae": 0.8448267224404078,
+    "qualifies": false,
+    "shift_examples": [
+     {
+      "group": 1,
+      "pred_band": "(0.1, 0.25]",
+      "shifts": [
+       -0.1399,
+       -0.1263,
+       -0.1325
+      ]
+     },
+     {
+      "group": 1,
+      "pred_band": "(0.25, 0.45]",
+      "shifts": [
+       -0.0503,
+       -0.0704,
+       -0.0765
+      ]
+     },
+     {
+      "group": 1,
+      "pred_band": "(0.45, 0.7]",
+      "shifts": [
+       -0.0612,
+       -0.0527,
+       -0.0445
+      ]
+     },
+     {
+      "group": 1,
+      "pred_band": "(0.7, 1.1]",
+      "shifts": [
+       -0.0505,
+       -0.0257,
+       -0.0307
+      ]
+     },
+     {
+      "group": 2,
+      "pred_band": "(0.1, 0.25]",
+      "shifts": [
+       -0.1365,
+       -0.1252,
+       -0.1301
+      ]
+     },
+     {
+      "group": 2,
+      "pred_band": "(0.25, 0.45]",
+      "shifts": [
+       -0.0622,
+       -0.0627,
+       -0.0735
+      ]
+     },
+     {
+      "group": 2,
+      "pred_band": "(0.45, 0.7]",
+      "shifts": [
+       -0.0829,
+       -0.0797,
+       -0.0909
+      ]
+     },
+     {
+      "group": 2,
+      "pred_band": "(0.7, 1.1]",
+      "shifts": [
+       -0.0684,
+       -0.0449,
+       -0.065
+      ]
+     },
+     {
+      "group": 3,
+      "pred_band": "(0.1, 0.25]",
+      "shifts": [
+       -0.1446,
+       -0.1367,
+       -0.1426
+      ]
+     },
+     {
+      "group": 3,
+      "pred_band": "(0.25, 0.45]",
+      "shifts": [
+       -0.0497,
+       -0.0685,
+       -0.0333
+      ]
+     },
+     {
+      "group": 3,
+      "pred_band": "(0.45, 0.7]",
+      "shifts": [
+       -0.0808,
+       -0.0716,
+       -0.0513
+      ]
+     },
+     {
+      "group": 3,
+      "pred_band": "(0.7, 1.1]",
+      "shifts": [
+       -0.0717,
+       -0.0877,
+       -0.116
+      ]
+     }
+    ],
+    "sign_agreement": 1.0,
+    "strata_with_all_splits": 12,
+    "total": 0.5729555588212942
+   },
+   "metric_shift": {
+    "R1_improves": false,
+    "R2_gate": false,
+    "R3_sign_stable": false,
+    "delta_vs_incumbent": -0.014177121308453056,
+    "ficr": 0.392744045278185,
+    "gate": {
+     "bootstrap_q05": -0.026946516331133766,
+     "flags": {
+      "G1": false,
+      "G2": false,
+      "G3": false,
+      "G4": false
+     },
+     "min_delta": -0.052181851775084054,
+     "months_scored": 9,
+     "passed": false,
+     "positive_months": 0,
+     "sign_test_p": 1.0
+    },
+    "group_ficr": {
+     "1": 0.39607656861984936,
+     "2": 0.4505835437653881,
+     "3": 0.33157202344931747
+    },
+    "group_nmae": {
+     "1": 0.14088271544130468,
+     "2": 0.1389880191756328,
+     "3": 0.1638431624900262
+    },
+    "one_minus_nmae": 0.8520953676310121,
+    "qualifies": false,
+    "shift_examples": [
+     {
+      "group": 1,
+      "pred_band": "(0.1, 0.25]",
+      "shifts": [
+       -0.075,
+       -0.065,
+       -0.07
+      ]
+     },
+     {
+      "group": 1,
+      "pred_band": "(0.25, 0.45]",
+      "shifts": [
+       0.015,
+       -0.04,
+       -0.045
+      ]
+     },
+     {
+      "group": 1,
+      "pred_band": "(0.45, 0.7]",
+      "shifts": [
+       -0.035,
+       0.03,
+       0.035
+      ]
+     },
+     {
+      "group": 1,
+      "pred_band": "(0.7, 1.1]",
+      "shifts": [
+       0.01,
+       0.025,
+       0.025
+      ]
+     },
+     {
+      "group": 2,
+      "pred_band": "(0.1, 0.25]",
+      "shifts": [
+       -0.07,
+       -0.065,
+       -0.06
+      ]
+     },
+     {
+      "group": 2,
+      "pred_band": "(0.25, 0.45]",
+      "shifts": [
+       -0.025,
+       -0.06,
+       -0.085
+      ]
+     },
+     {
+      "group": 2,
+      "pred_band": "(0.45, 0.7]",
+      "shifts": [
+       -0.005,
+       0.0,
+       -0.01
+      ]
+     },
+     {
+      "group": 2,
+      "pred_band": "(0.7, 1.1]",
+      "shifts": [
+       -0.005,
+       0.0,
+       -0.01
+      ]
+     },
+     {
+      "group": 3,
+      "pred_band": "(0.1, 0.25]",
+      "shifts": [
+       -0.06,
+       -0.065,
+       -0.065
+      ]
+     },
+     {
+      "group": 3,
+      "pred_band": "(0.25, 0.45]",
+      "shifts": [
+       -0.015,
+       0.035,
+       0.01
+      ]
+     },
+     {
+      "group": 3,
+      "pred_band": "(0.45, 0.7]",
+      "shifts": [
+       -0.02,
+       -0.02,
+       0.055
+      ]
+     },
+     {
+      "group": 3,
+      "pred_band": "(0.7, 1.1]",
+      "shifts": [
+       0.01,
+       0.01,
+       0.055
+      ]
+     }
+    ],
+    "sign_agreement": 0.5,
+    "strata_with_all_splits": 12,
+    "total": 0.6224197064545985
+   }
+  },
+  "node": "C1N21_MOS_BIAS_CORRECTION",
+  "parent_node": "C1N20_ALPHA_ENDPOINT",
+  "predeclared_check": {
+   "H1_expectation": "median_shift 가 R1·R2·R3 를 모두 만족",
+   "H1_held": false,
+   "H2_expectation": "metric_shift 가 R1·R2·R3 를 모두 만족",
+   "H2_held": false,
+   "H3_expectation": "부호 일치율이 두 방법 모두 >= 0.70",
+   "H3_held": false,
+   "chosen_by_frozen_priority": null,
+   "qualified_methods": [],
+   "verdict": "MOS_REJECTED_KEEP_MEDIAN4"
+  },
+  "promoted_total": 0.6365968277630516,
+  "promotion_rule_frozen_before_run": [
+   "R1 pooled Total 개선",
+   "R2 동결 게이트 통과(부모=M271_MEDIAN4)",
+   "R3 부호 일치 층 비율 >= 0.7",
+   "둘 다 자격시 median_shift 우선"
+  ]
+ },
+ "schema_version": 1,
+ "script_sha256": "8257b121735afc01cded22d97edda5ecba9a5f6122a36108b48fd0e7bf7837be",
+ "stage": "M271_P4_CYCLE21_MOS"
+}

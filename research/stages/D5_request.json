@@ -1,0 +1,135 @@
+{
+ "stage": "D5",
+ "category": "개선전략",
+ "name": "improvement strategy",
+ "queries": [
+  "decision theoretic point forecast step reward settlement band optimisation",
+  "expected utility maximisation forecast action threshold accuracy incentive"
+ ],
+ "prior_stage_results": {
+  "D1": {
+   "emitted": 4,
+   "retired": 4,
+   "verdicts": [
+    {
+     "node": "D1_F3_1",
+     "subcapability": "C3.6",
+     "summary": "GFS 80m/100m/PBL 풍속이 후보 피처 풀에 존재했는지 감사 - 선택 탈락인가 애초 부재인가",
+     "verdict": "PRESENT_BUT_DESELECTED",
+     "detail": "GFS 80m/100m 18+18 features in the 820-feature pool, deselected by feature selection; even 10m winds were deselected in favour of teacher sitewind",
+     "origin": "research://IOP 2026 doi:10.1088/3049-4753/ae4c8d; ACP 23:3181 (2023) 'Estimating hub-height wind speed based on machine "
+    },
+    {
+     "node": "D1_F3_2",
+     "subcapability": "C3.6",
+     "summary": "허브고도 풍속 직접사용 vs power-law 외삽 vs teacher 추정 3자 비교 (D1_F3_1 결과가 '부재'일 때만)",
+     "verdict": "ADMISSION_FAILED_PREMISE_UNDERMINED",
+     "detail": "D1_F3_1 showed hub-height winds are in the pool and were deselected; the premise 'absent from pool' is false",
+     "origin": "research://IOP 2026 doi:10.1088/3049-4753/ae4c8d; ACP 23:3181 (2023) 'Estimating hub-height wind speed based on machine "
+    },
+    {
+     "node": "D1_F1_1",
+     "subcapability": "C3.2",
+     "summary": "NWP 풍속 자체의 편향보정(quantile mapping) 후 하류 점수 변화 측정",
+     "verdict": "NO_BIAS_TO_CORRECT_QMAP_WORSENS",
+     "detail": "teacher wind bias -0.0056 m/s (already unbiased); quantile mapping raises sigma 1.5866 -> 1.6273 (+2.56%)",
+     "origin": "research://Spiliotis et al. 2025, ScienceDirect S2213138825004308 (Cited 9) [near_match_only]"
+    },
+    {
+     "node": "D1_F2_1",
+     "subcapability": "C3.4",
+     "summary": "제어전략 영역(MPPT/정격/피치) 구분 필터로 teacher 표적 정제 후 재평가",
+     "verdict": "ADMISSION_FAILED_SUPERSET_ALREADY_CLOSED",
+     "detail": "{'node': 'D1_F2_1', 'stage': 'D1', 'origin': 'research://Morrison-2022 + Wang-2025-JMSE-13-410 [near_match_only]', 'prior_failures': [{'node': 'C1N87', 'method': 'hand rule (residual<-0.15 & ws>=10)', 'delta': -0.001194, 'verdict': 'CURTAIL",
+     "origin": "research://Morrison et al. 2022 Univ. Glasgow (Cited 143); Wang et al. 2025 MDPI JMSE 13(3):410 (Cited 11) [near_match_o"
+    }
+   ]
+  },
+  "D2": {
+   "emitted": 3,
+   "retired": 3,
+   "verdicts": [
+    {
+     "node": "D2_G1_1",
+     "subcapability": "C4.4",
+     "summary": "C1N77 의 소스분할이 논문 sister-model 구성과 어떻게 다른지 대조하고, 정보량 손실이 실패 원인인지 판별",
+     "verdict": "IMPLEMENTATION_DIFFERS_BUT_DATA_FORBIDS_PAPER_CONSTRUCTION",
+     "detail": "C1N77 split features disjointly (gfs 50/101, ldaps 40/101) so each arm saw 40-50% of pooled information; the paper applies the same full pipeline per source. GFS and LDAPS expose different variable sets here (GFS has 80m/100m/PBL/upper-air,",
+     "origin": "research://arXiv:2505.10367v1 (HEFTCom2024 GEB팀); Yang 2024 MDPI Sustainability 16(14):5960 (Cited 14) [directly_support"
+    },
+    {
+     "node": "D2_G2_1",
+     "subcapability": "C4.3",
+     "summary": "풍향 조건부 후류 기하 피처(터빈 정렬각·이격거리/로터직경) 생성 후 잔차 설명력 측정",
+     "verdict": "WAKE_GEOMETRY_EXPLAINS_RESIDUAL_WEAKLY",
+     "detail": "unwaked fraction varies strongly with direction (g3 spread 0.800; 80% waked at 150 deg). Residual correlation is significant for g2 (rho +0.1033) and g3 (rho +0.1347) against |error|, and negative against band hit (g3 -0.1415), i.e. the fea",
+     "origin": "research://SPIE 14179:141790I (2025) 'GNN + physical wake model'; Zang 2025 STET (Cited 8) [near_match_only]"
+    },
+    {
+     "node": "D2_G3_1",
+     "subcapability": "C4.5",
+     "summary": "시각(hour-of-day) 조건부 예보-실측 정렬 오차 진단 — A4_error 의 일주기 편향이 밴드 적중에 미치는 영향",
+     "verdict": "DIURNAL_BIAS_TOO_SMALL_OR_UNSTABLE",
+     "detail": "hit rate 0.299-0.423 by hour, signed bias +0.0266..+0.0700 (max |bias| = 117% of the 0.06 band half-width) but fold-to-fold correlation of the hourly bias is only 0.220. Side finding: the signed bias is POSITIVE at all 24 hours, mean about ",
+     "origin": "research://arXiv:2510.15474v1 'Evaluating the Prediction of Wind Power Ramping Events' [near_match_only]"
+    }
+   ]
+  },
+  "D3": {
+   "emitted": 2,
+   "retired": 2,
+   "verdicts": [
+    {
+     "node": "D3_H2_1",
+     "subcapability": "C5.5",
+     "summary": "저장 후보 12종의 이산/평활 특성 감사 - 평활 계열 멤버가 실제로 부재한지 확인",
+     "verdict": "SMOOTH_MEMBER_EXISTS_PREMISE_HOLDS",
+     "detail": "unique-value ratio audit over 14 stored members: 11 discrete (0.009-0.032), 2 near-continuous (M113 0.174, M115 0.210), 1 smooth (M244 0.966). Browell's smooth counterpart already exists as the analog lineage, which also explains why M244 i",
+     "origin": "research://Browell et al. 2020, EEM20 Wind Power Forecasting Competition, Strathclyde 74066 (Cited 12) [near_match_only]"
+    },
+    {
+     "node": "D3_H3_1",
+     "subcapability": "C9.2",
+     "summary": "적격행 기준 전역 이동(-0.047 방향) 의 fold-외 효과 측정 - C1N22 가 전체행 기준이었는지 먼저 확인",
+     "verdict": "GLOBAL_SHIFT_NO_GAIN",
+     "detail": "shifting predictions by the -0.047 bias found in D2_G3_1 drops Total 0.628337 -> 0.603634 (FICR 0.4023 -> 0.3506). The positive bias is the decision layer's intended action under generation-weighted settlement, not an error. Independently r",
+     "origin": "research://NOAA NCEP Office Note 520 (2025) BC-Unet; ResearchGate 335482895 [near_match_only]"
+    }
+   ]
+  },
+  "D4": {
+   "emitted": 1,
+   "retired": 1,
+   "verdicts": [
+    {
+     "node": "D4_J1_1",
+     "subcapability": "C6.3",
+     "summary": "동결 월별게이트의 검정력 측정 - 알려진 크기의 인위적 이득을 주입해 게이트가 얼마나 잡아내는지",
+     "verdict": "NO_SCORE",
+     "detail": "None",
+     "origin": "research://Hewamalage et al. 2022, 'Forecast evaluation for data scientists: common pitfalls and best practices', PMC971"
+    }
+   ]
+  }
+ },
+ "contract": {
+  "each_finding_requires": [
+   "claim",
+   "source locator",
+   "evidence tag",
+   "relevance to this project"
+  ],
+  "valid_tags": [
+   "contradicts_premise",
+   "directly_supported",
+   "insufficient",
+   "near_match_only"
+  ],
+  "actionable_tags": [
+   "contradicts_premise",
+   "directly_supported",
+   "near_match_only"
+  ],
+  "note": "a finding tagged insufficient may be recorded but may not spawn a node"
+ }
+}

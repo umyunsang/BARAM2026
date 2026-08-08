@@ -1,0 +1,163 @@
+{
+  "schema_version": 1,
+  "node_id": "S17-N8_COST5_SPO_PLUS_STRICT_PREQUENTIAL_COMPARISON",
+  "stage": "S10_모델개선전략",
+  "kind": "one_shot_score_bearing_decision_learning_comparison",
+  "predeclared_at": "2026-08-08T20:11:26.414248+09:00",
+  "parents": [
+    "S17-N7_STRICT_ACTION_PROVENANCE_RECONSTRUCTION",
+    "S17-N3_STRICT_PREQUENTIAL_EVALUATION_REPAIR"
+  ],
+  "evidence": [
+    {
+      "path": "reports/s17_n7_strict_action_reconstruction_receipt.json",
+      "sha256": "f4d56d97532fbe4d681061dfff773f951c4be01b26081dda3c0ff77720e973fc"
+    },
+    {
+      "path": "research/rwa_model_decision_research.md",
+      "sha256": "0626868e9fbb6818021be659d719f7a95d53f829bb48f310aaac917de9734c7a"
+    },
+    {
+      "path": "research/rwa_eval_research.md",
+      "sha256": "2b418c28ecd4f9e3a27e30176d9d76298961b37cffc613447b7c36e5eb34b84c"
+    }
+  ],
+  "hypothesis": "A deterministic linear SPO+ selector can exploit the 0.41-0.43 band-hit complementarity of four fixed actions plus their champion better than the fixed champion action.",
+  "input_bundle": {
+    "sha256": "d024960e7e9653df4944bd70e7e5706e3dce571460f4c0df70123ad4ae7ecba5",
+    "files": {
+      "artifacts/backtests/s17_n7_strict_actions/actions.parquet": "6041a7bf6f242c4da7958dc43d3487cdc468cc39301086bf3a5e6df5fb87f290",
+      "artifacts/backtests/s17_n7_strict_actions/procedure_provenance.parquet": "12666e4e61d962e74e0168e41a40f13b13acc006808bd7bd09dd837fa6cf9cae",
+      "artifacts/backtests/s17_n7_strict_actions/family_manifest.json": "972ed2922260bec2000cb9bc0d97098ae533652ab16daf9d5ca6d90601daa046",
+      "research/nodes/S7-N8_D_keys.parquet": "f1e647ba5eb7529f8ff9e69e818dfb7697044c19b15839e05f97e89cea83a010",
+      "research/nodes/S7-N8_D_prob.npy": "e567109f8a86c37411e84fab0329af8465788988112ece114035753e60c52f0e",
+      "research/nodes/harness.py": "406da8abf51ccbec3a6d8c7493e7f05ea7ed6a3e8752317a5d0e1211fa471ae5",
+      "research/scratch/featbuild.py": "bfbb8e2973df593ddd7d769b37053940168a3e4b12db2b88044273b609c4d1ab",
+      "research/nodes/s6feats.py": "2e2f596a7be5e139ea34a92edd3adb00c194b665693f138efc01b1ec61a918a3",
+      "research/scratch/teacher_targets.parquet": "844070155ba310c12c25302058890f31efc0fb4b4c7c60351f7274a8625372f5",
+      "research/scratch/labels.parquet": "2f1bf4ab8293b3883dbf90bad7acc430de788d68b93ba1882831f8d2f67d01f4",
+      "research/scratch/powercurve_params.json": "69b78cd03eb33eba68f722fbf6dac2751dee2b46442b5a531613e2083efd96cf",
+      "research/scratch/grid_coords.json": "7091127c22032a55c61da572b46dc4900a0333d9ab6b69675a8307b886a7a997",
+      "artifacts/cache/920be0c458d820e855bf79dd25723146f52ce1736138aedba5e6bc853f1f720b/train_features.parquet": "fec1b0369f6d1c63a3d9e113190c45bb2b84d1c6500098b957c96a6b1d2128e7",
+      "artifacts/cache/920be0c458d820e855bf79dd25723146f52ce1736138aedba5e6bc853f1f720b/train_geometric.parquet": "765b3c3c4d9998d58f61c47698b7de272631c489f48cd5d8f30f14743c60b709",
+      "artifacts/cache/920be0c458d820e855bf79dd25723146f52ce1736138aedba5e6bc853f1f720b/train_grid_pivot.parquet": "aee0a4e934a23fa058063e4271135eef0add23563ae84296a3226701d1587996"
+    }
+  },
+  "action_family": [
+    "D",
+    "M102_TOP100",
+    "M113_LGBM_DART",
+    "M115_XGBOOST",
+    "CHAMPION"
+  ],
+  "feature_map": {
+    "base_action_cf": [
+      "a_D",
+      "a_M102_TOP100",
+      "a_M113_LGBM_DART",
+      "a_M115_XGBOOST"
+    ],
+    "added_action_cf": [
+      "a_CHAMPION"
+    ],
+    "base_action_dispersion": [
+      "a_mean",
+      "a_sd",
+      "a_rng"
+    ],
+    "D_distribution": [
+      "d_mean",
+      "d_spread"
+    ],
+    "history": [
+      "mean_gen"
+    ],
+    "groups": [
+      "g1",
+      "g2",
+      "g3"
+    ],
+    "state": [
+      "atm__hub_consensus",
+      "ldaps_spatial__idw__wind50max_speed",
+      "gfs_spatial__idw__wind100_speed",
+      "ldaps_spatial__idw__etc_0_blh",
+      "atm__alpha_100_80",
+      "atm__theta850_minus_t2",
+      "g2__l50x__rng",
+      "g2__l50x__std",
+      "atm__gust_factor",
+      "cal__hour_sin",
+      "cal__hour_cos",
+      "cal__doy_sin",
+      "cal__doy_cos"
+    ],
+    "dispersion_scope": "four base actions only, preserving S16; CHAMPION is one added scalar.",
+    "preprocess": "For each outer fold independently: replace nonfinite training values by training median (all-nonfinite fails), apply same medians to test, standardize by training mean/std with zero std replaced by 1."
+  },
+  "cost_and_learner": {
+    "cost": "For valid y>=0.1*capacity, c_im=abs(a-y)/capacity/(6*n_g) - y*u(abs(a-y)/capacity)/(24*S_g); invalid rows cost 0. n_g/S_g are computed on that outer fold training surface only. Multiply the entire cost matrix by n_train.",
+    "spo_plus": "mean_i[max_j(c_ij-2*chat_ij)+2*chat_i,jstar-c_i,jstar] + lambda/2*||W||^2, jstar=argmin_j c_ij.",
+    "predictor": "chat=[standardized features, intercept] @ coefficients; choose argmin chat with action-order tie break.",
+    "optimizer": "scipy L-BFGS-B, analytic subgradient, zero initialization, lambda=0.001, maxiter=500, ftol=1e-12, gtol=1e-7, one invocation per outer fold, no retry or sweep.",
+    "optimizer_acceptance": "Before scoring require finite coefficients/objective/gradient and final objective <= zero-init objective +1e-12. Report success/status; an unsuccessful but finite descending single invocation remains the frozen approximate solution and is not retried.",
+    "fits": 2,
+    "random_seeds": 0,
+    "hyperparameter_trials": 1
+  },
+  "outer_procedure": {
+    "burn_in": "dev-2023-Q2 retained 90 complete days",
+    "Q3": "fit only Q2 label-available rows; test 89 complete shifted days",
+    "Q4": "fit Q2+Q3 label-available rows; test 91 complete shifted days",
+    "Q2_candidate_column": "CHAMPION placeholder, never assessed",
+    "no_future_fold": true
+  },
+  "two_phase_freeze": {
+    "fit_phase": "write predictions, choice trace, procedure provenance, optimizer receipt and family manifest; no Q3/Q4 metric/component call",
+    "freeze": "hash family manifest after fit",
+    "evaluate_phase": "new process verifies all hashes then calls S17-N3 exactly once; no changes to predictions/family"
+  },
+  "evaluation": {
+    "protocol": "BARAM_STRICT_PREQUENTIAL_JOINT_v1",
+    "family": [
+      "CHAMPION",
+      "COST5_SPO_PLUS"
+    ],
+    "incumbent": "CHAMPION",
+    "comparison_index": 1,
+    "replicates": 4999,
+    "bootstrap_seed": 20260808,
+    "expected_block_days": [
+      3,
+      7,
+      14
+    ],
+    "primary_block_days": 7,
+    "margin_total": 0.001635,
+    "mcs_alpha": 0.1,
+    "promotion": "candidate point delta >=0.001635; stable promotion_eligible on blocks 3/7/14; Q3 and Q4 deltas positive; exact/additive sign agree; candidate in MCS and incumbent excluded.",
+    "evidence_label": "retrospective_chronology_repaired_multiplicity_aware_not_fresh_holdout"
+  },
+  "outputs": {
+    "script": "scripts/run_cost5_spo_plus.py",
+    "dir": "artifacts/backtests/s17_n8_cost5_spo_plus",
+    "receipt": "reports/s17_n8_cost5_spo_plus_receipt.json"
+  },
+  "failure_action": "Any pre-score hash/feature/chronology/optimizer/family-freeze failure closes non-score with pre_score_gate_failed=true. After evaluation, gate failure closes score-bearing REFUTED and consumes comparison_index=1.",
+  "limits": {
+    "workers": 1,
+    "model_fits": 2,
+    "q3_q4_point_score_evaluations": 2,
+    "protocol_calls": 1
+  },
+  "forbidden": [
+    "2024/test/rejected ECMWF",
+    "future-fold tuning",
+    "policy/feature/lambda/optimizer/seed sweep",
+    "post-score prediction or family mutation",
+    "Dacon/account",
+    "remote inference",
+    "dependency change"
+  ],
+  "pass_label": "SUPPORTED_RETROSPECTIVE only if the complete frozen promotion gate passes; otherwise REFUTED or INCONCLUSIVE in scope"
+}

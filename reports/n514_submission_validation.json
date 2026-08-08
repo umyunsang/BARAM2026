@@ -1,0 +1,98 @@
+{
+ "node": "N514_SUBMISSION_VALIDATION",
+ "results": [
+  {
+   "file": "E0_DECISION_CONTROL-46980d5f798a.csv",
+   "verdict": "PASS",
+   "issues": "",
+   "sha256_prefix": "b63887877287"
+  },
+  {
+   "file": "E0_FULL_HISTORY_Q1_GROUP12_ANALOG-1741a964e30b.csv",
+   "verdict": "PASS",
+   "issues": "",
+   "sha256_prefix": "06fe135a22b2"
+  },
+  {
+   "file": "E0_M229_SEQUENCE_SMOOTH-9647d4a5a407.csv",
+   "verdict": "PASS",
+   "issues": "",
+   "sha256_prefix": "d5f6fa67f969"
+  },
+  {
+   "file": "E0_Q1_GROUP12_RARE_EVENT_ANALOG-bea349ead945.csv",
+   "verdict": "PASS",
+   "issues": "",
+   "sha256_prefix": "daafce4b61bb"
+  },
+  {
+   "file": "E0_RARE_EVENT_ANALOG-5f6a9679a463.csv",
+   "verdict": "PASS",
+   "issues": "",
+   "sha256_prefix": "1c9c0a509a71"
+  },
+  {
+   "file": "E0_RECENCY_ANALOG-58cce9ff45a6.csv",
+   "verdict": "PASS",
+   "issues": "",
+   "sha256_prefix": "39a9b275f684"
+  },
+  {
+   "file": "E0_RECENCY_SPREAD_ANALOG-bc88b89a9c71.csv",
+   "verdict": "PASS",
+   "issues": "",
+   "sha256_prefix": "8af6c8a0670e"
+  },
+  {
+   "file": "E0_ROBUST_ANALOG_DEV-08f07b6d9e87.csv",
+   "verdict": "PASS",
+   "issues": "",
+   "sha256_prefix": "034a3c91d328"
+  },
+  {
+   "file": "E0_ROBUST_ANALOG_DEV-9c6caa802c66.csv",
+   "verdict": "PASS",
+   "issues": "",
+   "sha256_prefix": "034a3c91d328"
+  },
+  {
+   "file": "E0_SPREAD_SHRUNK_ANALOG-ead6308128ce.csv",
+   "verdict": "PASS",
+   "issues": "",
+   "sha256_prefix": "e4d69edeb322"
+  },
+  {
+   "file": "E0_SUPPORTED_SEASON_ANALOG-b2c9702c35a4.csv",
+   "verdict": "PASS",
+   "issues": "",
+   "sha256_prefix": "a2a5ff3dde26"
+  },
+  {
+   "file": "E0_V2_SEQUENCE_TRANSFER-a5111cee22bc.csv",
+   "verdict": "PASS",
+   "issues": "",
+   "sha256_prefix": "d67b0f5caf25"
+  },
+  {
+   "file": "final_candidate.csv",
+   "verdict": "FAIL",
+   "issues": "kpx_group_1 용량초과 8; kpx_group_2 용량초과 7",
+   "sha256_prefix": "f3285a4d370b"
+  },
+  {
+   "file": "submission_M263.csv",
+   "verdict": "PASS",
+   "issues": "",
+   "sha256_prefix": "5a1d701660a8"
+  },
+  {
+   "file": "submission_M268.csv",
+   "verdict": "PASS",
+   "issues": "",
+   "sha256_prefix": "696324f31689"
+  }
+ ],
+ "passed": 14,
+ "total": 15,
+ "agent_upload": false
+}

@@ -1,0 +1,26 @@
+{
+  "event_type": "PREDECLARED",
+  "cycle_id": "S17-N15A_R3_CORRECTED_PRIMARY_FORMULA_IDENTIFIABILITY_GATE",
+  "stage_id": "S5",
+  "node_id": "S17-N15A_R3_CORRECTED_PRIMARY_FORMULA_IDENTIFIABILITY_GATE",
+  "actor": "root",
+  "occurred_at": "2026-08-08T21:37:50.284738+09:00",
+  "body": {
+    "preregistration_sha256": "a264302498c1c959e33c3a49a5faf1c4aa9744ce5ce266af31f752e67e658d02",
+    "parent_ids": [
+      "S17-N15_R3_COPERNICUS_GLO30_STATIC_EXTRACTION_AND_FORMULA_FREEZE"
+    ],
+    "mechanism": "The exact printed zero-fit height correction is actionable only if it is dimensionally closed and its u(h_HC) term is directly reconstructible from supplied LDAPS variables.",
+    "treatment": "Corrected exact-primary-formula dimensional and observational identifiability gate.",
+    "control": "Current uncorrected LDAPS feature surface.",
+    "metric": "Two frozen Boolean gates before any DEM body retrieval; no model score.",
+    "min_effect": 0.0,
+    "score_bearing": false,
+    "novelty_signature": "R3_KMAPP_CORRECTED_EXACT_PRINT_IDENTIFIABILITY_V1",
+    "basis_evidence_ids": [
+      "KMAPP_2021_PRIMARY_PDF_PAGE_87",
+      "S17_N12_VERTICAL_LEVEL_AUDIT",
+      "S17_N15_TRANSCRIPTION_FAILURE"
+    ]
+  }
+}

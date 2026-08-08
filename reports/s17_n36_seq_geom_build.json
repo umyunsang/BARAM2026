@@ -1,0 +1,88 @@
+{
+ "train": {
+  "pivot_sha256": "aee0a4e934a23fa058063e4271135eef0add23563ae84296a3226701d1587996",
+  "blocks": {
+   "gfs": {
+    "grids": 9,
+    "lat0": 37.25,
+    "lon0": 129.0,
+    "vars": [
+     "heightAboveGround_10_10u",
+     "heightAboveGround_10_10v",
+     "heightAboveGround_100_100u",
+     "heightAboveGround_100_100v",
+     "meanSea_0_prmsl",
+     "surface_0_sp",
+     "heightAboveGround_2_2t",
+     "wind100_speed",
+     "wind10_speed"
+    ]
+   },
+   "ldaps": {
+    "grids": 16,
+    "lat0": 37.28193125,
+    "lon0": 128.96071875,
+    "vars": [
+     "heightAboveGround_10_10u",
+     "heightAboveGround_10_10v",
+     "meanSea_0_prmsl",
+     "surface_0_sp",
+     "heightAboveGround_2_t",
+     "wind10_speed",
+     "etc_0_blh"
+    ]
+   }
+  },
+  "path": "artifacts/features/s17_n36/train_seq_geom.parquet",
+  "sha256": "6a8e5e202a684fb07c2b40a18388df80d6257b3fff5ebcb06127000fb4ba5da9",
+  "rows": 26304,
+  "n_new_columns": 102,
+  "geom_columns": 54,
+  "seq_columns": 48,
+  "min_finite_fraction": 0.875,
+  "constant_columns": []
+ },
+ "test": {
+  "pivot_sha256": "90714354cd18334d04a2f209db254f56c4689fc5fa91bec4b6476eaec443c9f3",
+  "blocks": {
+   "gfs": {
+    "grids": 9,
+    "lat0": 37.25,
+    "lon0": 129.0,
+    "vars": [
+     "heightAboveGround_10_10u",
+     "heightAboveGround_10_10v",
+     "heightAboveGround_100_100u",
+     "heightAboveGround_100_100v",
+     "meanSea_0_prmsl",
+     "surface_0_sp",
+     "heightAboveGround_2_2t",
+     "wind100_speed",
+     "wind10_speed"
+    ]
+   },
+   "ldaps": {
+    "grids": 16,
+    "lat0": 37.28193125,
+    "lon0": 128.96071875,
+    "vars": [
+     "heightAboveGround_10_10u",
+     "heightAboveGround_10_10v",
+     "meanSea_0_prmsl",
+     "surface_0_sp",
+     "heightAboveGround_2_t",
+     "wind10_speed",
+     "etc_0_blh"
+    ]
+   }
+  },
+  "path": "artifacts/features/s17_n36/test_seq_geom.parquet",
+  "sha256": "edc7ea71377877fa8f1ef9817957a7fa69024ec59c4baf1567b4cc3d278e4b95",
+  "rows": 8760,
+  "n_new_columns": 102,
+  "geom_columns": 54,
+  "seq_columns": 48,
+  "min_finite_fraction": 0.875,
+  "constant_columns": []
+ }
+}

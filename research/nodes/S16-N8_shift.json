@@ -1,0 +1,113 @@
+{
+ "0.0": {
+  "solo": 0.6256687137857624,
+  "band_mass": 0.7590750199261418,
+  "entropy": 1.4041522683814427,
+  "blend": 0.6361842493883538,
+  "corr_D": 1.0
+ },
+ "0.25": {
+  "solo": 0.626646330168541,
+  "band_mass": 0.7551144629149193,
+  "entropy": 1.4944948924625816,
+  "blend": 0.6355057501527055,
+  "corr_D": 0.9968265644888663,
+  "arb": {
+   "point_cand": 0.6355057501527055,
+   "point_champ": 0.6361842493883538,
+   "paired_mean": -0.0006704633442239011,
+   "paired_sd": 0.00037071006421606357,
+   "p_better": 0.0225,
+   "ci95": [
+    -0.0014914668609680131,
+    -6.306042870013594e-06
+   ],
+   "n_rep": 400,
+   "block_days": 7,
+   "point_delta": -0.0006784992356483333,
+   "min_effect": 0.001,
+   "p_required_unadjusted": 0.9,
+   "p_required_adjusted": 0.975,
+   "n_comparisons_so_far": 4,
+   "took_champion": false
+  }
+ },
+ "0.5": {
+  "solo": 0.6244362956156457,
+  "band_mass": 0.7573348383130579,
+  "entropy": 1.5267575612995088,
+  "blend": 0.6327486620213603,
+  "corr_D": 0.9921462154443923,
+  "arb": {
+   "point_cand": 0.6327486620213603,
+   "point_champ": 0.6361842493883538,
+   "paired_mean": -0.0034587327067881223,
+   "paired_sd": 0.001141658642074935,
+   "p_better": 0.005,
+   "ci95": [
+    -0.005477333172708929,
+    -0.001178479478236236
+   ],
+   "n_rep": 400,
+   "block_days": 7,
+   "point_delta": -0.0034355873669935644,
+   "min_effect": 0.001,
+   "p_required_unadjusted": 0.9,
+   "p_required_adjusted": 0.975,
+   "n_comparisons_so_far": 4,
+   "took_champion": false
+  }
+ },
+ "0.75": {
+  "solo": 0.6231838462837291,
+  "band_mass": 0.7581356830248925,
+  "entropy": 1.537892457957145,
+  "blend": 0.6313558352592816,
+  "corr_D": 0.9855488668250322,
+  "arb": {
+   "point_cand": 0.6313558352592816,
+   "point_champ": 0.6361842493883538,
+   "paired_mean": -0.004791965961831151,
+   "paired_sd": 0.0018128069790888319,
+   "p_better": 0.0025,
+   "ci95": [
+    -0.008422987157857451,
+    -0.0010938068656109051
+   ],
+   "n_rep": 400,
+   "block_days": 7,
+   "point_delta": -0.0048284141290722005,
+   "min_effect": 0.001,
+   "p_required_unadjusted": 0.9,
+   "p_required_adjusted": 0.975,
+   "n_comparisons_so_far": 4,
+   "took_champion": false
+  }
+ },
+ "1.0": {
+  "solo": 0.6205127987140651,
+  "band_mass": 0.7581129519502392,
+  "entropy": 1.544334811698443,
+  "blend": 0.6309953271719672,
+  "corr_D": 0.9762874367385814,
+  "arb": {
+   "point_cand": 0.6309953271719672,
+   "point_champ": 0.6361842493883538,
+   "paired_mean": -0.005187120298421189,
+   "paired_sd": 0.0014436722697178492,
+   "p_better": 0.0,
+   "ci95": [
+    -0.00798841722770815,
+    -0.0021429680356764135
+   ],
+   "n_rep": 400,
+   "block_days": 7,
+   "point_delta": -0.005188922216386671,
+   "min_effect": 0.001,
+   "p_required_unadjusted": 0.9,
+   "p_required_adjusted": 0.975,
+   "n_comparisons_so_far": 4,
+   "took_champion": false
+  }
+ }
+}

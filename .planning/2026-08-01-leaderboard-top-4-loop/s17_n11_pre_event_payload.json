@@ -1,0 +1,25 @@
+{
+  "event_type": "PREDECLARED",
+  "cycle_id": "S17-N11_FOUR_MAPPING_TRAINING_WIND_DIAGNOSTIC",
+  "stage_id": "S5",
+  "node_id": "S17-N11_FOUR_MAPPING_TRAINING_WIND_DIAGNOSTIC",
+  "actor": "root",
+  "occurred_at": "2026-08-08T20:39:06.740425+09:00",
+  "body": {
+    "preregistration_sha256": "8db4fe0fcf89dbe78611dc0ddf49489afb548ff61114fd68150341b30798a435",
+    "parent_ids": [
+      "S17-N10B_ISSUANCE_CUBE_2022_2023_CORRECTED_AUDIT"
+    ],
+    "mechanism": "If supplied hourly NWP values are interval-shifted relative to their valid coordinate, exactly one frozen same-run mapping should align more strongly and robustly with training SCADA wind.",
+    "treatment": "Four fixed t/t-1/adjacent-mean mappings on 8 NWP-height x farm panels with joint day bootstrap.",
+    "control": "Current t mapping.",
+    "metric": "Equal-panel Fisher-z wind correlation, simultaneous lower bound, strata votes, source-family sign and coverage; no power score.",
+    "min_effect": 0.01,
+    "score_bearing": false,
+    "novelty_signature": "FOUR_MAPPING_TRAINING_WIND_R1_V1",
+    "basis_evidence_ids": [
+      "RWA_DATA_R1",
+      "S17_N10B_AMBIGUOUS_METADATA"
+    ]
+  }
+}

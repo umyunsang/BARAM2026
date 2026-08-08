@@ -1,0 +1,36 @@
+{
+  "event_type": "CLOSED",
+  "cycle_id": "S17-N24_SECONDARY_FRONTIER_RESEARCH_INTAKE",
+  "stage_id": "S10",
+  "node_id": "S17-N24_SECONDARY_FRONTIER_RESEARCH_INTAKE",
+  "actor": "root",
+  "occurred_at": "2026-08-09T00:35:29.212906+09:00",
+  "body": {
+    "predeclared_event_sha256": "c6218732b686f81238750ee7bc3aa41c17c46f7681487bc32020d83975c265e1",
+    "receipt_path": "reports/s17_n24_secondary_frontier_intake_receipt.json",
+    "receipt_sha256": "a37d645b254329f17fea20eb2f03dd88fbd12e59124f26e8340946e1468eed7f",
+    "code_sha256": "31f588f7e4da984c452cf3965861d6a86e0414804a6023bdf90bf8e529fd3a9e",
+    "config_sha256": "c8f7a8dc3c861aaaf417b952c8411c246949364f8b95e5b874ca3330d716ba24",
+    "data_sha256": "fb469daa495ca33ab7113137ee99ec94eb2b17c17f56aebc11d117cca967fc29",
+    "router_sha256": "80e37561a32fb2928d1a7505b652bb822f5b6989e73b6d7106afb0ae62041b43",
+    "policy_ids": [
+      "N24_SECONDARY_FRONTIER_NONE_READY_FAIL_CLOSED"
+    ],
+    "row_alignment_keys": [
+      "fold_id",
+      "group_id",
+      "forecast_kst_dtm"
+    ],
+    "evidence_class": "research",
+    "weights_fit": "fixed",
+    "result_status": "INCONCLUSIVE",
+    "score_bearing": false,
+    "comparison_index": null,
+    "stage_evidence_status": "INSUFFICIENT",
+    "next_handoff": [
+      "S17-N25_TERTIARY_FRONTIER_RESEARCH_INTAKE"
+    ],
+    "lockbox_2024_used": false,
+    "dacon_actions": []
+  }
+}

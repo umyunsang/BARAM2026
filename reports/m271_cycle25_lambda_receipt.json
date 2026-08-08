@@ -1,0 +1,391 @@
+{
+ "dacon_upload": false,
+ "decided_utc": "2026-08-04T07:42:38.721165+00:00",
+ "external_actions": [],
+ "lane": "L3",
+ "lockbox_reopened": false,
+ "model_fits": 0,
+ "new_2024_evaluation": false,
+ "node": "C1N25_ENVELOPE_LAMBDA",
+ "report_sha256": "eb42679eeaaa9afd7e4c049fc23cd4fc312c67efd0353ff6622a887c3a9e7c11",
+ "result": {
+  "eligible_rows": 11486,
+  "estimators": {
+   "median_lambda": {
+    "R1_improves": false,
+    "R2_gate": false,
+    "delta_vs_incumbent": -0.02249255183778709,
+    "ficr": 0.3643285064971072,
+    "gate": {
+     "bootstrap_q05": -0.030329645743516567,
+     "flags": {
+      "G1": false,
+      "G2": false,
+      "G3": false,
+      "G4": false
+     },
+     "months_scored": 9,
+     "passed": false,
+     "positive_months": 1,
+     "sign_test_p": 0.998046875
+    },
+    "group_ficr": {
+     "1": 0.3718578743492361,
+     "2": 0.416983026068074,
+     "3": 0.3041446190740116
+    },
+    "group_nmae": {
+     "1": 0.13119926680071445,
+     "2": 0.12947064236568329,
+     "3": 0.14768995477333677
+    },
+    "one_minus_nmae": 0.8638800453534218,
+    "qualifies": false,
+    "total": 0.6141042759252645
+   },
+   "metric_lambda": {
+    "R1_improves": false,
+    "R2_gate": false,
+    "delta_vs_incumbent": -0.0033406523214160044,
+    "ficr": 0.40922693952125505,
+    "gate": {
+     "bootstrap_q05": -0.008797114849531476,
+     "flags": {
+      "G1": false,
+      "G2": false,
+      "G3": false,
+      "G4": false
+     },
+     "months_scored": 9,
+     "passed": false,
+     "positive_months": 2,
+     "sign_test_p": 0.98046875
+    },
+    "group_ficr": {
+     "1": 0.4206327960555268,
+     "2": 0.4614981921778765,
+     "3": 0.34554983033036174
+    },
+    "group_nmae": {
+     "1": 0.13470638234398888,
+     "2": 0.13558542692763506,
+     "3": 0.15785195664232796
+    },
+    "one_minus_nmae": 0.8572854113620161,
+    "qualifies": false,
+    "total": 0.6332561754416356
+   }
+  },
+  "fold_rank_stability": [
+   {
+    "folds": "Q2~Q3",
+    "n_strata": 36,
+    "spearman": -0.2424817904158677
+   },
+   {
+    "folds": "Q2~Q4",
+    "n_strata": 36,
+    "spearman": 0.17395113046258343
+   },
+   {
+    "folds": "Q3~Q4",
+    "n_strata": 36,
+    "spearman": -0.15824731734285907
+   }
+  ],
+  "gap_to_target": 0.023403172236948433,
+  "gate_modified": false,
+  "gate_version": "M270_MONTHLY_GATE_v1_frozen_2026-08-04",
+  "incumbent": "M271_MEDIAN4",
+  "incumbent_score": {
+   "ficr": 0.41320978983964385,
+   "group_ficr": {
+    "1": 0.42079521858555724,
+    "2": 0.46863045810963244,
+    "3": 0.3502036928237419
+   },
+   "group_nmae": {
+    "1": 0.13286075292051555,
+    "2": 0.13543735862877082,
+    "3": 0.151750291391336
+   },
+   "one_minus_nmae": 0.8599838656864592,
+   "total": 0.6365968277630516
+  },
+  "lambda_of_median_combiner": {
+   "mean": 0.6094105705497173,
+   "median": 0.669591349984956
+  },
+  "lambda_range_across_strata": 0.7827501852860275,
+  "lambda_star_distribution": {
+   "at_one": 0.3265714783214348,
+   "at_zero": 0.4515932439491555,
+   "extreme_mass": 0.7781647222705903,
+   "interior": 0.22183527772940972,
+   "median": 0.23761983364680941
+  },
+  "mean_pairwise_spearman": -0.07559265909871445,
+  "method_sources": [
+   {
+    "applicability": "directly_supported",
+    "cite": "Wolpert (1992) — Stacked Generalization",
+    "claim": "교차검증 예측 위에 상위 학습기를 얹어 결합한다",
+    "id": "wolpert_1992_stacking",
+    "use": "fold-외 추정 설계의 근거"
+   },
+   {
+    "applicability": "directly_supported",
+    "cite": "Breiman (1996), Machine Learning — Stacked Regressions",
+    "claim": "비음·합1 가중치는 추정량을 **보간적**으로 만들어 min<=pred<=max 를 보장하고, 그 제약이 최고 단일 모델 선택보다 나은 정확도의 이유다",
+    "id": "breiman_1996_stacked_regressions",
+    "use": "결합을 가중치 4 개가 아니라 **봉투 안 위치 lambda 1 개**로 재좌표화. 사이클 19 의 봉투 오라클이 곧 이 제약 스태킹의 천장임을 확정"
+   },
+   {
+    "applicability": "contradicts_premise",
+    "cite": "forecast combination puzzle (Clemen 1989 이후 반복 확인)",
+    "claim": "추정 가중치는 흔히 단순평균에 진다",
+    "id": "forecast_combination_puzzle",
+    "use": "자유 회귀를 기각하고 **층별 상수 lambda** 로 자유도를 최소화"
+   }
+  ],
+  "node": "C1N25_ENVELOPE_LAMBDA",
+  "parent_node": "C1N19_ENVELOPE_ORACLE",
+  "predeclared_check": {
+   "H1_expectation": "lambda* 양극단 질량 >= 0.60",
+   "H1_held": true,
+   "H1_measured": 0.7781647222705903,
+   "H2_expectation": "층별 lambda 중앙값 층간 범위 >= 0.15",
+   "H2_held": true,
+   "H2_measured": 0.7827501852860275,
+   "H3_expectation": "fold 쌍 Spearman 평균 >= 0.50",
+   "H3_held": false,
+   "H3_measured": -0.07559265909871445,
+   "H4_expectation": "적어도 하나가 Total 개선 + 게이트 통과",
+   "H4_held": false,
+   "chosen": null,
+   "verdict": "EXTRACTION_AXIS_CLOSED_LAMBDA_UNPREDICTABLE"
+  },
+  "promoted_total": 0.6365968277630516,
+  "strata": [
+   {
+    "lambda_mean": 0.38195798063226966,
+    "lambda_median": 0.0,
+    "rows": 432,
+    "stratum": "3|(0.7, 1.1]|mid"
+   },
+   {
+    "lambda_mean": 0.43498595225652703,
+    "lambda_median": 0.0,
+    "rows": 186,
+    "stratum": "3|(0.45, 0.7]|lo"
+   },
+   {
+    "lambda_mean": 0.4320072354127845,
+    "lambda_median": 0.0,
+    "rows": 249,
+    "stratum": "1|(0.25, 0.45]|lo"
+   },
+   {
+    "lambda_mean": 0.36494387149306184,
+    "lambda_median": 0.0,
+    "rows": 816,
+    "stratum": "2|(0.7, 1.1]|lo"
+   },
+   {
+    "lambda_mean": 0.3737793059990946,
+    "lambda_median": 0.0,
+    "rows": 303,
+    "stratum": "2|(0.45, 0.7]|mid"
+   },
+   {
+    "lambda_mean": 0.42225612522291034,
+    "lambda_median": 0.0,
+    "rows": 172,
+    "stratum": "2|(0.45, 0.7]|lo"
+   },
+   {
+    "lambda_mean": 0.40427234377151783,
+    "lambda_median": 0.0,
+    "rows": 251,
+    "stratum": "3|(0.7, 1.1]|lo"
+   },
+   {
+    "lambda_mean": 0.372394071165121,
+    "lambda_median": 0.004951697003553439,
+    "rows": 405,
+    "stratum": "2|(0.7, 1.1]|mid"
+   },
+   {
+    "lambda_mean": 0.41779462113790267,
+    "lambda_median": 0.007903913451191853,
+    "rows": 345,
+    "stratum": "3|(0.45, 0.7]|mid"
+   },
+   {
+    "lambda_mean": 0.46616629700991213,
+    "lambda_median": 0.023163082437269118,
+    "rows": 185,
+    "stratum": "2|(0.25, 0.45]|lo"
+   },
+   {
+    "lambda_mean": 0.3996373318290048,
+    "lambda_median": 0.04310066508771412,
+    "rows": 387,
+    "stratum": "1|(0.25, 0.45]|mid"
+   },
+   {
+    "lambda_mean": 0.4183076898614586,
+    "lambda_median": 0.04792592592592414,
+    "rows": 363,
+    "stratum": "1|(0.1, 0.25]|lo"
+   },
+   {
+    "lambda_mean": 0.41674836110393304,
+    "lambda_median": 0.0875215423801079,
+    "rows": 332,
+    "stratum": "3|(0.25, 0.45]|mid"
+   },
+   {
+    "lambda_mean": 0.43136721258658545,
+    "lambda_median": 0.09107343511975229,
+    "rows": 315,
+    "stratum": "2|(0.25, 0.45]|mid"
+   },
+   {
+    "lambda_mean": 0.40053161327128234,
+    "lambda_median": 0.0956468233102343,
+    "rows": 271,
+    "stratum": "3|(0.45, 0.7]|hi"
+   },
+   {
+    "lambda_mean": 0.4179900898702757,
+    "lambda_median": 0.12916169263321994,
+    "rows": 399,
+    "stratum": "3|(0.7, 1.1]|hi"
+   },
+   {
+    "lambda_mean": 0.3735799993930619,
+    "lambda_median": 0.1869947044182729,
+    "rows": 184,
+    "stratum": "2|(0.25, 0.45]|hi"
+   },
+   {
+    "lambda_mean": 0.39857671264651146,
+    "lambda_median": 0.20750357927937707,
+    "rows": 415,
+    "stratum": "2|(0.45, 0.7]|hi"
+   },
+   {
+    "lambda_mean": 0.4829137188209813,
+    "lambda_median": 0.25159004381437067,
+    "rows": 213,
+    "stratum": "3|(0.25, 0.45]|lo"
+   },
+   {
+    "lambda_mean": 0.41325315466230017,
+    "lambda_median": 0.2549003719706039,
+    "rows": 410,
+    "stratum": "1|(0.45, 0.7]|hi"
+   },
+   {
+    "lambda_mean": 0.4575776678012376,
+    "lambda_median": 0.31827711315829443,
+    "rows": 481,
+    "stratum": "1|(0.45, 0.7]|mid"
+   },
+   {
+    "lambda_mean": 0.43542840203140604,
+    "lambda_median": 0.3368588010384054,
+    "rows": 405,
+    "stratum": "2|(0.7, 1.1]|hi"
+   },
+   {
+    "lambda_mean": 0.45256710410914774,
+    "lambda_median": 0.35085617951850606,
+    "rows": 216,
+    "stratum": "3|(0.25, 0.45]|hi"
+   },
+   {
+    "lambda_mean": 0.44470111881397245,
+    "lambda_median": 0.3540533235736817,
+    "rows": 185,
+    "stratum": "1|(0.25, 0.45]|hi"
+   },
+   {
+    "lambda_mean": 0.4785554188134577,
+    "lambda_median": 0.36720478792609756,
+    "rows": 317,
+    "stratum": "3|(0.1, 0.25]|mid"
+   },
+   {
+    "lambda_mean": 0.486217327641809,
+    "lambda_median": 0.42801804620519507,
+    "rows": 391,
+    "stratum": "3|(0.1, 0.25]|lo"
+   },
+   {
+    "lambda_mean": 0.47080499000963805,
+    "lambda_median": 0.44359779982962755,
+    "rows": 382,
+    "stratum": "1|(0.7, 1.1]|hi"
+   },
+   {
+    "lambda_mean": 0.47087150523084237,
+    "lambda_median": 0.4501617852541958,
+    "rows": 111,
+    "stratum": "1|(0.1, 0.25]|hi"
+   },
+   {
+    "lambda_mean": 0.49690624055035176,
+    "lambda_median": 0.4719488595929613,
+    "rows": 402,
+    "stratum": "2|(0.1, 0.25]|lo"
+   },
+   {
+    "lambda_mean": 0.4954356305185254,
+    "lambda_median": 0.49953624992153683,
+    "rows": 476,
+    "stratum": "1|(0.7, 1.1]|mid"
+   },
+   {
+    "lambda_mean": 0.48905132659473205,
+    "lambda_median": 0.5149219446268214,
+    "rows": 281,
+    "stratum": "2|(0.1, 0.25]|mid"
+   },
+   {
+    "lambda_mean": 0.5053540255143855,
+    "lambda_median": 0.5405296357398158,
+    "rows": 128,
+    "stratum": "3|(0.1, 0.25]|hi"
+   },
+   {
+    "lambda_mean": 0.5143758348253311,
+    "lambda_median": 0.5548710673595771,
+    "rows": 117,
+    "stratum": "2|(0.1, 0.25]|hi"
+   },
+   {
+    "lambda_mean": 0.5118596417070573,
+    "lambda_median": 0.5874093027555156,
+    "rows": 377,
+    "stratum": "1|(0.7, 1.1]|lo"
+   },
+   {
+    "lambda_mean": 0.5363203708446941,
+    "lambda_median": 0.622870456058992,
+    "rows": 364,
+    "stratum": "1|(0.1, 0.25]|mid"
+   },
+   {
+    "lambda_mean": 0.5142999272884148,
+    "lambda_median": 0.7827501852860275,
+    "rows": 220,
+    "stratum": "1|(0.45, 0.7]|lo"
+   }
+  ]
+ },
+ "schema_version": 1,
+ "script_sha256": "2b367070accf426214dc96217da6b693e801b7893173683e7cf6f63770724e41",
+ "stage": "M271_P4_CYCLE25_LAMBDA"
+}

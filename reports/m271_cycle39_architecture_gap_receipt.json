@@ -1,0 +1,69 @@
+{
+ "dacon_upload": false,
+ "decided_utc": "2026-08-04T11:18:50.428330+00:00",
+ "external_actions": [],
+ "lane": "L3",
+ "lockbox_reopened": false,
+ "model_fits": 0,
+ "new_2024_evaluation": false,
+ "node": "C1N39_ARCHITECTURE_GAP",
+ "report_sha256": "e93128a963ece684bddf98ea0c66184c7a7992875f61295a5e75a6b3e620201e",
+ "result": {
+  "admissibility_rule": "test_features.parquet 에 존재하거나 grid/geometric 유래여야 하고, SCADA 병합 컬럼(scada_ws)은 학습기간 전용이라 제외",
+  "coverage_delta": 0.0007260000000000044,
+  "gate_touched": false,
+  "leak_size": 0.11375500000000005,
+  "lockbox_used": false,
+  "measured": {
+   "best_fixed_policy": {
+    "name": "M115_XGBOOST@T0.6_G0.2",
+    "total": 0.63031
+   },
+   "clean_87_features": {
+    "features": 87,
+    "includes_scada_ws": false,
+    "total": 0.541677
+   },
+   "clean_full_features": {
+    "features": 1347,
+    "ficr": 0.257885,
+    "includes_scada_ws": false,
+    "one_minus_nmae": 0.826922,
+    "total": 0.542403
+   },
+   "deployed_classifier_policy": {
+    "name": "M269_PROBE_TOP100@T0.5_G1.5",
+    "total": 0.628605
+   },
+   "leaked_full_features": {
+    "features": 1348,
+    "includes_scada_ws": true,
+    "reason": "scada_ws 는 관측 나셀풍속. actual_kwh 와 상관 0.9266, 평가기간 부재",
+    "status": "RETRACTED",
+    "total": 0.656158
+   }
+  },
+  "new_training": false,
+  "node": "C1N39_ARCHITECTURE_GAP",
+  "parent_node": "C1N38_BAND_LOSS_FIXED",
+  "predeclared_check": {
+   "H1_expectation": "전체피처 vs 87피처 차이 <= 0.005",
+   "H1_held": true,
+   "H1_measured": 0.0007260000000000044,
+   "H2_expectation": "회귀기가 배포 대비 0.05 이상 열세",
+   "H2_held": true,
+   "H2_measured": 0.086202,
+   "H3_expectation": "누출판 - 비누출판 >= 0.1",
+   "H3_held": true,
+   "H3_measured": 0.11375500000000005,
+   "loss_axis_status": "UNJUDGED — 올바른 실험은 분류기 틀 안에서의 밴드 인지 학습",
+   "verdict": "BAND_LOSS_MISFRAMED_ARCHITECTURE_GAP_DOMINATES"
+  },
+  "retraction_reason": "scada_ws 는 관측 나셀풍속. actual_kwh 와 상관 0.9266, 평가기간 부재",
+  "retracts": "세션 중 관측된 전체피처 회귀기 0.656158",
+  "structural_gap": 0.086202
+ },
+ "schema_version": 1,
+ "script_sha256": "da12914f991a1838df6c0cdac1a25ac05bc8a716b9879687337d4cc10465f5f6",
+ "stage": "M271_P4_CYCLE39_ARCHITECTURE_GAP"
+}

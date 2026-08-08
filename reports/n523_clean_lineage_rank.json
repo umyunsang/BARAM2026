@@ -1,0 +1,112 @@
+{
+ "node": "N523_CLEAN_LINEAGE_RANK",
+ "offset": 0.006554,
+ "rows": [
+  {
+   "stem": "M113_LGBM_DART",
+   "insample_policy": "T0.5_G0.5",
+   "insample": 0.6310993045311954,
+   "foldout": 0.6307327469102272,
+   "contaminated": 0.636375740960913,
+   "pred_online": 0.6372867469102271,
+   "foldout_policies": {
+    "dev-2023-Q2": "T0.5_G0.35",
+    "dev-2023-Q3": "T0.5_G0.35",
+    "dev-2023-Q4": "T0.5_G0.5"
+   }
+  },
+  {
+   "stem": "M115_XGBOOST",
+   "insample_policy": "T0.6_G0.35",
+   "insample": 0.6306622974810827,
+   "foldout": 0.6299491865884773,
+   "contaminated": 0.6384100891518975,
+   "pred_online": 0.6365031865884773,
+   "foldout_policies": {
+    "dev-2023-Q2": "T0.6_G0.35",
+    "dev-2023-Q3": "T0.6_G0.35",
+    "dev-2023-Q4": "T0.6_G0.2"
+   }
+  },
+  {
+   "stem": "M102_TOP100",
+   "insample_policy": "T0.5_G1.5",
+   "insample": 0.6298962296336882,
+   "foldout": 0.6298962296336882,
+   "contaminated": 0.6305886378922547,
+   "pred_online": 0.6364502296336881,
+   "foldout_policies": {
+    "dev-2023-Q2": "T0.5_G1.5",
+    "dev-2023-Q3": "T0.5_G1.5",
+    "dev-2023-Q4": "T0.5_G1.5"
+   }
+  },
+  {
+   "stem": "M72_BIN020",
+   "insample_policy": "T0.6_G0.35",
+   "insample": 0.6276892133671192,
+   "foldout": 0.6276892133671192,
+   "contaminated": 0.6276961341085303,
+   "pred_online": 0.6342432133671192,
+   "foldout_policies": {
+    "dev-2023-Q2": "T0.6_G0.35",
+    "dev-2023-Q3": "T0.6_G0.35",
+    "dev-2023-Q4": "T0.6_G0.35"
+   }
+  },
+  {
+   "stem": "M68_SITEWIND_CLASS_ITER",
+   "insample_policy": "T0.6_G0.75",
+   "insample": 0.6268115272688445,
+   "foldout": 0.6260765627253922,
+   "contaminated": 0.6281790991486262,
+   "pred_online": 0.6326305627253922,
+   "foldout_policies": {
+    "dev-2023-Q2": "T0.6_G1",
+    "dev-2023-Q3": "T0.6_G0.35",
+    "dev-2023-Q4": "T0.6_G0.75"
+   }
+  },
+  {
+   "stem": "M84_LEAVES031",
+   "insample_policy": "T0.6_G0.5",
+   "insample": 0.6243088333213492,
+   "foldout": 0.6238830352625359,
+   "contaminated": 0.6248799725541889,
+   "pred_online": 0.6304370352625358,
+   "foldout_policies": {
+    "dev-2023-Q2": "T0.6_G0.5",
+    "dev-2023-Q3": "T0.6_G0.35",
+    "dev-2023-Q4": "T0.6_G0.35"
+   }
+  },
+  {
+   "stem": "M64B_ALLWEATHER_SITEWIND_CLASS",
+   "insample_policy": "T0.6_G0.75",
+   "insample": 0.6250962758695154,
+   "foldout": 0.6237641342834361,
+   "contaminated": 0.6262204726529224,
+   "pred_online": 0.6303181342834361,
+   "foldout_policies": {
+    "dev-2023-Q2": "T1_G0.35",
+    "dev-2023-Q3": "T0.6_G0.75",
+    "dev-2023-Q4": "T0.75_G0.5"
+   }
+  },
+  {
+   "stem": "M96_ORDINAL_CUMULATIVE",
+   "insample_policy": "T0.85_G1.25",
+   "insample": 0.6251620496094138,
+   "foldout": 0.6231471459126996,
+   "contaminated": 0.6270291079337966,
+   "pred_online": 0.6297011459126995,
+   "foldout_policies": {
+    "dev-2023-Q2": "T0.85_G0.75",
+    "dev-2023-Q3": "T0.85_G1.25",
+    "dev-2023-Q4": "T0.6_G0.75"
+   }
+  }
+ ],
+ "model_fits": 0,
+ "dacon_upload": false
+}

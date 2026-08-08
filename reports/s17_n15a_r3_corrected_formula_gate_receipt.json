@@ -1,0 +1,221 @@
+{
+  "schema_version": 1,
+  "node_id": "S17-N15A_R3_CORRECTED_PRIMARY_FORMULA_IDENTIFIABILITY_GATE",
+  "closed_at": "2026-08-08T21:39:54.158081+09:00",
+  "predeclaration": {
+    "path": "reports/s17_n15a_r3_corrected_formula_gate_predeclaration.json",
+    "sha256": "a264302498c1c959e33c3a49a5faf1c4aa9744ce5ce266af31f752e67e658d02",
+    "event_sha256": "3a4f2bd268d6434a846f10346b3f15e9c3ea12f49049baa0162f1287db799508"
+  },
+  "implementation": {
+    "path": "scripts/audit_kmapp_corrected_formula_gate.py",
+    "sha256": "9fc939c7403a489a9dcaf6d8ab27442b65f723c50b61932590e62abca5ef0f52"
+  },
+  "input_bundle_sha256": "8d1602558e6ef7e96d30b24fb67768fdb029f7d005b5374dace2f2dc33234c9f",
+  "artifact": {
+    "path": "artifacts/audits/s17_n15a_r3_corrected_formula_gate.json",
+    "sha256": "9200ab9514119e29f0c276be8aef34e9397258ca205c68a3f825a57d75271b52",
+    "reproduction_sha256": "9200ab9514119e29f0c276be8aef34e9397258ca205c68a3f825a57d75271b52",
+    "byte_identical": true
+  },
+  "findings": {
+    "primary_equation_excerpt": "uHCz=uhHCezH,",
+    "dimensional_audit": {
+      "declared_units": {
+        "equation_2": "delta_u_HC(z) = u(h_HC) * exp(-kappa*z) * delta_H_HC",
+        "equation_3": "h_HC = 1/kappa",
+        "equation_4": "kappa = pi * (A_over_S) / (H_over_2)",
+        "delta_height_unit": "metre",
+        "u_unit": "metre_per_second",
+        "kappa_unit": "inverse_metre"
+      },
+      "symbolic_dimensions": {
+        "lhs_delta_u": {
+          "length_power": 1,
+          "time_power": -1
+        },
+        "rhs_printed": {
+          "length_power": 2,
+          "time_power": -1
+        }
+      },
+      "passes": false,
+      "unprinted_factor_inserted": false
+    },
+    "observability_audit": {
+      "supplied_ldaps_comparable_mean_vector_heights_m": [
+        5,
+        10
+      ],
+      "ldaps_50m_component_extrema_not_mean_vectors": {
+        "ldaps_50_max": true,
+        "ldaps_50_min": true
+      },
+      "primary_prescribes_exact_reconstruction_from_supplied_5_10m_vectors": false,
+      "u_hhc_observable": false,
+      "forbidden_substitutions_used": []
+    },
+    "gates": {
+      "exact_print_detected": true,
+      "dimensional_consistency_without_inserting_unprinted_factor": false,
+      "u_hhc_observable_from_supplied_same_source_mean_vectors": false
+    }
+  },
+  "adjudication": "REFUTED as an exact zero-fit published treatment before DEM extraction. Printed Eq.2 has velocity times height on its RHS and is dimensionally inconsistent without inserting an unprinted inverse-length factor. Separately, u(h_HC) is defined as LDAPS forecast wind at the reference height, but supplied comparable LDAPS means are only 5/10 m and the 50 m fields are extrema; the paper does not prescribe an exact reconstruction from them. Either failure is sufficient. No GLO-30 tile body/value was read.",
+  "actions": {
+    "dem_tile_get_or_range_requests": 0,
+    "dem_tile_body_bytes": 0,
+    "archive_weather_value_rows": 0,
+    "model_fits": 0,
+    "official_score_calls": 0,
+    "target_or_scada_access": false,
+    "test_member_access": false,
+    "lockbox_2024_performance_access": false,
+    "dacon_actions": []
+  },
+  "verification": {
+    "compile": "pass",
+    "ruff": "All checks passed",
+    "deterministic_reproduction": true,
+    "event_chain_verified": true
+  },
+  "preclose_snapshot": {
+    "pending": [
+      "S17-N15A_R3_CORRECTED_PRIMARY_FORMULA_IDENTIFIABILITY_GATE"
+    ],
+    "closed": [
+      "S17-N10B_ISSUANCE_CUBE_2022_2023_CORRECTED_AUDIT",
+      "S17-N10_ISSUANCE_CUBE_TIMING_AND_MISSINGNESS_AUDIT",
+      "S17-N11A_FOUR_MAPPING_10MIN_SCADA_CORRECTED_DIAGNOSTIC",
+      "S17-N11_FOUR_MAPPING_TRAINING_WIND_DIAGNOSTIC",
+      "S17-N12_VERTICAL_PROFILE_TERRAIN_PREREQUISITE_AUDIT",
+      "S17-N13A_R2_NO_REFIT_TYPED_PROVENANCE_RECOVERY",
+      "S17-N13_R2_TWO_COMPONENT_VERTICAL_PCA_STRICT_PREQUENTIAL",
+      "S17-N14_R3_HEIGHT_ONLY_TERRAIN_PREREQUISITE_AUDIT",
+      "S17-N15_R3_COPERNICUS_GLO30_STATIC_EXTRACTION_AND_FORMULA_FREEZE",
+      "S17-N2_EVENT_LEDGER_ENVELOPE",
+      "S17-N3_STRICT_PREQUENTIAL_EVALUATION_REPAIR",
+      "S17-N4_ECMWF_18Z_FIXED_LEAD_AUDIT",
+      "S17-N5_ECMWF_18Z_2023_EXTRACTION",
+      "S17-N5_ECMWF_18Z_2023_INNOVATION_PROBE",
+      "S17-N6A_FAIL_CLOSED_SCORE_CLASS_REPAIR",
+      "S17-N6_COST5_SPO_PLUS_PREQUENTIAL",
+      "S17-N7_STRICT_ACTION_PROVENANCE_RECONSTRUCTION",
+      "S17-N8_COST5_SPO_PLUS_STRICT_PREQUENTIAL_COMPARISON",
+      "S17-N9_COST5_NO_REFIT_MATERIALIZATION_RECOVERY"
+    ],
+    "legacy": [
+      "C1N100_NOVEL_MEMBER_PROBE",
+      "C1N101_PHYSICAL_MEMBER_PROBE",
+      "C1N102_RETRIEVAL_MEMBER",
+      "C1N103_EXTERNAL_NWP_MEMBER",
+      "C1N104_M244_KEY_RECOVERED",
+      "C1N105_M244_RECIPE_READ",
+      "C1N10_BLEND_LOCALITY",
+      "C1N11_V2_REPRESENTATION",
+      "C1N12_G3_HISTORY",
+      "C1N13_ENSEMBLE_VARIANCE",
+      "C1N14_SHRINKBLEND",
+      "C1N15_WALKFORWARD",
+      "C1N16_ROBUSTNESS_AUDIT",
+      "C1N17_METRIC_ALIGNED_COMBINER",
+      "C1N18_SPREAD_SKILL",
+      "C1N19_ENVELOPE_ORACLE",
+      "C1N1_TOPRATE_MECHANISM",
+      "C1N20_ALPHA_ENDPOINT",
+      "C1N21_MOS_BIAS_CORRECTION",
+      "C1N22_GLOBAL_SHIFT",
+      "C1N23_ELIGIBLE_MOS",
+      "C1N24_MEMBER_COUNT_REOPEN",
+      "C1N25_ENVELOPE_LAMBDA",
+      "C1N26_POOL_WIDTH_SCREEN",
+      "C1N27_RESIDUAL_SIGNAL",
+      "C1N28_PERGRID_SIGNAL",
+      "C1N29_CHAMPION_AUDIT",
+      "C1N2_COLLIDER_CORRECTED",
+      "C1N30_TEMPORAL_SIGNAL",
+      "C1N31_SPACE_TIME",
+      "C1N32_LOCKBOX_OPERATOR",
+      "C1N33_SINGLE_VS_ENSEMBLE",
+      "C1N34_SHRINK_TO_BEST",
+      "C1N35_FIXED_POLICY_CORRECTION",
+      "C1N36_SOURCE_SENSITIVITY",
+      "C1N37_BAND_ALIGNED_LOSS",
+      "C1N38_BAND_LOSS_FIXED",
+      "C1N39_ARCHITECTURE_GAP",
+      "C1N3_MASS_AXIS_WIND_SECTOR",
+      "C1N40_BAND_CLASSIFIER",
+      "C1N41_BAND_CLASSIFIER_CAPACITY",
+      "C1N42_TEACHER_RESTORED",
+      "C1N43_EFFECT_TREND",
+      "C1N44_SHARPENED_DECISION",
+      "C1N45_SUBMISSION_DECISION",
+      "C1N46_CLOSURE_FALSIFICATION",
+      "C1N47_EXTERNAL_NWP_REVIVED",
+      "C1N48_MODEL_VALIDATION",
+      "C1N49_RHO_ACCEPTANCE",
+      "C1N4_BAND_CONDITIONAL_POLICY_ORACLE",
+      "C1N50_NONNEGATIVE_WEIGHTS",
+      "C1N51_EXTERNAL_SOURCE_PROBE",
+      "C1N52_EXTERNAL_CLOSURE",
+      "C1N53_SUPPLIED_EXTRACTION",
+      "C1N54_SCATTER_CEILING",
+      "C1N55_TURBINE_CORRELATION",
+      "C1N56_MEASURED_POWERCURVE",
+      "C1N57B_VARIANCE_LAW",
+      "C1N57_FICR_CEILING",
+      "C1N58_TEACHER_OOF_SPLIT",
+      "C1N59_PERFECT_PROG_BOUND",
+      "C1N5_SPATIAL_INTERPOLATION",
+      "C1N60_LEVEL_TEMPERATURE",
+      "C1N61_GRID_BOUNDARY",
+      "C1N62_MONTH_MECHANISM",
+      "C1N64_BAND_AVOIDANCE",
+      "C1N65_WIND_LIMITED_BOUND",
+      "C1N66_HETEROSCEDASTIC_WIND",
+      "C1N67_EXACT_CURVE_PROPAGATION",
+      "C1N69_SKILL_RESPONSE",
+      "C1N6_WIND50_MIDPOINT",
+      "C1N70_BASELINE_CORRECTION",
+      "C1N71_TEACHER_WEIGHT",
+      "C1N72_CURVE_BLEND",
+      "C1N74_BLOCK_LENGTH",
+      "C1N75_DAILY_GATE_ESTIMAND",
+      "C1N7_POLICY_FROZEN_GATE",
+      "C1N81_CYCLE_CONTRACT_ENFORCED",
+      "C1N8_ORACLE_LADDER",
+      "C1N92_METRIC_ALIGNED_LOSS",
+      "C1N93_ORDINAL_REPRESENTATION",
+      "C1N94_CDF_REJUDGE",
+      "C1N95_RECONSTRUCTION_GAP",
+      "C1N96_GAP_REJUDGE",
+      "C1N97_BOOSTING_ROUNDS",
+      "C1N98_REPRODUCIBILITY_ADJUDICATION",
+      "C1N99_ENSEMBLE_EXHAUSTIVE",
+      "C1N9_GATE_POWER"
+    ],
+    "comparison_count": 2,
+    "stage_coverage": [
+      "S1",
+      "S2",
+      "S3",
+      "S5",
+      "S6",
+      "S7",
+      "S8",
+      "S9",
+      "S10",
+      "S11"
+    ],
+    "frontier": [
+      "S17-N15A_R3_CORRECTED_PRIMARY_FORMULA_IDENTIFIABILITY_GATE"
+    ],
+    "evidence_complete_cycles": 19,
+    "accounted_cycles": 108,
+    "digest": "0b6e863d397ef74279b4bab8ff1721115276ffe113ecb34e0af826e79753c4cd"
+  },
+  "verdict": "REFUTED_R3_EXACT_PUBLISHED_TREATMENT_UNIDENTIFIED_NO_DEM_GET_NOT_MODEL_SCORE",
+  "next_handoff": [
+    "S17-N16_R4_SOURCE_SEPARATED_VS_CONCAT_PREREQUISITE_AUDIT"
+  ]
+}

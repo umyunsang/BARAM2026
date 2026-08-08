@@ -9,6 +9,7 @@ import pandas as pd
 from baram.contracts.hashing import canonical_sha256
 from baram.contracts.types import GroupId, QualityReceipt
 from baram.data.canonical import CanonicalTables
+from baram.data.turbines import group_static_metadata, validate_turbine_topology
 from baram.exceptions import DataQualityError
 
 
@@ -61,6 +62,10 @@ def audit_quality(
         .tolist()
     )
     findings: dict[str, Any] = {
+        "turbine_topology": validate_turbine_topology(tables.turbines),
+        "group_static_metadata": group_static_metadata(tables.turbines).to_dict(
+            orient="records"
+        ),
         "label_null_counts": null_counts,
         "label_negative_counts": negative_counts,
         "label_over_capacity_counts": over_capacity_counts,
@@ -85,6 +90,19 @@ def audit_quality(
         findings["gfs_blank_cells"] == {"train": 0, "test": 0}
         and findings["ldaps_train_blank_cells"] == 0
         and negative_counts == {1: 0, 2: 0, 3: 0}
+        and all(
+            abs(
+                float(
+                    tables.turbines.loc[
+                        tables.turbines["group_id"].eq(group), "group_capacity_mw"
+                    ].iloc[0]
+                )
+                * 1000.0
+                - float(capacities[group])
+            )
+            < 1e-9
+            for group in (1, 2, 3)
+        )
     )
     if not critical_ok:
         raise DataQualityError("critical supplied-data fixture mismatch")

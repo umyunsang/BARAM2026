@@ -1,0 +1,43 @@
+{
+  "event_type": "PREDECLARED",
+  "cycle_id": "S17-N24_SECONDARY_FRONTIER_RESEARCH_INTAKE",
+  "stage_id": "S1",
+  "node_id": "S17-N24_SECONDARY_FRONTIER_RESEARCH_INTAKE",
+  "actor": "root",
+  "occurred_at": "2026-08-09T00:17:42.855795+09:00",
+  "body": {
+    "preregistration_sha256": "c8f7a8dc3c861aaaf417b952c8411c246949364f8b95e5b874ca3330d716ba24",
+    "parent_ids": [
+      "S17-N23_POST_TERRAIN_FRONTIER_RESEARCH_INTAKE"
+    ],
+    "mechanism": "N23 found no exact treatment; a second independent frontier intake may expose unused issued inputs, a coefficient-complete physical transform, or a genuinely different pre-cutoff basis-safe information source.",
+    "treatment": "Five bounded evidence-tagged research lanes with at most one exact no-fit prerequisite handoff.",
+    "control": "Closed-axis ledger, unchanged Champion 0.6314827308346854, and zero fit/score/action/data-body/prohibited-period access.",
+    "metric": "Root source/applicability/chronology/licence/deployment/nonduplication gate only; no official Total.",
+    "min_effect": 0.0,
+    "score_bearing": false,
+    "novelty_signature": "S17N24_SECONDARY_FRONTIER_UNUSED_ISSUED_PHYSICAL_CFSV2_CURTAILMENT_OPEN_FLOW_V1",
+    "basis_evidence_ids": [
+      "AGENTS.md:91a11f95f94e8de86f5c84b204e1893830b3ed5693e3d7ede7f2e351e9891e9c",
+      "artifacts/manifests/prepare.json:ca4908d7f98639b13da80febcd071cd805369e8e044bb4d7b97f793d2703ca46",
+      "inputs/competition/open_wind_236727.zip:920be0c458d820e855bf79dd25723146f52ce1736138aedba5e6bc853f1f720b",
+      "inputs/notebooks/baseline.ipynb:712b26f4d2748860c94cff1e0100c23810468c983173f8e9ef8d009fe82df48c",
+      "reports/s17_n23_post_terrain_frontier_intake_closed_event.json:6cc9da73394ba0f3013c1b86cb72e58bebafaee905b2664a382817973140a4df",
+      "reports/s17_n23_post_terrain_frontier_intake_receipt.json:60f5cd8129c9a523cf259fe5176b42e199e7459b9f079f629fdcb23209c7730f",
+      "research/lanes/s17_n23_landcover_roughness.md:c0ecda2a510b42c5168ad3234913f951e1eb13c3dbd5d12c52c4b68e0a311b21",
+      "research/lanes/s17_n23_operational_nwp.md:a38571290fcdeeb37a400ad44c21ce22ac0adf8924fafa8dcd0d8d51dda99bf7",
+      "research/lanes/s17_n23_power_wake_static.md:a58f2f0b245ee71a285a96ae0ab336395b3c5aacda72aaf4ec03ee4273cc08c6",
+      "research/lanes/s17_n23_repo_mechanism.md:f9d3bac2a09a672e7068298d8faf32319fff15a511be1e36cdba9611e3126518",
+      "research/lanes/s17_n23_site_mapped_terrain.md:9a491086b8cb4b098772cffa0e89c82552f3c211a347108e2ea1babb053351b8",
+      "research/rwa_data_feature_research.md:16351bb387dfebf0dc7ccdc6ef0e8ec77406964bf3d0b40c52fcdc3496284504",
+      "research/rwa_external_eligibility.md:958ea7a0b96371b6d773920038ec8d6e07e7903b4b26f5dd8443dd6d354bf4e5",
+      "research/rwa_model_decision_research.md:0626868e9fbb6818021be659d719f7a95d53f829bb48f310aaac917de9734c7a",
+      "src/baram/constants.py:f4fbf5c6772d021436f9b40459a2587f8223d597045d7fe9c48c9428e1702843",
+      "src/baram/data/turbines.py:85051ef49d5820697f92dfd4ba1311fbdf7b91753a0d8fe36a636613deb1d6b1",
+      "src/baram/features/geometric.py:86e977ed4167c3f9229d0ef017da678cf709fdf39fe774f908a2edc1182406d4",
+      "src/baram/features/physics.py:881443f644acf802c8a222fedc7a0f7062fc2345d44580b01124bbfd9a2358bf",
+      "src/baram/features/spatial.py:37c31ccb17beedc01d0b6e7e3210d821bc4dcdc6e860c76dc38fea77aa64c092",
+      "src/baram/features/weather.py:d65a18fdf0b025d1863c783d5997f77824a3347ab87e78a4357fe2afeb2d1905"
+    ]
+  }
+}

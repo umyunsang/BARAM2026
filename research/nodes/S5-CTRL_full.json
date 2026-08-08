@@ -1,0 +1,18 @@
+{
+ "node_id": "S5-CTRL",
+ "tag": "no preprocessing treatment (control)",
+ "protocol": "full expanding-window, pooled dev-2023",
+ "insample_best": 0.6039471788213986,
+ "insample_policy": "T1.0_G2.0",
+ "one_minus_nmae": 0.8605019708608868,
+ "ficr": 0.3473923867819105,
+ "foldout": 0.6037271621882727,
+ "foldout_1mnmae": 0.8603830876332991,
+ "foldout_ficr": 0.34707123674324647,
+ "foldout_policies": {
+  "dev-2023-Q2": "T0.4_G1.5",
+  "dev-2023-Q3": "T0.4_G2.0",
+  "dev-2023-Q4": "T0.4_G2.0"
+ },
+ "deployed_reference": 0.6298962296336882
+}

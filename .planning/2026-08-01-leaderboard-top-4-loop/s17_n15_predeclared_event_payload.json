@@ -1,0 +1,26 @@
+{
+  "event_type": "PREDECLARED",
+  "cycle_id": "S17-N15_R3_COPERNICUS_GLO30_STATIC_EXTRACTION_AND_FORMULA_FREEZE",
+  "stage_id": "S5",
+  "node_id": "S17-N15_R3_COPERNICUS_GLO30_STATIC_EXTRACTION_AND_FORMULA_FREEZE",
+  "actor": "root",
+  "occurred_at": "2026-08-08T21:34:51.390717+09:00",
+  "body": {
+    "preregistration_sha256": "5a22ec6d2455f88b167160466fb1f1155e966dd4e59efe0ef57f13e0884cf700",
+    "parent_ids": [
+      "S17-N14_R3_HEIGHT_ONLY_TERRAIN_PREREQUISITE_AUDIT"
+    ],
+    "mechanism": "The published height correction is zero-choice only if its required u(h_HC) forecast wind is directly reconstructible from supplied same-source vertical vectors; terrain metadata alone is insufficient.",
+    "treatment": "Primary-formula identifiability gate before conditional GLO-30 extraction.",
+    "control": "Current uncorrected LDAPS feature surface.",
+    "metric": "Boolean exact-equation and u(h_HC) identifiability gates; no model score.",
+    "min_effect": 0.0,
+    "score_bearing": false,
+    "novelty_signature": "R3_KMAPP_EXACT_FORMULA_IDENTIFIABILITY_BEFORE_DEM_GET_V1",
+    "basis_evidence_ids": [
+      "KMAPP_2021_PRIMARY_PDF",
+      "S17_N12_VERTICAL_LEVEL_AUDIT",
+      "S17_N14_STATIC_ELIGIBILITY"
+    ]
+  }
+}

@@ -1,0 +1,79 @@
+{
+ "node": "C1N41_REJUDGE_M278",
+ "model_fits": 6,
+ "v1_reproduction": false,
+ "repro": {
+  "BAND": {
+   "dev-2023-Q2": 0.5965692367188797,
+   "dev-2023-Q3": 0.5857269997651584,
+   "dev-2023-Q4": 0.5954652295547637
+  },
+  "CONTROL": {
+   "dev-2023-Q2": 0.5807629486268431,
+   "dev-2023-Q3": 0.5715268789311527,
+   "dev-2023-Q4": 0.5915549796680296
+  }
+ },
+ "flat_rule": {
+  "BAND": 0.5942398270770102,
+  "CONTROL": 0.584468106910679
+ },
+ "flat_effect": 0.00977172016633121,
+ "optimised": {
+  "BAND": {
+   "total": 0.5912746017389923,
+   "one_minus_nmae": 0.8438049763699286,
+   "ficr": 0.3387442271080561
+  },
+  "CONTROL": {
+   "total": 0.5909001553439482,
+   "one_minus_nmae": 0.8422867418757937,
+   "ficr": 0.33951356881210276
+  }
+ },
+ "optimised_effect": 0.00037444639504402577,
+ "policies": {
+  "BAND": {
+   "dev-2023-Q2": [
+    1.0,
+    4.0
+   ],
+   "dev-2023-Q3": [
+    1.8,
+    0.5
+   ],
+   "dev-2023-Q4": [
+    1.6,
+    0.5
+   ]
+  },
+  "CONTROL": {
+   "dev-2023-Q2": [
+    1.4,
+    1.5
+   ],
+   "dev-2023-Q3": [
+    1.8,
+    1.0
+   ],
+   "dev-2023-Q4": [
+    1.6,
+    1.0
+   ]
+  }
+ },
+ "mean_T": {
+  "BAND": 1.4666666666666668,
+  "CONTROL": 1.6000000000000003
+ },
+ "verdict": "BAND_GAIN_IS_CALIBRATION_ARTIFACT",
+ "predeclared": {
+  "V1": "archive reproduce 1e-9",
+  "H1": "effect shrinks",
+  "H2": "shrink>50%",
+  "H3": "T_CONTROL>T_BAND"
+ },
+ "lockbox_reopened": false,
+ "dacon_upload": false,
+ "external_actions": []
+}

@@ -1,0 +1,34 @@
+{
+  "event_type": "CLOSED",
+  "cycle_id": "S17-N28_TRADERES_FULLTEXT_SCALAR_GRADIENT_REOPEN_AUDIT",
+  "stage_id": "S6",
+  "node_id": "S17-N28_TRADERES_FULLTEXT_SCALAR_GRADIENT_REOPEN_AUDIT",
+  "actor": "root",
+  "occurred_at": "2026-08-09T04:25:18.341929+09:00",
+  "body": {
+    "predeclared_event_sha256": "d888ad931837acd363a05a878b5a83d307493502fab46eee551edfcc7891df2f",
+    "receipt_path": "reports/s17_n28_traderes_fulltext_reopen_audit_receipt.json",
+    "receipt_sha256": "79b76f9c796432f9aa5f259a699bf54116644fcc23e674df963778ae9c6d7bc2",
+    "code_sha256": "580122f52f57786283f4daa74c7421c70c09de88eb4f91cece1df562a168d9da",
+    "config_sha256": "3ab846b5af236fadb896c6ddf6d90b02e934fe0820438a8316eacf68ded0fedf",
+    "data_sha256": "275ea0251b87db3db7fc2af497bd04f269f68a17ed76ddd67da9cf609670045d",
+    "router_sha256": "80e37561a32fb2928d1a7505b652bb822f5b6989e73b6d7106afb0ae62041b43",
+    "policy_ids": [
+      "N28_TRADERES_FULLTEXT_NONE_RESTORE_EXHAUSTED"
+    ],
+    "row_alignment_keys": [
+      "fold_id",
+      "group_id",
+      "forecast_kst_dtm"
+    ],
+    "evidence_class": "research",
+    "weights_fit": "fixed",
+    "result_status": "INCONCLUSIVE",
+    "score_bearing": false,
+    "comparison_index": null,
+    "stage_evidence_status": "INSUFFICIENT",
+    "next_handoff": [],
+    "lockbox_2024_used": false,
+    "dacon_actions": []
+  }
+}

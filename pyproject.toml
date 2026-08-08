@@ -19,6 +19,31 @@ dependencies = [
 [project.optional-dependencies]
 challenger = ["catboost>=1.2,<2", "xgboost>=2.1,<4"]
 dev = ["pytest>=8,<10", "pytest-cov>=5,<8", "ruff>=0.9,<1"]
+# M270 experiment-control tier. Deliberately kept out of the core contract so the
+# forecasting pipeline's own dependency surface stays unchanged. networkx holds the
+# hypothesis graph; optuna drives the ask-and-tell loop with a persistent study.
+experiment = ["networkx>=3.6,<4", "optuna>=4.9,<5"]
+# M271 excavation-graph tier. LangGraph supplies the three graph-engineering primitives
+# the M271 engine needs: a typed state store with per-channel reducers, conditional
+# edges, and parallel supersteps with dynamic `Send` fan-out. Isolated from the core
+# contract because it pulls 35 packages the forecasting pipeline itself never touches.
+#
+# EXACT pins, unlike every other extra here. The M271 determinism argument rests on
+# behaviour measured on these exact versions in reports/m271_framework_gate.md: parallel
+# branch writes are reduced in node-registration order, not completion order. That is not
+# a documented API guarantee, so a silent minor bump could break reproducibility without
+# failing any test. Re-run the gate before changing a pin.
+graph = ["langgraph==1.2.10", "langgraph-checkpoint-sqlite==3.1.1"]
+# M270 external-NWP tier. Only needed to decode public GRIB2 ensemble-spread messages.
+# Isolated from the core contract so the forecasting pipeline stays decodable without it.
+# eccodeslib carries the compiled ecCodes binaries; the eccodes bindings cannot resolve
+# the library without it and a Homebrew install would be a forbidden system change.
+nwp = [
+  "eccodes>=2.38,<3",
+  "eccodeslib>=2.48,<3",
+  "cfgrib>=0.9.15,<1",
+  "xarray>=2025.1,<2027",
+]
 
 [build-system]
 requires = ["hatchling>=1.26,<2"]

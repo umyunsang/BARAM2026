@@ -1,0 +1,221 @@
+{
+ "dacon_upload": false,
+ "decided_utc": "2026-08-04T07:55:43.958951+00:00",
+ "external_actions": [],
+ "lane": "L2",
+ "lockbox_reopened": false,
+ "model_fit_note": "진단용 fold-외 잔차 모형. 제출 후보가 아니며 2024 행 미사용",
+ "model_fits": 3,
+ "new_2024_evaluation": false,
+ "node": "C1N28_PERGRID_SIGNAL",
+ "report_sha256": "aa3bc73b579680b1895407b459b1a0123af8cc689db3f6846fc08fcfd14e5857",
+ "result": {
+  "design_correction_of": "C1N27_RESIDUAL_SIGNAL H4",
+  "features": {
+   "eligible_rows": 11486,
+   "feature_to_train_row_ratio": 0.1038265639284315,
+   "gfs_grids": 9,
+   "join_rows_lost": 0,
+   "ldaps_grids": 16,
+   "n_features": 795,
+   "rows_used": 19782
+  },
+  "gap_to_target": 0.023403172236948433,
+  "gate": {
+   "bootstrap_q05": -0.034937890022302555,
+   "flags": {
+    "G1": false,
+    "G2": false,
+    "G3": false,
+    "G4": false
+   },
+   "months_scored": 9,
+   "passed": false,
+   "positive_months": 0,
+   "sign_test_p": 1.0
+  },
+  "gate_modified": false,
+  "gate_version": "M270_MONTHLY_GATE_v1_frozen_2026-08-04",
+  "incumbent": "M271_MEDIAN4",
+  "input_hashes": {
+   "open_zip_sha256": "920be0c458d820e855bf79dd25723146f52ce1736138aedba5e6bc853f1f720b"
+  },
+  "model_params": {
+   "colsample_bytree": 0.3,
+   "deterministic": true,
+   "force_row_wise": true,
+   "learning_rate": 0.03,
+   "min_child_samples": 200,
+   "n_estimators": 400,
+   "n_jobs": 1,
+   "num_leaves": 15,
+   "objective": "regression_l1",
+   "random_state": 20260804,
+   "subsample": 0.8,
+   "subsample_freq": 1,
+   "verbose": -1
+  },
+  "node": "C1N28_PERGRID_SIGNAL",
+  "parent_node": "C1N27_RESIDUAL_SIGNAL",
+  "predeclared_check": {
+   "H1_expectation": "격자별 모형 fold-외 R^2 > 0.02",
+   "H1_held": false,
+   "H1_measured": -0.04525449293963879,
+   "H2_expectation": "격자별 R^2 > 격자평균 R^2 (-0.0535)",
+   "H2_held": true,
+   "H3_expectation": "보정이 Total 개선 + 동결 게이트 통과",
+   "H3_held": false,
+   "H4_expectation": "이득 상위 20 중 미선언 >= 3 — **H1 성립시에만 판정**",
+   "H4_held": null,
+   "H4_note": "H1 기각이므로 판정하지 않는다. 일반화하지 못하는 모형의 피처 중요도는 정보의 증거가 아니다 (사이클 27 의 설계 결함 교정)",
+   "a2_premise_flipped": false,
+   "verdict": "L2_LANE_CLOSED_WITHIN_SUPPLIED_NWP"
+  },
+  "promoted_total": 0.6365968277630516,
+  "residual_model": {
+   "fits": 3,
+   "gridmean_r2_reference": -0.0535,
+   "oof_pearson": 0.06469838874983104,
+   "oof_r2": -0.04525449293963879,
+   "top20_by_gain": [
+    {
+     "declared_in_spatial_v2": null,
+     "feature": "group_id",
+     "gain": 2505.625632762909
+    },
+    {
+     "declared_in_spatial_v2": false,
+     "feature": "gfs__surface_0_tp__g4",
+     "gain": 1925.8265767097473
+    },
+    {
+     "declared_in_spatial_v2": false,
+     "feature": "gfs__isobaricInhPa_700_u__g1",
+     "gain": 1781.8756589889526
+    },
+    {
+     "declared_in_spatial_v2": false,
+     "feature": "gfs__surface_0_dlwrf__g3",
+     "gain": 1776.691418170929
+    },
+    {
+     "declared_in_spatial_v2": false,
+     "feature": "gfs__isobaricInhPa_850_u__g5",
+     "gain": 1749.308925628662
+    },
+    {
+     "declared_in_spatial_v2": false,
+     "feature": "gfs__surface_0_dlwrf__g8",
+     "gain": 1579.7518129348755
+    },
+    {
+     "declared_in_spatial_v2": false,
+     "feature": "gfs__isobaricInhPa_500_v__g6",
+     "gain": 1519.9392046928406
+    },
+    {
+     "declared_in_spatial_v2": false,
+     "feature": "gfs__isobaricInhPa_850_v__g7",
+     "gain": 1506.473627090454
+    },
+    {
+     "declared_in_spatial_v2": false,
+     "feature": "gfs__isobaricInhPa_700_u__g2",
+     "gain": 1463.6149406433105
+    },
+    {
+     "declared_in_spatial_v2": true,
+     "feature": "gfs__surface_0_prate__g8",
+     "gain": 1453.9304666519165
+    },
+    {
+     "declared_in_spatial_v2": false,
+     "feature": "gfs__isobaricInhPa_850_u__g4",
+     "gain": 1448.834656238556
+    },
+    {
+     "declared_in_spatial_v2": true,
+     "feature": "gfs__heightAboveGround_2_2r__g3",
+     "gain": 1438.8907799720764
+    },
+    {
+     "declared_in_spatial_v2": false,
+     "feature": "gfs__isobaricInhPa_700_u__g3",
+     "gain": 1430.3101959228516
+    },
+    {
+     "declared_in_spatial_v2": false,
+     "feature": "gfs__surface_0_tp__g2",
+     "gain": 1339.07510471344
+    },
+    {
+     "declared_in_spatial_v2": false,
+     "feature": "gfs__isobaricInhPa_500_v__g9",
+     "gain": 1336.4140191078186
+    },
+    {
+     "declared_in_spatial_v2": false,
+     "feature": "gfs__isobaricInhPa_700_u__g9",
+     "gain": 1309.847912788391
+    },
+    {
+     "declared_in_spatial_v2": false,
+     "feature": "gfs__isobaricInhPa_850_u__g7",
+     "gain": 1282.149242401123
+    },
+    {
+     "declared_in_spatial_v2": true,
+     "feature": "gfs__heightAboveGround_2_2t__g6",
+     "gain": 1267.1617469787598
+    },
+    {
+     "declared_in_spatial_v2": false,
+     "feature": "gfs__lowCloudLayer_0_lcc__g3",
+     "gain": 1247.702473640442
+    },
+    {
+     "declared_in_spatial_v2": false,
+     "feature": "gfs__isobaricInhPa_500_v__g3",
+     "gain": 1242.710069656372
+    }
+   ],
+   "undeclared_in_top20": 16
+  },
+  "scores": {
+   "base": {
+    "ficr": 0.41320978983964385,
+    "group_ficr": {
+     "1": 0.42079521858555724,
+     "2": 0.46863045810963244,
+     "3": 0.3502036928237419
+    },
+    "group_nmae": {
+     "1": 0.13286075292051555,
+     "2": 0.13543735862877082,
+     "3": 0.151750291391336
+    },
+    "one_minus_nmae": 0.8599838656864592,
+    "total": 0.6365968277630516
+   },
+   "corrected": {
+    "ficr": 0.3616340753423839,
+    "group_ficr": {
+     "1": 0.3642452170038928,
+     "2": 0.40781689015590156,
+     "3": 0.31284011886735724
+    },
+    "group_nmae": {
+     "1": 0.13632561522175332,
+     "2": 0.1348616427003431,
+     "3": 0.1551045369847119
+    },
+    "one_minus_nmae": 0.8579027350310638,
+    "total": 0.6097684051867238
+   },
+   "delta_total": -0.02682842257632778
+  }
+ },
+ "schema_version": 1,
+ "script_sha256": "4a3063f2ddfc27b8bbae69f96875fac397ee3e0468cdd0f53170e77b70a9e150",
+ "stage": "M271_P4_CYCLE28_PERGRID"
+}

@@ -1,0 +1,53 @@
+{
+ "dacon_upload": false,
+ "external_actions": [],
+ "first_anchor_m261": {
+  "local": 0.629973,
+  "offset_ficr": 0.012027,
+  "offset_total": 0.006554,
+  "online": 0.6365274327
+ },
+ "local_counterpart": {
+  "ficr": 0.35058665087735097,
+  "one_minus_nmae": 0.8609327070961099,
+  "total": 0.6057596789867304
+ },
+ "lockbox_reopened": false,
+ "measured_offset": {
+  "ficr": 0.037266842922649035,
+  "one_minus_nmae": 0.004970617503890051,
+  "total": 0.0211187302132696
+ },
+ "method": "M244 runner re-run with additive Q2/Q4 persistence; Q3 reproduced the archived hash fb007b62... exactly, so the chain is consistent with current code",
+ "model_fits": 0,
+ "new_2024_evaluation": false,
+ "note": "M252 is the analog lineage, genuinely independent of M261's classifier lineage. No submission was spent; M252's online score was already recorded on 2026-08-03.",
+ "offset_agreement": {
+  "ficr": 0.025239842922649035,
+  "total": 0.014564730213269598
+ },
+ "online_result": {
+  "ficr": 0.3878534938,
+  "one_minus_nmae": 0.8659033246,
+  "total": 0.6268784092
+ },
+ "per_fold": {
+  "dev-2023-Q2": {
+   "ficr": 0.3244392451626785,
+   "one_minus_nmae": 0.8683512707975868,
+   "total": 0.5963952579801326
+  },
+  "dev-2023-Q3": {
+   "ficr": 0.33266143946442206,
+   "one_minus_nmae": 0.8636811652369278,
+   "total": 0.598171302350675
+  },
+  "dev-2023-Q4": {
+   "ficr": 0.3760879915122714,
+   "one_minus_nmae": 0.8533262381598887,
+   "total": 0.6147071148360801
+  }
+ },
+ "schema_version": 1,
+ "stage": "M270_SECOND_ANCHOR_M252"
+}

@@ -1,0 +1,276 @@
+{
+ "node": "N524_UPLOAD_MANIFEST",
+ "rows": [
+  {
+   "file": "submission_M252.csv",
+   "grade": "UPLOADED",
+   "pred": null,
+   "actual": 0.6268784092,
+   "valid": true,
+   "note": ""
+  },
+  {
+   "file": "submission_M261.csv",
+   "grade": "UPLOADED",
+   "pred": null,
+   "actual": 0.6365274327,
+   "valid": true,
+   "note": ""
+  },
+  {
+   "file": "submission_M266.csv",
+   "grade": "UPLOADED",
+   "pred": null,
+   "actual": 0.6374708505,
+   "valid": true,
+   "note": ""
+  },
+  {
+   "file": "BLEND_M261w070_M252.csv",
+   "grade": "A",
+   "pred": 0.63917,
+   "actual": null,
+   "valid": true,
+   "note": "N521 오염제거 곡선 최적, 자유도 1, 끝점 재현 1e-7/8e-5",
+   "sha": "3d3e7041a1d9",
+   "path": "artifacts/submissions/blends/BLEND_M261w070_M252.csv"
+  },
+  {
+   "file": "submission_M263.csv",
+   "grade": "B",
+   "pred": 0.638756,
+   "actual": null,
+   "valid": true,
+   "note": "사전확약 N513, 앙상블/g3 분해",
+   "sha": "5a1d701660a8",
+   "path": "artifacts/submissions/submission_M263.csv"
+  },
+  {
+   "file": "BLEND_M261w085_M252.csv",
+   "grade": "B",
+   "pred": 0.638573,
+   "actual": null,
+   "valid": true,
+   "note": "N521 곡선 우측 보간",
+   "sha": "aeaf69d4b724",
+   "path": "artifacts/submissions/blends/BLEND_M261w085_M252.csv"
+  },
+  {
+   "file": "BLEND_M261w055_M252.csv",
+   "grade": "B",
+   "pred": 0.637125,
+   "actual": null,
+   "valid": true,
+   "note": "N521 곡선 좌측",
+   "sha": "d2590f483f63",
+   "path": "artifacts/submissions/blends/BLEND_M261w055_M252.csv"
+  },
+  {
+   "file": "BLEND_M266w060_M252.csv",
+   "grade": "B",
+   "pred": null,
+   "actual": null,
+   "valid": true,
+   "note": "M266 기반, 곡선 3점 확보용",
+   "sha": "b2b7fa2cd787",
+   "path": "artifacts/submissions/blends/BLEND_M266w060_M252.csv"
+  },
+  {
+   "file": "BLEND_M266w080_M252.csv",
+   "grade": "B",
+   "pred": null,
+   "actual": null,
+   "valid": true,
+   "note": "M266(현재최고) 기반 결합, 곡선 미측정",
+   "sha": "106e744bd0b2",
+   "path": "artifacts/submissions/blends/BLEND_M266w080_M252.csv"
+  },
+  {
+   "file": "BLEND_M266w090_M252.csv",
+   "grade": "B",
+   "pred": null,
+   "actual": null,
+   "valid": true,
+   "note": "M266 기반",
+   "sha": "c1d86289b063",
+   "path": "artifacts/submissions/blends/BLEND_M266w090_M252.csv"
+  },
+  {
+   "file": "BLEND_M261w040_M252.csv",
+   "grade": "C",
+   "pred": 0.634468,
+   "actual": null,
+   "valid": true,
+   "note": "곡선상 열위",
+   "sha": "db0be9d60404",
+   "path": "artifacts/submissions/blends/BLEND_M261w040_M252.csv"
+  },
+  {
+   "file": "E0_DECISION_CONTROL-46980d5f798a.csv",
+   "grade": "C",
+   "pred": null,
+   "actual": null,
+   "valid": true,
+   "note": "미분류",
+   "sha": "b63887877287",
+   "path": "artifacts/submissions/E0_DECISION_CONTROL-46980d5f798a.csv"
+  },
+  {
+   "file": "E0_FULL_HISTORY_Q1_GROUP12_ANALOG-1741a964e30b.csv",
+   "grade": "C",
+   "pred": null,
+   "actual": null,
+   "valid": true,
+   "note": "미분류",
+   "sha": "06fe135a22b2",
+   "path": "artifacts/submissions/E0_FULL_HISTORY_Q1_GROUP12_ANALOG-1741a964e30b.csv"
+  },
+  {
+   "file": "E0_M229_SEQUENCE_SMOOTH-9647d4a5a407.csv",
+   "grade": "C",
+   "pred": null,
+   "actual": null,
+   "valid": true,
+   "note": "미분류",
+   "sha": "d5f6fa67f969",
+   "path": "artifacts/submissions/E0_M229_SEQUENCE_SMOOTH-9647d4a5a407.csv"
+  },
+  {
+   "file": "E0_Q1_GROUP12_RARE_EVENT_ANALOG-bea349ead945.csv",
+   "grade": "C",
+   "pred": null,
+   "actual": null,
+   "valid": true,
+   "note": "미분류",
+   "sha": "daafce4b61bb",
+   "path": "artifacts/submissions/E0_Q1_GROUP12_RARE_EVENT_ANALOG-bea349ead945.csv"
+  },
+  {
+   "file": "E0_RARE_EVENT_ANALOG-5f6a9679a463.csv",
+   "grade": "C",
+   "pred": null,
+   "actual": null,
+   "valid": true,
+   "note": "미분류",
+   "sha": "1c9c0a509a71",
+   "path": "artifacts/submissions/E0_RARE_EVENT_ANALOG-5f6a9679a463.csv"
+  },
+  {
+   "file": "E0_RECENCY_ANALOG-58cce9ff45a6.csv",
+   "grade": "C",
+   "pred": null,
+   "actual": null,
+   "valid": true,
+   "note": "미분류",
+   "sha": "39a9b275f684",
+   "path": "artifacts/submissions/E0_RECENCY_ANALOG-58cce9ff45a6.csv"
+  },
+  {
+   "file": "E0_RECENCY_SPREAD_ANALOG-bc88b89a9c71.csv",
+   "grade": "C",
+   "pred": null,
+   "actual": null,
+   "valid": true,
+   "note": "미분류",
+   "sha": "8af6c8a0670e",
+   "path": "artifacts/submissions/E0_RECENCY_SPREAD_ANALOG-bc88b89a9c71.csv"
+  },
+  {
+   "file": "E0_ROBUST_ANALOG_DEV-08f07b6d9e87.csv",
+   "grade": "C",
+   "pred": null,
+   "actual": null,
+   "valid": true,
+   "note": "미분류",
+   "sha": "034a3c91d328",
+   "path": "artifacts/submissions/E0_ROBUST_ANALOG_DEV-08f07b6d9e87.csv"
+  },
+  {
+   "file": "E0_ROBUST_ANALOG_DEV-9c6caa802c66.csv",
+   "grade": "C",
+   "pred": null,
+   "actual": null,
+   "valid": true,
+   "note": "미분류",
+   "sha": "034a3c91d328",
+   "path": "artifacts/submissions/E0_ROBUST_ANALOG_DEV-9c6caa802c66.csv"
+  },
+  {
+   "file": "E0_SPREAD_SHRUNK_ANALOG-ead6308128ce.csv",
+   "grade": "C",
+   "pred": null,
+   "actual": null,
+   "valid": true,
+   "note": "미분류",
+   "sha": "e4d69edeb322",
+   "path": "artifacts/submissions/E0_SPREAD_SHRUNK_ANALOG-ead6308128ce.csv"
+  },
+  {
+   "file": "E0_SUPPORTED_SEASON_ANALOG-b2c9702c35a4.csv",
+   "grade": "C",
+   "pred": null,
+   "actual": null,
+   "valid": true,
+   "note": "미분류",
+   "sha": "a2a5ff3dde26",
+   "path": "artifacts/submissions/E0_SUPPORTED_SEASON_ANALOG-b2c9702c35a4.csv"
+  },
+  {
+   "file": "E0_V2_SEQUENCE_TRANSFER-a5111cee22bc.csv",
+   "grade": "C",
+   "pred": null,
+   "actual": null,
+   "valid": true,
+   "note": "미분류",
+   "sha": "d67b0f5caf25",
+   "path": "artifacts/submissions/E0_V2_SEQUENCE_TRANSFER-a5111cee22bc.csv"
+  },
+  {
+   "file": "BLEND_M266w070_M252.csv",
+   "grade": "C",
+   "pred": null,
+   "actual": null,
+   "valid": true,
+   "note": "미분류",
+   "sha": "274d88cf61e9",
+   "path": "artifacts/submissions/blends/BLEND_M266w070_M252.csv"
+  },
+  {
+   "file": "submission_M268.csv",
+   "grade": "C",
+   "pred": null,
+   "actual": null,
+   "valid": true,
+   "note": "로컬 M261 하회",
+   "sha": "696324f31689",
+   "path": "artifacts/submissions/submission_M268.csv"
+  },
+  {
+   "file": "BLEND_PERGROUP_95_75_100.csv",
+   "grade": "X",
+   "pred": null,
+   "actual": null,
+   "valid": true,
+   "note": "N522 fold-외 기각",
+   "sha": "e1f120758f2c",
+   "path": "artifacts/submissions/blends/BLEND_PERGROUP_95_75_100.csv"
+  },
+  {
+   "file": "final_candidate.csv",
+   "grade": "X",
+   "pred": null,
+   "actual": null,
+   "valid": false,
+   "note": "형식 검증 실패",
+   "sha": "f3285a4d370b",
+   "path": "artifacts/submissions/final_candidate.csv"
+  }
+ ],
+ "agent_upload": false,
+ "grades": {
+  "A": "fold-외 검증 통과",
+  "B": "구조적 논거",
+  "C": "열위",
+  "X": "기각"
+ }
+}

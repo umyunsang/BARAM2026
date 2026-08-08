@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "node_id": "S17-N44_BAND_MASS_OBJECTIVE",
+  "stage_id": "S7",
+  "deficit": "FD12",
+  "created_at": "2026-08-09T06:13:32.688475+09:00",
+  "score_bearing": false,
+  "question": "Does training directly on a smoothed version of the actual band settlement reward beat the binned-softmax member?",
+  "objective": "minimise |a-y|/C - (y/C)*u_s(|a-y|/C)/(4*mean_gen_g) with u_s(e)=3*sigmoid((0.08-e)/s)+sigmoid((0.06-e)/s), s=0.01 fixed and not tuned",
+  "degrees_of_freedom": 1,
+  "trial_budget": 1
+}

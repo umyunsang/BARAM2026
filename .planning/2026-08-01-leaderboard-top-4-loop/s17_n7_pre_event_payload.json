@@ -1,0 +1,27 @@
+{
+  "event_type": "PREDECLARED",
+  "cycle_id": "S17-N7_STRICT_ACTION_PROVENANCE_RECONSTRUCTION",
+  "stage_id": "S8",
+  "node_id": "S17-N7_STRICT_ACTION_PROVENANCE_RECONSTRUCTION",
+  "actor": "root",
+  "occurred_at": "2026-08-08T20:04:45.426521+09:00",
+  "body": {
+    "preregistration_sha256": "0ed80aa6ef0e4f321cb1a084df650e762c52b0fa3a074c853daecfca71722a16",
+    "parent_ids": [
+      "S17-N6_COST5_SPO_PLUS_PREQUENTIAL",
+      "S17-N3_STRICT_PREQUENTIAL_EVALUATION_REPAIR"
+    ],
+    "mechanism": "A structural one-day origin shift plus Q2-frozen action definitions can make the saved base predictions issuance-admissible without fitting or viewing assessment scores.",
+    "treatment": "Shifted complete-day action cube with fixed M102 I60 and Q2-only policy selection.",
+    "control": "N6 inadmissible unshifted/fold-varying saved-action bundle.",
+    "metric": "Provenance inequalities, exact 72-cell atoms, deterministic hashes; no assessment score.",
+    "min_effect": 0.0,
+    "score_bearing": false,
+    "novelty_signature": "STRICT_ACTION_CUBE_SHIFT1_Q2_FROZEN_I60_V1",
+    "basis_evidence_ids": [
+      "S17_N6_G0",
+      "S17_N3_PROTOCOL",
+      "RWA_EVAL"
+    ]
+  }
+}

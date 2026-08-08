@@ -1,0 +1,27 @@
+{
+  "event_type": "PREDECLARED",
+  "cycle_id": "S17-N9_COST5_NO_REFIT_MATERIALIZATION_RECOVERY",
+  "stage_id": "S9",
+  "node_id": "S17-N9_COST5_NO_REFIT_MATERIALIZATION_RECOVERY",
+  "actor": "root",
+  "occurred_at": "2026-08-08T20:18:44.614961+09:00",
+  "body": {
+    "preregistration_sha256": "de1ac99f994c0667bd81d03c91e50707c64d5b4324f4e580af5daad4996b7684",
+    "parent_ids": [
+      "S17-N8_COST5_SPO_PLUS_STRICT_PREQUENTIAL_COMPARISON",
+      "S17-N7_STRICT_ACTION_PROVENANCE_RECONSTRUCTION"
+    ],
+    "mechanism": "A post-fit serialization failure can be recovered without selection bias when the complete prediction vector was frozen before any assessment score and is algebraically reproduced from frozen coefficients.",
+    "treatment": "No-refit typed-provenance materialization of the frozen N8 COST5 prediction vector.",
+    "control": "Strict shifted fixed CHAMPION action from S17-N7.",
+    "metric": "Exact official Total and unchanged S17-N3 joint promotion gate.",
+    "min_effect": 0.001635,
+    "score_bearing": true,
+    "novelty_signature": "COST5_NO_REFIT_FROZEN_VECTOR_RECOVERY_V1",
+    "basis_evidence_ids": [
+      "S17_N8_PARTIAL_PRE_SCORE",
+      "S17_N7_STRICT_ACTIONS",
+      "S17_N3_PROTOCOL"
+    ]
+  }
+}

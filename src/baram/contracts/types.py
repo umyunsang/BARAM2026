@@ -101,6 +101,49 @@ class RunManifest:
 
 
 @dataclass(frozen=True)
+class V2StageManifest:
+    """Immutable accounting record for one approved v2 experiment stage."""
+
+    run_id: str
+    stage: str
+    slot_limit: int
+    slots_used: int
+    slots_remaining: int
+    input_hashes: Mapping[str, str]
+    config_sha256: str
+    code_sha256: str
+    output_hashes: Mapping[str, str]
+    runtime_seconds: float
+    seed: int
+    worker_count: int
+    lockbox_sha256: str
+
+    def __post_init__(self) -> None:
+        if not self.run_id or not self.stage:
+            raise ValueError("v2 stage identity cannot be empty")
+        if self.slot_limit < 0 or not 0 <= self.slots_used <= self.slot_limit:
+            raise ValueError("v2 stage slots exceed the frozen limit")
+        if self.slots_remaining != self.slot_limit - self.slots_used:
+            raise ValueError("v2 stage remaining slots accounting is inconsistent")
+        if not 1 <= self.worker_count <= 6:
+            raise ValueError("v2 stage worker count must be between 1 and 6")
+        if self.runtime_seconds < 0:
+            raise ValueError("v2 stage runtime cannot be negative")
+
+
+@dataclass(frozen=True)
+class V2PolicyManifest:
+    """Frozen lineage shared by v2 distribution, decision, and ensemble policies."""
+
+    policy_id: str
+    policy_kind: Literal["distribution", "expected_utility", "ensemble"]
+    parent_hashes: Mapping[str, str]
+    configuration_sha256: str
+    training_rows_sha256: str
+    metric_sha256: str
+
+
+@dataclass(frozen=True)
 class PromotionDecision:
     accepted: bool
     gate: str

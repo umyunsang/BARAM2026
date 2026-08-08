@@ -1,0 +1,49 @@
+{
+ "ceiling_local": 0.4227,
+ "corrections": [
+  "offset class matched: the ceiling belongs to the classifier representation, so the M261 classifier offset applies, not the M252 analog offset",
+  "required FICR corrected: it is 1.32 - our own 1-NMAE, not rank-20's FICR"
+ ],
+ "dacon_upload": false,
+ "external_actions": [],
+ "lockbox_reopened": false,
+ "model_fits": 0,
+ "new_2024_evaluation": false,
+ "offset_matched": 0.012027,
+ "offset_mismatched": 0.037267,
+ "offset_needed_to_overturn": 0.039414627000000035,
+ "overturn_multiple_vs_measured": 3.277178598154156,
+ "scenarios": [
+  {
+   "ceiling_matched": 0.43472700000000003,
+   "ceiling_mismatched": 0.459967,
+   "nmae1": 0.857885373,
+   "required_ficr": 0.46211462700000006,
+   "scenario": "현재 온라인 (M261)",
+   "slack_matched": -0.027387627000000025,
+   "slack_mismatched": -0.002147627000000041
+  },
+  {
+   "ceiling_matched": 0.43472700000000003,
+   "ceiling_mismatched": 0.459967,
+   "nmae1": 0.87345,
+   "required_ficr": 0.4465500000000001,
+   "scenario": "rank-20 수준",
+   "slack_matched": -0.011823000000000083,
+   "slack_mismatched": 0.013416999999999901
+  },
+  {
+   "ceiling_matched": 0.43472700000000003,
+   "ceiling_mismatched": 0.459967,
+   "nmae1": 0.87964,
+   "required_ficr": 0.4403600000000001,
+   "scenario": "1위 수준",
+   "slack_matched": -0.005633000000000055,
+   "slack_mismatched": 0.01960699999999993
+  }
+ ],
+ "schema_version": 1,
+ "scope": "closes 'reach the target by post-processing the CURRENT representation', not 'reach the target' in general",
+ "stage": "M270_CEILING_READJUDICATION",
+ "verdict": "CLOSED and robust to offset uncertainty; even the largest measured offset, applied across method classes which is improper, does not reach the requirement"
+}

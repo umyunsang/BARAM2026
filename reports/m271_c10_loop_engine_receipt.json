@@ -1,0 +1,182 @@
+{
+  "node_id": "C1N78_LOOP_ENGINE_C10",
+  "lane": "L8",
+  "parent": "C1N76_CIRCULAR_BLOCK",
+  "triggered_by": "C10 (라우터가 지시)",
+  "research": {
+    "performed_at": "2026-08-06",
+    "trigger": "라우터 C10 (stall_counter 77 >= 3)",
+    "kind": "loop_engine",
+    "lane": "L8",
+    "scope": "루프·그래프 엔지니어링 라우터 표의 SOTA",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2509.19349",
+        "class": "peer_reviewed",
+        "finding": "ShinkaEvolve — novelty rejection-sampling, exploration-exploitation 균형 부모 선택, bandit 기반 선택. 150 표본으로 circle packing SOTA",
+        "applicability": "directly_supported"
+      },
+      {
+        "url": "https://sakana.ai/shinka-evolve/",
+        "class": "official_docs",
+        "finding": "임베딩 코사인 유사도가 임계 초과면 제안 기각 — '사소한 변형' 낭비 차단",
+        "applicability": "directly_supported"
+      },
+      {
+        "url": "https://arxiv.org/pdf/2507.01903",
+        "class": "peer_reviewed",
+        "finding": "AI4Research 서베이 — 획득함수가 기대개선을 불확실성 대비로 정규화",
+        "applicability": "near_match_only"
+      }
+    ],
+    "decision_impact": "라우터 v3 에 크기 게이트(C16)와 신규성 기각(C17)을 추가",
+    "stop_condition": "V2 가 거짓이면(이번 실패를 못 잡으면) 개선이 아니므로 채택하지 않는다"
+  },
+  "router_v2": "M271_ROUTER_v2_frozen_2026-08-04",
+  "router_v3": "M271_ROUTER_v3_frozen_2026-08-06",
+  "revisions": {
+    "C16_magnitude_floor": {
+      "value": 0.15,
+      "rule": "expected_gain < MAGNITUDE_FLOOR * remaining_gap 이면 REJECT_DIRECTION",
+      "status": "선언 관례. 보정된 값이 아니다(계획 R3 와 같은 지위)."
+    },
+    "C17_novelty_rejection": {
+      "window": 6,
+      "limit": 3,
+      "rule": "같은 레인 x 같은 kind 가 창 안에서 limit 회 이상이면 REJECT_DIRECTION",
+      "adapted_from": "ShinkaEvolve 임베딩 유사도 기각 -> 노드 메타데이터 반복"
+    },
+    "R3_ledger_update_contract": {
+      "defect": "결손 원장이 A7 이후 한 번도 갱신되지 않아 stall_counter 가 77",
+      "consequence": "연료계가 죽어 정체 탐지가 무의미했다",
+      "required": "사이클 계약에 원장 갱신을 넣는다"
+    }
+  },
+  "epsilon_information": 0.02,
+  "condition_count_v2": 14,
+  "remaining_gap": 0.029689999999999994,
+  "failure_replay": [
+    {
+      "evidence_id": "C1N60",
+      "lane": "L7",
+      "expected_gain": 0.00899,
+      "gain_over_gap": 0.30279555405860564,
+      "v3": {
+        "condition": "C17",
+        "action": "REJECT_DIRECTION",
+        "reason": "C17 신규성 기각 (레인 L7 반복 >= 3)",
+        "blocked_by": [
+          "C17"
+        ],
+        "targets": [],
+        "v2_would_have": {
+          "condition": "C10",
+          "action": "RESEARCH_DIRECTION"
+        },
+        "router_version": "M271_ROUTER_v3_frozen_2026-08-06"
+      }
+    },
+    {
+      "evidence_id": "C1N61",
+      "lane": "L7",
+      "expected_gain": 0.001169,
+      "gain_over_gap": 0.03937352643987875,
+      "v3": {
+        "condition": "C16",
+        "action": "REJECT_DIRECTION",
+        "reason": "C16 크기 게이트 (이득 0.00117 < 0.15 x 격차 0.02969)",
+        "blocked_by": [
+          "C16",
+          "C17"
+        ],
+        "targets": [],
+        "v2_would_have": {
+          "condition": "C10",
+          "action": "RESEARCH_DIRECTION"
+        },
+        "router_version": "M271_ROUTER_v3_frozen_2026-08-06"
+      }
+    },
+    {
+      "evidence_id": "C1N71",
+      "lane": "L2",
+      "expected_gain": 0.001238,
+      "gain_over_gap": 0.041697541259683404,
+      "v3": {
+        "condition": "C16",
+        "action": "REJECT_DIRECTION",
+        "reason": "C16 크기 게이트 (이득 0.00124 < 0.15 x 격차 0.02969)",
+        "blocked_by": [
+          "C16"
+        ],
+        "targets": [],
+        "v2_would_have": {
+          "condition": "C10",
+          "action": "RESEARCH_DIRECTION"
+        },
+        "router_version": "M271_ROUTER_v3_frozen_2026-08-06"
+      }
+    },
+    {
+      "evidence_id": "C1N73",
+      "lane": "L7",
+      "expected_gain": 0.004931,
+      "gain_over_gap": 0.16608285618053217,
+      "v3": {
+        "condition": "C17",
+        "action": "REJECT_DIRECTION",
+        "reason": "C17 신규성 기각 (레인 L7 반복 >= 3)",
+        "blocked_by": [
+          "C17"
+        ],
+        "targets": [],
+        "v2_would_have": {
+          "condition": "C10",
+          "action": "RESEARCH_DIRECTION"
+        },
+        "router_version": "M271_ROUTER_v3_frozen_2026-08-06"
+      }
+    }
+  ],
+  "passthrough_check": {
+    "condition": "C10",
+    "action": "RESEARCH_DIRECTION",
+    "reason": "C11 선택: 2 개 발화 중 가치 최대 (루프 정체 — 라우터 표 자체의 SOTA 를 조사해 엔진을 제자리 개선)",
+    "targets": [
+      {
+        "operator": "RESEARCH_DIRECTION",
+        "kind": "loop_engine",
+        "lane": "L8",
+        "deficit_cell": null,
+        "origin_node": "C1N68_EMPIRICAL_DECOMPOSITION",
+        "scope": "루프·그래프 엔지니어링 라우터 표의 SOTA"
+      }
+    ],
+    "blocked_by": [],
+    "v2_would_have": {
+      "condition": "C10",
+      "action": "RESEARCH_DIRECTION"
+    },
+    "router_version": "M271_ROUTER_v3_frozen_2026-08-06"
+  },
+  "checks": {
+    "V1_v2_preserved_when_not_firing": true,
+    "V2_catches_this_failure": true,
+    "V2_blocked_count": 4,
+    "V3_deterministic": true
+  },
+  "hypotheses": {
+    "H1_all_guards": true,
+    "H2_large_direction_passes": true
+  },
+  "H3_note": "C1N73 이득비 0.166 vs 문턱 0.15 — 차단. 경계값을 결과를 보고 조정하지 않았다.",
+  "verdict": "ROUTER_V3_ADOPTED",
+  "changes_model": false,
+  "dacon_upload": false,
+  "lockbox_used": false,
+  "external_actions": [
+    "WebSearch"
+  ],
+  "generated_at": "2026-08-05T16:50:53.934994+00:00",
+  "digest": "c4b3f610690325df"
+}

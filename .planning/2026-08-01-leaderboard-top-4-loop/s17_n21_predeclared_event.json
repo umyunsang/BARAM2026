@@ -1,0 +1,27 @@
+{
+  "event_type": "PREDECLARED",
+  "cycle_id": "S17-N21_TERRAIN_SX300_H8_MODEL_FAMILY_PREREQUISITE_AUDIT",
+  "stage_id": "S7",
+  "node_id": "S17-N21_TERRAIN_SX300_H8_MODEL_FAMILY_PREREQUISITE_AUDIT",
+  "actor": "root",
+  "occurred_at": "2026-08-08T23:08:49.318085+09:00",
+  "body": {
+    "preregistration_sha256": "5e79f095e6482c848b6c9251054f002daa38b1a620a6ff6340fa67f8f37925dc",
+    "parent_ids": [
+      "S17-N20A_TERRAIN_SX300_H8_NO_NODATA_TAG_RECOVERY"
+    ],
+    "mechanism": "The static Sx source can receive score-bearing authority only through one exact prior model family whose no-terrain refit reproduces the frozen M115 action and hence the unchanged Champion algebra before any assessment score.",
+    "treatment": "No-fit code/schema/provenance audit of one M115+terrain feature family.",
+    "control": "Frozen M115 generator, N7 action identity and Champion algebra; no fit/predict/score.",
+    "metric": "Boolean source-chain, schema, nonduplication, chronology, matched-control and strict-comparison-contract gates.",
+    "min_effect": 0.0,
+    "score_bearing": false,
+    "novelty_signature": "M115_XGBOOST_PLUS_TERRAIN_SX300_H8_MEAN16_PREREQUISITE_V1",
+    "basis_evidence_ids": [
+      "N20A_STATIC_LOOKUP_READY",
+      "N7_STRICT_ACTION_CUBE",
+      "M115_ALTERNATIVE_BOOSTER_SOURCE",
+      "N3_STRICT_EVALUATION"
+    ]
+  }
+}

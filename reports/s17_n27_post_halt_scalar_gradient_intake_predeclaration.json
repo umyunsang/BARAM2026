@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "node_id": "S17-N27_POST_HALT_ORIENTED_SCALAR_GRADIENT_RESEARCH_INTAKE",
+  "created_at": "2026-08-09T01:12:19.745569+09:00",
+  "stage_id": "S6",
+  "reopen_authority": {
+    "persistent_goal_continuation": true,
+    "terminal_reopen_clause": "a new chronology-safe model premise that is nonduplicate and does not use 2024/test outcomes",
+    "prior_halt_receipt": "reports/s17_evidence_exhausted_target_not_reached_receipt.json",
+    "prior_halt_receipt_sha256": "e128fce3b0211eb0330094105b41fd5c423e478b043538d2e269e1533529e6d7",
+    "prior_ledger_head_sequence": 154,
+    "prior_ledger_head_sha256": "7d30989a25349e1d8245c54b3cb1825e5b19ee9cc7b22cb771ad1c9843a0cf76"
+  },
+  "new_trigger": {
+    "source_only_scan": "No pressure-gradient, geostrophic, frontogenesis, baroclinic, temperature-gradient, or scalar-gradient implementation/reference was found in src/, scripts/, active-plan Python sources, or the exact planning narratives searched. Existing geometric.py computes wind-vector gradients only; physics.py uses scalar pressure only for density.",
+    "schema_fact": "Both GFS and LDAPS prepared schemas expose surface pressure and mean-sea-level pressure summaries, while raw issued grids and geometry are already consumed by the geometric feature builder.",
+    "candidate_class": "ORIENTED_SCALAR_FIELD_GRADIENTS_FROM_SUPPLIED_ISSUED_NWP",
+    "why_distinct": "This preserves spatial orientation of scalar synoptic fields that unordered mean/std/min/max/quantiles discard; it is neither another NWP source, terrain/roughness/open-flow, static metadata, source averaging, wake/power curve, nor wind-vector-gradient retuning."
+  },
+  "objective": "Boundedly determine whether one exact, source-prescribed, chronology-safe oriented scalar-gradient diagnostic from supplied issued NWP is directly supported, locally executable, and genuinely nonduplicate. Research only; no model candidate may be fitted or scored in N27.",
+  "lanes": [
+    {
+      "id": "SCALAR_GRADIENT_PHYSICS",
+      "path": "research/lanes/s17_n27_scalar_gradient_physics.md",
+      "source_budget": 8,
+      "time_budget_minutes": 15,
+      "scope": "Primary papers or official meteorological documentation published no later than 2026-07-05; require a literal pressure/temperature-gradient diagnostic and evidence relevant to short-range wind or wind-power errors, not generic textbook association."
+    },
+    {
+      "id": "REPOSITORY_NOVELTY",
+      "path": "research/lanes/s17_n27_scalar_gradient_repo_novelty.md",
+      "source_budget": 0,
+      "time_budget_minutes": 12,
+      "scope": "Only fixed local source/schema files; no reports with model scores, data bodies, labels, 2024/test values, fits, predictions, or metrics. Establish exact operation-level duplication or novelty."
+    },
+    {
+      "id": "SCHEMA_FORMULA_RUNTIME",
+      "path": "research/lanes/s17_n27_scalar_gradient_schema_runtime.md",
+      "source_budget": 3,
+      "time_budget_minutes": 12,
+      "scope": "Official field/units documentation plus fixed local metadata/code only; no API/object/data-body retrieval. Determine whether one zero-choice planar/physical formula and unchanged Darwin runtime can be frozen."
+    }
+  ],
+  "fixed_inputs": {
+    "AGENTS.md": "91a11f95f94e8de86f5c84b204e1893830b3ed5693e3d7ede7f2e351e9891e9c",
+    "artifacts/manifests/prepare.json": "ca4908d7f98639b13da80febcd071cd805369e8e044bb4d7b97f793d2703ca46",
+    "src/baram/features/geometric.py": "86e977ed4167c3f9229d0ef017da678cf709fdf39fe774f908a2edc1182406d4",
+    "src/baram/features/spatial.py": "37c31ccb17beedc01d0b6e7e3210d821bc4dcdc6e860c76dc38fea77aa64c092",
+    "src/baram/features/physics.py": "881443f644acf802c8a222fedc7a0f7062fc2345d44580b01124bbfd9a2358bf",
+    ".planning/2026-08-01-leaderboard-top-4-loop/run_classifier_iteration_sweep.py": "3539eb42a83a15e59fb6cc62b37ced2d5ed4b7b7c9439afb621461c3cc4f7cd1",
+    "research/lanes/s17_n24_issued_schema_coverage.md": "a7cc2db5b9ffcf39e7ada7e21d27e7c56316086579ec349a4e3baec312d708eb",
+    "reports/s17_n25_tertiary_frontier_intake_receipt.json": "9c90cbc24852e66571f3794d22a31e32660ca5c29f62f37e57ef214940f6bdc0",
+    "reports/s17_n26_s4_metric_action_audit_receipt.json": "1b42d6323efe92528d8a40f300d4b5ef2ef0c7a31042a68a74ca6f2c55452313",
+    "reports/s17_evidence_exhausted_target_not_reached_receipt.json": "e128fce3b0211eb0330094105b41fd5c423e478b043538d2e269e1533529e6d7"
+  },
+  "input_bundle_sha256": "b7050f406c64d6e85ef524c3dbca9c3ba6d4f7fcba411cd6d4f0719ab25a56f6",
+  "admission_gates": [
+    "direct pre-cutoff formula/mechanism support",
+    "literal supplied field and unit availability in both or one source",
+    "strict same-issuance computation and D-1 14:00 symmetry",
+    "one deterministic grid/coordinate/gradient/projection formula with no tuned scale, level, subset, or aggregation",
+    "operation-level nonduplication against current source and closed lanes",
+    "plausible target-scale effect evidence rather than generic meteorological relevance",
+    "commercial/open-source compatibility if external code is needed; external code is not preferred"
+  ],
+  "selection_rule": "Root may select at most one exact no-fit prerequisite candidate only if every gate is directly supported. near_match_only, generic physical plausibility, or unresolved formula choices produce NONE and restore the formal exhausted halt.",
+  "forbidden": [
+    "raw supplied weather values",
+    "actual_kwh or any label",
+    "2024/test values or result aggregates",
+    "model result scores",
+    "fits",
+    "predictions",
+    "policy or metric calls",
+    "external data/object/API bodies",
+    "attachments",
+    "model weights",
+    "dependency changes",
+    "Dacon/accounts",
+    "retuning any closed terrain, source-separation, power/wake, or existing physical-proxy family"
+  ],
+  "score_class": "NON_SCORE_BEARING",
+  "comparison_index": null,
+  "comparison_count_before": 4,
+  "next_score_bearing_comparison_index_if_admitted": 5,
+  "fit_budget": 0,
+  "prediction_budget": 0,
+  "project_metric_budget": 0,
+  "external_data_body_budget": 0,
+  "lockbox_2024_used": false,
+  "dacon_actions": [],
+  "next_handoff_on_none": []
+}

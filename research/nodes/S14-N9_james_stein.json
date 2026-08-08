@@ -1,0 +1,116 @@
+{
+ "diag": {
+  "dev-2023-Q2": {
+   "w_pooled": 0.30000000000000004,
+   "w_group": {
+    "1": 0.0,
+    "2": 0.4,
+    "3": 0.5
+   },
+   "spread_ss": 0.14,
+   "c_analytic": 0.16666666666666666,
+   "c_swept": 0.6000000000000001
+  },
+  "dev-2023-Q3": {
+   "w_pooled": 0.30000000000000004,
+   "w_group": {
+    "1": 0.0,
+    "2": 0.30000000000000004,
+    "3": 0.5
+   },
+   "spread_ss": 0.13,
+   "c_analytic": 0.1623931623931624,
+   "c_swept": 0.0
+  },
+  "dev-2023-Q4": {
+   "w_pooled": 0.30000000000000004,
+   "w_group": {
+    "1": 0.5,
+    "2": 0.30000000000000004,
+    "3": 0.30000000000000004
+   },
+   "spread_ss": 0.03999999999999998,
+   "c_analytic": 0.11111111111111112,
+   "c_swept": 1.0
+  }
+ },
+ "scores": {
+  "POOLED": {
+   "total": 0.6361842493883538,
+   "one_minus_nmae": 0.8618657013604555,
+   "ficr": 0.4105027974162521
+  },
+  "FREE3": {
+   "total": 0.6343753039463056,
+   "one_minus_nmae": 0.8614767878160727,
+   "ficr": 0.4072738200765384,
+   "arbitration": {
+    "point_cand": 0.6343753039463056,
+    "point_champ": 0.6361842493883538,
+    "paired_mean": -0.0017460067763543654,
+    "paired_sd": 0.0008428250928551961,
+    "p_better": 0.0275,
+    "ci95": [
+     -0.003415165807320014,
+     0.00011986154739737321
+    ],
+    "n_rep": 400,
+    "block_days": 7,
+    "point_delta": -0.0018089454420482376,
+    "min_effect": 0.001,
+    "p_required_unadjusted": 0.9,
+    "p_required_adjusted": 0.9,
+    "n_comparisons_so_far": 1,
+    "took_champion": false
+   }
+  },
+  "JS_ANALYTIC": {
+   "total": 0.6345502336984622,
+   "one_minus_nmae": 0.8616004213768707,
+   "ficr": 0.4075000460200538,
+   "arbitration": {
+    "point_cand": 0.6345502336984622,
+    "point_champ": 0.6361842493883538,
+    "paired_mean": -0.0015939392344404002,
+    "paired_sd": 0.0007427906986442815,
+    "p_better": 0.02,
+    "ci95": [
+     -0.0031493241195677617,
+     -0.00010553223169103447
+    ],
+    "n_rep": 400,
+    "block_days": 7,
+    "point_delta": -0.0016340156898916325,
+    "min_effect": 0.001,
+    "p_required_unadjusted": 0.9,
+    "p_required_adjusted": 0.9,
+    "n_comparisons_so_far": 1,
+    "took_champion": false
+   }
+  },
+  "JS_SWEPT": {
+   "total": 0.6354831257080489,
+   "one_minus_nmae": 0.861452414439554,
+   "ficr": 0.4095138369765437,
+   "arbitration": {
+    "point_cand": 0.6354831257080489,
+    "point_champ": 0.6361842493883538,
+    "paired_mean": -0.0006661419211012134,
+    "paired_sd": 0.0006562601510444197,
+    "p_better": 0.155,
+    "ci95": [
+     -0.001923171762461276,
+     0.0006509958878780252
+    ],
+    "n_rep": 400,
+    "block_days": 7,
+    "point_delta": -0.0007011236803049492,
+    "min_effect": 0.001,
+    "p_required_unadjusted": 0.9,
+    "p_required_adjusted": 0.9,
+    "n_comparisons_so_far": 1,
+    "took_champion": false
+   }
+  }
+ }
+}

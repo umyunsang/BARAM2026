@@ -1,0 +1,132 @@
+{
+  "schema_version": 1,
+  "node_id": "S17-N23_POST_TERRAIN_FRONTIER_RESEARCH_INTAKE",
+  "created_at": "2026-08-08T23:52:07.118854+09:00",
+  "parent_id": "S17-N22A_M115_TERRAIN_NO_REFIT_TYPED_PROVENANCE_RECOVERY",
+  "purpose": "Bounded post-terrain recursive frontier research. Seek a genuinely new public pre-cutoff information source or representation after exact M115 control reproduction showed mean16 Sx is weak-positive but non-promotable. No fit, prediction, actual, metric, acquisition, or comparison is authorized.",
+  "input_bundle": {
+    "files": {
+      "AGENTS.md": "91a11f95f94e8de86f5c84b204e1893830b3ed5693e3d7ede7f2e351e9891e9c",
+      "reports/s17_n22a_m115_terrain_no_refit_receipt.json": "35d1324c94d2f18aa37faa14b3e144b0597216e15e9810adef6df02b3248e018",
+      "artifacts/backtests/s17_n22a_m115_terrain_recovery/evaluation.json": "c1cac9d812eeeb1a2b341b99f9a8d7ca83ab243f8c2bb15cc7cc5caec9387552",
+      "artifacts/backtests/s17_n22a_m115_terrain_recovery/family_manifest.json": "c9c9ece7cade68656b1f178a2c66b738e803d5ed43c93cf32e8ffc13b9f37607",
+      "artifacts/backtests/s17_n22a_m115_terrain_recovery/typed_recovery.json": "5f2a0fc3fa49735957206018f3dea79feab77a04ab946e138f219c1dd065d1c8",
+      "reports/s17_n22_m115_terrain_strict_receipt.json": "ce88d091256c40bf72709de952dd80700e006d4003bc18e922a5926e79fefa17",
+      "artifacts/audits/s17_n21_terrain_model_family_prerequisite.json": "73dc743b24a14927336bbb7c5298a7f089dd9fd6658f5ee168f8d5d873ed3157",
+      "research/lanes/s17_n21_terrain_model_integration.md": "4befd9c72215ec37405942184f0c5b312b66975b5a551d14376143a94e0d5316",
+      "reports/s17_n20a_terrain_sx300_no_nodata_recovery_receipt.json": "8edf4d13ba12c9035048e1902111ecd672501c46cb554f0cc1043f171d5826a9",
+      "artifacts/external/copdem_s17_n20/recovery_manifest.json": "5b2f6918b22e0b4f8168367b15355d6eec6603d3d08538d5989a97dae076ab0e",
+      "reports/s17_n19_terrain_sx300_formula_manifest.json": "ca1022d8236acdefa2b886c20945029a060f3dddecb4d879cb4c6e5a99cf6b80",
+      "reports/s17_n18_post_rwa_frontier_intake_receipt.json": "c2c272f2d1f755855d3e46b45ac117240e47df027cb2f67c766e6e7378e8595b",
+      "research/rwa_external_eligibility.md": "958ea7a0b96371b6d773920038ec8d6e07e7903b4b26f5dd8443dd6d354bf4e5",
+      "research/rwa_data_feature_research.md": "16351bb387dfebf0dc7ccdc6ef0e8ec77406964bf3d0b40c52fcdc3496284504",
+      "research/rwa_model_decision_research.md": "0626868e9fbb6818021be659d719f7a95d53f829bb48f310aaac917de9734c7a",
+      "src/baram/constants.py": "f4fbf5c6772d021436f9b40459a2587f8223d597045d7fe9c48c9428e1702843",
+      "artifacts/manifests/prepare.json": "ca4908d7f98639b13da80febcd071cd805369e8e044bb4d7b97f793d2703ca46",
+      "inputs/competition/open_wind_236727.zip": "920be0c458d820e855bf79dd25723146f52ce1736138aedba5e6bc853f1f720b",
+      "inputs/notebooks/baseline.ipynb": "712b26f4d2748860c94cff1e0100c23810468c983173f8e9ef8d009fe82df48c",
+      "research/lanes/s17_n18_terrain_sx.md": "fc7e3aba702214274fe08b3f6041164cb63774eb293591d5d144581c73e3a1cd",
+      "research/lanes/s17_n18_pretrained_nwp.md": "336134ecefc8f787aec5357254a917514100480415fe12323ae5aaa4a90f4896",
+      "research/lanes/s17_n18_step_reward.md": "906d7cc175ae190c4c04dc54c8f8630de83cc8334c34d1a6d2398298be5b408d",
+      "research/lanes/s17_n18_repo_mechanism.md": "abdf36dbf55c2c6bdab46f9d40b5097778d9442f3426f9fefa105f9c2fb2a841",
+      "reports/s17_n14_r3_terrain_prerequisite_receipt.json": "c576917f22522cc3a08bb014cb9809d9113295e42a01a6fa7b248a71121922e7",
+      "reports/s17_n15a_r3_corrected_formula_gate_receipt.json": "66fa03a50ac0a3858bc244442a2a3a6e83cc5a2429fd0acce44f94901e3dfc9f"
+    },
+    "sha256": "714be6b43509f1a6b4f2f8e75d707509814d5c8735c63f7e5c42fb11258d7a22"
+  },
+  "authoritative_state": {
+    "champion_total": 0.6314827308346854,
+    "target_total": 0.66,
+    "gap": 0.0285172691653146,
+    "comparison_count": 4,
+    "terrain_candidate_total": 0.6318460412370778,
+    "terrain_delta": 0.00036331040239234724,
+    "terrain_decision": "REFUTED_ZERO_GAP_CLOSING_CREDIT"
+  },
+  "lanes": [
+    {
+      "id": "SITE_MAPPED_TERRAIN",
+      "path": "research/lanes/s17_n23_site_mapped_terrain.md",
+      "bound": "local repository <=40 files plus <=8 primary-source URLs; no raster body/value read beyond frozen lookup",
+      "question": "Does primary terrain-exposure literature and repository geometry directly support exactly one group/site-mapped Sx representation materially distinct from the refuted global mean16?"
+    },
+    {
+      "id": "LANDCOVER_ROUGHNESS",
+      "path": "research/lanes/s17_n23_landcover_roughness.md",
+      "bound": "<=12 primary-source URLs; metadata/HEAD only, no data body acquisition",
+      "question": "Is there a pre-cutoff, commercial-use-compatible, deployable static land-cover/roughness source and one published wind mechanism available for all rows?"
+    },
+    {
+      "id": "POWER_WAKE_STATIC",
+      "path": "research/lanes/s17_n23_power_wake_static.md",
+      "bound": "local repository <=40 files plus <=10 primary-source URLs; no model/data downloads",
+      "question": "Do turbine metadata/layout and primary power-curve or wake literature identify one strict deployable representation not already encoded?"
+    },
+    {
+      "id": "REPO_MECHANISM",
+      "path": "research/lanes/s17_n23_repo_mechanism.md",
+      "bound": "local repository <=50 source/artifact-schema files; N22 aggregate evaluation and saved action columns allowed, actual_kwh forbidden",
+      "question": "Which remaining repository-native information source is genuinely unused, chronology-safe, and executable after closed-axis contradiction audit?"
+    },
+    {
+      "id": "OPERATIONAL_NWP",
+      "path": "research/lanes/s17_n23_operational_nwp.md",
+      "bound": "<=14 primary official URLs, metadata only; no forecast/data/weight body, inference, API query, or acquisition",
+      "question": "Is any operational forecast archive covering Korea basis-safe at D-1 14 KST, pre-cutoff, commercially licensed, and runnable locally, excluding ECMWF N5, reanalysis, and observations?"
+    }
+  ],
+  "evidence_tags": [
+    "[directly_supported]",
+    "[derived]",
+    "[near_match_only]",
+    "[contradicts_premise]",
+    "[unverified]"
+  ],
+  "selection_rule": {
+    "maximum_executable_candidates": 1,
+    "requirements": [
+      "literal directly_supported evidence independently verified by root",
+      "new information or representation not a variant/retune of a closed axis",
+      "strict D-1 14 KST availability and past-only label chronology",
+      "pre-2026-07-05 publication/data availability",
+      "commercial-use-compatible license for external assets",
+      "same availability and transformation at deployment",
+      "self-contained Apple-M1/project-environment execution or root-verifiable acquisition prerequisite",
+      "exact one-feature/one-treatment formula with zero tuning degrees before any fit"
+    ],
+    "forbidden_credit": [
+      "expected improvement guessed from literature",
+      "near-match-only source",
+      "reanalysis/static reanalysis climatology",
+      "test-period observations",
+      "refuted mean16 retuning",
+      "post-hoc subgroup/fold choice"
+    ]
+  },
+  "execution_limits": {
+    "research_children": 5,
+    "repository_writes": "each child only its designated research/lanes file",
+    "model_fits": 0,
+    "predict_or_policy_calls": 0,
+    "metric_or_score_calls": 0,
+    "actual_kwh_values": 0,
+    "2024_or_test_values": 0,
+    "external_data_or_weight_bodies": 0,
+    "external_inference": 0,
+    "dependencies": 0,
+    "dacon_actions": []
+  },
+  "outputs": [
+    "research/lanes/s17_n23_site_mapped_terrain.md",
+    "research/lanes/s17_n23_landcover_roughness.md",
+    "research/lanes/s17_n23_power_wake_static.md",
+    "research/lanes/s17_n23_repo_mechanism.md",
+    "research/lanes/s17_n23_operational_nwp.md",
+    "reports/s17_n23_post_terrain_frontier_intake_receipt.json"
+  ],
+  "score_bearing": false,
+  "comparison_index": null,
+  "next_handoff_if_none": [
+    "S17-N24_SECONDARY_FRONTIER_RESEARCH_INTAKE"
+  ]
+}

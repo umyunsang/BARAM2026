@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "node_id": "S17-N47_FICR_ELASTICITY",
+  "stage_id": "S4",
+  "score_bearing": false,
+  "question": "How much accuracy improvement does Total 0.660000 actually require, and where is the energy-weighted error mass?",
+  "method": "Zero-fit arithmetic on frozen champion actions and 2023 labels: energy-weighted error histogram plus an elasticity curve of FICR under a uniform shrink of every error.",
+  "degrees_of_freedom": 0
+}

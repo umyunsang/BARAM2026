@@ -1,0 +1,83 @@
+{
+ "audit": [
+  {
+   "stage": "S1_목적파악",
+   "deep_research": "NONE",
+   "lane_file_exists": "-",
+   "n_nodes": 2,
+   "status": ""
+  },
+  {
+   "stage": "S2_데이터특성",
+   "deep_research": "NONE",
+   "lane_file_exists": "-",
+   "n_nodes": 5,
+   "status": ""
+  },
+  {
+   "stage": "S3_데이터정밀분석",
+   "deep_research": "YES",
+   "lane_file_exists": "YES",
+   "n_nodes": 5,
+   "status": ""
+  },
+  {
+   "stage": "S4_평가지표이해",
+   "deep_research": "NONE",
+   "lane_file_exists": "-",
+   "n_nodes": 4,
+   "status": ""
+  },
+  {
+   "stage": "S5_데이터전처리",
+   "deep_research": "YES",
+   "lane_file_exists": "YES",
+   "n_nodes": 23,
+   "status": "S5 CLOSED — treatment accepted, gate passed"
+  },
+  {
+   "stage": "S6_피처구성",
+   "deep_research": "YES",
+   "lane_file_exists": "YES",
+   "n_nodes": 6,
+   "status": "CLOSED"
+  },
+  {
+   "stage": "S7_모델링",
+   "deep_research": "NONE",
+   "lane_file_exists": "-",
+   "n_nodes": 9,
+   "status": "CLOSED"
+  },
+  {
+   "stage": "S8_검증전략",
+   "deep_research": "NONE",
+   "lane_file_exists": "-",
+   "n_nodes": 1,
+   "status": "APPLIED"
+  },
+  {
+   "stage": "S9_문제해결접근",
+   "deep_research": "YES",
+   "lane_file_exists": "YES",
+   "n_nodes": 7,
+   "status": "CANDIDATE_LIST_CLOSED_NO_GAIN"
+  },
+  {
+   "stage": "S10_모델개선전략",
+   "deep_research": "NONE",
+   "lane_file_exists": "-",
+   "n_nodes": 4,
+   "status": "CLOSED"
+  },
+  {
+   "stage": "S11_분석방법적절성",
+   "deep_research": "NONE",
+   "lane_file_exists": "-",
+   "n_nodes": 1,
+   "status": "OPEN"
+  }
+ ],
+ "finding": "S5/S6/S7 closed before the binding constraint was known; S12 nodes were all S9/S10-level and none re-entered S5/S6",
+ "action": "reopen S5 with a deep-research lane targeted at point accuracy"
+}

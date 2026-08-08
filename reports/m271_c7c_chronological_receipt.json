@@ -1,0 +1,49 @@
+{
+  "node_id": "C1N84_TEACHER_CHRONOLOGICAL",
+  "lane": "L6",
+  "parent": "C1N83_TEACHER_SCALEUP_REJUDGED",
+  "surface": "평가 fold test 행 (C1N66·C1N71 과 같은 면)",
+  "split": "fold 시작 이전 행으로만 학습. 내부 KFold 없음 — 누출 경로 없음",
+  "model_fits": 18,
+  "test_rows": 19783,
+  "arms": {
+    "base": {
+      "g1": 1.4957083168950884,
+      "g2": 1.5947495667798688,
+      "g3": 1.6520568905485604,
+      "overall": 1.5846644918657369
+    },
+    "deep": {
+      "g1": 1.4953270386833277,
+      "g2": 1.5894169269444127,
+      "g3": 1.6531862266250983,
+      "overall": 1.5831191423104365
+    }
+  },
+  "reduction": 0.0009751903719890098,
+  "implied_total_gain": 0.00015993122100619762,
+  "shuffle_reduction_c7b": 0.0283,
+  "required_reduction_for_c16": 0.02715548780487804,
+  "c16_floor_total": 0.004453499999999999,
+  "reference_c71_allweather": {
+    "1": 1.4957,
+    "2": 1.5947,
+    "3": 1.6521
+  },
+  "checks": {
+    "V1_base_matches_c71_allweather": true,
+    "V2_same_rows": true
+  },
+  "hypotheses": {
+    "H1_deep_beats_base": true,
+    "H2_clears_magnitude_gate": false,
+    "H3_helps_all_groups": false,
+    "H4_smaller_than_shuffle_reduction": true
+  },
+  "c7b_verdict": "TEACHER_CAPACITY_CLEARS_GATE_PENDING_CHRONOLOGICAL_CONFIRMATION",
+  "verdict": "DEEP_HELPS_BUT_BELOW_MAGNITUDE_GATE",
+  "dacon_upload": false,
+  "lockbox_used": false,
+  "generated_at": "2026-08-05T22:49:09.614227+00:00",
+  "digest": "c7bde775cec0bde7"
+}

@@ -1,0 +1,31 @@
+{
+ "analog_best_shortfall": 0.009648321013269512,
+ "breakeven_local_for_analog": 0.615408,
+ "candidates": {
+  "M244_analog_family_best": {
+   "ficr": 0.35058665087735097,
+   "one_minus_nmae": 0.8609327070961099,
+   "total": 0.6057596789867304
+  },
+  "M251_hybrid_m244_on_m107": {
+   "ficr": 0.4005096894665934,
+   "one_minus_nmae": 0.8557120402800917,
+   "total": 0.6281108648733426
+  }
+ },
+ "caveat": "n=1 offset per method class; the break-even is indicative, not a proven threshold",
+ "conclusion": "the local-selection bias against the analog family was real but did not cost a better candidate: the family's best falls short of the break-even",
+ "coverage_note": "only M244 and M251 have full Q2-Q4 persistence in the analog family; all Q3-only variants were rejected against M244 or its parents, so M244 is the family's best dev-surface candidate. M245 equals M244 on the dev surface because its change is confined to Q1.",
+ "dacon_upload": false,
+ "external_actions": [],
+ "lockbox_reopened": false,
+ "logic": "an offset constant within a method class cannot reorder that class; it only shifts cross-class comparison. So the operation is a break-even test, not a re-rank.",
+ "m261_local": 0.629973,
+ "m261_online": 0.6365274327,
+ "model_fits": 0,
+ "new_2024_evaluation": false,
+ "offset_analog": 0.021119,
+ "offset_classifier": 0.006554,
+ "schema_version": 1,
+ "stage": "M270_ANALOG_FAMILY_REEVALUATION"
+}

@@ -1,0 +1,150 @@
+{
+  "node_id": "C1N70_BASELINE_CORRECTION",
+  "lane": "L2",
+  "parent": "C1N69_SKILL_RESPONSE",
+  "candidate": false,
+  "diagnostic_only": true,
+  "method": "NONNEGATIVE_PAIR_COMBINATION (Breiman 1996; C1N50) on corrected baseline",
+  "surface": {
+    "spec_digest": "1736a900bafdc14213634fba",
+    "probability_digest": "8141403f56cd7eba",
+    "from_cache": true
+  },
+  "source": "ecmwf_ifs025",
+  "per_group": {
+    "1": {
+      "rows_2023": 6595,
+      "sigma_teacher_2023": 1.495992813035227,
+      "sigma_blend_2023": 2.0527523944631305,
+      "sigma_gfs_2023": 2.4138396103370883,
+      "sigma_ldaps_2023": 2.072173568104055,
+      "ratio": 0.7287741166788329,
+      "sigma_cur_2024": 1.9173908995074698,
+      "sigma_teacher_2024": 1.3973448591165891,
+      "sigma_ecmwf_2024": 1.901914100515735,
+      "q_against_blend": 0.9919281983680477,
+      "q_against_teacher": 1.3610914214248715,
+      "rho_reported": 0.7799154079713949,
+      "naive_reduction": 0.06050948393678879,
+      "naive_weight_on_new": 0.48159018219033844,
+      "c52_reduction": 0.061,
+      "sensitivity": {
+        "rho-0.05": {
+          "rho": 0.7299154079713949,
+          "weight_on_new": 0.9924695590192795,
+          "combined_sigma": 1.397310563363686,
+          "reduction": 2.4543513850172616e-05
+        },
+        "rho+0.00": {
+          "rho": 0.7799154079713949,
+          "weight_on_new": 1.0,
+          "combined_sigma": 1.3973448591165891,
+          "reduction": 0.0
+        },
+        "rho+0.05": {
+          "rho": 0.829915407971395,
+          "weight_on_new": 1.0,
+          "combined_sigma": 1.3973448591165891,
+          "reduction": 0.0
+        }
+      }
+    },
+    "2": {
+      "rows_2023": 6595,
+      "sigma_teacher_2023": 1.6003264450638843,
+      "sigma_blend_2023": 2.1773072118306285,
+      "sigma_gfs_2023": 2.717822655477331,
+      "sigma_ldaps_2023": 2.1875505408399,
+      "ratio": 0.7350025923619514,
+      "sigma_cur_2024": 2.095648267063499,
+      "sigma_teacher_2024": 1.5403069089705028,
+      "sigma_ecmwf_2024": 2.1477049032884397,
+      "q_against_blend": 1.0248403499017917,
+      "q_against_teacher": 1.3943356942571299,
+      "rho_reported": 0.759080617256687,
+      "naive_reduction": 0.05117785463918978,
+      "naive_weight_on_new": 0.5508649014944185,
+      "c52_reduction": 0.051,
+      "sensitivity": {
+        "rho-0.05": {
+          "rho": 0.7090806172566869,
+          "weight_on_new": 0.9883079970407721,
+          "combined_sigma": 1.5402051209312757,
+          "reduction": 6.60829595935386e-05
+        },
+        "rho+0.00": {
+          "rho": 0.759080617256687,
+          "weight_on_new": 1.0,
+          "combined_sigma": 1.5403069089705028,
+          "reduction": 0.0
+        },
+        "rho+0.05": {
+          "rho": 0.809080617256687,
+          "weight_on_new": 1.0,
+          "combined_sigma": 1.5403069089705028,
+          "reduction": 0.0
+        }
+      }
+    },
+    "3": {
+      "rows_2023": 6593,
+      "sigma_teacher_2023": 1.6565823117281728,
+      "sigma_blend_2023": 1.9793138226453149,
+      "sigma_gfs_2023": 2.5166580435756982,
+      "sigma_ldaps_2023": 1.9968850200604065,
+      "ratio": 0.8369477809810788,
+      "sigma_cur_2024": 1.9121661765134152,
+      "sigma_teacher_2024": 1.6003832382999768,
+      "sigma_ecmwf_2024": 2.0372890240915114,
+      "q_against_blend": 1.0654351327384324,
+      "q_against_teacher": 1.2730007259109026,
+      "rho_reported": 0.7456193874084585,
+      "naive_reduction": 0.03946156928097022,
+      "naive_weight_on_new": 0.623689960385004,
+      "c52_reduction": 0.039,
+      "sensitivity": {
+        "rho-0.05": {
+          "rho": 0.6956193874084584,
+          "weight_on_new": 0.8652403505145798,
+          "combined_sigma": 1.587990905019723,
+          "reduction": 0.007743353581619372
+        },
+        "rho+0.00": {
+          "rho": 0.7456193874084585,
+          "weight_on_new": 0.9296217270734111,
+          "combined_sigma": 1.597518352945328,
+          "reduction": 0.0017901245689700973
+        },
+        "rho+0.05": {
+          "rho": 0.7956193874084585,
+          "weight_on_new": 1.0,
+          "combined_sigma": 1.6003832382999768,
+          "reduction": 0.0
+        }
+      }
+    }
+  },
+  "response_slope_near_k1": 0.16423547908299588,
+  "mean_corrected_reduction": 0.0005967081896566991,
+  "estimated_total_gain": 9.800065540101515e-05,
+  "worst_case_gain": 0.00042887248915664,
+  "detection_threshold": 0.001013,
+  "checks": {
+    "V1_blend_worse_than_teacher": true,
+    "V2_ratio_matches_c54": false
+  },
+  "hypotheses": {
+    "H1_source_worse_than_teacher": true,
+    "H2_reduction_below_c52": true,
+    "H3_gain_below_detection": true,
+    "H4_robust_to_rho": true
+  },
+  "limitation": "rho \ub97c blend-ECMWF \uc0c1\uad00\uc73c\ub85c \ub300\uc785\ud588\ub2e4. teacher \uc794\ucc28\uc640 ECMWF \uc794\ucc28\uc758 \uc0c1\uad00\uc740 \uc9c1\uc811 \uc7ac\uc9c0 \uc54a\uc558\uace0, \uadf8\ub7ec\ub824\uba74 2024 \uc5d0 teacher \ub97c \ub3cc\ub824\uc57c \ud55c\ub2e4. teacher \uac00 blend \ubcf4\ub2e4 \uc815\uad50\ud558\ubbc0\ub85c \uc2e4\uc81c rho \ub294 \ub354 **\ub0ae\uc744** \uc218 \uc788\uace0 \uadf8\ub7ec\uba74 \uacb0\ud569 \uc774\ub4dd\uc774 \ucee4\uc9c4\ub2e4 \u2014 \ubbfc\uac10\ub3c4 rho-0.05 \uac00 \uadf8 \ubc29\ud5a5\uc744 \ubcf8\ub2e4.",
+  "verdict": "RATIO_INCONSISTENT_WITH_C54_VOID",
+  "no_collection": true,
+  "no_training": true,
+  "dacon_upload": false,
+  "lockbox_used": false,
+  "generated_at": "2026-08-05T11:59:20.908891+00:00",
+  "digest": "002c357df1bba83f"
+}

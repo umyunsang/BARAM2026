@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "status": "PASS_SNAPSHOT_TOP4_GUIDE",
+  "scope": "Read-only analysis of a user-supplied saved Dacon public leaderboard page; no upload or account mutation.",
+  "observed_at": "2026-08-01T22:48:41+09:00",
+  "source": {
+    "competition_id": "236727",
+    "official_url": "https://dacon.io/competitions/official/236727/leaderboard",
+    "file_name": "제3회 풍력발전량 예측 AI 경진대회 - BARAM 2026 - DACON.html",
+    "sha256": "f1328f9b68772da6a91a2cd715d649193e6f76252b47c5dafd36ece04567257c",
+    "bytes": 2401003,
+    "surface": "public_leaderboard",
+    "page_marker": "D-0"
+  },
+  "extraction": {
+    "parser": "Python 3.12 standard library regular expressions plus HTML entity decoding",
+    "public_rank_rows": 100,
+    "authenticated_user_summary_rows": 1,
+    "parsed_records": 101,
+    "contains_submission_history": false,
+    "contains_user_submission_count": true
+  },
+  "data_quality": {
+    "public_ranks_contiguous_1_to_100": true,
+    "duplicate_public_ranks": 0,
+    "missing_required_numeric_fields": 0,
+    "public_total_score_nonincreasing": true,
+    "all_scores_in_unit_interval": true,
+    "all_submission_counts_positive": true,
+    "displayed_total_formula": "total = (1-NMAE + FICR) / 2",
+    "max_display_precision_residual": 0.000005000000000032756
+  },
+  "leaderboard_bands": [
+    {
+      "label": "winner",
+      "rank_start": 1,
+      "rank_end": 1,
+      "html_class": "winner-top-group"
+    },
+    {
+      "label": "top_1_percent",
+      "rank_start": 2,
+      "rank_end": 10,
+      "html_class": "winner-group"
+    },
+    {
+      "label": "top_4_percent",
+      "rank_start": 11,
+      "rank_end": 35,
+      "html_class": "second-group"
+    },
+    {
+      "label": "top_10_percent",
+      "rank_start": 36,
+      "rank_end": 89,
+      "html_class": "third-group"
+    }
+  ],
+  "rank_landmarks": [
+    {"rank": 1, "total": 0.67365, "one_minus_nmae": 0.87964, "ficr": 0.46767},
+    {"rank": 10, "total": 0.66139, "one_minus_nmae": 0.87790, "ficr": 0.44488},
+    {"rank": 11, "total": 0.66125, "one_minus_nmae": 0.87787, "ficr": 0.44464},
+    {"rank": 35, "total": 0.65686, "one_minus_nmae": 0.87213, "ficr": 0.44158},
+    {"rank": 36, "total": 0.65683, "one_minus_nmae": 0.87221, "ficr": 0.44144},
+    {"rank": 89, "total": 0.65181, "one_minus_nmae": 0.87481, "ficr": 0.42882},
+    {"rank": 90, "total": 0.65179, "one_minus_nmae": 0.87356, "ficr": 0.43003},
+    {"rank": 100, "total": 0.65090, "one_minus_nmae": 0.87347, "ficr": 0.42834}
+  ],
+  "top_4_percent_band_statistics": {
+    "rank_start": 1,
+    "rank_end": 35,
+    "total": {"min": 0.65686, "q25": 0.658835, "median": 0.65986, "q75": 0.661395, "max": 0.67365},
+    "one_minus_nmae": {"min": 0.87164, "q25": 0.87361, "median": 0.87658, "q75": 0.87859, "max": 0.89047},
+    "ficr": {"min": 0.43722, "q25": 0.44156, "median": 0.44488, "q75": 0.44691, "max": 0.46767},
+    "submission_count": {"min": 4, "q25": 31.5, "median": 76, "q75": 104.5, "max": 128}
+  },
+  "authenticated_user_summary": {
+    "identity_redacted": true,
+    "rank": 689,
+    "total": 0.62366,
+    "one_minus_nmae": 0.87305,
+    "ficr": 0.37426,
+    "submission_count": 2,
+    "registration_relative_label": "5 days ago"
+  },
+  "target_guide": {
+    "snapshot_top_4_cutoff_rank": 35,
+    "snapshot_top_4_cutoff_total": 0.65686,
+    "current_total_gap_to_cutoff": 0.03320,
+    "current_one_minus_nmae_advantage_over_cutoff": 0.00092,
+    "current_ficr_gap_to_cutoff_row": 0.06732,
+    "ficr_required_at_current_one_minus_nmae_for_cutoff_total": 0.44067,
+    "minimum_local_proxy_target": {
+      "total": 0.65686,
+      "one_minus_nmae_floor": 0.87300,
+      "ficr_at_current_one_minus_nmae": 0.44067
+    },
+    "safe_local_proxy_target": {
+      "total": 0.66000,
+      "one_minus_nmae_floor": 0.87300,
+      "ficr_at_current_one_minus_nmae": 0.44695
+    },
+    "one_minus_nmae_required_at_current_ficr_for_cutoff_total": 0.93946,
+    "one_minus_nmae_required_at_current_ficr_for_safe_total": 0.94574,
+    "primary_bottleneck": "FICR"
+  },
+  "limitations": [
+    "The file is a saved D-0 public-leaderboard snapshot, not a final or private-leaderboard result.",
+    "The cutoff can move after this local save timestamp.",
+    "The file contains public ranks 1-100 plus one authenticated user summary row, not the full participant population.",
+    "The file does not contain the two individual submission-history rows; only the best user summary and submission count are visible.",
+    "No new candidate has been uploaded or verified against Dacon by this receipt."
+  ]
+}

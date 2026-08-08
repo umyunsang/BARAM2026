@@ -1,0 +1,26 @@
+{
+  "event_type": "PREDECLARED",
+  "cycle_id": "S17-N12_VERTICAL_PROFILE_TERRAIN_PREREQUISITE_AUDIT",
+  "stage_id": "S6",
+  "node_id": "S17-N12_VERTICAL_PROFILE_TERRAIN_PREREQUISITE_AUDIT",
+  "actor": "root",
+  "occurred_at": "2026-08-08T20:47:51.332136+09:00",
+  "body": {
+    "preregistration_sha256": "2a08b6bc511de3a357bf95c8e8eb143f7a42db761032f2b2aa529d6c1ea85518",
+    "parent_ids": [
+      "S17-N11A_FOUR_MAPPING_10MIN_SCADA_CORRECTED_DIAGNOSTIC"
+    ],
+    "mechanism": "R2 can be causal and reproducible only if each NWP source exposes physically comparable vertical vectors and a documented fixed target height; otherwise interpolation/PCA mixes incompatible semantics.",
+    "treatment": "Static docs, headers, feature-manifest and prior-receipt prerequisite audit.",
+    "control": "Current vertical feature block.",
+    "metric": "Boolean documentation, comparability, bracketing/extrapolation, duplication and provenance gates; no model score.",
+    "min_effect": 0.0,
+    "score_bearing": false,
+    "novelty_signature": "R2_VERTICAL_PROFILE_PREREQUISITE_AUDIT_V1",
+    "basis_evidence_ids": [
+      "RWA_DATA_R2",
+      "S17_N10B_METADATA",
+      "C1N6_WIND50_MIDPOINT"
+    ]
+  }
+}

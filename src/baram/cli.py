@@ -17,10 +17,12 @@ from baram.workflows import (
     run_reproduce,
     run_select,
     run_split_build,
+    run_v2_preflight,
 )
 
 COMMANDS = (
     "audit",
+    "v2-preflight",
     "prepare",
     "split-build",
     "backtest",
@@ -33,6 +35,7 @@ COMMANDS = (
 
 HANDLERS = {
     "audit": run_audit,
+    "v2-preflight": run_v2_preflight,
     "prepare": run_prepare,
     "split-build": run_split_build,
     "backtest": run_backtest,
@@ -51,6 +54,7 @@ def build_parser() -> argparse.ArgumentParser:
         subparser = subparsers.add_parser(command)
         subparser.add_argument("--config", type=Path, required=True)
         if command in {
+            "v2-preflight",
             "prepare",
             "split-build",
             "backtest",
@@ -63,7 +67,17 @@ def build_parser() -> argparse.ArgumentParser:
     subparsers.choices["lockbox"].add_argument("--candidate-freeze", type=Path, required=True)
     subparsers.choices["backtest"].add_argument(
         "--stage",
-        choices=("controls", "lightgbm", "ablation", "challengers"),
+        choices=(
+            "controls",
+            "lightgbm",
+            "ablation",
+            "challengers",
+            "spatial-v2",
+            "point-v2",
+            "distribution-v2",
+            "decision-v2",
+            "ensemble-v2",
+        ),
         required=True,
     )
     subparsers.choices["fit-final"].add_argument("--champion-receipt", type=Path, required=True)

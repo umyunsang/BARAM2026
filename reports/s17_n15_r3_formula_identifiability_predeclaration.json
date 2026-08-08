@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "node_id": "S17-N15_R3_COPERNICUS_GLO30_STATIC_EXTRACTION_AND_FORMULA_FREEZE",
+  "created_at": "2026-08-08T21:34:51.390717+09:00",
+  "purpose": "Freeze and audit the exact primary-paper height-correction formula before any GLO-30 tile body retrieval. Extraction is conditional on formula identifiability.",
+  "input_bundle": {
+    "files": {
+      "reports/s17_n14_r3_terrain_prerequisite_receipt.json": "c576917f22522cc3a08bb014cb9809d9113295e42a01a6fa7b248a71121922e7",
+      "reports/s17_n12_vertical_profile_prerequisite_receipt.json": "5f6d35ccc7193e683180b55b76ceca8c702be1ecc1257d682d93808a7d76bebe",
+      "research/sources/kim_lee_et_al_2021_kmapp_28740.pdf": "29f2015af66453f6a041b41fa147836ec2c9edccf908b722e152782f63c2d139",
+      "research/lanes/S13_S5_preprocessing_deep.md": "941ea50838d606aea5a1071572302f89a0153b767050ee9b9702874de28323ac",
+      "inputs/competition/open_wind_236727.zip": "920be0c458d820e855bf79dd25723146f52ce1736138aedba5e6bc853f1f720b"
+    },
+    "sha256": "6ce1e7111431fc5694696f24b0c3c151c64767b187401e8588108bfad5add921"
+  },
+  "frozen_primary_formula": {
+    "equation_2": "delta_u_HC(z) = u(h_HC) * exp(-kappa*z) * kappa * delta_H_HC",
+    "equation_3": "h_HC = 1/kappa",
+    "equation_4": "kappa = pi * (A_over_S) / (H_over_2)",
+    "equation_5": "H_over_2 = 2*sigma_H",
+    "equation_7": "A_over_S = tan(mean over 16 azimuth sections of terrain elevation angle)",
+    "delta_height": "H_high_resolution_site_or_cell - H_LDAPS_model",
+    "correction_application": "add delta_u_HC(z) to the interpolated forecast wind speed at z"
+  },
+  "gate_order": [
+    "verify primary equations and definitions",
+    "enumerate supplied comparable wind-vector levels",
+    "derive paper-implied h_HC support requirement",
+    "only if u(h_HC) is identified for every relevant grid may a DEM tile body be retrieved"
+  ],
+  "identifiability_rule": {
+    "PASS_AND_EXTRACT": "The supplied archive must expose a comparable mean horizontal wind vector that brackets every paper-implied h_HC, or the primary paper must prescribe an exact reconstruction supported by the supplied variables.",
+    "BLOCKED_UNIDENTIFIED_U_HHC_NO_TILE_GET": "If u(h_HC) is absent/unbracketed or needs a new extrapolation/free choice, stop before any DEM GET/range/body request. Do not substitute u(10m), LDAPS 50m extrema, GFS vectors, or a learned vertical profile."
+  },
+  "scope": {
+    "archive_value_rows": 0,
+    "allowed_archive_evidence": "N12 frozen header/static audit only",
+    "dem_tile_methods_allowed": [
+      "none"
+    ],
+    "labels_or_scada": false,
+    "test_members": false,
+    "lockbox_2024": false
+  },
+  "non_score_bearing": true,
+  "comparison_index": null,
+  "model_fits": 0,
+  "official_score_calls": 0,
+  "forbidden": [
+    "DEM tile GET/range/body unless identifiability passes",
+    "u(10m) substitution for u(h_HC)",
+    "LDAPS 50m extrema relabelled as a mean vector",
+    "GFS-to-LDAPS vector substitution",
+    "learned/extrapolated vertical profile",
+    "target/SCADA/test/2024 access",
+    "model fits",
+    "score calls",
+    "rejected ECMWF",
+    "Dacon actions"
+  ],
+  "handoff_if_blocked": [
+    "S17-N16_R4_SOURCE_SEPARATED_VS_CONCAT_PREREQUISITE_AUDIT"
+  ]
+}

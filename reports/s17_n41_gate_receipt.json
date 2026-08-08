@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "node_id": "S17-N41_CONDITIONAL_MEMBER_GATE",
+  "stage_id": "S7",
+  "deficit": "FD14",
+  "score_bearing": false,
+  "comparison_index": null,
+  "result_status": "REFUTED",
+  "results": {
+    "dev-2023-Q3": {
+      "training_rows": 6480,
+      "train_label_max": "2023-07-01T00:00:00",
+      "first_basis": "2023-07-01T14:00:00",
+      "gate_accuracy": 0.7947877652933832,
+      "majority_baseline": 0.6936641697877652,
+      "deployed": {
+        "total": 0.6051356658854874,
+        "one_minus_nmae": 0.8642506686611071,
+        "ficr": 0.34602066310986773
+      },
+      "gate_hard": {
+        "total": 0.6001362958109927,
+        "one_minus_nmae": 0.8683958516844801,
+        "ficr": 0.3318767399375054
+      },
+      "gate_soft": {
+        "total": 0.6077241134259389,
+        "one_minus_nmae": 0.8681304274150401,
+        "ficr": 0.34731779943683766
+      },
+      "gate_soft_shrunk": {
+        "total": 0.6096018350774004,
+        "one_minus_nmae": 0.866760657151572,
+        "ficr": 0.35244301300322883
+      },
+      "oracle_per_row": {
+        "total": 0.6970976966231928,
+        "one_minus_nmae": 0.8985703987929469,
+        "ficr": 0.4956249944534387
+      }
+    },
+    "dev-2023-Q4": {
+      "training_rows": 12888,
+      "train_label_max": "2023-10-01T00:00:00",
+      "first_basis": "2023-10-01T14:00:00",
+      "gate_accuracy": 0.6501831501831502,
+      "majority_baseline": 0.5544871794871795,
+      "deployed": {
+        "total": 0.6418311089992913,
+        "one_minus_nmae": 0.8552521261830528,
+        "ficr": 0.4284100918155298
+      },
+      "gate_hard": {
+        "total": 0.6286800036232251,
+        "one_minus_nmae": 0.8581279969395132,
+        "ficr": 0.39923201030693695
+      },
+      "gate_soft": {
+        "total": 0.6371330196087761,
+        "one_minus_nmae": 0.8583277544774157,
+        "ficr": 0.41593828474013644
+      },
+      "gate_soft_shrunk": {
+        "total": 0.6407085541036744,
+        "one_minus_nmae": 0.857274923293252,
+        "ficr": 0.42414218491409694
+      },
+      "oracle_per_row": {
+        "total": 0.7366447167772541,
+        "one_minus_nmae": 0.8890134063300459,
+        "ficr": 0.5842760272244623
+      }
+    }
+  },
+  "chronology_verified": {
+    "dev-2023-Q3": {
+      "train_label_max": "2023-07-01T00:00:00",
+      "first_basis": "2023-07-01T14:00:00",
+      "safe": true
+    },
+    "dev-2023-Q4": {
+      "train_label_max": "2023-10-01T00:00:00",
+      "first_basis": "2023-10-01T14:00:00",
+      "safe": true
+    }
+  },
+  "findings": [
+    "The member-optimality signal IS learnable. Gate accuracy beats the majority baseline on both folds: 0.794788 versus 0.693664 on Q3 and 0.650183 versus 0.554487 on Q4, roughly ten accuracy points in both cases.",
+    "Learning it does NOT convert into Total. Hard selection is worse than the deployed blend on both folds (0.600136 versus 0.605136 on Q3, 0.628680 versus 0.641831 on Q4). Soft mixture and a 50/50 shrink toward the deployed blend are mixed: shrink gains +0.004466 on Q3 and loses -0.001123 on Q4.",
+    "The diagnosis is target misalignment, not lack of signal. The gate was trained to predict the member with the smallest capacity-relative absolute error, but Total rewards actual-weighted capture of the nested 6 and 8 percent bands. A member that wins on many low-output rows earns accuracy and almost no FICR, and hard selection also discards the variance reduction that averaging provides.",
+    "Hard selection destroying value while the oracle per-row pick is worth +0.094 confirms that the oracle headroom is real but is not reachable through an error-rank objective."
+  ],
+  "residual_deficit": "FD15: any conditional combiner must be trained on a metric-aligned target, namely the expected actual-weighted settlement contribution of each candidate action, rather than on error rank or on a symmetric loss.",
+  "spawned_children": [
+    "S17-N42_METRIC_ALIGNED_GATE"
+  ],
+  "selected_disposition": "DEEPEN_S7",
+  "lockbox_2024_used": false,
+  "dacon_actions": [],
+  "closed_at": "2026-08-09T06:01:29.000567+09:00"
+}

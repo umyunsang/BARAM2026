@@ -1,0 +1,170 @@
+{
+ "dacon_upload": false,
+ "decided_utc": "2026-08-05T04:19:46.257319+00:00",
+ "external_actions": [],
+ "lane": "L2",
+ "lockbox_reopened": false,
+ "model_fits": 0,
+ "new_2024_evaluation": false,
+ "node": "C1N52_EXTERNAL_CLOSURE",
+ "reads_2024_scada_not_labels": true,
+ "report_sha256": "4a5050e325372412876c5d111ebb7ccc84473292551f808ee321dcad2989cd67",
+ "result": {
+  "closes": "AXIS_EXTERNAL_NWP_SOURCE",
+  "confound_corrected": "요구치 1.871 은 2023 유도값인데 2024 sigma_cur 가 이미 더 낮다. 절대 문턱은 표면 의존이므로 **상대 감소율**로 판정한다",
+  "no_collection": true,
+  "no_training": true,
+  "node": "C1N52_EXTERNAL_CLOSURE",
+  "parent_node": "C1N51_EXTERNAL_SOURCE_PROBE",
+  "per_group": [
+   {
+    "best_combined_sigma": 1.8013705656731775,
+    "best_reduction": 0.06050948393678879,
+    "group": 1,
+    "rho_between_new_sources": 0.774196740670022,
+    "rows": 7173,
+    "sigma_cur_2023": 2.159,
+    "sigma_cur_2024": 1.9173908995074698,
+    "sources": {
+     "ecmwf_ifs025": {
+      "combined_sigma": 1.8013705656731775,
+      "fraction_of_requirement": 0.4539346131792108,
+      "meets_primary": false,
+      "q": 0.9919281983680477,
+      "reduction": 0.06050948393678879,
+      "rho": 0.7799154079713949,
+      "sigma_new": 1.901914100515735
+     },
+     "icon_global": {
+      "combined_sigma": 1.9173908995074698,
+      "fraction_of_requirement": 0.0,
+      "meets_primary": false,
+      "q": 1.202589680986721,
+      "reduction": 0.0,
+      "rho": 0.8357676900106801,
+      "sigma_new": 2.3058345101655298
+     }
+    },
+    "year_effect": -0.24160910049253004
+   },
+   {
+    "best_combined_sigma": 1.9883974846768533,
+    "best_reduction": 0.05117785463918978,
+    "group": 2,
+    "rho_between_new_sources": 0.7713765639621206,
+    "rows": 7173,
+    "sigma_cur_2023": 2.368,
+    "sigma_cur_2024": 2.095648267063499,
+    "sources": {
+     "ecmwf_ifs025": {
+      "combined_sigma": 1.9883974846768533,
+      "fraction_of_requirement": 0.38392989226699015,
+      "meets_primary": false,
+      "q": 1.0248403499017917,
+      "reduction": 0.05117785463918978,
+      "rho": 0.759080617256687,
+      "sigma_new": 2.1477049032884397
+     },
+     "icon_global": {
+      "combined_sigma": 2.095648267063499,
+      "fraction_of_requirement": 0.0,
+      "meets_primary": false,
+      "q": 1.2566816255237152,
+      "reduction": 0.0,
+      "rho": 0.8076130203949368,
+      "sigma_new": 2.6335626707793147
+     }
+    },
+    "year_effect": -0.27235173293650083
+   },
+   {
+    "best_combined_sigma": 1.8367090984622032,
+    "best_reduction": 0.03946156928097022,
+    "group": 3,
+    "rho_between_new_sources": 0.7646412603610249,
+    "rows": 7167,
+    "sigma_cur_2023": 2.129,
+    "sigma_cur_2024": 1.9121661765134152,
+    "sources": {
+     "ecmwf_ifs025": {
+      "combined_sigma": 1.8367090984622032,
+      "fraction_of_requirement": 0.2960357785519147,
+      "meets_primary": false,
+      "q": 1.0654351327384324,
+      "reduction": 0.03946156928097022,
+      "rho": 0.7456193874084585,
+      "sigma_new": 2.0372890240915114
+     },
+     "icon_global": {
+      "combined_sigma": 1.9121661765134152,
+      "fraction_of_requirement": 0.0,
+      "meets_primary": false,
+      "q": 1.2843216203308647,
+      "reduction": 0.0,
+      "rho": 0.7833605085064237,
+      "sigma_new": 2.455836362161584
+     }
+    },
+    "year_effect": -0.21683382348658475
+   }
+  ],
+  "predeclared_check": {
+   "H1_expectation": "ECMWF 결합이 세 그룹 모두 13.3% 이상 감소",
+   "H1_held": false,
+   "H2_expectation": "ICON 결합이 세 그룹 모두 13.3% 이상 감소",
+   "H2_held": false,
+   "H3_expectation": "3-소스로도 필요 감소율 미달",
+   "H3_held": true,
+   "H4_best_fraction": 0.4539346131792108,
+   "H4_expectation": "실측 감소율이 필요량의 절반(50%) 미만",
+   "H4_held": true,
+   "verdict": "EXTERNAL_NWP_CLOSED_BY_MEASUREMENT_RELATIVE"
+  },
+  "required_reduction": {
+   "primary_local_066": 0.13329999999999997,
+   "secondary_leader_ficr": 0.1582
+  },
+  "three_source_optimistic": [
+   {
+    "group": 1,
+    "meets_primary": false,
+    "note": "낙관적 상한 (2 단계 결합, 잔차 상관을 상호 rho 로 근사)",
+    "order": [
+     "ecmwf_ifs025",
+     "icon_global"
+    ],
+    "reduction": 0.060567362513451295,
+    "stage1_sigma": 1.8013705656731775,
+    "stage2_sigma": 1.8012595898170083
+   },
+   {
+    "group": 2,
+    "meets_primary": false,
+    "note": "낙관적 상한 (2 단계 결합, 잔차 상관을 상호 rho 로 근사)",
+    "order": [
+     "ecmwf_ifs025",
+     "icon_global"
+    ],
+    "reduction": 0.05117785463918978,
+    "stage1_sigma": 1.9883974846768533,
+    "stage2_sigma": 1.9883974846768533
+   },
+   {
+    "group": 3,
+    "meets_primary": false,
+    "note": "낙관적 상한 (2 단계 결합, 잔차 상관을 상호 rho 로 근사)",
+    "order": [
+     "ecmwf_ifs025",
+     "icon_global"
+    ],
+    "reduction": 0.03946156928097022,
+    "stage1_sigma": 1.8367090984622032,
+    "stage2_sigma": 1.8367090984622032
+   }
+  ],
+  "uses_actual_kwh": false
+ },
+ "schema_version": 1,
+ "script_sha256": "61fa08627d10de18a17f1f7b9bbff9b4e1df3cc5ba034a80a06328620a94bad7",
+ "stage": "M271_P4_CYCLE52_EXTERNAL_CLOSURE"
+}

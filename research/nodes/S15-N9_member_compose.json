@@ -1,0 +1,31 @@
+{
+ "per_seed": [
+  0.6317889383020108,
+  0.6318413599699326,
+  0.6324511336759191
+ ],
+ "mean": 0.6320271439826208,
+ "sd": 0.0003681201608636714,
+ "seedavg_blend": 0.632130851958971,
+ "deployed_champion": 0.6361842493883538,
+ "honest_champion": 0.634573,
+ "arb": {
+  "point_cand": 0.632130851958971,
+  "point_champ": 0.6361842493883538,
+  "paired_mean": -0.003952233263189203,
+  "paired_sd": 0.0015500790449269638,
+  "p_better": 0.005,
+  "ci95": [
+   -0.006986911774322943,
+   -0.000927764784165514
+  ],
+  "n_rep": 400,
+  "block_days": 7,
+  "point_delta": -0.004053397429382821,
+  "min_effect": 0.001,
+  "p_required_unadjusted": 0.9,
+  "p_required_adjusted": 0.9,
+  "n_comparisons_so_far": 1,
+  "took_champion": false
+ }
+}

@@ -1,0 +1,108 @@
+{
+  "node_id": "C1N82_TEACHER_SCALEUP",
+  "lane": "L6",
+  "parent": "C1N68_EMPIRICAL_DECOMPOSITION",
+  "triggered_by": "라우터 C7 scale_up (v3)",
+  "research": {
+    "performed_at": "2026-08-06",
+    "trigger": "라우터 C7 scale_up (v3, 다른 넷은 C16 기각)",
+    "sources": [
+      {
+        "url": "https://wes.copernicus.org/articles/7/1905/2022/",
+        "class": "peer_reviewed",
+        "finding": "진단풍모델 + 신경망 후처리로 hub height 풍속 RMSE 약 30% 개선",
+        "applicability": "directly_supported"
+      },
+      {
+        "url": "https://rmets.onlinelibrary.wiley.com/doi/10.1002/qj.5063",
+        "class": "peer_reviewed",
+        "finding": "다운스케일링에서 지형·기압·기온 입력이 가장 크게 기여",
+        "applicability": "contradicts_premise"
+      }
+    ]
+  },
+  "gaps_identified": {
+    "sequence_context_absent": "teacher 표면의 시계열 열이 `issuance_batch` 하나뿐",
+    "capacity_unsearched": "TEACHER_PARAMS 400x63 이 C1N42 이후 스윕된 적 없음",
+    "inputs_not_starved": "teacher 는 이미 수치형 1,347 열 전부를 먹는다"
+  },
+  "sequence_target_columns": 60,
+  "sequence_columns_added": 480,
+  "sequence_sample": [
+    "seq__gfs_spatial__idw__heightAboveGround_10_10u__anomaly3",
+    "seq__gfs_spatial__idw__heightAboveGround_10_10u__anomaly5",
+    "seq__gfs_spatial__idw__heightAboveGround_10_10u__hm1",
+    "seq__gfs_spatial__idw__heightAboveGround_10_10u__hm2",
+    "seq__gfs_spatial__idw__heightAboveGround_10_10u__hp1",
+    "seq__gfs_spatial__idw__heightAboveGround_10_10u__hp2",
+    "seq__gfs_spatial__idw__heightAboveGround_10_10u__mean3",
+    "seq__gfs_spatial__idw__heightAboveGround_10_10u__mean5",
+    "seq__gfs_spatial__idw__heightAboveGround_10_10v__anomaly3",
+    "seq__gfs_spatial__idw__heightAboveGround_10_10v__anomaly5"
+  ],
+  "arms": {
+    "base": {
+      "g1": 1.0437629171961564,
+      "g2": 1.1605301634640381,
+      "g3": 1.1036926219297651,
+      "overall": 1.1036777862749971
+    },
+    "deep": {
+      "g1": 1.0093942899621962,
+      "g2": 1.1165865252250662,
+      "g3": 1.0963985699498204,
+      "overall": 1.0724563845749382
+    },
+    "long": {
+      "g1": 1.0232256346638713,
+      "g2": 1.1316389995134164,
+      "g3": 1.0869951043697796,
+      "overall": 1.0808429867521274
+    },
+    "seq": {
+      "g1": 1.0500125645097942,
+      "g2": 1.159158291681388,
+      "g3": 1.109724404151227,
+      "overall": 1.106871526104277
+    },
+    "seq_deep": {
+      "g1": 1.0215697185303745,
+      "g2": 1.126335797107975,
+      "g3": 1.097973764245349,
+      "overall": 1.0809625714617608
+    }
+  },
+  "reductions": {
+    "base": 0.0,
+    "deep": 0.02828851145535305,
+    "long": 0.020689733731018567,
+    "seq": -0.00289372484342465,
+    "seq_deep": 0.020581382624273004
+  },
+  "best_arm": "deep",
+  "best_reduction": 0.02828851145535305,
+  "implied_total_gain": 0.0046393158786779,
+  "required_reduction_for_c16": 0.02715548780487804,
+  "c16_floor_total": 0.004453499999999999,
+  "response_slope": 0.164,
+  "checks": {
+    "V1_base_matches_c66": false,
+    "V1_base_sigma": 1.1036777862749971,
+    "V2_sequence_columns_added": true,
+    "V3_same_split": true
+  },
+  "hypotheses": {
+    "H1_clears_magnitude_gate": true,
+    "H2_sequence_helps": false,
+    "H3_capacity_helps": true,
+    "H4_best_arm_helps_all_groups": true
+  },
+  "verdict": "GUARD_FAILED_RESULT_VOID",
+  "dacon_upload": false,
+  "external_actions": [
+    "WebSearch"
+  ],
+  "lockbox_used": false,
+  "generated_at": "2026-08-05T19:58:00.782895+00:00",
+  "digest": "5df8671f58c77fa1"
+}

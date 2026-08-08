@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "node_id": "S17-N29_ISSUANCE_CUBE_KEYS",
+  "stage_id": "S2",
+  "deficit": "FD1",
+  "predeclared_event_sha256": "3eba7c16a91366985509da9783d81c6a1667ba7c5b209c0406da5c132d3e8031",
+  "audit": {
+    "path": "research/lanes/s17_n29_issuance_cube_keys.json",
+    "sha256": "995a44e47f5bdcc88cc4b9381e6076cf23fd4f26c371f818f41617531eea66db"
+  },
+  "verdict": "FD1_RESOLVED_FAVOURABLY",
+  "result_status": "SUPPORTED",
+  "score_bearing": false,
+  "comparison_index": null,
+  "residual_deficit": "Temporal support and accumulation semantics of individual value columns remain unresolved (N29b); FD10 and FD11 are now unblocked for construction.",
+  "selected_disposition": "ADVANCE_TO_S5_PREPARE_CHANGE",
+  "spawned_children": [
+    "S17-N36_SEQ_GEOM_PREPARE_EXTENSION"
+  ],
+  "lockbox_2024_used": false,
+  "dacon_actions": [],
+  "fits": 0,
+  "metric_calls": 0,
+  "labels_read": 0,
+  "closed_at": "2026-08-09T05:36:09.996562+09:00"
+}

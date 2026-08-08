@@ -1,0 +1,149 @@
+{
+ "dacon_upload": false,
+ "decided_utc": "2026-08-05T07:58:17.806563+00:00",
+ "external_actions": [],
+ "lane": "L3",
+ "lockbox_reopened": false,
+ "model_fits": 6,
+ "new_2024_evaluation": false,
+ "node": "C1N58_TEACHER_OOF_SPLIT",
+ "report_sha256": "71573540a2487b6a69ccef2cbcae10f798c35e78ce867e9018a5ef6a8f5f9463",
+ "result": {
+  "by_fold": {
+   "blocked": {
+    "Q2": 0.6003192075420762,
+    "Q3": 0.5898063880746075,
+    "Q4": 0.6080647459035163
+   },
+   "shuffle": {
+    "Q2": 0.6070575243253177,
+    "Q3": 0.5874592143739396,
+    "Q4": 0.6089110840721658
+   }
+  },
+  "changed_vs_cycle44": "teacher 의 OOF 분할 방식만 (shuffle -> 시간 블록)",
+  "chosen_temperature_out_of_fold": {
+   "blocked": {
+    "dev-2023-Q2": 1.7,
+    "dev-2023-Q3": 2.2,
+    "dev-2023-Q4": 2.2
+   },
+   "shuffle": {
+    "dev-2023-Q2": 2.2,
+    "dev-2023-Q3": 2.2,
+    "dev-2023-Q4": 2.2
+   }
+  },
+  "classifier_fits": 6,
+  "contribution": {
+   "ficr": -0.0005425455917812683,
+   "one_minus_nmae": -0.0014845874849366836
+  },
+  "defect": "teacher 가 학습행에 무작위 KFold OOF(누출)를, 테스트행에 최종 모형 예측(정직)을 준다. 학습 때 보는 sitewind 피처가 테스트보다 정확하다",
+  "delta_blocked_minus_shuffle": -0.0020271330767179796,
+  "external_data_used": false,
+  "features_used": 101,
+  "gate_blocked_vs_shuffle": {
+   "bootstrap_q05": -0.008597930297200648,
+   "flags": {
+    "G1": false,
+    "G2": false,
+    "G3": false,
+    "G4": false
+   },
+   "months_scored": 9,
+   "passed": false,
+   "positive_months": 4,
+   "sign_test_p": 0.74609375
+  },
+  "gate_modified": false,
+  "gate_version": "M270_MONTHLY_GATE_v1_frozen_2026-08-04",
+  "lockbox_used": false,
+  "node": "C1N58_TEACHER_OOF_SPLIT",
+  "parent_node": "C1N56_MEASURED_POWERCURVE",
+  "predeclared_check": {
+   "H1_expectation": "BLOCKED > SHUFFLE",
+   "H1_held": false,
+   "H1_measured": -0.0020271330767179796,
+   "H2_expectation": "BLOCKED 가 SHUFFLE 부모 동결 게이트 통과",
+   "H2_held": false,
+   "H3_expectation": "BLOCKED > 0.63031",
+   "H3_held": false,
+   "H4_expectation": "이득이 FICR 쪽",
+   "H4_held": true,
+   "V1_expectation": "SHUFFLE 이 사이클 44 CONTROL(0.604043) ±0.005 재현",
+   "V1_gap": 4.4813601940418835e-08,
+   "V1_held": true,
+   "judged": true,
+   "verdict": "FEATURE_DISTRIBUTION_SHIFT_AXIS_CLOSED"
+  },
+  "scores": {
+   "blocked": {
+    "ficr": 0.3501313682954694,
+    "group_ficr": {
+     "1": 0.33570394370361256,
+     "2": 0.41036658877110377,
+     "3": 0.3043235724116919
+    },
+    "group_nmae": {
+     "1": 0.14004605286216307,
+     "2": 0.1390284846412037,
+     "3": 0.15922409696173787
+    },
+    "one_minus_nmae": 0.8539004551782985,
+    "total": 0.602015911736884
+   },
+   "deployed": {
+    "ficr": 0.40246401063156667,
+    "group_ficr": {
+     "1": 0.409551299643159,
+     "2": 0.46073846269466673,
+     "3": 0.33710226955687433
+    },
+    "group_nmae": {
+     "1": 0.13617589715402054,
+     "2": 0.14227310586805572,
+     "3": 0.15731590353073155
+    },
+    "one_minus_nmae": 0.8547450311490641,
+    "total": 0.6286045208903154
+   },
+   "shuffle": {
+    "ficr": 0.35121645947903196,
+    "group_ficr": {
+     "1": 0.34477162605325284,
+     "2": 0.41264102315652224,
+     "3": 0.29623672922732086
+    },
+    "group_nmae": {
+     "1": 0.136457009791002,
+     "2": 0.13493981052083334,
+     "3": 0.1579942892436492
+    },
+    "one_minus_nmae": 0.8568696301481719,
+    "total": 0.6040430448136019
+   }
+  },
+  "teacher_train_oof_sigma": {
+   "blocked": {
+    "mean": 1.6772228907578308,
+    "per_fold": [
+     1.733887269910992,
+     1.6566780353631256,
+     1.641103366999375
+    ]
+   },
+   "shuffle": {
+    "mean": 1.0922550415986336,
+    "per_fold": [
+     1.0828154123878422,
+     1.0986401342684646,
+     1.0953095781395945
+    ]
+   }
+  }
+ },
+ "schema_version": 1,
+ "script_sha256": "533cbef41510c34ae27c9aa50c79ae64357178b4c435fc74389eee5d9f4085a7",
+ "stage": "M271_P4_CYCLE58_TEACHER_OOF_SPLIT"
+}

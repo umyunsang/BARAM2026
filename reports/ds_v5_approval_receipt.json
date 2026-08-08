@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "id": "DS_V5_APPROVAL",
+  "decision": "APPROVED",
+  "approved_at": "2026-08-09T05:19:40.364162+09:00",
+  "exact_human_phrase": "DS@v5 승인",
+  "exact_human_approval_found": true,
+  "approver": "user",
+  "design": {
+    "path": ".planning/2026-08-01-leaderboard-top-4-loop/DS_v5.md",
+    "sha256": "7d49fe2c02b8b4c9275e4ba6b73c8ad20cc6ac9de2377482a4902ce98c8cc38f"
+  },
+  "basis": {
+    "skeleton_sha256": "c2c813475ab5f0a741e6adbceab196d5b38447f2aeb02f9716a8f5be8973c820",
+    "skeleton_approval_sha256": "e827b324a23913346598d274f2ded496ffc3134243de5636033ee6a3ac387173",
+    "foundation_map_sha256": "393ee74bf53251037547fc52bc92c554a4aa207e2288f194766d836675512b35",
+    "wave_a_synthesis_sha256": "38745040f68a035d9a976b2fc63f0dc32caf647459fd058857d2bf8c05795024"
+  },
+  "authorized_scope": [
+    "write the IP@v3 implementation plan",
+    "continue SK@v5-approved read-only Wave-B research lanes under research/",
+    "root-owned planning and receipt writes"
+  ],
+  "not_authorized": [
+    "source edits",
+    "dependency changes",
+    "model fits",
+    "score-bearing runs",
+    "EventStore or registry mutation",
+    "external data or weight body download",
+    "2024 lockbox read",
+    "Dacon/account/remote compute/git",
+    "execution of the N29-N35 diagnostics"
+  ],
+  "next_gate": {
+    "artifact": "IP@v3",
+    "status": "PENDING_DRAFT",
+    "approval_phrase": "IP@v3 승인"
+  },
+  "invariants_at_approval": {
+    "champion_total": 0.6314827308346854,
+    "target": 0.66,
+    "comparison_count": 4,
+    "next_comparison_index": 5,
+    "eventstore_sequence": 158,
+    "eventstore_sha256": "5881b48f39ad8e8a334f11dd30abee1f893547da34aed55dc1979f1e476f0e12",
+    "independent_confirmation_count": 0
+  }
+}

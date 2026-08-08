@@ -1,0 +1,117 @@
+{
+ "dacon_upload": false,
+ "external_actions": [],
+ "local_m102_level": {
+  "ficr": 0.40246401063156667,
+  "group_ficr": {
+   "1": 0.409551299643159,
+   "2": 0.46073846269466673,
+   "3": 0.33710226955687433
+  },
+  "one_minus_nmae": 0.8547450311490641,
+  "total": 0.6286045208903154
+ },
+ "local_m107_level": {
+  "ficr": 0.4031415153923736,
+  "group_ficr": {
+   "1": 0.40972875677853343,
+   "2": 0.4607355431177929,
+   "3": 0.3389602462807943
+  },
+  "one_minus_nmae": 0.856805074585153,
+  "total": 0.6299732949887633
+ },
+ "lockbox_reopened": false,
+ "measured_offset": {
+  "ficr": 0.012027492299999998,
+  "one_minus_nmae": 0.0010803729999999678,
+  "total": 0.006554432700000001
+ },
+ "model_fits": 0,
+ "monthly": [
+  {
+   "ficr": 0.4112021694675421,
+   "month": "2023-04",
+   "one_minus_nmae": 0.8556957372282986,
+   "total": 0.6334489533479204
+  },
+  {
+   "ficr": 0.38377048086871207,
+   "month": "2023-05",
+   "one_minus_nmae": 0.8725285022216815,
+   "total": 0.6281494915451968
+  },
+  {
+   "ficr": 0.41124305142536866,
+   "month": "2023-06",
+   "one_minus_nmae": 0.8614737675561235,
+   "total": 0.6363584094907461
+  },
+  {
+   "ficr": 0.32131021294965584,
+   "month": "2023-07",
+   "one_minus_nmae": 0.8344178409332839,
+   "total": 0.5778640269414699
+  },
+  {
+   "ficr": 0.32732260410056324,
+   "month": "2023-08",
+   "one_minus_nmae": 0.8660342078352901,
+   "total": 0.5966784059679267
+  },
+  {
+   "ficr": 0.41988751871952984,
+   "month": "2023-09",
+   "one_minus_nmae": 0.8919648981953862,
+   "total": 0.655926208457458
+  },
+  {
+   "ficr": 0.339964768874846,
+   "month": "2023-10",
+   "one_minus_nmae": 0.8466489320275846,
+   "total": 0.5933068504512153
+  },
+  {
+   "ficr": 0.4277441011181112,
+   "month": "2023-11",
+   "one_minus_nmae": 0.8578338851116225,
+   "total": 0.6427889931148668
+  },
+  {
+   "ficr": 0.47776014238415637,
+   "month": "2023-12",
+   "one_minus_nmae": 0.8454840131257263,
+   "total": 0.6616220777549413
+  }
+ ],
+ "new_2024_evaluation": false,
+ "online_result": {
+  "ficr": 0.4151694923,
+  "filename": "submission_M261.csv",
+  "memo": "m261 edit",
+  "one_minus_nmae": 0.857885373,
+  "submitted_at_kst": "2026-08-04 05:27:41",
+  "total": 0.6365274327
+ },
+ "policy": "M107/M102 Q2-frozen champion, deployed full-history as M261",
+ "predeclared_expectation": "online Total should exceed local Total; magnitude unknown",
+ "schema_version": 1,
+ "stage": "M270_M261_LOCAL_BASELINE_PREDECLARED",
+ "submission_path": "/Users/um-yunsang/BARAM2026/artifacts/submissions/submission_M261.csv",
+ "submission_sha256": "fb937f77dfe501b4d7f8e52da098f07f79b1924dace347d3020da405b660773b",
+ "surface": "M269 corrected probe surface",
+ "temporal_policy": {
+  "1": {
+   "original_weight": 0.7,
+   "shift_hours": -1
+  },
+  "2": {
+   "original_weight": 0.8,
+   "shift_hours": -2
+  },
+  "3": {
+   "original_weight": 0.8,
+   "shift_hours": -2
+  }
+ }
+}

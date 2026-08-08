@@ -1,0 +1,38 @@
+{
+  "event_type": "CLOSED",
+  "cycle_id": "S17-N9_COST5_NO_REFIT_MATERIALIZATION_RECOVERY",
+  "stage_id": "S9",
+  "node_id": "S17-N9_COST5_NO_REFIT_MATERIALIZATION_RECOVERY",
+  "actor": "root",
+  "occurred_at": "2026-08-08T20:22:46.473161+09:00",
+  "body": {
+    "predeclared_event_sha256": "22f03c3ab8a5c268ac53a8ceec9d7a07981635dd13023c633252424668f1f045",
+    "receipt_path": "reports/s17_n9_cost5_recovery_receipt.json",
+    "receipt_sha256": "792545c5ce7127452b18f19b077657e1f9c1ba4e257eef05e5c82c072542a9e0",
+    "code_sha256": "650c4e2aed7b91ab21fdf487647325db23eda55889f51589fff7682df6525e91",
+    "config_sha256": "de1ac99f994c0667bd81d03c91e50707c64d5b4324f4e580af5daad4996b7684",
+    "data_sha256": "a0f4f84a2a842747a9e98bff6c61ddd1d6d3b1fbe4e3d0b37226405277e8af3c",
+    "router_sha256": "80e37561a32fb2928d1a7505b652bb822f5b6989e73b6d7106afb0ae62041b43",
+    "policy_ids": [
+      "CHAMPION_FIXED_SHIFTED",
+      "COST5_SPO_PLUS_N8_FROZEN_NO_REFIT"
+    ],
+    "row_alignment_keys": [
+      "fold_id",
+      "group_id",
+      "forecast_kst_dtm"
+    ],
+    "evidence_class": "foldoutside",
+    "weights_fit": "fold_outside",
+    "result_status": "REFUTED",
+    "score_bearing": true,
+    "comparison_index": 1,
+    "official_total": 0.6195834444059027,
+    "stage_evidence_status": "RESEARCHED",
+    "next_handoff": [
+      "S17-N10_ISSUANCE_CUBE_TIMING_AND_MISSINGNESS_AUDIT"
+    ],
+    "lockbox_2024_used": false,
+    "dacon_actions": []
+  }
+}

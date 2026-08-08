@@ -1,0 +1,556 @@
+{
+  "schema_version": 1,
+  "node_id": "S17-N4_ECMWF_18Z_FIXED_LEAD_AUDIT",
+  "generated_at": "2026-08-08T19:01:56.194880+09:00",
+  "predeclaration": {
+    "path": "reports/s17_n4_ecmwf_18z_audit_predeclaration.json",
+    "sha256": "2bfe84902b3517809925c7f0dc4231a4ff570c8d595e9eaedde19054ed7a9afb",
+    "event_sha256": "acd3aa088dd5a44cb65f0cdafa5bce0b319fbab79b2dccb2ade8c03c7dbb23cd"
+  },
+  "source_report": {
+    "path": "research/rwa_external_eligibility.md",
+    "sha256": "958ea7a0b96371b6d773920038ec8d6e07e7903b4b26f5dd8443dd6d354bf4e5"
+  },
+  "request_manifest": {
+    "path": "artifacts/external/ecmwf_18z_audit/request_manifest.json",
+    "sha256": "274fffd10363778a6d5238a4bf8580b5b483c6c58f8620e9249ece5919e6f2d1",
+    "request_count": 25,
+    "get_response_bytes": 437968,
+    "grib_body_bytes": 0
+  },
+  "raw_metadata_sha256": {
+    "artifacts/external/ecmwf_18z_audit/ecmwf_dissemination_schedule.html": "4fe24a22efe68060bdd91707057a7e0c8fcfa7a53830c5d164cd833e96fd1c84",
+    "artifacts/external/ecmwf_18z_audit/ecmwf_open_data.html": "a825e51f3a766f0f9ca0b3a7e13dafdaada90f7d6e832e2a55b55d72e6857028",
+    "artifacts/external/ecmwf_18z_audit/head_responses.json": "5ea860b543115dc8833aa36d8a6c7be6c34c109c77a95b5167860720e984e202",
+    "artifacts/external/ecmwf_18z_audit/index_20230201_45h.jsonl": "da50304ab5e07d0cd86df9b97063699c3ac1b7282f67d6e944190778f3ba770c",
+    "artifacts/external/ecmwf_18z_audit/index_20230601_21h.jsonl": "75ece5ba38f5b915cc8c67f0c676e86d73a4b9535897a1d071f7d7827ffe559a",
+    "artifacts/external/ecmwf_18z_audit/index_20230601_24h.jsonl": "767ea555149c9dba4a254bf43911d6dd8efc08a95822d2dc78032caded136748",
+    "artifacts/external/ecmwf_18z_audit/index_20230601_27h.jsonl": "2ef345946f50418a4dd5e24341e516344169477b56e433d9cb277c0bbfd28841",
+    "artifacts/external/ecmwf_18z_audit/index_20230601_30h.jsonl": "864a7b813af0bccfd284358c0dfde4990b089915c8bb736680a9dc800f44159c",
+    "artifacts/external/ecmwf_18z_audit/index_20230601_33h.jsonl": "0e762514b95ab045233454a88b6a84b9c8bba741ad4049230b88dbc5cf78124e",
+    "artifacts/external/ecmwf_18z_audit/index_20230601_36h.jsonl": "066ec8807f1174d3e3e9335e71f21f64e2fe85edb9dc9071aca71d54d500bbb8",
+    "artifacts/external/ecmwf_18z_audit/index_20230601_39h.jsonl": "b77b5cdf27b934bb03d0f8e55524c338dc52fb392fb6250b1833209b7c1f1a50",
+    "artifacts/external/ecmwf_18z_audit/index_20230601_42h.jsonl": "b426e6309666dbb4802563a5fe2fd3c9364ec7fd2e68654c749cf4d4dbcd2bd4",
+    "artifacts/external/ecmwf_18z_audit/index_20230601_45h.jsonl": "b71f87dc17fdecf95e007e547ba0f6d619d2d5acb6b8c1873779bf59f95cfad6",
+    "artifacts/external/ecmwf_18z_audit/index_20231001_45h.jsonl": "61e1aa69ea0f67c5698f43115cd85069d67ec2abf04dcb3f20c7fd443477c0b9",
+    "artifacts/external/ecmwf_18z_audit/listing_2023.xml": "e6f6f93804fa966b5bd33414e6979853eba6329a732de9e617778e67c4ca987c",
+    "artifacts/external/ecmwf_18z_audit/request_manifest.json": "274fffd10363778a6d5238a4bf8580b5b483c6c58f8620e9249ece5919e6f2d1"
+  },
+  "official_source": {
+    "bucket": "https://ecmwf-forecasts.s3.amazonaws.com",
+    "open_data_url": "https://www.ecmwf.int/en/forecasts/datasets/open-data",
+    "schedule_url": "https://confluence.ecmwf.int/display/DAC/Dissemination+schedule",
+    "licence": "CC-BY-4.0",
+    "commercial_use_text": "Creative Commons CC-BY-4.0 licence and the ECMWF Terms of Use . This means that the data may be redistributed and used commercially, subject to appropriate attribution . Accessing this data, or arranging for any open data to be delivered directly to you, may be subject to Service Charges and a Service Agreement . If you are interested in this, please see our Service Agreement and Use Cases page. For more information, please refer to the U ser Doc",
+    "schedule_18utc_text": "18 UTC 0 to 90 by 1 93 to 144 by 3 23:45 → 00:12 00:12 → 00:27 Analysis run Delivery 00 UTC 05:40 06 UTC 11:40 12 UTC 17:40 18 UTC 23:40 Thermofeel run Delivery 00 UTC 08",
+    "attribution_required": true
+  },
+  "fixed_run_contract": {
+    "init": "D-2 18:00 UTC",
+    "stream": "scda",
+    "grid_2023": "0p4-beta",
+    "available_steps_hours": [
+      21,
+      24,
+      27,
+      30,
+      33,
+      36,
+      39,
+      42,
+      45
+    ],
+    "target_required_leads_hours": [
+      22,
+      45
+    ],
+    "mapping": "same-run linear interpolation from 3-hour fixed leads; no later run enters",
+    "fields": [
+      {
+        "param": "10u",
+        "levtype": "sfc"
+      },
+      {
+        "param": "10v",
+        "levtype": "sfc"
+      },
+      {
+        "param": "u",
+        "levtype": "pl",
+        "levelist": "925"
+      },
+      {
+        "param": "v",
+        "levtype": "pl",
+        "levelist": "925"
+      }
+    ]
+  },
+  "index_checks": {
+    "20230201_45h": {
+      "records_total": 82,
+      "fixed_fields": [
+        {
+          "param": "10u",
+          "levtype": "sfc",
+          "levelist": null,
+          "offset": 7917622,
+          "length": 609046
+        },
+        {
+          "param": "10v",
+          "levtype": "sfc",
+          "levelist": null,
+          "offset": 7308576,
+          "length": 609046
+        },
+        {
+          "param": "u",
+          "levtype": "pl",
+          "levelist": "925",
+          "offset": 19692642,
+          "length": 609046
+        },
+        {
+          "param": "v",
+          "levtype": "pl",
+          "levelist": "925",
+          "offset": 20301688,
+          "length": 609046
+        }
+      ],
+      "selected_range_bytes": 2436184,
+      "all_records_fixed_init_stream_step": true
+    },
+    "20230601_21h": {
+      "records_total": 83,
+      "fixed_fields": [
+        {
+          "param": "10u",
+          "levtype": "sfc",
+          "levelist": null,
+          "offset": 7308576,
+          "length": 609046
+        },
+        {
+          "param": "10v",
+          "levtype": "sfc",
+          "levelist": null,
+          "offset": 7917622,
+          "length": 609046
+        },
+        {
+          "param": "u",
+          "levtype": "pl",
+          "levelist": "925",
+          "offset": 12587040,
+          "length": 609046
+        },
+        {
+          "param": "v",
+          "levtype": "pl",
+          "levelist": "925",
+          "offset": 13196086,
+          "length": 609046
+        }
+      ],
+      "selected_range_bytes": 2436184,
+      "all_records_fixed_init_stream_step": true
+    },
+    "20230601_24h": {
+      "records_total": 83,
+      "fixed_fields": [
+        {
+          "param": "10u",
+          "levtype": "sfc",
+          "levelist": null,
+          "offset": 10353806,
+          "length": 609046
+        },
+        {
+          "param": "10v",
+          "levtype": "sfc",
+          "levelist": null,
+          "offset": 7917622,
+          "length": 609046
+        },
+        {
+          "param": "u",
+          "levtype": "pl",
+          "levelist": "925",
+          "offset": 13805132,
+          "length": 609046
+        },
+        {
+          "param": "v",
+          "levtype": "pl",
+          "levelist": "925",
+          "offset": 13196086,
+          "length": 609046
+        }
+      ],
+      "selected_range_bytes": 2436184,
+      "all_records_fixed_init_stream_step": true
+    },
+    "20230601_27h": {
+      "records_total": 83,
+      "fixed_fields": [
+        {
+          "param": "10u",
+          "levtype": "sfc",
+          "levelist": null,
+          "offset": 8120572,
+          "length": 609046
+        },
+        {
+          "param": "10v",
+          "levtype": "sfc",
+          "levelist": null,
+          "offset": 11165802,
+          "length": 609046
+        },
+        {
+          "param": "u",
+          "levtype": "pl",
+          "levelist": "925",
+          "offset": 7511526,
+          "length": 609046
+        },
+        {
+          "param": "v",
+          "levtype": "pl",
+          "levelist": "925",
+          "offset": 6902480,
+          "length": 609046
+        }
+      ],
+      "selected_range_bytes": 2436184,
+      "all_records_fixed_init_stream_step": true
+    },
+    "20230601_30h": {
+      "records_total": 83,
+      "fixed_fields": [
+        {
+          "param": "10u",
+          "levtype": "sfc",
+          "levelist": null,
+          "offset": 5684388,
+          "length": 609046
+        },
+        {
+          "param": "10v",
+          "levtype": "sfc",
+          "levelist": null,
+          "offset": 14617128,
+          "length": 609046
+        },
+        {
+          "param": "u",
+          "levtype": "pl",
+          "levelist": "925",
+          "offset": 10962852,
+          "length": 609046
+        },
+        {
+          "param": "v",
+          "levtype": "pl",
+          "levelist": "925",
+          "offset": 9947710,
+          "length": 609046
+        }
+      ],
+      "selected_range_bytes": 2436184,
+      "all_records_fixed_init_stream_step": true
+    },
+    "20230601_33h": {
+      "records_total": 83,
+      "fixed_fields": [
+        {
+          "param": "10u",
+          "levtype": "sfc",
+          "levelist": null,
+          "offset": 4466296,
+          "length": 609046
+        },
+        {
+          "param": "10v",
+          "levtype": "sfc",
+          "levelist": null,
+          "offset": 12180944,
+          "length": 609046
+        },
+        {
+          "param": "u",
+          "levtype": "pl",
+          "levelist": "925",
+          "offset": 14617128,
+          "length": 609046
+        },
+        {
+          "param": "v",
+          "levtype": "pl",
+          "levelist": "925",
+          "offset": 15226174,
+          "length": 609046
+        }
+      ],
+      "selected_range_bytes": 2436184,
+      "all_records_fixed_init_stream_step": true
+    },
+    "20230601_36h": {
+      "records_total": 83,
+      "fixed_fields": [
+        {
+          "param": "10u",
+          "levtype": "sfc",
+          "levelist": null,
+          "offset": 12587040,
+          "length": 609046
+        },
+        {
+          "param": "10v",
+          "levtype": "sfc",
+          "levelist": null,
+          "offset": 9135714,
+          "length": 609046
+        },
+        {
+          "param": "u",
+          "levtype": "pl",
+          "levelist": "925",
+          "offset": 15023224,
+          "length": 609046
+        },
+        {
+          "param": "v",
+          "levtype": "pl",
+          "levelist": "925",
+          "offset": 15632270,
+          "length": 609046
+        }
+      ],
+      "selected_range_bytes": 2436184,
+      "all_records_fixed_init_stream_step": true
+    },
+    "20230601_39h": {
+      "records_total": 83,
+      "fixed_fields": [
+        {
+          "param": "10u",
+          "levtype": "sfc",
+          "levelist": null,
+          "offset": 9338664,
+          "length": 609046
+        },
+        {
+          "param": "10v",
+          "levtype": "sfc",
+          "levelist": null,
+          "offset": 6902480,
+          "length": 609046
+        },
+        {
+          "param": "u",
+          "levtype": "pl",
+          "levelist": "925",
+          "offset": 17865504,
+          "length": 609046
+        },
+        {
+          "param": "v",
+          "levtype": "pl",
+          "levelist": "925",
+          "offset": 17256458,
+          "length": 609046
+        }
+      ],
+      "selected_range_bytes": 2436184,
+      "all_records_fixed_init_stream_step": true
+    },
+    "20230601_42h": {
+      "records_total": 83,
+      "fixed_fields": [
+        {
+          "param": "10u",
+          "levtype": "sfc",
+          "levelist": null,
+          "offset": 13196086,
+          "length": 609046
+        },
+        {
+          "param": "10v",
+          "levtype": "sfc",
+          "levelist": null,
+          "offset": 9338664,
+          "length": 609046
+        },
+        {
+          "param": "u",
+          "levtype": "pl",
+          "levelist": "925",
+          "offset": 23753014,
+          "length": 609046
+        },
+        {
+          "param": "v",
+          "levtype": "pl",
+          "levelist": "925",
+          "offset": 24362060,
+          "length": 609046
+        }
+      ],
+      "selected_range_bytes": 2436184,
+      "all_records_fixed_init_stream_step": true
+    },
+    "20230601_45h": {
+      "records_total": 83,
+      "fixed_fields": [
+        {
+          "param": "10u",
+          "levtype": "sfc",
+          "levelist": null,
+          "offset": 6293434,
+          "length": 609046
+        },
+        {
+          "param": "10v",
+          "levtype": "sfc",
+          "levelist": null,
+          "offset": 7511526,
+          "length": 609046
+        },
+        {
+          "param": "u",
+          "levtype": "pl",
+          "levelist": "925",
+          "offset": 19489692,
+          "length": 609046
+        },
+        {
+          "param": "v",
+          "levtype": "pl",
+          "levelist": "925",
+          "offset": 20098738,
+          "length": 609046
+        }
+      ],
+      "selected_range_bytes": 2436184,
+      "all_records_fixed_init_stream_step": true
+    },
+    "20231001_45h": {
+      "records_total": 83,
+      "fixed_fields": [
+        {
+          "param": "10u",
+          "levtype": "sfc",
+          "levelist": null,
+          "offset": 6813761,
+          "length": 315591
+        },
+        {
+          "param": "10v",
+          "levtype": "sfc",
+          "levelist": null,
+          "offset": 6497778,
+          "length": 315983
+        },
+        {
+          "param": "u",
+          "levtype": "pl",
+          "levelist": "925",
+          "offset": 3978694,
+          "length": 301225
+        },
+        {
+          "param": "v",
+          "levtype": "pl",
+          "levelist": "925",
+          "offset": 3668114,
+          "length": 310580
+        }
+      ],
+      "selected_range_bytes": 1243379,
+      "all_records_fixed_init_stream_step": true
+    }
+  },
+  "availability_spot_checks": [
+    {
+      "init_date": "2023-02-01",
+      "object_last_modified": "2023-02-02T00:58:31+00:00",
+      "deadline_utc": "2023-02-02T05:00:00+00:00",
+      "margin_hours": 4.0247222222222225,
+      "pass": true,
+      "content_length": 51971320,
+      "etag": "\"62eb62cf7f8f4d6a768979c80a885ec2\""
+    },
+    {
+      "init_date": "2023-06-01",
+      "object_last_modified": "2023-06-02T00:58:31+00:00",
+      "deadline_utc": "2023-06-02T05:00:00+00:00",
+      "margin_hours": 4.0247222222222225,
+      "pass": true,
+      "content_length": 52377416,
+      "etag": "\"ef7c31577126cf234381b595af87e079\""
+    },
+    {
+      "init_date": "2023-10-01",
+      "object_last_modified": "2023-10-02T00:58:31+00:00",
+      "deadline_utc": "2023-10-02T05:00:00+00:00",
+      "margin_hours": 4.0247222222222225,
+      "pass": true,
+      "content_length": 25875711,
+      "etag": "\"085ababd663a782f085555e4b4430330\""
+    }
+  ],
+  "archive_2023": {
+    "prefixes": 342,
+    "first": "20230118/",
+    "last": "20231231/",
+    "q2_q4_calendar_days": 275,
+    "q2_q4_present_days": 269,
+    "q2_q4_coverage": 0.9781818181818182,
+    "q2_q4_missing_dates": [
+      "2023-04-27",
+      "2023-04-28",
+      "2023-04-29",
+      "2023-04-30",
+      "2023-05-01",
+      "2023-05-02"
+    ]
+  },
+  "range_cost_estimate": {
+    "representative_selected_bytes_per_day": 21925656,
+    "q2_q4_present_bytes_decimal": 5898001464,
+    "q2_q4_present_gb_decimal": 5.898001464,
+    "method": "sum _length for four fixed fields x nine steps on 2023-06-01, multiplied by 269 present days"
+  },
+  "checks": {
+    "A1_official_ccby4_commercial": true,
+    "A2_fixed_init_stream_steps": true,
+    "A3_common_four_fields_all_indices": true,
+    "A4_45h_before_cutoff_all_spots": true,
+    "A5_archive_and_missing_dates_exact": true,
+    "A6_metadata_only_zero_grib_bytes": true,
+    "A7_no_2024_2025_or_lockbox": true,
+    "A8_provenance_complete": true
+  },
+  "actions": {
+    "model_fits": 0,
+    "official_score_calls": 0,
+    "lockbox_2024_access": false,
+    "test_period_value_access": false,
+    "remote_inference": false,
+    "dacon_actions": [],
+    "dependency_changes": false,
+    "grib_bytes_downloaded": 0
+  },
+  "verdict": "PASS_EXTERNAL_METADATA_ELIGIBILITY_ONLY_NOT_VALUE_OR_SCORE",
+  "decision": "Eligible for a root-owned 2023 Q2-Q4 byte-range innovation probe with deterministic six-day source fallback; no 2025 collection until development gate passes.",
+  "next_handoff": [
+    "S17-N5_ECMWF_18Z_2023_INNOVATION_PROBE"
+  ],
+  "audit_algorithm": {
+    "path": "reports/s17_n4_ecmwf_audit_algorithm.json",
+    "sha256": "5353971f404021a701d789d962f8e89c75eb002d638e9b8c53f21963ca006781"
+  }
+}

@@ -22,6 +22,8 @@ def test_actual_quality_receipt_matches_frozen_fixture(
         "2025-07-18 06:00:00",
     ]
     assert audit.findings["scada_internal_gap_counts"] == {"unison": 0, "vestas": 0}
+    assert audit.findings["turbine_topology"]["turbine_count"] == 17
+    assert audit.findings["turbine_topology"]["group_counts"] == {1: 6, 2: 6, 3: 5}
 
 
 def test_quality_audit_preserves_raw_ldaps_missing_values(

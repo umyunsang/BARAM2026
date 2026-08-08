@@ -1,0 +1,129 @@
+{
+ "dacon_upload": false,
+ "decided_utc": "2026-08-04T06:15:57.235796+00:00",
+ "external_actions": [],
+ "lane": "L2",
+ "lockbox_reopened": false,
+ "model_fits": 0,
+ "new_2024_evaluation": false,
+ "node": "C1N5_SPATIAL_INTERPOLATION",
+ "report_sha256": "f9f056452ca98b7c723166682a9357b9a4181ac52983f1e38c4ae65a06b79335",
+ "result": {
+  "comparisons": [
+   {
+    "group": 1,
+    "idw_pearson": 0.6973316299785187,
+    "idw_residual_std": 2.4121265012337956,
+    "idw_rows": 26304,
+    "idw_weight_beyond_10km": 0.2667218469912307,
+    "idw_weight_on_nearest": 0.7332781530087692,
+    "nearest_grid": 5,
+    "nearest_minus_idw_pearson": -0.004822269458133688,
+    "nearest_minus_idw_residual": 0.015683512816039524,
+    "nearest_pearson": 0.692509360520385,
+    "nearest_residual_std": 2.427810014049835,
+    "nearest_rows": 26304,
+    "source": "gfs"
+   },
+   {
+    "group": 1,
+    "idw_pearson": 0.7774349645697549,
+    "idw_residual_std": 2.1166962370866886,
+    "idw_rows": 26304,
+    "idw_weight_beyond_10km": 0.0,
+    "idw_weight_on_nearest": 0.2584619466149212,
+    "nearest_grid": 5,
+    "nearest_minus_idw_pearson": -0.06702771896069581,
+    "nearest_minus_idw_residual": 0.2518224664885791,
+    "nearest_pearson": 0.7104072456090591,
+    "nearest_residual_std": 2.3685187035752677,
+    "nearest_rows": 26304,
+    "source": "ldaps"
+   },
+   {
+    "group": 2,
+    "idw_pearson": 0.6926680995893268,
+    "idw_residual_std": 2.7809911545274693,
+    "idw_rows": 26304,
+    "idw_weight_beyond_10km": 0.1849076063236717,
+    "idw_weight_on_nearest": 0.8150923936763284,
+    "nearest_grid": 5,
+    "nearest_minus_idw_pearson": -0.004425312923250213,
+    "nearest_minus_idw_residual": 0.01628658231203861,
+    "nearest_pearson": 0.6882427866660766,
+    "nearest_residual_std": 2.797277736839508,
+    "nearest_rows": 26304,
+    "source": "gfs"
+   },
+   {
+    "group": 2,
+    "idw_pearson": 0.8037290625695326,
+    "idw_residual_std": 2.2941590943572368,
+    "idw_rows": 26304,
+    "idw_weight_beyond_10km": 0.0,
+    "idw_weight_on_nearest": 0.27933268134416683,
+    "nearest_grid": 6,
+    "nearest_minus_idw_pearson": 0.0023533841516669707,
+    "nearest_minus_idw_residual": -0.01230837357841752,
+    "nearest_pearson": 0.8060824467211996,
+    "nearest_residual_std": 2.2818507207788192,
+    "nearest_rows": 26304,
+    "source": "ldaps"
+   },
+   {
+    "group": 3,
+    "idw_pearson": 0.709263430087974,
+    "idw_residual_std": 2.5418759522917656,
+    "idw_rows": 17537,
+    "idw_weight_beyond_10km": 0.12498421021597655,
+    "idw_weight_on_nearest": 0.8750157897840235,
+    "nearest_grid": 5,
+    "nearest_minus_idw_pearson": -0.0024094031012796835,
+    "nearest_minus_idw_residual": 0.008711258213895956,
+    "nearest_pearson": 0.7068540269866943,
+    "nearest_residual_std": 2.5505872105056615,
+    "nearest_rows": 17537,
+    "source": "gfs"
+   },
+   {
+    "group": 3,
+    "idw_pearson": 0.8225092592983585,
+    "idw_residual_std": 2.0507973303651252,
+    "idw_rows": 17537,
+    "idw_weight_beyond_10km": 0.0,
+    "idw_weight_on_nearest": 0.34585198318686816,
+    "nearest_grid": 12,
+    "nearest_minus_idw_pearson": 0.01280727927162284,
+    "nearest_minus_idw_residual": -0.06844656300009122,
+    "nearest_pearson": 0.8353165385699813,
+    "nearest_residual_std": 1.982350767365034,
+    "nearest_rows": 17537,
+    "source": "ldaps"
+   }
+  ],
+  "input_hashes": {
+   "open_zip_sha256": "920be0c458d820e855bf79dd25723146f52ce1736138aedba5e6bc853f1f720b"
+  },
+  "predeclared_check": {
+   "H1_deltas": [
+    -0.004822269458133688,
+    -0.004425312923250213,
+    -0.0024094031012796835
+   ],
+   "H1_expectation": "GFS 는 nearest 가 IDW 보다 나셀 풍속과 더 강하게 상관",
+   "H1_held": false,
+   "H2_deltas": [
+    -0.06702771896069581,
+    0.0023533841516669707,
+    0.01280727927162284
+   ],
+   "H2_expectation": "LDAPS 는 그 반대이거나 차이 없음",
+   "H2_held": false,
+   "verdict": "GFS_INTERPOLATION_JUSTIFIED"
+  }
+ },
+ "routed_by": "C13_structural_consequence",
+ "schema_version": 1,
+ "script_sha256": "0e45cb954450fb02475eb451d5d5c400bf080ccaffe86afba652a4533835e80b",
+ "stage": "M271_P4_CYCLE5_SPATIAL"
+}

@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "artifact": "top20_module_research",
+  "created_at": "2026-08-01T00:00:00+09:00",
+  "status": "RESEARCH_COMPLETE_DESIGN_PENDING_APPROVAL",
+  "authority": {
+    "approved_gate": "SK@v3",
+    "pending_gate": "DS@v3",
+    "approval_request": "DS@v3 승인",
+    "scope": "bounded read-only module research and design synthesis"
+  },
+  "project": {
+    "root": "/Users/um-yunsang/BARAM2026",
+    "git_head": "383265af810eee24129de2d7ce99457bb8a757ef",
+    "execution_topology": "single_root",
+    "subagents_spawned": 0
+  },
+  "immutable_inputs": {
+    "open_zip": {
+      "path": "/Users/um-yunsang/Downloads/open.zip",
+      "sha256": "920be0c458d820e855bf79dd25723146f52ce1736138aedba5e6bc853f1f720b"
+    },
+    "baseline_notebook": {
+      "path": "/Users/um-yunsang/Downloads/baseline.ipynb",
+      "sha256": "712b26f4d2748860c94cff1e0100c23810468c983173f8e9ef8d009fe82df48c"
+    },
+    "leaderboard_snapshot": {
+      "sha256": "f1328f9b68772da6a91a2cd715d649193e6f76252b47c5dafd36ece04567257c",
+      "live_or_private_claim": false
+    }
+  },
+  "outputs": {
+    "research_report": {
+      "path": "reports/top20_module_research.md",
+      "lines": 315,
+      "sha256": "bec689b52b3cb46249ee87534e05e1e7ddf46dd6f2ad2f9a623e73661b817c75"
+    },
+    "design_specification": {
+      "path": ".planning/2026-08-01-leaderboard-top-4-loop/DS_v3.md",
+      "lines": 194,
+      "sha256": "9872ed6e0656c6b658c2ca435e038feb2ef965fefa0e71de902d5fad4db6b6ac",
+      "status": "SYNTHESIZED_DESIGN_PENDING_APPROVAL(DS@v3)"
+    }
+  },
+  "research": {
+    "official_dacon_pages": 4,
+    "primary_method_sources": 12,
+    "modules": ["M0", "M1", "M2", "M3", "M4", "M5", "M6", "M7", "M8", "M9"],
+    "selected_architecture": "competition-supplied spatial features -> LightGBM point/quantile plus QRF -> cross-fitted expected official utility -> residual-diverse constrained ensemble if additive",
+    "deep_tier": "conditional_not_activated"
+  },
+  "leaderboard_target_guide": {
+    "hard_rank20_total": 0.65971,
+    "intermediate_rank15_total": 0.66033,
+    "operating_total": 0.662,
+    "operating_one_minus_nmae": 0.875,
+    "operating_ficr": 0.449,
+    "local_to_public_mapping_supported": false
+  },
+  "artifact_surface": {
+    "surface": "report",
+    "snapshot_status": "ready",
+    "validation_ok": true,
+    "validation_attempts": 2,
+    "first_validation_error": "artifact chart series field unsupported; replaced with long-form color encoding",
+    "dataset_count": 7,
+    "source_count": 10,
+    "chart_count": 1,
+    "table_count": 6,
+    "render_calls": 1,
+    "render_ok": true
+  },
+  "actions_not_performed": {
+    "source_implementation": true,
+    "model_training": true,
+    "dependency_installation": true,
+    "external_data_or_weights": true,
+    "remote_inference_or_compute": true,
+    "dacon_upload_or_account_mutation": true,
+    "remote_git": true,
+    "reopen_2024_lockbox": true
+  }
+}

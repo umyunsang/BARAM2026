@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "id": "IP_V3_APPROVAL",
+  "decision": "APPROVED",
+  "approved_at": "2026-08-09T05:34:35.585450+09:00",
+  "exact_human_phrase": "IP@v3 승인",
+  "exact_human_approval_found": true,
+  "plan": {
+    "path": ".planning/2026-08-01-leaderboard-top-4-loop/IP_v3.md",
+    "sha256": "27564d87725ca96041dea12d4145bd71113ec20eca5d3a6fb95545d6b2a35609"
+  },
+  "design_sha256": "e14f005c01e1ed2e003834a2acdb1f0aa62d774d34d008bd27a674cd599e50e3",
+  "rules_snapshot_sha256": "6dcececbfb33df6761c87220ea8ce15d875d6b7afc9d90c5afe5dd827ad54ee5",
+  "agents_md_sha256": "fdf667428047bfe5be22a072a5419695814d81061a05ea28c648d945dca8f5cc",
+  "foundation_map_sha256": "009aaa019218f3e8f3ce64636d069d09dc4910136a33f6e5df214069bd7b4c00",
+  "authorized": [
+    "source edits in src/baram/loop, src/baram/evaluation schema fields, tests/loop",
+    "dependency installation into the project .venv, pinned and recorded",
+    "no-mutation migration dry run then one-time live migration",
+    "execution of T0 diagnostics N29-N35",
+    "T1 bounded screens",
+    "T2 strict prequential comparisons through predeclare/close governance resuming at comparison index 5"
+  ],
+  "still_forbidden": [
+    "2024 lockbox read",
+    "Dacon/account/upload",
+    "remote compute, remote API model inference, git push",
+    "reanalysis products and post-hoc corrected observations",
+    "test-period observations",
+    "rewriting or renumbering existing EventStore rows"
+  ],
+  "root_reordering": {
+    "decision": "run WP0 then N29 before the full engine refactor",
+    "reason": "four of five Wave-B lanes independently converge that FD1 gates the temporal and gradient portfolios; N29 is zero-fit metadata and can retire most candidates at no cost. The existing event contract already supports non-score-bearing PREDECLARED/CLOSED nodes, so governance is preserved without the new engine."
+  },
+  "baseline": {
+    "eventstore_sha256": "5881b48f39ad8e8a334f11dd30abee1f893547da34aed55dc1979f1e476f0e12",
+    "sequence": 158,
+    "comparison_count": 4,
+    "next_comparison_index": 5
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "event_type": "CLOSED",
+  "cycle_id": "S17-N8_COST5_SPO_PLUS_STRICT_PREQUENTIAL_COMPARISON",
+  "stage_id": "S10",
+  "node_id": "S17-N8_COST5_SPO_PLUS_STRICT_PREQUENTIAL_COMPARISON",
+  "actor": "root",
+  "occurred_at": "2026-08-08T20:17:46.609976+09:00",
+  "body": {
+    "predeclared_event_sha256": "da05a55972769c0dd8f1678633f231f80ef0d062bb106cffe9797835ea5536a0",
+    "receipt_path": "reports/s17_n8_cost5_spo_plus_receipt.json",
+    "receipt_sha256": "3fd4db78eeb7ecbe71afa38ee6803928dbbaa860c005b3ee398f82a10c642754",
+    "code_sha256": "8b80b462cd103634c9ef8525bc72381cf5808b8f8c2db165a1a6574ec41f4f39",
+    "config_sha256": "1094074f8f4e0675526ed752429be47052921476e96de4a621c209b18981d9e8",
+    "data_sha256": "d024960e7e9653df4944bd70e7e5706e3dce571460f4c0df70123ad4ae7ecba5",
+    "router_sha256": "80e37561a32fb2928d1a7505b652bb822f5b6989e73b6d7106afb0ae62041b43",
+    "policy_ids": [
+      "COST5_SPO_PLUS_ONE_SHOT",
+      "STOP_PRE_SCORE_FAMILY_SERIALIZATION"
+    ],
+    "row_alignment_keys": [
+      "fold_id",
+      "group_id",
+      "forecast_kst_dtm"
+    ],
+    "evidence_class": "diagnostic",
+    "weights_fit": "fixed",
+    "result_status": "INCONCLUSIVE",
+    "score_bearing": false,
+    "comparison_index": null,
+    "pre_score_gate_failed": true,
+    "stage_evidence_status": "INSUFFICIENT",
+    "next_handoff": [
+      "S17-N9_COST5_NO_REFIT_MATERIALIZATION_RECOVERY"
+    ],
+    "lockbox_2024_used": false,
+    "dacon_actions": []
+  }
+}

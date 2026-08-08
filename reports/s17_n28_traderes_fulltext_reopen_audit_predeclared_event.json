@@ -1,0 +1,26 @@
+{
+  "event_type": "PREDECLARED",
+  "cycle_id": "S17-N28_TRADERES_FULLTEXT_SCALAR_GRADIENT_REOPEN_AUDIT",
+  "stage_id": "S6",
+  "node_id": "S17-N28_TRADERES_FULLTEXT_SCALAR_GRADIENT_REOPEN_AUDIT",
+  "actor": "root",
+  "occurred_at": "2026-08-09T04:21:20.604395+09:00",
+  "body": {
+    "preregistration_sha256": "3ab846b5af236fadb896c6ddf6d90b02e934fe0820438a8316eacf68ded0fedf",
+    "parent_ids": [
+      "S17-N27_POST_HALT_ORIENTED_SCALAR_GRADIENT_RESEARCH_INTAKE"
+    ],
+    "mechanism": "Published same-issuance MSLP spatial-gradient diagnostics may preserve oriented synoptic forcing/ramp information discarded by unordered scalar summaries.",
+    "treatment": "Research-only full-text transfer audit of Couto-Estanqueiro MSLPGrad/Spatial-PCA and TradeRES D4.9 gradient-tendency ramp algorithms; no feature materialization.",
+    "control": "N27 fail-closed receipt plus fixed current scalar-summary, vector-gradient, graph-spectrum, and daily-PCA source contracts.",
+    "metric": "Binary satisfaction of every N27 admission gate; no project score or label-bearing diagnostic.",
+    "min_effect": 0.0,
+    "score_bearing": false,
+    "novelty_signature": "TRADERES_FULLTEXT_CURE_AUDIT__MSLP_CENTRED_DIFFERENCE__GRADIENT_TENDENCY__SPATIAL_PCA",
+    "basis_evidence_ids": [
+      "S17-N27_CLOSED_NONE",
+      "COUTO_ESTANQUEIRO_2022_FULLTEXT",
+      "TRADERES_D4_9_ED2"
+    ]
+  }
+}

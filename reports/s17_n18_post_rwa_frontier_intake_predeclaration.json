@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "node_id": "S17-N18_POST_RWA_FRONTIER_RESEARCH_INTAKE",
+  "created_at": "2026-08-08T22:16:43.463711+09:00",
+  "parent_id": "S17-N17_R4_NO_REFIT_STRICT_SOURCE_SEPARATION_COMPARISON",
+  "purpose": "After RWA candidates COST5-SPO+, issuance timing, vertical PCA, exact height correction, and source separation have been gated or refuted, perform a bounded evidence-first re-entry across terrain representation, local pretrained NWP feasibility, discontinuous-reward decision learning, and repository-native untested mechanisms. Select at most one next executable prerequisite audit; do not fit or score.",
+  "input_bundle": {
+    "files": {
+      "AGENTS.md": "91a11f95f94e8de86f5c84b204e1893830b3ed5693e3d7ede7f2e351e9891e9c",
+      "reports/s17_n17_r4_source_separation_receipt.json": "09264ee9a9de839a2927b085e827b163c5d41b32e279f9f1ce654ecd12e5508b",
+      "research/rwa_data_feature_research.md": "16351bb387dfebf0dc7ccdc6ef0e8ec77406964bf3d0b40c52fcdc3496284504",
+      "research/rwa_model_decision_research.md": "0626868e9fbb6818021be659d719f7a95d53f829bb48f310aaac917de9734c7a",
+      "research/rwa_external_eligibility.md": "958ea7a0b96371b6d773920038ec8d6e07e7903b4b26f5dd8443dd6d354bf4e5",
+      "research/lanes/S13_S5_preprocessing_deep.md": "941ea50838d606aea5a1071572302f89a0153b767050ee9b9702874de28323ac",
+      "research/lanes/S15_sota_nwp.md": "ab8328f5c05b46a32ba8f3259baf1ea9f2914659eceecb3c1d4b68b85c03db3e",
+      "research/lanes/S6_ext_A_competitions.md": "175f00ea0b1052e5f06330d55a6b2f59dcc28eb77b7efeb4f15bc89fa65ed656"
+    },
+    "sha256": "38a253b572cd62554a4a2518c0e15ab6c3b98eb65a7ad33a4a98979488dc3308"
+  },
+  "lane_contracts": {
+    "terrain_sx": {
+      "output": "research/lanes/s17_n18_terrain_sx.md",
+      "source_bound": "at most 10 primary/official source packages plus named local reports",
+      "time_bound_minutes": 30,
+      "question": "Can direction-dependent terrain exposure or shelter derived from one static DEM be computed by a frozen published formula without the unidentifiable KMAPP wind-at-height term, and is it nonduplicate here?"
+    },
+    "pretrained_nwp": {
+      "output": "research/lanes/s17_n18_pretrained_nwp.md",
+      "source_bound": "at most 10 official source packages plus named local reports",
+      "time_bound_minutes": 30,
+      "question": "Is any pre-2026-07-05 commercially licensed local pretrained forecast model operationally runnable in the unchanged project environment from basis-safe GFS forecast states, with fixed development coverage and no remote inference?"
+    },
+    "step_reward": {
+      "output": "research/lanes/s17_n18_step_reward.md",
+      "source_bound": "at most 12 primary papers or official software sources plus named local reports",
+      "time_bound_minutes": 30,
+      "question": "Find a genuinely nonduplicate estimator for the 6%/8% band reward after COST5, direct band-hit estimation, member selection and postprocessing closures; specify one falsifiable smallest test or close the axis."
+    },
+    "repo_mechanism": {
+      "output": "research/lanes/s17_n18_repo_mechanism.md",
+      "source_bound": "repository and named local reports only; no web",
+      "time_bound_minutes": 30,
+      "question": "Audit existing artifacts/code for a chronology-reconstructible but untested information or representation axis, excluding policy remixing, future-fold selection, 2024, rejected ECMWF and quarantined N10."
+    }
+  },
+  "required_evidence_tags": [
+    "directly_supported",
+    "derived",
+    "near_match_only",
+    "contradicts_premise",
+    "unverified"
+  ],
+  "root_promotion_rule": "Only root may reclassify a claim as actionable, and only when primary/official source, local machine fact, exact applicability, chronology, commercial licence and nonduplication gates are all explicit. Agent [derived] is not execution authority.",
+  "selection_rule": {
+    "rank_order": [
+      "expected nonredundant information gain",
+      "chronology and deployment symmetry",
+      "prerequisite cost",
+      "multiplicity cost"
+    ],
+    "maximum_next_executable_candidates": 1,
+    "tie_break": "prefer a no-fit prerequisite audit; then smaller external acquisition; then lexicographic candidate id"
+  },
+  "outputs": [
+    "four bounded research lane reports",
+    "reports/s17_n18_post_rwa_frontier_intake_receipt.json"
+  ],
+  "forbidden_actions": [
+    "model or optimizer fit",
+    "official or strict score call",
+    "DEM tile body download",
+    "model weight download",
+    "bulk forecast download",
+    "2024 operating-day feature/label or score access",
+    "competition test archive or test-period access",
+    "rejected ECMWF artifact access",
+    "quarantined N10 artifact access",
+    "Dacon/account/remote mutations",
+    "remote API inference",
+    "dependency changes"
+  ],
+  "score_bearing": false,
+  "comparison_index": null,
+  "lockbox_2024_used": false
+}

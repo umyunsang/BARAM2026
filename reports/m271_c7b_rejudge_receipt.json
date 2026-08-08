@@ -1,0 +1,79 @@
+{
+  "node_id": "C1N83_TEACHER_SCALEUP_REJUDGED",
+  "lane": "L6",
+  "parent": "C1N82_TEACHER_SCALEUP",
+  "candidate": false,
+  "derivation_only": true,
+  "source_receipt": "m271_c7_teacher_scaleup_receipt.json",
+  "source_digest": "c18145cffee8d38c",
+  "corrects": {
+    "node": "C1N82_TEACHER_SCALEUP",
+    "what": "V1 참조 상수",
+    "was": "C1N66 test 행 잔차 1.5866",
+    "should_be": "C1N58 shuffle KFold OOF 1.0923",
+    "why": "C7 은 학습행의 무작위 KFold OOF 를 재는데 나는 평가 fold 의 test 행 잔차를 기준으로 걸었다. 다른 양이다. C1N58 의 shuffle 값과는 0.0114 차이로 일치하므로 하네스는 멀쩡했다."
+  },
+  "arms": {
+    "base": {
+      "g1": 1.0437629171961564,
+      "g2": 1.1605301634640381,
+      "g3": 1.1036926219297651,
+      "overall": 1.1036777862749971
+    },
+    "deep": {
+      "g1": 1.0093942899621962,
+      "g2": 1.1165865252250662,
+      "g3": 1.0963985699498204,
+      "overall": 1.0724563845749382
+    },
+    "long": {
+      "g1": 1.0232256346638713,
+      "g2": 1.1316389995134164,
+      "g3": 1.0869951043697796,
+      "overall": 1.0808429867521274
+    },
+    "seq": {
+      "g1": 1.0500125645097942,
+      "g2": 1.159158291681388,
+      "g3": 1.109724404151227,
+      "overall": 1.106871526104277
+    },
+    "seq_deep": {
+      "g1": 1.0215697185303745,
+      "g2": 1.126335797107975,
+      "g3": 1.097973764245349,
+      "overall": 1.0809625714617608
+    }
+  },
+  "reductions": {
+    "base": 0.0,
+    "deep": 0.02828851145535305,
+    "long": 0.020689733731018567,
+    "seq": -0.00289372484342465,
+    "seq_deep": 0.020581382624273004
+  },
+  "base_sigma": 1.1036777862749971,
+  "best_arm": "deep",
+  "best_reduction": 0.02828851145535305,
+  "implied_total_gain": 0.0046393158786779,
+  "required_reduction_for_c16": 0.02715548780487804,
+  "c16_floor_total": 0.004453499999999999,
+  "sequence_columns_added": 480,
+  "checks": {
+    "V1_base_matches_c58_shuffle": true,
+    "V1_gap": 0.011377786274997082
+  },
+  "hypotheses": {
+    "H1_v1_passes_on_correct_reference": true,
+    "H2_clears_magnitude_gate": true,
+    "H3_sequence_does_not_help": true,
+    "H4_helps_all_groups": true
+  },
+  "limitation": "**누출면에서 잰 값이다.** 무작위 KFold 는 이웃 시각이 학습에 들어가므로 잔차가 작다(학습행 1.0923 대 test 행 1.5866, C1N54 가 잰 누출분 17.8~21.3%p). 따라서 이 개선은 시간 분할에서 재확인되기 전까지 **승격 근거가 되지 못한다**.",
+  "verdict": "TEACHER_CAPACITY_CLEARS_GATE_PENDING_CHRONOLOGICAL_CONFIRMATION",
+  "no_training": true,
+  "dacon_upload": false,
+  "lockbox_used": false,
+  "generated_at": "2026-08-05T20:00:17.742930+00:00",
+  "digest": "a003f09d75e9f8d6"
+}

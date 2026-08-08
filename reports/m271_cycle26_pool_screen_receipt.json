@@ -1,0 +1,213 @@
+{
+ "dacon_upload": false,
+ "decided_utc": "2026-08-04T07:47:58.435985+00:00",
+ "external_actions": [],
+ "lane": "L7",
+ "lockbox_reopened": false,
+ "model_fits": 0,
+ "new_2024_evaluation": false,
+ "node": "C1N26_POOL_WIDTH_SCREEN",
+ "report_sha256": "9d1db622433365eaa7f15e590b0b421a3e91b8b5f1968f4e3baa7d8fc1e0367e",
+ "result": {
+  "comparison": {
+   "delta_total_all_vs_p4": 0.0017777931062451513,
+   "detection_threshold": 0.001013,
+   "monthly_delta": {
+    "2023-07": 0.0037913850342929933,
+    "2023-08": 0.0009406000541565263,
+    "2023-09": -0.0012306845466616423,
+    "2023-10": -0.009551532963852694
+   }
+  },
+  "evaluation_surface_note": "Q3 3 개월 전용. 동결 게이트(9 개월)를 대신하지 않는다",
+  "fold": "dev-2023-Q3",
+  "gate_modified": false,
+  "node": "C1N26_POOL_WIDTH_SCREEN",
+  "parent_node": "C1N20_ALPHA_ENDPOINT",
+  "pool": {
+   "dropped": [],
+   "files_found": 124,
+   "fold_coverage_census": {
+    "Q3_only_pool": 124,
+    "full_fold": 12
+   },
+   "usable": 124
+  },
+  "predeclared_check": {
+   "H1_expectation": "Q3 에서 median(P_ALL) > median(P4)",
+   "H1_held": true,
+   "H1_measured": 0.0017777931062451513,
+   "H2_expectation": "차이가 검출문턱 0.001013 초과",
+   "H2_held": true,
+   "H3_expectation": "Q3 세 달 전부에서 우세",
+   "H3_held": false,
+   "H3_measured": {
+    "2023-07": 0.0037913850342929933,
+    "2023-08": 0.0009406000541565263,
+    "2023-09": -0.0012306845466616423,
+    "2023-10": -0.009551532963852694
+   },
+   "H4_expectation": "P_ALL 봉투 커버리지 > P4 봉투 커버리지",
+   "H4_held": true,
+   "justifies_q2_q4_backfill": false,
+   "promotes_candidate": false,
+   "spec_defect": {
+    "H3_on_thick_months_only": false,
+    "issue": "H3 에 최소 월 크기 미명시. fold 경계가 얇은 달로 흘러넘쳤다",
+    "month_rows": {
+     "2023-07": 2214,
+     "2023-08": 2232,
+     "2023-09": 2160,
+     "2023-10": 3
+    },
+    "thin_months_excluded": [
+     "2023-10"
+    ],
+    "verdict_changes_if_corrected": false
+   },
+   "verdict": "POOL_WIDTH_IMMATERIAL_C24_CONFIRMED"
+  },
+  "promotes": false,
+  "reopens": "C1N24_MEMBER_COUNT_REOPEN",
+  "sets": {
+   "P12_FULL_FOLD_COVERAGE": {
+    "coverage_eligible": 0.29694629694629693,
+    "ficr": 0.3482386442648475,
+    "group_ficr": {
+     "1": 0.3582901495076176,
+     "2": 0.3790565399841617,
+     "3": 0.30736924330276316
+    },
+    "group_nmae": {
+     "1": 0.13215627055491513,
+     "2": 0.1406636318749128,
+     "3": 0.14571237053211875
+    },
+    "median_envelope_width_cap": 0.12280535930211613,
+    "monthly_total": {
+     "2023-07": 0.5785873965477021,
+     "2023-08": 0.6109073497767732,
+     "2023-09": 0.6561660558998231,
+     "2023-10": 0.6073741924603174
+    },
+    "n_members": 12,
+    "one_minus_nmae": 0.8604892423460178,
+    "total": 0.6043639433054326
+   },
+   "P4_E3_FOUR_FAMILY": {
+    "coverage_eligible": 0.2098982098982099,
+    "ficr": 0.3540389072125507,
+    "group_ficr": {
+     "1": 0.36445160285315137,
+     "2": 0.38493346966283826,
+     "3": 0.31273164912166246
+    },
+    "group_nmae": {
+     "1": 0.13117796276166308,
+     "2": 0.13943133538449154,
+     "3": 0.1447234639234537
+    },
+    "median_envelope_width_cap": 0.07708325869993622,
+    "monthly_total": {
+     "2023-07": 0.5810068989758133,
+     "2023-08": 0.609814404785635,
+     "2023-09": 0.666771426000323,
+     "2023-10": 0.6077075257936507
+    },
+    "n_members": 4,
+    "one_minus_nmae": 0.8615557459767972,
+    "total": 0.6077973265946739
+   },
+   "P_ALL_Q3": {
+    "coverage_eligible": 0.6837486837486837,
+    "ficr": 0.35581971985676075,
+    "group_ficr": {
+     "1": 0.37849767977924753,
+     "2": 0.38109616406904173,
+     "3": 0.307865315721993
+    },
+    "group_nmae": {
+     "1": 0.1301160099495146,
+     "2": 0.1372606193769109,
+     "3": 0.1426318120383425
+    },
+    "median_envelope_width_cap": 0.3450000000000002,
+    "monthly_total": {
+     "2023-07": 0.5847982840101063,
+     "2023-08": 0.6107550048397915,
+     "2023-09": 0.6655407414536614,
+     "2023-10": 0.598155992829798
+    },
+    "n_members": 124,
+    "one_minus_nmae": 0.8633305195450773,
+    "total": 0.609575119700919
+   }
+  },
+  "single_model_quality": {
+   "best": [
+    {
+     "model": "M229_LOCAL_Q3_SEQUENCE_SMOOTH",
+     "total": 0.6274121692719657
+    },
+    {
+     "model": "M225_LOCAL_Q3_PROB_SMOOTH_BLEND",
+     "total": 0.625648705340002
+    },
+    {
+     "model": "M222_LOCAL_Q3_POINT_ANCHOR_BLEND",
+     "total": 0.6247062244108766
+    },
+    {
+     "model": "M227_STRICT_G3_PSEUDO_PLS_Q3",
+     "total": 0.622162324471352
+    },
+    {
+     "model": "M173_SCADA_PSEUDO_SOURCE_Q3",
+     "total": 0.6218511757668267
+    }
+   ],
+   "frac_below_p4_ensemble": 0.6693548387096774,
+   "median_total": 0.6046932177479016,
+   "n": 124,
+   "worst": [
+    {
+     "model": "M184_STRICT_GRID_EXPERT_Q3",
+     "total": 0.5764522054329216
+    },
+    {
+     "model": "M191_STRICT_MLP_DIST_Q3",
+     "total": 0.5743039112131302
+    },
+    {
+     "model": "M182_STRICT_CAL_SOURCE_CDF_Q3",
+     "total": 0.5724905157355564
+    },
+    {
+     "model": "M193_STRICT_MLP_ORDINAL_Q3",
+     "total": 0.5657025125915797
+    },
+    {
+     "model": "M190_STRICT_G3_DIVERSE_SITEWIND_Q3",
+     "total": 0.5346754318995405
+    }
+   ]
+  },
+  "spec_defect": {
+   "H3_on_thick_months_only": false,
+   "issue": "H3 에 최소 월 크기 미명시. fold 경계가 얇은 달로 흘러넘쳤다",
+   "month_rows": {
+    "2023-07": 2214,
+    "2023-08": 2232,
+    "2023-09": 2160,
+    "2023-10": 3
+   },
+   "thin_months_excluded": [
+    "2023-10"
+   ],
+   "verdict_changes_if_corrected": false
+  }
+ },
+ "schema_version": 1,
+ "script_sha256": "4c56f2dff5f3a322cf1b0923bdafffc1d2623ab4ccdc212d27cc9e568d7d8f56",
+ "stage": "M271_P4_CYCLE26_POOL_SCREEN"
+}

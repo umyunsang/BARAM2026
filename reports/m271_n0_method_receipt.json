@@ -1,0 +1,246 @@
+{
+ "applicability_tags": [
+  "contradicts_premise",
+  "near_match_only"
+ ],
+ "dacon_upload": false,
+ "decided_utc": "2026-08-04T00:31:15.325158+00:00",
+ "decomposition_finding": {
+  "claim": "공식 Total 은 임의의 행 분할에 대해 정확히 가법 분해된다.",
+  "consequence": "계획의 R9('FICR 이 발전량 가중 비선형이라 가법 분해가 정확히 망라적이지 않을 수 있음')는 과대평가로 보인다. A7 은 근사 귀속이 아니라 **정확한 회계**를 목표로 할 수 있고, 잔차 셀이 0 이어야 한다.",
+  "derivation": [
+   "FICR_g = sum_i(a_i * u_i) / sum_i(4 * a_i) 이므로, 행 분할 {C} 에 대해",
+   "FICR_g = sum_C w_C * (ubar_C / 4),  w_C = sum_{i in C} a_i / sum_all a_i,  sum_C w_C = 1",
+   "즉 FICR 은 셀에 대한 볼록결합이다.",
+   "NMAE_g = mean_i(|e_i|) 도 유효행에 대한 평균이므로 동일하게 분해된다.",
+   "Total = 0.5*(1 - mean_g NMAE_g) + 0.5*mean_g FICR_g 는 둘의 선형결합이다.",
+   "유효행 판정(actual >= 0.1*capacity)은 **실측값에만** 의존하므로 후보를 바꿔도 행 집합과 가중치 w_C 가 변하지 않는다. 분할이 고정이다."
+  ],
+  "status": "DERIVED_NOT_YET_VERIFIED",
+  "verification_owner": "A7 (④ 단계에서 수치로 확인. 잔차가 부동소수 오차 범위를 넘으면 이 주장은 철회되고 R9 가 복구된다.)"
+ },
+ "external_actions": [
+  "web search (read-only, method research)"
+ ],
+ "inner_loop_steps": [
+  "1_method_research",
+  "2_spec_freeze"
+ ],
+ "lockbox_reopened": false,
+ "methods": [
+  {
+   "adopt": "방법만 채택. 신규 의존성 0. 층화 축은 리드타임/시각/계절/풍향섹터.",
+   "frameworks_considered": {
+    "properscoring==0.1": {
+     "adopted": false,
+     "license": "Apache-2.0"
+    },
+    "scores==2.6.0": {
+     "adopted": false,
+     "license": "Apache-2.0"
+    },
+    "xskillscore==0.0.29": {
+     "adopted": false,
+     "license": "Apache-2.0"
+    }
+   },
+   "lane": "L8",
+   "method": "층화 예보검증(stratified verification) + Murphy 분해",
+   "serves_nodes": [
+    "A4",
+    "A7"
+   ],
+   "standard": "Murphy(1973) Brier score -> reliability + resolution + uncertainty. 예보검증의 표준 분해.",
+   "sub_query": "a_forecast_verification",
+   "tag": "near_match_only",
+   "why": "세 라이브러리 모두 xarray 기반 격자 예보를 대상으로 한다. 우리 표면은 3그룹 시간별 tabular 이고 공식 지표(NMAE/FICR)는 이미 정확히 구현돼 있다. 필요한 것은 지표 구현이 아니라 **층화 규약**이므로 라이브러리를 도입할 이유가 없다. dask/xarray/xhistogram 의존을 추가하는 비용만 남는다."
+  },
+  {
+   "adopt": "bin 방법 + 밀도 정규화 채택. 로그 대신 통계적 이상치 제거(3-sigma + 사분위 조합, Mahalanobis 거리)로 대체하고 그 대체 사실을 리포트에 명시한다.",
+   "frameworks_considered": {},
+   "lane": "L1",
+   "method": "IEC 61400-12-1 풍속 bin 방법 + 공기밀도 정규화, SCADA 이상치 제거",
+   "serves_nodes": [
+    "A5"
+   ],
+   "standard": "IEC 61400-12-1:2022 — 단일 풍력터빈 출력성능 계측 절차. 데이터 품질검사(가용성/출력제한/고장 제외)를 명시적으로 요구한다.",
+   "sub_query": "b_power_curve",
+   "tag": "near_match_only",
+   "why": "표준은 기상탑을 갖춘 통제된 단일터빈 계측 프로토콜이다. 우리는 로터 뒤 나셀 풍속계, 10분 데이터, **운전로그 없음**, 그리고 예측 대상은 그룹 합산 출력이다. 따라서 운전로그 기반 필터링은 부적용이고, **풍속 bin 구성과 공기밀도 정규화**는 그대로 적용된다. 로그가 없으므로 출력제한/정지 구간은 통계적으로 식별해야 한다."
+  },
+  {
+   "adopt": "MI 는 **선별 스크린으로만** 쓰고 순위 해석에 그친다. 채택 판정은 시간순 안전 홀드아웃에서의 추가이득으로 별도 측정한다. 자기상관 보정 없이 유의성을 주장하지 않는다.",
+   "frameworks_considered": {
+    "scikit-learn==1.9.0 (mutual_info_regression)": {
+     "adopted": true,
+     "license": "BSD-3-Clause",
+     "note": "이미 설치됨. 신규 의존성 0."
+    }
+   },
+   "lane": "L2",
+   "method": "KSG(Kraskov-Stoegbauer-Grassberger) kNN 상호정보량",
+   "serves_nodes": [
+    "A2"
+   ],
+   "standard": "Kraskov et al. 2004. 연속변수 MI 추정의 표준 kNN 방법.",
+   "sub_query": "c_feature_relevance",
+   "tag": "near_match_only",
+   "why": "두 가지 한계가 A2 의 실제 질문과 어긋난다. (1) 주변 MI 는 기존 12개 컬럼 대비 **추가** 정보를 재지 못한다. A2 가 알고 싶은 것은 조건부 관련성이다. (2) kNN 추정량은 편향되며 편향이 표본수와 k 에 의존하는데, 우리 데이터는 강한 자기상관을 가져 **유효표본수가 n 보다 훨씬 작다**. 절대값을 신뢰할 수 없다."
+  },
+  {
+   "adopt": "둘 다 미채택. A1 은 명시적 통계량을 직접 계산한다. 신규 의존성 0.",
+   "frameworks_considered": {
+    "pycatch22==0.4.5": {
+     "adopted": false,
+     "license": "GPL-3.0-or-later"
+    },
+    "tsfresh==0.21.2": {
+     "adopted": false,
+     "license": "MIT"
+    }
+   },
+   "lane": "L1",
+   "method": "표준 특성 피처셋",
+   "serves_nodes": [
+    "A1"
+   ],
+   "standard": "catch22 (Lubba et al. 2019) — hctsa 4791개에서 선별한 22개. 분류성능 90% 를 1000배 빠르게 재현.",
+   "sub_query": "d_timeseries_characterisation",
+   "tag": "contradicts_premise",
+   "why": "**pycatch22 는 GPLv3+ 카피레프트다.** 상금이 걸리고 2차평가에 코드 일체를 제출해야 하는 대회에서 파생물 라이선스 부담을 지는 것은 정당화되지 않는다. 공식 규칙 5조는 사전학습 *가중치*에 상업이용 허용을 요구하는데, 라이브러리에 직접 적용되지는 않더라도 같은 취지에서 회피한다. tsfresh 는 MIT 이지만 분류용 대량 피처 생성기이고 A1 이 필요한 것은 라벨 3계열의 분포/주기/램프 특성이라 목적이 다르며, statsmodels/stumpy/pywavelets 의존을 추가한다."
+  }
+ ],
+ "model_fits": 0,
+ "new_2024_evaluation": false,
+ "new_dependencies_total": 0,
+ "node": "N0",
+ "report_sha256": "d1f48ee89455f80d93606c1f0efa2a0a539cf309a3bed40b023c5ca766f6b725",
+ "schema_version": 1,
+ "script_sha256": "7465afedee7d583c10c52b7e8ff960f66c37877f2d2adf9eeca84797df6363d6",
+ "spec_hash": "15d9078de483cdf798bb79abe4e692de4f71ae7a23a588a1ce27c7fbf6286bc6",
+ "specs": {
+  "A1_labels": {
+   "depends_on": [],
+   "generation": 1,
+   "lane": "L1",
+   "method_from": "d_timeseries_characterisation",
+   "new_dependencies": [],
+   "outputs": [
+    "그룹별 결측·0·저출력 비중",
+    "유효행(actual >= 0.1*capacity) 비중 — 월별/그룹별",
+    "발전량 분포 분위수와 y대역 경계 후보",
+    "시각/월 주기 구조",
+    "시간당 램프 |dy| 분포",
+    "그룹간 동시 상관",
+    "그룹3 2022 부재가 학습 표면에 미치는 영향"
+   ],
+   "predeclared_expectation": "없음. 이 노드는 가설 검정이 아니라 특성 기술이다.",
+   "stop_condition": "위 7개 산출이 모두 생성되면 종료.",
+   "task": "라벨 3계열의 분포/결측/유효행 비중/주기/램프 특성을 명시 통계량으로 계산"
+  },
+  "A2_columns": {
+   "depends_on": [],
+   "generation": 1,
+   "lane": "L2",
+   "method_from": "c_feature_relevance",
+   "new_dependencies": [],
+   "outputs": [
+    "GFS/LDAPS 전 컬럼 목록과 configs/features/spatial_v2.yaml 실사용분 대조",
+    "미사용 컬럼별 mutual_info_regression 점수 (순위 해석 전용)",
+    "자기상관으로 인한 유효표본 축소 경고를 수치와 함께 기록"
+   ],
+   "predeclared_expectation": "MI 절대값은 신뢰하지 않는다. 순위만 본다. 상위 컬럼이라도 조건부 추가이득은 별도 측정 전까지 주장하지 않는다.",
+   "router_note": "MI 가 임계 미만이면 C8(PRUNE), 이상이면 C1 로 L2 방향리서치 발화.",
+   "stop_condition": "전 컬럼에 MI 점수가 붙고 사용/미사용 구분이 완료되면 종료.",
+   "task": "공급 NWP 컬럼 전수 인벤토리와 라벨 관련성 스크린"
+  },
+  "A3_spatial": {
+   "depends_on": [],
+   "generation": 1,
+   "lane": "L2",
+   "method_from": null,
+   "new_dependencies": [],
+   "outputs": [
+    "info.xlsx 17터빈의 좌표/허브고/로터경/제작사/모델/그룹 매핑",
+    "LDAPS 16격자·GFS 9격자와 각 터빈의 거리 행렬",
+    "그룹별 공간 배치와 격자 커버리지",
+    "surface_0_h(지형고도), surface_0_lsm(육해 마스크)의 격자별 값"
+   ],
+   "predeclared_expectation": "없음. 기하 기술이다.",
+   "stop_condition": "매핑과 거리 행렬이 산출되면 종료.",
+   "task": "격자-터빈 기하 구조 규명"
+  },
+  "A4_error": {
+   "depends_on": [
+    "A1_labels",
+    "A3_spatial"
+   ],
+   "generation": 2,
+   "lane": "L2",
+   "method_from": "a_forecast_verification",
+   "new_dependencies": [],
+   "outputs": [
+    "리드타임(16~39h)별 오차",
+    "시각(01~24)별 오차",
+    "월/계절별 오차",
+    "풍향 섹터별 오차",
+    "LDAPS 50MUmax/min·50MVmax/min 의 max-min 과 오차의 관계"
+   ],
+   "predeclared_expectation": "max-min 스프레드가 오차와 양의 관계를 가질 것으로 예상한다. 부호가 반대면 C5(anomaly)로 라우팅된다.",
+   "stop_condition": "5개 층화 축이 모두 산출되면 종료.",
+   "task": "층화 예보검증 — 예보-실측 오차 구조를 축별로 분해"
+  },
+  "A5_scada": {
+   "constraint": "SCADA 는 진단 전용. 추론 피처를 만들지 않는다(평가기간 부재).",
+   "depends_on": [],
+   "generation": 1,
+   "lane": "L3",
+   "method_from": "b_power_curve",
+   "new_dependencies": [],
+   "outputs": [
+    "터빈 17기별 풍속 bin 파워커브 (0.5 m/s bin)",
+    "공기밀도 정규화 적용 전후 대조",
+    "통계적 이상치 제거(3-sigma + 사분위) 전후 대조와 제거율",
+    "나셀풍속 대 NWP 풍속의 그룹별 사상 관계"
+   ],
+   "predeclared_expectation": "운전로그가 없으므로 표준의 로그 기반 필터링을 통계적 대체로 수행한다. 이 대체는 표준 준수가 아니며 그 사실을 리포트에 명시한다.",
+   "stop_condition": "17기 파워커브와 제거율이 산출되면 종료.",
+   "task": "IEC 61400-12-1 bin 방법으로 터빈별 경험 파워커브 추정"
+  },
+  "A6_timing": {
+   "depends_on": [],
+   "generation": 1,
+   "lane": "L1",
+   "method_from": null,
+   "new_dependencies": [],
+   "outputs": [
+    "data_available_kst_dtm 실측 분포와 명세서 기술(13:00 KST)의 일치 확인",
+    "행별 공식 예측기준시점(대상일 전일 14:00 KST) 계산",
+    "행별 여유 = 공식기준시점 - 공급가용시각. 00:00 행의 특수성 확인",
+    "리드타임(예보 초기화 09:00 KST 기준) 분포"
+   ],
+   "predeclared_expectation": "명세서상 모든 행이 13:00 가용이고 공식 기준시점은 14:00 이므로 최소 1시간 여유가 예상된다. 00:00 행은 대상일이 하루 뒤라 여유가 25시간으로 예상된다. 실측이 이와 다르면 그 자체가 발견이다.",
+   "stop_condition": "행별 여유 분포가 산출되면 종료.",
+   "task": "시간 규약 감사 — 공급 데이터 가용시각 대 공식 예측기준시점"
+  },
+  "A7_deficit_init": {
+   "depends_on": [
+    "A1_labels",
+    "A4_error"
+   ],
+   "generation": 3,
+   "lane": "L8",
+   "method_from": "a_forecast_verification",
+   "new_dependencies": [],
+   "outputs": [
+    "셀 키 (group x 월 x y대역 x 정산단위) 별 w_C 와 ubar_C",
+    "현재 로컬 Total 과 목표 0.66 의 격차",
+    "격차의 셀별 가법 분해와 **잔차**"
+   ],
+   "predeclared_expectation": "DECOMPOSITION_FINDING 에 따라 잔차가 부동소수 오차 범위(1e-9) 안이어야 한다. 이를 넘으면 그 주장을 철회하고 계획 R9 를 복구한다. 이 기대는 결과를 보기 전에 동결한다.",
+   "stop_condition": "셀별 분해와 잔차가 산출되면 종료.",
+   "task": "결손 원장 초기화 — 목표까지의 격차를 셀별로 정확 회계"
+  }
+ },
+ "stage": "M271_N0_METHOD_AND_SPEC"
+}

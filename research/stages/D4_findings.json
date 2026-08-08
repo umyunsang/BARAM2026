@@ -1,0 +1,40 @@
+{
+ "stage": "D4",
+ "category": "검증전략",
+ "fulfilled_utc": "2026-08-06",
+ "queries_run": 3,
+ "prior_stage_carry": "D3 확정: GBDT 가 SOTA 이고 우리는 이미 사용 중. H2_4(조건부 가중)가 fold-외 +0.000835 로 문턱의 82% — 게이트 문턱 바로 아래에서 반복적으로 기각되는 후보가 누적됨(M284 +0.001207 월별기각, M251 월별기각, H2_4 문턱미달).",
+ "findings": [
+  {
+   "id": "J1",
+   "claim": "예측 평가에서 둘 이상의 모델 비교는 다중검정 보정이 필요하며, 보정 없는 반복 비교는 과적합을 낳는다",
+   "source": "Hewamalage et al. 2022, 'Forecast evaluation for data scientists: common pitfalls and best practices', PMC9718476 (Cited 389)",
+   "tag": "directly_supported",
+   "relevance": "본 세션에서 14회 측정형 검정을 수행했고 우연통과 기대확률이 51.2% 였다. 동결 월별게이트가 3건을 차단했으므로 방향은 맞으나, **게이트의 검정력(power)** 은 측정된 적이 없다. 검정력이 너무 낮으면 진짜 이득도 함께 기각된다.",
+   "proposes": [
+    {
+     "subcapability": "C6.3",
+     "kind": "analysis",
+     "summary": "동결 월별게이트의 검정력 측정 - 알려진 크기의 인위적 이득을 주입해 게이트가 얼마나 잡아내는지",
+     "score_bearing": false
+    }
+   ]
+  },
+  {
+   "id": "J2",
+   "claim": "작은 개선에 대한 페어드 평가 프로토콜: per-seed 델타 + BCa 부트스트랩 신뢰구간 + sign-flip 검정 결합",
+   "source": "arXiv:2511.19794v1 'When +1% Is Not Enough: A Paired Bootstrap Protocol for Small Improvements'",
+   "tag": "near_match_only",
+   "relevance": "우리 게이트는 sign-test + median + block bootstrap q05 + worst-month floor 의 논리곱이다. 논문은 BCa 보정을 권하는데 우리는 percentile 부트스트랩을 쓴다. 다만 게이트는 이미 동결됐고 변경은 규칙 위반이므로, **진단만** 가능하다.",
+   "proposes": []
+  },
+  {
+   "id": "J3",
+   "claim": "표본외 예측 비교가 데이터마이닝 유발 과적합을 방지한다",
+   "source": "Clark 2000, Federal Reserve Bank of Kansas City RWP00-05 (Cited 143)",
+   "tag": "near_match_only",
+   "relevance": "우리는 이미 fold-외 선택을 표준으로 쓴다. 확증 증거이며 신규 개입 없음.",
+   "proposes": []
+  }
+ ]
+}

@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "node_id": "S17-N2_EVENT_LEDGER_ENVELOPE",
+  "stage": "S11_분석방법적절성",
+  "kind": "workflow_provenance_non_score_bearing",
+  "predeclared_at": "2026-08-08T18:25:59.262636+09:00",
+  "parent": "S17-N1_LOOP_CONTRACT_REPAIR",
+  "evidence": [
+    {
+      "path": "research/rwa_local_audit.md",
+      "sha256": "a497c3a6f4725b24dfd724e7869957a9dfff4029902e3a8d249b2dd146cfe500",
+      "claims": [
+        "C10",
+        "C11",
+        "C22",
+        "C25"
+      ]
+    },
+    {
+      "path": "research/rwa_loop_research.md",
+      "sha256": "80ea3a3ee6e34cffb5892bcf412ee4981a4368cf7d3c4218763e06e20b66a811",
+      "status": "near-match design guidance only"
+    },
+    {
+      "path": "reports/s17_n1_loop_contract_receipt.json",
+      "sha256": "684e9928308d3e81483b9f783fd9825ffa2532acbec98199096940c4e6b847d2"
+    }
+  ],
+  "purpose": "Make one append-only transactional event stream authoritative for cycle identity, provenance, comparison count, stage coverage, closure and halt eligibility.",
+  "invariants": {
+    "E1": "PREDECLARED event is required before CLOSED",
+    "E2": "same event retry is idempotent; conflicting retry is rejected",
+    "E3": "every event is canonical-hashed and chained to the previous committed event",
+    "E4": "CLOSED verifies receipt SHA and required code/config/data/policy/alignment provenance",
+    "E5": "score-bearing CLOSED comparison_index is strictly monotone with no gaps",
+    "E6": "legacy cycles are accounted as LEGACY_UNRECONSTRUCTABLE and never evidence-complete",
+    "E7": "snapshot derives pending/closed/legacy/comparison/stage coverage/frontier from events only",
+    "E8": "halt below target is impossible; non-target halt requires reconciled ledger, S1-S11 coverage and empty frontier",
+    "E9": "reopen after process restart reproduces identical state digest",
+    "E10": "tamper or broken hash/parent chain is detected on replay",
+    "E11": "SQLite transaction is the sole mutation path; no read-modify-write JSON state",
+    "E12": "targeted/full tests and Ruff pass"
+  },
+  "files": {
+    "add": [
+      "src/baram/loop/events.py",
+      "tests/loop/test_events.py"
+    ],
+    "modify": [
+      "src/baram/loop/state.py",
+      "src/baram/loop/graph.py",
+      "src/baram/loop/graph_staged.py",
+      "src/baram/loop/__init__.py"
+    ]
+  },
+  "forbidden": [
+    "model fit",
+    "official score call",
+    "2024 access",
+    "Dacon/account action",
+    "dependency change",
+    "bulk data action",
+    "fabricated legacy backfill"
+  ],
+  "pass_label": "PASS_EVENT_LEDGER_CONTRACT_ONLY_NOT_MODEL_SCORE"
+}

@@ -1,0 +1,292 @@
+{
+ "dacon_upload": false,
+ "decided_utc": "2026-08-04T08:46:21.934530+00:00",
+ "external_actions": [],
+ "lane": "L7",
+ "lockbox_reopened": false,
+ "model_fits": 0,
+ "new_2024_evaluation": false,
+ "node": "C1N33_SINGLE_VS_ENSEMBLE",
+ "report_sha256": "c84bc6115b369c867084c112890a3ebf24d082b8733d83496371b9bf67a6f844",
+ "result": {
+  "best_single_by_fold": {
+   "Q2": "M115_XGBOOST",
+   "Q3": "M115_XGBOOST",
+   "Q4": "M115_XGBOOST"
+  },
+  "champion": "M271_MEDIAN4",
+  "champion_by_fold": {
+   "Q2": 0.6396794805906179,
+   "Q3": 0.607751286338821,
+   "Q4": 0.6461123732018937
+  },
+  "champion_fold_mean": 0.6311810467104442,
+  "champion_score": {
+   "ficr": 0.41320978983964385,
+   "group_ficr": {
+    "1": 0.42079521858555724,
+    "2": 0.46863045810963244,
+    "3": 0.3502036928237419
+   },
+   "group_nmae": {
+    "1": 0.13286075292051555,
+    "2": 0.13543735862877082,
+    "3": 0.151750291391336
+   },
+   "one_minus_nmae": 0.8599838656864592,
+   "total": 0.6365968277630516
+  },
+  "deployed": {
+   "ficr": 0.40246401063156667,
+   "group_ficr": {
+    "1": 0.409551299643159,
+    "2": 0.46073846269466673,
+    "3": 0.33710226955687433
+   },
+   "group_nmae": {
+    "1": 0.13617589715402054,
+    "2": 0.14227310586805572,
+    "3": 0.15731590353073155
+   },
+   "one_minus_nmae": 0.8547450311490641,
+   "policy": "T0.5_G1.5",
+   "total": 0.6286045208903154
+  },
+  "detection_threshold": 0.001013,
+  "gate_modified": false,
+  "gate_version": "M270_MONTHLY_GATE_v1_frozen_2026-08-04",
+  "lockbox_used": false,
+  "members": {
+   "M102_TOP100": {
+    "by_fold": {
+     "Q2": 0.6335105010099826,
+     "Q3": 0.6003817496842562,
+     "Q4": 0.6408788273561032
+    },
+    "champion_gate_vs_it": {
+     "bootstrap_q05": 0.005086772957546898,
+     "flags": {
+      "G1": true,
+      "G2": true,
+      "G3": true,
+      "G4": true
+     },
+     "median_delta": 0.006009966065715688,
+     "min_delta": 0.0023614986124402826,
+     "months_scored": 9,
+     "passed": true,
+     "positive_months": 9,
+     "sign_test_p": 0.001953125
+    },
+    "delta_vs_champion": -0.006008189870796876,
+    "ficr": 0.4061985831232719,
+    "gate_vs_champion": {
+     "bootstrap_q05": -0.009040725063424052,
+     "flags": {
+      "G1": false,
+      "G2": false,
+      "G3": false,
+      "G4": false
+     },
+     "median_delta": -0.006009966065715688,
+     "min_delta": -0.015723638256651684,
+     "months_scored": 9,
+     "passed": false,
+     "positive_months": 0,
+     "sign_test_p": 1.0
+    },
+    "group_ficr": {
+     "1": 0.40923844713743496,
+     "2": 0.4595137863971613,
+     "3": 0.3498435158352194
+    },
+    "group_nmae": {
+     "1": 0.13667956784343652,
+     "2": 0.14138696478009277,
+     "3": 0.15699738939275804
+    },
+    "one_minus_nmae": 0.8549786926612375,
+    "total": 0.6305886378922547
+   },
+   "M113_LGBM_DART": {
+    "by_fold": {
+     "Q2": 0.6392823653675034,
+     "Q3": 0.6070258490625228,
+     "Q4": 0.6462563075320386
+    },
+    "champion_gate_vs_it": {
+     "bootstrap_q05": -0.0008331155116651014,
+     "flags": {
+      "G1": false,
+      "G2": true,
+      "G3": false,
+      "G4": true
+     },
+     "median_delta": 0.000519908169475447,
+     "min_delta": -0.006005281056468137,
+     "months_scored": 9,
+     "passed": false,
+     "positive_months": 5,
+     "sign_test_p": 0.5
+    },
+    "delta_vs_champion": -0.00022108680213861476,
+    "ficr": 0.4151157026820282,
+    "gate_vs_champion": {
+     "bootstrap_q05": -0.0037343487970400917,
+     "flags": {
+      "G1": false,
+      "G2": false,
+      "G3": false,
+      "G4": true
+     },
+     "median_delta": -0.000519908169475447,
+     "min_delta": -0.006860088762377425,
+     "months_scored": 9,
+     "passed": false,
+     "positive_months": 4,
+     "sign_test_p": 0.74609375
+    },
+    "group_ficr": {
+     "1": 0.42129925880143193,
+     "2": 0.47112969152289896,
+     "3": 0.3529181577217536
+    },
+    "group_nmae": {
+     "1": 0.1361191358833866,
+     "2": 0.13672280320601868,
+     "3": 0.1542507231912013
+    },
+    "one_minus_nmae": 0.8576357792397978,
+    "total": 0.636375740960913
+   },
+   "M115_XGBOOST": {
+    "by_fold": {
+     "Q2": 0.6427655877100643,
+     "Q3": 0.6083107660440932,
+     "Q4": 0.6476913378039102
+    },
+    "champion_gate_vs_it": {
+     "bootstrap_q05": -0.0039868564590812795,
+     "flags": {
+      "G1": false,
+      "G2": false,
+      "G3": false,
+      "G4": true
+     },
+     "median_delta": -0.003635082700526704,
+     "min_delta": -0.005929004202985366,
+     "months_scored": 9,
+     "passed": false,
+     "positive_months": 3,
+     "sign_test_p": 0.91015625
+    },
+    "delta_vs_champion": 0.0018132613888458549,
+    "ficr": 0.4177798187050226,
+    "gate_vs_champion": {
+     "bootstrap_q05": -0.00035985229076109236,
+     "flags": {
+      "G1": false,
+      "G2": true,
+      "G3": false,
+      "G4": true
+     },
+     "median_delta": 0.003635082700526704,
+     "min_delta": -0.005238557836474977,
+     "months_scored": 9,
+     "passed": false,
+     "positive_months": 6,
+     "sign_test_p": 0.25390625
+    },
+    "group_ficr": {
+     "1": 0.4288679430008999,
+     "2": 0.4685054214853474,
+     "3": 0.35596609162882065
+    },
+    "group_nmae": {
+     "1": 0.13464640739584785,
+     "2": 0.13567393947916678,
+     "3": 0.15255857432866865
+    },
+    "one_minus_nmae": 0.8590403595987722,
+    "total": 0.6384100891518975
+   },
+   "M244_RARE_EVENT_CORRECTED_ANALOG_Q234": {
+    "by_fold": {
+     "Q2": 0.5963952579801326,
+     "Q3": 0.5983745256863745,
+     "Q4": 0.6146165175193415
+    },
+    "champion_gate_vs_it": {
+     "bootstrap_q05": 0.013888374693579656,
+     "flags": {
+      "G1": true,
+      "G2": true,
+      "G3": true,
+      "G4": false
+     },
+     "median_delta": 0.022263212487235062,
+     "min_delta": -0.017159005223759682,
+     "months_scored": 9,
+     "passed": false,
+     "positive_months": 8,
+     "sign_test_p": 0.01953125
+    },
+    "delta_vs_champion": -0.030837148776321155,
+    "ficr": 0.35058665087735097,
+    "gate_vs_champion": {
+     "bootstrap_q05": -0.039147810059060935,
+     "flags": {
+      "G1": false,
+      "G2": false,
+      "G3": false,
+      "G4": false
+     },
+     "median_delta": -0.022263212487235062,
+     "min_delta": -0.06381657787028583,
+     "months_scored": 9,
+     "passed": false,
+     "positive_months": 1,
+     "sign_test_p": 0.998046875
+    },
+    "group_ficr": {
+     "1": 0.3370028902604238,
+     "2": 0.4128394635027482,
+     "3": 0.30191759886888087
+    },
+    "group_nmae": {
+     "1": 0.13341925914191893,
+     "2": 0.13283552723806294,
+     "3": 0.15094709233168818
+    },
+    "one_minus_nmae": 0.8609327070961099,
+    "total": 0.6057596789867304
+   }
+  },
+  "node": "C1N33_SINGLE_VS_ENSEMBLE",
+  "omission_being_corrected": "챔피언을 배포 정책하고만 비교했고 자기 앙상블의 최고 멤버와 비교한 적이 없다 (Breiman 1996 의 핵심 대조)",
+  "oracle_fold_pick_mean": 0.6329225638526892,
+  "parent_node": "C1N32_LOCKBOX_OPERATOR",
+  "pooled_best_single": "M115_XGBOOST",
+  "predeclared_check": {
+   "H1_expectation": "최고단일(M115_XGBOOST)이 챔피언 부모 게이트를 통과",
+   "H1_held": false,
+   "H2_expectation": "최고 단일 멤버가 세 fold 에서 동일",
+   "H2_held": true,
+   "H2_measured": {
+    "Q2": "M115_XGBOOST",
+    "Q3": "M115_XGBOOST",
+    "Q4": "M115_XGBOOST"
+   },
+   "H3_champion_fold_mean": 0.6311810467104442,
+   "H3_expectation": "챔피언 < fold 별 최고단일 평균",
+   "H3_held": true,
+   "H3_oracle_fold_mean": 0.6329225638526892,
+   "H4_expectation": "챔피언이 모든 개별 멤버 부모 게이트를 통과",
+   "H4_held": false,
+   "verdict": "CHAMPION_HELD_NEITHER_SIDE_SIGNIFICANT"
+  }
+ },
+ "schema_version": 1,
+ "script_sha256": "8b87b54714d1cca76066abbe2fd8fb61e9a45fecb84794cac8d2735883e622ec",
+ "stage": "M271_P4_CYCLE33_SINGLE_VS_ENSEMBLE"
+}

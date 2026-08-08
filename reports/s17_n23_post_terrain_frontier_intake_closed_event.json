@@ -1,0 +1,36 @@
+{
+  "event_type": "CLOSED",
+  "cycle_id": "S17-N23_POST_TERRAIN_FRONTIER_RESEARCH_INTAKE",
+  "stage_id": "S10",
+  "node_id": "S17-N23_POST_TERRAIN_FRONTIER_RESEARCH_INTAKE",
+  "actor": "root",
+  "occurred_at": "2026-08-09T00:14:01.058165+09:00",
+  "body": {
+    "predeclared_event_sha256": "a2ffa6b0941b24104b26939f41aba15d54059eb49afb818d1fc9483e9bd188ba",
+    "receipt_path": "reports/s17_n23_post_terrain_frontier_intake_receipt.json",
+    "receipt_sha256": "60f5cd8129c9a523cf259fe5176b42e199e7459b9f079f629fdcb23209c7730f",
+    "code_sha256": "3cdd9802afa9eb4ea85c66f2875475753000616096849411a0857619f5eceb0f",
+    "config_sha256": "d0939ba03683d39ae6c56186323bb83888698966eb877796c2f75ae4bff52148",
+    "data_sha256": "714be6b43509f1a6b4f2f8e75d707509814d5c8735c63f7e5c42fb11258d7a22",
+    "router_sha256": "80e37561a32fb2928d1a7505b652bb822f5b6989e73b6d7106afb0ae62041b43",
+    "policy_ids": [
+      "N23_POST_TERRAIN_INTAKE_NONE_READY_FAIL_CLOSED"
+    ],
+    "row_alignment_keys": [
+      "fold_id",
+      "group_id",
+      "forecast_kst_dtm"
+    ],
+    "evidence_class": "research",
+    "weights_fit": "fixed",
+    "result_status": "INCONCLUSIVE",
+    "score_bearing": false,
+    "comparison_index": null,
+    "stage_evidence_status": "INSUFFICIENT",
+    "next_handoff": [
+      "S17-N24_SECONDARY_FRONTIER_RESEARCH_INTAKE"
+    ],
+    "lockbox_2024_used": false,
+    "dacon_actions": []
+  }
+}

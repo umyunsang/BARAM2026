@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "node_id": "S17-N14_R3_HEIGHT_ONLY_TERRAIN_PREREQUISITE_AUDIT",
+  "created_at": "2026-08-08T21:27:45.891246+09:00",
+  "purpose": "Static prerequisite and eligibility audit only for a zero-fit height-only KMAPP terrain-correction branch. No DEM value retrieval, model fit, prediction, or metric call.",
+  "input_bundle": {
+    "files": {
+      "reports/s17_n12_vertical_profile_prerequisite_receipt.json": "5f6d35ccc7193e683180b55b76ceca8c702be1ecc1257d682d93808a7d76bebe",
+      "reports/s17_n13a_r2_provenance_recovery_receipt.json": "d9d3ab4075a6104a22e3b4c5ef1124a169867d60aa8d666e2d738c084f9234be",
+      "research/lanes/S13_S5_preprocessing_deep.md": "941ea50838d606aea5a1071572302f89a0153b767050ee9b9702874de28323ac",
+      "inputs/competition/open_wind_236727.zip": "920be0c458d820e855bf79dd25723146f52ce1736138aedba5e6bc853f1f720b"
+    },
+    "sha256": "a33e275ceb21a5bbe547f52ba8664bede00c241afc62baf22870f19551871d38"
+  },
+  "scope": {
+    "archive_members": [
+      "train/ldaps_train.csv",
+      "info.xlsx"
+    ],
+    "operating_day_max": "2023-12-31",
+    "weather_filter_before_all_value_statistics": true,
+    "weather_columns": [
+      "forecast_kst_dtm",
+      "grid_id",
+      "latitude",
+      "longitude",
+      "surface_0_h"
+    ],
+    "labels_or_scada": false,
+    "test_members": false,
+    "lockbox_2024": false
+  },
+  "official_sources": {
+    "license": "https://documentation.dataspace.copernicus.eu/APIs/SentinelHub/Data/DEM/resources/license/License-COPDEM-30.pdf",
+    "product": "https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM",
+    "aws_readme": "https://copernicus-dem-30m.s3.amazonaws.com/readme.html",
+    "tile_head_only": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N37_00_E128_00_DEM/Copernicus_DSM_COG_10_N37_00_E128_00_DEM.tif"
+  },
+  "frozen_checks": {
+    "license_gate": "Official licence must grant worldwide, unlimited-time reproduction, distribution, public communication, adaptation/modification/combination, free of charge, with no field-of-use restriction; commercial use is inferred only from these explicit rights and absence of a non-commercial restriction, not from a search snippet.",
+    "time_gate": "Official product metadata must establish static source acquisition and public availability before 2026-07-05.",
+    "availability_gate": "Anonymous HEAD of the exact N37/E128 GLO-30 tile must return 200 with positive content length; no range/body request is permitted in this node.",
+    "model_orography_gate": "Within operating days through 2023-12-31, LDAPS surface_0_h must be finite, constant within grid_id, and present for every frozen grid; coordinates must likewise be constant per grid.",
+    "formula_inputs_gate": "Static turbine coordinates/hub height from N12, LDAPS model orography, and an eligible 30 m DSM must together cover the inputs needed by the published height-only formula. The next extraction node must still freeze exact terrain-statistic definitions before downloading values."
+  },
+  "verdict_rule": {
+    "READY_STATIC_DEM_EXTRACTION": "all five gates pass",
+    "BLOCKED": "any gate fails or is not directly supported"
+  },
+  "non_score_bearing": true,
+  "comparison_index": null,
+  "model_fits": 0,
+  "official_score_calls": 0,
+  "forbidden": [
+    "GET/range/body access to the DEM tile",
+    "DEM-derived features",
+    "target or SCADA access",
+    "test member access",
+    "2024 operating-day weather",
+    "model fits",
+    "official metric calls",
+    "rejected ECMWF",
+    "Dacon actions"
+  ],
+  "handoff_if_ready": [
+    "S17-N15_R3_COPERNICUS_GLO30_STATIC_EXTRACTION_AND_FORMULA_FREEZE"
+  ]
+}

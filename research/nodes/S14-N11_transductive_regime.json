@@ -1,0 +1,74 @@
+{
+ "K4": {
+  "total": 0.6352058532521453,
+  "picks": {
+   "dev-2023-Q2": {
+    "global_policy": "(1.5, 8.0)",
+    "c": 0.0
+   },
+   "dev-2023-Q3": {
+    "global_policy": "(0.6, 2.0)",
+    "c": 0.0
+   },
+   "dev-2023-Q4": {
+    "global_policy": "(1.0, 5.0)",
+    "c": 0.125
+   }
+  },
+  "arb": {
+   "point_cand": 0.6352058532521453,
+   "point_champ": 0.6361842493883538,
+   "paired_mean": -0.0009549902779435029,
+   "paired_sd": 0.00032105029013692157,
+   "p_better": 0.0025,
+   "ci95": [
+    -0.0016015949048177214,
+    -0.00036279879505565516
+   ],
+   "n_rep": 400,
+   "block_days": 7,
+   "point_delta": -0.000978396136208537,
+   "min_effect": 0.001,
+   "p_required_unadjusted": 0.9,
+   "p_required_adjusted": 0.9,
+   "n_comparisons_so_far": 1,
+   "took_champion": false
+  }
+ },
+ "K8": {
+  "total": 0.635277563269318,
+  "picks": {
+   "dev-2023-Q2": {
+    "global_policy": "(1.5, 8.0)",
+    "c": 0.0
+   },
+   "dev-2023-Q3": {
+    "global_policy": "(0.6, 2.0)",
+    "c": 0.0
+   },
+   "dev-2023-Q4": {
+    "global_policy": "(1.0, 5.0)",
+    "c": 0.25
+   }
+  },
+  "arb": {
+   "point_cand": 0.635277563269318,
+   "point_champ": 0.6361842493883538,
+   "paired_mean": -0.000912784688944078,
+   "paired_sd": 0.0002620632392466265,
+   "p_better": 0.0,
+   "ci95": [
+    -0.001419160368111938,
+    -0.00040860873909754134
+   ],
+   "n_rep": 400,
+   "block_days": 7,
+   "point_delta": -0.0009066861190358821,
+   "min_effect": 0.001,
+   "p_required_unadjusted": 0.9,
+   "p_required_adjusted": 0.9,
+   "n_comparisons_so_far": 1,
+   "took_champion": false
+  }
+ }
+}

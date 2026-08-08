@@ -10,13 +10,39 @@ import pandas as pd
 from baram.contracts.types import FoldSpec
 from baram.exceptions import ModelError
 from baram.models.baselines import fit_supplied_rf_bundle, predict_bundle
-from baram.models.lightgbm import fit_lgbm_bundle
+from baram.models.lightgbm import PointModelSpec, fit_lgbm_bundle
 
 
 @dataclass(frozen=True)
 class OOFResult:
     predictions: pd.DataFrame
     training_forecast_ids: Mapping[str, frozenset[str]]
+
+
+def generate_named_point_oof(
+    features: pd.DataFrame,
+    labels: pd.DataFrame,
+    folds: tuple[FoldSpec, ...],
+    feature_names: tuple[str, ...],
+    specification: PointModelSpec,
+    seed: int,
+    n_jobs: int,
+) -> OOFResult:
+    """Run one frozen v2 row and label its output without mutating model lineage IDs."""
+    result = generate_oof(
+        features,
+        labels,
+        folds,
+        feature_names,
+        family=specification.family,
+        architecture=specification.architecture,
+        params=dict(specification.params),
+        seed=seed,
+        n_jobs=n_jobs,
+    )
+    predictions = result.predictions.copy()
+    predictions["candidate_id"] = specification.candidate_id
+    return OOFResult(predictions, result.training_forecast_ids)
 
 
 def filter_complete_validation_rows(

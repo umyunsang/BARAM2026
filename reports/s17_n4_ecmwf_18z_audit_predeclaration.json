@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "node_id": "S17-N4_ECMWF_18Z_FIXED_LEAD_AUDIT",
+  "stage": "S1_원시자료파악",
+  "kind": "external_metadata_eligibility_non_score_bearing",
+  "predeclared_at": "2026-08-08T18:58:14.891486+09:00",
+  "parent": "S17-N3_STRICT_PREQUENTIAL_EVALUATION_REPAIR",
+  "evidence": [
+    {
+      "path": "research/rwa_external_eligibility.md",
+      "sha256": "958ea7a0b96371b6d773920038ec8d6e07e7903b4b26f5dd8443dd6d354bf4e5",
+      "status": "child metadata findings to reproduce independently"
+    },
+    {
+      "path": "research/rwa_data_feature_research.md",
+      "sha256": "16351bb387dfebf0dc7ccdc6ef0e8ec77406964bf3d0b40c52fcdc3496284504",
+      "status": "issuance-cube and vertical-profile migration contract"
+    },
+    {
+      "path": "reports/s17_n3_event_commit_receipt.json",
+      "sha256": "49f405a64dcc33769ad84709e23cd39f759fe19cac0965cd4777b62f1f98498c"
+    }
+  ],
+  "purpose": "Independently establish whether ECMWF open deterministic D-2 18Z fixed-lead common fields are historically available before the D-1 05:00 UTC cutoff on the 2023 development surface.",
+  "invariants": {
+    "A1": "official ECMWF source and CC-BY-4.0 commercial licence text/locator are saved and hashed",
+    "A2": "S3 keys preserve init=18Z, stream=scda, fixed 21..45h leads; no stitching",
+    "A3": "2023 index inventory contains 10u,10v,u925,v925 on the common 0p4-beta surface",
+    "A4": "45h object Last-Modified is before 05:00 UTC next day on prespecified 2023 spot dates",
+    "A5": "2023 archive day listing and exact Q2-Q4 missing dates are recorded",
+    "A6": "only HTML/XML/index/HEAD metadata; zero GRIB range/value retrieval",
+    "A7": "no 2024 artifact, competition lockbox, 2025 test value, remote inference or model score is touched",
+    "A8": "receipt includes URLs, HTTP status, headers, byte/hash provenance and fixed lead arithmetic"
+  },
+  "fixed_spot_dates": [
+    "2023-02-01",
+    "2023-06-01",
+    "2023-10-01"
+  ],
+  "fixed_cycle": "D-2 18Z",
+  "fixed_steps_hours": [
+    21,
+    24,
+    27,
+    30,
+    33,
+    36,
+    39,
+    42,
+    45
+  ],
+  "fixed_variables": [
+    "10u",
+    "10v",
+    "u@925hPa",
+    "v@925hPa"
+  ],
+  "cutoff_utc": "D-1 05:00:00Z",
+  "files": {
+    "raw_metadata_dir": "artifacts/external/ecmwf_18z_audit",
+    "receipt": "reports/s17_n4_ecmwf_18z_audit_receipt.json"
+  },
+  "forbidden": [
+    "GRIB data bytes",
+    "2024",
+    "2025 test values",
+    "model fit",
+    "official candidate score",
+    "Dacon/account action",
+    "dependency change",
+    "remote inference"
+  ],
+  "pass_label": "PASS_EXTERNAL_METADATA_ELIGIBILITY_ONLY_NOT_VALUE_OR_SCORE"
+}

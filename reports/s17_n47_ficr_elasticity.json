@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "node_id": "S17-N47_FICR_ELASTICITY",
+  "stage_id": "S4",
+  "deficit": "FD5",
+  "created_at": "2026-08-09T06:26:13.804144+09:00",
+  "score_bearing": false,
+  "comparison_index": null,
+  "result_status": "SUPPORTED",
+  "surface": "champion actions, outer folds dev-2023-Q3 and dev-2023-Q4, 7453 valid rows of 12960",
+  "error_distribution_energy_weighted": {
+    "0-2%": 0.121,
+    "2-4%": 0.1162,
+    "4-6%": 0.1031,
+    "6-8%": 0.0906,
+    "8-10%": 0.079,
+    "10-15%": 0.1594,
+    "15-20%": 0.1057,
+    "20-30%": 0.1249,
+    "30%+": 0.1002
+  },
+  "settlement_tiers": {
+    "pays_4_share_energy": 0.3403,
+    "pays_3_share_energy": 0.0906,
+    "pays_0_share_energy": 0.5692
+  },
+  "ficr_elasticity_shrink_all_errors_by_s": {
+    "1.00": 0.404485,
+    "0.95": 0.421112,
+    "0.90": 0.43985,
+    "0.85": 0.458648,
+    "0.80": 0.481046,
+    "0.75": 0.506892,
+    "0.70": 0.532113,
+    "0.60": 0.591269,
+    "0.50": 0.661157
+  },
+  "requirements": {
+    "ficr_needed_for_total_066_at_current_1nmae": 0.46152,
+    "ficr_needed_at_1nmae_087": 0.45,
+    "implied_error_shrink_factor": 0.85,
+    "implied_relative_mae_reduction": "about 15 percent"
+  },
+  "findings": [
+    "Reaching Total 0.660000 requires FICR 0.461520 at the current 1-NMAE, and the elasticity curve says that corresponds to shrinking every capacity-relative absolute error by a factor of about 0.85, i.e. a 15 percent reduction in MAE.",
+    "A 15 percent MAE cut takes 1-NMAE from 0.8584802 to about 0.8797, which is almost exactly the rank-20 leaderboard 1-NMAE of 0.87991 recorded in AGENTS.md.",
+    "At that accuracy our own action policy would deliver FICR about 0.4586, which is HIGHER than the rank-20 FICR of 0.43952. The settlement policy is therefore already efficient at converting accuracy into settlement; it is not the deficit.",
+    "The energy-weighted error mass is bimodal in a punishing way: 34.0 percent of delivered energy sits inside the 6 percent band and earns 4 units, only 9.1 percent sits in the 6 to 8 percent shell, and 56.9 percent is beyond 8 percent and earns nothing.",
+    "Only 17.0 percent of delivered energy sits in the 6 to 10 percent error shell, so there is no large pool of nearly-paying rows that a small nudge would convert. The gain must come from moving genuinely inaccurate rows, not from boundary shaving."
+  ],
+  "reframed_bottleneck": "The binding constraint is RAW POINT-FORECAST ACCURACY, not the action rule, not the ensemble weights, not the density family and not the density resolution. Every one of those was measured this session and capped at about +0.002 each. The target is a roughly 15 percent reduction in capacity-relative MAE.",
+  "redirects_effort_to": [
+    "S5 preprocessing and S6 representation",
+    "S7 model capability now that dependency installation and pre-2026-07-05 commercially licensed pretrained weights are authorised"
+  ],
+  "lockbox_2024_used": false,
+  "dacon_actions": [],
+  "closed_at": "2026-08-09T06:26:13.804156+09:00"
+}

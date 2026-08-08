@@ -1,0 +1,91 @@
+{
+ "table": [
+  {
+   "model": "CHAMPION",
+   "total": 0.6361842493883538,
+   "one_minus_nmae": 0.8618657013604555,
+   "ficr": 0.4105027974162521,
+   "fitted_dof": 2,
+   "members": 4
+  },
+  {
+   "model": "DEPAVG",
+   "total": 0.6325915038299078,
+   "one_minus_nmae": 0.856281924672228,
+   "ficr": 0.4089010829875876,
+   "fitted_dof": 0,
+   "members": 3
+  }
+ ],
+ "paired": {
+  "point_cand": 0.6325915038299078,
+  "point_champ": 0.6361842493883538,
+  "paired_mean": -0.003552964560914751,
+  "paired_sd": 0.0018664751627487342,
+  "p_better": 0.03,
+  "ci95": [
+   -0.0071605789994675624,
+   8.071638659051124e-05
+  ],
+  "n_rep": 400,
+  "block_days": 7
+ },
+ "dof": {
+  "DEPAVG": {
+   "members": 3,
+   "policy_per_member": 0,
+   "blend_weight": 0,
+   "member_training": 3,
+   "note": "three deployed stems at fixed documented policies, uniform average; no weight and no policy is re-fitted by us"
+  },
+  "CHAMPION": {
+   "members": 4,
+   "policy_per_member": 1,
+   "blend_weight": 1,
+   "member_training": 4,
+   "note": "DEPAVG plus member D, whose (T,G) policy is chosen fold-outside and whose blend weight is chosen fold-outside"
+  },
+  "BL_KNN120": {
+   "members": 4,
+   "policy_per_member": 1,
+   "blend_weight": 1,
+   "member_training": 4,
+   "note": "same shape as CHAMPION with a different own-member"
+  },
+  "BL_KNN60": {
+   "members": 4,
+   "policy_per_member": 1,
+   "blend_weight": 1,
+   "member_training": 4,
+   "note": "same shape as CHAMPION with a different own-member"
+  },
+  "BL_KNN300": {
+   "members": 4,
+   "policy_per_member": 1,
+   "blend_weight": 1,
+   "member_training": 4,
+   "note": "same shape as CHAMPION with a different own-member"
+  },
+  "BL_DL": {
+   "members": 4,
+   "policy_per_member": 1,
+   "blend_weight": 1,
+   "member_training": 4,
+   "note": "same shape as CHAMPION with a different own-member"
+  },
+  "BL_DV": {
+   "members": 4,
+   "policy_per_member": 1,
+   "blend_weight": 1,
+   "member_training": 4,
+   "note": "same shape as CHAMPION with a different own-member"
+  },
+  "BL_DG": {
+   "members": 4,
+   "policy_per_member": 1,
+   "blend_weight": 1,
+   "member_training": 4,
+   "note": "same shape as CHAMPION with a different own-member"
+  }
+ }
+}

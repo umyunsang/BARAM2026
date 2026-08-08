@@ -1,0 +1,49 @@
+{
+ "baseline_60day": {
+  "spread_gust": 0.186,
+  "spread_u10": 0.0232,
+  "spread_v10": 0.0341,
+  "spread_vec": 0.0268
+ },
+ "cycles": 215,
+ "dacon_upload": false,
+ "external_actions": [],
+ "lockbox_reopened": false,
+ "merged_rows": 1531,
+ "model_fits": 0,
+ "new_2024_evaluation": false,
+ "noise_band": 0.05116445100966508,
+ "partial_correlations": {
+  "spread_gust": 0.09223034094550396,
+  "spread_u10": 0.011761007754938836,
+  "spread_v10": 0.00826846517490657,
+  "spread_vec": 0.009617842899426477
+ },
+ "per_level": {
+  "(0.099, 0.25]": {
+   "n": 412,
+   "r_gust": 0.2965782367584058,
+   "r_vec": -0.016841220274717628
+  },
+  "(0.25, 0.45]": {
+   "n": 341,
+   "r_gust": 0.2143050323691233,
+   "r_vec": -0.00032591525503541637
+  },
+  "(0.45, 0.7]": {
+   "n": 366,
+   "r_gust": -0.03624631711431788,
+   "r_vec": 0.0977316559150249
+  },
+  "(0.7, 1.1]": {
+   "n": 412,
+   "r_gust": -0.03933953096484063,
+   "r_vec": 0.035661155342760945
+  }
+ },
+ "schema_version": 1,
+ "spread_rows": 860,
+ "spread_store_sha256": "ae167d75dece671af9f059774296ec39fefc3d675cf72d12fdb3ff96b47f0893",
+ "stage": "M270_GEFS_EXPANDED_ANALYSIS",
+ "standard_error": 0.02558222550483254
+}

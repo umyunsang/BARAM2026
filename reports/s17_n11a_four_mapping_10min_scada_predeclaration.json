@@ -1,0 +1,149 @@
+{
+  "schema_version": 1,
+  "node_id": "S17-N11A_FOUR_MAPPING_10MIN_SCADA_CORRECTED_DIAGNOSTIC",
+  "stage": "S5_데이터전처리",
+  "kind": "corrected_training_scada_wind_temporal_mapping_diagnostic_non_score_bearing",
+  "predeclared_at": "2026-08-08T20:42:04.433578+09:00",
+  "parent": "S17-N11_FOUR_MAPPING_TRAINING_WIND_DIAGNOSTIC",
+  "repair_basis": {
+    "failed_receipt": {
+      "path": "reports/s17_n11_four_mapping_wind_receipt.json",
+      "sha256": "3025326dd352666e0bdb88cd09aa0b881488ad402d2c242a3ee5c32150cc678b"
+    },
+    "fixed_facts": {
+      "vestas": "10-minute source, available 2022-2023",
+      "unison": "10-minute source, available 2023 only",
+      "hour_ending": "Vestas ceil(h); Unison floor(h)+1h, unchanged from local audit"
+    }
+  },
+  "input_bundle": {
+    "sha256": "40f17333839515d10f370a2eb798be9a6c395dc35b17af687797b921c68ef896",
+    "files": {
+      "inputs/competition/open_wind_236727.zip": "920be0c458d820e855bf79dd25723146f52ce1736138aedba5e6bc853f1f720b",
+      "research/rwa_data_feature_research.md": "16351bb387dfebf0dc7ccdc6ef0e8ec77406964bf3d0b40c52fcdc3496284504",
+      "research/lanes/S5_preprocessing_research.md": "cac6fa1b850617bbb99f07242facacb58dcc1e1e5b04e5b2d3f3262009e9096f",
+      "research/lanes/repo_wind_axis.md": "11feef7627740c1c7f4bf4f218004274ca6db5b7b5ba7bd2a3f9e4631b56e2e4",
+      "research/lanes/S15_sota_nwp.md": "ab8328f5c05b46a32ba8f3259baf1ea9f2914659eceecb3c1d4b68b85c03db3e",
+      "artifacts/audits/s17_n10b_issuance_cube_2022_2023.json": "0f29f2db4fc77feab0d54a91ff8da3feab932c0a16c070e7a9c3512f46990b84",
+      "reports/s17_n10b_issuance_cube_corrected_receipt.json": "7eee3844ba1d72eb2813a707dc190c63e9a4295b4e70f9636743a37ffbe89c0f",
+      "reports/s17_n11_four_mapping_wind_receipt.json": "3025326dd352666e0bdb88cd09aa0b881488ad402d2c242a3ee5c32150cc678b"
+    }
+  },
+  "scope": {
+    "nwp_operating_days": [
+      "2022-01-01",
+      "2023-12-31"
+    ],
+    "scada_hourly_targets": {
+      "vestas": [
+        "2022-01-01 01:00",
+        "2024-01-01 00:00"
+      ],
+      "unison": [
+        "2023-01-01 01:00",
+        "2024-01-01 00:00"
+      ]
+    },
+    "csv_reader_guard": "Pass 1 reads only first timestamp field until first mapped hour after 2024-01-01 00:00; pass 2 uses exact nrows and timestamp+*_ws usecols. No 2024 mapped-hour wind value or power column is materialized.",
+    "valid_hours_common_support": "02:00 through 23:00 per operating day"
+  },
+  "scada_aggregation": {
+    "row": "median across turbine *_ws after finite [0,40] filter; Vestas require >=6/12, Unison >=3/5",
+    "hour": "mean row median; require >=4 ten-minute rows",
+    "mapping_to_hour": {
+      "vestas": "kst_dtm.ceil(1h)",
+      "unison": "kst_dtm.floor(1h)+1h"
+    }
+  },
+  "panels": {
+    "nwp_spatial_summary": "mean over native grids of sqrt(u^2+v^2)",
+    "nwp_winds": {
+      "gfs_10m": [
+        "heightAboveGround_10_10u",
+        "heightAboveGround_10_10v"
+      ],
+      "gfs_80m": [
+        "heightAboveGround_80_u",
+        "heightAboveGround_80_v"
+      ],
+      "gfs_100m": [
+        "heightAboveGround_100_100u",
+        "heightAboveGround_100_100v"
+      ],
+      "ldaps_10m": [
+        "heightAboveGround_10_10u",
+        "heightAboveGround_10_10v"
+      ]
+    },
+    "observed_wind": {
+      "unison": "row median of five *_ws; require >=3 finite values in [0,40] m/s",
+      "vestas": "row median of twelve *_ws; require >=6 finite values in [0,40] m/s"
+    }
+  },
+  "mappings": [
+    "t",
+    "t_minus_1",
+    "mean_t_minus_1_t",
+    "mean_t_t_plus_1"
+  ],
+  "same_run_rule": "Every neighbor must have the same source and data_available_kst_dtm as t; use the common within-issue hours only.",
+  "no_cycle_selection": "The supplied availability batch is fixed and never selected by SCADA error.",
+  "metric": {
+    "primary": "equal-weight mean Fisher atanh(Pearson r) over 8 source-height x farm panels (Vestas 2022-23, Unison 2023)",
+    "strata": "12 source-height x farm x available-year correlations",
+    "secondary": [
+      "per-panel Pearson r",
+      "coverage",
+      "hourly SCADA row counts"
+    ],
+    "bootstrap": {
+      "unit": "operating_day",
+      "scheme": "stationary",
+      "mean_block_days": 7,
+      "replicates": 4096,
+      "seed": 20260808,
+      "joint_across_all_panels_and_mappings": true,
+      "multiplicity": "one-sided simultaneous 95% lower bounds via centered maximum over three non-current mappings"
+    }
+  },
+  "clear_winner_gate": {
+    "candidate": "unique largest primary aggregate",
+    "delta_fisher_z_vs_t_min": 0.01,
+    "simultaneous_95pct_lower_bound_gt": 0.0,
+    "strata_wins_min_of_12": 9,
+    "mean_delta_positive_in_each_source_family": [
+      "gfs",
+      "ldaps"
+    ],
+    "coverage_min_each_panel_year": 0.95
+  },
+  "decision": {
+    "clear_noncurrent": "SUPPORTED diagnostic; hand off exactly one unchanged-model strict prequential OOF mapping comparison",
+    "current_best_or_clear_gate_fail": "Do not score a mapping candidate; close R1 and hand off R2 prerequisite audit",
+    "ties": "INCONCLUSIVE; no OOF"
+  },
+  "outputs": {
+    "script": "scripts/diagnose_nwp_temporal_mapping_10min.py",
+    "report": "artifacts/audits/s17_n11a_four_mapping_wind.json",
+    "receipt": "reports/s17_n11a_four_mapping_wind_receipt.json"
+  },
+  "actions": {
+    "model_fits": 0,
+    "power_target_access": false,
+    "training_scada_wind_access": true,
+    "official_score_calls": 0,
+    "comparison_index": null
+  },
+  "forbidden": [
+    "power columns/labels",
+    "2024 mapped-hour SCADA/NWP values",
+    "test data",
+    "model fitting",
+    "official Total/components",
+    "alternative shifts/mappings/heights/spatial summaries",
+    "Dacon/account",
+    "remote inference",
+    "dependency change"
+  ],
+  "pass_label": "CORRECTED_TRAINING_WIND_DIAGNOSTIC_ONLY_NOT_POWER_MODEL_SCORE"
+}

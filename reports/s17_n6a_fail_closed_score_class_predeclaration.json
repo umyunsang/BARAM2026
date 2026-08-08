@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "node_id": "S17-N6A_FAIL_CLOSED_SCORE_CLASS_REPAIR",
+  "stage": "S11_분석방법적절성",
+  "kind": "event_contract_non_score_bearing_repair",
+  "predeclared_at": "2026-08-08T19:59:44.814241+09:00",
+  "parent": "S17-N2_EVENT_LEDGER_ENVELOPE",
+  "trigger": {
+    "pending_node": "S17-N6_COST5_SPO_PLUS_PREQUENTIAL",
+    "observed_error": "EventContractError: predeclaration and closure score class mismatch",
+    "failed_close_committed": false
+  },
+  "purpose": "Allow a predeclared potentially score-bearing experiment to fail closed before fit/score without fabricating a score-bearing closure or consuming a comparison index.",
+  "contract": {
+    "allow_only_if": [
+      "PREDECLARED score_bearing=true",
+      "CLOSED score_bearing=false",
+      "CLOSED pre_score_gate_failed=true",
+      "result_status in REFUTED/INCONCLUSIVE",
+      "comparison_index is null",
+      "evidence_class=diagnostic"
+    ],
+    "continue_to_reject": [
+      "true->false downgrade without explicit flag",
+      "SUPPORTED downgrade",
+      "false->true upgrade",
+      "score-bearing closure with nonmonotone comparison index"
+    ],
+    "reducer": "downgraded closure remains non-score-bearing and does not increment comparison_count"
+  },
+  "files": {
+    "modify": [
+      "src/baram/loop/events.py",
+      "tests/loop/test_events.py"
+    ],
+    "receipt": "reports/s17_n6a_fail_closed_score_class_receipt.json"
+  },
+  "forbidden": [
+    "model fit",
+    "official score",
+    "2024/test access",
+    "Dacon/account",
+    "dependency/data action",
+    "rewriting historical events"
+  ],
+  "pass_label": "PASS_FAIL_CLOSED_LEDGER_REPAIR_ONLY_NOT_MODEL_SCORE"
+}

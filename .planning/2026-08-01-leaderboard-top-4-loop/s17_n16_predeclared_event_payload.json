@@ -1,0 +1,27 @@
+{
+  "event_type": "PREDECLARED",
+  "cycle_id": "S17-N16_R4_SOURCE_SEPARATED_VS_CONCAT_PREREQUISITE_AUDIT",
+  "stage_id": "S6",
+  "node_id": "S17-N16_R4_SOURCE_SEPARATED_VS_CONCAT_PREREQUISITE_AUDIT",
+  "actor": "root",
+  "occurred_at": "2026-08-08T21:43:08.127246+09:00",
+  "body": {
+    "preregistration_sha256": "6d4a0208dae9e689b66e61a9b657fe718d04d50bc7cac0fd089ca9c9ac4aca23",
+    "parent_ids": [
+      "S17-N15A_R3_CORRECTED_PRIMARY_FORMULA_IDENTIFIABILITY_GATE"
+    ],
+    "mechanism": "Source separation can be tested without new fits only if frozen per-source probabilities are source-pure, architecturally matched, aligned, and reconstructibly past-only; legacy negative scores remain non-evidence.",
+    "treatment": "Frozen-artifact and chronology prerequisite audit for D versus DL/DG.",
+    "control": "No new comparison; legacy accounting only.",
+    "metric": "Boolean integrity, architecture, source-purity, chronology and no-prior-S17-comparison gates.",
+    "min_effect": 0.0,
+    "score_bearing": false,
+    "novelty_signature": "R4_NO_REFIT_STRICT_PREREQUISITE_AUDIT_V1",
+    "basis_evidence_ids": [
+      "RWA_DATA_R4",
+      "LEGACY_S12_N3",
+      "S17_N7_RECONSTRUCTION_PRECEDENT",
+      "S17_N3_PROTOCOL"
+    ]
+  }
+}

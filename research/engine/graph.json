@@ -1,0 +1,887 @@
+{
+ "nodes": {
+  "C000": {
+   "id": "C000",
+   "stage": "S0",
+   "title": "DEPAVG + D, 1-dof fold-outside blend",
+   "principle": "incumbent, reproduced exactly by research/nodes/loop_lib.py",
+   "hypothesis": "",
+   "mechanism": "",
+   "parent": null,
+   "status": "champion",
+   "prereg": {
+    "treatment": "incumbent",
+    "control": "n/a",
+    "primary_metric": "total",
+    "min_effect": 0.0,
+    "widens_matrix": false,
+    "noise_arm": null,
+    "prune_arm": "none",
+    "axis": "incumbent",
+    "provenance": {
+     "policy": "fold-outside (T,G) chosen on the other two folds, per member",
+     "weights": "fold-outside 1-dof, w=0.30 on all three folds",
+     "row_key": [
+      "fold_id",
+      "group_id",
+      "forecast_kst_dtm"
+     ],
+     "script": "research/nodes/loop_lib.py (exact port of s10_final3.py)"
+    }
+   },
+   "script": null,
+   "result": {
+    "total": 0.6361842493883538,
+    "one_minus_nmae": 0.8618657013604555,
+    "ficr": 0.4105027974162521
+   },
+   "arbitration": {},
+   "cost_min": 10.0,
+   "prior_effect": 0.001,
+   "notes": ""
+  },
+  "F01": {
+   "id": "F01",
+   "stage": "S7",
+   "title": "conditional-density head + explicit Bayes action",
+   "principle": "Murphy 5.7 Bayes action is a functional of p(y|x); Boyd EE364a 6.5 deadzone penalty",
+   "hypothesis": "",
+   "mechanism": "replace the point head with a 50-bin conditional density and deploy the exact Bayes action a*=argmax_a[w2(p~*K)(a) - w1 E|a-y|1{y>=c}] per row instead of a grid-searched (T,G) scalar",
+   "parent": "C000",
+   "status": "rejected",
+   "prereg": {
+    "treatment": "replace the point head with a 50-bin conditional density and deploy the exact Bayes action a*=argmax_a[w2(p~*K)(a) - w1 E|a-y|1{y>=c}] per row instead of a grid-searched (T,G) scalar",
+    "control": "champion C000",
+    "primary_metric": "total",
+    "min_effect": 0.001,
+    "widens_matrix": false,
+    "noise_arm": null,
+    "prune_arm": "none",
+    "axis": "bayes_action",
+    "provenance": {
+     "policy": "fold-outside",
+     "weights": "fold-outside",
+     "row_key": [
+      "fold_id",
+      "group_id",
+      "forecast_kst_dtm"
+     ]
+    },
+    "six_component_bin": "1.3 evaluation criteria + 1.5"
+   },
+   "script": null,
+   "result": {
+    "pooled_bayes": 0.630571,
+    "champion": 0.636184,
+    "delta": -0.005613,
+    "paired_sd": 0.002057,
+    "p_better": 0.0
+   },
+   "arbitration": {},
+   "cost_min": 45,
+   "prior_effect": 0.004,
+   "notes": "EXECUTED as S14-N8. The foundation lane's TOP recommendation, and it is WRONG here -- pooling densities and taking one Bayes action scores 0.630571 against the champion's 0.636184 (delta -0.005613, paired sd 0.002057, P(better)=0.000). MECHANISM, and it is a real correction to the theory: Murphy 5.7's Bayes action applies when you HAVE the densities. The three deployed members expose ACTIONS, and each of those actions is already an argmax under its own (T,G) -- a point deliberately shifted off the conditional median toward a settlement band. Lifting such a point back into density space with a kernel and re-running the argmax DOUBLE-APPLIES the decision layer: it treats an already-optimised action as if it were a mode of the predictive law. Averaging the four actions in kWh space is therefore not the rank-1 approximation error the lane diagnosed; given actions rather than densities it is the correct combination, and it works because four correlated band-seekers average into a band that each individually straddles. F01 closed with a mechanism."
+  },
+  "F02": {
+   "id": "F02",
+   "stage": "S7",
+   "title": "train under the dead-zone penalty itself",
+   "principle": "Boyd EE364a slide 6.5: penalty shape determines the residual distribution",
+   "hypothesis": "",
+   "mechanism": "custom booster objective 0.5|r|/C - 0.5 w_y K(r) with a smoothed trapezoid K, instead of fitting L1/L2 and post-processing",
+   "parent": "C000",
+   "status": "rejected",
+   "prereg": {
+    "treatment": "custom booster objective 0.5|r|/C - 0.5 w_y K(r) with a smoothed trapezoid K, instead of fitting L1/L2 and post-processing",
+    "control": "champion C000",
+    "primary_metric": "total",
+    "min_effect": 0.001,
+    "widens_matrix": false,
+    "noise_arm": null,
+    "prune_arm": "none",
+    "axis": "deadzone_loss",
+    "provenance": {
+     "policy": "fold-outside",
+     "weights": "fold-outside",
+     "row_key": [
+      "fold_id",
+      "group_id",
+      "forecast_kst_dtm"
+     ]
+    },
+    "six_component_bin": "1.3 evaluation criteria"
+   },
+   "script": null,
+   "result": {
+    "hit6_L1": 0.3256,
+    "hit6_DZ_best": 0.1233,
+    "total_L1": 0.603068,
+    "total_DZ_best": 0.393678,
+    "ctrl_plumbing_total": 0.56972
+   },
+   "arbitration": {},
+   "cost_min": 25,
+   "prior_effect": 0.003,
+   "notes": "EXECUTED as S14-N5, THREE attempts. Attempt 1 and 2 were degenerate (all variants identical, MAE 0.240) -- caught only because a plumbing control was pre-declared. Root cause: LGBMRegressor's custom objective signature is (y_true, y_pred), not the native Booster's (preds, dataset); writing the native one makes r=0 and the gradient vanish silently. Attempt 3 learns. RESULT: dead-zone fitting is catastrophic -- best variant hit6 0.1233 vs L1's 0.3256, Total 0.393678 vs 0.603068. CONFOUND DECLARED: the custom-objective path itself is handicapped (CTRL_L1 reaches only 0.569720 vs built-in L1 0.603068) because LightGBM's built-in regression_l1 additionally renews each leaf to the residual MEDIAN, which custom objectives do not get. But the dead-zone penalty is 6x worse than that handicap, so the sign is not in doubt. MECHANISM: the step reward's gradient is a narrow bump near |r|=0.06-0.08 and vanishes for the 67% of rows that are further away, so the fit is a half-scale L1 with a distracting bump and no signal where most of the mass lives. CONSEQUENCE: a step reward must be handled in the DECISION, not in the FIT -- which is what Murphy 5.7 prescribes and what this project's two-stage architecture already does. The axis is closed with a mechanism, and it retroactively justifies the density+decision-layer design."
+  },
+  "F03": {
+   "id": "F03",
+   "stage": "S8",
+   "title": "Optimization Verification test",
+   "principle": "Ng MLY ch.44-45",
+   "hypothesis": "",
+   "mechanism": "for each scored row compare the TRAINING objective at our deployed action vs at the realised Total-maximising action; if the objective prefers ours >50% of the time the objective, not the search, is at fault",
+   "parent": "C000",
+   "status": "arbitrated",
+   "prereg": {
+    "treatment": "for each scored row compare the TRAINING objective at our deployed action vs at the realised Total-maximising action; if the objective prefers ours >50% of the time the objective, not the search, is at fault",
+    "control": "champion C000",
+    "primary_metric": "total",
+    "min_effect": 0.001,
+    "widens_matrix": false,
+    "noise_arm": null,
+    "prune_arm": "none",
+    "axis": "diagnostic",
+    "provenance": {
+     "policy": "fold-outside",
+     "weights": "fold-outside",
+     "row_key": [
+      "fold_id",
+      "group_id",
+      "forecast_kst_dtm"
+     ]
+    },
+    "six_component_bin": "diagnostic, gates 1.5/1.6"
+   },
+   "script": null,
+   "result": {
+    "verdict": "objective/density, not search"
+   },
+   "arbitration": {},
+   "cost_min": 3,
+   "prior_effect": 0.0,
+   "notes": "EXECUTED as S14-N4. Ng's test returns 100%, but that is STRUCTURAL not evidential: our deployed action IS the exact argmax of J over a 0.0025-spaced grid, so J(a_ours)>=J(a) for every a by construction and the search cannot be at fault. The informative number is the density diagnostic: on scored rows q assigns mean 0.2690 mass to our deployed action versus 0.0999 to the action that would actually have maximised the row's score -- 2.69x misplaced. Binding object = the predictive density, not the optimiser."
+  },
+  "F04": {
+   "id": "F04",
+   "stage": "S7",
+   "title": "sharpness routing",
+   "principle": "18.657 excess-risk weighting",
+   "hypothesis": "",
+   "mechanism": "partition rows by predictive spread into FICR-winnable and FICR-hopeless; apply the Bayes action only where it can pay",
+   "parent": "C000",
+   "status": "rejected",
+   "prereg": {
+    "treatment": "partition rows by predictive spread into FICR-winnable and FICR-hopeless; apply the Bayes action only where it can pay",
+    "control": "champion C000",
+    "primary_metric": "total",
+    "min_effect": 0.001,
+    "widens_matrix": false,
+    "noise_arm": null,
+    "prune_arm": "none",
+    "axis": "bayes_action",
+    "provenance": {
+     "policy": "fold-outside",
+     "weights": "fold-outside",
+     "row_key": [
+      "fold_id",
+      "group_id",
+      "forecast_kst_dtm"
+     ]
+    },
+    "six_component_bin": "1.5/1.6"
+   },
+   "script": null,
+   "result": {
+    "capture_by_spread_quintile": [
+     0.5043,
+     0.4124,
+     0.3791,
+     0.366,
+     0.4358
+    ]
+   },
+   "arbitration": {},
+   "cost_min": 15,
+   "prior_effect": 0.002,
+   "notes": "EXECUTED as S14-N8. Sharpness routing presumes FICR is winnable on sharp rows and hopeless on diffuse ones. Measured capture (realised/available FICR) by predictive-spread quintile is U-SHAPED: 0.5043 / 0.4124 / 0.3791 / 0.3660 / 0.4358, and the most diffuse quintile carries 26.4% of production with hit6 0.3123, ABOVE quintiles 3 and 4. There is no partition on which the Bayes action pays and elsewhere does not, because diffuse rows are mostly high-production hours near power-curve saturation, where the band is easy to hit. REJECT."
+  },
+  "F05": {
+   "id": "F05",
+   "stage": "S5",
+   "title": "truncation-corrected target",
+   "principle": "Greene ch.19-6 truncated regression",
+   "hypothesis": "",
+   "mechanism": "retarget at median(y | x, y >= 0.1C) via explicit truncated estimation rather than the unconditional median",
+   "parent": "C000",
+   "status": "refused",
+   "prereg": {
+    "treatment": "retarget at median(y | x, y >= 0.1C) via explicit truncated estimation rather than the unconditional median",
+    "control": "champion C000",
+    "primary_metric": "total",
+    "min_effect": 0.001,
+    "widens_matrix": false,
+    "noise_arm": null,
+    "prune_arm": "none",
+    "axis": "truncation",
+    "provenance": {
+     "policy": "fold-outside",
+     "weights": "fold-outside",
+     "row_key": [
+      "fold_id",
+      "group_id",
+      "forecast_kst_dtm"
+     ]
+    },
+    "six_component_bin": "1.2 assumptions"
+   },
+   "script": null,
+   "result": {},
+   "arbitration": {},
+   "cost_min": 20,
+   "prior_effect": 0.002,
+   "notes": "Closed by F06 above -- same structure, same mechanism."
+  },
+  "F06": {
+   "id": "F06",
+   "stage": "S8",
+   "title": "binned signed-residual curve on the scored subpopulation",
+   "principle": "Imbens ARE213",
+   "hypothesis": "",
+   "mechanism": "fit E[y-yhat | yhat, spread, group] restricted to scored rows -- the empirical inverse-Mills term; a flat curve kills the truncation family in ten minutes",
+   "parent": "C000",
+   "status": "arbitrated",
+   "prereg": {
+    "treatment": "fit E[y-yhat | yhat, spread, group] restricted to scored rows -- the empirical inverse-Mills term; a flat curve kills the truncation family in ten minutes",
+    "control": "champion C000",
+    "primary_metric": "total",
+    "min_effect": 0.001,
+    "widens_matrix": false,
+    "noise_arm": null,
+    "prune_arm": "none",
+    "axis": "diagnostic",
+    "provenance": {
+     "policy": "fold-outside",
+     "weights": "fold-outside",
+     "row_key": [
+      "fold_id",
+      "group_id",
+      "forecast_kst_dtm"
+     ]
+    },
+    "six_component_bin": "1.5/1.6"
+   },
+   "script": null,
+   "result": {
+    "surface_range": 0.2474,
+    "foldoutside_delta_total": -0.009745,
+    "foldoutside_delta_1mnmae": 0.000484
+   },
+   "arbitration": {},
+   "cost_min": 5,
+   "prior_effect": 0.001,
+   "notes": "EXECUTED as S14-N6. The selected-subpopulation residual surface is NOT flat: mean(y-yhat) runs +0.0913..+0.1359 at yhat<=0.15 and -0.0528..-0.1115 at yhat>0.85, a range of 0.2474 of capacity, monotone in yhat and widening with predictive spread. So the truncation/selection structure is REAL and large. But correcting it fold-outside COSTS -0.009745 of Total while gaining only +0.000484 of 1-NMAE. MECHANISM: that surface IS the shrinkage that MAE-optimality requires; de-shrinking raises the prediction's variance, which is roughly neutral for absolute error and destructive for band-hitting. The truncation family (F05, F06) is closed with a mechanism: the inverse-Mills-shaped structure is not an error to remove, it is the optimal estimator's own attenuation."
+  },
+  "F07": {
+   "id": "F07",
+   "stage": "S5",
+   "title": "metric-matched row weights",
+   "principle": "Gelman-Hill 12.16 / the score algebra itself",
+   "hypothesis": "",
+   "mechanism": "train with w_i proportional to lam1*1{y>=c}/(3 n_g) + lam2*y_i/(3 n_g), the weights the score literally implies including the macro-average over 3 unequal groups",
+   "parent": "C000",
+   "status": "refused",
+   "prereg": {
+    "treatment": "train with w_i proportional to lam1*1{y>=c}/(3 n_g) + lam2*y_i/(3 n_g), the weights the score literally implies including the macro-average over 3 unequal groups",
+    "control": "champion C000",
+    "primary_metric": "total",
+    "min_effect": 0.001,
+    "widens_matrix": false,
+    "noise_arm": null,
+    "prune_arm": "none",
+    "axis": "metric_weights",
+    "provenance": {
+     "policy": "fold-outside",
+     "weights": "fold-outside",
+     "row_key": [
+      "fold_id",
+      "group_id",
+      "forecast_kst_dtm"
+     ]
+    },
+    "six_component_bin": "1.3 evaluation criteria"
+   },
+   "script": null,
+   "result": {},
+   "arbitration": {},
+   "cost_min": 20,
+   "prior_effect": 0.002,
+   "notes": "Duplicate. Already executed as S13-N5 (DW1/DW2/DW3), which implemented w = (1/n_g)(1 + beta*y/ybar_g) -- exactly the lam1:lam2 form with the macro-average over the three unequal groups. Blends 0.632804 / 0.633013 / 0.632861, all below the champion; point 1-NMAE unmoved (0.862934 / 0.862789 / 0.862750 vs D's 0.862828). Refused to avoid spending a comparison on a repeat, per contract R6."
+  },
+  "F08": {
+   "id": "F08",
+   "stage": "S6",
+   "title": "NWP error-state features from recent verification residuals",
+   "principle": "Ng MLY ch.57 information axis",
+   "hypothesis": "",
+   "mechanism": "features describing the error state of the current issuance: LDAPS/GFS verification residuals against observed generation over D-2..D-8",
+   "parent": "C000",
+   "status": "refused",
+   "prereg": {
+    "treatment": "features describing the error state of the current issuance: LDAPS/GFS verification residuals against observed generation over D-2..D-8",
+    "control": "champion C000",
+    "primary_metric": "total",
+    "min_effect": 0.001,
+    "widens_matrix": true,
+    "noise_arm": "equal-count gaussian columns",
+    "prune_arm": "declare at scripting time",
+    "axis": "information_set",
+    "provenance": {
+     "policy": "fold-outside",
+     "weights": "fold-outside",
+     "row_key": [
+      "fold_id",
+      "group_id",
+      "forecast_kst_dtm"
+     ]
+    },
+    "six_component_bin": "1.1 problem class",
+    "needs_recent_observations": true
+   },
+   "script": null,
+   "result": {},
+   "arbitration": {},
+   "cost_min": 40,
+   "prior_effect": 0.008,
+   "notes": "admitted | R9 the node needs recent observed generation at prediction time; training labels end 2024-12-31 and the graded period is all of 2025 submitted at once, so this input does not exist on delivery"
+  },
+  "F09": {
+   "id": "F09",
+   "stage": "S6",
+   "title": "spatio-temporal displacement of the NWP field",
+   "principle": "ESL 15.2 ensemble ambiguity",
+   "hypothesis": "",
+   "mechanism": "estimate a field displacement (which cell/lag best matches realised ridge wind, per regime) and read the forecast from the displaced location -- changes what the member SEES, the only kind of change that can move rho",
+   "parent": "C000",
+   "status": "rejected",
+   "prereg": {
+    "treatment": "estimate a field displacement (which cell/lag best matches realised ridge wind, per regime) and read the forecast from the displaced location -- changes what the member SEES, the only kind of change that can move rho",
+    "control": "champion C000",
+    "primary_metric": "total",
+    "min_effect": 0.001,
+    "widens_matrix": true,
+    "noise_arm": "equal-count gaussian columns",
+    "prune_arm": "declare at scripting time",
+    "axis": "information_set",
+    "provenance": {
+     "policy": "fold-outside",
+     "weights": "fold-outside",
+     "row_key": [
+      "fold_id",
+      "group_id",
+      "forecast_kst_dtm"
+     ]
+    },
+    "six_component_bin": "1.1 problem class",
+    "needs_recent_observations": false
+   },
+   "script": null,
+   "result": {
+    "BASE": 0.865946,
+    "NOISE": 0.86641,
+    "DISP": 0.866082,
+    "DISP_PRUNE": 0.866261,
+    "disp_minus_noise": -0.000329,
+    "disp_prune_minus_noise": -0.00015
+   },
+   "arbitration": {},
+   "cost_min": 60,
+   "prior_effect": 0.005,
+   "notes": "EXECUTED as S14-N7 under the full R2/R3 protocol. The displacement map is real: it selects 9-11 distinct (cell, lag) reads out of 24 group x sector regimes, i.e. the best-matching cell genuinely moves with flow regime. But the information-attributable effect, measured against the equal-count NOISE arm as contract R2 requires, is -0.000329, and with the R3 prune arm -0.000150. REJECT. Note for the ledger: with only 3 added columns the NOISE arm GAINED +0.000465 over BASE, whereas S13-N8's 21-column noise arm LOST -0.000411 -- the 'noise tax' is not monotone in column count, it is simply noise at this scale, which is itself evidence that every effect on this axis lives inside the measurement floor."
+  },
+  "F11": {
+   "id": "F11",
+   "stage": "S4",
+   "title": "transductive estimation of the metric normalisers",
+   "principle": "Vapnik transduction; ESL 7.10.2 licenses unsupervised use of test x",
+   "hypothesis": "",
+   "mechanism": "use the supplied test x to estimate E[sum y] and E[N_scored] over the graded period and DERIVE the lam1:lam2 weight between the two halves instead of grid-searching T/G",
+   "parent": "C000",
+   "status": "arbitrated",
+   "prereg": {
+    "treatment": "use the supplied test x to estimate E[sum y] and E[N_scored] over the graded period and DERIVE the lam1:lam2 weight between the two halves instead of grid-searching T/G",
+    "control": "champion C000",
+    "primary_metric": "total",
+    "min_effect": 0.001,
+    "widens_matrix": false,
+    "noise_arm": null,
+    "prune_arm": "none",
+    "axis": "transductive",
+    "provenance": {
+     "policy": "fold-outside",
+     "weights": "fold-outside",
+     "row_key": [
+      "fold_id",
+      "group_id",
+      "forecast_kst_dtm"
+     ]
+    },
+    "six_component_bin": "1.3 evaluation criteria"
+   },
+   "script": null,
+   "result": {
+    "train": 0.625669,
+    "pred_transductive": 0.625906,
+    "oracle": 0.625734
+   },
+   "arbitration": {},
+   "cost_min": 15,
+   "prior_effect": 0.002,
+   "notes": "EXECUTED as S14-N6. The transductive estimate WORKS as an estimator: the training-window normaliser is badly wrong for two of three folds (Q3 train 0.32 vs true 0.18; Q4 train 0.30 vs true 0.43) while the transductive estimate from our own predictions on the held-out inputs tracks the truth closely (Q3 0.2031 vs 0.1833; Q4 0.4355 vs 0.4294). But the SCORE barely moves: +0.000237 versus TRAIN, which is below the 0.0010 pre-declared minimum effect and below the paired bootstrap sd, and it even exceeds the ORACLE normaliser's +0.000065. MECHANISM: the normaliser only rescales gamma, and the fold-outside (T,G) search already absorbs the error by picking a compensating gamma. LOCAL VERDICT: reject. DELIVERY VERDICT: keep -- on the graded 2025 period there is no held-out fold on which to select gamma, so a correct normaliser computed transductively from the supplied test inputs is genuinely valuable there even though it is invisible locally. Recorded as a delivery-time improvement, not a champion."
+  },
+  "F13": {
+   "id": "F13",
+   "stage": "S7",
+   "title": "transductive regime discovery with shrinkage",
+   "principle": "ESL 7.10.2 + James-Stein",
+   "hypothesis": "",
+   "mechanism": "cluster train union test inputs into atmospheric regimes and fit per-regime policies with James-Stein shrinkage across regimes",
+   "parent": "C000",
+   "status": "rejected",
+   "prereg": {
+    "treatment": "cluster train union test inputs into atmospheric regimes and fit per-regime policies with James-Stein shrinkage across regimes",
+    "control": "champion C000",
+    "primary_metric": "total",
+    "min_effect": 0.001,
+    "widens_matrix": false,
+    "noise_arm": null,
+    "prune_arm": "none",
+    "axis": "transductive",
+    "provenance": {
+     "policy": "fold-outside",
+     "weights": "fold-outside",
+     "row_key": [
+      "fold_id",
+      "group_id",
+      "forecast_kst_dtm"
+     ]
+    },
+    "six_component_bin": "1.5/1.6"
+   },
+   "script": null,
+   "result": {
+    "K4": 0.635206,
+    "K8": 0.635278,
+    "delta_K4": -0.000978,
+    "delta_K8": -0.000907,
+    "p_better_K4": 0.003,
+    "p_better_K8": 0.0
+   },
+   "arbitration": {},
+   "cost_min": 45,
+   "prior_effect": 0.0008,
+   "notes": "EXECUTED as S14-N11. Clustering train UNION the held-out inputs (legal unsupervised use of test x per ESL 7.10.2) into 4 and 8 atmospheric regimes and fitting per-regime policies with a fold-outside shrinkage intensity. Rejected at P(better)=0.003 and 0.000. Informative detail: the fold-outside shrinkage search picks c=0.0 on two of three folds, i.e. it WANTS full per-regime freedom, and still loses -- the per-regime policies chosen on two folds do not transfer to the third. Same verdict as every per-group fit in this project, and consistent with S14-N9's finding that complete shrinkage is optimal."
+  },
+  "F14": {
+   "id": "F14",
+   "stage": "S7",
+   "title": "self-training on test inputs",
+   "principle": "SAIL/CS229M self-training expansion",
+   "hypothesis": "",
+   "mechanism": "pseudo-label test rows with the champion, retrain with regularisation, check SHARPNESS on the test manifold rather than accuracy",
+   "parent": "C000",
+   "status": "rejected",
+   "prereg": {
+    "treatment": "pseudo-label test rows with the champion, retrain with regularisation, check SHARPNESS on the test manifold rather than accuracy",
+    "control": "champion C000",
+    "primary_metric": "total",
+    "min_effect": 0.001,
+    "widens_matrix": false,
+    "noise_arm": null,
+    "prune_arm": "none",
+    "axis": "transductive",
+    "provenance": {
+     "policy": "fold-outside",
+     "weights": "fold-outside",
+     "row_key": [
+      "fold_id",
+      "group_id",
+      "forecast_kst_dtm"
+     ]
+    },
+    "six_component_bin": "1.5/1.6"
+   },
+   "script": null,
+   "result": {
+    "BASE": 0.603068,
+    "ST0.25": 0.632844,
+    "ST0.5": 0.634318,
+    "ST1.0": 0.63571,
+    "sd_pred_base": 0.2438,
+    "sd_pred_st1": 0.2623,
+    "d_1mnmae_st1": -0.00261
+   },
+   "arbitration": {},
+   "cost_min": 40,
+   "prior_effect": 0.0006,
+   "notes": "EXECUTED as S14-N12 at reduced cost on the point model. COMPARISON-TARGET TRAP, declared: scored against BASE the arms look like a +0.033 gain, but the pseudo-labels ARE the champion's actions, so the arms merely learn to imitate the champion -- which is exactly why their FICR jumps 0.340190 -> 0.408085. Against the correct target, every arm is BELOW the champion it imitates (0.635710 vs 0.636184 at the strongest weight). The pre-declared observable behaved as predicted: sharpness rose (sd(pred) 0.2438 -> 0.2623) while accuracy FELL (1-NMAE -0.002610). Self-training is a manifold regulariser here, not an information channel, and F12 had already established there is no distinguishable test manifold to supply one. REJECTED, confirmatorily."
+  },
+  "F17": {
+   "id": "F17",
+   "stage": "S7",
+   "title": "James-Stein shrinkage of every per-group parameter",
+   "principle": "James-Stein; p=3 is exactly where the theorem bites",
+   "hypothesis": "",
+   "mechanism": "any per-group quantity (bias offset, policy width, calibration slope) becomes a shrunk estimator toward the common value; 1 dof, unlike the already-rejected 3-dof per-group weights",
+   "parent": "C000",
+   "status": "rejected",
+   "prereg": {
+    "treatment": "any per-group quantity (bias offset, policy width, calibration slope) becomes a shrunk estimator toward the common value; 1 dof, unlike the already-rejected 3-dof per-group weights",
+    "control": "champion C000",
+    "primary_metric": "total",
+    "min_effect": 0.001,
+    "widens_matrix": false,
+    "noise_arm": null,
+    "prune_arm": "none",
+    "axis": "shrinkage",
+    "provenance": {
+     "policy": "fold-outside",
+     "weights": "fold-outside",
+     "row_key": [
+      "fold_id",
+      "group_id",
+      "forecast_kst_dtm"
+     ]
+    },
+    "six_component_bin": "1.5/1.6"
+   },
+   "script": null,
+   "result": {
+    "POOLED": 0.636184,
+    "JS_SWEPT": 0.635483,
+    "JS_ANALYTIC": 0.63455,
+    "FREE3": 0.634375
+   },
+   "arbitration": {},
+   "cost_min": 15,
+   "prior_effect": 0.002,
+   "notes": "EXECUTED as S14-N9, after fixing a real defect: official_total averages over three groups and returns NaN when a single-group subframe is passed, which silently made every per-group search return the first grid point. The same defect produced the meaningless all-0.8 per-group arm in S12-N7. With a proper single-group score the per-group weights DO oscillate as the registry recorded -- {1:0.0,2:0.4,3:0.5} / {1:0.0,2:0.3,3:0.5} / {1:0.5,2:0.3,3:0.3} -- and James-Stein behaves exactly as the theorem says, beating free estimation (0.635483 > 0.634550 > 0.634375). But it never beats COMPLETE shrinkage: the pooled estimator (0.636184) wins, i.e. optimal shrinkage here is total and the deployed design ALREADY IS the fully shrunk estimator. James-Stein confirms the current design rather than improving it."
+  },
+  "F12": {
+   "id": "F12",
+   "stage": "S14",
+   "title": "covariate-shift audit",
+   "principle": "",
+   "hypothesis": "",
+   "mechanism": "",
+   "parent": "C000",
+   "status": "arbitrated",
+   "prereg": {
+    "axis": "transductive"
+   },
+   "script": null,
+   "result": {},
+   "arbitration": {},
+   "cost_min": 10.0,
+   "prior_effect": 0.001,
+   "notes": "EXECUTED as S14-N1 + control S14-N3: domain AUC 0.9999 train-vs-test, but the control shows 2022-23 vs 2024 = 0.9999 and adjacent quarters 2023Q2 vs Q3 = 1.0000 while the NULL random halves give 0.4990. The classifier measures elapsed time in 813 columns, not harmful shift. Importance-weighting branch CLOSED."
+  },
+  "F15": {
+   "id": "F15",
+   "stage": "S14",
+   "title": "cross-group replicate noise floor",
+   "principle": "",
+   "hypothesis": "",
+   "mechanism": "",
+   "parent": "C000",
+   "status": "arbitrated",
+   "prereg": {
+    "axis": "diagnostic"
+   },
+   "script": null,
+   "result": {},
+   "arbitration": {},
+   "cost_min": 10.0,
+   "prior_effect": 0.001,
+   "notes": "EXECUTED as S14-N2 + control S14-N3: E|y1-y2| = 0.08526 implies an MAE floor of 0.0568-0.0603, but the two groups share the same NWP so the weather-model error cancels in the difference (group-specific 0.93 m/s vs common 1.49-1.78 m/s). The floor bounds only the group-specific component and is a LOWER bound, not the achievable MAE."
+  },
+  "F16": {
+   "id": "F16",
+   "stage": "S14",
+   "title": "stopping rule + six-component audit",
+   "principle": "",
+   "hypothesis": "",
+   "mechanism": "",
+   "parent": "C000",
+   "status": "arbitrated",
+   "prereg": {
+    "axis": "process"
+   },
+   "script": null,
+   "result": {},
+   "arbitration": {},
+   "cost_min": 10.0,
+   "prior_effect": 0.001,
+   "notes": "SUPERSEDED by the Model Confidence Set (arch 8.0.0): the 10% MCS over 23 candidates contains 8 models INCLUDING plain DEPAVG, so the champion is not distinguishable under family-wise error control. This is strictly stronger than the eta=0.0015 ladder rule the lane proposed."
+  },
+  "F18": {
+   "id": "F18",
+   "stage": "S8",
+   "title": "parsimony selection inside the model confidence set",
+   "principle": "one-standard-error rule (ESL 7.10 / foundation lane E2) applied to the MCS",
+   "hypothesis": "",
+   "mechanism": "",
+   "parent": "C000",
+   "status": "arbitrated",
+   "prereg": {
+    "axis": "process",
+    "provenance": {
+     "policy": "fixed documented policies for DEPAVG; fold-outside for the champion",
+     "weights": "none for DEPAVG; fold-outside 1-dof for the champion",
+     "row_key": [
+      "fold_id",
+      "group_id",
+      "forecast_kst_dtm"
+     ]
+    }
+   },
+   "script": null,
+   "result": {
+    "champion": 0.636184,
+    "depavg": 0.632592,
+    "paired_mean": -0.003553,
+    "paired_sd": 0.001866,
+    "ci95": [
+     -0.007161,
+     8.1e-05
+    ],
+    "champion_fitted_dof": 2,
+    "depavg_fitted_dof": 0
+   },
+   "arbitration": {},
+   "cost_min": 10.0,
+   "prior_effect": 0.001,
+   "notes": "EXECUTED as S14-N10. Three independent measurements converge on one decision that is NOT about finding a better model. (1) The 10% MCS over 23 candidates contains eight models and plain DEPAVG is one of them. (2) The paired 95% CI for DEPAVG minus champion is [-0.007161, +0.000081] -- it includes zero. (3) S12-N19 measured that the organiser's plain RandomForest GAINS +0.012925 of 1-NMAE across the period change while our lineage LOSES -0.003091, so the extra complexity is precisely what fails to transfer; and S14-N9 showed that every per-group fit this project has tried is beaten by total shrinkage. DEPAVG has 0 quantities fitted on development data; the champion has 2. The one-standard-error rule therefore prefers DEPAVG for DELIVERY. This is a risk preference, not a measurement -- DEPAVG does score lower locally (0.632592 vs 0.636184) -- and it is recorded so the choice is taken explicitly instead of inherited from an unadjusted local maximum."
+  },
+  "P01": {
+   "id": "P01",
+   "stage": "S15",
+   "title": "composed pipeline (B1+B2+A3+D1, D4 pruned)",
+   "principle": "pipeline decomposition + composition + reverse ablation",
+   "hypothesis": "",
+   "mechanism": "",
+   "parent": "C000",
+   "status": "arbitrated",
+   "prereg": {
+    "axis": "pipeline",
+    "provenance": {
+     "policy": "fold-outside",
+     "weights": "fold-outside",
+     "row_key": [
+      "fold_id",
+      "group_id",
+      "forecast_kst_dtm"
+     ]
+    }
+   },
+   "script": null,
+   "result": {
+    "point_pipeline_total": 0.605922,
+    "point_1mnmae": 0.867079,
+    "member_blend_mean": 0.632027,
+    "honest_champion": 0.634573,
+    "contributions": {
+     "B2": 0.004214,
+     "D1": 0.002685,
+     "A3": 0.001912,
+     "B1": 0.000145,
+     "D4": -0.000563
+    }
+   },
+   "arbitration": {},
+   "cost_min": 10.0,
+   "prior_effect": 0.001,
+   "notes": "Best point forecaster this project has produced (+0.003623 on the point axis, 5.6 of its own sd, seed variance cut fourfold), attributed stage by stage by reverse ablation. Does NOT enter the deployed action: its density is flatter (band mass 0.567 vs 0.759) and its error correlation with D is 0.9643, higher than D's 0.9217 with DEPAVG, so it is a near-duplicate of D rather than a complement. Kept as the accepted POINT pipeline and as the base for a native distributional build."
+  }
+ },
+ "edges": [
+  [
+   "C000",
+   "F01"
+  ],
+  [
+   "C000",
+   "F02"
+  ],
+  [
+   "C000",
+   "F03"
+  ],
+  [
+   "C000",
+   "F04"
+  ],
+  [
+   "C000",
+   "F05"
+  ],
+  [
+   "C000",
+   "F06"
+  ],
+  [
+   "C000",
+   "F07"
+  ],
+  [
+   "C000",
+   "F08"
+  ],
+  [
+   "C000",
+   "F09"
+  ],
+  [
+   "C000",
+   "F11"
+  ],
+  [
+   "C000",
+   "F13"
+  ],
+  [
+   "C000",
+   "F14"
+  ],
+  [
+   "C000",
+   "F17"
+  ],
+  [
+   "C000",
+   "F12"
+  ],
+  [
+   "C000",
+   "F15"
+  ],
+  [
+   "C000",
+   "F16"
+  ],
+  [
+   "C000",
+   "F18"
+  ],
+  [
+   "C000",
+   "P01"
+  ]
+ ],
+ "champion": "C000",
+ "champion_record": {
+  "id": "C000",
+  "title": "DEPAVG + D, 1-dof fold-outside blend",
+  "score": {
+   "total": 0.6361842493883538,
+   "one_minus_nmae": 0.8618657013604555,
+   "ficr": 0.4105027974162521
+  },
+  "provenance": {
+   "policy": "fold-outside (T,G) chosen on the other two folds, per member",
+   "weights": "fold-outside 1-dof, w=0.30 on all three folds",
+   "row_key": [
+    "fold_id",
+    "group_id",
+    "forecast_kst_dtm"
+   ],
+   "script": "research/nodes/loop_lib.py (exact port of s10_final3.py)"
+  },
+  "honest_seed_mean": 0.634573,
+  "seed_sd": 0.000849,
+  "z_within_own_family": 1.9,
+  "note": "S15-N6: with the physics teacher held at the champion's own seed (20260801) and only the DART seed varied, six siblings give mean 0.634573 (sd 0.000849, range 0.633501-0.635789) and NONE exceeds the deployed 0.636184, which sits +1.90 sd above its own configuration mean and above even E[max of 7 draws] = 0.635652. The champion is an upper-tail draw. Its advantage over plain DEPAVG is +0.003593 as measured but +0.001982 in expectation -- 45% of it does not survive a seed redraw. The honest headline for this configuration is 0.634573, not 0.636184, and the gap to 0.66 is therefore 0.025427."
+ },
+ "comparisons": 0,
+ "log": [
+  {
+   "t": "2026-08-08T00:18:40",
+   "kind": "propose",
+   "node": "F01",
+   "msg": "admitted"
+  },
+  {
+   "t": "2026-08-08T00:18:40",
+   "kind": "propose",
+   "node": "F02",
+   "msg": "admitted"
+  },
+  {
+   "t": "2026-08-08T00:18:40",
+   "kind": "propose",
+   "node": "F03",
+   "msg": "admitted"
+  },
+  {
+   "t": "2026-08-08T00:18:40",
+   "kind": "propose",
+   "node": "F04",
+   "msg": "admitted"
+  },
+  {
+   "t": "2026-08-08T00:18:40",
+   "kind": "propose",
+   "node": "F05",
+   "msg": "admitted"
+  },
+  {
+   "t": "2026-08-08T00:18:40",
+   "kind": "propose",
+   "node": "F06",
+   "msg": "admitted"
+  },
+  {
+   "t": "2026-08-08T00:18:40",
+   "kind": "propose",
+   "node": "F07",
+   "msg": "admitted"
+  },
+  {
+   "t": "2026-08-08T00:18:40",
+   "kind": "propose",
+   "node": "F08",
+   "msg": "admitted"
+  },
+  {
+   "t": "2026-08-08T00:18:40",
+   "kind": "propose",
+   "node": "F09",
+   "msg": "admitted"
+  },
+  {
+   "t": "2026-08-08T00:18:40",
+   "kind": "propose",
+   "node": "F11",
+   "msg": "admitted"
+  },
+  {
+   "t": "2026-08-08T00:18:40",
+   "kind": "propose",
+   "node": "F13",
+   "msg": "admitted"
+  },
+  {
+   "t": "2026-08-08T00:18:40",
+   "kind": "propose",
+   "node": "F14",
+   "msg": "admitted"
+  },
+  {
+   "t": "2026-08-08T00:18:40",
+   "kind": "propose",
+   "node": "F17",
+   "msg": "admitted"
+  }
+ ],
+ "saved": "2026-08-08T14:57:57"
+}

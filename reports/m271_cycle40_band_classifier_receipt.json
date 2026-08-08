@@ -1,0 +1,144 @@
+{
+ "dacon_upload": false,
+ "decided_utc": "2026-08-04T12:46:41.957497+00:00",
+ "external_actions": [],
+ "lane": "L3",
+ "lockbox_reopened": false,
+ "model_fits": 6,
+ "new_2024_evaluation": false,
+ "node": "C1N40_BAND_CLASSIFIER",
+ "report_sha256": "93c686b6f6500dd7dcd9a4a3bfe7349351cd00514b553814adf10394386d7e7a",
+ "result": {
+  "by_fold": {
+   "BAND": {
+    "Q2": 0.5965692367188797,
+    "Q3": 0.5857480019682426,
+    "Q4": 0.5954467020779709
+   },
+   "CONTROL": {
+    "Q2": 0.5807629486268431,
+    "Q3": 0.5717358874880417,
+    "Q4": 0.5914536345150462
+   }
+  },
+  "contribution": {
+   "ficr": 0.00822361691998122,
+   "one_minus_nmae": 0.0015481032463499633
+  },
+  "delta_band_minus_control": 0.00977172016633121,
+  "design": {
+   "band_target": "q_i ∝ u(|c_i - y|), 정산 규칙이 모양을 정한 label smoothing",
+   "control_target": "one-hot",
+   "decision": "Bayes: argmax_x E_p[(1/4)(c/cbar)u(|x-c|) - |x-c|]",
+   "loss": "softmax CE, grad = p - q, hess = max(2p(1-p), 1e-6)",
+   "representation": "46 class, width 0.02",
+   "same_decision_both_arms": true
+  },
+  "features_used": 87,
+  "fits": 6,
+  "gate_modified": false,
+  "gate_version": "M270_MONTHLY_GATE_v1_frozen_2026-08-04",
+  "gate_vs_deployed": {
+   "bootstrap_q05": -0.04120175779561425,
+   "flags": {
+    "G1": false,
+    "G2": false,
+    "G3": false,
+    "G4": false
+   },
+   "min_delta": -0.0633437269764403,
+   "months_scored": 9,
+   "passed": false,
+   "positive_months": 1,
+   "sign_test_p": 0.998046875
+  },
+  "leaky_columns_excluded": [
+   "scada_ws"
+  ],
+  "lockbox_used": false,
+  "node": "C1N40_BAND_CLASSIFIER",
+  "params": {
+   "bagging_fraction": 0.8,
+   "bagging_freq": 1,
+   "deterministic": true,
+   "feature_fraction": 0.8,
+   "force_row_wise": true,
+   "learning_rate": 0.1,
+   "min_child_samples": 100,
+   "num_class": 46,
+   "num_leaves": 15,
+   "num_threads": 1,
+   "objective": "multiclass",
+   "seed": 20260804,
+   "verbose": -1
+  },
+  "parent_node": "C1N39_ARCHITECTURE_GAP",
+  "predeclared_check": {
+   "H1_expectation": "BAND > CONTROL",
+   "H1_held": null,
+   "H1_measured": 0.00977172016633121,
+   "H2_expectation": "BAND 가 배포 대비 개선 + 게이트 통과",
+   "H2_held": null,
+   "H3_expectation": "BAND > 0.63031",
+   "H3_held": null,
+   "H4_expectation": "이득이 FICR 쪽",
+   "H4_held": null,
+   "V1_expectation": "CONTROL 이 배포의 -0.03 이내",
+   "V1_held": false,
+   "V1_measured_gap": -0.04413641397963641,
+   "judged": false,
+   "verdict": "CLASSIFIER_RECONSTRUCTION_INVALID_AXIS_NOT_JUDGED"
+  },
+  "rounds": 200,
+  "scores": {
+   "BAND": {
+    "ficr": 0.34454066432656827,
+    "group_ficr": {
+     "1": 0.3144556970864149,
+     "2": 0.39711144269784826,
+     "3": 0.3220548531954418
+    },
+    "group_nmae": {
+     "1": 0.1480997107203958,
+     "2": 0.14783389100694444,
+     "3": 0.17224942879030383
+    },
+    "one_minus_nmae": 0.843938989827452,
+    "total": 0.5942398270770102
+   },
+   "CONTROL": {
+    "ficr": 0.32809343048660583,
+    "group_ficr": {
+     "1": 0.2915728830775525,
+     "2": 0.3911856685558978,
+     "3": 0.3015217398263671
+    },
+    "group_nmae": {
+     "1": 0.1543595878878254,
+     "2": 0.15267316135416667,
+     "3": 0.17043890075375165
+    },
+    "one_minus_nmae": 0.840842783334752,
+    "total": 0.584468106910679
+   },
+   "deployed": {
+    "ficr": 0.40246401063156667,
+    "group_ficr": {
+     "1": 0.409551299643159,
+     "2": 0.46073846269466673,
+     "3": 0.33710226955687433
+    },
+    "group_nmae": {
+     "1": 0.13617589715402054,
+     "2": 0.14227310586805572,
+     "3": 0.15731590353073155
+    },
+    "one_minus_nmae": 0.8547450311490641,
+    "total": 0.6286045208903154
+   }
+  }
+ },
+ "schema_version": 1,
+ "script_sha256": "b1458bec1048263492b93cd30507e3166d8e4d4d0f027fb2f92d9b6ab3f46721",
+ "stage": "M271_P4_CYCLE40_BAND_CLASSIFIER"
+}

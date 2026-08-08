@@ -1,0 +1,11 @@
+{
+ "node": "N513_M263_PREDECLARATION",
+ "frozen_utc": "2026-08-06",
+ "hypothesis": "M263 online Total > M261 online 0.6365274",
+ "rationale": "M252 (analog) offset +0.021119 is 3.2x M261 (classifier) +0.006554, and M252 is the only decorrelated member (error corr 0.8436 vs M115; all others 0.91-0.98). Local ensemble evaluation cannot see the class-dependent offset, so the online value of the ensemble may exceed its local value. The project closed the combination axis on local evidence only (upper bound +0.000979 < threshold 0.001013).",
+ "falsifier": "M263 <= 0.6365274 rejects the online-ensemble-advantage hypothesis and attributes the whole +0.0009434 of M266 to the group-3 DART augmentation.",
+ "controls": "M263 and M261 share the same full-history training and the same 2025 evaluation surface; the only difference is the analog member. Unlike the M266 test, gamma and architecture are not confounded here.",
+ "candidate_csv": "artifacts/submissions/submission_M263.csv",
+ "csv_sha256_prefix": "5a1d701660a83291105a",
+ "agent_upload": false
+}

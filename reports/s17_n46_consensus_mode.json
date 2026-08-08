@@ -1,0 +1,30 @@
+{
+ "Q2": [
+  {
+   "tag": "weighted_mean_deployed",
+   "total": 0.6440251957593686,
+   "one_minus_nmae": 0.8672536328623236,
+   "ficr": 0.42079675865641347
+  },
+  {
+   "tag": "settlement_mode_consensus",
+   "total": 0.6430659152822699,
+   "one_minus_nmae": 0.8653552616242073,
+   "ficr": 0.4207765689403325
+  }
+ ],
+ "OUTER": [
+  {
+   "tag": "weighted_mean_deployed",
+   "total": 0.6314827308346854,
+   "one_minus_nmae": 0.8584802239958174,
+   "ficr": 0.40448523767355354
+  },
+  {
+   "tag": "settlement_mode_consensus",
+   "total": 0.630101668839726,
+   "one_minus_nmae": 0.8559800721128077,
+   "ficr": 0.40422326556664423
+  }
+ ]
+}

@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "node_id": "S17-N38_ACTION_LANDSCAPE",
+  "stage_id": "S8",
+  "deficit": "FD5",
+  "score_bearing": false,
+  "comparison_index": null,
+  "result_status": "SUPPORTED",
+  "mean_raw_total_by_temperature_at_G2": {
+    "0.6": 0.622123,
+    "0.75": 0.620843,
+    "0.9": 0.616553,
+    "1.0": 0.61219,
+    "1.25": 0.601708
+  },
+  "mean_raw_total_by_gain_at_T075": {
+    "1.0": 0.620155,
+    "1.5": 0.620701,
+    "2.0": 0.620843,
+    "2.5": 0.621018,
+    "3.0": 0.620536
+  },
+  "deployed_rule": "T0.75_G2.0",
+  "exact_plug_in_bayes_rule": "T1.0_G1.0",
+  "key_numbers": {
+    "q2_raw_deployed": 0.6370810528809719,
+    "q2_raw_exact": 0.619236542028937,
+    "blended_outer_deployed": 0.6314827308346854,
+    "blended_outer_exact": 0.6310300300941719,
+    "blended_outer_best_in_grid": 0.6323352065906478,
+    "blended_outer_grid_range": 0.0017766675205532767
+  },
+  "findings": [
+    "Temperature dominates the action surface and the settlement gain does not. Averaged over the three folds at G=2, raw Total rises monotonically as the distribution is sharpened: T=1.25 gives 0.601708, T=1.00 gives 0.612190, T=0.90 gives 0.616553, T=0.75 gives 0.620843, T=0.60 gives 0.622123. At fixed T=0.75 the whole G sweep from 1.0 to 3.0 spans only about 0.0007.",
+    "The exact plug-in Bayes rule (T=1, G=1) is clearly WORSE than the deployed heuristic: 0.619237 versus 0.637081 raw on Q2. Optimising the exact expected settlement against this conditional distribution is not the improvement it appears to be, because the distribution is over-dispersed. Sharpening compensates for that mis-calibration.",
+    "The deployed T0.75_G2 is the argmax of the 25-point grid on the Q2 selection fold, so the historically tuned policy was already grid-optimal and it transferred to the outer folds. The action-rule axis has essentially no slack left.",
+    "At champion level the entire 25-rule grid spans only 0.001776 of Total, because every arm change is multiplied by the deployment weight 0.70/3 = 0.2333.",
+    "The single raw M115 arm scores far below the champion on the outer folds (about 0.595 on Q3 and 0.638 on Q4), so the ensemble genuinely dominates its member and cannot be replaced by improving that member."
+  ],
+  "reclassified_deficit": "The live axis is the SHARPNESS AND CALIBRATION of the conditional distribution, not the action functional. A rule that needs T=0.6 to perform is telling us the density is too flat inside the +/-6% band.",
+  "residual_deficit": "Two new deficits: FD12 the conditional distribution is over-dispersed relative to the band width, and FD13 the champion is an ensemble whose fixed blend weight caps any single-member gain at 23.3 percent.",
+  "spawned_children": [
+    "S17-N39_DENSITY_SHARPNESS",
+    "S17-N40_ENSEMBLE_RECONSTRUCTION"
+  ],
+  "selected_disposition": "REENTER_S7_DISTRIBUTION",
+  "lockbox_2024_used": false,
+  "dacon_actions": [],
+  "closed_at": "2026-08-09T05:55:54.727727+09:00"
+}

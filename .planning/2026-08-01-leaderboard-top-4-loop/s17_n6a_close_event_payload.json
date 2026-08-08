@@ -1,0 +1,36 @@
+{
+  "event_type": "CLOSED",
+  "cycle_id": "S17-N6A_FAIL_CLOSED_SCORE_CLASS_REPAIR",
+  "stage_id": "S11",
+  "node_id": "S17-N6A_FAIL_CLOSED_SCORE_CLASS_REPAIR",
+  "actor": "root",
+  "occurred_at": "2026-08-08T20:01:34.548082+09:00",
+  "body": {
+    "predeclared_event_sha256": "aabcd37bc284efe8b23786932913bf4481a4e1bd77e983aa3e6bc137d9a5612b",
+    "receipt_path": "reports/s17_n6a_fail_closed_score_class_receipt.json",
+    "receipt_sha256": "bda56305d9d50de0fefb4a7393df5fbc770b2ccf55c6a7c0a302f6e61a5a762a",
+    "code_sha256": "c1d0edcf516f609ced062060aa2075e6b56275d8f8313b777c74d94defed8f4e",
+    "config_sha256": "cdde865e195abb73382a7ef8f486f5b3fd8c2c85408ed667a8c6324891e56769",
+    "data_sha256": "62f2a2b70a16339d857743295274d04a140cc6030562f8c6d7038565be7542cc",
+    "router_sha256": "80e37561a32fb2928d1a7505b652bb822f5b6989e73b6d7106afb0ae62041b43",
+    "policy_ids": [
+      "EVENT_SCORE_CLASS_FAIL_CLOSED_DOWNGRADE_V1"
+    ],
+    "row_alignment_keys": [
+      "fold_id",
+      "group_id",
+      "forecast_kst_dtm"
+    ],
+    "evidence_class": "diagnostic",
+    "weights_fit": "fixed",
+    "result_status": "SUPPORTED",
+    "score_bearing": false,
+    "comparison_index": null,
+    "stage_evidence_status": "RESEARCHED",
+    "next_handoff": [
+      "S17-N6_COST5_SPO_PLUS_PREQUENTIAL"
+    ],
+    "lockbox_2024_used": false,
+    "dacon_actions": []
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "event_type": "CLOSED",
+  "cycle_id": "S17-N22A_M115_TERRAIN_NO_REFIT_TYPED_PROVENANCE_RECOVERY",
+  "stage_id": "S8",
+  "node_id": "S17-N22A_M115_TERRAIN_NO_REFIT_TYPED_PROVENANCE_RECOVERY",
+  "actor": "root",
+  "occurred_at": "2026-08-08T23:46:52.874782+09:00",
+  "body": {
+    "predeclared_event_sha256": "80d91af19ed929b198813cff1a1df8deb378853cd41d4536a2987da542e61c95",
+    "receipt_path": "reports/s17_n22a_m115_terrain_no_refit_receipt.json",
+    "receipt_sha256": "35d1324c94d2f18aa37faa14b3e144b0597216e15e9810adef6df02b3248e018",
+    "code_sha256": "dec5b423be13c53fa2efef11244c934e115c05550375b6a6f42d5b0e59ad007e",
+    "config_sha256": "07ef6b7fec59e2ffac6e233d95b4ba6ee7fe6f488c80d0dce491d69329b1b0d8",
+    "data_sha256": "5a8ac193b259cc1d1223d7c1cfe39512b1e481344f2dd5d89a11f2a16468571f",
+    "router_sha256": "80e37561a32fb2928d1a7505b652bb822f5b6989e73b6d7106afb0ae62041b43",
+    "policy_ids": [
+      "FIXED_T0.75_G2_M115_REFIT_ZERO",
+      "FIXED_T0.75_G2_TERRAIN_MEAN16_REPLACE_M115",
+      "DEDUP_IDENTICAL_ZERO_FOR_MCS_ONLY"
+    ],
+    "row_alignment_keys": [
+      "fold_id",
+      "group_id",
+      "forecast_kst_dtm"
+    ],
+    "evidence_class": "foldoutside",
+    "weights_fit": "fixed",
+    "result_status": "REFUTED",
+    "score_bearing": true,
+    "comparison_index": 4,
+    "official_total": 0.6318460412370778,
+    "stage_evidence_status": "RESEARCHED",
+    "next_handoff": [
+      "S17-N23_POST_TERRAIN_FRONTIER_RESEARCH_INTAKE"
+    ],
+    "lockbox_2024_used": false,
+    "dacon_actions": []
+  }
+}

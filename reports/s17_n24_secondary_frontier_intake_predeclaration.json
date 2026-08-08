@@ -1,0 +1,126 @@
+{
+  "schema_version": 1,
+  "node_id": "S17-N24_SECONDARY_FRONTIER_RESEARCH_INTAKE",
+  "created_at": "2026-08-09T00:17:42.855795+09:00",
+  "parent_id": "S17-N23_POST_TERRAIN_FRONTIER_RESEARCH_INTAKE",
+  "purpose": "Second bounded frontier intake after N23 found zero READY candidates. Audit literal unused issued inputs, coefficient-complete physical transforms, one new operational source treatment, a basis-time curtailment source, and an open terrain-flow runtime without any fit, score, data body, or prohibited period access.",
+  "input_bundle": {
+    "files": {
+      "AGENTS.md": "91a11f95f94e8de86f5c84b204e1893830b3ed5693e3d7ede7f2e351e9891e9c",
+      "reports/s17_n23_post_terrain_frontier_intake_receipt.json": "60f5cd8129c9a523cf259fe5176b42e199e7459b9f079f629fdcb23209c7730f",
+      "research/lanes/s17_n23_site_mapped_terrain.md": "9a491086b8cb4b098772cffa0e89c82552f3c211a347108e2ea1babb053351b8",
+      "research/lanes/s17_n23_landcover_roughness.md": "c0ecda2a510b42c5168ad3234913f951e1eb13c3dbd5d12c52c4b68e0a311b21",
+      "research/lanes/s17_n23_power_wake_static.md": "a58f2f0b245ee71a285a96ae0ab336395b3c5aacda72aaf4ec03ee4273cc08c6",
+      "research/lanes/s17_n23_repo_mechanism.md": "f9d3bac2a09a672e7068298d8faf32319fff15a511be1e36cdba9611e3126518",
+      "research/lanes/s17_n23_operational_nwp.md": "a38571290fcdeeb37a400ad44c21ce22ac0adf8924fafa8dcd0d8d51dda99bf7",
+      "reports/s17_n23_post_terrain_frontier_intake_closed_event.json": "6cc9da73394ba0f3013c1b86cb72e58bebafaee905b2664a382817973140a4df",
+      "research/rwa_external_eligibility.md": "958ea7a0b96371b6d773920038ec8d6e07e7903b4b26f5dd8443dd6d354bf4e5",
+      "research/rwa_data_feature_research.md": "16351bb387dfebf0dc7ccdc6ef0e8ec77406964bf3d0b40c52fcdc3496284504",
+      "research/rwa_model_decision_research.md": "0626868e9fbb6818021be659d719f7a95d53f829bb48f310aaac917de9734c7a",
+      "artifacts/manifests/prepare.json": "ca4908d7f98639b13da80febcd071cd805369e8e044bb4d7b97f793d2703ca46",
+      "src/baram/constants.py": "f4fbf5c6772d021436f9b40459a2587f8223d597045d7fe9c48c9428e1702843",
+      "src/baram/data/turbines.py": "85051ef49d5820697f92dfd4ba1311fbdf7b91753a0d8fe36a636613deb1d6b1",
+      "src/baram/features/weather.py": "d65a18fdf0b025d1863c783d5997f77824a3347ab87e78a4357fe2afeb2d1905",
+      "src/baram/features/physics.py": "881443f644acf802c8a222fedc7a0f7062fc2345d44580b01124bbfd9a2358bf",
+      "src/baram/features/geometric.py": "86e977ed4167c3f9229d0ef017da678cf709fdf39fe774f908a2edc1182406d4",
+      "src/baram/features/spatial.py": "37c31ccb17beedc01d0b6e7e3210d821bc4dcdc6e860c76dc38fea77aa64c092",
+      "inputs/competition/open_wind_236727.zip": "920be0c458d820e855bf79dd25723146f52ce1736138aedba5e6bc853f1f720b",
+      "inputs/notebooks/baseline.ipynb": "712b26f4d2748860c94cff1e0100c23810468c983173f8e9ef8d009fe82df48c"
+    },
+    "sha256": "fb469daa495ca33ab7113137ee99ec94eb2b17c17f56aebc11d117cca967fc29"
+  },
+  "authoritative_state": {
+    "champion_total": 0.6314827308346854,
+    "target_total": 0.66,
+    "gap": 0.0285172691653146,
+    "comparison_count": 4,
+    "next_score_bearing_comparison_index": 5,
+    "n23_decision": "INCONCLUSIVE_NONE_READY"
+  },
+  "lanes": [
+    {
+      "id": "ISSUED_SCHEMA_COVERAGE",
+      "path": "research/lanes/s17_n24_issued_schema_coverage.md",
+      "bound": "local <=50 whitelisted src/schema/feature-name files only; no planning narratives, result receipts, generated row bodies, labels, 2024/test values",
+      "question": "Does any literal basis-time supplied input or metadata field remain unused by the prepared/model representation, and can exactly one zero-variant treatment be frozen?"
+    },
+    {
+      "id": "PHYSICAL_STABILITY_HUB_WIND",
+      "path": "research/lanes/s17_n24_physical_stability_hub_wind.md",
+      "bound": "local whitelisted feature source plus <=10 primary/official URLs; no row bodies or fits",
+      "question": "Do supplied forecast fields support one coefficient-complete, chronology-safe stability/hub-wind representation not already encoded or closed?"
+    },
+    {
+      "id": "CFSV2_EXACT_TREATMENT",
+      "path": "research/lanes/s17_n24_cfsv2_exact_treatment.md",
+      "bound": "<=10 primary official documentation URLs, metadata pages only; no data/API/catalogue/object endpoint, HEAD, body or acquisition",
+      "question": "Can official CFSv2 documentation freeze exactly one operational cycle/member/field/spatial-temporal BARAM treatment and clear licence/deployment gates before an object audit?"
+    },
+    {
+      "id": "CURTAILMENT_MARKET_FORECAST",
+      "path": "research/lanes/s17_n24_curtailment_market_forecast.md",
+      "bound": "<=12 primary official Korean provider/legal documentation URLs; no account/application/API/data endpoint or body",
+      "question": "Is any archived D-1 basis-available public planned-curtailment/outage/market forecast a legal, anonymous, deployment-symmetric new information source for this wind farm?"
+    },
+    {
+      "id": "OPEN_TERRAIN_FLOW_RUNTIME",
+      "path": "research/lanes/s17_n24_open_terrain_flow_runtime.md",
+      "bound": "<=10 primary official/repository URLs plus local runtime inventory; no code/data download, dependency change, raster read or execution",
+      "question": "Does a pre-cutoff commercially compatible, coefficient-complete Apple-M1-local open terrain/roughness flow transform exist that can use issued NWP plus frozen static metadata without tuning?"
+    }
+  ],
+  "evidence_tags": [
+    "[directly_supported]",
+    "[derived]",
+    "[near_match_only]",
+    "[contradicts_premise]",
+    "[unverified]"
+  ],
+  "selection_rule": {
+    "maximum_executable_or_prerequisite_candidates": 1,
+    "requirements": [
+      "literal directly_supported evidence independently verified by root",
+      "genuinely new information or representation rather than a variant/retune of a closed axis",
+      "strict D-1 14:00 KST availability and past-only label chronology",
+      "pre-2026-07-05 publication/data availability",
+      "commercial-use-compatible licence",
+      "train/deployment availability symmetry",
+      "exact one-feature/one-treatment formula with zero tuning degrees",
+      "self-contained Apple-M1/project-environment execution or one bounded root-verifiable acquisition prerequisite"
+    ],
+    "forbidden_credit": [
+      "derived or near-match promotion",
+      "planning/result narrative performance claims",
+      "reanalysis or test-period observations",
+      "post-hoc subgroup/fold/parameter variants",
+      "terrain mean16/site-Sx/roughness/wake rescue without curing every N23 blocker"
+    ]
+  },
+  "execution_limits": {
+    "research_children": 5,
+    "repository_writes": "each child only its designated research/lanes file",
+    "model_fits": 0,
+    "predict_or_policy_calls": 0,
+    "metric_or_score_calls": 0,
+    "actual_kwh_or_raw_label_values": 0,
+    "2024_or_test_values": 0,
+    "external_data_or_weight_bodies": 0,
+    "external_catalogue_or_object_queries": 0,
+    "external_inference": 0,
+    "dependencies": 0,
+    "dacon_actions": []
+  },
+  "outputs": [
+    "research/lanes/s17_n24_issued_schema_coverage.md",
+    "research/lanes/s17_n24_physical_stability_hub_wind.md",
+    "research/lanes/s17_n24_cfsv2_exact_treatment.md",
+    "research/lanes/s17_n24_curtailment_market_forecast.md",
+    "research/lanes/s17_n24_open_terrain_flow_runtime.md",
+    "reports/s17_n24_secondary_frontier_intake_receipt.json"
+  ],
+  "score_bearing": false,
+  "comparison_index": null,
+  "next_handoff_if_none": [
+    "S17-N25_TERTIARY_FRONTIER_RESEARCH_INTAKE"
+  ]
+}

@@ -1,0 +1,110 @@
+{
+ "node": "D3_H2_1",
+ "stage": "D3",
+ "models": [
+  {
+   "model": "M269_PROBE_TOP100",
+   "n": 19785,
+   "n_uniq": 181,
+   "uniq_ratio": 0.00914834470558504,
+   "gap_cv": 0.9685697254489314
+  },
+  {
+   "model": "M84_LEAVES031",
+   "n": 19785,
+   "n_uniq": 183,
+   "uniq_ratio": 0.009249431387414709,
+   "gap_cv": 0.9483585901350909
+  },
+  {
+   "model": "M102_TOP100",
+   "n": 19785,
+   "n_uniq": 185,
+   "uniq_ratio": 0.009350518069244376,
+   "gap_cv": 0.9767171717956372
+  },
+  {
+   "model": "M271_M269REPRO",
+   "n": 19785,
+   "n_uniq": 186,
+   "uniq_ratio": 0.009401061410159211,
+   "gap_cv": 0.9704076767211389
+  },
+  {
+   "model": "M72_BIN020",
+   "n": 19785,
+   "n_uniq": 192,
+   "uniq_ratio": 0.009704321455648219,
+   "gap_cv": 0.9427910174466579
+  },
+  {
+   "model": "M96_ORDINAL_CUMULATIVE",
+   "n": 19785,
+   "n_uniq": 198,
+   "uniq_ratio": 0.010007581501137225,
+   "gap_cv": 0.9525268873461288
+  },
+  {
+   "model": "M129_GROUP_FINETUNE",
+   "n": 19785,
+   "n_uniq": 201,
+   "uniq_ratio": 0.01015921152388173,
+   "gap_cv": 1.0111073733453626
+  },
+  {
+   "model": "M68_SITEWIND_CLASS_ITER",
+   "n": 19785,
+   "n_uniq": 231,
+   "uniq_ratio": 0.011675511751326762,
+   "gap_cv": 0.9223650311783766
+  },
+  {
+   "model": "M64B_ALLWEATHER_SITEWIND_CLASS",
+   "n": 19785,
+   "n_uniq": 246,
+   "uniq_ratio": 0.012433661865049279,
+   "gap_cv": 0.9087978111663351
+  },
+  {
+   "model": "M98_ORDINAL_BIN025",
+   "n": 19785,
+   "n_uniq": 262,
+   "uniq_ratio": 0.013242355319686632,
+   "gap_cv": 0.872434962330319
+  },
+  {
+   "model": "M93_POWER_QUANTILE",
+   "n": 19785,
+   "n_uniq": 630,
+   "uniq_ratio": 0.03184230477634572,
+   "gap_cv": 0.6023606418817304
+  },
+  {
+   "model": "M113_LGBM_DART",
+   "n": 19785,
+   "n_uniq": 3443,
+   "uniq_ratio": 0.1740207227697751,
+   "gap_cv": 1.4325380386040352
+  },
+  {
+   "model": "M115_XGBOOST",
+   "n": 19785,
+   "n_uniq": 4157,
+   "uniq_ratio": 0.2101086681829669,
+   "gap_cv": 1.3604205999774415
+  },
+  {
+   "model": "M244_RARE_EVENT_CORRECTED_ANALOG_Q234",
+   "n": 19782,
+   "n_uniq": 19111,
+   "uniq_ratio": 0.9660802749974724,
+   "gap_cv": 1.3792276777773498
+  }
+ ],
+ "discrete": 11,
+ "smooth": 1,
+ "verdict": "SMOOTH_MEMBER_EXISTS_PREMISE_HOLDS",
+ "origin": "research://Browell-2020-EEM20-Strathclyde-74066 [near_match_only]",
+ "model_fits": 0,
+ "dacon_upload": false
+}

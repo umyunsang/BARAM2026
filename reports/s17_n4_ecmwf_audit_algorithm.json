@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "node_id": "S17-N4_ECMWF_18Z_FIXED_LEAD_AUDIT",
+  "http_policy": {
+    "GET": [
+      "official HTML",
+      "S3 XML listing",
+      "*.index JSON-lines"
+    ],
+    "HEAD": [
+      "*.grib2"
+    ],
+    "forbid_get_suffix": [
+      ".grib2"
+    ]
+  },
+  "key_template": "{YYYYMMDD}/18z/0p4-beta/scda/{YYYYMMDD}180000-{step}h-scda-fc.{index|grib2}",
+  "index_assertion": "date==init and time=='1800' and stream=='scda' and type=='fc' and step==declared; exactly one each of 10u/sfc,10v/sfc,u/pl/925,v/pl/925",
+  "cutoff_equation": "deadline_utc = init_date + 1 day + 05:00; require Last-Modified(45h) < deadline",
+  "coverage_equation": "present S3 date prefixes intersect 2023-04-01..2023-12-31 inclusive",
+  "cost_equation": "sum selected _length across steps 21:3:45 on 2023-06-01 x present Q2-Q4 days",
+  "fixed_dates": [
+    "2023-02-01",
+    "2023-06-01",
+    "2023-10-01"
+  ]
+}

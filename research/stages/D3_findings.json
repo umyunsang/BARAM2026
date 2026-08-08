@@ -1,0 +1,48 @@
+{
+ "stage": "D3",
+ "category": "모델링",
+ "fulfilled_utc": "2026-08-06",
+ "queries_run": 3,
+ "provider": "Serper/Google",
+ "prior_stage_carry": "D2 확정: (a) sister-model 은 두 NWP 변수집합 차이로 재현 불가, (b) 일주기 조건부는 폴드 간 상관 0.220 으로 불안정하나 **24개 시각 전부 양수인 전역 과대예측 +0.047** 이 부수 발견됨, (c) 후류 기하는 잔차를 설명하나 1~2%.",
+ "findings": [
+  {
+   "id": "H1",
+   "claim": "표형 데이터에서 gradient boosting tree 가 딥러닝을 능가하며 day-ahead 풍력에서 여전히 경쟁력 최상",
+   "source": "arXiv:2602.13010v2; arXiv:2507.01579v1 (HEFTCom2024 리뷰) 'reaffirms the competitiveness of popular gradient boosted tree algorithms'",
+   "tag": "directly_supported",
+   "relevance": "우리 배포는 이미 LightGBM 46-bin 분류기다. 모델 계열 교체(딥러닝)는 근거가 부정적이다. N401(CQR −0.005965), N403(오라클 상한 미달)과 정합. **모델 계열 축을 닫는 확증 증거**로 기록.",
+   "proposes": []
+  },
+  {
+   "id": "H2",
+   "claim": "특성이 다른 두 모델(이산 트리 기반 + 평활 GAM 계열)의 분위수를 결합하면 성능이 개선된다",
+   "source": "Browell et al. 2020, EEM20 Wind Power Forecasting Competition, Strathclyde 74066 (Cited 12)",
+   "tag": "near_match_only",
+   "relevance": "우리 12개 저장 후보는 전부 46-bin 이산 트리 계열이고 오차상관 0.984~0.994 다(M244 만 0.944). 논문이 말하는 '평활(smooth)' 계열 멤버가 우리에게 **없다**. C1N99 의 조합 축 폐쇄 전제가 '현 12 후보 집합' 에만 걸린다고 명시돼 있으므로, 평활 멤버 생성은 그 전제를 건드린다.",
+   "proposes": [
+    {
+     "subcapability": "C5.5",
+     "kind": "analysis",
+     "summary": "저장 후보 12종의 이산/평활 특성 감사 - 평활 계열 멤버가 실제로 부재한지 확인",
+     "score_bearing": true
+    }
+   ]
+  },
+  {
+   "id": "H3",
+   "claim": "예보 편향 보정에 ML 기반 프레임워크가 쓰이며 전역 편향은 보정 대상이다",
+   "source": "NOAA NCEP Office Note 520 (2025) BC-Unet; ResearchGate 335482895",
+   "tag": "near_match_only",
+   "relevance": "D2_G3_1 이 적격행 기준 **전역 +0.047 과대예측**을 발견했다. C1N22_GLOBAL_SHIFT 는 MOS_SUPERSEDED_BY_ELIGIBLE_POPULATION 으로 폐기됐으나, 그것은 전체행 기준이었을 수 있다. **적격행 기준 전역 이동**이 별도로 검정된 기록이 없다.",
+   "proposes": [
+    {
+     "subcapability": "C9.2",
+     "kind": "decision",
+     "summary": "적격행 기준 전역 이동(-0.047 방향) 의 fold-외 효과 측정 - C1N22 가 전체행 기준이었는지 먼저 확인",
+     "score_bearing": true
+    }
+   ]
+  }
+ ]
+}

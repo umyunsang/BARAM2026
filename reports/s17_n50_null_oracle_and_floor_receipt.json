@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "node_id": "S17-N50_NULL_ORACLE_AND_NOISE_FLOOR",
+  "stage_id": "S3",
+  "deficit": "FD14/FD18",
+  "score_bearing": false,
+  "comparison_index": null,
+  "result_status": "SUPPORTED",
+  "results": {
+    "deployed_blend": 0.6314827308346854,
+    "true_per_row_oracle": 0.7255568523319222,
+    "true_oracle_gain": 0.09407412149723682,
+    "null_oracle_member_cloud_mean": 0.6258726090321566,
+    "null_oracle_sd": 0.0015625513804018156,
+    "random_member_mean": 0.6261341063556972,
+    "random_member_sd": 0.001487691135136687,
+    "matched_pair": {
+      "n_pairs": 5770,
+      "D_mean_abs_diff_cf": 0.14050658275677883,
+      "floor_lower": 0.07025329137838941,
+      "floor_upper": 0.14050658275677883,
+      "current_mae_cf": 0.1409629910250622,
+      "target_mae_cf": 0.1203,
+      "verdict": "INCONCLUSIVE_BRACKET_STRADDLES_TARGET"
+    }
+  },
+  "source_lanes": {
+    "edu_decision_theory": "12bd0cfd974ba373c429a1da11752fbcc7a11d44b9d6bacc26a9c54fb938fb2a",
+    "edu_density_sharpness": "3ede15048d61cda147721e58fa23b3537a06b37559eec9f7adba369d6af86e3c",
+    "edu_market_bidding": "34f058bcf2c28616b5ee2af17eee3733fc87a838da8d83fe3d10dd8d40636bda"
+  },
+  "findings": [
+    "NULL-ORACLE CALIBRATION. Replacing the outcome with a pseudo-outcome drawn from the member cloud and then running the identical per-row argmin yields 0.6258726 +/- 0.0015626, essentially identical to picking a member at random (0.6261341 +/- 0.0014877) and BELOW the deployed blend. The +0.0940741 per-row oracle gain is therefore NOT a mechanical artifact of taking a maximum over four numbers.",
+    "Refined reading of N40 to N42: the information in the member spread is REAL, in that some member is genuinely close to truth on many rows, but it is not identifiable from basis-time features, which is what two independent gates demonstrated. The correct statement is not that the headroom is fake but that it is ex-ante unpredictable with the current conditioning.",
+    "MATCHED-PAIR IRREDUCIBLE-NOISE BRACKET. Pairing rows on group, target hour and champion-action bin gives 5770 pairs with mean absolute difference D = 0.1405066 in capacity-fraction units, so the irreducible MAE floor lies in [0.0702533, 0.1405066].",
+    "The current champion MAE is 0.1409630, which is essentially equal to D itself. The champion is therefore performing at about the level of predicting with an independent draw from the same conditional law, i.e. at the UPPER end of the bracket.",
+    "The target MAE of 0.1203 lies strictly INSIDE the bracket. The accuracy axis is therefore NOT provably closed. The required 15 percent error reduction is not excluded by irreducible noise, and if the floor is near the lower bound there is room for roughly a 50 percent reduction.",
+    "Bias direction is favourable to this reading: conditioning on the champion action bin is a coarse proxy for conditioning on X, so D is biased UPWARD and the true floor is likely lower than measured."
+  ],
+  "verdict": "INCONCLUSIVE_BRACKET_STRADDLES_TARGET_ACCURACY_AXIS_REMAINS_OPEN",
+  "implication": "The session narrative changes. Nine nodes closed every action-side, ensemble-side and density-functional axis, and the elasticity measurement showed the requirement is a 15 percent MAE cut. This node shows that requirement is not blocked by irreducible noise. Effort should return to S5 and S6 representation and S7 model capability, which is now materially better resourced because dependency installation and pre-2026-07-05 commercially licensed pretrained weights are authorised.",
+  "lockbox_2024_used": false,
+  "dacon_actions": [],
+  "closed_at": "2026-08-09T06:34:55.060857+09:00"
+}

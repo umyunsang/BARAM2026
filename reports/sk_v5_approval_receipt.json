@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "artifact": "SK@v5",
+  "artifact_type": "project_skeleton",
+  "stable_locator": ".planning/2026-08-01-leaderboard-top-4-loop/SK_v5.md",
+  "skeleton_sha256": "c2c813475ab5f0a741e6adbceab196d5b38447f2aeb02f9716a8f5be8973c820",
+  "decision": "APPROVED_FOR_BOUNDED_READ_ONLY_RESEARCH",
+  "state": "SKELETON_APPROVED_FOR_RESEARCH(SK@v5)",
+  "approving_authority": "human_user",
+  "exact_approval_message": "SK@v5 승인",
+  "approved_at": "2026-08-09T04:42:32.896251+09:00",
+  "authorized_scope": [
+    "bounded local workflow audit",
+    "Wave A V5-ENGINE/V5-FOUNDATION/V5-DISCOVERY-SCIENCE/V5-VALIDATION read-only lanes",
+    "Wave B module research only after root freezes the Wave-A foundation map",
+    "research-lane writes only to their exclusive research deliverables",
+    "root validation and DS@v5 synthesis"
+  ],
+  "not_authorized": [
+    "source implementation",
+    "model fitting",
+    "score-bearing experiment",
+    "dependency changes",
+    "external data-body acquisition",
+    "Dacon/account actions",
+    "remote inference/compute/Git",
+    "2024 evaluation",
+    "DS@v5 implementation",
+    "IP@v3 execution"
+  ],
+  "next_gate": "SYNTHESIZED_DESIGN_PENDING_APPROVAL(DS@v5)"
+}

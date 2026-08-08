@@ -32,8 +32,12 @@ def test_tiny_pipeline_reproduces_hashes_in_fresh_processes(tmp_path: Path) -> N
     second = _run_fixture(second_root)
     assert first == second
     assert set(first["payload"]) == {
+        "expected_candidate_sha256",
+        "expected_policy_sha256",
         "manifest_sha256",
         "policy_sha256",
+        "quantile_sha256",
+        "spatial_feature_sha256",
         "submission_sha256",
     }
     assert not (first_root / "artifacts" / "locks" / "lockbox-2024.consumed.json").exists()

@@ -1,0 +1,327 @@
+{
+  "schema_version": 1,
+  "node_id": "S17-N17_R4_NO_REFIT_STRICT_SOURCE_SEPARATION_COMPARISON",
+  "closed_at": "2026-08-08T21:51:38.592562+09:00",
+  "predeclaration": {
+    "path": "reports/s17_n17_r4_no_refit_source_separation_predeclaration.json",
+    "sha256": "623e7590dc764c8945c7dd4c9b1aa4481c876fa98452f7e5c36ee7cbb3e7db4a",
+    "event_sha256": "8beeaebbff11b1caf5a5b0ca0261dab6d8a831f62d7625476f6ad9f102b683c2"
+  },
+  "implementation": {
+    "path": "scripts/run_r4_source_separation_no_refit.py",
+    "sha256": "99a76a469ae4a8c150c6dff898f2e7829a4320fe589d949176b89d133e5f001f"
+  },
+  "input_bundle_sha256": "c98af5d4b88ef83bf07352de097450ad3c3eb3bdedec9eeab4d63937a36d0a25",
+  "family": {
+    "path": "artifacts/backtests/s17_n17_r4_source_separation/family_manifest.json",
+    "sha256": "49b338638a9cf796bb75d08a58065e505f24e343a06144db132b4753539d3098",
+    "output_hashes": {
+      "predictions.parquet": "9c1f2d1031a74496535cbe136a9058fa70429d7c4829aaa3435170c825007797",
+      "procedure_provenance.parquet": "ab44424340af25c2876355355a90c60c5888d6999a944652e1bf1bd77dca65ec",
+      "materialization_details.json": "823855a86aeba7733d1da09c960169b3580315e6054cd937b7506be9a0ddf3d3"
+    },
+    "selected_q2_policies": {
+      "D": "T1_G1.5",
+      "DL": "T1.2_G0.2",
+      "DG": "T1_G2"
+    },
+    "q2_ldaps_weight": 0.7,
+    "action_accounting": {
+      "model_or_optimizer_fits": 0,
+      "inherited_outer_model_fits": 18,
+      "inner_q2_official_calls": 189,
+      "q3_q4_assessment_score_calls": 0
+    }
+  },
+  "evaluation": {
+    "path": "artifacts/backtests/s17_n17_r4_source_separation/evaluation.json",
+    "sha256": "42957c873adbac86ab2847432b238ee2e8f9ce0b15ea27284ac625ad2fdda9a2",
+    "comparison_index": 3,
+    "scores": {
+      "CHAMPION": {
+        "total": 0.6314827308346854,
+        "one_minus_nmae": 0.8584802239958174,
+        "ficr": 0.40448523767355354,
+        "group_nmae": {
+          "1": 0.13374875571118536,
+          "2": 0.13717782021604943,
+          "3": 0.1536327520853131
+        },
+        "group_ficr": {
+          "1": 0.40302241682883877,
+          "2": 0.45313004431308845,
+          "3": 0.3573032518787334
+        }
+      },
+      "R4_CONCAT_D": {
+        "total": 0.6206018615949642,
+        "one_minus_nmae": 0.8616355025349316,
+        "ficr": 0.3795682206549969,
+        "group_nmae": {
+          "1": 0.13287258723835632,
+          "2": 0.1302975007644933,
+          "3": 0.15192340439235555
+        },
+        "group_ficr": {
+          "1": 0.3708000538148575,
+          "2": 0.4212016066798969,
+          "3": 0.3467030014702364
+        }
+      },
+      "R4_LDAPS_ONLY": {
+        "total": 0.6093715354447586,
+        "one_minus_nmae": 0.8514902741531057,
+        "ficr": 0.3672527967364116,
+        "group_nmae": {
+          "1": 0.1433242818184414,
+          "2": 0.14507029073860722,
+          "3": 0.1571346049836342
+        },
+        "group_ficr": {
+          "1": 0.3608583867659491,
+          "2": 0.39463623156687416,
+          "3": 0.34626377187641144
+        }
+      },
+      "R4_GFS_ONLY": {
+        "total": 0.612861807906828,
+        "one_minus_nmae": 0.8574588218557393,
+        "ficr": 0.3682647939579167,
+        "group_nmae": {
+          "1": 0.13725389331505752,
+          "2": 0.13451665416808894,
+          "3": 0.1558529869496357
+        },
+        "group_ficr": {
+          "1": 0.3642048332796981,
+          "2": 0.41407788500568926,
+          "3": 0.32651166358836287
+        }
+      },
+      "R4_SEP_EQUAL": {
+        "total": 0.6183209846580615,
+        "one_minus_nmae": 0.8627105152649992,
+        "ficr": 0.3739314540511238,
+        "group_nmae": {
+          "1": 0.1321507477012479,
+          "2": 0.13088612350301526,
+          "3": 0.14883158300073906
+        },
+        "group_ficr": {
+          "1": 0.3770521794328973,
+          "2": 0.41502794991655806,
+          "3": 0.3297142328039161
+        }
+      },
+      "R4_SEP_Q2_WEIGHTED": {
+        "total": 0.6167042494697709,
+        "one_minus_nmae": 0.8603351926812781,
+        "ficr": 0.37307330625826357,
+        "group_nmae": {
+          "1": 0.13460033671007168,
+          "2": 0.13449890199194967,
+          "3": 0.1498951832541442
+        },
+        "group_ficr": {
+          "1": 0.3726548008901,
+          "2": 0.4093831718107771,
+          "3": 0.33718194607391355
+        }
+      }
+    },
+    "deltas_vs_champion": {
+      "R4_CONCAT_D": -0.010880869239721203,
+      "R4_LDAPS_ONLY": -0.022111195389926785,
+      "R4_GFS_ONLY": -0.018620922927857442,
+      "R4_SEP_EQUAL": -0.013161746176623912,
+      "R4_SEP_Q2_WEIGHTED": -0.014778481364914553
+    },
+    "treatment_deltas_vs_concat": {
+      "R4_SEP_EQUAL": -0.0022808769369027093,
+      "R4_SEP_Q2_WEIGHTED": -0.0038976121251933504
+    },
+    "promotion_supported": {
+      "R4_SEP_EQUAL": false,
+      "R4_SEP_Q2_WEIGHTED": false
+    },
+    "goal_total_0p66_reached": false,
+    "promotion_stable_all_blocks": {
+      "R4_CONCAT_D": false,
+      "R4_LDAPS_ONLY": false,
+      "R4_GFS_ONLY": false,
+      "R4_SEP_EQUAL": false,
+      "R4_SEP_Q2_WEIGHTED": false
+    },
+    "mcs_included_by_block": {
+      "3": [
+        "CHAMPION"
+      ],
+      "7": [
+        "CHAMPION"
+      ],
+      "14": [
+        "CHAMPION"
+      ]
+    }
+  },
+  "adjudication": "REFUTED. Equal source separation scored 0.6183209846580615 and Q2-weighted source separation 0.6167042494697709, trailing the matched concat D by 0.0022808769369027093 and 0.0038976121251933504 and trailing CHAMPION by 0.013161746176623912 and 0.014778481364914553. Every 3/7/14-day T_R MCS retained CHAMPION only; both treatment fold deltas were negative. Source separation may remain an outage fallback, but receives zero gap-closing credit.",
+  "known_outcome_exposure": "Legacy registry numeric outcomes and a negative equal-average conclusion are already known. This comparison is chronology-repaired, multiplicity-aware retrospective confirmation only, not a fresh holdout.",
+  "actions": {
+    "inherited_outer_model_fits": 18,
+    "new_model_or_optimizer_fits": 0,
+    "inner_q2_official_calls": 189,
+    "outer_point_official_calls": 6,
+    "strict_protocol_calls": 1,
+    "comparison_index_consumed": 3,
+    "lockbox_2024": false,
+    "test_period": false,
+    "rejected_ecmwf": false,
+    "dacon_actions": []
+  },
+  "verification": {
+    "full_pytest": "217 passed, 144 pre-existing warnings",
+    "ruff": "All checks passed",
+    "event_chain_verified": true
+  },
+  "preclose_snapshot": {
+    "pending": [
+      "S17-N17_R4_NO_REFIT_STRICT_SOURCE_SEPARATION_COMPARISON"
+    ],
+    "closed": [
+      "S17-N10B_ISSUANCE_CUBE_2022_2023_CORRECTED_AUDIT",
+      "S17-N10_ISSUANCE_CUBE_TIMING_AND_MISSINGNESS_AUDIT",
+      "S17-N11A_FOUR_MAPPING_10MIN_SCADA_CORRECTED_DIAGNOSTIC",
+      "S17-N11_FOUR_MAPPING_TRAINING_WIND_DIAGNOSTIC",
+      "S17-N12_VERTICAL_PROFILE_TERRAIN_PREREQUISITE_AUDIT",
+      "S17-N13A_R2_NO_REFIT_TYPED_PROVENANCE_RECOVERY",
+      "S17-N13_R2_TWO_COMPONENT_VERTICAL_PCA_STRICT_PREQUENTIAL",
+      "S17-N14_R3_HEIGHT_ONLY_TERRAIN_PREREQUISITE_AUDIT",
+      "S17-N15A_R3_CORRECTED_PRIMARY_FORMULA_IDENTIFIABILITY_GATE",
+      "S17-N15_R3_COPERNICUS_GLO30_STATIC_EXTRACTION_AND_FORMULA_FREEZE",
+      "S17-N16_R4_SOURCE_SEPARATED_VS_CONCAT_PREREQUISITE_AUDIT",
+      "S17-N2_EVENT_LEDGER_ENVELOPE",
+      "S17-N3_STRICT_PREQUENTIAL_EVALUATION_REPAIR",
+      "S17-N4_ECMWF_18Z_FIXED_LEAD_AUDIT",
+      "S17-N5_ECMWF_18Z_2023_EXTRACTION",
+      "S17-N5_ECMWF_18Z_2023_INNOVATION_PROBE",
+      "S17-N6A_FAIL_CLOSED_SCORE_CLASS_REPAIR",
+      "S17-N6_COST5_SPO_PLUS_PREQUENTIAL",
+      "S17-N7_STRICT_ACTION_PROVENANCE_RECONSTRUCTION",
+      "S17-N8_COST5_SPO_PLUS_STRICT_PREQUENTIAL_COMPARISON",
+      "S17-N9_COST5_NO_REFIT_MATERIALIZATION_RECOVERY"
+    ],
+    "legacy": [
+      "C1N100_NOVEL_MEMBER_PROBE",
+      "C1N101_PHYSICAL_MEMBER_PROBE",
+      "C1N102_RETRIEVAL_MEMBER",
+      "C1N103_EXTERNAL_NWP_MEMBER",
+      "C1N104_M244_KEY_RECOVERED",
+      "C1N105_M244_RECIPE_READ",
+      "C1N10_BLEND_LOCALITY",
+      "C1N11_V2_REPRESENTATION",
+      "C1N12_G3_HISTORY",
+      "C1N13_ENSEMBLE_VARIANCE",
+      "C1N14_SHRINKBLEND",
+      "C1N15_WALKFORWARD",
+      "C1N16_ROBUSTNESS_AUDIT",
+      "C1N17_METRIC_ALIGNED_COMBINER",
+      "C1N18_SPREAD_SKILL",
+      "C1N19_ENVELOPE_ORACLE",
+      "C1N1_TOPRATE_MECHANISM",
+      "C1N20_ALPHA_ENDPOINT",
+      "C1N21_MOS_BIAS_CORRECTION",
+      "C1N22_GLOBAL_SHIFT",
+      "C1N23_ELIGIBLE_MOS",
+      "C1N24_MEMBER_COUNT_REOPEN",
+      "C1N25_ENVELOPE_LAMBDA",
+      "C1N26_POOL_WIDTH_SCREEN",
+      "C1N27_RESIDUAL_SIGNAL",
+      "C1N28_PERGRID_SIGNAL",
+      "C1N29_CHAMPION_AUDIT",
+      "C1N2_COLLIDER_CORRECTED",
+      "C1N30_TEMPORAL_SIGNAL",
+      "C1N31_SPACE_TIME",
+      "C1N32_LOCKBOX_OPERATOR",
+      "C1N33_SINGLE_VS_ENSEMBLE",
+      "C1N34_SHRINK_TO_BEST",
+      "C1N35_FIXED_POLICY_CORRECTION",
+      "C1N36_SOURCE_SENSITIVITY",
+      "C1N37_BAND_ALIGNED_LOSS",
+      "C1N38_BAND_LOSS_FIXED",
+      "C1N39_ARCHITECTURE_GAP",
+      "C1N3_MASS_AXIS_WIND_SECTOR",
+      "C1N40_BAND_CLASSIFIER",
+      "C1N41_BAND_CLASSIFIER_CAPACITY",
+      "C1N42_TEACHER_RESTORED",
+      "C1N43_EFFECT_TREND",
+      "C1N44_SHARPENED_DECISION",
+      "C1N45_SUBMISSION_DECISION",
+      "C1N46_CLOSURE_FALSIFICATION",
+      "C1N47_EXTERNAL_NWP_REVIVED",
+      "C1N48_MODEL_VALIDATION",
+      "C1N49_RHO_ACCEPTANCE",
+      "C1N4_BAND_CONDITIONAL_POLICY_ORACLE",
+      "C1N50_NONNEGATIVE_WEIGHTS",
+      "C1N51_EXTERNAL_SOURCE_PROBE",
+      "C1N52_EXTERNAL_CLOSURE",
+      "C1N53_SUPPLIED_EXTRACTION",
+      "C1N54_SCATTER_CEILING",
+      "C1N55_TURBINE_CORRELATION",
+      "C1N56_MEASURED_POWERCURVE",
+      "C1N57B_VARIANCE_LAW",
+      "C1N57_FICR_CEILING",
+      "C1N58_TEACHER_OOF_SPLIT",
+      "C1N59_PERFECT_PROG_BOUND",
+      "C1N5_SPATIAL_INTERPOLATION",
+      "C1N60_LEVEL_TEMPERATURE",
+      "C1N61_GRID_BOUNDARY",
+      "C1N62_MONTH_MECHANISM",
+      "C1N64_BAND_AVOIDANCE",
+      "C1N65_WIND_LIMITED_BOUND",
+      "C1N66_HETEROSCEDASTIC_WIND",
+      "C1N67_EXACT_CURVE_PROPAGATION",
+      "C1N69_SKILL_RESPONSE",
+      "C1N6_WIND50_MIDPOINT",
+      "C1N70_BASELINE_CORRECTION",
+      "C1N71_TEACHER_WEIGHT",
+      "C1N72_CURVE_BLEND",
+      "C1N74_BLOCK_LENGTH",
+      "C1N75_DAILY_GATE_ESTIMAND",
+      "C1N7_POLICY_FROZEN_GATE",
+      "C1N81_CYCLE_CONTRACT_ENFORCED",
+      "C1N8_ORACLE_LADDER",
+      "C1N92_METRIC_ALIGNED_LOSS",
+      "C1N93_ORDINAL_REPRESENTATION",
+      "C1N94_CDF_REJUDGE",
+      "C1N95_RECONSTRUCTION_GAP",
+      "C1N96_GAP_REJUDGE",
+      "C1N97_BOOSTING_ROUNDS",
+      "C1N98_REPRODUCIBILITY_ADJUDICATION",
+      "C1N99_ENSEMBLE_EXHAUSTIVE",
+      "C1N9_GATE_POWER"
+    ],
+    "comparison_count": 2,
+    "stage_coverage": [
+      "S1",
+      "S2",
+      "S3",
+      "S5",
+      "S6",
+      "S7",
+      "S8",
+      "S9",
+      "S10",
+      "S11"
+    ],
+    "frontier": [
+      "S17-N17_R4_NO_REFIT_STRICT_SOURCE_SEPARATION_COMPARISON"
+    ],
+    "evidence_complete_cycles": 21,
+    "accounted_cycles": 110,
+    "digest": "d7cf459a4279d1a58b78b0319753b5eb162fdfb2fbac97e3c841482a24cd2302"
+  },
+  "verdict": "REFUTED_R4_SOURCE_SEPARATION_STRICT_PREQUENTIAL_NOT_FRESH_HOLDOUT",
+  "next_handoff": [
+    "S17-N18_POST_RWA_FRONTIER_RESEARCH_INTAKE"
+  ]
+}

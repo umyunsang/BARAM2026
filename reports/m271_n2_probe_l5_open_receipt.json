@@ -1,0 +1,183 @@
+{
+  "node_id": "C1N88_N2_PROBE_L5_OPEN",
+  "lane": "L1",
+  "parent": "C1N87_CURTAILMENT_CLEAN_TARGET",
+  "candidate": false,
+  "diagnostic_only": true,
+  "freeze_reexamination": {
+    "frozen_by": "C1N86",
+    "text": "N2 는 N1 이 F1 을 넘을 때만 착수한다 — 그 전에는 크기를 주장할 근거가 없다",
+    "n1_outcome": "실패 (C1N87, -0.73%)",
+    "finding": "동결의 이유는 '크기 근거 없음' 이었지 'N1 이 실패하면 N2 도 실패한다' 가 아니다. N1 은 감발 하나를, N2 는 SCADA 이상 일반을 시험한다 — 조건을 N1 에 건 것이 두 기전을 섞은 것이었다.",
+    "response": "동결을 풀지 않고 **그 이유를 해소한다** — N2 를 실행하는 대신 크기 상한을 측정한다. 근거가 서면 라우터가 판정하고, 안 서면 동결이 유지된다."
+  },
+  "surface": {
+    "spec_digest": "195531818b8ab2b7c1e59965",
+    "probability_digest": "8141403f56cd7eba",
+    "from_cache": true
+  },
+  "rows": 19783,
+  "k_grid": [
+    0.01,
+    0.02,
+    0.05,
+    0.1
+  ],
+  "seed": 20260806,
+  "pooled_bounds": {
+    "k1": {
+      "rows_flagged": 198,
+      "variance_share": 0.03433863551519767,
+      "concentration": 3.433863551519767,
+      "sigma_reduction_upper_bound": 0.01731929677804178
+    },
+    "k2": {
+      "rows_flagged": 396,
+      "variance_share": 0.0620382075605161,
+      "concentration": 3.1019103780258046,
+      "sigma_reduction_upper_bound": 0.031515724216709895
+    },
+    "k5": {
+      "rows_flagged": 989,
+      "variance_share": 0.1245499717550199,
+      "concentration": 2.490999435100398,
+      "sigma_reduction_upper_bound": 0.06434513401309128
+    },
+    "k10": {
+      "rows_flagged": 1978,
+      "variance_share": 0.21376205195943895,
+      "concentration": 2.1376205195943894,
+      "sigma_reduction_upper_bound": 0.11329940338321587
+    }
+  },
+  "per_group": {
+    "1": {
+      "rows": 6595,
+      "bounds": {
+        "k1": {
+          "rows_flagged": 66,
+          "variance_share": 0.02726833676866473,
+          "concentration": 2.7268336768664727,
+          "sigma_reduction_upper_bound": 0.013728402907528081
+        },
+        "k2": {
+          "rows_flagged": 132,
+          "variance_share": 0.055147366659701755,
+          "concentration": 2.7573683329850875,
+          "sigma_reduction_upper_bound": 0.027964695424956165
+        },
+        "k5": {
+          "rows_flagged": 330,
+          "variance_share": 0.11657210049567909,
+          "concentration": 2.3314420099135815,
+          "sigma_reduction_upper_bound": 0.060091547274777946
+        },
+        "k10": {
+          "rows_flagged": 660,
+          "variance_share": 0.20279514808963334,
+          "concentration": 2.0279514808963333,
+          "sigma_reduction_upper_bound": 0.1071367115227736
+        }
+      }
+    },
+    "2": {
+      "rows": 6595,
+      "bounds": {
+        "k1": {
+          "rows_flagged": 66,
+          "variance_share": 0.03647058398095423,
+          "concentration": 3.6470583980954228,
+          "sigma_reduction_upper_bound": 0.018404657703060545
+        },
+        "k2": {
+          "rows_flagged": 132,
+          "variance_share": 0.06063367633675266,
+          "concentration": 3.0316838168376328,
+          "sigma_reduction_upper_bound": 0.03079087722863061
+        },
+        "k5": {
+          "rows_flagged": 330,
+          "variance_share": 0.12944080815073367,
+          "concentration": 2.5888161630146733,
+          "sigma_reduction_upper_bound": 0.06696238454751124
+        },
+        "k10": {
+          "rows_flagged": 660,
+          "variance_share": 0.19704146295477598,
+          "concentration": 1.9704146295477598,
+          "sigma_reduction_upper_bound": 0.10392046276838574
+        }
+      }
+    },
+    "3": {
+      "rows": 6593,
+      "bounds": {
+        "k1": {
+          "rows_flagged": 66,
+          "variance_share": 0.045129677805091445,
+          "concentration": 4.512967780509144,
+          "sigma_reduction_upper_bound": 0.022825336904958138
+        },
+        "k2": {
+          "rows_flagged": 132,
+          "variance_share": 0.07492942070202589,
+          "concentration": 3.7464710351012944,
+          "sigma_reduction_upper_bound": 0.03819410518651212
+        },
+        "k5": {
+          "rows_flagged": 330,
+          "variance_share": 0.1571680655300572,
+          "concentration": 3.1433613106011435,
+          "sigma_reduction_upper_bound": 0.08194121404457821
+        },
+        "k10": {
+          "rows_flagged": 659,
+          "variance_share": 0.2556340011849714,
+          "concentration": 2.556340011849714,
+          "sigma_reduction_upper_bound": 0.13723352011391365
+        }
+      }
+    }
+  },
+  "concentration_by_group_k10": {
+    "1": 2.0279514808963333,
+    "2": 1.9704146295477598,
+    "3": 2.556340011849714
+  },
+  "f1_sigma_reduction": 0.006176829268292682,
+  "detection_threshold": 0.001013,
+  "bound_interpretation": "상위 k% 이상 행이 잔차 분산의 f 를 차지하면 그 행들을 **완벽히 처리했을 때**의 sigma 감소 상한이 `1 - sqrt(1-f)` 다. 실제 이득은 반드시 그보다 작다.",
+  "l5_research": {
+    "performed_at": "2026-08-06",
+    "lane": "L5",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2501.14805",
+        "class": "peer_reviewed",
+        "finding": "NABQR — 앙상블을 LSTM 으로 보정한 뒤 시간적응 분위수회귀",
+        "applicability": "near_match_only"
+      },
+      {
+        "url": "https://doi.org/10.3390/en18164226",
+        "class": "peer_reviewed",
+        "finding": "결정론 예측 + 확산모형으로 잔차 분포 학습(2 단계)",
+        "applicability": "near_match_only"
+      }
+    ],
+    "why_not_applicable": "NABQR 의 입력은 NWP **앙상블 멤버**다. 우리에겐 앙상블이 없다 — 46 구간 분포는 단일 모형 출력이라 LSTM 보정이 먹을 다중 멤버가 아니다. 그리고 '시간적응 분위수회귀' 는 결정층 재보정이고 C1N60·C1N73 이 그 이웃에서 이미 0 과 구분 불가였다(C17 신규성 기각 대상)."
+  },
+  "hypotheses": {
+    "H1_bound_clears_detection": true,
+    "H2_concentration_above_uniform": true,
+    "H3_g3_most_concentrated": true,
+    "H4_l5_not_applicable_recorded": true
+  },
+  "verdict": "N2_MAGNITUDE_BASIS_ESTABLISHED_UNFREEZE",
+  "dacon_upload": false,
+  "external_actions": [
+    "WebSearch"
+  ],
+  "lockbox_used": false,
+  "generated_at": "2026-08-06T03:04:02.924896+00:00",
+  "digest": "d763081d28ad79ff"
+}

@@ -1,0 +1,31 @@
+{
+ "node": "D2_G1_1",
+ "stage": "D2",
+ "pool": {
+  "gfs": 394,
+  "ldaps": 296,
+  "other": 130
+ },
+ "c1n77": {
+  "pooled": {
+   "features": 101,
+   "total": 0.604043
+  },
+  "gfs": {
+   "features": 50,
+   "total": 0.602321
+  },
+  "ldaps": {
+   "features": 40,
+   "total": 0.593511
+  },
+  "stack": {
+   "total": 0.603122
+  }
+ },
+ "verdict": "IMPLEMENTATION_DIFFERS_BUT_DATA_FORBIDS_PAPER_CONSTRUCTION",
+ "reasoning": "C1N77 split features disjointly so each arm saw 40-50% of pooled information; the paper applies the same full pipeline per source. But GFS and LDAPS expose different variable sets here, so the paper construction cannot be reproduced without falling back to a common subset, which reintroduces the information loss.",
+ "origin": "research://arXiv:2505.10367v1 [directly_supported]",
+ "model_fits": 0,
+ "dacon_upload": false
+}

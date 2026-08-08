@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "artifact": "SK@v4",
+  "checked_at": "2026-08-08T18:00:06.473694+09:00",
+  "state": "SKELETON_APPROVAL_PENDING",
+  "skeleton_sha256": "474dfdd3912ab255b26b6988442d8107a0c1c0c9c2e7d3db8ceb43ad1ebb4530",
+  "conversation_log": "/Users/um-yunsang/.prime/agent/sessions/019fe091-1287-738d-a038-0d15d181993c.jsonl",
+  "events_scanned": 129,
+  "human_user_message_ids": [
+    "83cbb9e5"
+  ],
+  "exact_approval_phrase": "SK@v4 승인",
+  "exact_human_approval_found": false,
+  "blocked_actions": [
+    "web/deep research",
+    "research dispatch",
+    "source implementation",
+    "model fitting",
+    "dependency changes",
+    "external-data retrieval"
+  ],
+  "allowed_action_taken": "approval-ledger verification only"
+}

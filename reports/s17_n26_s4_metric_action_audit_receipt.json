@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "node_id": "S17-N26_S4_OFFICIAL_METRIC_AND_ACTION_APPROPRIATENESS_AUDIT",
+  "status": "CLOSED_SUPPORTED_STAGE_COVERAGE_REPAIR",
+  "created_at": "2026-08-09T01:04:07.244409+09:00",
+  "predeclaration": {
+    "path": "reports/s17_n26_s4_metric_action_audit_predeclaration.json",
+    "sha256": "09a4e38106939cab7afdb792826b41fdcc86e11be1f815a0d8612ccd44c2152c",
+    "predeclared_event_sha256": "f4751c8c100c5dca0cdf00973bd065fb8e192ba5b6101013e80725d5950fcd2d",
+    "predeclared_sequence": 153,
+    "input_bundle_sha256": "0a2c9cfa52754b1a46ef8bd0f04a5b03de3974af61447cb7e3ac0835fe986c3d",
+    "input_hashes_reverified_unchanged": true
+  },
+  "trigger": {
+    "prior_terminal_intake": "S17-N25_TERTIARY_FRONTIER_RESEARCH_INTAKE",
+    "prior_terminal_intake_receipt_sha256": "9c90cbc24852e66571f3794d22a31e32660ca5c29f62f37e57ef214940f6bdc0",
+    "pre_repair_halt_eligibility": "HALT_BLOCKED_STAGE_COVERAGE",
+    "missing_stage": [
+      "S4"
+    ],
+    "pending_after_predeclaration": [
+      "S17-N26_S4_OFFICIAL_METRIC_AND_ACTION_APPROPRIATENESS_AUDIT"
+    ]
+  },
+  "audit": {
+    "path": "reports/s17_n26_s4_metric_action_audit.json",
+    "sha256": "9c92a4fdebe4e67d3043555f8955816b404fb791b38bc64a0e3ebfa2d1d62f77",
+    "official_formula_verdict": "EQUIVALENT",
+    "strict_prequential_exact_total_verdict": "EQUIVALENT_ON_COMPLETE_SELECTED_DAY_SET",
+    "action_appropriateness_verdict": "SUPPORTED_NARROWLY",
+    "contradiction_count": 0
+  },
+  "decision": {
+    "result_status": "SUPPORTED",
+    "stage_evidence_status": "RESEARCHED",
+    "stage_covered": "S4",
+    "candidate_emitted": false,
+    "frontier_reopened": false,
+    "next_handoff": [],
+    "reason": "The only missing formal stage was a ledger coverage omission. Literal official formula, local scorer, exact-Total resampling, and narrow action semantics agree."
+  },
+  "exhaustion_preservation": {
+    "n25_ready_candidate_count": 0,
+    "comparison_count_before": 4,
+    "comparison_count_after": 4,
+    "champion_total": 0.6314827308346854,
+    "target_total": 0.66,
+    "gap": 0.0285172691653146,
+    "target_reached": false,
+    "next_score_bearing_comparison_index_if_reopened": 5,
+    "expected_postclosure_halt_eligibility": "HALT_ALLOWED_EXHAUSTED"
+  },
+  "validation": {
+    "targeted_pytest": {
+      "command": ".venv/bin/python -m pytest -q tests/evaluation/test_official.py tests/evaluation/test_prequential.py tests/loop/test_events.py",
+      "result": "PASS",
+      "tests_passed": 36,
+      "stdout_sha256": "d1bc7f05ba1eb6f8d6030ae65143f2018b3abd74e449f1455cb064270934a9a9"
+    },
+    "ruff": {
+      "result": "PASS",
+      "stdout_sha256": "5b196eb3a6acb50d3fa398d04ca284985cc1ffec870e940264b00780bfd2c971"
+    },
+    "prior_full_suite_after_all_source_changes": {
+      "node_id": "S17-N25_TERTIARY_FRONTIER_RESEARCH_INTAKE",
+      "tests_passed": 217,
+      "warnings": 144,
+      "source_inputs_unchanged_in_n26": true
+    },
+    "immutable_inputs": {
+      "competition_zip_sha256": "920be0c458d820e855bf79dd25723146f52ce1736138aedba5e6bc853f1f720b",
+      "baseline_notebook_sha256": "712b26f4d2748860c94cff1e0100c23810468c983173f8e9ef8d009fe82df48c",
+      "official_metric_notebook_sha256": "0a3ab5a57dba0705dbdbda73cd723be37ef39cce388fcb22b1a220ce523a70f9"
+    }
+  },
+  "scope_accounting": {
+    "project_data_bodies_read": 0,
+    "project_actual_or_label_values_read": 0,
+    "raw_2024_or_test_values_read": 0,
+    "model_result_scores_read": 0,
+    "model_fits": 0,
+    "prediction_calls": 0,
+    "project_metric_calls": 0,
+    "synthetic_unit_tests_only": true,
+    "external_sources_or_calls": 0,
+    "dependency_changes": 0,
+    "dacon_or_account_actions": []
+  },
+  "comparison": {
+    "score_bearing": false,
+    "comparison_index": null,
+    "official_total": null,
+    "champion_changed": false
+  },
+  "lockbox_2024_used": false,
+  "dacon_actions": [],
+  "success_target_reached": false
+}

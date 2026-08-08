@@ -1,0 +1,144 @@
+{
+ "dacon_upload": false,
+ "decided_utc": "2026-08-04T06:59:23.051204+00:00",
+ "external_actions": [],
+ "lane": "L7",
+ "lockbox_reopened": false,
+ "model_fits": 0,
+ "new_2024_evaluation": false,
+ "node": "C1N13_ENSEMBLE_VARIANCE",
+ "report_sha256": "2b8a82a46b59dc25000d8c2134451c93d3ff6355ae83e29fd82e3e6c73845f4f",
+ "result": {
+  "ensembles": [
+   {
+    "bootstrap_q05": 0.0015172613354885883,
+    "cells_improved": 57,
+    "cells_worsened": 51,
+    "delta_total": 0.003329810165570546,
+    "ficr": 0.4038525147527546,
+    "gate": {
+     "G1": false,
+     "G2": true,
+     "G3": true,
+     "G4": true
+    },
+    "members": [
+     "M102_TOP100",
+     "M113_LGBM_DART",
+     "M115_XGBOOST",
+     "M129_GROUP_FINETUNE",
+     "M244_RARE_EVENT_CORRECTED_ANALOG_Q234",
+     "M64B_ALLWEATHER_SITEWIND_CLASS",
+     "M68_SITEWIND_CLASS_ITER",
+     "M72_BIN020",
+     "M84_LEAVES031",
+     "M93_POWER_QUANTILE",
+     "M96_ORDINAL_CUMULATIVE",
+     "M98_ORDINAL_BIN025"
+    ],
+    "min_delta": -0.003768760053953768,
+    "months_scored": 9,
+    "n_members": 12,
+    "name": "E1_ALL_EQUAL",
+    "net_loss_removed": 0.003329810165570598,
+    "one_minus_nmae": 0.8600161473590173,
+    "passed": false,
+    "positive_months": 6,
+    "rows": 19782,
+    "sign_test_p": 0.25390625,
+    "total": 0.6319343310558859
+   },
+   {
+    "bootstrap_q05": -0.009314343479599503,
+    "cells_improved": 66,
+    "cells_worsened": 42,
+    "delta_total": -0.0046969931655512775,
+    "ficr": 0.38411383297553336,
+    "gate": {
+     "G1": false,
+     "G2": false,
+     "G3": false,
+     "G4": false
+    },
+    "members": [
+     "M102_TOP100",
+     "M244_RARE_EVENT_CORRECTED_ANALOG_Q234"
+    ],
+    "min_delta": -0.02292994589177133,
+    "months_scored": 9,
+    "n_members": 2,
+    "name": "E2_CLASSIFIER_PLUS_ANALOG",
+    "net_loss_removed": -0.00469699316555121,
+    "one_minus_nmae": 0.863701222473995,
+    "passed": false,
+    "positive_months": 4,
+    "rows": 19782,
+    "sign_test_p": 0.74609375,
+    "total": 0.6239075277247641
+   },
+   {
+    "bootstrap_q05": 0.001670083617938979,
+    "cells_improved": 64,
+    "cells_worsened": 44,
+    "delta_total": 0.0035385599090722586,
+    "ficr": 0.40146539495891903,
+    "gate": {
+     "G1": false,
+     "G2": true,
+     "G3": true,
+     "G4": true
+    },
+    "members": [
+     "M102_TOP100",
+     "M244_RARE_EVENT_CORRECTED_ANALOG_Q234",
+     "M113_LGBM_DART",
+     "M115_XGBOOST"
+    ],
+    "min_delta": -0.006438622138300709,
+    "months_scored": 9,
+    "n_members": 4,
+    "name": "E3_FOUR_FAMILY",
+    "net_loss_removed": 0.0035385599090722846,
+    "one_minus_nmae": 0.8628207666398562,
+    "passed": false,
+    "positive_months": 6,
+    "rows": 19782,
+    "sign_test_p": 0.25390625,
+    "total": 0.6321430807993876
+   }
+  ],
+  "gate_modified": false,
+  "gate_version": "M270_MONTHLY_GATE_v1_frozen_2026-08-04",
+  "parent": {
+   "ficr": 0.40246401063156667,
+   "group_ficr": {
+    "1": 0.409551299643159,
+    "2": 0.46073846269466673,
+    "3": 0.33710226955687433
+   },
+   "group_nmae": {
+    "1": 0.13617589715402054,
+    "2": 0.14227310586805572,
+    "3": 0.15731590353073155
+   },
+   "one_minus_nmae": 0.8547450311490641,
+   "policy": "T0.5_G1.5",
+   "total": 0.6286045208903154
+  },
+  "predeclared_check": {
+   "H1_expectation": "악화 셀 수가 정책 재배분(47)보다 적다",
+   "H1_held": true,
+   "H1_which": [
+    "E2_CLASSIFIER_PLUS_ANALOG",
+    "E3_FOUR_FAMILY"
+   ],
+   "H2_expectation": "적어도 하나가 동결 게이트를 통과한다",
+   "H2_held": false,
+   "H2_which": [],
+   "verdict": "ENSEMBLE_AXIS_CLOSED"
+  }
+ },
+ "schema_version": 1,
+ "script_sha256": "9080717bc8ded41e9ac696f1954ddef1087ae3b1b2ec6576d46283ecf3491449",
+ "stage": "M271_P4_CYCLE13_ENSEMBLE"
+}

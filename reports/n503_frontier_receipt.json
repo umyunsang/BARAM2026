@@ -1,0 +1,82 @@
+{
+ "node": "N503_FRONTIER",
+ "grid": 130,
+ "frontier": [
+  [
+   0.8553575783525448,
+   0.41464144757666926
+  ],
+  [
+   0.8556526836488635,
+   0.4145765609791296
+  ],
+  [
+   0.8558272308924496,
+   0.4141919553794042
+  ],
+  [
+   0.856025980922688,
+   0.413713222682041
+  ],
+  [
+   0.858071435178748,
+   0.41333513654132914
+  ],
+  [
+   0.859051165303012,
+   0.41211098751447023
+  ],
+  [
+   0.8606424310893374,
+   0.39718639374876913
+  ],
+  [
+   0.861531702770718,
+   0.3962438648899628
+  ]
+ ],
+ "offsets": {
+  "nmae": 0.00108,
+  "ficr": 0.012027
+ },
+ "leaderboard": {
+  "rank20": {
+   "one_minus_nmae": 0.87991,
+   "ficr": 0.43952,
+   "total": 0.659715,
+   "our_max_ficr_at_that_nmae": NaN,
+   "slack": NaN,
+   "inside": false
+  },
+  "rank10": {
+   "one_minus_nmae": 0.8779,
+   "ficr": 0.44488,
+   "total": 0.66139,
+   "our_max_ficr_at_that_nmae": NaN,
+   "slack": NaN,
+   "inside": false
+  },
+  "rank1": {
+   "one_minus_nmae": 0.87964,
+   "ficr": 0.46767,
+   "total": 0.673655,
+   "our_max_ficr_at_that_nmae": NaN,
+   "slack": NaN,
+   "inside": false
+  },
+  "M261_online": {
+   "one_minus_nmae": 0.857885,
+   "ficr": 0.415169,
+   "total": 0.6365270000000001,
+   "our_max_ficr_at_that_nmae": 0.41333513654132914,
+   "slack": -0.0018338634586708702,
+   "inside": false
+  }
+ },
+ "our_max_online_equivalent_total": 0.6357032858600385,
+ "gap_to_066": 0.024296714139961484,
+ "model_fits": 0,
+ "lockbox_reopened": false,
+ "dacon_upload": false,
+ "external_actions": []
+}

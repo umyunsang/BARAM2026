@@ -1,0 +1,36 @@
+{
+  "event_type": "CLOSED",
+  "cycle_id": "S17-N10_ISSUANCE_CUBE_TIMING_AND_MISSINGNESS_AUDIT",
+  "stage_id": "S3",
+  "node_id": "S17-N10_ISSUANCE_CUBE_TIMING_AND_MISSINGNESS_AUDIT",
+  "actor": "root",
+  "occurred_at": "2026-08-08T20:28:07.235247+09:00",
+  "body": {
+    "predeclared_event_sha256": "12b808a614f4a3b37f23fd8155c17ef07b865cfd69b71179f20aafac7d12093a",
+    "receipt_path": "reports/s17_n10_issuance_cube_audit_receipt.json",
+    "receipt_sha256": "c2df3f198de69fa5f21255888794f69fc60ed78400d8337ae980ab2f3643cde3",
+    "code_sha256": "9c8578dc1649572ef6854fcd8f780c669d502489adcad48cd9cce24d745bfa94",
+    "config_sha256": "f173471a2c85a8505eaba5ef809ee3d8ff3cf26971e07045f7e42c6940a38798",
+    "data_sha256": "a54a05bc4026c5b0fd7ffaf6c23b3c22d1cb2ff0c84b9f9d6c0f2e9abde2d582",
+    "router_sha256": "80e37561a32fb2928d1a7505b652bb822f5b6989e73b6d7106afb0ae62041b43",
+    "policy_ids": [
+      "QUARANTINE_SCOPE_BREACH_DO_NOT_USE"
+    ],
+    "row_alignment_keys": [
+      "fold_id",
+      "group_id",
+      "forecast_kst_dtm"
+    ],
+    "evidence_class": "diagnostic",
+    "weights_fit": "fixed",
+    "result_status": "INCONCLUSIVE",
+    "score_bearing": false,
+    "comparison_index": null,
+    "stage_evidence_status": "INSUFFICIENT",
+    "next_handoff": [
+      "S17-N10B_ISSUANCE_CUBE_2022_2023_CORRECTED_AUDIT"
+    ],
+    "lockbox_2024_used": false,
+    "dacon_actions": []
+  }
+}

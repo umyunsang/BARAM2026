@@ -1,0 +1,36 @@
+{
+  "event_type": "CLOSED",
+  "cycle_id": "S17-N11_FOUR_MAPPING_TRAINING_WIND_DIAGNOSTIC",
+  "stage_id": "S5",
+  "node_id": "S17-N11_FOUR_MAPPING_TRAINING_WIND_DIAGNOSTIC",
+  "actor": "root",
+  "occurred_at": "2026-08-08T20:40:44.866172+09:00",
+  "body": {
+    "predeclared_event_sha256": "6488c954e8d760e506af6587bfa890bcff73ae1da76328d426776d6d1ba3d677",
+    "receipt_path": "reports/s17_n11_four_mapping_wind_receipt.json",
+    "receipt_sha256": "3025326dd352666e0bdb88cd09aa0b881488ad402d2c242a3ee5c32150cc678b",
+    "code_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "config_sha256": "8db4fe0fcf89dbe78611dc0ddf49489afb548ff61114fd68150341b30798a435",
+    "data_sha256": "7a633ae93a2e5a8df90eeb7fb16fb9077dc28695675ef0fa3ab25271cb13f39d",
+    "router_sha256": "80e37561a32fb2928d1a7505b652bb822f5b6989e73b6d7106afb0ae62041b43",
+    "policy_ids": [
+      "NO_RUN_SCADA_FREQUENCY_GATE"
+    ],
+    "row_alignment_keys": [
+      "fold_id",
+      "group_id",
+      "forecast_kst_dtm"
+    ],
+    "evidence_class": "diagnostic",
+    "weights_fit": "fixed",
+    "result_status": "INCONCLUSIVE",
+    "score_bearing": false,
+    "comparison_index": null,
+    "stage_evidence_status": "INSUFFICIENT",
+    "next_handoff": [
+      "S17-N11A_FOUR_MAPPING_10MIN_SCADA_CORRECTED_DIAGNOSTIC"
+    ],
+    "lockbox_2024_used": false,
+    "dacon_actions": []
+  }
+}

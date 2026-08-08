@@ -1,0 +1,131 @@
+{
+ "axis_external_data": {
+  "anonymous_listing_verified": true,
+  "availability_time_provable_from_key": true,
+  "coverage_verified": [
+   "gefs.20220401/",
+   "gefs.20250101/"
+  ],
+  "cycle_policy": "previous-day 18Z only",
+  "forbidden_confirmed": [
+   "reanalysis",
+   "post-hoc correction",
+   "post-reference-time observation"
+  ],
+  "justification_ledger_required": [
+   "source url",
+   "bucket and key path",
+   "cycle time",
+   "collection time",
+   "variables used",
+   "license",
+   "preprocessing code"
+  ],
+  "key_structure": "gefs.YYYYMMDD/CC/ with CC in {00,06,12,18}",
+  "license": "NOAA NODD open to the public; attribution requested",
+  "margin_hours": 10,
+  "source": "NOAA GEFS via AWS Open Data (bucket noaa-gefs-pds)",
+  "verdict": "PASS"
+ },
+ "axis_new_dependency": {
+  "conditions": [
+   "pin versions in pyproject.toml",
+   "fix seeds/threads",
+   "reject non-reproducible families"
+  ],
+  "frameworks_adopted": {
+   "networkx": {
+    "license": "BSD-3-Clause",
+    "role": "experiment graph",
+    "version": "3.6.1"
+   },
+   "optuna": {
+    "license": "MIT",
+    "role": "ask-and-tell loop",
+    "version": "4.9.0"
+   }
+  },
+  "frameworks_rejected": {
+   "dvc": "duplicates existing hash/receipt discipline; staging friction",
+   "mlflow": "duplicates receipt system",
+   "prefect": "daemon/cluster oriented; conflicts with single-root-session rule",
+   "ray": "cluster oriented; no benefit at this scale",
+   "snakemake": "file-rule DAG does not express a hypothesis graph"
+  },
+  "installed": {
+   "catboost": "1.2.10",
+   "lightgbm": "4.7.0",
+   "numpy": "2.5.1",
+   "pandas": "2.3.3",
+   "pyarrow": "23.0.1",
+   "scikit-learn": "1.9.0",
+   "scipy": "1.18.0",
+   "xgboost": "3.3.0"
+  },
+  "not_installed": [
+   "torch",
+   "ngboost"
+  ],
+  "pypi_reachable": true,
+  "verdict": "PASS"
+ },
+ "axis_pretrained_weights": {
+  "applicability": "LOW_PRIORITY — history-driven forecasters, while this task is covariate-driven at 12-36h lead; distributional learning targets the diagnosed defect more directly",
+  "eligible": {
+   "amazon/chronos-bolt-base": {
+    "created": "2024-11-25",
+    "license": "apache-2.0"
+   },
+   "amazon/chronos-t5-base": {
+    "created": "2024-02-21",
+    "license": "apache-2.0"
+   },
+   "google/timesfm-2.0-500m-pytorch": {
+    "created": "2024-12-24",
+    "license": "apache-2.0"
+   },
+   "ibm-granite/granite-timeseries-ttm-r2": {
+    "created": "2024-10-08",
+    "license": "apache-2.0"
+   },
+   "time-series-foundation-models/Lag-Llama": {
+    "created": "2024-02-07",
+    "license": "apache-2.0"
+   }
+  },
+  "evidence_caveat": "createdAt is the Hugging Face repository creation date, not a formal release date; margin to the 2026-07-05 cutoff is about 19 months for every eligible model",
+  "ineligible": {
+   "Salesforce/moirai-1.1-R-large": {
+    "license": "cc-by-nc-4.0",
+    "reason": "non-commercial"
+   }
+  },
+  "rule": "public release on or before 2026-07-05 under commercial-use-permitting OSS license",
+  "verdict": "PASS_PARTIAL"
+ },
+ "dacon_upload": false,
+ "decided_at_kst": "2026-08-04",
+ "external_actions": [
+  "read-only public HTTPS reads of PyPI, Hugging Face API, AWS Open Data registry and S3 listing"
+ ],
+ "lockbox_reopened": false,
+ "model_fits": 0,
+ "new_2024_evaluation": false,
+ "reference_time_contract": {
+  "data_available_kst_dtm_count": 365,
+  "data_available_kst_first": "2024-12-31 13:00:00",
+  "data_available_kst_last": "2025-12-30 13:00:00",
+  "forecast_kst_first": "2025-01-01 01:00:00",
+  "forecast_kst_last": "2026-01-01 00:00:00",
+  "lead_hours": [
+   12,
+   36
+  ],
+  "reference_time_utc": "04:00",
+  "source": "open.zip:test/gfs_test.csv"
+ },
+ "report_path": "reports/m270_capability_gate.md",
+ "report_sha256": "7e9493c3c4d01f0b6756d311c5514a691a4ffed475178d21759acca5750a2ad9",
+ "schema_version": 1,
+ "stage": "M270_P2_CAPABILITY_GATE"
+}

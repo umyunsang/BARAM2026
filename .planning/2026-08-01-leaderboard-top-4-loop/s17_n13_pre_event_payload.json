@@ -1,0 +1,26 @@
+{
+  "event_type": "PREDECLARED",
+  "cycle_id": "S17-N13_R2_TWO_COMPONENT_VERTICAL_PCA_STRICT_PREQUENTIAL",
+  "stage_id": "S6",
+  "node_id": "S17-N13_R2_TWO_COMPONENT_VERTICAL_PCA_STRICT_PREQUENTIAL",
+  "actor": "root",
+  "occurred_at": "2026-08-08T20:59:15.160115+09:00",
+  "body": {
+    "preregistration_sha256": "db53b395560056fd54d6ffd42b5cd5264db667621cf268e3bdbef3063047dc7b",
+    "parent_ids": [
+      "S17-N12_VERTICAL_PROFILE_TERRAIN_PREREQUISITE_AUDIT"
+    ],
+    "mechanism": "A low-dimensional, fold-local source-separated representation of comparable vertical vectors may regularize the current 126-column raw vertical block without adding new information or mixing incompatible 50 m extrema.",
+    "treatment": "Four fold-local PCA features (2 GFS + 2 LDAPS).",
+    "control": "Four constant-zero matched columns under the identical direct-CF learner, calibration and fixed action policy; CHAMPION remains incumbent.",
+    "metric": "Exact outer Q3+Q4 official Total under S17-N3 joint dependent bootstrap; mechanism delta candidate-control and promotion delta candidate-incumbent.",
+    "min_effect": 0.00357236259,
+    "score_bearing": true,
+    "novelty_signature": "R2_VERTICAL_PCA2X2_DIRECT_CF_STRICT_V1",
+    "basis_evidence_ids": [
+      "RWA_DATA_R2",
+      "S17_N12_READY_PCA_ONLY",
+      "S17_N3_PROTOCOL"
+    ]
+  }
+}

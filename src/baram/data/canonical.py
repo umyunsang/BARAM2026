@@ -6,7 +6,8 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-from baram.data.archive import read_csv_member
+from baram.data.archive import read_csv_member, read_info_workbook
+from baram.data.turbines import parse_turbine_workbook
 from baram.exceptions import ContractError, DataQualityError
 
 
@@ -20,6 +21,7 @@ class CanonicalTables:
     ldaps_test: pd.DataFrame
     scada_vestas: pd.DataFrame
     scada_unison: pd.DataFrame
+    turbines: pd.DataFrame
 
 
 def _parse_timestamp(frame: pd.DataFrame, column: str) -> pd.DataFrame:
@@ -140,6 +142,7 @@ def load_canonical_tables(path: Path) -> CanonicalTables:
         raise ContractError("LDAPS train/test schemas differ")
     scada_vestas = _canonicalize_scada(read_csv_member(path, "train/scada_vestas_train.csv"))
     scada_unison = _canonicalize_scada(read_csv_member(path, "train/scada_unison_train.csv"))
+    turbines = parse_turbine_workbook(read_info_workbook(path))
     return CanonicalTables(
         labels_long=labels,
         submission_keys=sample,
@@ -149,4 +152,5 @@ def load_canonical_tables(path: Path) -> CanonicalTables:
         ldaps_test=ldaps_test,
         scada_vestas=scada_vestas,
         scada_unison=scada_unison,
+        turbines=turbines,
     )

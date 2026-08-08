@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "node_id": "S17-N22A_M115_TERRAIN_NO_REFIT_TYPED_PROVENANCE_RECOVERY",
+  "parent_id": "S17-N22_M115_TERRAIN_SX300_H8_STRICT_PREQUENTIAL_COMPARISON",
+  "recovery_scope": {
+    "predictions_source": "artifacts/backtests/s17_n22_m115_terrain/predictions.parquet",
+    "predictions_sha256": "ccb1ae4fe0fcf6f1828ee0b7db128d487b733f81f9da80d4e6e67b9827a30e25",
+    "materialization_details_source": "artifacts/backtests/s17_n22_m115_terrain/materialization_details.json",
+    "materialization_details_sha256": "6c2d73829f47546106747d6ee537192d70b5a5471fe56768a1b781903f17f454",
+    "allowed_changes": [
+      "byte-copy frozen predictions",
+      "byte-copy frozen materialization details",
+      "normalize only provenance time fields to ISO-8601 strings",
+      "write provenance, family manifest, evaluation, receipt"
+    ],
+    "forbidden_changes": [
+      "model fit",
+      "predict/predict_proba",
+      "terrain or control action recomputation",
+      "action/prediction/calibration/policy change",
+      "feature/parameter/iteration change",
+      "assessment actual before family hash freeze"
+    ]
+  },
+  "typed_provenance": {
+    "columns": [
+      "model_id",
+      "test_fold",
+      "fit_max_time",
+      "selection_max_time",
+      "policy_id",
+      "predeclaration_sha256",
+      "prediction_sha256",
+      "weights_fit"
+    ],
+    "dtype": "all string",
+    "rows": 6,
+    "models": [
+      "CHAMPION",
+      "M115_REFIT_ZERO",
+      "TERRAIN_SX300_H8_M115_REPLACED"
+    ],
+    "folds": [
+      "dev-2023-Q3",
+      "dev-2023-Q4"
+    ],
+    "champion_source": "N7 provenance values with time values normalized to ISO strings",
+    "recovered_models_predeclaration_sha256": "N22A predeclaration sha256",
+    "fit_times": "frozen materialization fit_label_available_max",
+    "selection_time": "2023-07-01T00:00:00",
+    "vector_hash": "KEYS as strings joined plus little-endian float64 action bytes"
+  },
+  "pre_score_guards": {
+    "partial_hashes_exact": true,
+    "predictions_byte_copy_exact": true,
+    "details_byte_copy_exact": true,
+    "details_all_guards_pass": true,
+    "fits_inherited": 6,
+    "new_fits": 0,
+    "new_predict_calls": 0,
+    "action_max_abs_change": 0.0,
+    "row_count": 19440,
+    "key_unique": true,
+    "finite_family": true,
+    "control_max_abs_kwh": 0.0,
+    "zero_outer_max_abs_kwh": 0.0,
+    "q2_family_equal": true,
+    "typed_provenance_roundtrip_exact": true,
+    "assessment_actual_values_read": 0
+  },
+  "evaluation": {
+    "protocol": "S17-N3",
+    "comparison_index": 4,
+    "incumbent": "CHAMPION",
+    "n_rep": 4999,
+    "seed": 20260808,
+    "block_lengths": [
+      3,
+      7,
+      14
+    ],
+    "margin_total": 0.001635,
+    "outer_assessment_folds": [
+      "dev-2023-Q3",
+      "dev-2023-Q4"
+    ],
+    "promotion": "candidate delta vs Champion >=0.001635 AND promotion_stable_all_blocks AND inference SUPPORTED",
+    "goal_total": 0.66
+  },
+  "failure_contract": "Any recovery gate failure closes diagnostic without score or comparison. Only after family-manifest hash freeze may N7 actual be joined and comparison index 4 consumed.",
+  "next_handoff_on_failure": [
+    "S17-N23_POST_TERRAIN_FRONTIER_RESEARCH_INTAKE"
+  ],
+  "prohibited": [
+    "current unbounded _surface",
+    "np.load on M64B NPZ",
+    "2024/test values",
+    "assessment actual before materialization freeze",
+    "policy/hyperparameter/feature search",
+    "external requests",
+    "rejected ECMWF/quarantined N10",
+    "dependency change",
+    "Dacon/account mutation",
+    "refit",
+    "prediction recomputation"
+  ]
+}

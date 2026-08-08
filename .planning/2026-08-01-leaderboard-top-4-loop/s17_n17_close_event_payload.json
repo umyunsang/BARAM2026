@@ -1,0 +1,42 @@
+{
+  "event_type": "CLOSED",
+  "cycle_id": "S17-N17_R4_NO_REFIT_STRICT_SOURCE_SEPARATION_COMPARISON",
+  "stage_id": "S6",
+  "node_id": "S17-N17_R4_NO_REFIT_STRICT_SOURCE_SEPARATION_COMPARISON",
+  "actor": "root",
+  "occurred_at": "2026-08-08T21:51:38.592562+09:00",
+  "body": {
+    "predeclared_event_sha256": "8beeaebbff11b1caf5a5b0ca0261dab6d8a831f62d7625476f6ad9f102b683c2",
+    "receipt_path": "reports/s17_n17_r4_source_separation_receipt.json",
+    "receipt_sha256": "09264ee9a9de839a2927b085e827b163c5d41b32e279f9f1ce654ecd12e5508b",
+    "code_sha256": "99a76a469ae4a8c150c6dff898f2e7829a4320fe589d949176b89d133e5f001f",
+    "config_sha256": "623e7590dc764c8945c7dd4c9b1aa4481c876fa98452f7e5c36ee7cbb3e7db4a",
+    "data_sha256": "c98af5d4b88ef83bf07352de097450ad3c3eb3bdedec9eeab4d63937a36d0a25",
+    "router_sha256": "80e37561a32fb2928d1a7505b652bb822f5b6989e73b6d7106afb0ae62041b43",
+    "policy_ids": [
+      "CHAMPION",
+      "R4_CONCAT_D",
+      "R4_LDAPS_ONLY",
+      "R4_GFS_ONLY",
+      "R4_SEP_EQUAL",
+      "R4_SEP_Q2_WEIGHTED"
+    ],
+    "row_alignment_keys": [
+      "fold_id",
+      "group_id",
+      "forecast_kst_dtm"
+    ],
+    "evidence_class": "foldoutside",
+    "weights_fit": "fold_outside",
+    "result_status": "REFUTED",
+    "score_bearing": true,
+    "comparison_index": 3,
+    "official_total": 0.6183209846580615,
+    "stage_evidence_status": "RESEARCHED",
+    "next_handoff": [
+      "S17-N18_POST_RWA_FRONTIER_RESEARCH_INTAKE"
+    ],
+    "lockbox_2024_used": false,
+    "dacon_actions": []
+  }
+}

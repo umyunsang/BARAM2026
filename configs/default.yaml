@@ -1,6 +1,9 @@
 repo_root: /Users/um-yunsang/BARAM2026
 open_zip:
-  path: /Users/um-yunsang/Downloads/open.zip
+  # 2026-08-05 22:19 다른 대회 다운로드가 `open.zip` 이름을 덮어썼다(Dacon 은 모든
+  # 대회 산출물을 open.zip 으로 내려준다). 바람 원본은 `open (1).zip` 으로 남아 있고
+  # sha256 이 아래 동결값과 일치한다 — **해시는 바꾸지 않았다. 경로만 옮긴다.**
+  path: /Users/um-yunsang/Downloads/open (1).zip
   sha256: 920be0c458d820e855bf79dd25723146f52ce1736138aedba5e6bc853f1f720b
 baseline_notebook:
   path: /Users/um-yunsang/Downloads/baseline.ipynb

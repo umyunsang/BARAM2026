@@ -1,0 +1,23 @@
+{
+ "champion": 0.6361842493883538,
+ "pooled": 0.6305714073045187,
+ "arb": {
+  "point_cand": 0.6305714073045187,
+  "point_champ": 0.6361842493883538,
+  "paired_mean": -0.00557503258337797,
+  "paired_sd": 0.0020571300019515707,
+  "p_better": 0.0,
+  "ci95": [
+   -0.009810653153410986,
+   -0.0016765849153593585
+  ],
+  "n_rep": 400,
+  "block_days": 7,
+  "point_delta": -0.005612842083835168,
+  "min_effect": 0.001,
+  "p_required_unadjusted": 0.9,
+  "p_required_adjusted": 0.9,
+  "n_comparisons_so_far": 1,
+  "took_champion": false
+ }
+}

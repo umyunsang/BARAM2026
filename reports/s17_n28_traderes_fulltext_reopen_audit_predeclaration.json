@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "node_id": "S17-N28_TRADERES_FULLTEXT_SCALAR_GRADIENT_REOPEN_AUDIT",
+  "created_at": "2026-08-09T04:21:20.604395+09:00",
+  "stage_id": "S6",
+  "reopen_authority": {
+    "new_evidence_after_n27_close": true,
+    "parent_cycle_id": "S17-N27_POST_HALT_ORIENTED_SCALAR_GRADIENT_RESEARCH_INTAKE",
+    "parent_closed_event_sequence": 156,
+    "parent_closed_event_sha256": "977a30203efc6fd0f1d6b14b4f74e7ccf7e9328c1d7633f2126d99071c1f2061",
+    "parent_receipt_path": "reports/s17_n27_post_halt_scalar_gradient_intake_receipt.json",
+    "parent_receipt_sha256": "3667985cef45b4d97848a51aec6f4730e7f71b986859bba9230eeed5db66f5b8"
+  },
+  "new_trigger": {
+    "source_1": {
+      "title": "New forecast tools to enhance the value of VRE on the electricity markets, TradeRES Deliverable D4.9 edition 2",
+      "edition_date": "2024-01-26",
+      "ares_reference": "Ares(2025)354641 - 16/01/2025",
+      "official_url": "https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e51750507a&appId=PPGMS",
+      "retrieved_pdf_bytes": 3948209,
+      "retrieved_pdf_sha256": "f58e65e25870ec4a1f3833b0ec3a0897bde36c8f9cb3d7c52f90f1efc220c5f6",
+      "direct_new_detail": "Equations 16-18 prescribe centred MSLP spatial derivatives, time derivative of gradient norm, and 2nd/98th spatial-percentile ramp events."
+    },
+    "source_2": {
+      "title": "Couto & Estanqueiro (2022), Enhancing wind power forecast accuracy using WRF NWP-based features and ANN",
+      "doi": "10.1016/j.renene.2022.11.022",
+      "official_repository_url": "https://repositorio.lneg.pt/bitstream/10400.9/4016/2/RenewableEnergy_Vol.201_1076-1085.pdf",
+      "retrieval_url": "https://r.jina.ai/https://repositorio.lneg.pt/bitstream/10400.9/4016/2/RenewableEnergy_Vol.201_1076-1085.pdf",
+      "retrieved_text_bytes": 56493,
+      "retrieved_text_sha256": "ed3d342c63eb55751f9e69bd55e048b2b24a97b178e49964d99540838a40f3dd",
+      "direct_new_detail": "Equation 1 fixes first-order centred finite differences for MSLPGrad on projected x/y; the 00 UTC WRF run covers 48 h and evaluates the last 24 h; full text exposes feature-selection and spatial-PCA boundaries."
+    }
+  },
+  "objective": "Audit whether the newly retrieved exact primary/full-text formulas cure every N27 admission gate. At most one exact no-fit prerequisite may be selected; otherwise close NONE and restore the exhausted halt.",
+  "fixed_questions": [
+    "Does the full text fix source, field, projection, grid domain, boundary handling, output reduction, and local supplied mapping without analyst choice?",
+    "Does it isolate a 12-36 h wind-power effect for that same treatment rather than a selected multifeature system or unevaluated alert?",
+    "Is its information/operation absent from current fixed representation rather than merely a compression of already represented local grids?",
+    "Can the treatment be computed strictly same-issuance under the unchanged runtime with no external inference/data at deployment?"
+  ],
+  "admission_gates": [
+    "direct pre-cutoff formula/mechanism support",
+    "literal supplied field and unit availability in both or one source",
+    "strict same-issuance computation and D-1 14:00 symmetry",
+    "one deterministic grid/coordinate/gradient/projection formula with no tuned scale, level, subset, or aggregation",
+    "operation-level nonduplication against current source and closed lanes",
+    "plausible target-scale effect evidence rather than generic meteorological relevance",
+    "commercial/open-source compatibility if external code is needed; external code is not preferred"
+  ],
+  "selection_rule": "Select at most one no-fit prerequisite only if every N27 admission gate is now directly supported by one internally consistent treatment. Cross-paper/source bridging, unisolated suite gains, future-work validation, or local grid/domain substitution forces NONE.",
+  "fixed_inputs": {
+    "AGENTS.md": "91a11f95f94e8de86f5c84b204e1893830b3ed5693e3d7ede7f2e351e9891e9c",
+    "reports/s17_n27_post_halt_scalar_gradient_intake_receipt.json": "3667985cef45b4d97848a51aec6f4730e7f71b986859bba9230eeed5db66f5b8",
+    "research/lanes/s17_n27_scalar_gradient_physics.md": "da5a2e16e455c51173d2285beea85522ccfe0a456e8b486f3087d9f988d599b3",
+    "research/lanes/s17_n27_scalar_gradient_repo_novelty.md": "1440230748fa34191dab57d152e753ab1461afee8df048ada519c8158cd7195c",
+    "research/lanes/s17_n27_scalar_gradient_schema_runtime.md": "aefae874bc1e165a9a5f1b3a0d997192c0f16241d1ef11a5facbc5acd962b673",
+    "artifacts/manifests/prepare.json": "ca4908d7f98639b13da80febcd071cd805369e8e044bb4d7b97f793d2703ca46",
+    "src/baram/features/weather.py": "d65a18fdf0b025d1863c783d5997f77824a3347ab87e78a4357fe2afeb2d1905",
+    "src/baram/features/geometric.py": "86e977ed4167c3f9229d0ef017da678cf709fdf39fe774f908a2edc1182406d4",
+    ".planning/2026-08-01-leaderboard-top-4-loop/run_spatial_graph_spectrum_rank.py": "7c1138d06a07f75f881a459ac7d315cbf96473d864f7057d3338e7e9fe31a86c",
+    ".planning/2026-08-01-leaderboard-top-4-loop/run_daily_pca_classifier.py": "c6507ccb560985eff770ebb7547f63e306074ea3e838fe1c3cf8c59a34005f95",
+    "external:TradeRES_D4.9_Edition2_PDF": "f58e65e25870ec4a1f3833b0ec3a0897bde36c8f9cb3d7c52f90f1efc220c5f6",
+    "external:Couto_Estanqueiro_2022_fulltext_jina_extract": "ed3d342c63eb55751f9e69bd55e048b2b24a97b178e49964d99540838a40f3dd",
+    "inputs/competition/open_wind_236727.zip": "920be0c458d820e855bf79dd25723146f52ce1736138aedba5e6bc853f1f720b",
+    "inputs/notebooks/baseline.ipynb": "712b26f4d2748860c94cff1e0100c23810468c983173f8e9ef8d009fe82df48c"
+  },
+  "input_bundle_sha256": "275ea0251b87db3db7fc2af497bd04f269f68a17ed76ddd67da9cf609670045d",
+  "forbidden": [
+    "raw supplied weather values",
+    "any label or actual_kwh",
+    "2024/test values or result aggregates",
+    "model result scores",
+    "fits",
+    "predictions",
+    "policy or metric calls",
+    "new external data/object/API bodies or attachments",
+    "model weights",
+    "dependency changes",
+    "Dacon/accounts",
+    "retuning any closed family"
+  ],
+  "score_class": "NON_SCORE_BEARING",
+  "comparison_index": null,
+  "comparison_count_before": 4,
+  "next_score_bearing_comparison_index_if_admitted": 5,
+  "fit_budget": 0,
+  "prediction_budget": 0,
+  "project_metric_budget": 0,
+  "additional_external_body_budget": 0,
+  "lockbox_2024_used": false,
+  "dacon_actions": []
+}

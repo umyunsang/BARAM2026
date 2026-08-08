@@ -1,0 +1,340 @@
+{
+  "schema_version": 1,
+  "lane_id": "V5-DISCOVERY-SCIENCE",
+  "adjudicated_at": "2026-08-09T05:15:11.348774+09:00",
+  "artifact": {
+    "path": "research/lanes/v5_discovery_science.md",
+    "sha256": "67aa1b3c0bafc17cd1f7999f534b33f6ea9ac4cfac915c5430434a192e7b5657",
+    "reported_sha256": "67aa1b3c0bafc17cd1f7999f534b33f6ea9ac4cfac915c5430434a192e7b5657",
+    "hash_match": true
+  },
+  "bounds": {
+    "sources": 10,
+    "source_ids": [
+      "S01",
+      "S02",
+      "S03",
+      "S04",
+      "S05",
+      "S06",
+      "S07",
+      "S08",
+      "S09",
+      "S10"
+    ],
+    "max_sources": 10,
+    "claims": 22,
+    "tag_counts": {
+      "directly_supported": 13,
+      "contradicts_premise": 6,
+      "near_match_only": 4,
+      "insufficient": 3
+    },
+    "exclusive_output_only": true,
+    "prohibited_actions_observed": []
+  },
+  "root_source_validation": {
+    "landing_page_fetches": {
+      "S01": {
+        "url": "https://public.dhe.ibm.com/software/analytics/spss/documentation/modeler/14.2/en/CRISP_DM.pdf",
+        "provider": "exa",
+        "content_type": "text",
+        "length": 25000,
+        "content_sha256": "8141a387284d425c9ffe97cbc982574e917e559ae598b27d94a47e912e12f981"
+      },
+      "S02": {
+        "url": "https://doi.org/10.1126/science.1165620",
+        "provider": "exa",
+        "content_type": "text",
+        "length": 5151,
+        "content_sha256": "82d4e5a0a4a7dfbd878a1e0deab4f73d3f349b24afe5c45dea36ae2ca3b6c986"
+      },
+      "S03": {
+        "url": "https://arxiv.org/abs/1406.3896v1",
+        "provider": "exa",
+        "content_type": "text",
+        "length": 25000,
+        "content_sha256": "5a3fc32294c02966ada4d0de37f8bb2f2af90003d53241e5a39fc997a9f0a495"
+      },
+      "S04": {
+        "url": "https://jmlr.org/papers/v18/16-558.html",
+        "provider": "exa",
+        "content_type": "text",
+        "length": 1272,
+        "content_sha256": "7a87a9e49cec78e2e147edfdbb9c72c1b0df2a5e2c1779cbb578b3fdab32487d"
+      },
+      "S05": {
+        "url": "https://proceedings.mlr.press/v80/falkner18a.html",
+        "provider": "exa",
+        "content_type": "text",
+        "length": 5061,
+        "content_sha256": "ab2af450e64c995fed976263a15e53c3a0826ece3007019645d4350c58178cf0"
+      },
+      "S06": {
+        "url": "https://aclanthology.org/2024.findings-emnlp.815/",
+        "provider": "exa",
+        "content_type": "text",
+        "length": 2772,
+        "content_sha256": "7eeae507f9db0896eb1abe2d421356f3baafaa3c341859f4974a7a407cd19ef3"
+      },
+      "S07": {
+        "url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/0d70af566e69f1dfb687791ecf955e28-Abstract-Conference.html",
+        "provider": "exa",
+        "content_type": "text",
+        "length": 1650,
+        "content_sha256": "dc5a37d7798a4849f62ba941e81290f66474443dc5563f26292b5599ffafc9ac"
+      },
+      "S08": {
+        "url": "https://arxiv.org/abs/2410.05080v3",
+        "provider": "exa",
+        "content_type": "text",
+        "length": 25000,
+        "content_sha256": "81184fa547274d640148bcd0531244dcea3d8d911b954931077024169f9390af"
+      },
+      "S09": {
+        "url": "https://arxiv.org/abs/2502.13138v1",
+        "provider": "exa",
+        "content_type": "text",
+        "length": 25000,
+        "content_sha256": "693d3e1e96105a4615e6216ed91831297e749ddcd1fcfafd064f50d776becb69"
+      },
+      "S10": {
+        "url": "https://doi.org/10.1038/s41586-026-10644-y",
+        "provider": "exa",
+        "content_type": "text",
+        "length": 25000,
+        "content_sha256": "98477a694e7e4722204c1e74d090cba080b6192d789c04d7efafb96147e9a429"
+      }
+    },
+    "fulltext_downloads": {
+      "S01": {
+        "url": "https://public.dhe.ibm.com/software/analytics/spss/documentation/modeler/14.2/en/CRISP_DM.pdf",
+        "status": 200,
+        "content_type": "application/pdf",
+        "bytes": 1048443,
+        "pdf": true,
+        "sha256": "a4541dafad876c3efb2b674f9dddbe96927648d7c7f8579ff0a009d485f2b8fa",
+        "pages": 53,
+        "text_chars": 106240
+      },
+      "S03": {
+        "url": "https://arxiv.org/pdf/1406.3896v1",
+        "status": 200,
+        "content_type": "application/pdf",
+        "bytes": 1010029,
+        "pdf": true,
+        "sha256": "374495a402b5a04da48ccdcd4853944f63d97af9f17ff229bf6c9a2cdfaaaa48",
+        "pages": 12,
+        "text_chars": 34474
+      },
+      "S04": {
+        "url": "https://jmlr.org/papers/volume18/16-558/16-558.pdf",
+        "status": 200,
+        "content_type": "application/pdf",
+        "bytes": 1579220,
+        "pdf": true,
+        "sha256": "09c14cb28ec214e63378c8c0e952cecc7edf12796dda0dbadc698d2a3587307b",
+        "pages": 52,
+        "text_chars": 128900
+      },
+      "S05": {
+        "url": "https://proceedings.mlr.press/v80/falkner18a/falkner18a.pdf",
+        "status": 200,
+        "content_type": "application/pdf",
+        "bytes": 551850,
+        "pdf": true,
+        "sha256": "774cc0ce958873154145bbd87e8b1d99ee282adb4599a8fdf30df314a63c5fa2",
+        "pages": 10,
+        "text_chars": 48693
+      },
+      "S06": {
+        "url": "https://aclanthology.org/2024.findings-emnlp.815.pdf",
+        "status": 200,
+        "content_type": "application/pdf",
+        "bytes": 17341067,
+        "pdf": true,
+        "sha256": "c1a51ba6f496e9aee8f2255036c97ebf261b407d3942fc9749d133978f4ef429",
+        "pages": 36,
+        "text_chars": 124039
+      },
+      "S07": {
+        "url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/0d70af566e69f1dfb687791ecf955e28-Paper-Conference.pdf",
+        "status": 200,
+        "content_type": "application/pdf",
+        "bytes": 1456777,
+        "pdf": true,
+        "sha256": "fa4fa59a12e9bcc3591bc098f392ca7993db56f9e66b2c967c8e9b6d063a6694",
+        "pages": 24,
+        "text_chars": 81276
+      },
+      "S08": {
+        "url": "https://arxiv.org/pdf/2410.05080v3",
+        "status": 200,
+        "content_type": "application/pdf",
+        "bytes": 2011302,
+        "pdf": true,
+        "sha256": "da5b44b1d7ff4992127ce32daf5343031a109b7104d743bb18f0803fc904da7b",
+        "pages": 60,
+        "text_chars": 188517
+      },
+      "S09": {
+        "url": "https://arxiv.org/pdf/2502.13138v1",
+        "status": 200,
+        "content_type": "application/pdf",
+        "bytes": 648632,
+        "pdf": true,
+        "sha256": "5fc52573eab9c8cb568b0c5aab6ee75752d198504babf8278ad23fe3d542cb41",
+        "pages": 17,
+        "text_chars": 49756
+      },
+      "S10": {
+        "url": "https://www.nature.com/articles/s41586-026-10644-y.pdf",
+        "status": 200,
+        "content_type": "application/pdf",
+        "bytes": 5121974,
+        "pdf": true,
+        "sha256": "351f49d89d2f4f4ed84eed4225c09cc95470c41aa3becd0aa3e06b3bd8ba54c3",
+        "pages": 28,
+        "text_chars": 124389
+      }
+    },
+    "verbatim_checks": [
+      {
+        "claims": [
+          "C01",
+          "C02"
+        ],
+        "result": "PASS",
+        "quote": "The sequence of the phases is not strict. In fact, most projects move back and forth between phases as necessary.",
+        "source": "S01 IBM CRISP-DM guide"
+      },
+      {
+        "claims": [
+          "C03",
+          "C04"
+        ],
+        "result": "PASS",
+        "quote": "over 10,000 different research units in a nested treelike structure, 10 levels deep, that relates the 6.6 million biomass measurements to their logical description",
+        "source": "S02 Science 2009 abstract"
+      },
+      {
+        "claims": [
+          "C05",
+          "C06"
+        ],
+        "result": "PASS",
+        "quote": "decide when to pause training of current models, resume training of previous models, or start new models ... the training loss during the fitting procedure roughly follows an exponential decay",
+        "source": "S03 arXiv 1406.3896v1"
+      },
+      {
+        "claims": [
+          "C07",
+          "C08"
+        ],
+        "result": "PASS",
+        "quote": "the performance on a smaller resource is not indicative of that on a larger resource. Hence, these problems are particularly difficult for Hyperband, since the benefit of early-stopping can be muted.",
+        "source": "S04 JMLR 18(185) §4.4.3"
+      },
+      {
+        "claims": [
+          "C09"
+        ],
+        "result": "PASS",
+        "quote": "we also sample a constant fraction rho of the configurations uniformly at random ... BOHB always uses the model for the largest budget for which enough observations are available",
+        "source": "S05 PMLR 80 §4"
+      },
+      {
+        "claims": [
+          "C13",
+          "C14"
+        ],
+        "result": "PASS",
+        "quote": "we represent transforms in code as a column data flow graph ... coverage of the ground truth for forming statistical models with conceptual variables is below 13%, and for operationalizing variables, it is below 27%",
+        "source": "S06 Findings of EMNLP 2024"
+      },
+      {
+        "claims": [
+          "C10",
+          "C11",
+          "C12"
+        ],
+        "result": "PASS",
+        "quote": "264 tasks ... 903 synthetic tasks ... even the best system scores only 25% ... Contexts (c): Boundary conditions ... hypothesis semantic tree",
+        "source": "S07 DiscoveryBench ICLR 2025"
+      },
+      {
+        "claims": [
+          "C15",
+          "C16"
+        ],
+        "result": "PASS",
+        "quote": "the best-performing agent can only solve 32.4% of the tasks independently and 34.3% with expert-provided knowledge ... rubrics into five stages: Data Loading, Data Processing, Modeling or Visualization, Output formatting, and Output Saving",
+        "source": "S08 ScienceAgentBench arXiv v3"
+      },
+      {
+        "claims": [
+          "C17",
+          "C18"
+        ],
+        "result": "PASS",
+        "quote": "proposes exactly one \"atomic\" change ... Debugging if a buggy node remains within a certain debug depth ... let h: S -> R be a stateless objective function",
+        "source": "S09 AIDE arXiv 2502.13138v1"
+      },
+      {
+        "claims": [
+          "C19",
+          "C20"
+        ],
+        "result": "PASS",
+        "quote": "The Evolution agent generates new hypotheses; it does not modify or replace existing ones ... These evaluations reflect subjective expert assessments, not objective ground truth ... this is a preliminary finding requiring further validation",
+        "source": "S10 Nature Co-Scientist"
+      }
+    ],
+    "date_audit": {
+      "S10": {
+        "online": "2026-05-19",
+        "issue": "2026-07 (article pages 487-496)",
+        "publisher_metadata": {
+          "dc.date": "2026-05-19",
+          "citation_online_date": "2026/05/19",
+          "citation_publication_date": "2026/07"
+        },
+        "cutoff": "2026-07-05",
+        "root_ruling": "ADMITTED_ON_ONLINE_PUBLICATION_DATE",
+        "safeguard": "DS-O1/DS-O6 recommendations must remain independently supported by S01-S09 so no design element depends solely on S10."
+      }
+    }
+  },
+  "disposition": "ACCEPT_WITH_SCOPE_DOWNGRADE",
+  "scope_downgrades": [
+    {
+      "item": "M0-M6 maturity rubric and closure-key tuple",
+      "to": "provisional governance design",
+      "reason": "synthesized by the lane, not a published standard"
+    },
+    {
+      "item": "multi-fidelity ladder (DS-O3), learned acquisition (DS-O4), tournament promotion (DS-O5)",
+      "to": "BLOCKED_PENDING_LOCAL_CALIBRATION_OR_REJECTED",
+      "reason": "Hyperband records its own rank-informativeness failure case; AIDE assumes a stateless scalar evaluator; Co-Scientist ranking is subjective and preliminary."
+    },
+    {
+      "item": "any performance implication",
+      "to": "NONE",
+      "reason": "C22 stands: no source evidences a BARAM Total gain from a discovery graph."
+    }
+  ],
+  "admitted_conclusion": "WORKFLOW_REPAIR_CONDITIONALLY_SUPPORTED_NO_PERFORMANCE_GUARANTEE",
+  "admitted_ds_elements": [
+    "typed node kinds and immutable typed edges",
+    "separate graph layers and stage_depth vs node_depth",
+    "hypothesis/test/falsifier/inconclusive/result/interpretation/child-rule contract",
+    "scoped closure key with untested siblings and frozen revival predicate",
+    "maturity vector replacing boolean stage completion",
+    "deterministic lexicographic acquisition with logged ties and a small exploration reserve",
+    "similarity clustering and duplicate control",
+    "RESEARCH_PAUSE distinct from SUCCESS_EXIT"
+  ],
+  "execution_authority": false,
+  "comparison_consumed": false,
+  "candidate_promoted": false
+}

@@ -1,0 +1,68 @@
+{
+ "stage": "D1",
+ "category": "전처리",
+ "fulfilled_utc": "2026-08-06",
+ "queries_run": 4,
+ "provider": "Serper/Google",
+ "findings": [
+  {
+   "id": "F3",
+   "claim": "power-law 허브고도 외삽의 한계가 정량화되어 있고, 관측/ML 기반 허브고도 풍속 추정이 대안으로 제시된다",
+   "source": "IOP 2026 doi:10.1088/3049-4753/ae4c8d; ACP 23:3181 (2023) 'Estimating hub-height wind speed based on machine learning'; arXiv:2602.19954",
+   "tag": "directly_supported",
+   "relevance": "GFS 원자료에 heightAboveGround_80_u/v 와 heightAboveGround_100_100u/100v 가 실재하는데(확인함), M115 선택 피처 100개에 0개다. teacher sitewind 13개가 10m/50m 로부터 추정으로 대체 중. 허브고도는 통상 80~100m.",
+   "proposes": [
+    {
+     "subcapability": "C3.6",
+     "kind": "analysis",
+     "summary": "GFS 80m/100m/PBL 풍속이 후보 피처 풀에 존재했는지 감사 - 선택 탈락인가 애초 부재인가",
+     "score_bearing": true
+    },
+    {
+     "subcapability": "C3.6",
+     "kind": "feature",
+     "summary": "허브고도 풍속 직접사용 vs power-law 외삽 vs teacher 추정 3자 비교 (D1_F3_1 결과가 '부재'일 때만)",
+     "score_bearing": true
+    }
+   ]
+  },
+  {
+   "id": "F1",
+   "claim": "풍속 단계 편향보정이 풍력 예측 정확도에 미치는 영향을 75개 단지로 측정",
+   "source": "Spiliotis et al. 2025, ScienceDirect S2213138825004308 (Cited 9)",
+   "tag": "near_match_only",
+   "relevance": "우리 MOS 계열(C1N21/22/23)은 전부 출력(발전량) MOS 였고 NO_STABLE_METRIC_ALIGNED_BIAS 로 폐기됐다. 풍속 단계 보정은 시도 기록이 없다. 단 대상 단지·지표가 달라 near_match.",
+   "proposes": [
+    {
+     "subcapability": "C3.2",
+     "kind": "analysis",
+     "summary": "NWP 풍속 자체의 편향보정(quantile mapping) 후 하류 점수 변화 측정",
+     "score_bearing": true
+    }
+   ]
+  },
+  {
+   "id": "F2",
+   "claim": "SCADA power-curve cleaning(감발·정지·이상 제거)은 원자료 사용의 필수 전처리이며, 제어전략(가변속·가변피치 MPPT 영역) 기반 필터가 잔차 규칙보다 우수",
+   "source": "Morrison et al. 2022 Univ. Glasgow (Cited 143); Wang et al. 2025 MDPI JMSE 13(3):410 (Cited 11)",
+   "tag": "near_match_only",
+   "relevance": "C1N87(잔차<-0.15 & 풍속>=10)과 C1N89(비지도 탐지)는 둘 다 실패했다. 제어영역 구분 필터는 미시도. 단 그 논문들은 터빈 성능평가가 목적이고 우리는 그룹 발전량 예측이라 near_match.",
+   "proposes": [
+    {
+     "subcapability": "C3.4",
+     "kind": "analysis",
+     "summary": "제어전략 영역(MPPT/정격/피치) 구분 필터로 teacher 표적 정제 후 재평가",
+     "score_bearing": true
+    }
+   ]
+  },
+  {
+   "id": "F4",
+   "claim": "주파수영역 학습 기반 보간이 결측 관측 재구성에 효과적",
+   "source": "Xu et al. 2025, MDPI Applied Sciences 16(1):305",
+   "tag": "insufficient",
+   "relevance": "테스트 LDAPS 결측은 752셀/462만셀 = 0.016%이고 핵심 10m 풍속은 결측 0. 규모가 무의미해 개선 여지 없음. 노드 생성 불가.",
+   "proposes": []
+  }
+ ]
+}

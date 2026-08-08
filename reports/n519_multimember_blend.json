@@ -1,0 +1,36 @@
+{
+ "node": "N519_MULTIMEMBER_BLEND",
+ "members": [
+  "M102_TOP100",
+  "M113_LGBM_DART",
+  "M115_XGBOOST",
+  "M129_GROUP_FINETUNE",
+  "M244_RARE_EVENT_CORRECTED_ANALOG_Q234",
+  "M93_POWER_QUANTILE",
+  "M98_ORDINAL_BIN025"
+ ],
+ "best_weights": {
+  "1": {
+   "M102_TOP100": 0.105,
+   "M113_LGBM_DART": 0.038,
+   "M115_XGBOOST": 0.808,
+   "M244_RARE_EVENT_CORRECTED_ANALOG_Q234": 0.049
+  },
+  "2": {
+   "M102_TOP100": 0.052,
+   "M115_XGBOOST": 0.364,
+   "M244_RARE_EVENT_CORRECTED_ANALOG_Q234": 0.259,
+   "M93_POWER_QUANTILE": 0.324
+  },
+  "3": {
+   "M102_TOP100": 0.06,
+   "M115_XGBOOST": 0.586,
+   "M129_GROUP_FINETUNE": 0.355
+  }
+ },
+ "local_total": 0.6387719801607997,
+ "offset": 0.00804934,
+ "predicted_online": 0.6468213201607997,
+ "model_fits": 0,
+ "dacon_upload": false
+}

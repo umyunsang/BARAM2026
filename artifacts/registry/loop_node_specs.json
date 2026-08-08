@@ -1,0 +1,944 @@
+{
+ "schema_version": 1,
+ "specs": [
+  {
+   "id": "M272",
+   "kind": "decision",
+   "subcapability": "C9.1",
+   "summary": "정책격자 확장(재구성 표면)",
+   "origin": "internal",
+   "reference": null,
+   "arguments": {},
+   "preconditions": [],
+   "score_bearing": true,
+   "trial_budget": 1,
+   "status": "retired",
+   "outcome": {
+    "score": 0.606051,
+    "accepted": false,
+    "note": "배포 미전이"
+   }
+  },
+  {
+   "id": "M274",
+   "kind": "analysis",
+   "subcapability": "C5.2",
+   "summary": "분포축 개방·게이트 판독",
+   "origin": "internal",
+   "reference": null,
+   "arguments": {},
+   "preconditions": [],
+   "score_bearing": true,
+   "trial_budget": 1,
+   "status": "retired",
+   "outcome": {
+    "accepted": false,
+    "note": "게이트 정당 확인"
+   }
+  },
+  {
+   "id": "M275",
+   "kind": "analysis",
+   "subcapability": "C5.2",
+   "summary": "밴드 캘리브레이션 재평가",
+   "origin": "internal",
+   "reference": null,
+   "arguments": {},
+   "preconditions": [],
+   "score_bearing": true,
+   "trial_budget": 1,
+   "status": "retired",
+   "outcome": {
+    "accepted": false,
+    "note": "D1>D2, 내 주장 철회"
+   }
+  },
+  {
+   "id": "M276",
+   "kind": "analysis",
+   "subcapability": "C9.1",
+   "summary": "결정온도=캘리브레이션 반증실험",
+   "origin": "internal",
+   "reference": null,
+   "arguments": {},
+   "preconditions": [],
+   "score_bearing": true,
+   "trial_budget": 1,
+   "status": "retired",
+   "outcome": {
+    "accepted": false,
+    "note": "기전 규명"
+   }
+  },
+  {
+   "id": "M277",
+   "kind": "decision",
+   "subcapability": "C9.2",
+   "summary": "조건부 캘리브레이션",
+   "origin": "internal",
+   "reference": null,
+   "arguments": {},
+   "preconditions": [],
+   "score_bearing": true,
+   "trial_budget": 1,
+   "status": "retired",
+   "outcome": {
+    "score": 0.606043,
+    "accepted": false,
+    "note": "세분화 단조악화"
+   }
+  },
+  {
+   "id": "M278",
+   "kind": "model",
+   "subcapability": "C5.3",
+   "summary": "C1N41 재판정(적합6)",
+   "origin": "internal",
+   "reference": null,
+   "arguments": {},
+   "preconditions": [],
+   "score_bearing": true,
+   "trial_budget": 1,
+   "status": "retired",
+   "outcome": {
+    "accepted": false,
+    "note": "96% 아티팩트"
+   }
+  },
+  {
+   "id": "M279",
+   "kind": "decision",
+   "subcapability": "C9.1",
+   "summary": "격자확장 배포 전이",
+   "origin": "internal",
+   "reference": null,
+   "arguments": {},
+   "preconditions": [],
+   "score_bearing": true,
+   "trial_budget": 1,
+   "status": "retired",
+   "outcome": {
+    "score": 0.62808,
+    "accepted": false,
+    "note": "개선 0"
+   }
+  },
+  {
+   "id": "M281",
+   "kind": "analysis",
+   "subcapability": "C4.4",
+   "summary": "외부NWP 전제 재검정",
+   "origin": "internal",
+   "reference": null,
+   "arguments": {},
+   "preconditions": [],
+   "score_bearing": true,
+   "trial_budget": 1,
+   "status": "retired",
+   "outcome": {
+    "accepted": false,
+    "note": "검증면 부재"
+   }
+  },
+  {
+   "id": "M282",
+   "kind": "decision",
+   "subcapability": "C9.1",
+   "summary": "적격성 마스크(배포)",
+   "origin": "internal",
+   "reference": null,
+   "arguments": {},
+   "preconditions": [],
+   "score_bearing": true,
+   "trial_budget": 1,
+   "status": "retired",
+   "outcome": {
+    "accepted": false,
+    "note": "무효 no-op"
+   }
+  },
+  {
+   "id": "M283",
+   "kind": "analysis",
+   "subcapability": "C5.4",
+   "summary": "구간 지지 정의",
+   "origin": "internal",
+   "reference": null,
+   "arguments": {},
+   "preconditions": [],
+   "score_bearing": true,
+   "trial_budget": 1,
+   "status": "retired",
+   "outcome": {
+    "score": 0.609429,
+    "accepted": false,
+    "note": "격차 17.6% 규명"
+   }
+  },
+  {
+   "id": "M284",
+   "kind": "decision",
+   "subcapability": "C5.4",
+   "summary": "구간 내부적분(배포)",
+   "origin": "internal",
+   "reference": null,
+   "arguments": {},
+   "preconditions": [],
+   "score_bearing": true,
+   "trial_budget": 1,
+   "status": "retired",
+   "outcome": {
+    "score": 0.629545,
+    "accepted": false,
+    "note": "게이트 기각"
+   }
+  },
+  {
+   "id": "M285",
+   "kind": "analysis",
+   "subcapability": "C6.3",
+   "summary": "월별 게이트 판정",
+   "origin": "internal",
+   "reference": null,
+   "arguments": {},
+   "preconditions": [],
+   "score_bearing": true,
+   "trial_budget": 1,
+   "status": "retired",
+   "outcome": {
+    "accepted": false,
+    "note": "M284 기각"
+   }
+  },
+  {
+   "id": "M286",
+   "kind": "decision",
+   "subcapability": "C9.1",
+   "summary": "오프셋 모형 정책 재선택",
+   "origin": "internal",
+   "reference": null,
+   "arguments": {},
+   "preconditions": [],
+   "score_bearing": true,
+   "trial_budget": 1,
+   "status": "retired",
+   "outcome": {
+    "accepted": false,
+    "note": "사전확약만 동결, 미실행"
+   }
+  },
+  {
+   "id": "N301",
+   "kind": "analysis",
+   "subcapability": "C3.4",
+   "summary": "curtailment·정지 구간 타깃 정제 — 라벨의 비기상 구간을 식별하고 학습에서 제외했을 때의 효과",
+   "origin": "internal",
+   "reference": null,
+   "arguments": {},
+   "preconditions": [],
+   "score_bearing": true,
+   "trial_budget": 1,
+   "status": "retired",
+   "outcome": {
+    "accepted": false,
+    "note": "ADMISSION_FAILED_PRIOR_EVIDENCE",
+    "prior": "C1N87 CURTAILMENT_CLEANING_DOES_NOT_HELP (-0.001194) / C1N89 ANOMALY_CLEANING_DOES_NOT_HELP (-0.008177)"
+   }
+  },
+  {
+   "id": "N302",
+   "kind": "analysis",
+   "subcapability": "C3.3",
+   "summary": "발행배치 경계 정렬 감사 — 반개구간 라벨과 예보시각 정렬의 체계적 편향 재검",
+   "origin": "internal",
+   "reference": null,
+   "arguments": {},
+   "preconditions": [],
+   "score_bearing": true,
+   "trial_budget": 1,
+   "status": "retired",
+   "outcome": {
+    "accepted": false,
+    "note": "ADMISSION_FAILED_PRIOR_EVIDENCE",
+    "prior": "발행배치 경계 정렬은 m269_stage_b / m261_diagnostic 에서 다뤄짐"
+   }
+  },
+  {
+   "id": "N303",
+   "kind": "analysis",
+   "subcapability": "C2.2",
+   "summary": "적격모집단 선택편향 — actual>=0.10C 컷오프가 만드는 조건부 분포 왜곡의 정량화",
+   "origin": "internal",
+   "reference": null,
+   "arguments": {},
+   "preconditions": [],
+   "score_bearing": true,
+   "trial_budget": 1,
+   "status": "retired",
+   "outcome": {
+    "accepted": false,
+    "note": "ADMISSION_FAILED_PRIOR_EVIDENCE",
+    "prior": "적격모집단은 C1N23_ELIGIBLE_MOS(NO_STABLE_METRIC_ALIGNED_BIAS) 및 M282 에서 다뤄짐"
+   }
+  },
+  {
+   "id": "N304",
+   "kind": "analysis",
+   "subcapability": "C7.2",
+   "summary": "배포 후보 재현성 byte 검증 — 2차 평가 산출물 요건 선제 충족",
+   "origin": "internal",
+   "reference": null,
+   "arguments": {},
+   "preconditions": [],
+   "score_bearing": false,
+   "trial_budget": 1,
+   "status": "candidate",
+   "outcome": {}
+  },
+  {
+   "id": "N305",
+   "kind": "analysis",
+   "subcapability": "C7.4",
+   "summary": "성능주장 범위관리 — 로컬↔온라인 오프셋 계급별 신뢰구간 문서화",
+   "origin": "internal",
+   "reference": null,
+   "arguments": {},
+   "preconditions": [],
+   "score_bearing": false,
+   "trial_budget": 1,
+   "status": "candidate",
+   "outcome": {}
+  },
+  {
+   "id": "N306",
+   "kind": "analysis",
+   "subcapability": "C6.1",
+   "summary": "시계열 분할 정합 재감사 — 월별 게이트가 pooled 이득을 기각하는 구조적 원인",
+   "origin": "internal",
+   "reference": null,
+   "arguments": {},
+   "preconditions": [],
+   "score_bearing": false,
+   "trial_budget": 1,
+   "status": "retired",
+   "outcome": {
+    "accepted": false,
+    "note": "ADMISSION_FAILED_PRIOR_EVIDENCE",
+    "prior": "월별 게이트 구조는 m270_monthly_validation 에서 확립됨"
+   }
+  },
+  {
+   "id": "N307",
+   "kind": "feature",
+   "subcapability": "C4.6",
+   "summary": "SCADA teacher 특권정보(LUPI) 활용 — train 전용 신호의 정식 활용 경로",
+   "origin": "internal",
+   "reference": null,
+   "arguments": {},
+   "preconditions": [],
+   "score_bearing": true,
+   "trial_budget": 1,
+   "status": "retired",
+   "outcome": {
+    "accepted": false,
+    "note": "ADMISSION_FAILED_PRIOR_EVIDENCE",
+    "prior": "teacher/sitewind 계열은 C1N42/C1N58/C1N82~84 에서 다수 실행됨 — 미탐색 아님"
+   }
+  },
+  {
+   "id": "N308",
+   "kind": "analysis",
+   "subcapability": "C1.6",
+   "summary": "레짐·이상치 진단 — 월별 게이트 실패가 특정 레짐에 몰리는지",
+   "origin": "internal",
+   "reference": null,
+   "arguments": {},
+   "preconditions": [],
+   "score_bearing": false,
+   "trial_budget": 1,
+   "status": "retired",
+   "outcome": {
+    "accepted": false,
+    "note": "ADMISSION_FAILED_PRIOR_EVIDENCE",
+    "prior": "레짐 진단은 m270_regime_diagnosis 에서 실행됨"
+   }
+  },
+  {
+   "id": "N401",
+   "kind": "model",
+   "subcapability": "C5.2",
+   "summary": "심층 확률예측(CQR 우선) — LightGBM 분위수 위 conformal 교정으로 조건부 커버리지 확보",
+   "origin": "research://arXiv:2602.13010v2 (CQR nCRPS 5.7% 대 NGBoost 6.0%) + reports/m270_revived_lanes.md#4 UNOPENED",
+   "reference": null,
+   "arguments": {},
+   "preconditions": [],
+   "score_bearing": true,
+   "trial_budget": 1,
+   "status": "retired",
+   "outcome": {
+    "accepted": false,
+    "note": "CQR_DOES_NOT_BEAT_ACCEPTED",
+    "gain": -0.005965,
+    "gate": "all four conditions FAIL"
+   }
+  },
+  {
+   "id": "N402",
+   "kind": "model",
+   "subcapability": "C5.2",
+   "summary": "Treeffuser/분포회귀 — 튜닝 전제 하 최상위 nCRPS 5.6%. 라이선스·공개일 게이트 선행 필요",
+   "origin": "research://arXiv:2602.13010v2 + reports/m270_revived_lanes.md#4 UNOPENED",
+   "reference": null,
+   "arguments": {},
+   "preconditions": [],
+   "score_bearing": true,
+   "trial_budget": 1,
+   "status": "retired",
+   "outcome": {
+    "accepted": false,
+    "note": "ADMISSION_FAILED_EXPECTED_VALUE_BELOW_REQUIREMENT",
+    "detail": {
+     "spec": "N402",
+     "licence_gate": {
+      "package": "treeffuser 0.2.0 (PyPI, MIT, first upload 2024-06-11)",
+      "note": "an algorithm package, not pretrained weights — the 2026-07-05 weights gate does not apply",
+      "result": "PASS"
+     },
+     "environment_gate": {
+      "pins": [
+       "numpy<2.0,>=1.24",
+       "lightgbm==4.3.0",
+       "scikit-learn==1.5.0"
+      ],
+      "project": [
+       "numpy 2.5.1",
+       "lightgbm 4.7.0",
+       "scikit-learn 1.9.0"
+      ],
+      "impact": "installing into the project venv downgrades three core libraries, invalidating the reproduction of every existing fit and the second-round Private-Score restoration requirement. A side venv is possible but adds a documented two-environment contract.",
+      "result": "BLOCKED_MITIGABLE"
+     },
+     "expected_value_gate": {
+      "benchmark": "arXiv:2602.13010v2 (Belgian offshore, 9 farms, 4y, day-ahead): Treeffuser nCRPS 5.6% vs CQR 5.7% — a 1.8% relative edge",
+      "in_project_measurement": "N401 measured CQR (D7_CHRONO_CONFORMAL) at -0.005965 official Total against the accepted D1 under a fold-outside decision layer, failing all four monthly-gate conditions",
+      "requirement": 0.023473,
+      "reasoning": "Treeffuser starts from CQR's measured -0.005965 deficit and the benchmark grants it a 1.8% nCRPS edge. N401 also established that better band calibration did not translate into official-metric gain at all. The margin cannot bridge the deficit, let alone add the requirement.",
+      "result": "FAIL"
+     },
+     "result": "ADMISSION_FAILED_EXPECTED_VALUE_BELOW_REQUIREMENT",
+     "note": "rejected on evidence generated by N401 in this same loop, not on prior belief"
+    }
+   }
+  },
+  {
+   "id": "N403",
+   "kind": "model",
+   "subcapability": "C5.1",
+   "summary": "사전학습 시계열 파운데이션 모델 — 2026-07-05 이전 공개 + 상업이용 OSS 한정, 로컬 로드",
+   "origin": "reports/m270_revived_lanes.md#4 UNOPENED (P2 역량 게이트 대상)",
+   "reference": null,
+   "arguments": {},
+   "preconditions": [],
+   "score_bearing": true,
+   "trial_budget": 1,
+   "status": "retired",
+   "outcome": {
+    "accepted": false,
+    "note": "ADMISSION_FAILED_ORACLE_BOUND_BELOW_REQUIREMENT",
+    "detail": {
+     "spec": "N403",
+     "premise": "pretrained TS foundation models exploit temporal structure the row-wise model misses",
+     "prior_evidence": [
+      "progress.md 2026-08-04: within-issuance residual autocorrelation 0.818 (lag1), between-issuance residual variance 30.0/32.7/30.4% — the structure is large and real",
+      "progress.md 2026-08-04: an ORACLE per-issuance offset correction moved 1-NMAE +0.020365 and FICR -0.014849, for a Total change of only +0.002758",
+      "mechanism: the deployed prediction is an ACTION under a step reward, not a conditional mean; moving it toward the conditional mean improves point accuracy and damages settlement by construction"
+     ],
+     "oracle_bound_total": 0.002758,
+     "requirement_total": 0.023473,
+     "test": "does the oracle bound on the temporal axis reach the requirement?",
+     "finding": "0.002758 < 0.023473 — a PERFECT exploitation of temporal structure covers 11.7% of the gap",
+     "result": "ADMISSION_FAILED_ORACLE_BOUND_BELOW_REQUIREMENT",
+     "note": "compute/licence gates were not even reached; the axis is capped on evidence regardless"
+    }
+   }
+  },
+  {
+   "id": "N404",
+   "kind": "analysis",
+   "subcapability": "C1.6",
+   "summary": "ramp/weather-pattern 분류 레인 — 차단 전제(대체 NWP 부재)가 해소되어 REVIVED",
+   "origin": "reports/m270_revived_lanes.md#3 M251 NO_SELECTABLE_NWP",
+   "reference": null,
+   "arguments": {},
+   "preconditions": [],
+   "score_bearing": true,
+   "trial_budget": 1,
+   "status": "retired",
+   "outcome": {
+    "accepted": false,
+    "note": "ADMISSION_FAILED_PREMISE_UNDERMINED",
+    "detail": {
+     "spec": "N404",
+     "premise": "alternative NWP source usable => ramp/weather-pattern lane revived",
+     "test": "M281 — Open-Meteo leak-safe variable (previous_day2) coverage by year",
+     "finding": "2023 (validation surface) EMPTY for both icon_global and ecmwf_ifs025; 2025 full. A member built on external NWP cannot be validated on any leak-safe surface (2024 is the twice-consumed lockbox).",
+     "result": "ADMISSION_FAILED_PREMISE_UNDERMINED"
+    }
+   }
+  },
+  {
+   "id": "R501",
+   "kind": "research",
+   "subcapability": "C8.5",
+   "summary": "정체 트리거 딥리서치 — 신규 admissible 레인 0건",
+   "origin": "router-triggered",
+   "reference": null,
+   "arguments": {},
+   "preconditions": [],
+   "score_bearing": false,
+   "trial_budget": 1,
+   "status": "retired",
+   "outcome": {
+    "accepted": false,
+    "note": "RESEARCH_YIELDS_NO_ADMISSIBLE_SCORE_BEARING_LANE",
+    "detail": {
+     "trigger": "router: stagnation 4 >= 3, score_bearing candidates exhausted",
+     "queries": 3,
+     "surfaced": [
+      {
+       "item": "Jørgensen 2025, Sequential methods for error correction of probabilistic wind power forecast ENSEMBLES derived from NWP (Expert Syst. Appl.)",
+       "admissible": false,
+       "reason": "requires NWP ensemble members; the competition supplies two DETERMINISTIC sources (LDAPS, GFS) with no members. C1N18_SPREAD_SKILL already closed the 2-source spread proxy (SPREAD_EXPLAINED_BY_PREDICTED_LEVEL)."
+      },
+      {
+       "item": "Li 2025, Ranking-oriented ML framework for wind power forecasting (PMC12658214)",
+       "admissible": false,
+       "reason": "optimises ranking consistency; the official objective is an absolute settlement band, not a ranking. No stated translation to NMAE/FICR."
+      },
+      {
+       "item": "Korean sources on the KPX 재생에너지 발전량 예측제도 (6%/8% bands)",
+       "admissible": false,
+       "reason": "confirms the settlement scheme already ported verbatim into evaluation/official.py. No new method."
+      }
+     ],
+     "new_specs": 0,
+     "result": "RESEARCH_YIELDS_NO_ADMISSIBLE_SCORE_BEARING_LANE",
+     "note": "third independent research pass (L2 lane, N401/N402 admission searches, this one) converging on the same closure set"
+    }
+   }
+  },
+  {
+   "id": "N521",
+   "kind": "analysis",
+   "subcapability": "C5.5",
+   "summary": "oil-free blend curve: best w=0.70, predicted 0.639170",
+   "origin": "internal",
+   "reference": null,
+   "arguments": {},
+   "preconditions": [],
+   "score_bearing": true,
+   "trial_budget": 1,
+   "status": "retired",
+   "outcome": {
+    "accepted": true,
+    "note": "VERIFIED_BLEND_W070",
+    "pred": 0.63917
+   }
+  },
+  {
+   "id": "N522",
+   "kind": "analysis",
+   "subcapability": "C5.5",
+   "summary": "per-group blend: rejected fold-outside",
+   "origin": "internal",
+   "reference": null,
+   "arguments": {},
+   "preconditions": [],
+   "score_bearing": true,
+   "trial_budget": 1,
+   "status": "retired",
+   "outcome": {
+    "accepted": false,
+    "note": "FOLDOUT_REJECTS_PERGROUP"
+   }
+  },
+  {
+   "id": "N523",
+   "kind": "analysis",
+   "subcapability": "C7.1",
+   "summary": "lineage re-rank: order flipped by contamination, swap below threshold",
+   "origin": "internal",
+   "reference": null,
+   "arguments": {},
+   "preconditions": [],
+   "score_bearing": true,
+   "trial_budget": 1,
+   "status": "retired",
+   "outcome": {
+    "accepted": false,
+    "note": "RANK_FLIPPED_BUT_BELOW_THRESHOLD"
+   }
+  },
+  {
+   "id": "N524",
+   "kind": "analysis",
+   "subcapability": "C7.3",
+   "summary": "upload manifest frozen: A=1 / B=6 / rejected=2",
+   "origin": "internal",
+   "reference": null,
+   "arguments": {},
+   "preconditions": [],
+   "score_bearing": true,
+   "trial_budget": 1,
+   "status": "retired",
+   "outcome": {
+    "accepted": true,
+    "note": "MANIFEST_FROZEN"
+   }
+  },
+  {
+   "id": "D1_A",
+   "kind": "analysis",
+   "subcapability": "C3.6",
+   "summary": "GFS 80m/100m 풍속의 피처풀 존재 여부 감사 — 선택 탈락인가 애초 부재인가",
+   "origin": "research://IOP-3049-4753-ae4c8d + ACP-23-3181 (F3, directly_supported)",
+   "reference": null,
+   "arguments": {
+    "note": "가장 먼저 실행. 결과가 D1_B/D1_C 의 설계를 결정한다."
+   },
+   "preconditions": [],
+   "score_bearing": true,
+   "trial_budget": 1,
+   "status": "candidate",
+   "outcome": {}
+  },
+  {
+   "id": "D1_B",
+   "kind": "feature",
+   "subcapability": "C3.6",
+   "summary": "허브고도 풍속 직접 사용 대 power-law 외삽 대 teacher 추정 3자 비교",
+   "origin": "research://IOP-3049-4753-ae4c8d (F3)",
+   "reference": null,
+   "arguments": {
+    "note": "D1_A 가 '애초 부재' 를 반환할 때만 실행."
+   },
+   "preconditions": [],
+   "score_bearing": true,
+   "trial_budget": 1,
+   "status": "candidate",
+   "outcome": {}
+  },
+  {
+   "id": "D1_C",
+   "kind": "analysis",
+   "subcapability": "C3.2",
+   "summary": "NWP 풍속 자체의 편향보정(quantile mapping / MOS on wind, not on power)",
+   "origin": "research://Spiliotis-2025-S2213138825004308 (F1)",
+   "reference": null,
+   "arguments": {
+    "note": "기존 C1N21/22/23 은 출력 MOS 였음. 풍속 단계 보정은 미시도."
+   },
+   "preconditions": [],
+   "score_bearing": true,
+   "trial_budget": 1,
+   "status": "candidate",
+   "outcome": {}
+  },
+  {
+   "id": "D1_D",
+   "kind": "analysis",
+   "subcapability": "C3.4",
+   "summary": "제어전략 기반 SCADA 필터(MPPT/정격/피치 영역 구분) 후 teacher 재학습",
+   "origin": "research://Morrison-2022 + Wang-2025-JMSE-13-410 (F2)",
+   "reference": null,
+   "arguments": {
+    "note": "C1N87/89 는 잔차·비지도 규칙이었고 제어영역 구분은 미시도."
+   },
+   "preconditions": [],
+   "score_bearing": true,
+   "trial_budget": 1,
+   "status": "candidate",
+   "outcome": {}
+  },
+  {
+   "id": "D1_F3_1",
+   "kind": "analysis",
+   "subcapability": "C3.6",
+   "summary": "GFS 80m/100m/PBL 풍속이 후보 피처 풀에 존재했는지 감사 - 선택 탈락인가 애초 부재인가",
+   "origin": "research://IOP 2026 doi:10.1088/3049-4753/ae4c8d; ACP 23:3181 (2023) 'Estimating hub-height wind speed based on machine learning'; arXiv:2602.19954 [directly_supported]",
+   "reference": null,
+   "arguments": {
+    "stage": "D1"
+   },
+   "preconditions": [],
+   "score_bearing": true,
+   "trial_budget": 1,
+   "status": "retired",
+   "outcome": {
+    "accepted": false,
+    "note": "PRESENT_BUT_DESELECTED",
+    "detail": "GFS 80m/100m 18+18 features in the 820-feature pool, deselected by feature selection; even 10m winds were deselected in favour of teacher sitewind"
+   }
+  },
+  {
+   "id": "D1_F3_2",
+   "kind": "feature",
+   "subcapability": "C3.6",
+   "summary": "허브고도 풍속 직접사용 vs power-law 외삽 vs teacher 추정 3자 비교 (D1_F3_1 결과가 '부재'일 때만)",
+   "origin": "research://IOP 2026 doi:10.1088/3049-4753/ae4c8d; ACP 23:3181 (2023) 'Estimating hub-height wind speed based on machine learning'; arXiv:2602.19954 [directly_supported]",
+   "reference": null,
+   "arguments": {
+    "stage": "D1"
+   },
+   "preconditions": [],
+   "score_bearing": true,
+   "trial_budget": 1,
+   "status": "retired",
+   "outcome": {
+    "accepted": false,
+    "note": "ADMISSION_FAILED_PREMISE_UNDERMINED",
+    "detail": "D1_F3_1 showed hub-height winds are in the pool and were deselected; the premise 'absent from pool' is false"
+   }
+  },
+  {
+   "id": "D1_F1_1",
+   "kind": "analysis",
+   "subcapability": "C3.2",
+   "summary": "NWP 풍속 자체의 편향보정(quantile mapping) 후 하류 점수 변화 측정",
+   "origin": "research://Spiliotis et al. 2025, ScienceDirect S2213138825004308 (Cited 9) [near_match_only]",
+   "reference": null,
+   "arguments": {
+    "stage": "D1"
+   },
+   "preconditions": [],
+   "score_bearing": true,
+   "trial_budget": 1,
+   "status": "retired",
+   "outcome": {
+    "accepted": false,
+    "note": "NO_BIAS_TO_CORRECT_QMAP_WORSENS",
+    "detail": "teacher wind bias -0.0056 m/s (already unbiased); quantile mapping raises sigma 1.5866 -> 1.6273 (+2.56%)"
+   }
+  },
+  {
+   "id": "D1_F2_1",
+   "kind": "analysis",
+   "subcapability": "C3.4",
+   "summary": "제어전략 영역(MPPT/정격/피치) 구분 필터로 teacher 표적 정제 후 재평가",
+   "origin": "research://Morrison et al. 2022 Univ. Glasgow (Cited 143); Wang et al. 2025 MDPI JMSE 13(3):410 (Cited 11) [near_match_only]",
+   "reference": null,
+   "arguments": {
+    "stage": "D1"
+   },
+   "preconditions": [],
+   "score_bearing": true,
+   "trial_budget": 1,
+   "status": "retired",
+   "outcome": {
+    "accepted": false,
+    "note": "ADMISSION_FAILED_SUPERSET_ALREADY_CLOSED",
+    "detail": {
+     "node": "D1_F2_1",
+     "stage": "D1",
+     "origin": "research://Morrison-2022 + Wang-2025-JMSE-13-410 [near_match_only]",
+     "prior_failures": [
+      {
+       "node": "C1N87",
+       "method": "hand rule (residual<-0.15 & ws>=10)",
+       "delta": -0.001194,
+       "verdict": "CURTAILMENT_CLEANING_DOES_NOT_HELP"
+      },
+      {
+       "node": "C1N89",
+       "method": "unsupervised anomaly detection",
+       "delta": -0.008177,
+       "verdict": "ANOMALY_CLEANING_DOES_NOT_HELP_LANE_CLOSES"
+      }
+     ],
+     "reasoning": "control-region filtering is a hand-written physical rule, i.e. a strictly narrower hypothesis space than the unsupervised detector that already failed and closed the lane. Both prior attempts moved in the negative direction. No basis to expect the subset to succeed where the superset failed.",
+     "result": "ADMISSION_FAILED_SUPERSET_ALREADY_CLOSED"
+    }
+   }
+  },
+  {
+   "id": "D2_G1_1",
+   "kind": "analysis",
+   "subcapability": "C4.4",
+   "summary": "C1N77 의 소스분할이 논문 sister-model 구성과 어떻게 다른지 대조하고, 정보량 손실이 실패 원인인지 판별",
+   "origin": "research://arXiv:2505.10367v1 (HEFTCom2024 GEB팀); Yang 2024 MDPI Sustainability 16(14):5960 (Cited 14) [directly_supported]",
+   "reference": null,
+   "arguments": {
+    "stage": "D2"
+   },
+   "preconditions": [],
+   "score_bearing": true,
+   "trial_budget": 1,
+   "status": "retired",
+   "outcome": {
+    "accepted": false,
+    "note": "IMPLEMENTATION_DIFFERS_BUT_DATA_FORBIDS_PAPER_CONSTRUCTION",
+    "detail": "C1N77 split features disjointly (gfs 50/101, ldaps 40/101) so each arm saw 40-50% of pooled information; the paper applies the same full pipeline per source. GFS and LDAPS expose different variable sets here (GFS has 80m/100m/PBL/upper-air, LDAPS has 50m max/min, radiation, cloud), so the paper construction cannot be reproduced without a common subset that reintroduces the loss."
+   }
+  },
+  {
+   "id": "D2_G2_1",
+   "kind": "feature",
+   "subcapability": "C4.3",
+   "summary": "풍향 조건부 후류 기하 피처(터빈 정렬각·이격거리/로터직경) 생성 후 잔차 설명력 측정",
+   "origin": "research://SPIE 14179:141790I (2025) 'GNN + physical wake model'; Zang 2025 STET (Cited 8) [near_match_only]",
+   "reference": null,
+   "arguments": {
+    "stage": "D2"
+   },
+   "preconditions": [],
+   "score_bearing": true,
+   "trial_budget": 1,
+   "status": "retired",
+   "outcome": {
+    "accepted": false,
+    "note": "WAKE_GEOMETRY_EXPLAINS_RESIDUAL_WEAKLY",
+    "detail": "unwaked fraction varies strongly with direction (g3 spread 0.800; 80% waked at 150 deg). Residual correlation is significant for g2 (rho +0.1033) and g3 (rho +0.1347) against |error|, and negative against band hit (g3 -0.1415), i.e. the feature acts as a wind-regime proxy. Explained variance is only 1-2% and C1N3 already closed the sector axis with WIND_SECTOR_LOSS_IS_PROPORTIONAL."
+   }
+  },
+  {
+   "id": "D2_G3_1",
+   "kind": "analysis",
+   "subcapability": "C4.5",
+   "summary": "시각(hour-of-day) 조건부 예보-실측 정렬 오차 진단 — A4_error 의 일주기 편향이 밴드 적중에 미치는 영향",
+   "origin": "research://arXiv:2510.15474v1 'Evaluating the Prediction of Wind Power Ramping Events' [near_match_only]",
+   "reference": null,
+   "arguments": {
+    "stage": "D2"
+   },
+   "preconditions": [],
+   "score_bearing": true,
+   "trial_budget": 1,
+   "status": "retired",
+   "outcome": {
+    "accepted": false,
+    "note": "DIURNAL_BIAS_TOO_SMALL_OR_UNSTABLE",
+    "detail": "hit rate 0.299-0.423 by hour, signed bias +0.0266..+0.0700 (max |bias| = 117% of the 0.06 band half-width) but fold-to-fold correlation of the hourly bias is only 0.220. Side finding: the signed bias is POSITIVE at all 24 hours, mean about +0.047 - a global over-prediction on eligible rows."
+   }
+  },
+  {
+   "id": "D3_H2_1",
+   "kind": "analysis",
+   "subcapability": "C5.5",
+   "summary": "저장 후보 12종의 이산/평활 특성 감사 - 평활 계열 멤버가 실제로 부재한지 확인",
+   "origin": "research://Browell et al. 2020, EEM20 Wind Power Forecasting Competition, Strathclyde 74066 (Cited 12) [near_match_only]",
+   "reference": null,
+   "arguments": {
+    "stage": "D3"
+   },
+   "preconditions": [],
+   "score_bearing": true,
+   "trial_budget": 1,
+   "status": "retired",
+   "outcome": {
+    "accepted": false,
+    "note": "SMOOTH_MEMBER_EXISTS_PREMISE_HOLDS",
+    "detail": "unique-value ratio audit over 14 stored members: 11 discrete (0.009-0.032), 2 near-continuous (M113 0.174, M115 0.210), 1 smooth (M244 0.966). Browell's smooth counterpart already exists as the analog lineage, which also explains why M244 is the only decorrelated member (0.8436)."
+   }
+  },
+  {
+   "id": "D3_H3_1",
+   "kind": "decision",
+   "subcapability": "C9.2",
+   "summary": "적격행 기준 전역 이동(-0.047 방향) 의 fold-외 효과 측정 - C1N22 가 전체행 기준이었는지 먼저 확인",
+   "origin": "research://NOAA NCEP Office Note 520 (2025) BC-Unet; ResearchGate 335482895 [near_match_only]",
+   "reference": null,
+   "arguments": {
+    "stage": "D3"
+   },
+   "preconditions": [],
+   "score_bearing": true,
+   "trial_budget": 1,
+   "status": "retired",
+   "outcome": {
+    "accepted": false,
+    "note": "GLOBAL_SHIFT_NO_GAIN",
+    "detail": "shifting predictions by the -0.047 bias found in D2_G3_1 drops Total 0.628337 -> 0.603634 (FICR 0.4023 -> 0.3506). The positive bias is the decision layer's intended action under generation-weighted settlement, not an error. Independently reconfirms C1N22 on eligible rows."
+   }
+  },
+  {
+   "id": "D3_H2_2",
+   "kind": "analysis",
+   "subcapability": "C5.5",
+   "summary": "무조건부 잔차 결정층을 평활 멤버(M244)에 적용",
+   "origin": "derived://D3_H2_1",
+   "reference": null,
+   "arguments": {
+    "stage": "D3"
+   },
+   "preconditions": [],
+   "score_bearing": true,
+   "trial_budget": 1,
+   "status": "retired",
+   "outcome": {
+    "accepted": false,
+    "note": "UNCONDITIONAL_RESIDUAL_DECISION_LAYER_HURTS",
+    "detail": "Total 0.605760 -> 0.581140, FICR 0.3506 -> 0.3026. 잔차 분위수가 전 행 동일이라 조건부 정보 없음."
+   }
+  },
+  {
+   "id": "D3_H2_3",
+   "kind": "analysis",
+   "subcapability": "C5.5",
+   "summary": "밴드 도달가능성 조건부 멤버 전환",
+   "origin": "derived://D3_H2_2",
+   "reference": null,
+   "arguments": {
+    "stage": "D3"
+   },
+   "preconditions": [],
+   "score_bearing": true,
+   "trial_budget": 1,
+   "status": "retired",
+   "outcome": {
+    "accepted": false,
+    "note": "REACHABILITY_SWITCH_BELOW_UNIFORM_BLEND",
+    "detail": "전부이산 대비 +0.003131 (tau 0.40) 이나 균일 w=0.7 대비 -0.001148. 전환은 분산감소가 없음."
+   }
+  },
+  {
+   "id": "D3_H2_4",
+   "kind": "analysis",
+   "subcapability": "C5.5",
+   "summary": "밴드 도달가능성 조건부 가중 결합 (두 멤버 항상 기여)",
+   "origin": "derived://D3_H2_3",
+   "reference": null,
+   "arguments": {
+    "stage": "D3"
+   },
+   "preconditions": [],
+   "score_bearing": true,
+   "trial_budget": 1,
+   "status": "retired",
+   "outcome": {
+    "accepted": false,
+    "note": "CONDITIONAL_WEIGHT_BELOW_THRESHOLD_AND_NOT_DEPLOYABLE",
+    "detail": "fold-외 균일 대비 +0.000835 (문턱의 82%), 인샘플->fold-외 붕괴 -0.0018 로 안정. 그러나 p_band 가 2025 46-bin 분포를 요구하는데 어디에도 저장돼 있지 않아 재적합 없이는 배포 불가."
+   }
+  },
+  {
+   "id": "D4_J1_1",
+   "kind": "analysis",
+   "subcapability": "C6.3",
+   "summary": "동결 월별게이트의 검정력 측정 - 알려진 크기의 인위적 이득을 주입해 게이트가 얼마나 잡아내는지",
+   "origin": "research://Hewamalage et al. 2022, 'Forecast evaluation for data scientists: common pitfalls and best practices', PMC9718476 (Cited 389) [directly_supported]",
+   "reference": null,
+   "arguments": {
+    "stage": "D4"
+   },
+   "preconditions": [],
+   "score_bearing": false,
+   "trial_budget": 1,
+   "status": "retired",
+   "outcome": {
+    "accepted": false,
+    "note": "GATE_POWER_CONSISTENT_WITH_NOMINAL",
+    "detail": "Injecting known-size genuine improvements (pred' = actual + k*(pred-actual)) into the deployed prediction and applying the frozen gate unmodified: k=0.995 (0.5% error reduction, delta +0.000972) already passes all four conditions. Measured detection limit +0.000972 matches the nominal 0.001013 threshold. The gate is NOT discarding real gains; it screens on month-to-month consistency rather than magnitude, which is why M284 (+0.001207, positive in only 4 of 9 months, median -0.001235) was rejected while a same-size consistent gain passes."
+   }
+  }
+ ]
+}

@@ -1,0 +1,29 @@
+[
+ {
+  "member": "D (champion)",
+  "point_1mnmae": 0.8628275246764968,
+  "point_ficr": 0.3661746733234706,
+  "mean_sd": 0.0766537655951184,
+  "mean_entropy": 1.404152268407443,
+  "band_mass": 0.7590750199261418,
+  "solo_total": 0.6256687137857624
+ },
+ {
+  "member": "COMPOSED all stages",
+  "point_1mnmae": 0.8653195150006978,
+  "point_ficr": 0.34877560285630443,
+  "mean_sd": 0.11984515597337449,
+  "mean_entropy": 1.9405064016026117,
+  "band_mass": 0.5669841483748815,
+  "solo_total": 0.6271904876548378
+ },
+ {
+  "member": "COMPOSED no-D1-density",
+  "point_1mnmae": 0.8630197728100504,
+  "point_ficr": 0.3719674755003138,
+  "mean_sd": 0.07950429780507356,
+  "mean_entropy": 1.5376595709031582,
+  "band_mass": 0.6877304332706576,
+  "solo_total": 0.6251472515048073
+ }
+]

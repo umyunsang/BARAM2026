@@ -1,0 +1,34 @@
+{
+ "node": "D3_H2_4",
+ "stage": "D3",
+ "insample": [
+  0.8,
+  0.4,
+  0.4
+ ],
+ "insample_pred": 0.6419748906488493,
+ "foldout_selection": {
+  "dev-2023-Q2": [
+   0.8,
+   0.3,
+   0.4
+  ],
+  "dev-2023-Q3": [
+   0.8,
+   0.4,
+   0.4
+  ],
+  "dev-2023-Q4": [
+   0.9,
+   0.5,
+   0.45
+  ]
+ },
+ "foldout_local": 0.629528517124111,
+ "foldout_pred": 0.6401748386852633,
+ "uniform_pred": 0.6393399706183815,
+ "gain_over_uniform": 0.000834868066881711,
+ "verdict": "NO_GAIN_OVER_UNIFORM",
+ "model_fits": 0,
+ "dacon_upload": false
+}

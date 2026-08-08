@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "id": "SK5_WAVE_A_SYNTHESIS",
+  "created_at": "2026-08-09T05:17:42.299962+09:00",
+  "status": "WAVE_A_COMPLETE_FOUNDATION_FROZEN",
+  "lanes_completed": 4,
+  "lanes_retired": 4,
+  "root_adjudication_protocol": {
+    "path": "reports/sk_v5_wave_a_root_adjudication_protocol.json",
+    "sha256": "b3ca2c8bf8b470695bf026c5b76f1eeb601c8b2b4fe7c9e32d25be0f64927909"
+  },
+  "lane_adjudications": {
+    "V5-ENGINE": "af7935fcd1b3116f8d09c1afcfca28cb6ba3a9e6e3b1f0f727ae7023804f4201",
+    "V5-FOUNDATION": "11dc402ae0dfbcd7bd254017ee1f636bd22c4a2870db1113a17da5f38b66ba7f",
+    "V5-DISCOVERY-SCIENCE": "3bf28ec448b38336fc4024b58d2385a2810e4bcfc89d086783fd8fa0442fc2b6",
+    "V5-VALIDATION": "f92b80a530cd43fe7475268f7725da8bf009ab2530b26d8e619fccd4b487888c"
+  },
+  "foundation_map": {
+    "path": "research/nodes/sk5_foundation_map.json",
+    "sha256": "393ee74bf53251037547fc52bc92c554a4aa207e2288f194766d836675512b35",
+    "active_deficits": 9
+  },
+  "design": {
+    "path": ".planning/2026-08-01-leaderboard-top-4-loop/DS_v5.md",
+    "sha256": "7d49fe2c02b8b4c9275e4ba6b73c8ad20cc6ac9de2377482a4902ce98c8cc38f",
+    "status": "SYNTHESIZED_DESIGN_PENDING_APPROVAL(DS@v5)",
+    "approval_phrase": "DS@v5 승인",
+    "exact_human_approval_found": false
+  },
+  "independent_root_verification": {
+    "local_files_rechecked": 45,
+    "primary_sources_fetched": 20,
+    "primary_fulltext_pdfs": 16,
+    "ocr_recovered": [
+      "S01 Dawid 1984",
+      "S04 Diebold-Mariano 1995"
+    ]
+  },
+  "guarantees": {
+    "model_fits": 0,
+    "score_bearing_runs": 0,
+    "comparison_count": 4,
+    "next_comparison_index": 5,
+    "lockbox_reads": 0,
+    "dacon_actions": 0,
+    "dependency_changes": 0,
+    "source_edits": 0,
+    "eventstore_appends": 0
+  },
+  "child_model_preference": {
+    "requested_by_user": "opus 5",
+    "resolved_selector": "anthropic/claude-opus-5",
+    "applies_to": "future SK@v5 research subagents"
+  }
+}

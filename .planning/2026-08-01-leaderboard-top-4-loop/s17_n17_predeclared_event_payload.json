@@ -1,0 +1,26 @@
+{
+  "event_type": "PREDECLARED",
+  "cycle_id": "S17-N17_R4_NO_REFIT_STRICT_SOURCE_SEPARATION_COMPARISON",
+  "stage_id": "S6",
+  "node_id": "S17-N17_R4_NO_REFIT_STRICT_SOURCE_SEPARATION_COMPARISON",
+  "actor": "root",
+  "occurred_at": "2026-08-08T21:47:01.782719+09:00",
+  "body": {
+    "preregistration_sha256": "623e7590dc764c8945c7dd4c9b1aa4481c876fa98452f7e5c36ee7cbb3e7db4a",
+    "parent_ids": [
+      "S17-N16_R4_SOURCE_SEPARATED_VS_CONCAT_PREREQUISITE_AUDIT"
+    ],
+    "mechanism": "Source-specific models may preserve complementary LDAPS/GFS information lost by concatenation, but must beat the matched concat control and CHAMPION under a no-refit strict-past comparison.",
+    "treatment": "Q2-frozen equal and one-degree source-weighted blends of source-pure DL/DG actions.",
+    "control": "Matched all-source concat D action plus fixed CHAMPION incumbent.",
+    "metric": "Exact official Total with 4,999-replicate joint dependent bootstrap, 3/7/14-day blocks, centered max-t and T_R MCS.",
+    "min_effect": 0.001635,
+    "score_bearing": true,
+    "novelty_signature": "R4_STRICT_NO_REFIT_SOURCE_SEPARATION_V1",
+    "basis_evidence_ids": [
+      "RWA_DATA_R4",
+      "S17_N16_PREREQUISITE",
+      "S17_N7_STRICT_ACTION_PRECEDENT"
+    ]
+  }
+}

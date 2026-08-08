@@ -1,0 +1,517 @@
+{
+ "dacon_upload": false,
+ "decided_utc": "2026-08-04T07:44:07.281727+00:00",
+ "external_actions": [],
+ "lane": "L1",
+ "lockbox_reopened": false,
+ "model_fits": 0,
+ "new_2024_evaluation": false,
+ "node": "C1N23_ELIGIBLE_MOS",
+ "report_sha256": "469667380a93dfe3b9deae1b74590d144f64c199a14b03a4618ea16429adeab5",
+ "result": {
+  "eligible_fraction": 0.5806288545142049,
+  "eligible_rows": 11486,
+  "gap_to_target": 0.023403172236948433,
+  "gate_modified": false,
+  "gate_version": "M270_MONTHLY_GATE_v1_frozen_2026-08-04",
+  "incumbent": "M271_MEDIAN4",
+  "incumbent_score": {
+   "ficr": 0.41320978983964385,
+   "group_ficr": {
+    "1": 0.42079521858555724,
+    "2": 0.46863045810963244,
+    "3": 0.3502036928237419
+   },
+   "group_nmae": {
+    "1": 0.13286075292051555,
+    "2": 0.13543735862877082,
+    "3": 0.151750291391336
+   },
+   "one_minus_nmae": 0.8599838656864592,
+   "total": 0.6365968277630516
+  },
+  "methods": {
+   "median_shift": {
+    "R1_improves": false,
+    "R2_gate": false,
+    "R3_sign_stable": true,
+    "delta_vs_incumbent": -0.030956305142888718,
+    "ficr": 0.34737876933606904,
+    "gate": {
+     "bootstrap_q05": -0.03538679209359462,
+     "flags": {
+      "G1": false,
+      "G2": false,
+      "G3": false,
+      "G4": false
+     },
+     "months_scored": 9,
+     "passed": false,
+     "positive_months": 2,
+     "sign_test_p": 0.98046875
+    },
+    "group_ficr": {
+     "1": 0.3720484535975114,
+     "2": 0.38541679518888844,
+     "3": 0.2846710592218074
+    },
+    "group_nmae": {
+     "1": 0.13120195625948264,
+     "2": 0.12892381565686123,
+     "3": 0.14816740037088563
+    },
+    "one_minus_nmae": 0.8639022759042568,
+    "qualifies": false,
+    "shift_examples": [
+     {
+      "group": 1,
+      "pred_band": "(0.1, 0.25]",
+      "shifts": [
+       -0.02,
+       -0.0006,
+       -0.0107
+      ]
+     },
+     {
+      "group": 1,
+      "pred_band": "(0.25, 0.45]",
+      "shifts": [
+       -0.0203,
+       -0.0417,
+       -0.0503
+      ]
+     },
+     {
+      "group": 1,
+      "pred_band": "(0.45, 0.7]",
+      "shifts": [
+       -0.0528,
+       -0.0475,
+       -0.039
+      ]
+     },
+     {
+      "group": 1,
+      "pred_band": "(0.7, 1.1]",
+      "shifts": [
+       -0.0491,
+       -0.0237,
+       -0.03
+      ]
+     },
+     {
+      "group": 2,
+      "pred_band": "(0.1, 0.25]",
+      "shifts": [
+       -0.0041,
+       -0.003,
+       -0.0047
+      ]
+     },
+     {
+      "group": 2,
+      "pred_band": "(0.25, 0.45]",
+      "shifts": [
+       -0.0307,
+       -0.0349,
+       -0.0533
+      ]
+     },
+     {
+      "group": 2,
+      "pred_band": "(0.45, 0.7]",
+      "shifts": [
+       -0.0769,
+       -0.0736,
+       -0.0841
+      ]
+     },
+     {
+      "group": 2,
+      "pred_band": "(0.7, 1.1]",
+      "shifts": [
+       -0.0633,
+       -0.0439,
+       -0.0648
+      ]
+     },
+     {
+      "group": 3,
+      "pred_band": "(0.1, 0.25]",
+      "shifts": [
+       0.0047,
+       0.0001,
+       -0.0069
+      ]
+     },
+     {
+      "group": 3,
+      "pred_band": "(0.25, 0.45]",
+      "shifts": [
+       -0.0113,
+       -0.031,
+       -0.012
+      ]
+     },
+     {
+      "group": 3,
+      "pred_band": "(0.45, 0.7]",
+      "shifts": [
+       -0.0716,
+       -0.0592,
+       -0.0388
+      ]
+     },
+     {
+      "group": 3,
+      "pred_band": "(0.7, 1.1]",
+      "shifts": [
+       -0.071,
+       -0.084,
+       -0.1125
+      ]
+     }
+    ],
+    "sign_agreement": 0.9166666666666666,
+    "strata_with_all_splits": 12,
+    "total": 0.6056405226201629
+   },
+   "metric_shift": {
+    "R1_improves": false,
+    "R2_gate": false,
+    "R3_sign_stable": false,
+    "delta_vs_incumbent": -0.00421184602523017,
+    "ficr": 0.4078987537697165,
+    "gate": {
+     "bootstrap_q05": -0.007384608994845512,
+     "flags": {
+      "G1": false,
+      "G2": false,
+      "G3": false,
+      "G4": false
+     },
+     "months_scored": 9,
+     "passed": false,
+     "positive_months": 2,
+     "sign_test_p": 0.98046875
+    },
+    "group_ficr": {
+     "1": 0.4104962880132105,
+     "2": 0.4650239112840165,
+     "3": 0.3481760620119226
+    },
+    "group_nmae": {
+     "1": 0.136638506182637,
+     "2": 0.13398472745483866,
+     "3": 0.15876313724474525
+    },
+    "one_minus_nmae": 0.8568712097059263,
+    "qualifies": false,
+    "shift_examples": [
+     {
+      "group": 1,
+      "pred_band": "(0.1, 0.25]",
+      "shifts": [
+       0.005,
+       0.005,
+       0.005
+      ]
+     },
+     {
+      "group": 1,
+      "pred_band": "(0.25, 0.45]",
+      "shifts": [
+       0.025,
+       -0.04,
+       -0.045
+      ]
+     },
+     {
+      "group": 1,
+      "pred_band": "(0.45, 0.7]",
+      "shifts": [
+       -0.035,
+       0.03,
+       0.035
+      ]
+     },
+     {
+      "group": 1,
+      "pred_band": "(0.7, 1.1]",
+      "shifts": [
+       0.01,
+       0.025,
+       0.025
+      ]
+     },
+     {
+      "group": 2,
+      "pred_band": "(0.1, 0.25]",
+      "shifts": [
+       0.0,
+       -0.005,
+       0.005
+      ]
+     },
+     {
+      "group": 2,
+      "pred_band": "(0.25, 0.45]",
+      "shifts": [
+       -0.025,
+       -0.025,
+       -0.06
+      ]
+     },
+     {
+      "group": 2,
+      "pred_band": "(0.45, 0.7]",
+      "shifts": [
+       -0.005,
+       0.0,
+       -0.01
+      ]
+     },
+     {
+      "group": 2,
+      "pred_band": "(0.7, 1.1]",
+      "shifts": [
+       -0.005,
+       0.0,
+       -0.01
+      ]
+     },
+     {
+      "group": 3,
+      "pred_band": "(0.1, 0.25]",
+      "shifts": [
+       0.005,
+       0.005,
+       0.0
+      ]
+     },
+     {
+      "group": 3,
+      "pred_band": "(0.25, 0.45]",
+      "shifts": [
+       -0.015,
+       0.035,
+       0.02
+      ]
+     },
+     {
+      "group": 3,
+      "pred_band": "(0.45, 0.7]",
+      "shifts": [
+       -0.02,
+       -0.02,
+       0.055
+      ]
+     },
+     {
+      "group": 3,
+      "pred_band": "(0.7, 1.1]",
+      "shifts": [
+       0.01,
+       0.01,
+       0.055
+      ]
+     }
+    ],
+    "sign_agreement": 0.3333333333333333,
+    "strata_with_all_splits": 12,
+    "total": 0.6323849817378214
+   }
+  },
+  "node": "C1N23_ELIGIBLE_MOS",
+  "parent_node": "C1N22_GLOBAL_SHIFT",
+  "population_diagnosis": [
+   {
+    "examples": [
+     {
+      "all_rows": -0.1328,
+      "eligible": -0.0105,
+      "group": 1,
+      "pred_band": "(0.1, 0.25]"
+     },
+     {
+      "all_rows": -0.0651,
+      "eligible": -0.0397,
+      "group": 1,
+      "pred_band": "(0.25, 0.45]"
+     },
+     {
+      "all_rows": -0.0528,
+      "eligible": -0.0457,
+      "group": 1,
+      "pred_band": "(0.45, 0.7]"
+     },
+     {
+      "all_rows": -0.0334,
+      "eligible": -0.0318,
+      "group": 1,
+      "pred_band": "(0.7, 1.1]"
+     },
+     {
+      "all_rows": -0.1307,
+      "eligible": -0.004,
+      "group": 2,
+      "pred_band": "(0.1, 0.25]"
+     },
+     {
+      "all_rows": -0.0663,
+      "eligible": -0.0415,
+      "group": 2,
+      "pred_band": "(0.25, 0.45]"
+     },
+     {
+      "all_rows": -0.0853,
+      "eligible": -0.0781,
+      "group": 2,
+      "pred_band": "(0.45, 0.7]"
+     },
+     {
+      "all_rows": -0.0567,
+      "eligible": -0.0546,
+      "group": 2,
+      "pred_band": "(0.7, 1.1]"
+     },
+     {
+      "all_rows": -0.1419,
+      "eligible": -0.003,
+      "group": 3,
+      "pred_band": "(0.1, 0.25]"
+     },
+     {
+      "all_rows": -0.0469,
+      "eligible": -0.0169,
+      "group": 3,
+      "pred_band": "(0.25, 0.45]"
+     },
+     {
+      "all_rows": -0.0704,
+      "eligible": -0.0583,
+      "group": 3,
+      "pred_band": "(0.45, 0.7]"
+     },
+     {
+      "all_rows": -0.0874,
+      "eligible": -0.0833,
+      "group": 3,
+      "pred_band": "(0.7, 1.1]"
+     }
+    ],
+    "median_abs_shift_all_rows": 0.0683766881263787,
+    "median_abs_shift_eligible": 0.040574344120101156,
+    "median_magnitude_ratio": 0.7269588656350248,
+    "method": "median_shift",
+    "strata_compared": 12
+   },
+   {
+    "examples": [
+     {
+      "all_rows": -0.07,
+      "eligible": 0.005,
+      "group": 1,
+      "pred_band": "(0.1, 0.25]"
+     },
+     {
+      "all_rows": -0.045,
+      "eligible": -0.045,
+      "group": 1,
+      "pred_band": "(0.25, 0.45]"
+     },
+     {
+      "all_rows": 0.01,
+      "eligible": 0.035,
+      "group": 1,
+      "pred_band": "(0.45, 0.7]"
+     },
+     {
+      "all_rows": 0.01,
+      "eligible": 0.01,
+      "group": 1,
+      "pred_band": "(0.7, 1.1]"
+     },
+     {
+      "all_rows": -0.06,
+      "eligible": -0.005,
+      "group": 2,
+      "pred_band": "(0.1, 0.25]"
+     },
+     {
+      "all_rows": -0.06,
+      "eligible": -0.025,
+      "group": 2,
+      "pred_band": "(0.25, 0.45]"
+     },
+     {
+      "all_rows": 0.0,
+      "eligible": 0.0,
+      "group": 2,
+      "pred_band": "(0.45, 0.7]"
+     },
+     {
+      "all_rows": -0.01,
+      "eligible": -0.01,
+      "group": 2,
+      "pred_band": "(0.7, 1.1]"
+     },
+     {
+      "all_rows": -0.065,
+      "eligible": 0.005,
+      "group": 3,
+      "pred_band": "(0.1, 0.25]"
+     },
+     {
+      "all_rows": 0.01,
+      "eligible": 0.02,
+      "group": 3,
+      "pred_band": "(0.25, 0.45]"
+     },
+     {
+      "all_rows": -0.02,
+      "eligible": -0.02,
+      "group": 3,
+      "pred_band": "(0.45, 0.7]"
+     },
+     {
+      "all_rows": 0.03,
+      "eligible": 0.03,
+      "group": 3,
+      "pred_band": "(0.7, 1.1]"
+     }
+    ],
+    "median_abs_shift_all_rows": 0.025,
+    "median_abs_shift_eligible": 0.015,
+    "median_magnitude_ratio": 1.0,
+    "method": "metric_shift",
+    "strata_compared": 12
+   }
+  ],
+  "predeclared_check": {
+   "H1_expectation": "유효행 기준 이동 크기가 전체행 기준의 절반 미만",
+   "H1_held": false,
+   "H2_expectation": "median_shift 가 R1·R2·R3 만족",
+   "H2_held": false,
+   "H3_expectation": "metric_shift 가 R1·R2·R3 만족",
+   "H3_held": false,
+   "chosen": null,
+   "frozen_priority": [
+    "metric_shift",
+    "median_shift"
+   ],
+   "qualified_methods": [],
+   "verdict": "BIAS_CORRECTION_FAMILY_CLOSED_ON_CORRECT_POPULATION"
+  },
+  "promoted_total": 0.6365968277630516,
+  "supersedes": [
+   "C1N21_MOS_BIAS_CORRECTION",
+   "C1N22_GLOBAL_SHIFT"
+  ],
+  "supersession_reason": "추정 모집단 오설정 (전체행 -> 유효행)",
+  "total_rows": 19782
+ },
+ "schema_version": 1,
+ "script_sha256": "638a59c03fe316d9ae47470c53e19383a8af8df3a9eba8d5d0941692388e1782",
+ "stage": "M271_P4_CYCLE23_ELIGIBLE_MOS"
+}

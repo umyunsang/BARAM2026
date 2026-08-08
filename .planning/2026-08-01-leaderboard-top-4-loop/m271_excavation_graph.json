@@ -1,0 +1,1370 @@
+{
+ "digest": "7adfaccaa822055b6fd959529ad8bcccadca32461bbdb0a8579b52f9c29f7e7b",
+ "edges": [
+  "dict_items([('source', 'A1_labels'), ('target', 'C1N12_G3_HISTORY'), ('kind', 'follows')])",
+  "dict_items([('source', 'A2_columns'), ('target', 'AXIS_UNUSED_COLUMNS'), ('kind', 'depends_on')])",
+  "dict_items([('source', 'A3_spatial'), ('target', 'C1N5_SPATIAL_INTERPOLATION'), ('kind', 'follows')])",
+  "dict_items([('source', 'A3_spatial'), ('target', 'C1N6_WIND50_MIDPOINT'), ('kind', 'follows')])",
+  "dict_items([('source', 'A4_error'), ('target', 'C1N1_TOPRATE_MECHANISM'), ('kind', 'follows')])",
+  "dict_items([('source', 'A4_error'), ('target', 'C1N2_COLLIDER_CORRECTED'), ('kind', 'follows')])",
+  "dict_items([('source', 'A4_error'), ('target', 'C1N3_MASS_AXIS_WIND_SECTOR'), ('kind', 'follows')])",
+  "dict_items([('source', 'A5_scada'), ('target', 'C1N10_BLEND_LOCALITY'), ('kind', 'follows')])",
+  "dict_items([('source', 'A7_deficit_init'), ('target', 'C1N11_V2_REPRESENTATION'), ('kind', 'follows')])",
+  "dict_items([('source', 'A7_deficit_init'), ('target', 'C1N13_ENSEMBLE_VARIANCE'), ('kind', 'follows')])",
+  "dict_items([('source', 'A7_deficit_init'), ('target', 'C1N4_BAND_CONDITIONAL_POLICY_ORACLE'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N100_NOVEL_MEMBER_PROBE'), ('target', 'C1N101_PHYSICAL_MEMBER_PROBE'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N101_PHYSICAL_MEMBER_PROBE'), ('target', 'C1N102_RETRIEVAL_MEMBER'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N102_RETRIEVAL_MEMBER'), ('target', 'C1N103_EXTERNAL_NWP_MEMBER'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N103_EXTERNAL_NWP_MEMBER'), ('target', 'C1N104_M244_KEY_RECOVERED'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N104_M244_KEY_RECOVERED'), ('target', 'C1N105_M244_RECIPE_READ'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N13_ENSEMBLE_VARIANCE'), ('target', 'C1N14_SHRINKBLEND'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N13_ENSEMBLE_VARIANCE'), ('target', 'C1N15_WALKFORWARD'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N14_SHRINKBLEND'), ('target', 'C1N16_ROBUSTNESS_AUDIT'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N16_ROBUSTNESS_AUDIT'), ('target', 'C1N17_METRIC_ALIGNED_COMBINER'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N17_METRIC_ALIGNED_COMBINER'), ('target', 'C1N18_SPREAD_SKILL'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N17_METRIC_ALIGNED_COMBINER'), ('target', 'C1N19_ENVELOPE_ORACLE'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N19_ENVELOPE_ORACLE'), ('target', 'C1N20_ALPHA_ENDPOINT'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N19_ENVELOPE_ORACLE'), ('target', 'C1N25_ENVELOPE_LAMBDA'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N20_ALPHA_ENDPOINT'), ('target', 'C1N14_SHRINKBLEND'), ('kind', 'supersedes')])",
+  "dict_items([('source', 'C1N20_ALPHA_ENDPOINT'), ('target', 'C1N21_MOS_BIAS_CORRECTION'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N20_ALPHA_ENDPOINT'), ('target', 'C1N22_GLOBAL_SHIFT'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N20_ALPHA_ENDPOINT'), ('target', 'C1N23_ELIGIBLE_MOS'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N20_ALPHA_ENDPOINT'), ('target', 'C1N24_MEMBER_COUNT_REOPEN'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N20_ALPHA_ENDPOINT'), ('target', 'C1N26_POOL_WIDTH_SCREEN'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N20_ALPHA_ENDPOINT'), ('target', 'C1N27_RESIDUAL_SIGNAL'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N20_ALPHA_ENDPOINT'), ('target', 'C1N28_PERGRID_SIGNAL'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N20_ALPHA_ENDPOINT'), ('target', 'C1N29_CHAMPION_AUDIT'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N20_ALPHA_ENDPOINT'), ('target', 'C1N30_TEMPORAL_SIGNAL'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N20_ALPHA_ENDPOINT'), ('target', 'C1N31_SPACE_TIME'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N23_ELIGIBLE_MOS'), ('target', 'C1N21_MOS_BIAS_CORRECTION'), ('kind', 'supersedes')])",
+  "dict_items([('source', 'C1N23_ELIGIBLE_MOS'), ('target', 'C1N22_GLOBAL_SHIFT'), ('kind', 'supersedes')])",
+  "dict_items([('source', 'C1N29_CHAMPION_AUDIT'), ('target', 'C1N32_LOCKBOX_OPERATOR'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N2_COLLIDER_CORRECTED'), ('target', 'AXIS_AVAILABILITY_RECOVERY'), ('kind', 'depends_on')])",
+  "dict_items([('source', 'C1N2_COLLIDER_CORRECTED'), ('target', 'C1N1_TOPRATE_MECHANISM'), ('kind', 'supersedes')])",
+  "dict_items([('source', 'C1N32_LOCKBOX_OPERATOR'), ('target', 'C1N33_SINGLE_VS_ENSEMBLE'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N33_SINGLE_VS_ENSEMBLE'), ('target', 'C1N34_SHRINK_TO_BEST'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N34_SHRINK_TO_BEST'), ('target', 'C1N35_FIXED_POLICY_CORRECTION'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N35_FIXED_POLICY_CORRECTION'), ('target', 'C1N36_SOURCE_SENSITIVITY'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N35_FIXED_POLICY_CORRECTION'), ('target', 'C1N37_BAND_ALIGNED_LOSS'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N35_FIXED_POLICY_CORRECTION'), ('target', 'C1N38_BAND_LOSS_FIXED'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N38_BAND_LOSS_FIXED'), ('target', 'C1N39_ARCHITECTURE_GAP'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N39_ARCHITECTURE_GAP'), ('target', 'C1N40_BAND_CLASSIFIER'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N39_ARCHITECTURE_GAP'), ('target', 'C1N92_METRIC_ALIGNED_LOSS'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N39_ARCHITECTURE_GAP'), ('target', 'C1N95_RECONSTRUCTION_GAP'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N40_BAND_CLASSIFIER'), ('target', 'C1N41_BAND_CLASSIFIER_CAPACITY'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N40_BAND_CLASSIFIER'), ('target', 'C1N93_ORDINAL_REPRESENTATION'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N41_BAND_CLASSIFIER_CAPACITY'), ('target', 'C1N42_TEACHER_RESTORED'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N42_TEACHER_RESTORED'), ('target', 'C1N43_EFFECT_TREND'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N42_TEACHER_RESTORED'), ('target', 'C1N44_SHARPENED_DECISION'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N44_SHARPENED_DECISION'), ('target', 'C1N45_SUBMISSION_DECISION'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N44_SHARPENED_DECISION'), ('target', 'C1N56_MEASURED_POWERCURVE'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N45_SUBMISSION_DECISION'), ('target', 'C1N46_CLOSURE_FALSIFICATION'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N46_CLOSURE_FALSIFICATION'), ('target', 'C1N47_EXTERNAL_NWP_REVIVED'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N47_EXTERNAL_NWP_REVIVED'), ('target', 'C1N48_MODEL_VALIDATION'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N48_MODEL_VALIDATION'), ('target', 'C1N49_RHO_ACCEPTANCE'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N48_MODEL_VALIDATION'), ('target', 'C1N50_NONNEGATIVE_WEIGHTS'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N4_BAND_CONDITIONAL_POLICY_ORACLE'), ('target', 'C1N7_POLICY_FROZEN_GATE'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N4_BAND_CONDITIONAL_POLICY_ORACLE'), ('target', 'C1N8_ORACLE_LADDER'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N50_NONNEGATIVE_WEIGHTS'), ('target', 'C1N51_EXTERNAL_SOURCE_PROBE'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N51_EXTERNAL_SOURCE_PROBE'), ('target', 'C1N52_EXTERNAL_CLOSURE'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N52_EXTERNAL_CLOSURE'), ('target', 'C1N53_SUPPLIED_EXTRACTION'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N53_SUPPLIED_EXTRACTION'), ('target', 'C1N54_SCATTER_CEILING'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N54_SCATTER_CEILING'), ('target', 'C1N55_TURBINE_CORRELATION'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N55_TURBINE_CORRELATION'), ('target', 'C1N57_FICR_CEILING'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N56_MEASURED_POWERCURVE'), ('target', 'C1N58_TEACHER_OOF_SPLIT'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N57B_VARIANCE_LAW'), ('target', 'C1N63_CEILING_REBASE'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N57_FICR_CEILING'), ('target', 'C1N57B_VARIANCE_LAW'), ('kind', 'depends_on')])",
+  "dict_items([('source', 'C1N57_FICR_CEILING'), ('target', 'C1N59_PERFECT_PROG_BOUND'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N57_FICR_CEILING'), ('target', 'C1N60_LEVEL_TEMPERATURE'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N60_LEVEL_TEMPERATURE'), ('target', 'C1N61_GRID_BOUNDARY'), ('kind', 'depends_on')])",
+  "dict_items([('source', 'C1N60_LEVEL_TEMPERATURE'), ('target', 'C1N62_MONTH_MECHANISM'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N63_CEILING_REBASE'), ('target', 'C1N64_BAND_AVOIDANCE'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N64_BAND_AVOIDANCE'), ('target', 'C1N65_WIND_LIMITED_BOUND'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N65_WIND_LIMITED_BOUND'), ('target', 'C1N66_HETEROSCEDASTIC_WIND'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N66_HETEROSCEDASTIC_WIND'), ('target', 'C1N67_EXACT_CURVE_PROPAGATION'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N67_EXACT_CURVE_PROPAGATION'), ('target', 'C1N68_EMPIRICAL_DECOMPOSITION'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N68_EMPIRICAL_DECOMPOSITION'), ('target', 'C1N69_SKILL_RESPONSE'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N68_EMPIRICAL_DECOMPOSITION'), ('target', 'C1N77_PER_SOURCE_STACK'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N68_EMPIRICAL_DECOMPOSITION'), ('target', 'C1N82_TEACHER_SCALEUP'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N68_EMPIRICAL_DECOMPOSITION'), ('target', 'C1N90_WITHIN_BIN_INTEGRATION'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N69_SKILL_RESPONSE'), ('target', 'C1N70_BASELINE_CORRECTION'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N69_SKILL_RESPONSE'), ('target', 'C1N72_CURVE_BLEND'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N70_BASELINE_CORRECTION'), ('target', 'C1N71_TEACHER_WEIGHT'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N72_CURVE_BLEND'), ('target', 'C1N73_GROUP_BLEND_GATE'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N73_GROUP_BLEND_GATE'), ('target', 'C1N74_BLOCK_LENGTH'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N74_BLOCK_LENGTH'), ('target', 'C1N75_DAILY_GATE_ESTIMAND'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N75_DAILY_GATE_ESTIMAND'), ('target', 'C1N76_CIRCULAR_BLOCK'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N76_CIRCULAR_BLOCK'), ('target', 'C1N78_LOOP_ENGINE_C10'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N77_PER_SOURCE_STACK'), ('target', 'C1N80_FUSION_ANOMALY'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N78_LOOP_ENGINE_C10'), ('target', 'C1N79_LEDGER_CONTRACT'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N78_LOOP_ENGINE_C10'), ('target', 'C1N85_C16_RECHECK'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N79_LEDGER_CONTRACT'), ('target', 'C1N81_CYCLE_CONTRACT_ENFORCED'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N7_POLICY_FROZEN_GATE'), ('target', 'C1N9_GATE_POWER'), ('kind', 'depends_on')])",
+  "dict_items([('source', 'C1N82_TEACHER_SCALEUP'), ('target', 'C1N83_TEACHER_SCALEUP_REJUDGED'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N83_TEACHER_SCALEUP_REJUDGED'), ('target', 'C1N84_TEACHER_CHRONOLOGICAL'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N85_C16_RECHECK'), ('target', 'C1N86_LANE_EXPAND'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N86_LANE_EXPAND'), ('target', 'C1N87_CURTAILMENT_CLEAN_TARGET'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N87_CURTAILMENT_CLEAN_TARGET'), ('target', 'C1N88_N2_PROBE_L5_OPEN'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N88_N2_PROBE_L5_OPEN'), ('target', 'C1N89_ANOMALY_CLEAN_TARGET'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N90_WITHIN_BIN_INTEGRATION'), ('target', 'C1N91_WITHIN_BIN_ESTABLISHED'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N93_ORDINAL_REPRESENTATION'), ('target', 'C1N94_CDF_REJUDGE'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N95_RECONSTRUCTION_GAP'), ('target', 'C1N96_GAP_REJUDGE'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N96_GAP_REJUDGE'), ('target', 'C1N97_BOOSTING_ROUNDS'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N97_BOOSTING_ROUNDS'), ('target', 'C1N98_REPRODUCIBILITY_ADJUDICATION'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N98_REPRODUCIBILITY_ADJUDICATION'), ('target', 'C1N99_ENSEMBLE_EXHAUSTIVE'), ('kind', 'follows')])",
+  "dict_items([('source', 'C1N99_ENSEMBLE_EXHAUSTIVE'), ('target', 'C1N100_NOVEL_MEMBER_PROBE'), ('kind', 'follows')])",
+  "dict_items([('source', 'N0'), ('target', 'A1_labels'), ('kind', 'depends_on')])",
+  "dict_items([('source', 'N0'), ('target', 'A2_columns'), ('kind', 'depends_on')])",
+  "dict_items([('source', 'N0'), ('target', 'A3_spatial'), ('kind', 'depends_on')])",
+  "dict_items([('source', 'N0'), ('target', 'A4_error'), ('kind', 'depends_on')])",
+  "dict_items([('source', 'N0'), ('target', 'A5_scada'), ('kind', 'depends_on')])",
+  "dict_items([('source', 'N0'), ('target', 'A6_timing'), ('kind', 'depends_on')])",
+  "dict_items([('source', 'N0'), ('target', 'A7_deficit_init'), ('kind', 'depends_on')])"
+ ],
+ "nodes": [
+  {
+   "id": "A1_labels",
+   "lane": "L1",
+   "node_type": "MEASURE",
+   "premise": null,
+   "spec_hash": null,
+   "status": "LIVE",
+   "summary": "라벨 특성 — 유효행·자기상관 0.95+"
+  },
+  {
+   "id": "A2_columns",
+   "lane": "L2",
+   "node_type": "MEASURE",
+   "premise": null,
+   "spec_hash": null,
+   "status": "LIVE",
+   "summary": "NWP 컬럼 인벤토리 — 진짜미사용 평균 MI 0.41배"
+  },
+  {
+   "id": "A3_spatial",
+   "lane": "L2",
+   "node_type": "MEASURE",
+   "premise": null,
+   "spec_hash": null,
+   "status": "LIVE",
+   "summary": "격자·터빈 기하 — GFS 격자 1개 공유, 1000m 능선"
+  },
+  {
+   "id": "A4_error",
+   "lane": "L2",
+   "node_type": "MEASURE",
+   "premise": null,
+   "spec_hash": null,
+   "status": "LIVE",
+   "summary": "층화 예보검증 — 일주기 편향, 240도 43%"
+  },
+  {
+   "id": "A5_scada",
+   "lane": "L3",
+   "node_type": "MEASURE",
+   "premise": null,
+   "spec_hash": null,
+   "status": "LIVE",
+   "summary": "파워커브 — 나셀-NWP 잔차 2.08~2.37 m/s"
+  },
+  {
+   "id": "A6_timing",
+   "lane": "L1",
+   "node_type": "MEASURE",
+   "premise": null,
+   "spec_hash": null,
+   "status": "LIVE",
+   "summary": "시간 규약 — 여유 {1h, 25h}, 위반 0"
+  },
+  {
+   "id": "A7_deficit_init",
+   "lane": "L8",
+   "node_type": "MEASURE",
+   "premise": null,
+   "spec_hash": null,
+   "status": "LIVE",
+   "summary": "결손 원장 — 가법분해 잔차 5.55e-17"
+  },
+  {
+   "id": "AXIS_AVAILABILITY_RECOVERY",
+   "lane": "L3",
+   "node_type": "EXPERIMENT",
+   "premise": "AVAILABILITY_UNKNOWABLE_AT_FORECAST",
+   "spec_hash": null,
+   "status": "PRUNED",
+   "summary": "터빈 가용성 회수"
+  },
+  {
+   "id": "AXIS_UNUSED_COLUMNS",
+   "lane": "L2",
+   "node_type": "EXPERIMENT",
+   "premise": "UNUSED_COLUMNS_CARRY_LITTLE",
+   "spec_hash": null,
+   "status": "PRUNED",
+   "summary": "미사용 NWP 컬럼 확장"
+  },
+  {
+   "id": "C1N100_NOVEL_MEMBER_PROBE",
+   "lane": "L7",
+   "node_type": "EXPERIMENT",
+   "premise": "GBM_REPARAMETERISATION_IS_NOT_DIVERSITY_CORRELATION_FLOOR_0_98",
+   "spec_hash": null,
+   "status": "PRUNED",
+   "summary": "C1N99 의 부활 술어 `structurally_novel_candidate_added` 를 직접 시험한다. 신규 후보 `NOVEL_GENWT` = 오늘 재현한 M269 사양(**발전율 표본가중** — 12 후보 중 유일 — 다른 피처 스크린, 다른 결정정책). 단독 0.631783. **기각** — 어떤 조합도 M115 단독 0.638410 을 못 넘는다. `med(M115,M129,NOVEL)` 0.636973, NOVEL 포함 최선(5 개) 0.638088, 둘 다 C1N99 최선 0.639389 보다 낮다. **실패가 표적을 정량화한다.** M115 와의 오차 상관: M129 0.9811 / M113 0.9828 / **NOVEL 0.9767** / **M244 아날로그 0.8436**. 표본가중·스크린·정책을 전부 바꿔도 GBM 계열 내부 변형은 상관이 0.98 아래로 안 내려간다 — **같은 것을 예측한다**. **C1N99 해석을 정정한다**: 최선 조합이 M244 를 포함한 이유는 '약체 타이브레이커' 가 아니라 **유일한 탈상관 멤버**여서다. 조합 축을 열려면 M115 와의 오차 상관 **<=0.85** 후보가 필요하고, 그것은 **방법군 자체가 달라야** 한다(아날로그/최근접이웃, 물리 직접계산, 다른 표적공간)"
+  },
+  {
+   "id": "C1N101_PHYSICAL_MEMBER_PROBE",
+   "lane": "L7",
+   "node_type": "EXPERIMENT",
+   "premise": "SAME_NWP_IMPLIES_CORRELATION_FLOOR_0_91",
+   "spec_hash": null,
+   "status": "PRUNED",
+   "summary": "C1N100 이 정량화한 표적(M115 대비 오차 상관 <=0.85)을 **물리 갈래**로 시험한다. `CURVE_PHYS` = 실측 파워커브 ∘ teacher 풍속 — **GBM 을 전혀 안 거치는** 순수 물리 사상이다(재학습 0 회, C1N73 산출 재사용). **기각** — 상관 **0.9097** 로 0.85 벽을 못 뚫는다. 단독 0.592217, `med(M115,M129,CURVE)` 0.637005 로 M115 단독 0.638410 에 미달하고 어떤 조합도 C1N99 최선 0.639389 를 못 넘는다. **기전 — 공통 원인이 GBM 이 아니라 NWP 다.** teacher 풍속이 GFS·LDAPS 에서 나오고 M115 도 같은 NWP 를 쓴다. **풍속 예보 오차가 두 경로 모두의 지배적 오차원**이므로 하류에서 무엇을 하든 오차가 같이 움직인다 — C1N68 의 27 배 비율(모델링 장치 +0.017 대 완벽 풍속 +0.453)이 정확히 이 이야기였다. **M244 가 0.8436 인 이유도 이것으로 설명된다** — 아날로그는 NWP 를 회귀 입력으로 쓰지 않고 **과거 유사 패턴을 검색**하므로 오차 전파 경로가 구조적으로 다르다. **상관 0.85 벽은 하류 방법론으로 못 뚫는다** — 같은 NWP 를 쓰는 한 0.91 이 바닥이고, 뚫으려면 **NWP 를 다르게 소비**(검색 기반)하거나 **다른 NWP** 여야 한다"
+  },
+  {
+   "id": "C1N102_RETRIEVAL_MEMBER",
+   "lane": "L7",
+   "node_type": "EXPERIMENT",
+   "premise": "SAME_NWP_CORRELATION_FLOOR_CONFIRMED_BY_THREE_PATHS",
+   "spec_hash": null,
+   "status": "PRUNED",
+   "summary": "조합 축의 마지막 갈래 — **검색 기반(AnEn)** 후보를 재현 가능하게 새로 만든다. M244 는 receipt 가 빈 키 0 개라 강화가 불가하므로 재구축이다. 표준 설계(Delle Monache et al. 2013): 저차원 검색공간(teacher 풍속 + 시간 위상 4), k=200, 이웃 rate 의 46 구간 히스토그램 + Laplace 평활, 결정층은 선행 노드와 동일. **가드 전부 통과**(누출 0, 확률면 정상, 조인 19,782). **H1~H4 전부 거짓** — 상관 **0.9150**(목표 <=0.85), 단독 0.602807(M244 0.605760 미달), 최선 조합 0.638555 로 C1N99 최선 대비 **-0.000834**. **세 갈래가 모두 0.91 에 수렴했다** — GBM 재모수화 0.9767 / 순수 물리 0.9097 / 검색 기반 0.9150. 회귀->물리->검색으로 방법론을 완전히 갈아도 바닥이 안 뚫린다. **같은 NWP 를 쓰는 한 0.91 이 바닥**임이 세 독립 경로로 확인됐다. **M244 의 0.8436 이 재현성 결함의 실질 비용이다** — 내 AnEn 도 검색 기반인데 0.9150 이므로 차이는 **검색 키**에 있고, `RARE_EVENT_CORRECTED`·`Q234` 라는 이름이 희귀사건 보정과 분기별 처리를 시사하나 **receipt 가 비어 무엇을 했는지 알 수 없다**. 조합 축의 유일한 열쇠를 손에 쥐고도 복원할 수 없다"
+  },
+  {
+   "id": "C1N103_EXTERNAL_NWP_MEMBER",
+   "lane": "L7",
+   "node_type": "EXPERIMENT",
+   "premise": "EXTERNAL_NWP_ARCHIVE_DOES_NOT_COVER_VALIDATION_SURFACE",
+   "spec_hash": null,
+   "status": "PRUNED",
+   "summary": "C1N102 가 남긴 두 경로 중 **외부 NWP 독립 멤버**를 시도한다. C1N70 은 ECMWF 를 **teacher 혼합**으로만 쟀고(+0.000098) **독립 앙상블 멤버로는 미판정**이었으며, 다른 NWP 는 정의상 다른 풍속 오차를 가지므로 상관 0.85 벽을 뚫을 유일한 구조적 근거였다. 보유 자산 점검: `artifacts/external/open-meteo-previous-runs` 에 ecmwf_ifs025·icon_global 2 모델 x 12 개월 x 3 좌표 = 72 파일, 변수 `wind_speed_100m_previous_day2`(전일 예보라 리드타임 정합, **재분석이 아니라 예보 아카이브**이므로 규칙 경계 안). **그러나 전부 2024 다 — 2023 파일 0 개**이고 검증면은 2023 Q2~Q4 라 겹치는 행이 **0** 이다. 사용자 승인 하에 2023 수집을 시도했고 **직접 확인 결과 불가**하다 — previous-runs API 가 2023-07(ecmwf)·2023-11(icon) 에 72 시간 전부 **null** 을 반환하고 2024-07 은 72/72 정상값을 반환한다. API 장애가 아니라 **아카이브가 2023 을 덮지 않는다**. C1N51 이 같은 사실을 기록해 뒀고 지금도 유효하다. **정책이 아니라 데이터 가용성으로 막혔다** — 외부 NWP 를 현 검증면에서 독립 멤버로 판정하는 것은 **불가능**하다. 2024 lockbox 에서만 평가 가능하며 그것은 되돌릴 수 없는 3 차 소비다"
+  },
+  {
+   "id": "C1N104_M244_KEY_RECOVERED",
+   "lane": "L7",
+   "node_type": "EXPERIMENT",
+   "premise": null,
+   "spec_hash": null,
+   "status": "LIVE",
+   "summary": "**C1N98 의 주장을 정정한다.** 나는 M244 의 receipt 가 '빈 키 0 개' 라고 기록했으나 **틀렸다** — `M244...-dev-2023-Q3.json`(fold 별)을 찾은 것이고, 이 계보는 **후보 단위 receipt** 하나를 낸다. `M244_RARE_EVENT_CORRECTED_ANALOG_Q234.json` 이 **18 개 키**로 존재하며 `prediction_sha256`·`inputs`·`policy`·`diagnostics` 를 갖는다. 분류기 계열과 규약이 다를 뿐 문서화돼 있다. **산출기도 온전하다** — `run_rare_event_corrected_analog_transfer.py:51` 의 `MODEL_ID`, 그리고 `M243_RECEIPT_SHA` 를 assert 하는 부모 체인(M243 recency spread <- recency weighted <- spread shrunk <- conditional daily analog profile <- stable daily analog profile)까지 있다. **탈상관 0.8436 의 기전이 읽힌다** — `_complete_group_days`·`_profile_frame`·`_profile_heads` 는 **일 단위 아날로그 프로파일 전이**다. 시간별 독립 예측이 아니라 **유사한 하루 전체를 찾아 24 시간 프로파일을 통째로 옮긴다**. 검색공간 `REPRESENTATIONS` 는 core/extended x raw/**raw_delta** 이고 `raw_delta` 는 **변화량** 표현이라 수준이 아닌 변화를 매칭해 계통 편의가 상쇄된다. **C1N102 가 왜 0.9150 이었는지도 설명된다** — 나는 **시간 단위**로 teacher 풍속에 매칭했으므로 풍속 예보 오차가 행마다 그대로 전파돼 GBM 과 같은 경로가 됐다. 아날로그의 **껍데기(k-NN)** 를 만들었지 M244 의 실제 기전(일 프로파일 전이 + 변화량 표현)이 아니었다. **0.8436 은 우연이 아니라 설계 결과이고 설계가 복원 가능하다**"
+  },
+  {
+   "id": "C1N105_M244_RECIPE_READ",
+   "lane": "L7",
+   "node_type": "EXPERIMENT",
+   "premise": null,
+   "spec_hash": null,
+   "status": "LIVE",
+   "summary": "M244 의 **재현성을 확정하고 설계를 판독**한다(적합 0 회). **바이트 일치 확인** — receipt `prediction_sha256` 과 디스크 산출물이 `fb007b62d07c9d15757b0d449b0f11cc165925e6631f173a9c2f6e87b9eb7598` 로 일치하고, `open_zip_sha256` 도 현 아카이브와 같으며, 산출기가 정상 import 되고 `main()` 이 있다. **M244 는 재현 가능하다** — C1N98·C1N104 가 우려한 결함이 없다. **설계 판독** — `architecture: exact_m243_with_train_only_rare_event_analog_mos`, `hub_feature: phys_v2__hub117_speed`, `member_adjustment: slope_times_query_minus_neighbor_hub_speed`, `recency_half_life_days: 365.0`. recipe 3 개 모두 표현 `core_raw_delta_pca24_season2p5` — core(공간 IDW 풍속 + hub117) x **raw_delta(변화량)** x pca24 x 계절가중 2.5. k=20/40/5, kernel exponential/exponential/uniform, head utility/utility/median, transform level/level/scaled, blend_weight 0.075/0.05/0.125. **핵심 구조 — 아날로그 가중 합계 0.25, 부모 기여 0.75**. M244 는 독립 아날로그가 아니라 **보정**이며, 탈상관 0.8436 은 아날로그 기전만의 것이 아니라 **부모가 GBM 계열이 아니라는 점**(v2 transfer sequence 계보)에서도 온다. **C1N102 실패의 진짜 이유가 둘로 확정된다** — (1) 나는 아날로그를 **단독 후보**로 만들었고 M244 는 비-GBM 부모 위의 25% 보정이다, (2) 나는 단일 k=200 히스토그램을 썼고 M244 는 k=5/20/40 세 스케일 x 세 head x 세 kernel 의 **아날로그 앙상블**이며 검색 표현이 변화량+PCA+계절가중이다. **설계가 전부 복원됐고 모수를 흔들 수 있다**"
+  },
+  {
+   "id": "C1N10_BLEND_LOCALITY",
+   "lane": "L2",
+   "node_type": "EXPERIMENT",
+   "premise": "MULTISOURCE_BLEND_GAIN_NEGLIGIBLE",
+   "spec_hash": null,
+   "status": "PRUNED",
+   "summary": "블렌딩 국소성 — 실측 감소 0.10~0.37%, 상관 1.1 sigma"
+  },
+  {
+   "id": "C1N11_V2_REPRESENTATION",
+   "lane": "L3",
+   "node_type": "EXPERIMENT",
+   "premise": "COARSER_REPRESENTATION_IS_WORSE",
+   "spec_hash": null,
+   "status": "PRUNED",
+   "summary": "v2 7분위 대조 — 46-bin 대비 FICR -0.0139 (동일 fold)"
+  },
+  {
+   "id": "C1N12_G3_HISTORY",
+   "lane": "L3",
+   "node_type": "EXPERIMENT",
+   "premise": "HISTORY_LENGTH_DOES_NOT_EXPLAIN_G3",
+   "spec_hash": null,
+   "status": "PRUNED",
+   "summary": "g3 이력 길이 — 열세가 Q2>Q3>Q4 로 줄지 않음"
+  },
+  {
+   "id": "C1N13_ENSEMBLE_VARIANCE",
+   "lane": "L7",
+   "node_type": "EXPERIMENT",
+   "premise": null,
+   "spec_hash": null,
+   "status": "LIVE",
+   "summary": "분산감소 앙상블 — 악화 셀 0 으로 게이트 통과. **축 개방**"
+  },
+  {
+   "id": "C1N14_SHRINKBLEND",
+   "lane": "L7",
+   "node_type": "EXPERIMENT",
+   "premise": null,
+   "spec_hash": null,
+   "status": "LIVE",
+   "summary": "수축 블렌드 alpha=0.5 (mean) — Total 0.632505, 게이트 통과"
+  },
+  {
+   "id": "C1N15_WALKFORWARD",
+   "lane": "L4",
+   "node_type": "EXPERIMENT",
+   "premise": "WALKFORWARD_WEIGHTING_REJECTED",
+   "spec_hash": null,
+   "status": "PRUNED",
+   "summary": "walk-forward MSE 가중 — 등가중보다 낮고 게이트 기각"
+  },
+  {
+   "id": "C1N16_ROBUSTNESS_AUDIT",
+   "lane": "L4",
+   "node_type": "EXPERIMENT",
+   "premise": null,
+   "spec_hash": null,
+   "status": "LIVE",
+   "summary": "견고성 감사 — 세 그룹 동시 개선, 월제거 9/9, 재현 일치"
+  },
+  {
+   "id": "C1N17_METRIC_ALIGNED_COMBINER",
+   "lane": "L7",
+   "node_type": "EXPERIMENT",
+   "premise": null,
+   "spec_hash": null,
+   "status": "LIVE",
+   "summary": "지표정합 결합자 — median 채택 +0.0018, 실측 천장 rho_bar 0.9227"
+  },
+  {
+   "id": "C1N18_SPREAD_SKILL",
+   "lane": "L4",
+   "node_type": "EXPERIMENT",
+   "premise": "SPREAD_EXPLAINED_BY_PREDICTED_LEVEL",
+   "spec_hash": null,
+   "status": "PRUNED",
+   "summary": "스프레드-스킬 — 주변 23%p 단조, 통제 후 4.9%p"
+  },
+  {
+   "id": "C1N19_ENVELOPE_ORACLE",
+   "lane": "L5",
+   "node_type": "EXPERIMENT",
+   "premise": null,
+   "spec_hash": null,
+   "status": "LIVE",
+   "summary": "봉투 오라클 — 커버리지 0.226, 오라클 Total 0.742380. **추출 축 개방**"
+  },
+  {
+   "id": "C1N1_TOPRATE_MECHANISM",
+   "lane": "L2",
+   "node_type": "EXPERIMENT",
+   "premise": "SUPERSEDED_BY_COLLIDER_CORRECTION",
+   "spec_hash": null,
+   "status": "PRUNED",
+   "summary": "정격구간 기전 — 가용성·이질성 부호 역전"
+  },
+  {
+   "id": "C1N20_ALPHA_ENDPOINT",
+   "lane": "L7",
+   "node_type": "EXPERIMENT",
+   "premise": null,
+   "spec_hash": null,
+   "status": "LIVE",
+   "summary": "alpha 끝점 — 사다리 완전 단조, alpha=1.0 승격. **현 챔피언 후보 0.636597**"
+  },
+  {
+   "id": "C1N21_MOS_BIAS_CORRECTION",
+   "lane": "L1",
+   "node_type": "EXPERIMENT",
+   "premise": "MOS_SUPERSEDED_BY_ELIGIBLE_POPULATION",
+   "spec_hash": null,
+   "status": "PRUNED",
+   "summary": "MOS 층화 보정 — 추정 모집단 오설정으로 -0.0636"
+  },
+  {
+   "id": "C1N22_GLOBAL_SHIFT",
+   "lane": "L1",
+   "node_type": "EXPERIMENT",
+   "premise": "MOS_SUPERSEDED_BY_ELIGIBLE_POPULATION",
+   "spec_hash": null,
+   "status": "PRUNED",
+   "summary": "전역 이동 + 기전 진단 — 예측 부호 반대로 기각, 사양 결함 노출"
+  },
+  {
+   "id": "C1N23_ELIGIBLE_MOS",
+   "lane": "L1",
+   "node_type": "EXPERIMENT",
+   "premise": "NO_STABLE_METRIC_ALIGNED_BIAS",
+   "spec_hash": null,
+   "status": "PRUNED",
+   "summary": "유효행 MOS 재시행 — 지표정합 이동의 fold간 부호일치 0.333"
+  },
+  {
+   "id": "C1N24_MEMBER_COUNT_REOPEN",
+   "lane": "L7",
+   "node_type": "EXPERIMENT",
+   "premise": "MEMBER_COUNT_CLOSED_UNDER_BOTH_COMBINERS",
+   "spec_hash": null,
+   "status": "PRUNED",
+   "summary": "멤버 수 축 재검 — median 12개도 4개보다 낮음"
+  },
+  {
+   "id": "C1N25_ENVELOPE_LAMBDA",
+   "lane": "L3",
+   "node_type": "EXPERIMENT",
+   "premise": "LAMBDA_UNPREDICTABLE_FROM_CONTEXT",
+   "spec_hash": null,
+   "status": "PRUNED",
+   "summary": "봉투 안 위치 lambda — 층간 범위 0.78 이나 fold 간 Spearman -0.0756"
+  },
+  {
+   "id": "C1N26_POOL_WIDTH_SCREEN",
+   "lane": "L7",
+   "node_type": "EXPERIMENT",
+   "premise": "POOL_WIDTH_NOT_MONTH_CONSISTENT",
+   "spec_hash": null,
+   "status": "PRUNED",
+   "summary": "멤버 풀 폭 Q3 선별 — 124멤버 pooled +0.0018 이나 월별 2/3"
+  },
+  {
+   "id": "C1N27_RESIDUAL_SIGNAL",
+   "lane": "L2",
+   "node_type": "EXPERIMENT",
+   "premise": "NO_RESIDUAL_SIGNAL_IN_SUPPLIED_NWP",
+   "spec_hash": null,
+   "status": "PRUNED",
+   "summary": "잔차 신호 (격자평균 NWP 65피처) — fold-외 R^2 -0.0535"
+  },
+  {
+   "id": "C1N28_PERGRID_SIGNAL",
+   "lane": "L2",
+   "node_type": "EXPERIMENT",
+   "premise": "NO_RESIDUAL_SIGNAL_IN_SUPPLIED_NWP",
+   "spec_hash": null,
+   "status": "PRUNED",
+   "summary": "잔차 신호 (격자별 NWP 795피처) — fold-외 R^2 -0.0453. L2 레인 폐쇄"
+  },
+  {
+   "id": "C1N29_CHAMPION_AUDIT",
+   "lane": "L4",
+   "node_type": "EXPERIMENT",
+   "premise": null,
+   "spec_hash": null,
+   "status": "LIVE",
+   "summary": "선택편향 감사 — 결합자·alpha·챔피언 우세가 세 fold 전부에서 재현. 오프셋 투영 온라인 0.6432~0.6577"
+  },
+  {
+   "id": "C1N2_COLLIDER_CORRECTED",
+   "lane": "L2",
+   "node_type": "EXPERIMENT",
+   "premise": null,
+   "spec_hash": null,
+   "status": "LIVE",
+   "summary": "collider 교정 — 가용성 기전 확인 15~23 sigma"
+  },
+  {
+   "id": "C1N30_TEMPORAL_SIGNAL",
+   "lane": "L2",
+   "node_type": "EXPERIMENT",
+   "premise": "NO_RESIDUAL_SIGNAL_IN_SUPPLIED_NWP",
+   "spec_hash": null,
+   "status": "PRUNED",
+   "summary": "잔차 신호 (시간문맥 585피처) — fold-외 R^2 -0.0322. 셋 중 최고이나 문턱 미달"
+  },
+  {
+   "id": "C1N31_SPACE_TIME",
+   "lane": "L2",
+   "node_type": "EXPERIMENT",
+   "premise": "NO_RESIDUAL_SIGNAL_IN_SUPPLIED_NWP",
+   "spec_hash": null,
+   "status": "PRUNED",
+   "summary": "공간x시간 4770피처 — R^2 -0.0361, 상호작용 -0.0121(열가법). 2x2 네 칸 전부 음수"
+  },
+  {
+   "id": "C1N32_LOCKBOX_OPERATOR",
+   "lane": "L4",
+   "node_type": "EXPERIMENT",
+   "premise": "OPERATOR_TRANSFER_UNRESOLVED_CONFOUNDED",
+   "spec_hash": null,
+   "status": "PRUNED",
+   "summary": "lockbox 2차 — 2024 median(3) < mean(3), 둘 다 최고단일에 -0.012 패. 멤버 품질 스프레드 0.037(약체 대조군 포함)이라는 교란 명시"
+  },
+  {
+   "id": "C1N33_SINGLE_VS_ENSEMBLE",
+   "lane": "L7",
+   "node_type": "EXPERIMENT",
+   "premise": null,
+   "spec_hash": null,
+   "status": "LIVE",
+   "summary": "챔피언 vs 최고단일 — M115_XGBOOST 0.638410 > 챔피언 0.636597 이나 양방향 게이트 모두 기각. M115 는 3/3 fold 최고, 배포 대비 9/9월 통과"
+  },
+  {
+   "id": "C1N34_SHRINK_TO_BEST",
+   "lane": "L7",
+   "node_type": "EXPERIMENT",
+   "premise": "NOTHING_TO_ADD_TO_BEST_SINGLE",
+   "spec_hash": null,
+   "status": "PRUNED",
+   "summary": "M115 를 닻으로 한 수축 사다리 15 조합 — 전부 기각. 최고 단일에 결합이 더할 것 없음"
+  },
+  {
+   "id": "C1N35_FIXED_POLICY_CORRECTION",
+   "lane": "L6",
+   "node_type": "EXPERIMENT",
+   "premise": null,
+   "spec_hash": null,
+   "status": "LIVE",
+   "summary": "**정정** probe 본 parquet 은 fold별 선택 정책을 쓴다(프리미엄 M115 +0.0077, M113 +0.0053, M102 +0.0007). 고정정책 580 조합 중 자격 1: M115_XGBOOST@T0.6_G0.2 = 0.630310 (배포 대비 +0.001705)"
+  },
+  {
+   "id": "C1N36_SOURCE_SENSITIVITY",
+   "lane": "L2",
+   "node_type": "EXPERIMENT",
+   "premise": "EXTERNAL_NWP_MARGINAL_RHO_UNMEASURED",
+   "spec_hash": null,
+   "status": "PRUNED",
+   "summary": "외부 NWP 하한의 전제 민감도 — q x rho 격자 전체에서 필요치 만족 조합 0 개. 수집 없이 폐쇄 — **사이클 47 이 요구치 오류로 반증**"
+  },
+  {
+   "id": "C1N37_BAND_ALIGNED_LOSS",
+   "lane": "L3",
+   "node_type": "EXPERIMENT",
+   "premise": "SUPERSEDED_BY_FIXED_IMPLEMENTATION",
+   "spec_hash": null,
+   "status": "PRUNED",
+   "summary": "밴드 정합 손실 1차 — 학습 모집단 오설정 + 헤시안 폭주로 **무효**"
+  },
+  {
+   "id": "C1N38_BAND_LOSS_FIXED",
+   "lane": "L3",
+   "node_type": "EXPERIMENT",
+   "premise": "SUPERSEDED_BY_FIXED_IMPLEMENTATION",
+   "spec_hash": null,
+   "status": "PRUNED",
+   "summary": "밴드 정합 손실 2차 — D1·D2 교정. **V1 대조군 가드 발화**로 손실 축 미판정"
+  },
+  {
+   "id": "C1N39_ARCHITECTURE_GAP",
+   "lane": "L3",
+   "node_type": "EXPERIMENT",
+   "premise": null,
+   "spec_hash": null,
+   "status": "LIVE",
+   "summary": "누출 철회(scada_ws, 0.656158) + 구조 격차 실측 **0.086202** (직접 점회귀 0.5424 vs 분류기+정책 0.6286). 손실 축은 **미판정**"
+  },
+  {
+   "id": "C1N3_MASS_AXIS_WIND_SECTOR",
+   "lane": "L2",
+   "node_type": "EXPERIMENT",
+   "premise": "WIND_SECTOR_LOSS_IS_PROPORTIONAL",
+   "spec_hash": null,
+   "status": "PRUNED",
+   "summary": "손실질량 축 — 240도 초과비율 0.968"
+  },
+  {
+   "id": "C1N40_BAND_CLASSIFIER",
+   "lane": "L3",
+   "node_type": "EXPERIMENT",
+   "premise": null,
+   "spec_hash": null,
+   "status": "LIVE",
+   "summary": "정산모양 soft target (46 class) — 처리효과 **+0.009772**, FICR 기여 84%. V1 가드 발화로 미판정"
+  },
+  {
+   "id": "C1N41_BAND_CLASSIFIER_CAPACITY",
+   "lane": "L3",
+   "node_type": "EXPERIMENT",
+   "premise": null,
+   "spec_hash": null,
+   "status": "LIVE",
+   "summary": "증량 1회(예산 소진) — CONTROL 이 오히려 악화(V2 기각, 과적합). 처리효과는 **+0.021490 으로 배증**, 부호 재현(H5). 여전히 미판정"
+  },
+  {
+   "id": "C1N42_TEACHER_RESTORED",
+   "lane": "L3",
+   "node_type": "EXPERIMENT",
+   "premise": null,
+   "spec_hash": null,
+   "status": "LIVE",
+   "summary": "teacher(sitewind 14) 복원 — V3 통과(대조군 +0.011451). 처리효과 +0.004827, 부호 3/3 재현. V1 은 0.002685 차로 여전히 기각"
+  },
+  {
+   "id": "C1N43_EFFECT_TREND",
+   "lane": "L3",
+   "node_type": "EXPERIMENT",
+   "premise": "BAND_TARGET_VANISHES_AT_FRONTIER",
+   "spec_hash": null,
+   "status": "PRUNED",
+   "summary": "처리효과 vs 대조군 품질 r=-0.9922 (n=3). 영점 CONTROL 0.6027, 배포 품질 외삽 -0.0156. **밴드 목표는 정규화이지 목적함수 정합이 아니다**"
+  },
+  {
+   "id": "C1N44_SHARPENED_DECISION",
+   "lane": "L3",
+   "node_type": "EXPERIMENT",
+   "premise": "BAND_TARGET_AND_TEMPERATURE_ARE_SUBSTITUTES",
+   "spec_hash": null,
+   "status": "PRUNED",
+   "summary": "마지막 결손 제거(온도 자유도, fold-외 선택) — **V1 최초 통과**(CONTROL 0.604043). 처리효과 **-0.001015 로 역전**. 사이클 43 회귀선 예측 -0.000755 를 잔차 -0.000260 으로 맞힘(H6). 축을 **측정으로** 폐쇄"
+  },
+  {
+   "id": "C1N45_SUBMISSION_DECISION",
+   "lane": "L5",
+   "node_type": "EXPERIMENT",
+   "premise": "NO_CANDIDATE_BEATS_SUBMITTED_INCUMBENT",
+   "spec_hash": null,
+   "status": "PRUNED",
+   "summary": "제출 착수 판정 — 기준선 정정(배포 0.628605 -> **현직 M261 로컬 0.629973**). 문턱 넘는 후보는 게이트 기각, 게이트 통과 후보는 현직 대비 +0.000337(문턱의 33%). **착수하지 않는다**"
+  },
+  {
+   "id": "C1N46_CLOSURE_FALSIFICATION",
+   "lane": "L8",
+   "node_type": "EXPERIMENT",
+   "premise": null,
+   "spec_hash": null,
+   "status": "LIVE",
+   "summary": "폐쇄 집합 반증 — 오차 축소 역산으로 상위권 FICR 필요 sigma **1.817**, 로컬 0.66 필요 **1.871**. 사이클 36 의 요구치 0.571 은 급경사 점별 기준이라 **3.2 배 과대**했다"
+  },
+  {
+   "id": "C1N47_EXTERNAL_NWP_REVIVED",
+   "lane": "L2",
+   "node_type": "EXPERIMENT",
+   "premise": null,
+   "spec_hash": null,
+   "status": "LIVE",
+   "summary": "정정 요구치로 재계산 — 로컬 0.66 기준 **세 그룹 모두 실현가능**, 상위권 FICR 기준은 2/3 (g2 가 0.021 m/s 차). 사이클 36 전제 내용이 반증됨"
+  },
+  {
+   "id": "C1N48_MODEL_VALIDATION",
+   "lane": "L8",
+   "node_type": "EXPERIMENT",
+   "premise": null,
+   "spec_hash": null,
+   "status": "LIVE",
+   "summary": "46·47 의 두 가정 검증 — 결합산식 오차 +0.026~+0.048(보수적), **단일 k 가 상위권 두 지표를 동시 설명**(k 불일치 0.0057, 교차잔차 1-NMAE -0.00083 / FICR +0.00231). 상위권 우위는 결정층이 아니라 예보 정확도"
+  },
+  {
+   "id": "C1N49_RHO_ACCEPTANCE",
+   "lane": "L2",
+   "node_type": "EXPERIMENT",
+   "premise": "SUPERSEDED_BY_NONNEGATIVE_WEIGHT_FIX",
+   "spec_hash": null,
+   "status": "PRUNED",
+   "summary": "합격선 1차 — 비단조 출력으로 결함 노출. C1N50 이 대체"
+  },
+  {
+   "id": "C1N4_BAND_CONDITIONAL_POLICY_ORACLE",
+   "lane": "L6",
+   "node_type": "EXPERIMENT",
+   "premise": null,
+   "spec_hash": null,
+   "status": "LIVE",
+   "summary": "대역조건부 정책 — 오라클 상한 8.8%"
+  },
+  {
+   "id": "C1N50_NONNEGATIVE_WEIGHTS",
+   "lane": "L2",
+   "node_type": "EXPERIMENT",
+   "premise": null,
+   "spec_hash": null,
+   "status": "LIVE",
+   "summary": "음수가중 결함 교정 — 사이클 36 식이 rho>q 에서 음수가중(외삽). 비음 제약 재도출. **사이클 47 결론은 생존**(g2 여유 +0.033, 모서리 q=0.80 rho=0.60). 구속선: q=0.85 -> rho<=0.505, q=1.00 -> rho<=0.245"
+  },
+  {
+   "id": "C1N51_EXTERNAL_SOURCE_PROBE",
+   "lane": "L2",
+   "node_type": "EXPERIMENT",
+   "premise": null,
+   "spec_hash": null,
+   "status": "LIVE",
+   "summary": "ICON·ECMWF IFS 실측(Open-Meteo Previous Runs, previous_day2=48h 리드, 2024, truth=scada_ws) — ICON q 1.20~1.28(우리보다 나쁨), ECMWF q 0.99~1.07 rho 0.75~0.78. 구속 그룹 g2 에서 탈락"
+  },
+  {
+   "id": "C1N52_EXTERNAL_CLOSURE",
+   "lane": "L2",
+   "node_type": "EXPERIMENT",
+   "premise": "EXTERNAL_NWP_MEASURED_INSUFFICIENT",
+   "spec_hash": null,
+   "status": "PRUNED",
+   "summary": "상대 요구치로 재판정 — ECMWF 실측 감소 3.9~6.1% 대 필요 13.3%(**필요량의 30~45%**). 3-소스 상한도 동일. 축을 **측정으로** 폐쇄"
+  },
+  {
+   "id": "C1N53_SUPPLIED_EXTRACTION",
+   "lane": "L2",
+   "node_type": "EXPERIMENT",
+   "premise": "SUPERSEDED_BY_CHRONOLOGICAL_SPLIT",
+   "spec_hash": null,
+   "status": "PRUNED",
+   "summary": "학습형 teacher vs IDW 단일컬럼 — 무작위 KFold 로 46~49% 감소(시간 누출). C1N54 가 교정"
+  },
+  {
+   "id": "C1N54_SCATTER_CEILING",
+   "lane": "L3",
+   "node_type": "EXPERIMENT",
+   "premise": null,
+   "spec_hash": null,
+   "status": "LIVE",
+   "summary": "시간분할 교정 — 감소 24.7~29.8%(누출 17.8~21.3%p). **필요량 13.3% 의 약 2 배로 결론 생존**. 급경사 출력산포 상한 0.0712(밴드 1.19x) / 하한 0.0299(0.50x)"
+  },
+  {
+   "id": "C1N55_TURBINE_CORRELATION",
+   "lane": "L3",
+   "node_type": "EXPERIMENT",
+   "premise": "SUPERSEDED_BY_HOURLY_EMPIRICAL_CEILING",
+   "spec_hash": null,
+   "status": "PRUNED",
+   "summary": "터빈간 잔차상관 rho_t 0.27~0.30(예상보다 약함) — 그래도 집계 산포 0.0614~0.1469 로 **세 그룹 모두 밴드 반폭 초과**(1.02~2.45x). **병목은 NWP->풍속 이 아니라 풍속->출력**"
+  },
+  {
+   "id": "C1N56_MEASURED_POWERCURVE",
+   "lane": "L2",
+   "node_type": "EXPERIMENT",
+   "premise": "BASIS_FUNCTION_IRRELEVANT_TO_GBM",
+   "spec_hash": null,
+   "status": "PRUNED",
+   "summary": "파워커브 기저함수를 A5 실측 + IEC 밀도정규화로 교체 — V1 완벽재현(차이 0.000000), MEASURED -0.000039. 정격 27% 어긋난 기저를 고쳐도 무변화. **GBM 이 단조변환을 스스로 학습한다**"
+  },
+  {
+   "id": "C1N57B_VARIANCE_LAW",
+   "lane": "L8",
+   "node_type": "EXPERIMENT",
+   "premise": null,
+   "spec_hash": null,
+   "status": "LIVE",
+   "summary": "C57 receipt 재판독(파생 전용, 학습 없음). 조건부 산포가 출력수준의 멱함수다 — `log sd = log sigma + theta * log mu` 의 발전량가중 theta 가 **g1 +0.534 / g2 +0.495 / g3 +0.775** (가중 r 0.937~0.976). g1·g2 는 theta≈0.5 즉 **분산 ∝ 평균**(Tweedie p≈1, 독립 터빈 집계 서명), g3 만 곱셈 쪽(p 1.55)으로 A5 의 UNISON 포화비 0.89~0.95 와 맞는다. 덧셈도 곱셈도 아니므로 **전역 상수 T 는 어느 수준에서도 맞을 수 없다** — C1N60 의 근거"
+  },
+  {
+   "id": "C1N57_FICR_CEILING",
+   "lane": "L5",
+   "node_type": "EXPERIMENT",
+   "premise": null,
+   "spec_hash": null,
+   "status": "LIVE",
+   "summary": "전 구간 FICR 천장 — 10 분->시간 집계 + 경험적 분포 + 발전량 가중으로 재계산. 산포 0.0685->0.0601 / 0.0614->0.0436 / 0.1469->0.1007. **천장 0.7586 / 0.9108 / 0.5770 (평균 0.7488)** 대 로컬 0.66 요구 0.4459. **출력 산포는 병목이 아니다**"
+  },
+  {
+   "id": "C1N58_TEACHER_OOF_SPLIT",
+   "lane": "L4",
+   "node_type": "EXPERIMENT",
+   "premise": "TEACHER_FEATURE_NOISE_MONOTONE_LOWER_IS_BETTER",
+   "spec_hash": null,
+   "status": "PRUNED",
+   "summary": "teacher OOF 를 무작위 KFold 에서 시간블록으로 교체 — V1 완벽재현(0.604043, 차이 0.000000), BLOCKED **-0.002027**(FICR -0.000543 / 1-NMAE -0.001485), 게이트 [----] 4/9월 기각. 학습행 OOF sigma 가 shuffle 1.0923 -> blocked 1.6772 로 test(1.37~1.50)를 **건너뛰어** 반대편으로 어긋났는데 점수는 단조 하락했다. 두 점이 test sigma 를 끼우고 추세가 반대이므로 **'학습/평가 피처잡음을 일치시키면 낫다'는 가설 자체가 반증**된다 — 중간 블록수 재시험 불필요"
+  },
+  {
+   "id": "C1N59_PERFECT_PROG_BOUND",
+   "lane": "L6",
+   "node_type": "EXPERIMENT",
+   "premise": "SCADA_WS_ABSENT_IN_TEST_DIAGNOSTIC_ONLY",
+   "spec_hash": null,
+   "status": "PRUNED",
+   "summary": "Perfect Prog 상한(진단 전용, 후보 아님). CONTROL 0.604043 완벽재현, MASKONLY 가 CONTROL 과 **소수점까지 동일**(결측 경로 +0.000000 — 가용성이 결측패턴으로 샌다는 경로를 측정으로 0 확정), ORACLE 0.845340 로 +0.241297. 격차 0.029690 의 8 배라 **너무 느슨해 크기를 못 말한다**(1-NMAE 0.857->0.946 자체가 나셀 풍속계의 로터후류 오염 증거). 실행 전 비대칭 판정의 약한 가지. **건진 것은 그룹별 패턴** — 오라클 이득 g1 +0.288 / g2 +0.287 / g3 **+0.149** 로 C1N57B 의 theta(0.534/0.495/**0.775**)와 역대응한다. theta 가 높은(곱셈·가용성) g3 는 풍속을 완벽히 알아도 절반만 회수된다. **H4(g3 최대 이득) 기각** — 최악인 이유가 풍속이 아니면 풍속으로 못 고친다"
+  },
+  {
+   "id": "C1N5_SPATIAL_INTERPOLATION",
+   "lane": "L2",
+   "node_type": "EXPERIMENT",
+   "premise": "GFS_INTERPOLATION_JUSTIFIED",
+   "spec_hash": null,
+   "status": "PRUNED",
+   "summary": "GFS 공간보간 — nearest 가 IDW 보다 나쁨"
+  },
+  {
+   "id": "C1N60_LEVEL_TEMPERATURE",
+   "lane": "L7",
+   "node_type": "EXPERIMENT",
+   "premise": "LEVEL_GAIN_CONCENTRATED_IN_TWO_MONTHS",
+   "spec_hash": null,
+   "status": "PRUNED",
+   "summary": "수준조건부 온도(세 팔이 **같은 확률행렬** — fold 당 적합 1 회, 처리효과가 결정층에만 귀속). GLOBAL 0.604043 완벽재현 / LEVEL **0.613033**(+0.008990) / LEVELGROUP 0.611445. 기전 예측 적중 — FICR +0.019325 대 1-NMAE **-0.001344**(H3), T 가 수준에 단조(H5), 9 파라미터가 3 파라미터에 짐(H4 기각, 과적합 서명). 저·중 수준은 2.2 (최대 평탄화), 고 수준은 0.3~0.4(최대 날카로움) — **정반대 요구**. 그러나 게이트 [-O-O] 5/9 월 기각이고 C1N62 가 이유를 밝혔다: **이득이 2 개월에 집중**되어 배포 불가"
+  },
+  {
+   "id": "C1N61_GRID_BOUNDARY",
+   "lane": "L7",
+   "node_type": "EXPERIMENT",
+   "premise": "LEVEL_GAIN_CONCENTRATED_IN_TWO_MONTHS",
+   "spec_hash": null,
+   "status": "PRUNED",
+   "summary": "온도격자 확장 2x2 요인(확률면 캐시, V1·V2 **둘 다 차이 0.000000** 로 C44·C60 재현). 격자효과 전역 **+0.000000**(H6 — 전역 팔은 두 격자에서 똑같이 2.2 를 골라 C44 의 격자 선택이 옳았음을 확인) / 수준별 **-0.001169**(H1 기각). 확장격자가 0.10~0.20 을 줬는데도 고수준은 0.3~0.4 유지 — **하한은 애초에 안 물렸다**. 상한 확장(2.2->3.0)은 fold 마다 **다른 수준**에서 일어나 잡음추종이고 게이트 [----] 3/9 월, 최악월 -0.0148 로 G4 바닥까지 뚫린다. **동결격자의 한계가 정규화로 작동하고 있었다**"
+  },
+  {
+   "id": "C1N62_MONTH_MECHANISM",
+   "lane": "L8",
+   "node_type": "EXPERIMENT",
+   "premise": null,
+   "spec_hash": null,
+   "status": "LIVE",
+   "summary": "C60 이득의 월별 이질성(진단 전용, 조절변수 **실행 전 동결**). 사전지정 셋 모두 설명 실패 — Spearman M1 질량 +0.083 / M2 위양성 -0.200(문턱 0.5 미달) / M3 평균rate +0.333. **월별 표가 결론을 준다**: 2023-12 +0.041039, 2023-04 +0.021646, 나머지 일곱 달은 -0.0064~+0.0020. 최대 1 개월 제거시 평균 +0.004985 -> **+0.000479**, 2 개월 제거시 **-0.002545**(부호 반전). 11 월은 수준2 질량이 **최대**(0.381)인데 손해를 보므로 질량 서사도 성립하지 않는다. **기전이 참이어도 발화가 2/9 면 배포할 수 없고, 동결 게이트의 기각이 정확했다**"
+  },
+  {
+   "id": "C1N63_CEILING_REBASE",
+   "lane": "L8",
+   "node_type": "EXPERIMENT",
+   "premise": null,
+   "spec_hash": null,
+   "status": "LIVE",
+   "summary": "결손 원장을 동류평균이 아니라 **물리 천장**에 재기준화(파생 전용). 손실 항등식 `ficr_loss = (1/6)*w_gen*(1-ubar/4)` 를 108 셀 전부에서 잔차 **0.00e+00** 로 재구성했고 천장 초과 셀은 2.8% 로 전이가 유효하다. **g3 점유율이 회수가능 0.452 -> 여유 0.247 로 반토막**난다 — 동류평균 기준은 g3 의 어려운 물리(theta 0.775)를 회수 가능으로 잘못 계상하고 있었고, C1N57B·C1N59 와 세 갈래로 일치한다. 총 여유 **0.18133** 대 격차 0.02969 로 **6.1 배 — 목표를 물리가 막고 있지 않다**. 라우팅이 뒤집혀 1 위가 g3|2023-12|(0.45,0.7] 에서 **g2|2023-11|(0.45,0.7]** 로 옮겨간다(실현 0.136 대 천장 0.916). 대역 축은 (0.45,0.7] 로 불변이므로 **편향은 그룹 축에만** 있었다"
+  },
+  {
+   "id": "C1N64_BAND_AVOIDANCE",
+   "lane": "L8",
+   "node_type": "EXPERIMENT",
+   "premise": "MID_BAND_NOT_AVOIDED_ERROR_SYMMETRIC",
+   "spec_hash": null,
+   "status": "PRUNED",
+   "summary": "중간대 비켜감 가설 — **기각**(진단 전용). 주변분포 비 `P(예측 mid)/P(실제 mid)` 가 1.148~1.376 으로 세 그룹 모두 **1 초과** — 예측이 중간대를 비켜 가기는커녕 더 자주 쓴다. 오차 부호도 대칭(g2 과소 0.412)이라 이동 보정으로 못 고친다. 남는 것은 대칭 산포다. **V1 이 통과한 것이 소득** — g2 중간대 실현/천장 0.262 가 캐시 면에서도 최저(g1 0.368 / g3 0.316)여서 C1N63 의 라우팅이 독립 면에서 재현됐다"
+  },
+  {
+   "id": "C1N65_WIND_LIMITED_BOUND",
+   "lane": "L6",
+   "node_type": "EXPERIMENT",
+   "premise": null,
+   "spec_hash": null,
+   "status": "LIVE",
+   "summary": "국소 선형 오차전파로 적중률 예측 — `error = dP/dv * eps_v + r`, sigma_v 1.40 동결. **H1 3/12 로 기각**. 그러나 **어긋남이 대역에 대해 단조이고 세 그룹에서 동일**하다: 저출력대 +0.093~+0.119(관측이 예측보다 좋음), 고출력대 -0.093~-0.134(나쁨). 등분산 가정 하나가 양끝을 반대로 틀리게 한다 — NWP 풍속 오차는 상대오차가 일정해 **절대오차가 풍속을 따라 커진다**. **H4 는 통과**: C1N63 이 라우팅한 최대 여유 셀 g2 중간대의 차가 -0.028 로, **그 셀에서는 이미 풍속제약 한계에 붙어 있다**. sigma_v(v) 를 관측 적중률에서 역산하면 순환논법이므로 teacher OOF 잔차로 독립 계측해야 하고, 그래서 확률면 캐시를 v2 로 넓혔다"
+  },
+  {
+   "id": "C1N66_HETEROSCEDASTIC_WIND",
+   "lane": "L6",
+   "node_type": "EXPERIMENT",
+   "premise": null,
+   "spec_hash": null,
+   "status": "LIVE",
+   "summary": "sigma_v(v) 를 teacher OOF 잔차로 **독립 계측**(캐시 v2). 전체 1.5866 m/s 로 C58 의 1.37~1.50 과 정합. **이분산 확인** — Spearman(v, sigma) +0.911/+0.982/+0.982, 기울기 g1 +0.0865 / g2 +0.1136 / **g3 +0.1965** (v=10 에서 g3 2.44 대 g1 1.76 으로 g3 열세의 상당 부분이 여기 있다). 이분산 보정이 **고출력대를 고쳤다**(g2 -0.112 -> -0.006). 적중 3/12 -> 7/12. 그러나 저출력대는 +0.113 -> +0.124 로 불변이라 H2 기각"
+  },
+  {
+   "id": "C1N67_EXACT_CURVE_PROPAGATION",
+   "lane": "L6",
+   "node_type": "EXPERIMENT",
+   "premise": "PROPAGATION_APPROXIMATION_SUPERSEDED_BY_EMPIRICAL",
+   "spec_hash": null,
+   "status": "PRUNED",
+   "summary": "선형화를 버리고 실측 커브 몬테카를로(JCGM 101). 저출력대의 곡률·cut-in 절단 가설 **기각** — 예측이 0.293 -> 0.307 로 거의 안 움직이고 잔차 +0.086~+0.111 유지, 적중 7/12 제자리. C1N68 이 원인을 밝혔다: **전파 모형이 풍속-only 기계 자체를 과소평가**하고 있었다(경험적 CURVE_TEACHER 는 저출력대에서 0.380~0.406)"
+  },
+  {
+   "id": "C1N68_EMPIRICAL_DECOMPOSITION",
+   "lane": "L6",
+   "node_type": "EXPERIMENT",
+   "premise": null,
+   "spec_hash": null,
+   "status": "LIVE",
+   "summary": "전파 모형을 버리고 **같은 행 3 팔**로 직접 분해(적합·분포가정 없음, 보유율 1.000, 선택편향 0). **MODEL 0.3067 / CURVE_TEACHER 0.2897 / CURVE_ORACLE 0.7592**. 즉 피처 100 개 GBM + 46 구간 분포 + Bayes 결정층 전체가 '실측 커브를 teacher 풍속에 적용' 대비 **+0.017** 을 더하고, 완벽한 풍속은 **+0.453** 을 더한다 — **27 배**. **C1N65~67 의 '풍속제약 한계 도달' 해석을 정정한다**: 전파와 일치한다는 것은 *풍속-only 기계와 비슷하다*는 뜻이지 물리 한계라는 뜻이 아니다. g2 중간대의 남은 여지는 +0.577 로 12 셀 중 3 위(H4 기각). 모형잉여는 저출력대가 아니라 **중간대**에서 최대(+0.053)이고 고출력대는 **음수**(-0.017)"
+  },
+  {
+   "id": "C1N69_SKILL_RESPONSE",
+   "lane": "L6",
+   "node_type": "EXPERIMENT",
+   "premise": null,
+   "spec_hash": null,
+   "status": "LIVE",
+   "summary": "풍속 오차 배율 `k` 에 대한 스킬 반응곡선을 **직접 측정**(가드 둘 다 통과 — k=1 적중 0.2960 대 C68 CURVE_TEACHER 0.2897, k=0 적중 0.7592 대 CURVE_ORACLE 0.7592). k=1 Total **0.612331** -> k=0 **0.847521**. 목표 0.66 에 닿는 **k* = 0.7269**, 즉 요구 감소율 **27.3%** — C46 의 역산 13.3% 의 **2 배**이고 그 역산을 대체한다. H4 기각 — 곡선이 **볼록**이라 현재 지점의 개선이 가장 값이 적다(k=1 근방 기울기 0.164/단위, k=0.3 근방 0.326/단위). C52 가용 3.9~6.1% 는 Total +0.0064~+0.0099 에 해당해 검출문턱의 6~10 배로 보였고, 그것이 C1N70 을 유발했다"
+  },
+  {
+   "id": "C1N6_WIND50_MIDPOINT",
+   "lane": "L2",
+   "node_type": "EXPERIMENT",
+   "premise": "WIND50_MIDPOINT_NOT_BETTER",
+   "spec_hash": null,
+   "status": "PRUNED",
+   "summary": "50m 중점 피처 — 10m·max 보다 상관 낮음"
+  },
+  {
+   "id": "C1N70_BASELINE_CORRECTION",
+   "lane": "L2",
+   "node_type": "EXPERIMENT",
+   "premise": "VOIDED_BY_OWN_GUARD_SUPERSEDED_BY_C71",
+   "spec_hash": null,
+   "status": "PRUNED",
+   "summary": "**V2 가드 발화로 VOID** — 그리고 그 발화가 소득이다. C51 의 `sigma_cur` 는 GFS·LDAPS **두 원시 컬럼**의 선형보정 최적결합(2.05/2.18/1.98)이지 우리가 쓰는 teacher 가 아니다. 교정하면 q 가 0.99~1.07 -> **1.27~1.39** 로 뒤집혀 ECMWF 가 teacher 보다 나쁘고 결합 감소가 6.1% -> **0.00~0.18%**, Total +0.000098 로 문턱 미달이 된다(H1~H4 전부 True). 그러나 V2(비 r in [0.68,0.80], C54 정합)가 g3 0.8369 로 발화했고, 파고드니 **C54 는 `allweather` 단독(1.373/1.502/1.466)을, C70 은 `sitewind__mean`(1.496/1.600/**1.657**)을 쟀다.** `mean` 은 legacy 와 allweather 의 **단순 50/50 평균**이라 최적 가중이 아니다 — C50 이 비음 제약 최적결합을 확립했는데 teacher 편성에는 0.5 가 박혀 있다. g3 격차 13% 는 C69 기울기로 Total +0.019 규모. **사후에 허용범위를 넓히지 않고** C1N71 이 별도 사전확약으로 측정한다"
+  },
+  {
+   "id": "C1N71_TEACHER_WEIGHT",
+   "lane": "L2",
+   "node_type": "EXPERIMENT",
+   "premise": null,
+   "spec_hash": null,
+   "status": "LIVE",
+   "summary": "teacher 편성의 0.5 고정가중을 C50 비음제약 최적가중(fold-외 선택)으로 교체해 풍속 잔차층에서 측정. 가드 완벽 통과(V1 0.00e+00 / V2 0.0000). OPTIMAL 이 MEAN 대비 **+0.58% / +0.91% / +0.77%** 개선, 환산 Total **+0.001238** 로 검출문턱 0.001013 을 겨우 넘는다. **C70 이 시사한 13% 격차는 가중 결함이 아니었다** — 이 캐시에서 g3 allweather 1.6521 대 mean 1.6566 은 0.27% 차이이고, C54 의 1.466 은 다른 모집단·분할의 값이다. **핵심은 rho(legacy, allweather) = 0.89~0.91** — 두 teacher 가 거의 같은 신호라 결합이 최선단일 대비 벌 게 없다(MEAN 1.4960 대 ALLWEATHER 1.4957). 이것이 C1N68 의 +0.017 과 같은 이야기다: **모형 스택이 얇은 이유는 입력이 사실상 하나의 풍속 신호이기 때문**이다. 승격 전망은 낮다 — GBM 은 세 컬럼을 이미 전부 갖고 있어 어떤 선형결합도 스스로 만들 수 있으므로 C1N56(기저함수 -0.000039) 과 같은 결과가 예상된다"
+  },
+  {
+   "id": "C1N72_CURVE_BLEND",
+   "lane": "L7",
+   "node_type": "EXPERIMENT",
+   "premise": "VOIDED_BY_OWN_GUARD_SUPERSEDED_BY_C73",
+   "spec_hash": null,
+   "status": "PRUNED",
+   "summary": "**V2 가드 발화로 VOID** — 내가 박은 참조 상수가 틀렸다. C69 의 `k=1` 팔은 `curve(scada_ws + 시뮬레이션 잡음)` 이지 `curve(sitewind)` 가 아니었고, 실제 커브 직독은 **0.594183** 으로 MODEL(0.604043)에 **진다**. 두 팔이 적중률에서는 0.006 차로 맞았으나(C69 V1 이 검정한 것) Total 에서는 0.018 벌어진다 — 시뮬 오차는 대칭 가우스인데 실제 teacher 오차는 편의가 있어 NMAE 를 깎는다. **적중률 일치가 Total 일치를 보장하지 않는다.** C68 의 적중률 순서(MODEL 우위)가 이미 모순을 가리키고 있었으나 내가 파고들지 않았다. 팔 값 자체는 유효하고 C1N73 이 이어받는다"
+  },
+  {
+   "id": "C1N73_GROUP_BLEND_GATE",
+   "lane": "L7",
+   "node_type": "EXPERIMENT",
+   "premise": "DECISION_LAYER_EFFECTS_NOT_ESTABLISHED_AT_N9",
+   "spec_hash": null,
+   "status": "PRUNED",
+   "summary": "그룹별 커브 결합의 게이트(가드 셋 전부 통과, C72 팔 정확히 재현). GROUP_ALPHA **0.608974**(MODEL 대비 +0.004931) 이나 게이트 `[-O--]` 5/9 월 기각. **선택 alpha 는 매우 안정적**이다 — g2 세 fold 전부 0.5, **g3 세 fold 전부 1.0** (커브 가중 0). g3 는 C1N57B 의 theta 0.775 로 곱셈·가용성 잡음이 지배하므로 파워커브가 정보를 못 주고, 선택 절차가 그것을 스스로 찾았다. **그러나 효과가 0 과 구분되지 않는다** — 월 델타 평균 +0.002185, 표준편차 0.012087, t=+0.542, p=0.602, 평균의 95% CI **[-0.005712, +0.010082]**. pooled 이득이 큰 것은 발전량 가중이 4 월(+0.0204)·12 월(+0.0176)에 쏠린 탓이고 10 월(-0.0158)·7 월(-0.0103)이 반대편에 있다. **C1N60 도 같은 진단**(t≈0.93, p≈0.38)이므로, 두 결정층 개입 모두 실재가 확립되지 않았고 동결 게이트가 두 번 다 옳았다"
+  },
+  {
+   "id": "C1N74_BLOCK_LENGTH",
+   "lane": "L4",
+   "node_type": "EXPERIMENT",
+   "premise": "BOOTSTRAP_BIAS_UNCORRECTED_LONG_BLOCKS_UNREADABLE",
+   "spec_hash": null,
+   "status": "PRUNED",
+   "summary": "**검증면 확장 시도. V2 가드 발화로 VOID** — 그러나 세 가지를 확정한다. (1) **개월 수로는 못 늘린다** — 세 그룹 라벨이 모두 있는 구간은 2023-01~2025-01 인데 Q1-2023 은 학습이 2022 뿐이고 g3 라벨이 2022 에 없어 fold 로 못 쓰며 2024 는 소진된 lockbox 다. 무료 확장 **0 개월**. (2) **부트스트랩 평균이 블록길이에 따라 아래로 흐른다**(L=30 에서 -0.0025/-0.0047). **당시 나는 원인을 Total 의 비선형성으로 지목했으나 C1N75·C1N76 이 그것을 반증했다** — 진짜 원인은 이동블록의 **가장자리 과소표집**이다. L<=5 만 신뢰 가능(편향 <0.00004). (3) **C1N73 의 '5 배 검정력 부족' 주장을 정정한다** — 일별 델타 sd 0.044756, 적분 자기상관 시간 **1.00/2.35 일**, 일 독립 SE 0.002964, L=5 블록 SE 0.00311, 월 블록 SE 0.004029 로 월 블록은 **1.36 배 보수적일 뿐**이다. 다만 월 sigma 가 일 독립 예측(0.00817)의 1.48 배이므로 짧은 시차 ACF 가 못 잡는 체제 스케일 의존이 실재하고, **월 블록이 틀린 것이 아니다**. L=5 에서 C60 은 0 을 제외하나(+0.000501~+0.014618) C73 은 못 한다(-0.000202~+0.010038)"
+  },
+  {
+   "id": "C1N75_DAILY_GATE_ESTIMAND",
+   "lane": "L4",
+   "node_type": "EXPERIMENT",
+   "premise": "VOIDED_BY_OWN_GUARD_SUPERSEDED_BY_C76",
+   "spec_hash": null,
+   "status": "PRUNED",
+   "summary": "**V1 발화로 VOID — 그리고 C1N74 의 진단이 틀렸음을 보인다.** 추정량을 게이트와 같은 계열의 **선형**(일별 델타의 평균)으로 바꿨는데도 편향이 그대로였다(L=30 에서 -0.0022). 비선형성이 원인이었다면 사라졌어야 한다. **동결 게이트는 편향되지 않았다** — 게이트가 부트스트랩하는 것은 월별 델타의 평균(선형)이다(`m270_monthly_validation.py:118`). C1N74 의 편향은 pooled Total 을 재계산한 내 구성에서 나왔다고 했으나 그것도 원인이 아니었고, C1N76 이 진짜 원인을 찾는다"
+  },
+  {
+   "id": "C1N76_CIRCULAR_BLOCK",
+   "lane": "L4",
+   "node_type": "EXPERIMENT",
+   "premise": null,
+   "spec_hash": null,
+   "status": "LIVE",
+   "summary": "**원인은 가장자리 과소표집이었다.** 이동블록 부트스트랩에서 날짜 i 를 덮는 시작점 수가 계열 양 끝에서 적고, 그 정도가 블록길이에 비례한다. 이 개발면은 2023-04 에 시작해 2023-12 에 끝나는데 **가장 큰 양수 델타 두 달이 정확히 양 끝**이다(C1N62·C1N73 이 이미 지목). 원형 블록(Politis & Romano 1992)으로 바꾸자 편향이 -0.0022~-0.0047 에서 **모든 블록길이에서 <=0.00007** 로 떨어졌다(V1·V2 통과, L=1 이 C75 와 일치). **판정: 두 효과 모두 성립하지 않는다.** n=228 일, 무편향, 폭 평탄(H1) 상태에서 C60 은 L=7 [-0.001307, +0.006057] / L=30 [-0.002059, +0.006756], C73 은 L=7 [-0.003207, +0.006217] 로 **L=1 을 포함한 전 구간에서 0 을 포함**한다. 일별 평균은 C60 +0.002116 / C73 +0.001562 로 pooled(+0.007694 / +0.004982)의 약 1/3 인데, 차이는 **발전량 가중이 양 끝 두 달에 쏠린 것**이 전부다. 동결 게이트가 세 계측기 중 가장 약한 자(n=9)로도 옳은 판정을 냈다"
+  },
+  {
+   "id": "C1N77_PER_SOURCE_STACK",
+   "lane": "L3",
+   "node_type": "EXPERIMENT",
+   "premise": "VERDICT_RETRACTED_INFORMATION_NOT_FUSION",
+   "spec_hash": null,
+   "status": "PRUNED",
+   "summary": "**이 세션 최초로 실제 딥리서치가 낳은 노드.** HEFTCom2024 우승팀이 NWP 소스별로 CatBoost 를 분리 적합했고(arXiv 2505.10367) 복수 소스 결합이 오차를 8~30% 줄인다는 문헌(ScienceDirect S0360544222027797)을 근거로 GFS/LDAPS 분리 스태킹을 시험했다. V1·V2 통과, POOLED 0.604043 / gfs 0.602321 / ldaps 0.593511 / stack 0.603122 로 **H1 기각(-0.000921)**. 소스 확률행렬 상관 0.8550 으로 sitewind 의 0.89~0.91 보다 낮아 H3(다양성 증가)는 확인됐다. **그러나 C1N80 이 판정을 철회한다** — V2 가 요구한 '서로소 분할' 때문에 교차·불일치 피처 20 개를 양쪽에서 버렸고(POOLED 101 대 팔 합계 88), 융합 시점이 아니라 정보량을 쟀다"
+  },
+  {
+   "id": "C1N78_LOOP_ENGINE_C10",
+   "lane": "L8",
+   "node_type": "EXPERIMENT",
+   "premise": null,
+   "spec_hash": null,
+   "status": "LIVE",
+   "summary": "**라우터가 지시한 노드.** `m271_p4_route.py` 가 상태그래프를 실제로 통과시켰고 증거 셋이 전부 C10 으로 갔다(stall 77 >= 3). ShinkaEvolve(arXiv 2509.19349)의 세 축을 리서치해 **라우터 v3** 을 만들었다 — **C16 크기게이트**(`expected_gain < 0.15 x 남은격차` 면 방향 기각, 획득함수 정규화의 최소형)와 **C17 신규성기각**(같은 레인 x 같은 kind 반복 시 기각, 임베딩 유사도를 노드 메타데이터로 대체). **이번 실패 4/4 포착** — C1N61·C1N71 은 C16(격차대비 0.039·0.042), C1N60·C1N73 은 C17. C1N68(격차대비 0.573)은 통과해 무차별 차단기가 아님을 확인. V1·V2·V3 전부 통과"
+  },
+  {
+   "id": "C1N79_LEDGER_CONTRACT",
+   "lane": "L8",
+   "node_type": "EXPERIMENT",
+   "premise": null,
+   "spec_hash": null,
+   "status": "LIVE",
+   "summary": "C10 이 지목한 **근본 결함**의 수정. A7 이 `T0.5_G1.5` 0.628605 로 원장을 세운 뒤 **어떤 사이클도 갱신하지 않았고**(감사 결과 **미기록 76 건**), 챔피언이 0.630310 로 바뀌어도 재계산하지 않아 회수가능질량이 **원리적으로 움직일 수 없었다**. 이력 영속화 + 셀 귀속 API(소유자 필수) + `stall_counter` **계산화** + 미기록 감사를 넣었다. 백필은 receipt 가 셀 단위로 지지하는 **C1N63 의 19 셀만** — 77 개를 사후 배정하지 않는다(그것이 이 사태를 만든 습관이다). **효과: 가짜 stall 77 -> 이력 계산 1, 잔여질량 0.04875 -> 0.02509, 그리고 라우팅이 C10 일색에서 C7/C13/C5/HALT 로 분화**했다 — 가짜 stall 이 C10 을 무조건 발화시켜 다른 조건을 전부 가리고 있었다"
+  },
+  {
+   "id": "C1N7_POLICY_FROZEN_GATE",
+   "lane": "L4",
+   "node_type": "EXPERIMENT",
+   "premise": "POLICY_FAMILY_FAILS_FROZEN_GATE",
+   "spec_hash": null,
+   "status": "PRUNED",
+   "summary": "동결 게이트 판정 — 62개 전부 기각"
+  },
+  {
+   "id": "C1N80_FUSION_ANOMALY",
+   "lane": "L3",
+   "node_type": "EXPERIMENT",
+   "premise": "EARLY_FUSION_CORRECT_FOR_CORRELATED_NWP_SOURCES",
+   "spec_hash": null,
+   "status": "PRUNED",
+   "summary": "**라우터 C5(부호역전, voi 0.40 으로 표 최고)가 지시한 노드.** C1N77 의 판정을 철회하고 정보량을 맞춘 비교로 다시 세웠다 — 공유 피처 9 개를 두 팔에 **모두** 주어 합집합이 POOLED 와 같아지고(V2 True) 남는 차이는 융합 시점 하나다. **격차가 오히려 커졌다** (-0.000921 -> **-0.002480**). H3 만 참 — 확률행렬 상관이 0.8550 -> **0.9153** 으로 올라, 공유 피처를 양쪽에 주면 두 팔이 닮아져 앙상블 이득이 사라진다는 기전이 확인된다. **H4 반증이 결정적** — `gfs_plus`(0.599800)가 C1N77 의 마른 `gfs`(0.602321)보다 **나쁘다**. 피처를 20 개 더 줬는데 성능이 떨어졌고, 분할된 모델에서는 그 피처들이 잡음으로 작동한다. **상관 0.855~0.915 의 NWP 소스쌍에서는 early fusion 이 옳다** — 문헌(ACM 3589335.3652504)이 말한 조건과 일치한다"
+  },
+  {
+   "id": "C1N81_CYCLE_CONTRACT_ENFORCED",
+   "lane": "L8",
+   "node_type": "EXPERIMENT",
+   "premise": null,
+   "spec_hash": null,
+   "status": "LIVE",
+   "summary": "미기록 문제 종결. 계약 API 를 만들기만 하고 **아무것도 강제하지 않아** 계약 이후 노드 넷도 안 썼다(79 건) — 엔진을 만들고 안 돌린 것과 같은 형태다. 감사 백필(AUDIT 사건 하나가 `cycles_covered=79` 로 덮음, 가짜 사건 79 개를 지어내지 않는다) + 개별 기록 8 건 + **라우팅 강제**(`require_recorded`)를 넣었다. 강제가 실물로 작동함이 확인됐다 — C1N68·C1N73·C1N76 이 개별 기록 없이 라우팅에 들어오려다 `CycleContractViolation` 으로 **실제로 거부**됐다. **정체 77(가짜) -> 1(계약을 늦게 만든 탓) -> 87(진짜)**, 원장 갱신필요 True -> False. 부작용(정체 복원 시 C10 재발화)은 `loop_engine_visits` 게이팅으로 막았고, 처음엔 곧바로 HALT 로 보내 다섯 건을 전부 멈췄다가 **후보 집합에서 C10 만 빼고 재선택**하도록 고쳤다 — 종료 가드는 '다른 것이 아무것도 발화하지 않을 때' 의 사다리다"
+  },
+  {
+   "id": "C1N82_TEACHER_SCALEUP",
+   "lane": "L6",
+   "node_type": "EXPERIMENT",
+   "premise": "V1_REFERENCE_MISSPECIFIED_SUPERSEDED_BY_C1N83",
+   "spec_hash": null,
+   "status": "PRUNED",
+   "summary": "**라우터 C7 scale_up 이 지시한 노드**(다른 넷은 C16 이 방향 자체를 기각). 리서치가 크기 근거를 줬다 — 진단풍모델+NN 후처리로 hub height 풍속 RMSE 약 30% 개선(WES 7/1905/2022)으로 C1N69 요구 27.3% 와 자릿수가 맞는다. **입력 부족 가설은 반증** — teacher 는 이미 수치형 1,347 열 전부를 먹는다. 확인된 공백 둘: 시계열 문맥 부재, 용량 미탐색. **V1 발화로 VOID** — 내가 기준을 C1N66 test 행(1.5866)으로 잡았는데 이 노드는 학습행 무작위 KFold OOF(1.1037)를 잰다. 다른 양이다"
+  },
+  {
+   "id": "C1N83_TEACHER_SCALEUP_REJUDGED",
+   "lane": "L6",
+   "node_type": "EXPERIMENT",
+   "premise": null,
+   "spec_hash": null,
+   "status": "LIVE",
+   "summary": "C1N82 산출물의 재판정(파생 전용, 재계산 없음). 올바른 기준은 C1N58 이 같은 방식으로 잰 shuffle **1.0923** 이고 base 1.1037 과 **차 0.0114** 로 일치 — 하네스는 멀쩡했다. `deep`(255 잎) **+2.83%** 로 C16 문턱 2.72% 통과, 세 그룹 모두 개선. **시계열 문맥은 무효**(-0.29%, 480 열 추가에도 sigma 증가). 현행 teacher 가 **미적합**이었음이 확인됐다. 다만 **누출면에서 잰 값**이므로 판정문에 `PENDING_CHRONOLOGICAL_CONFIRMATION` 을 남겼다"
+  },
+  {
+   "id": "C1N84_TEACHER_CHRONOLOGICAL",
+   "lane": "L6",
+   "node_type": "EXPERIMENT",
+   "premise": "TEACHER_CAPACITY_GAIN_IS_LEAKAGE",
+   "spec_hash": null,
+   "status": "PRUNED",
+   "summary": "`deep` 을 **평가 fold test 행**(C1N69 반응곡선이 보정된 면, 모형이 실제로 쓰는 면)에서 재확인. 학습은 fold 시작 이전 행만, 내부 KFold 없음 — 누출 경로 자체가 없다. **V1 이 완벽히 맞았다** — base 그룹별 sigma 가 C1N71 의 allweather 값과 소수점 넷째 자리까지 일치(1.4957 / 1.5947 / 1.6521). **용량 이득의 96% 가 누출이었다** — 무작위 KFold 2.83% -> 시간 분할 **+0.10%**, 환산 Total +0.000160 으로 C16 문턱(0.004453)에 **크게 미달**. g3 는 오히려 악화 (1.6521 -> 1.6532)라 H3 도 기각. **C1N83 의 'C16 통과' 는 누출면의 성질이었다**"
+  },
+  {
+   "id": "C1N85_C16_RECHECK",
+   "lane": "L8",
+   "node_type": "EXPERIMENT",
+   "premise": null,
+   "spec_hash": null,
+   "status": "LIVE",
+   "summary": "C16 크기게이트 재검(파생 전용). **문턱 0.15 는 근거가 없었고 결함이 둘**이었다 — 방향을 개별 판정하는데 목표는 합산이고, 상수가 아무것도 재지 않았다. **측정된 문턱으로 교체**: F1 검출가능성 = C1N9 가 잰 **0.001013**, F2 도달가능성 = 생존 방향의 **합**이 격차에 닿는가. **C16 이 한 후보를 잘못 잘랐다** — C1N71(최적가중 +0.001238)이 검출문턱 위인데 0.15 x 격차(0.004453)에 걸렸다. **그러나 폐쇄 판정은 문턱과 무관하게 성립** — F1 통과 합이 +0.001238 이고 격차는 0.029690 이라 필요량의 **4%** 뿐이다. 음수와 0 을 더할 수는 없다"
+  },
+  {
+   "id": "C1N86_LANE_EXPAND",
+   "lane": "L1",
+   "node_type": "EXPERIMENT",
+   "premise": null,
+   "spec_hash": null,
+   "status": "LIVE",
+   "summary": "레인 확장 강제(실체화 전용). 레인 인구가 **L8 31 / L1 5 / L5 3** 으로 내가 만든 노드 대부분이 진단·계측기였음을 보인다. L1·L5 는 PRUNED 가 3·1 로 **닫힌 근거도 거의 없다** — 탐색을 안 한 것이지 막힌 것이 아니다. 라우터 C6 은 `LIVE==0` 을 요구해 자연 발화하지 않으므로 실질 기아를 못 잡는다. L1 리서치가 **감발 정제**를 지목했고(MDPI s25175329, PMC12431095) A5 §5 가 '로그 기반 필터링을 통계적 대체로 했고 표준 준수가 아니다' 라고 이미 자백해 뒀다. 후보 셋 실체화, N1 만 기대 하한(1%)이 F1(0.62%)을 넘어 실행 가치"
+  },
+  {
+   "id": "C1N87_CURTAILMENT_CLEAN_TARGET",
+   "lane": "L1",
+   "node_type": "EXPERIMENT",
+   "premise": "G3_SATURATION_IS_NOT_CURTAILMENT",
+   "spec_hash": null,
+   "status": "PRUNED",
+   "summary": "**굶은 레인 L1 의 첫 실행 노드.** 감발 구간을 teacher **학습 표적에서만** 제외한다(감발은 예보시점 미지라 피처가 될 수 없으나 표적 제외는 학습기간 SCADA 만 쓰므로 배포 가능). 판정 규칙 `잔차 < -0.15 그리고 나셀풍속 >= 10 m/s` 를 실행 전 동결. 가드 통과(V1 base 가 C1N84 와 일치, V2 판정비율 2.36%)하고 **사전확약 넷 전부 기각**. sigma 1.5847 -> **1.5962**(-0.73%), 보조 지표도 1.5649 -> 1.5683 악화. **H3 반증이 기전을 뒤집는다** — g3 개선이 최대일 것으로 예측했는데 g3 가 가장 나빠졌다(-2.16%). 내가 감발로 잡은 2.06% 가 g3 에서는 **정상 운전**이었고, UNISON 의 낮은 포화비(0.89~0.95)는 감발이 아니라 **터빈의 정상 특성**일 수 있다"
+  },
+  {
+   "id": "C1N88_N2_PROBE_L5_OPEN",
+   "lane": "L1",
+   "node_type": "EXPERIMENT",
+   "premise": null,
+   "spec_hash": null,
+   "status": "LIVE",
+   "summary": "N2 동결 재검 + L5 개방(진단 전용). **동결을 임의로 풀지 않고 그 이유를 해소했다** — C1N86 의 조건 'N1 이 F1 을 넘을 때만' 은 **두 기전을 섞은 것**이었다(N1 은 감발 하나, N2 는 SCADA 이상 일반). 이유가 '크기 근거 없음' 이었으므로 상한을 측정했다. 캐시 잔차로 적합 없이 — 상위 10% 이상 행이 잔차 분산의 **21.4%**(집중 2.14 배), sigma 감소 **상한 11.33%** 로 F1(0.62%)의 18 배. 사전확약 넷 전부 참이고 **g3 집중도 2.56 배로 최대**. **L5 는 열었으나 착수하지 않는다** — NABQR(arXiv 2501.14805)의 입력은 NWP 앙상블 멤버인데 우리에겐 없고(46 구간 분포는 단일 모형 출력), 시간적응 분위수회귀는 C1N60·C1N73 이 닫은 결정층 이웃이다"
+  },
+  {
+   "id": "C1N89_ANOMALY_CLEAN_TARGET",
+   "lane": "L1",
+   "node_type": "EXPERIMENT",
+   "premise": "TARGET_ROW_REMOVAL_LOSES_MORE_THAN_IT_CLEANS",
+   "spec_hash": null,
+   "status": "PRUNED",
+   "summary": "비지도 이상 탐지(IsolationForest, fold 별 학습구간에서만 적합)로 teacher 표적 정제. 가드 통과(V1 base 가 C1N84 와 일치, V2 제외율 5.01%/10.0%)하고 **H1~H3 기각**. base 1.5847 -> clean5 **1.6637(-4.99%)** / clean10 1.7245(-8.83%), 그룹별 g1 -3.34% / g2 -2.26% / **g3 -9.02%**. **상한은 맞았으나 부호가 반대다** — C1N88 이 6.43% 개선 가능이라 쟀는데 실측 -4.99%. 기전이 뒤집힌다: 이상 행은 **오염돼서가 아니라 예측하기 어려워서** 잔차가 크다. 어려운 행을 학습에서 빼면 teacher 가 그 영역을 못 배우고 예측은 여전히 전 행에 해야 하므로 나빠진다. **g3 집중도 2.56 배는 이상이 많다는 뜻이 아니라 예측이 가장 어렵다는 뜻**이었고, C1N57B 의 theta 0.775 도 제거할 오염이 아니라 **환원 불가능한 물리**다. N1(손으로 쓴 물리 규칙)과 N2(비지도 탐지)가 다른 경로로 같은 결론에 도달했으므로 **L1 표적 정제 축을 닫는다**"
+  },
+  {
+   "id": "C1N8_ORACLE_LADDER",
+   "lane": "L6",
+   "node_type": "EXPERIMENT",
+   "premise": null,
+   "spec_hash": null,
+   "status": "LIVE",
+   "summary": "오라클 사다리 — 일반화 조건화 16.5%, 행 362%"
+  },
+  {
+   "id": "C1N90_WITHIN_BIN_INTEGRATION",
+   "lane": "L7",
+   "node_type": "EXPERIMENT",
+   "premise": null,
+   "spec_hash": null,
+   "status": "LIVE",
+   "summary": "**아키텍처 결함 발견.** `bayes_decision` 이 각 46 구간을 **중심점의 점질량**으로 다룬다 — 구간 폭 0.02, FICR 창 ±0.06 이라 창 경계 근처에서 기대단위를 과대평가해 argmax 를 민다. 구간 내부를 소구간 9 개로 적분해 교정(**재학습 없음**, 확률행렬 동일). V1 완벽 재현(0.604043), `uniform` **+0.001890** 으로 검출문턱 0.001013 의 1.87 배, **이득이 전부 FICR**(+0.001896 대 1-NMAE -0.000006)이라 기전 진단이 맞았다. **H2 기각이 유익** — 경험 분포가 균등보다 나을 게 없어(-0.000020) 구간 폭 0.02 안에서 라벨 분포가 사실상 균등임을 뜻하고, 더 정교한 내부 분포를 찾을 이유가 없다. 게이트 `[-O-O]` 5/9 월 기각"
+  },
+  {
+   "id": "C1N91_WITHIN_BIN_ESTABLISHED",
+   "lane": "L4",
+   "node_type": "EXPERIMENT",
+   "premise": "WITHIN_BIN_BIAS_EXISTS_BUT_DIRECTION_IS_ROW_DEPENDENT",
+   "spec_hash": null,
+   "status": "PRUNED",
+   "summary": "C1N90 이득의 실재성을 C1N76 계측기(원형 블록, 일별 델타 평균)로 검정. 가드 통과(무편향 ±0.00005, pooled 재현). **효과 기각** — pooled +0.001866 인데 **일별 평균은 +0.000011**(170 배 차이), **양수 일 104/228 = 45.6% 로 과반 미만**, L=1 부터 L=30 까지 전 구간에서 0 을 포함. **내 예측이 정면으로 틀렸다** — 계산 결함 수정이라 방향이 일관될 것으로 봤으나 행마다 다르다. 점질량이 창 경계에서 과대평가한다는 것은 맞지만 그 편향이 결정을 **어느 쪽으로** 미는지는 분포 모양에 달렸다. 체계적 **존재**만 맞고 체계적 **방향**은 틀렸다. pooled 가 큰 것은 발전량 가중이 소수 고발전일에 쏠린 탓으로 C1N62·C1N73 과 같은 구조다. **동결 게이트가 세 번째로 옳았다**"
+  },
+  {
+   "id": "C1N92_METRIC_ALIGNED_LOSS",
+   "lane": "L3",
+   "node_type": "EXPERIMENT",
+   "premise": "UTILITY_IN_GRADIENT_BREAKS_PROPRIETY",
+   "spec_hash": null,
+   "status": "PRUNED",
+   "summary": "결정층이 쓰는 효용을 **학습 기울기**에 섞는다 — `L = alpha*CE + (1-alpha)*(-E_util)`, 효용은 `bayes_decision` 이 쓰는 바로 그 식. **가드 전부 통과** — V1 대조군 0.604043 **정확 재현**(C1N38 이 깨진 지점), V2 기울기 규모 비 [1.0, 4.178, 2.271] 로 0.1~10 배 안이라 **C1N37 의 D2 폭주가 아니다**. **H1 결정적 거짓** — util(alpha 0.5) **-0.049992**, util_soft(0.8) **-0.018203**. **효용 비중이 클수록 나쁘다**(H4 거짓)는 단조성이 기전을 준다: 교차엔트로피는 **적정 점수규칙**이라 최적해가 참 조건부확률인데, `-E_util` 은 `p` 에 의존하지 않는 **상수 기울기**라 적정성을 깬다. 확률이 편향되면 **결정층의 입력이 망가진다** — 결정층을 도우려다 결정층이 딛는 교정도를 부순 것이다. **귀속 정정.** 이 노드의 사양은 스스로 C1N43 의 부활 술어를 검정한다고 적었으나 **틀렸다**. C1N43 의 술어 `positive_band_effect_at_frontier_control` 는 **정산모양 soft target**(표적 재형성)에 걸린 것이고 이 노드가 시험한 것은 **기울기 혼합**이라 다른 처리다. 측정과 폐쇄는 유효하되 **C1N43 을 검정한 것이 아니다**. 그리고 C1N43 의 술어는 **이미 C1N44 가 같은 대조군 0.604043 에서 -0.001015 로 관측했다**(`BAND_TARGET_AND_TEMPERATURE_ARE_SUBSTITUTES`). 게이트 [----] 2/9 월"
+  },
+  {
+   "id": "C1N93_ORDINAL_REPRESENTATION",
+   "lane": "L3",
+   "node_type": "EXPERIMENT",
+   "premise": "REJUDGED_BY_C1N94",
+   "spec_hash": null,
+   "status": "PRUNED",
+   "summary": "분포 **표현** 축을 네 팔로 잰다 — 결정층은 `sharpen(fold-외 T)` + `bayes_decision` 으로 **전부 동일**하므로 차이가 표현에만 귀속된다. **V2 가 자기 가드로 발화해 VOID** — 사양은 `재배열 **후** 교차 0 건` 인데 코드가 재배열 **전** 원시 행렬을 쟀다(63,404 건 = 인접쌍의 17.8%). 독립 적합 분위수회귀에서 교차는 **정상**이고 그것이 재배열의 존재 이유이므로, 결함이 아니라 **계측기 오설정**이다. 결과를 본 뒤 사양을 재해석하지 않고 C1N94 가 새 사전확약으로 재판정한다. **그러나 두 재현이 소득이다.** V1 대조군 **0.6040430448** 로 C1N60 정확 재현, V5 `band` 처리효과 **-0.0010148987** 로 C1N44 의 -0.001015 를 **6 자리까지** 재현했고 fold-외 선택 온도가 **band 1.7 / onehot 2.2** 로 C1N44 전제 본문의 기록과 정확히 같다. 완전히 다른 스크립트의 독립 재현이므로 **C1N40 의 +0.009772 가 온도 자유도 없는 하네스의 인공물이라는 판정이 확정된다**"
+  },
+  {
+   "id": "C1N94_CDF_REJUDGE",
+   "lane": "L3",
+   "node_type": "EXPERIMENT",
+   "premise": "SOFTMAX_BEATS_QUANTILE_CDF_ESTIMATOR_AXIS_CLOSES",
+   "spec_hash": null,
+   "status": "PRUNED",
+   "summary": "C1N93 산출물을 교정 계측기로 재판정(**파생 전용, 적합 0 회**). 고칠 것이 데이터 측정이 아니라 **코드 성질**이므로 — 재배열 후 단조성은 `np.maximum.accumulate` 의 정의상 성질이라 입력에 의존하지 않는다 — 적대적 입력 6 종(완전역전·전동률·극단꼬리·범위밖)의 단위검정으로 확인했고 **위반 0 건**이다. 재실행보다 강한 검증이다. **H1 거짓** — `mq19` **-0.007176**, `blend` -0.003694 로 46-class softmax 가 이긴다. **H5 참이 결정적** — 세 fold **전부** 음수(-0.008827/-0.011865/-0.003947)라 부호가 일관하므로 pooled 우연이 아니다. 기전: 분위 19 개는 CDF 19 지점만 잡고 사이를 선형보간해 **구간 내부 균등밀도**를 가정하는데, 46 빈 softmax 는 빈 질량을 직접 추정해 분포 모양을 더 세밀히 표현한다. 차이의 대부분이 **FICR 쪽**(-0.003524 대 1-NMAE -0.000170)인 것이 그 진단을 확인한다 — FICR 은 +-6% 창 안의 **질량 집중도**로 결정되는데 균등밀도 보간이 그것을 뭉갠다. **서수성 가설 전체가 닫힌다** — 표적 재형성(C1N44 -0.001015)도 CDF 추정(-0.007176)도 졌다. 현 조합이 이 표면에서 분포 표현 축의 **국소 최적**이다"
+  },
+  {
+   "id": "C1N95_RECONSTRUCTION_GAP",
+   "lane": "L4",
+   "node_type": "EXPERIMENT",
+   "premise": "REJUDGED_BY_C1N96",
+   "spec_hash": null,
+   "status": "PRUNED",
+   "summary": "재구성 격차 0.024562 를 결정규칙과 모형으로 가르려 했으나 **V1·V3 자기 가드로 VOID**. `A0` 를 평온도 `bayes_decision` 으로 놓아 0.595919 가 나왔는데 C1N60 대조군은 0.604043 이다 — 차이 **0.008124** 가 정확히 C1N60 의 온도 개입이고, 나는 그것을 뺀 채 대조군이라 불렀다. V3 항등식도 GAP 를 상수로 고정해 성립할 수 없었다. **소득은 배포 결정규칙의 판독이다** — `run_site_wind_classifier.py:207-228` 에서 `bayes_decision` 이 지표 최적이 아니라 **`T1_G0.5435` 정책**임을 확인했다(0.25/cbar, cbar=0.46). 배포와 다른 점 셋: 행동격자(401 점 0.075~ vs 201 점 0~), 정산항 정규화(**그룹별** 평균 발전율 vs 전역 cbar), 온도(0.5 vs 1). C1N96 이 재판정한다"
+  },
+  {
+   "id": "C1N96_GAP_REJUDGE",
+   "lane": "L4",
+   "node_type": "EXPERIMENT",
+   "premise": "RECONSTRUCTION_GAP_IS_MODEL_NOT_DECISION_RULE",
+   "spec_hash": null,
+   "status": "PRUNED",
+   "summary": "대조군을 `sharpen(fold-외 T)` + `bayes_decision` 으로 고쳐 재판정(**적합 0 회**). **가드 전부 통과** — A0 **0.6040430448** 로 C1N60 정확 재현, 항등식 1e-12 이내. **격차는 전부 모형이다** — 결정규칙 기여 **-0.008475(-34.5%)**, 모형 기여 **+0.033037(134.5%)**. 배포 규칙 `T0.5_G1.5` 를 우리 확률에 대입하면 **더 나빠지고**, 63 정책을 전부 훑은 **같은-fold 최적(선택편향 허용 상한)조차 0.602668** 로 배포보다 0.0259 낮다. **H4 가 기전을 준다** — fold-외 선택 온도가 우리 쪽은 T=2.2/1.2 로 **전부 T>1(평활)** 인데 배포는 **T=0.5(예리화)** 로 정반대다. 우리 확률행렬은 **과확신**이라 평활이 필요하고 배포는 **과소확신**이라 예리화가 이득이다 — 두 모형이 온도 손잡이의 **반대편**에 있다. 배포는 정보를 갖고 덜 자신 있게 표현하고, 우리 재구성은 자신 있게 틀린다. **굴착 전체의 진단이 바뀐다**: C1N40 이후 모든 결정층·손실·표현 실험이 배포보다 0.0246 약하고 **교정 방향이 반대인** 확률면 위에서 돌았다. 거기서 잰 +-0.001~0.008 효과가 배포 프레임으로 이전된다고 볼 근거가 없다. **다음은 배포 확률행렬의 재현이다**"
+  },
+  {
+   "id": "C1N97_BOOSTING_ROUNDS",
+   "lane": "L3",
+   "node_type": "EXPERIMENT",
+   "premise": "ROUNDS_NOT_THE_GAP_DRIVER",
+   "spec_hash": null,
+   "status": "PRUNED",
+   "summary": "배포 사양 `selected_iteration=60` 대 우리 `ROUNDS=200`. 한 부스터에서 `num_iteration` 으로 7 개 라운드를 뽑아 **적합 3 회**로 전 격자를 쟀다. **가드 전부 통과**, 대조군 0.6040430448 정확 재현. **H3 참 — 과확신 기전이 확인됐다**: 라운드가 줄면 fold-외 선택 온도가 **단조로** 내려간다(200~80 에서 2.2 -> 40 에서 1.7 -> 20 에서 1.3). 라운드가 확률면의 확신도를 정한다는 C1N96 의 진단이 맞다. H2 도 참(최선 라운드 20 < 200). **그러나 H1 거짓 — 크기가 미달이다.** 최선이 +0.002263(라운드 20)인데 라운드·온도를 함께 fold-외로 고르면 **-0.000497** 로 떨어진다. 곡선이 비단조(60 에서 0.604372 로 꺼졌다 80 에서 0.605834 로 반등)라 라운드 선택이 fold 를 건너 **이전되지 않는다**. 배포까지 0.025059 남았고 라운드는 격차의 최대 **9%** 다. **남은 단서 둘을 특정했다** — (1) 배포 산출기 `run_classifier_iteration_sweep.py` 는 `sample_weight = clip(rate, 0.10) ** 1.0` 으로 **발전율 표본가중**을 쓰는데 우리 재구성은 **균등 가중**이다. FICR 이 발전량 가중이므로 지표 정합이며, 표본가중은 행마다 CE 의 **적정성을 유지**하므로 C1N92 가 닫은 기울기 혼합과 근본적으로 다르다. (2) 배포 M269 와 우리 기저 M115 의 피처 목록이 **100 개 중 87 개만 공통**이다"
+  },
+  {
+   "id": "C1N98_REPRODUCIBILITY_ADJUDICATION",
+   "lane": "L4",
+   "node_type": "EXPERIMENT",
+   "premise": null,
+   "spec_hash": null,
+   "status": "LIVE",
+   "summary": "**배포 챔피언의 재현성을 판정하고 기준선을 갱신한다.** 판정 사다리를 실행 **전에** 동결했다 — R1 `prediction_sha256` 바이트 일치 / R2 피처 100/100 + iter 일치 / R3 피처 90/100 이상 / R4 `NOT_REPRODUCIBLE`. **M269 는 R4 다** — 남은 sitewind 캐시 3 종을 전부 대입해 5 회 실행했고 피처 **76~78/100**, sha 전부 불일치다. **캐시 가설은 기각** — M64B->M174(Q3) 77->78, M64B->M122(Q4) 78->78 로 캐시를 갈아도 거의 안 변하고, 다섯 실행 **전부** sitewind 를 11 개만 고른다(M269 는 13~14). 캐시와 무관한 계통적 차이다. **비결정성 가설도 기각** — 동일 설정 2 회 실행이 피처 **100/100**, iter, 정책, 예측값 **max|diff|=0.0** 로 완전 일치한다. 파이프라인은 결정적이고 상류 캐시(08-02)와 산출기 스크립트(08-04 02:20)가 M269 산출(02:21)보다 앞서며 선언 사양 7 필드가 전부 일치하는데도 결과가 다르다. **receipt 가 기록하지 않는 입력이 있다**(`sitewind_cache_id` 포함 CLI 인자 다수가 receipt 에 없다). 계획 §4.5 가 실행 전부터 규정한 그대로 **`NOT_REPRODUCIBLE`** 이다. **MEDIAN4 는 재현성이 두 층으로 갈린다** — L1 재생(저장된 4 산출물의 중앙값)은 `0.636597/0.859984/0.413210` **세 값 모두 정확 재현**되어 제출·채점 가능하나, L2 재생성은 **불가**다(네 멤버 모두 `sitewind_cache_id` 없음, **M244 는 receipt 자체가 빈 키 0 개**). **기준선 갱신**: 제출 `M115_XGBOOST` **0.638410**(재생 가능한 최고 단일, MEDIAN4 대비 **+0.001813**), 개선 작업 `0.604043`(오늘 5 개 독립 스크립트가 소수점 10 자리까지 재현). **MEDIAN4 가 최고 단일에 지는 이유**는 멤버 품질 산포 0.033(0.605760~0.638410)이고 최약체 M244 가 곧 **receipt 가 빈 멤버**다 — C1N32 가 lockbox 에서 관측한 '의도적 약체를 포함한 결합은 해롭다'와 같은 구조다. **오늘 두 노드의 해석이 수정된다** — C1N96(격차의 134.5%가 모형)·C1N97(라운드 9%)의 **측정은 유효**하나(대조군 0.6040430448 정확 재현), '우리 모형이 배포보다 0.0246 나쁘다'는 해석은 성립하지 않는다. 그 격차의 정체는 모형 열위가 아니라 **재현 가능한 것과 불가능한 것의 차이**다"
+  },
+  {
+   "id": "C1N99_ENSEMBLE_EXHAUSTIVE",
+   "lane": "L7",
+   "node_type": "EXPERIMENT",
+   "premise": "ENSEMBLE_OVER_STORED_ARTIFACTS_CLOSED_NO_DIVERSITY",
+   "spec_hash": null,
+   "status": "PRUNED",
+   "summary": "새 기준선 위에서 **재생 가능한 조합을 전수 탐색**(재학습 없음, 저장 산출물의 median/mean). 12 후보 조인 19,782 행, 크기 2~5 조합 2000+ 개. 단독 순위 M115 0.638410 > M113 0.636376 > **M129_GROUP_FINETUNE 0.636249**(MEDIAN4 에 **없던** 3 위) > M102 0.630589 > ... > M244 0.605760. **최선 조합 `med(M115, M129, M244)` 0.639389 = M115 단독 대비 +0.000979 로 검출문턱 0.001013 미달**이고, 상위 8 개가 0.638343~0.639389 로 전부 +-0.001 안이다. 이 값은 **같은 fold 선택**이라 선택편향을 허용한 **상한**이며, 상한이 문턱 아래면 축이 닫힌다. 기전: 12 후보가 전부 같은 NWP·같은 피처군·같은 46 구간 틀에서 나와 **다양성 자체가 없다** — C1N77/C1N80 의 소스 분리(-0.000921/-0.002480)와 같은 구조다. 격차 0.021590 을 조합으로 메울 수 없다. **제출 기준선은 M115_XGBOOST 0.638410 로 확정한다**"
+  },
+  {
+   "id": "C1N9_GATE_POWER",
+   "lane": "L4",
+   "node_type": "EXPERIMENT",
+   "premise": "POLICY_FAMILY_FAILS_FROZEN_GATE",
+   "spec_hash": null,
+   "status": "PRUNED",
+   "summary": "게이트 검출력 — 문턱 +0.001013, 게이트 정상"
+  },
+  {
+   "id": "N0",
+   "lane": "L8",
+   "node_type": "MEASURE",
+   "premise": null,
+   "spec_hash": null,
+   "status": "LIVE",
+   "summary": "데이터 정밀 분석 및 특성 정밀 파악"
+  },
+  {
+   "excess": 1.373974930565442,
+   "id": "group_id=1|month=2023-08|y_band=(0.45, 0.7]",
+   "lane": "L8",
+   "node_type": "DEFICIT",
+   "premise": null,
+   "recoverable": 0.0009840179709242362,
+   "spec_hash": null,
+   "status": "LIVE"
+  },
+  {
+   "excess": 1.4602560222667798,
+   "id": "group_id=1|month=2023-12|y_band=(0.25, 0.45]",
+   "lane": "L8",
+   "node_type": "DEFICIT",
+   "premise": null,
+   "recoverable": 0.001305472450724406,
+   "spec_hash": null,
+   "status": "LIVE"
+  },
+  {
+   "excess": 1.2149898158172654,
+   "id": "group_id=1|month=2023-12|y_band=(0.45, 0.7]",
+   "lane": "L8",
+   "node_type": "DEFICIT",
+   "premise": null,
+   "recoverable": 0.0010677146564703026,
+   "spec_hash": null,
+   "status": "LIVE"
+  },
+  {
+   "excess": 1.2581128869061362,
+   "id": "group_id=2|month=2023-04|y_band=(0.45, 0.7]",
+   "lane": "L8",
+   "node_type": "DEFICIT",
+   "premise": null,
+   "recoverable": 0.0010186955065057063,
+   "spec_hash": null,
+   "status": "LIVE"
+  },
+  {
+   "excess": 1.2814865342478425,
+   "id": "group_id=2|month=2023-07|y_band=(0.45, 0.7]",
+   "lane": "L8",
+   "node_type": "DEFICIT",
+   "premise": null,
+   "recoverable": 0.001262253224472363,
+   "spec_hash": null,
+   "status": "LIVE"
+  },
+  {
+   "excess": 1.2902853397879759,
+   "id": "group_id=2|month=2023-10|y_band=(0.45, 0.7]",
+   "lane": "L8",
+   "node_type": "DEFICIT",
+   "premise": null,
+   "recoverable": 0.0013199547024790037,
+   "spec_hash": null,
+   "status": "LIVE"
+  },
+  {
+   "excess": 1.4224036212524667,
+   "id": "group_id=2|month=2023-11|y_band=(0.45, 0.7]",
+   "lane": "L8",
+   "node_type": "DEFICIT",
+   "premise": null,
+   "recoverable": 0.0023527961292865154,
+   "spec_hash": null,
+   "status": "LIVE"
+  },
+  {
+   "excess": 1.613539560518848,
+   "id": "group_id=2|month=2023-12|y_band=(0.25, 0.45]",
+   "lane": "L8",
+   "node_type": "DEFICIT",
+   "premise": null,
+   "recoverable": 0.0011111906136063074,
+   "spec_hash": null,
+   "status": "LIVE"
+  },
+  {
+   "excess": 1.2620407694256557,
+   "id": "group_id=2|month=2023-12|y_band=(0.45, 0.7]",
+   "lane": "L8",
+   "node_type": "DEFICIT",
+   "premise": null,
+   "recoverable": 0.0010441151798538774,
+   "spec_hash": null,
+   "status": "LIVE"
+  },
+  {
+   "excess": 1.4055218421636375,
+   "id": "group_id=3|month=2023-04|y_band=(0.25, 0.45]",
+   "lane": "L8",
+   "node_type": "DEFICIT",
+   "premise": null,
+   "recoverable": 0.0010555776904292245,
+   "spec_hash": null,
+   "status": "LIVE"
+  },
+  {
+   "excess": 1.2325763564478198,
+   "id": "group_id=3|month=2023-04|y_band=(0.45, 0.7]",
+   "lane": "L8",
+   "node_type": "DEFICIT",
+   "premise": null,
+   "recoverable": 0.0013273154383763915,
+   "spec_hash": null,
+   "status": "LIVE"
+  },
+  {
+   "excess": 1.144182248457312,
+   "id": "group_id=3|month=2023-04|y_band=(0.7, 1.1]",
+   "lane": "L8",
+   "node_type": "DEFICIT",
+   "premise": null,
+   "recoverable": 0.0010798878972733319,
+   "spec_hash": null,
+   "status": "LIVE"
+  },
+  {
+   "excess": 1.3192292392687697,
+   "id": "group_id=3|month=2023-05|y_band=(0.45, 0.7]",
+   "lane": "L8",
+   "node_type": "DEFICIT",
+   "premise": null,
+   "recoverable": 0.0010987928244986303,
+   "spec_hash": null,
+   "status": "LIVE"
+  },
+  {
+   "excess": 1.3081664685319403,
+   "id": "group_id=3|month=2023-07|y_band=(0.45, 0.7]",
+   "lane": "L8",
+   "node_type": "DEFICIT",
+   "premise": null,
+   "recoverable": 0.0012734144242344718,
+   "spec_hash": null,
+   "status": "LIVE"
+  },
+  {
+   "excess": 1.3659221313374317,
+   "id": "group_id=3|month=2023-07|y_band=(0.7, 1.1]",
+   "lane": "L8",
+   "node_type": "DEFICIT",
+   "premise": null,
+   "recoverable": 0.002225358191451735,
+   "spec_hash": null,
+   "status": "LIVE"
+  },
+  {
+   "excess": 1.3966610900128233,
+   "id": "group_id=3|month=2023-10|y_band=(0.25, 0.45]",
+   "lane": "L8",
+   "node_type": "DEFICIT",
+   "premise": null,
+   "recoverable": 0.0013277270051301835,
+   "spec_hash": null,
+   "status": "LIVE"
+  },
+  {
+   "excess": 1.336157042481738,
+   "id": "group_id=3|month=2023-11|y_band=(0.25, 0.45]",
+   "lane": "L8",
+   "node_type": "DEFICIT",
+   "premise": null,
+   "recoverable": 0.00101822845962766,
+   "spec_hash": null,
+   "status": "LIVE"
+  },
+  {
+   "excess": 1.2927105899446405,
+   "id": "group_id=3|month=2023-11|y_band=(0.45, 0.7]",
+   "lane": "L8",
+   "node_type": "DEFICIT",
+   "premise": null,
+   "recoverable": 0.0019078370241846828,
+   "spec_hash": null,
+   "status": "LIVE"
+  },
+  {
+   "excess": 1.4991336506097295,
+   "id": "group_id=3|month=2023-12|y_band=(0.25, 0.45]",
+   "lane": "L8",
+   "node_type": "DEFICIT",
+   "premise": null,
+   "recoverable": 0.001289747386798103,
+   "spec_hash": null,
+   "status": "LIVE"
+  },
+  {
+   "excess": 1.3644206135927592,
+   "id": "group_id=3|month=2023-12|y_band=(0.45, 0.7]",
+   "lane": "L8",
+   "node_type": "DEFICIT",
+   "premise": null,
+   "recoverable": 0.0023804249860205724,
+   "spec_hash": null,
+   "status": "LIVE"
+  }
+ ]
+}

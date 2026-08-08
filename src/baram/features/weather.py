@@ -7,7 +7,13 @@ import pandas as pd
 
 from baram.constants import CAPACITIES_KWH
 from baram.data.canonical import add_operating_period
+from baram.data.turbines import group_static_metadata
 from baram.exceptions import ContractError, DataQualityError
+from baram.features.spatial import (
+    add_source_disagreement_features,
+    aggregate_group_weather,
+    build_group_grid_weights,
+)
 
 _GFS_VECTOR_PAIRS: Mapping[str, tuple[str, str]] = {
     "wind10": ("heightAboveGround_10_10u", "heightAboveGround_10_10v"),
@@ -132,8 +138,16 @@ def build_weather_features(
     gfs: pd.DataFrame,
     ldaps: pd.DataFrame,
     forecast_keys: pd.DataFrame | None = None,
+    *,
+    turbines: pd.DataFrame | None = None,
+    spatial_config: Mapping[str, object] | None = None,
+    spatial_mode: str = "global_only",
 ) -> pd.DataFrame:
-    """Build one globally aggregated feature row per timestamp and group."""
+    """Build global controls and optional group-aware supplied-grid features."""
+    if spatial_mode not in {"global_only", "spatial_v2"}:
+        raise ContractError(f"unsupported spatial feature mode: {spatial_mode}")
+    if spatial_mode == "spatial_v2" and (turbines is None or spatial_config is None):
+        raise ContractError("spatial_v2 requires turbine metadata and a frozen configuration")
     gfs_agg = aggregate_weather(_with_known_vectors(gfs, _GFS_VECTOR_PAIRS), "gfs")
     ldaps_agg = aggregate_weather(_with_known_vectors(ldaps, _LDAPS_VECTOR_PAIRS), "ldaps")
     merged = gfs_agg.merge(
@@ -162,11 +176,78 @@ def build_weather_features(
         )
         if merged.drop(columns=required).isna().all(axis=1).any():
             raise ContractError("forecast keys are missing weather features")
+    spatial: pd.DataFrame | None = None
+    if spatial_mode == "spatial_v2":
+        assert turbines is not None and spatial_config is not None
+        sources = spatial_config.get("sources")
+        if not isinstance(sources, dict):
+            raise ContractError("spatial feature configuration has no source allowlists")
+        try:
+            gfs_values = tuple(str(value) for value in sources["gfs"]["variables"])
+            ldaps_values = tuple(str(value) for value in sources["ldaps"]["variables"])
+        except (KeyError, TypeError) as error:
+            raise ContractError(f"invalid spatial feature allowlist: {error}") from error
+        gfs_weights = build_group_grid_weights(turbines, gfs)
+        ldaps_weights = build_group_grid_weights(turbines, ldaps)
+        gfs_vectors = {
+            alias: pair
+            for alias, pair in _GFS_VECTOR_PAIRS.items()
+            if set(pair).issubset(gfs_values)
+        }
+        ldaps_vectors = {
+            alias: pair
+            for alias, pair in _LDAPS_VECTOR_PAIRS.items()
+            if set(pair).issubset(ldaps_values)
+        }
+        gfs_spatial = aggregate_group_weather(
+            gfs,
+            gfs_weights,
+            "gfs_spatial",
+            gfs_values,
+            gfs_vectors,
+        )
+        ldaps_spatial = aggregate_group_weather(
+            ldaps,
+            ldaps_weights,
+            "ldaps_spatial",
+            ldaps_values,
+            ldaps_vectors,
+        )
+        spatial = gfs_spatial.merge(
+            ldaps_spatial,
+            on=["forecast_kst_dtm", "data_available_kst_dtm", "group_id"],
+            how="inner",
+            validate="one_to_one",
+            sort=True,
+        )
+        disagreement = spatial_config.get("source_disagreement")
+        if not isinstance(disagreement, dict):
+            raise ContractError("spatial feature configuration has no disagreement map")
+        aligned = {
+            str(alias): (str(pair[0]), str(pair[1]))
+            for alias, pair in disagreement.items()
+        }
+        spatial = add_source_disagreement_features(spatial, aligned)
+
+    static_metadata = group_static_metadata(turbines) if turbines is not None else None
     group_frames: list[pd.DataFrame] = []
     for group, capacity in CAPACITIES_KWH.items():
         part = merged.copy()
         part["group_id"] = np.int8(group)
         part["capacity_kwh"] = np.float32(capacity)
+        if spatial is not None:
+            part = part.merge(
+                spatial.loc[spatial["group_id"].eq(group)],
+                on=["forecast_kst_dtm", "data_available_kst_dtm", "group_id"],
+                how="left",
+                validate="one_to_one",
+                sort=False,
+            )
+            if part.filter(regex=r"^(gfs|ldaps)_spatial").isna().all(axis=1).any():
+                raise ContractError("group-aware weather features are missing forecast rows")
+        if static_metadata is not None:
+            static = static_metadata.loc[static_metadata["group_id"].eq(group)]
+            part = part.merge(static, on="group_id", how="left", validate="many_to_one")
         group_frames.append(part)
     return (
         pd.concat(group_frames, ignore_index=True)

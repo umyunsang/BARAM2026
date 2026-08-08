@@ -1,0 +1,11 @@
+{
+ "node": "N520_FOLDOUT_BLEND",
+ "foldout_local": 0.6358990832803346,
+ "offset": 0.007988643178113035,
+ "foldout_predicted_online": 0.6438877264584476,
+ "insample_predicted": 0.646821,
+ "m115_local": 0.6384100891518975,
+ "m115_predicted": 0.6449640891518974,
+ "model_fits": 0,
+ "dacon_upload": false
+}

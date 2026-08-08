@@ -1,0 +1,105 @@
+{
+ "dacon_upload": false,
+ "decided_utc": "2026-08-04T17:27:55.746423+00:00",
+ "external_actions": [],
+ "lane": "L8",
+ "lockbox_reopened": false,
+ "model_fits": 0,
+ "new_2024_evaluation": false,
+ "node": "C1N48_MODEL_VALIDATION",
+ "report_sha256": "0abdc09c0e8cd0af7302f945e47210209f99132cef6a7b194b64b6b5b3363872",
+ "result": {
+  "assumption_A_formula": [
+   {
+    "conservative": true,
+    "error_equal": 0.025623714395685226,
+    "error_optimal": -0.014432755661749397,
+    "group": 1,
+    "observed_mix": 2.159,
+    "predicted_equal": 2.184623714395685,
+    "predicted_optimal": 2.1445672443382504,
+    "rho": 0.799,
+    "sigma_gfs": 2.437,
+    "sigma_ldaps": 2.169,
+    "within_tolerance": true
+   },
+   {
+    "conservative": true,
+    "error_equal": 0.040934024447737194,
+    "error_optimal": -0.05052052148043584,
+    "group": 2,
+    "observed_mix": 2.406,
+    "predicted_equal": 2.4469340244477373,
+    "predicted_optimal": 2.3554794785195643,
+    "rho": 0.771,
+    "sigma_gfs": 2.83,
+    "sigma_ldaps": 2.368,
+    "within_tolerance": true
+   },
+   {
+    "conservative": true,
+    "error_equal": 0.047549476839604754,
+    "error_optimal": -0.057167308096750524,
+    "group": 3,
+    "observed_mix": 2.175,
+    "predicted_equal": 2.2225494768396046,
+    "predicted_optimal": 2.1178326919032493,
+    "rho": 0.739,
+    "sigma_gfs": 2.634,
+    "sigma_ldaps": 2.129,
+    "within_tolerance": true
+   }
+  ],
+  "assumption_B_cross_prediction": {
+   "k_disagreement": 0.005697155934544562,
+   "k_from_ficr": 0.8417511715780687,
+   "k_from_nmae": 0.8360540156435241,
+   "predicted_ficr_at_k_nmae": 0.45795542896404157,
+   "predicted_nmae_at_k_ficr": 0.8777314597921888,
+   "residual_ficr": 0.002312428964041602,
+   "residual_nmae": -0.0008275402078111727
+  },
+  "gate_touched": false,
+  "leader_local_equivalent": {
+   "ficr": 0.45564299999999996,
+   "one_minus_nmae": 0.878559,
+   "total": 0.667096
+  },
+  "leader_online": {
+   "ficr": 0.46767,
+   "one_minus_nmae": 0.87964,
+   "total": 0.67365
+  },
+  "no_collection": true,
+  "no_training": true,
+  "node": "C1N48_MODEL_VALIDATION",
+  "offset_decomposition": {
+   "derivation": "Total = 0.5(1-NMAE) + 0.5*FICR -> offset_nmae = 2*offset_total - offset_ficr",
+   "offset_ficr": 0.012027,
+   "offset_one_minus_nmae": 0.0010810000000000004,
+   "offset_total": 0.006554
+  },
+  "parent_node": "C1N47_EXTERNAL_NWP_REVIVED",
+  "predeclared_check": {
+   "A1_expectation": "등가중 예측이 실측의 ±0.1 m/s 이내 (3 그룹)",
+   "A1_held": true,
+   "A2_expectation": "예측 >= 실측 (산식이 보수적)",
+   "A2_held": true,
+   "B1_expectation": "|k_ficr - k_nmae| <= 0.03",
+   "B1_held": true,
+   "B1_measured": 0.005697155934544562,
+   "B2_expectation": "교차예측 불일치가 두 지표 모두 0.005 이내",
+   "B2_held": true,
+   "B3_expectation": "상위권 우위가 결정층이 아니라 예보 정확도에서 온다",
+   "B3_held": true,
+   "verdict": "ASSUMPTIONS_VALIDATED_CYCLE46_47_STAND"
+  },
+  "validates": [
+   "C1N46_CLOSURE_FALSIFICATION",
+   "C1N47_EXTERNAL_NWP_REVIVED"
+  ]
+ },
+ "schema_version": 1,
+ "script_sha256": "3bcf3524644fcc587a8612aa7ec2aea72574e43a7052c40c33e6074635bc2010",
+ "stage": "M271_P4_CYCLE48_MODEL_VALIDATION"
+}

@@ -1,0 +1,35 @@
+{
+ "dacon_upload": false,
+ "external_actions": [],
+ "independent_of_m261": "partially — M263 blends M261 and M252, so M268 is NOT fully independent of the M261 lineage; it shares groups 1/3 with M261",
+ "lineage": "M263 convex ensemble -> M265 DART group-3 -> M267 sequence transform; M268 is the full-history deployment of exactly this policy",
+ "local_counterpart": {
+  "ficr": 0.4018925444096382,
+  "group_ficr": {
+   "1": 0.3992247339359533,
+   "2": 0.46195721618943775,
+   "3": 0.34449568310352346
+  },
+  "one_minus_nmae": 0.857565762437458,
+  "total": 0.6297291534235481
+ },
+ "local_counterpart_artifact": "M267_FIXED_M231_SEQUENCE_TRANSFER-oof.parquet",
+ "lockbox_reopened": false,
+ "m261_anchor": {
+  "local_total": 0.629973,
+  "offset_ficr": 0.012027,
+  "offset_total": 0.006554,
+  "online_total": 0.6365274327
+ },
+ "measured_offset": null,
+ "model_fits": 0,
+ "new_2024_evaluation": false,
+ "online_result": null,
+ "predeclared_before_result": true,
+ "predicted_online_if_offset_transfers": 0.636283153423548,
+ "schema_version": 1,
+ "stage": "M270_M268_LOCAL_BASELINE_PREDECLARED",
+ "submission_path": "artifacts/submissions/submission_M268.csv",
+ "submission_sha256": "696324f316891d03cd89b61d5c64812faf14ba37e62124c0241ac13ad0e21b10",
+ "surface_caveat": "this OOF sits on the LEGACY surface (pre complete-issuance correction). The M261 counterpart was computed on the CORRECTED surface. Measured legacy-minus-corrected on the deployed policy was +0.001291 Total, so the two anchors are not on an identical footing."
+}

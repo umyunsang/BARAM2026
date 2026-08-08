@@ -1,0 +1,32 @@
+{
+ "node": "M285_WITHIN_BIN_GATE",
+ "gate_version": "M270_MONTHLY_GATE_v1_frozen_2026-08-04",
+ "v1_reproduction": true,
+ "parent_total": 0.6283370227786943,
+ "candidate_total": 0.6295445117185468,
+ "delta": 0.0012074889398524524,
+ "conditions": {
+  "G1 sign-test p <= 0.1 (p=0.7461, 4/9)": false,
+  "G2 median delta > 0 (median=-0.001235)": false,
+  "G3 bootstrap q05 > 0 (q05=-0.002043)": false,
+  "G4 worst month >= -0.010 (worst=-0.006069)": true
+ },
+ "evidence": {
+  "months_scored": 9.0,
+  "positive_months": 4.0,
+  "positive_fraction": 0.4444444444444444,
+  "mean_total_delta": 0.0005286270463674322,
+  "median_total_delta": -0.001235239657477738,
+  "min_total_delta": -0.00606940380479426,
+  "max_total_delta": 0.007547191028119848,
+  "sign_test_p_greater": 0.74609375,
+  "block_bootstrap_positive_fraction": 0.6137,
+  "block_bootstrap_q05": -0.002042755732096839
+ },
+ "passed": false,
+ "verdict": "M284_GATE_REJECTED",
+ "model_fits": 0,
+ "lockbox_reopened": false,
+ "dacon_upload": false,
+ "external_actions": []
+}

@@ -1,0 +1,25 @@
+{
+  "event_type": "PREDECLARED",
+  "cycle_id": "S17-N10B_ISSUANCE_CUBE_2022_2023_CORRECTED_AUDIT",
+  "stage_id": "S3",
+  "node_id": "S17-N10B_ISSUANCE_CUBE_2022_2023_CORRECTED_AUDIT",
+  "actor": "root",
+  "occurred_at": "2026-08-08T20:34:09.251538+09:00",
+  "body": {
+    "preregistration_sha256": "dc31c74225458ded4f008e2647c9bf74d4a72781ad503731d29edaf5faa75979",
+    "parent_ids": [
+      "S17-N10_ISSUANCE_CUBE_TIMING_AND_MISSINGNESS_AUDIT"
+    ],
+    "mechanism": "A scope-corrected issuance cube can establish basis safety and source/run completeness while refusing all 2024 operating-day weather and all power targets.",
+    "treatment": "Exact frozen-row 2022-2023 prefix audit of supplied GFS and LDAPS training CSVs.",
+    "control": "N10 rejected full-train aggregation; none of its findings are admitted.",
+    "metric": "Exact scope boundary, issue/hour/grid completeness, nonfinite counts, and metadata-field presence; no model score.",
+    "min_effect": 0.0,
+    "score_bearing": false,
+    "novelty_signature": "ISSUANCE_CUBE_2022_2023_CORRECTED_AUDIT_V1",
+    "basis_evidence_ids": [
+      "S17_N10_SCOPE_BREACH",
+      "RWA_DATA_R1"
+    ]
+  }
+}

@@ -1,0 +1,860 @@
+{
+ "artifact_hash": "49b6d6cdb4c90d000cd5204b05e7ea759eda034f6e1e62b9d11f1c93e6c6a111",
+ "code_version": "383265af810eee24129de2d7ce99457bb8a757ef+dirty",
+ "dacon_upload": false,
+ "decided_utc": "2026-08-04T00:42:47.526688+00:00",
+ "external_actions": [],
+ "inner_loop_steps": [
+  "3_code",
+  "4_run",
+  "5_evaluate"
+ ],
+ "input_hashes": {
+  "open_zip_sha256": "920be0c458d820e855bf79dd25723146f52ce1736138aedba5e6bc853f1f720b"
+ },
+ "lockbox_reopened": false,
+ "model_fits": 0,
+ "new_2024_evaluation": false,
+ "node": "A2_columns",
+ "parents": [],
+ "premise": null,
+ "report_sha256": "60de4173d6cb0b080fa4b04db08dd3a22c0b66c03d39403e33a966b4f3d0bda7",
+ "result": {
+  "effective_sample": {
+   "1": {
+    "effective_ratio": 0.02154098083271479,
+    "effective_rows": 342,
+    "lag1_autocorr": 0.9578264969553046,
+    "rows_screened": 15915
+   },
+   "2": {
+    "effective_ratio": 0.019238650258922765,
+    "effective_rows": 305,
+    "lag1_autocorr": 0.9622489781877179,
+    "rows_screened": 15891
+   },
+   "3": {
+    "effective_ratio": 0.02515779203096941,
+    "effective_rows": 236,
+    "lag1_autocorr": 0.9509191809757821,
+    "rows_screened": 9414
+   }
+  },
+  "gfs": {
+   "columns": [
+    {
+     "column": "isobaricInhPa_850_u",
+     "declared_in_spatial_v2": false,
+     "mi_g1": 0.2685843214857355,
+     "mi_g2": 0.29778408724568184,
+     "mi_g3": 0.24056353450849421,
+     "mi_mean": 0.26897731441330386,
+     "rank": 1,
+     "referenced_in_src": true,
+     "source": "gfs"
+    },
+    {
+     "column": "heightAboveGround_100_100u",
+     "declared_in_spatial_v2": true,
+     "mi_g1": 0.25545011833741516,
+     "mi_g2": 0.24581536902592838,
+     "mi_g3": 0.21210745169924206,
+     "mi_mean": 0.23779097968752852,
+     "rank": 2,
+     "referenced_in_src": true,
+     "source": "gfs"
+    },
+    {
+     "column": "heightAboveGround_80_u",
+     "declared_in_spatial_v2": true,
+     "mi_g1": 0.26027732362057865,
+     "mi_g2": 0.2291329825642876,
+     "mi_g3": 0.19901528559924397,
+     "mi_mean": 0.22947519726137008,
+     "rank": 3,
+     "referenced_in_src": true,
+     "source": "gfs"
+    },
+    {
+     "column": "planetaryBoundaryLayer_0_u",
+     "declared_in_spatial_v2": false,
+     "mi_g1": 0.2605448284091212,
+     "mi_g2": 0.2247022781028596,
+     "mi_g3": 0.19875396276303547,
+     "mi_mean": 0.2280003564250054,
+     "rank": 4,
+     "referenced_in_src": true,
+     "source": "gfs"
+    },
+    {
+     "column": "heightAboveGround_10_10u",
+     "declared_in_spatial_v2": true,
+     "mi_g1": 0.25140803516864985,
+     "mi_g2": 0.22272804791785283,
+     "mi_g3": 0.18290260420835303,
+     "mi_mean": 0.2190128957649519,
+     "rank": 5,
+     "referenced_in_src": true,
+     "source": "gfs"
+    },
+    {
+     "column": "surface_0_gust",
+     "declared_in_spatial_v2": true,
+     "mi_g1": 0.179976016627573,
+     "mi_g2": 0.17634459088242416,
+     "mi_g3": 0.12756066362120055,
+     "mi_mean": 0.16129375704373258,
+     "rank": 6,
+     "referenced_in_src": false,
+     "source": "gfs"
+    },
+    {
+     "column": "isobaricInhPa_700_u",
+     "declared_in_spatial_v2": false,
+     "mi_g1": 0.11805596880674418,
+     "mi_g2": 0.10396441768173226,
+     "mi_g3": 0.08777825630335911,
+     "mi_mean": 0.10326621426394518,
+     "rank": 7,
+     "referenced_in_src": true,
+     "source": "gfs"
+    },
+    {
+     "column": "heightAboveGround_10_10v",
+     "declared_in_spatial_v2": true,
+     "mi_g1": 0.07798274182204068,
+     "mi_g2": 0.07020649061695838,
+     "mi_g3": 0.09538908580318939,
+     "mi_mean": 0.08119277274739616,
+     "rank": 8,
+     "referenced_in_src": true,
+     "source": "gfs"
+    },
+    {
+     "column": "isobaricInhPa_500_gh",
+     "declared_in_spatial_v2": false,
+     "mi_g1": 0.07981570785847136,
+     "mi_g2": 0.07839590449596834,
+     "mi_g3": 0.07488011731649635,
+     "mi_mean": 0.07769724322364535,
+     "rank": 9,
+     "referenced_in_src": false,
+     "source": "gfs"
+    },
+    {
+     "column": "isobaricInhPa_500_t",
+     "declared_in_spatial_v2": false,
+     "mi_g1": 0.08504804234236474,
+     "mi_g2": 0.06973816011327916,
+     "mi_g3": 0.07503758438648322,
+     "mi_mean": 0.07660792894737571,
+     "rank": 10,
+     "referenced_in_src": false,
+     "source": "gfs"
+    },
+    {
+     "column": "heightAboveGround_80_v",
+     "declared_in_spatial_v2": true,
+     "mi_g1": 0.07369377503318031,
+     "mi_g2": 0.08111050694799005,
+     "mi_g3": 0.0723181439736802,
+     "mi_mean": 0.07570747531828352,
+     "rank": 11,
+     "referenced_in_src": true,
+     "source": "gfs"
+    },
+    {
+     "column": "planetaryBoundaryLayer_0_VRATE",
+     "declared_in_spatial_v2": true,
+     "mi_g1": 0.09022786850243492,
+     "mi_g2": 0.065811990313418,
+     "mi_g3": 0.04864273162723176,
+     "mi_mean": 0.06822753014769489,
+     "rank": 12,
+     "referenced_in_src": false,
+     "source": "gfs"
+    },
+    {
+     "column": "surface_0_dlwrf",
+     "declared_in_spatial_v2": false,
+     "mi_g1": 0.07739359048582273,
+     "mi_g2": 0.07620552218922061,
+     "mi_g3": 0.05085251701219029,
+     "mi_mean": 0.06815054322907788,
+     "rank": 13,
+     "referenced_in_src": false,
+     "source": "gfs"
+    },
+    {
+     "column": "isobaricInhPa_700_t",
+     "declared_in_spatial_v2": false,
+     "mi_g1": 0.07611125877299685,
+     "mi_g2": 0.07630454624612248,
+     "mi_g3": 0.0500512099496877,
+     "mi_mean": 0.06748900498960235,
+     "rank": 14,
+     "referenced_in_src": false,
+     "source": "gfs"
+    },
+    {
+     "column": "heightAboveGround_100_100v",
+     "declared_in_spatial_v2": true,
+     "mi_g1": 0.07072792198032563,
+     "mi_g2": 0.06846449857078252,
+     "mi_g3": 0.05850906460229233,
+     "mi_mean": 0.06590049505113349,
+     "rank": 15,
+     "referenced_in_src": true,
+     "source": "gfs"
+    },
+    {
+     "column": "heightAboveGround_2_2t",
+     "declared_in_spatial_v2": true,
+     "mi_g1": 0.06779663411921177,
+     "mi_g2": 0.07962803996459655,
+     "mi_g3": 0.04492565876945598,
+     "mi_mean": 0.06411677761775476,
+     "rank": 16,
+     "referenced_in_src": true,
+     "source": "gfs"
+    },
+    {
+     "column": "heightAboveGround_2_2d",
+     "declared_in_spatial_v2": false,
+     "mi_g1": 0.07599776308276684,
+     "mi_g2": 0.06792049478785689,
+     "mi_g3": 0.04681882495168921,
+     "mi_mean": 0.06357902760743765,
+     "rank": 17,
+     "referenced_in_src": false,
+     "source": "gfs"
+    },
+    {
+     "column": "planetaryBoundaryLayer_0_v",
+     "declared_in_spatial_v2": false,
+     "mi_g1": 0.06079064371590004,
+     "mi_g2": 0.059366086241253946,
+     "mi_g3": 0.062326819990087934,
+     "mi_mean": 0.06082784998241397,
+     "rank": 18,
+     "referenced_in_src": true,
+     "source": "gfs"
+    },
+    {
+     "column": "heightAboveGround_2_2sh",
+     "declared_in_spatial_v2": false,
+     "mi_g1": 0.07603305879352273,
+     "mi_g2": 0.05968947610188824,
+     "mi_g3": 0.04488262630086126,
+     "mi_mean": 0.06020172039875741,
+     "rank": 19,
+     "referenced_in_src": false,
+     "source": "gfs"
+    },
+    {
+     "column": "isobaricInhPa_850_t",
+     "declared_in_spatial_v2": false,
+     "mi_g1": 0.07114606172564564,
+     "mi_g2": 0.05651482774176397,
+     "mi_g3": 0.0470487835059874,
+     "mi_mean": 0.058236557657799004,
+     "rank": 20,
+     "referenced_in_src": false,
+     "source": "gfs"
+    },
+    {
+     "column": "isobaricInhPa_500_u",
+     "declared_in_spatial_v2": false,
+     "mi_g1": 0.054978558538584466,
+     "mi_g2": 0.026165244517225794,
+     "mi_g3": 0.04646925876972663,
+     "mi_mean": 0.04253768727517896,
+     "rank": 21,
+     "referenced_in_src": true,
+     "source": "gfs"
+    },
+    {
+     "column": "isobaricInhPa_850_v",
+     "declared_in_spatial_v2": false,
+     "mi_g1": 0.04733282610651557,
+     "mi_g2": 0.04581391788008471,
+     "mi_g3": 0.03432976753141492,
+     "mi_mean": 0.04249217050600507,
+     "rank": 22,
+     "referenced_in_src": true,
+     "source": "gfs"
+    },
+    {
+     "column": "meanSea_0_prmsl",
+     "declared_in_spatial_v2": false,
+     "mi_g1": 0.03930325856944883,
+     "mi_g2": 0.038068729001710544,
+     "mi_g3": 0.0377362801536929,
+     "mi_mean": 0.03836942257495076,
+     "rank": 23,
+     "referenced_in_src": false,
+     "source": "gfs"
+    },
+    {
+     "column": "heightAboveGround_2_2r",
+     "declared_in_spatial_v2": true,
+     "mi_g1": 0.038848590788521875,
+     "mi_g2": 0.02961498141136243,
+     "mi_g3": 0.02703028145264863,
+     "mi_mean": 0.03183128455084431,
+     "rank": 24,
+     "referenced_in_src": false,
+     "source": "gfs"
+    },
+    {
+     "column": "atmosphere_0_tcc",
+     "declared_in_spatial_v2": false,
+     "mi_g1": 0.03282155591211389,
+     "mi_g2": 0.02884295372872714,
+     "mi_g3": 0.023951245016673894,
+     "mi_mean": 0.028538584885838308,
+     "rank": 25,
+     "referenced_in_src": false,
+     "source": "gfs"
+    },
+    {
+     "column": "isobaricInhPa_850_r",
+     "declared_in_spatial_v2": false,
+     "mi_g1": 0.044570647302074384,
+     "mi_g2": 0.02392605034945028,
+     "mi_g3": 0.013684958921053259,
+     "mi_mean": 0.02739388552419264,
+     "rank": 26,
+     "referenced_in_src": false,
+     "source": "gfs"
+    },
+    {
+     "column": "surface_0_tp",
+     "declared_in_spatial_v2": false,
+     "mi_g1": 0.03257203142187004,
+     "mi_g2": 0.025555402911801917,
+     "mi_g3": 0.019227189798458166,
+     "mi_mean": 0.025784874710710042,
+     "rank": 27,
+     "referenced_in_src": false,
+     "source": "gfs"
+    },
+    {
+     "column": "surface_0_sp",
+     "declared_in_spatial_v2": true,
+     "mi_g1": 0.029912915204564072,
+     "mi_g2": 0.025443973049475765,
+     "mi_g3": 0.020853651627134262,
+     "mi_mean": 0.0254035132937247,
+     "rank": 28,
+     "referenced_in_src": true,
+     "source": "gfs"
+    },
+    {
+     "column": "isobaricInhPa_700_v",
+     "declared_in_spatial_v2": false,
+     "mi_g1": 0.030658601471093228,
+     "mi_g2": 0.01858935766161185,
+     "mi_g3": 0.02371353040155011,
+     "mi_mean": 0.024320496511418394,
+     "rank": 29,
+     "referenced_in_src": true,
+     "source": "gfs"
+    },
+    {
+     "column": "surface_0_dswrf",
+     "declared_in_spatial_v2": false,
+     "mi_g1": 0.02181050515056171,
+     "mi_g2": 0.03239814663947582,
+     "mi_g3": 0.01647024641667416,
+     "mi_mean": 0.023559632735570563,
+     "rank": 30,
+     "referenced_in_src": false,
+     "source": "gfs"
+    },
+    {
+     "column": "middleCloudLayer_0_mcc",
+     "declared_in_spatial_v2": false,
+     "mi_g1": 0.027119437819816294,
+     "mi_g2": 0.012976831400636879,
+     "mi_g3": 0.01133680410121185,
+     "mi_mean": 0.01714435777388834,
+     "rank": 31,
+     "referenced_in_src": false,
+     "source": "gfs"
+    },
+    {
+     "column": "highCloudLayer_0_hcc",
+     "declared_in_spatial_v2": false,
+     "mi_g1": 0.019632425269885623,
+     "mi_g2": 0.012291312974426205,
+     "mi_g3": 0.013714388303617042,
+     "mi_mean": 0.015212708849309623,
+     "rank": 32,
+     "referenced_in_src": false,
+     "source": "gfs"
+    },
+    {
+     "column": "surface_0_prate",
+     "declared_in_spatial_v2": true,
+     "mi_g1": 0.02575765176879763,
+     "mi_g2": 0.009669226853207924,
+     "mi_g3": 0.007684178899100669,
+     "mi_mean": 0.014370352507035408,
+     "rank": 33,
+     "referenced_in_src": false,
+     "source": "gfs"
+    },
+    {
+     "column": "isobaricInhPa_500_v",
+     "declared_in_spatial_v2": false,
+     "mi_g1": 0.02544421877348846,
+     "mi_g2": 0.0,
+     "mi_g3": 0.015888880299306685,
+     "mi_mean": 0.013777699690931714,
+     "rank": 34,
+     "referenced_in_src": true,
+     "source": "gfs"
+    },
+    {
+     "column": "lowCloudLayer_0_lcc",
+     "declared_in_spatial_v2": false,
+     "mi_g1": 0.019081101823833713,
+     "mi_g2": 0.007538809675799563,
+     "mi_g3": 0.005820738727787322,
+     "mi_mean": 0.010813550075806866,
+     "rank": 35,
+     "referenced_in_src": false,
+     "source": "gfs"
+    }
+   ],
+   "summary": {
+    "best_undeclared": {
+     "column": "isobaricInhPa_850_u",
+     "declared_in_spatial_v2": false,
+     "mi_g1": 0.2685843214857355,
+     "mi_g2": 0.29778408724568184,
+     "mi_g3": 0.24056353450849421,
+     "mi_mean": 0.26897731441330386,
+     "rank": 1,
+     "referenced_in_src": true,
+     "source": "gfs"
+    },
+    "best_untouched": {
+     "column": "isobaricInhPa_500_gh",
+     "declared_in_spatial_v2": false,
+     "mi_g1": 0.07981570785847136,
+     "mi_g2": 0.07839590449596834,
+     "mi_g3": 0.07488011731649635,
+     "mi_mean": 0.07769724322364535,
+     "rank": 9,
+     "referenced_in_src": false,
+     "source": "gfs"
+    },
+    "declared_columns": 12,
+    "declared_mean_mi": 0.1061935859159542,
+    "total_columns": 35,
+    "undeclared_columns": 23,
+    "undeclared_in_top10": 5,
+    "undeclared_mean_mi": 0.06273821009792022,
+    "untouched_columns": 15,
+    "untouched_in_top10": 2,
+    "untouched_mean_mi": 0.043918602878930825
+   }
+  },
+  "interpretation_limits": [
+   "주변 MI 이므로 기존 사용 컬럼 대비 추가 정보를 재지 않는다.",
+   "kNN 추정량은 편향되며 자기상관 하에서 유효표본이 크게 줄어든다.",
+   "순위 스크린 전용. 절대값과 유의성을 주장하지 않는다."
+  ],
+  "ldaps": {
+   "columns": [
+    {
+     "column": "heightAboveGround_10_10u",
+     "declared_in_spatial_v2": true,
+     "mi_g1": 0.2562571004910348,
+     "mi_g2": 0.24923773137299232,
+     "mi_g3": 0.22494292202165678,
+     "mi_mean": 0.24347925129522796,
+     "rank": 1,
+     "referenced_in_src": true,
+     "source": "ldaps"
+    },
+    {
+     "column": "heightAboveGround_50_50MUmin",
+     "declared_in_spatial_v2": true,
+     "mi_g1": 0.2725415402107352,
+     "mi_g2": 0.2497353964499025,
+     "mi_g3": 0.20059973277192444,
+     "mi_mean": 0.24095888981085403,
+     "rank": 2,
+     "referenced_in_src": true,
+     "source": "ldaps"
+    },
+    {
+     "column": "heightAboveGround_50_50MUmax",
+     "declared_in_spatial_v2": true,
+     "mi_g1": 0.2552630602521644,
+     "mi_g2": 0.2366740112735739,
+     "mi_g3": 0.2052089796057217,
+     "mi_mean": 0.23238201704382,
+     "rank": 3,
+     "referenced_in_src": true,
+     "source": "ldaps"
+    },
+    {
+     "column": "heightAboveGround_5_YBLWS",
+     "declared_in_spatial_v2": true,
+     "mi_g1": 0.09065127964359387,
+     "mi_g2": 0.09509906883444064,
+     "mi_g3": 0.1307343491399644,
+     "mi_mean": 0.10549489920599964,
+     "rank": 4,
+     "referenced_in_src": true,
+     "source": "ldaps"
+    },
+    {
+     "column": "heightAboveGround_50_50MVmin",
+     "declared_in_spatial_v2": true,
+     "mi_g1": 0.08262539410829106,
+     "mi_g2": 0.08573338373741457,
+     "mi_g3": 0.09238858870933786,
+     "mi_mean": 0.08691578885168116,
+     "rank": 5,
+     "referenced_in_src": true,
+     "source": "ldaps"
+    },
+    {
+     "column": "heightAboveGround_10_10v",
+     "declared_in_spatial_v2": true,
+     "mi_g1": 0.07512413061797929,
+     "mi_g2": 0.09021837929403542,
+     "mi_g3": 0.09392490269251219,
+     "mi_mean": 0.08642247086817563,
+     "rank": 6,
+     "referenced_in_src": true,
+     "source": "ldaps"
+    },
+    {
+     "column": "heightAboveGround_5_XBLWS",
+     "declared_in_spatial_v2": true,
+     "mi_g1": 0.09446866453992975,
+     "mi_g2": 0.07677166368790278,
+     "mi_g3": 0.07390048875518573,
+     "mi_mean": 0.08171360566100609,
+     "rank": 7,
+     "referenced_in_src": true,
+     "source": "ldaps"
+    },
+    {
+     "column": "heightAboveGround_50_50MVmax",
+     "declared_in_spatial_v2": true,
+     "mi_g1": 0.07471060788247819,
+     "mi_g2": 0.07314600884365774,
+     "mi_g3": 0.08835937558793461,
+     "mi_mean": 0.07873866410469017,
+     "rank": 8,
+     "referenced_in_src": true,
+     "source": "ldaps"
+    },
+    {
+     "column": "etc_0_blh",
+     "declared_in_spatial_v2": true,
+     "mi_g1": 0.08261930233464199,
+     "mi_g2": 0.07286543044058114,
+     "mi_g3": 0.05407007781053785,
+     "mi_mean": 0.06985160352858699,
+     "rank": 9,
+     "referenced_in_src": false,
+     "source": "ldaps"
+    },
+    {
+     "column": "heightAboveGround_2_t",
+     "declared_in_spatial_v2": true,
+     "mi_g1": 0.07043374040768136,
+     "mi_g2": 0.07393109065971881,
+     "mi_g3": 0.05542339406029484,
+     "mi_mean": 0.066596075042565,
+     "rank": 10,
+     "referenced_in_src": false,
+     "source": "ldaps"
+    },
+    {
+     "column": "heightAboveGround_2_q",
+     "declared_in_spatial_v2": false,
+     "mi_g1": 0.06095553101818929,
+     "mi_g2": 0.05107379604878037,
+     "mi_g3": 0.05152205087781336,
+     "mi_mean": 0.05451712598159434,
+     "rank": 11,
+     "referenced_in_src": false,
+     "source": "ldaps"
+    },
+    {
+     "column": "heightAboveGround_2_dpt",
+     "declared_in_spatial_v2": false,
+     "mi_g1": 0.051952090669824535,
+     "mi_g2": 0.062214175400487015,
+     "mi_g3": 0.04546912582659335,
+     "mi_mean": 0.0532117972989683,
+     "rank": 12,
+     "referenced_in_src": false,
+     "source": "ldaps"
+    },
+    {
+     "column": "surface_0_sp",
+     "declared_in_spatial_v2": true,
+     "mi_g1": 0.04926465686892456,
+     "mi_g2": 0.03165255437436887,
+     "mi_g3": 0.03766638090002683,
+     "mi_mean": 0.03952786404777342,
+     "rank": 13,
+     "referenced_in_src": true,
+     "source": "ldaps"
+    },
+    {
+     "column": "meanSea_0_prmsl",
+     "declared_in_spatial_v2": false,
+     "mi_g1": 0.02350961249236949,
+     "mi_g2": 0.020381569501878083,
+     "mi_g3": 0.03325767318673645,
+     "mi_mean": 0.02571628506032801,
+     "rank": 14,
+     "referenced_in_src": false,
+     "source": "ldaps"
+    },
+    {
+     "column": "surface_0_NDNLW",
+     "declared_in_spatial_v2": false,
+     "mi_g1": 0.03613920881268662,
+     "mi_g2": 0.017058103648421863,
+     "mi_g3": 0.018688921688577054,
+     "mi_mean": 0.02396207804989518,
+     "rank": 15,
+     "referenced_in_src": false,
+     "source": "ldaps"
+    },
+    {
+     "column": "etc_0_mcc",
+     "declared_in_spatial_v2": false,
+     "mi_g1": 0.024363752188089283,
+     "mi_g2": 0.016472651433148133,
+     "mi_g3": 0.021970727420576708,
+     "mi_mean": 0.020935710347271375,
+     "rank": 16,
+     "referenced_in_src": false,
+     "source": "ldaps"
+    },
+    {
+     "column": "heightAboveGround_2_SWDIR",
+     "declared_in_spatial_v2": false,
+     "mi_g1": 0.018914205971786835,
+     "mi_g2": 0.01780849344213875,
+     "mi_g3": 0.023205800725567105,
+     "mi_mean": 0.01997616671316423,
+     "rank": 17,
+     "referenced_in_src": false,
+     "source": "ldaps"
+    },
+    {
+     "column": "heightAboveGround_2_r",
+     "declared_in_spatial_v2": true,
+     "mi_g1": 0.03035409306671344,
+     "mi_g2": 0.011088952896590065,
+     "mi_g3": 0.01751522118031623,
+     "mi_mean": 0.01965275571453991,
+     "rank": 18,
+     "referenced_in_src": false,
+     "source": "ldaps"
+    },
+    {
+     "column": "surface_0_NDNSW",
+     "declared_in_spatial_v2": false,
+     "mi_g1": 0.02252393267994446,
+     "mi_g2": 0.013583939499105746,
+     "mi_g3": 0.015708168452207794,
+     "mi_mean": 0.017272013543752667,
+     "rank": 19,
+     "referenced_in_src": false,
+     "source": "ldaps"
+    },
+    {
+     "column": "etc_0_hcc",
+     "declared_in_spatial_v2": false,
+     "mi_g1": 0.018997237694430957,
+     "mi_g2": 0.01790119147947422,
+     "mi_g3": 0.0,
+     "mi_mean": 0.012299476391301726,
+     "rank": 20,
+     "referenced_in_src": false,
+     "source": "ldaps"
+    },
+    {
+     "column": "etc_0_lcc",
+     "declared_in_spatial_v2": false,
+     "mi_g1": 0.011588975456195971,
+     "mi_g2": 0.009057045727503432,
+     "mi_g3": 0.011825622827209337,
+     "mi_mean": 0.01082388133696958,
+     "rank": 21,
+     "referenced_in_src": false,
+     "source": "ldaps"
+    },
+    {
+     "column": "heightAboveGround_2_SWDIF",
+     "declared_in_spatial_v2": false,
+     "mi_g1": 0.011585196821406463,
+     "mi_g2": 0.011033844066909104,
+     "mi_g3": 0.006936729998855196,
+     "mi_mean": 0.009851923629056921,
+     "rank": 22,
+     "referenced_in_src": false,
+     "source": "ldaps"
+    },
+    {
+     "column": "surface_0_avg_lsprate",
+     "declared_in_spatial_v2": false,
+     "mi_g1": 0.01513171330013341,
+     "mi_g2": 0.006607623940232177,
+     "mi_g3": 0.002491374437435523,
+     "mi_mean": 0.00807690389260037,
+     "rank": 23,
+     "referenced_in_src": false,
+     "source": "ldaps"
+    },
+    {
+     "column": "etc_0_VLCDC",
+     "declared_in_spatial_v2": false,
+     "mi_g1": 0.0,
+     "mi_g2": 0.010402527606799605,
+     "mi_g3": 0.012929599213449716,
+     "mi_mean": 0.007777375606749774,
+     "rank": 24,
+     "referenced_in_src": false,
+     "source": "ldaps"
+    },
+    {
+     "column": "surface_0_ncpcp",
+     "declared_in_spatial_v2": false,
+     "mi_g1": 0.011478475748177175,
+     "mi_g2": 0.009068481634504355,
+     "mi_g3": 0.0,
+     "mi_mean": 0.006848985794227176,
+     "rank": 25,
+     "referenced_in_src": false,
+     "source": "ldaps"
+    },
+    {
+     "column": "surface_0_snol",
+     "declared_in_spatial_v2": false,
+     "mi_g1": 0.006131632209671833,
+     "mi_g2": 0.0,
+     "mi_g3": 0.010262615920515694,
+     "mi_mean": 0.005464749376729176,
+     "rank": 26,
+     "referenced_in_src": false,
+     "source": "ldaps"
+    },
+    {
+     "column": "surface_0_lssrate",
+     "declared_in_spatial_v2": false,
+     "mi_g1": 0.008008122607382706,
+     "mi_g2": 0.004089616986653999,
+     "mi_g3": 0.0028458919315954567,
+     "mi_mean": 0.004981210508544054,
+     "rank": 27,
+     "referenced_in_src": false,
+     "source": "ldaps"
+    },
+    {
+     "column": "surface_0_h",
+     "declared_in_spatial_v2": false,
+     "mi_g1": 0.0,
+     "mi_g2": 0.0,
+     "mi_g3": 0.013039106553274227,
+     "mi_mean": 0.004346368851091409,
+     "rank": 28,
+     "referenced_in_src": false,
+     "source": "ldaps"
+    },
+    {
+     "column": "surface_0_lsm",
+     "declared_in_spatial_v2": false,
+     "mi_g1": 0.00022869092205124453,
+     "mi_g2": 0.0,
+     "mi_g3": 0.004275329996472843,
+     "mi_mean": 0.001501340306174696,
+     "rank": 29,
+     "referenced_in_src": false,
+     "source": "ldaps"
+    },
+    {
+     "column": "surface_0_SNOM",
+     "declared_in_spatial_v2": false,
+     "mi_g1": 0.003169632865237304,
+     "mi_g2": 0.0,
+     "mi_g3": 0.0,
+     "mi_mean": 0.0010565442884124347,
+     "rank": 30,
+     "referenced_in_src": false,
+     "source": "ldaps"
+    }
+   ],
+   "summary": {
+    "best_undeclared": {
+     "column": "heightAboveGround_2_q",
+     "declared_in_spatial_v2": false,
+     "mi_g1": 0.06095553101818929,
+     "mi_g2": 0.05107379604878037,
+     "mi_g3": 0.05152205087781336,
+     "mi_mean": 0.05451712598159434,
+     "rank": 11,
+     "referenced_in_src": false,
+     "source": "ldaps"
+    },
+    "best_untouched": {
+     "column": "heightAboveGround_2_q",
+     "declared_in_spatial_v2": false,
+     "mi_g1": 0.06095553101818929,
+     "mi_g2": 0.05107379604878037,
+     "mi_g3": 0.05152205087781336,
+     "mi_mean": 0.05451712598159434,
+     "rank": 11,
+     "referenced_in_src": false,
+     "source": "ldaps"
+    },
+    "declared_columns": 12,
+    "declared_mean_mi": 0.11264449043124332,
+    "total_columns": 30,
+    "undeclared_columns": 18,
+    "undeclared_in_top10": 0,
+    "undeclared_mean_mi": 0.0160344409431573,
+    "untouched_columns": 18,
+    "untouched_in_top10": 0,
+    "untouched_mean_mi": 0.0160344409431573
+   }
+  }
+ },
+ "schema_version": 1,
+ "script_sha256": "dfdf0b527d0fcbc1a78be244b24b26589ec2a92605ca1e1e58459bf617bf4115",
+ "seed": 20260804,
+ "spec": {
+  "depends_on": [],
+  "generation": 1,
+  "lane": "L2",
+  "method_from": "c_feature_relevance",
+  "new_dependencies": [],
+  "outputs": [
+   "GFS/LDAPS 전 컬럼 목록과 configs/features/spatial_v2.yaml 실사용분 대조",
+   "미사용 컬럼별 mutual_info_regression 점수 (순위 해석 전용)",
+   "자기상관으로 인한 유효표본 축소 경고를 수치와 함께 기록"
+  ],
+  "predeclared_expectation": "MI 절대값은 신뢰하지 않는다. 순위만 본다. 상위 컬럼이라도 조건부 추가이득은 별도 측정 전까지 주장하지 않는다.",
+  "router_note": "MI 가 임계 미만이면 C8(PRUNE), 이상이면 C1 로 L2 방향리서치 발화.",
+  "stop_condition": "전 컬럼에 MI 점수가 붙고 사용/미사용 구분이 완료되면 종료.",
+  "task": "공급 NWP 컬럼 전수 인벤토리와 라벨 관련성 스크린"
+ },
+ "spec_hash": "15d9078de483cdf798bb79abe4e692de4f71ae7a23a588a1ce27c7fbf6286bc6",
+ "stage": "M271_N0_A2_COLUMNS",
+ "threads": 1
+}

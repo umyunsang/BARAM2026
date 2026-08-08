@@ -1,0 +1,131 @@
+{
+  "schema_version": 1,
+  "node_id": "S17-N6_COST5_SPO_PLUS_PREQUENTIAL",
+  "stage": "S7_모델링",
+  "kind": "saved_action_decision_learning_score_bearing_only_if_input_gate_passes",
+  "predeclared_at": "2026-08-08T19:54:26.725604+09:00",
+  "parent": "S17-N5_ECMWF_18Z_2023_EXTRACTION",
+  "evidence": [
+    {
+      "path": "research/rwa_model_decision_research.md",
+      "sha256": "0626868e9fbb6818021be659d719f7a95d53f829bb48f310aaac917de9734c7a",
+      "status": "directly_supported proposal boundary after root reclassification"
+    },
+    {
+      "path": "research/rwa_eval_research.md",
+      "sha256": "2b418c28ecd4f9e3a27e30176d9d76298961b37cffc613447b7c36e5eb34b84c",
+      "status": "directly_supported chronology and evaluation constraints after root reclassification"
+    },
+    {
+      "path": "reports/s17_n3_prequential_eval_receipt.json",
+      "sha256": "6f25b5bdff627de2a1bcebe537204d91e0be0bf5be63cc8018193c1754c0a080"
+    },
+    {
+      "path": "reports/s17_n5_ecmwf_18z_extraction_receipt.json",
+      "sha256": "9f82caf9cc85dce3aad3703b844bd62a4b24f2f89d3139b91946f77303e71674"
+    }
+  ],
+  "purpose": "Test the single surviving internal COST5-SPO+ hypothesis using only the frozen four saved actions plus their fixed champion action, but fail closed before any fit or score if those saved actions cannot prove strict D-1 14:00 label/selection chronology.",
+  "input_bundle": {
+    "sha256": "136b7a0cd16485d1e877387468c39fdc07f201127b8f682f79b3c32170086fa4",
+    "files": {
+      "research/nodes/S7-N8_D_keys.parquet": "f1e647ba5eb7529f8ff9e69e818dfb7697044c19b15839e05f97e89cea83a010",
+      "research/nodes/S7-N8_D_prob.npy": "e567109f8a86c37411e84fab0329af8465788988112ece114035753e60c52f0e",
+      "research/nodes/s7_savemembers.py": "5a86baf85a631e070da29124b2c6c0f6c77aa8bf0a0f1d4024b4ae988a02fdbd",
+      "artifacts/cache/harness/6e2a1e3f3bb5782ec35a2454/MANIFEST.json": "45397afeb0af9c7797fa20ade2fd1107396b1c15279f4de8ef44dd58635b1ae7",
+      "artifacts/backtests/metric-aligned-probe/M102_TOP100-dev-2023-Q2-policies.parquet": "edeced928847332711e5b2f62a0e8bc6df2f64dc779224621735fbc13eb0dd7a",
+      "artifacts/backtests/metric-aligned-probe/M102_TOP100-dev-2023-Q2.json": "17f7ea69f4eca3e1c9500ae2df6f6c2361a6eeca9d8a953551825f476d5b06eb",
+      "artifacts/backtests/metric-aligned-probe/M102_TOP100-dev-2023-Q3-policies.parquet": "599e61da1d6f3738db1d267fc7da3b7c2bb2e65c4ea45344d940e90fb3269945",
+      "artifacts/backtests/metric-aligned-probe/M102_TOP100-dev-2023-Q3.json": "21fca4ab64433f27f1d26a7f0dee5040d085aeed13a76ab8d055610d30f2b484",
+      "artifacts/backtests/metric-aligned-probe/M102_TOP100-dev-2023-Q4-policies.parquet": "4f271f254c55275c43256f0b855388ec4120935391d281c07cc6ec65f8e7bf93",
+      "artifacts/backtests/metric-aligned-probe/M102_TOP100-dev-2023-Q4.json": "8cb7b96656d7773594ed50c99de92b071c1baa4eaaad242cb299c63a5724b79e",
+      "artifacts/backtests/metric-aligned-probe/M113_LGBM_DART-dev-2023-Q2-policies.parquet": "dddd4fcbbb4555737b51f152173d73bc84a372edeb6879e218fa5a853557c02d",
+      "artifacts/backtests/metric-aligned-probe/M113_LGBM_DART-dev-2023-Q2.json": "cd449c73b0761032aa2a84a2a1dbbc2fe70537130d6ce7425cd86cbf38cdea63",
+      "artifacts/backtests/metric-aligned-probe/M113_LGBM_DART-dev-2023-Q3-policies.parquet": "a9b94a32393b42b180b113129d4be68c06879da0f070193defca4ab877d63c5c",
+      "artifacts/backtests/metric-aligned-probe/M113_LGBM_DART-dev-2023-Q3.json": "2ba18a45ba9713b8f53c6e4df7e2322865c5920e72da85f9e758105c902ea410",
+      "artifacts/backtests/metric-aligned-probe/M113_LGBM_DART-dev-2023-Q4-policies.parquet": "97ed67d6f52994bacc942162bdbd8df304956c6cb866e7ec4c4ae7c45c192771",
+      "artifacts/backtests/metric-aligned-probe/M113_LGBM_DART-dev-2023-Q4.json": "3b440ab995b46eb107bcf4cdb4afdc40bd2cc87b67d2fc4be8147ac0a4b4385c",
+      "artifacts/backtests/metric-aligned-probe/M115_XGBOOST-dev-2023-Q2-policies.parquet": "4ad669071fc8010c15713f014e320dcffb1cdb5c142a05fa426fd21f7f306ade",
+      "artifacts/backtests/metric-aligned-probe/M115_XGBOOST-dev-2023-Q2.json": "917d2c741fa85aa68a264f3f75bd230517276a5ebd4a5e397890756707b19cf6",
+      "artifacts/backtests/metric-aligned-probe/M115_XGBOOST-dev-2023-Q3-policies.parquet": "951793f696a5599b2dd52684fac22b72949a90380e0437761ea397c1bffc520b",
+      "artifacts/backtests/metric-aligned-probe/M115_XGBOOST-dev-2023-Q3.json": "f2ca31f9c00ecc88b2af5b50fec7bd38824601bc6b2ddeb69ae498d4b3ce6748",
+      "artifacts/backtests/metric-aligned-probe/M115_XGBOOST-dev-2023-Q4-policies.parquet": "8913ab0cb6ce6de9b87d0eb79c79d541971b5f930c27da4647df7ee5caba3867",
+      "artifacts/backtests/metric-aligned-probe/M115_XGBOOST-dev-2023-Q4.json": "7dd4e5a2fde1d2b8ca7f583560dd861c7778c78d3a2264f10d4e98b9dd0829b3"
+    },
+    "rejected_ecmwf_path": "artifacts/external/ecmwf_18z_2023_rejected_s17n5",
+    "rejected_ecmwf_use": "FORBIDDEN"
+  },
+  "hard_input_gate": {
+    "G0a": "For each Q3/Q4 base action, maximum target-label availability used in fitting must be strictly earlier than the first held operating-day basis time.",
+    "G0b": "Every feature, iteration, policy, blend, threshold and weight selection timestamp must be strictly earlier than that held basis; same-fold or future-fold selection fails.",
+    "G0c": "Assessment retains only complete common operating-day atoms with 72 unique group-hour cells; exclusions are mechanical and disclosed.",
+    "G0d": "All declared input hashes match; no 2024, test, rejected ECMWF, Dacon or remote-inference input.",
+    "failure_action": "STOP before decision-model fit, official metric call, bootstrap, score-bearing closure, or comparison-index consumption; close REFUTED non-score-bearing."
+  },
+  "conditional_procedure_if_G0_passes": {
+    "actions": [
+      "D",
+      "M102_TOP100",
+      "M113_LGBM_DART",
+      "M115_XGBOOST",
+      "CHAMPION_0p3D_0p7DEPAVG"
+    ],
+    "policy_selection": "Select each base action fixed (T,G) only on complete Q2 operating days whose labels are available before the Q3 first basis; freeze through Q3/Q4.",
+    "champion": "0.30*D + 0.70*mean(M102,M113,M115); weights fixed, not refit.",
+    "outer_rule": "Q2 burn-in; train COST5 on label-available past only for Q3; expand through label-available Q3 past only for Q4.",
+    "feature_map": "Frozen S16-N3 state/action map, adding normalized CHAMPION action; fold-local finite imputation and standardization fitted on training rows only.",
+    "cost": "Exact official per-row additive loss contribution scaled by the fold training-row count, with invalid actual<0.1*capacity rows assigned zero contribution exactly as the official metric.",
+    "learner": "Five-action linear SPO+ empirical-risk minimizer; zero initialization; L2 lambda=0.001; scipy L-BFGS-B; maxiter=500; ftol=1e-12; gtol=1e-7; deterministic argmax/argmin tie break by declared action order; no sweep or retry.",
+    "candidate_output": "Choose the minimum predicted-cost action per row; no blending, calibration, threshold, seed search, or fallback chosen from assessment scores."
+  },
+  "evaluation": {
+    "protocol": "BARAM_STRICT_PREQUENTIAL_JOINT_v1",
+    "incumbent": "CHAMPION_0p3D_0p7DEPAVG",
+    "candidate_family": [
+      "CHAMPION_0p3D_0p7DEPAVG",
+      "COST5_SPO_PLUS"
+    ],
+    "family_manifest_frozen_before_score": true,
+    "comparison_index_if_score_bearing": 1,
+    "replicates": 4999,
+    "bootstrap_seed": 20260808,
+    "block_days": [
+      3,
+      7,
+      14
+    ],
+    "primary_block_days": 7,
+    "margin_total": 0.001635,
+    "promotion": "S17-N3 stable-all-block gate; Q3 and Q4 deltas positive; exact/additive sign agreement; candidate in 90% MCS and incumbent excluded.",
+    "label": "retrospective_chronology_repaired_multiplicity_aware_not_fresh_holdout"
+  },
+  "files": {
+    "add": [
+      "scripts/audit_cost5_saved_actions.py",
+      "scripts/run_cost5_spo_plus.py"
+    ],
+    "outputs": [
+      "artifacts/backtests/s17_n6_cost5_spo_plus/actions.parquet",
+      "artifacts/backtests/s17_n6_cost5_spo_plus/family_manifest.json",
+      "artifacts/backtests/s17_n6_cost5_spo_plus/predictions.parquet"
+    ],
+    "receipt": "reports/s17_n6_cost5_spo_plus_receipt.json"
+  },
+  "limits": {
+    "model_workers": 6,
+    "decision_model_fits_if_gate_passes": 2,
+    "official_score_protocol_calls_if_gate_passes": 1,
+    "hyperparameter_sweeps": 0
+  },
+  "forbidden": [
+    "2024 lockbox or target",
+    "test-period observation",
+    "rejected ECMWF partials",
+    "Dacon/account action",
+    "remote API inference",
+    "dependency change",
+    "future-fold selection",
+    "post-hoc gate relaxation"
+  ],
+  "pass_label": "SUPPORTED only if G0 and full S17-N3 promotion gate pass; otherwise REFUTED or INCONCLUSIVE in stated scope"
+}

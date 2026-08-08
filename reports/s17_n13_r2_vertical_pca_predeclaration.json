@@ -1,0 +1,186 @@
+{
+  "schema_version": 1,
+  "node_id": "S17-N13_R2_TWO_COMPONENT_VERTICAL_PCA_STRICT_PREQUENTIAL",
+  "stage": "S6_피처구성",
+  "kind": "score_bearing_two_arm_vertical_pca_strict_prequential",
+  "predeclared_at": "2026-08-08T20:59:15.160115+09:00",
+  "parent": "S17-N12_VERTICAL_PROFILE_TERRAIN_PREREQUISITE_AUDIT",
+  "comparison_index": 2,
+  "input_bundle": {
+    "sha256": "534c31de5071ce2421a925701c7c302903fd1ee5e558dd75bf4d187976fa1598",
+    "files": {
+      "artifacts/cache/920be0c458d820e855bf79dd25723146f52ce1736138aedba5e6bc853f1f720b/train_features.parquet": "fec1b0369f6d1c63a3d9e113190c45bb2b84d1c6500098b957c96a6b1d2128e7",
+      "artifacts/cache/920be0c458d820e855bf79dd25723146f52ce1736138aedba5e6bc853f1f720b/labels_long.parquet": "880a6f9368023d1fdab541fb82a7133f18b15c3974d0fd7528c08e6ff8badab2",
+      "artifacts/manifests/prepare.json": "ca4908d7f98639b13da80febcd071cd805369e8e044bb4d7b97f793d2703ca46",
+      "artifacts/backtests/s17_n7_strict_actions/actions.parquet": "6041a7bf6f242c4da7958dc43d3487cdc468cc39301086bf3a5e6df5fb87f290",
+      "artifacts/backtests/s17_n7_strict_actions/procedure_provenance.parquet": "12666e4e61d962e74e0168e41a40f13b13acc006808bd7bd09dd837fa6cf9cae",
+      "artifacts/backtests/s17_n7_strict_actions/family_manifest.json": "972ed2922260bec2000cb9bc0d97098ae533652ab16daf9d5ca6d90601daa046",
+      "artifacts/backtests/s17_n9_cost5_recovery/predictions.parquet": "1422f8e375235659434055ef84a419f902008fe01c67363b6d717f08c744895d",
+      "artifacts/backtests/s17_n9_cost5_recovery/procedure_provenance.parquet": "c7763bf65ec6c6110cf261315379a463403cdcff89344f5c3b934c6633392b65",
+      "artifacts/backtests/s17_n9_cost5_recovery/family_manifest.json": "205d624c5d6d30a9a862a94fed1748a6d78d82e733049dc67ee0aa11c5c1b0b1",
+      "artifacts/backtests/s17_n9_cost5_recovery/evaluation.json": "7d6fc0e183a0d74647dbd3d4e1619b4dbfe03989521c137036d247f862593969",
+      "artifacts/audits/s17_n12_vertical_profile_prerequisites.json": "e6c829a7dd77a59179b949d3fb18cda02816ee55f6a9aed4365a13b6f50d9f87",
+      "reports/s17_n12_vertical_profile_prerequisite_receipt.json": "5f6d35ccc7193e683180b55b76ceca8c702be1ecc1257d682d93808a7d76bebe",
+      "src/baram/evaluation/prequential.py": "a4cd12d30b3cf79ac339f1a5dbcc009f5b85ba10a30ef6614346a6309703b35b",
+      "src/baram/evaluation/official.py": "5701ddfc5a6254e89cbc49451cd3f4bbddd437cff451a4596a86e7c68ff42cba",
+      "src/baram/constants.py": "f4fbf5c6772d021436f9b40459a2587f8223d597045d7fe9c48c9428e1702843",
+      "research/scratch/lib.py": "f66b6c402a3a612b824d8b220c8a5b69b4eaaa6d765fdb6a0742a9a2e743b0d4"
+    }
+  },
+  "family": {
+    "incumbent": "CHAMPION",
+    "control": "R2_CONTROL_ZERO4",
+    "candidate": "R2_VERTICAL_PCA2X2",
+    "row_keys": [
+      "fold_id",
+      "group_id",
+      "forecast_kst_dtm"
+    ],
+    "assessment_manifest": "S17-N7 90/89/91 complete days, 19440 rows; Q2 burn-in; Q3+Q4 outer 12960 rows"
+  },
+  "scope": {
+    "operating_years": [
+      2022,
+      2023
+    ],
+    "parquet_filter": "operating_day <= 2023-12-31 / valid <= 2024-01-01 00:00; never materialize a 2024 operating-day feature or label",
+    "fold_fit_label_max": {
+      "dev-2023-Q2": "2023-04-01 00:00:00",
+      "dev-2023-Q3": "2023-07-01 00:00:00",
+      "dev-2023-Q4": "2023-10-01 00:00:00"
+    },
+    "first_retained_basis": {
+      "dev-2023-Q2": "2023-04-01 14:00:00",
+      "dev-2023-Q3": "2023-07-01 14:00:00",
+      "dev-2023-Q4": "2023-10-01 14:00:00"
+    },
+    "calibration_tail_days": 90
+  },
+  "features": {
+    "base": "all numeric columns from frozen prepare.feature_names; identifiers/timestamps/categoricals excluded",
+    "pca_inputs": {
+      "gfs": [
+        "gfs__heightAboveGround_10_10u__mean",
+        "gfs__heightAboveGround_10_10v__mean",
+        "gfs__heightAboveGround_80_u__mean",
+        "gfs__heightAboveGround_80_v__mean",
+        "gfs__heightAboveGround_100_100u__mean",
+        "gfs__heightAboveGround_100_100v__mean"
+      ],
+      "ldaps": [
+        "ldaps__heightAboveGround_5_XBLWS__mean",
+        "ldaps__heightAboveGround_5_YBLWS__mean",
+        "ldaps__heightAboveGround_10_10u__mean",
+        "ldaps__heightAboveGround_10_10v__mean"
+      ]
+    },
+    "fit_unit": "unique forecast timestamp (group 1 representative), past-only within each preliminary/final fit",
+    "preprocessing": "fit-local median imputation, mean centering, population standard deviation; zero scale ->1",
+    "pca": "separate source SVD, exactly 2 components, largest-absolute loading sign positive",
+    "candidate_additions": [
+      "vpca_gfs_1",
+      "vpca_gfs_2",
+      "vpca_ldaps_1",
+      "vpca_ldaps_2"
+    ],
+    "control_additions": "four constant-zero columns with identical names/column count",
+    "source_identity_retained": true
+  },
+  "learner": {
+    "target": "actual_kwh / CAPACITIES_KWH[group_id]",
+    "architecture": "one pooled LightGBM L2 regressor per arm and fold; preliminary model for strict 90-day calibration tail plus final expanding model",
+    "model_fit_count": 12,
+    "parameters": {
+      "objective": "l2",
+      "n_estimators": 900,
+      "learning_rate": 0.035,
+      "num_leaves": 63,
+      "min_child_samples": 40,
+      "subsample": 0.85,
+      "subsample_freq": 1,
+      "colsample_bytree": 0.4,
+      "reg_lambda": 3.0,
+      "random_state": 20260801,
+      "n_jobs": 6,
+      "verbose": -1,
+      "deterministic": true,
+      "force_col_wise": true
+    },
+    "sample_weight": "cf when cf>=0.1 else 0.05; clip cf to [0,1.2]",
+    "prediction_clip": [
+      0.0,
+      1.05
+    ]
+  },
+  "calibration": {
+    "preliminary_train": "labels <= fit_max-90d",
+    "residual_tail": "fit_max-90d < labels <= fit_max, predicted only by preliminary past model",
+    "quantiles": "81 equally spaced 0.01..0.99 per group",
+    "minimum_residuals_per_group": 240
+  },
+  "decision_policy": {
+    "id": "FIXED_T0.5_G1.5_DIRECT_CF_RESID81",
+    "action_grid_cf": "0.05..1.08 inclusive step 0.0025",
+    "soft_caps_cf": {
+      "1": 0.985,
+      "2": 0.989,
+      "3": 1.005
+    },
+    "temperature": 0.5,
+    "density_bins": 15,
+    "gamma": 1.5,
+    "band_units": "4 if |a-y|<=0.06; 3 if <=0.08; else 0",
+    "mean_generation": "past-only final training CF mean per group",
+    "selection": "structural policy frozen from Q2 lineage; no Q3/Q4 power score or component inspected during materialization"
+  },
+  "evaluation": {
+    "protocol": "S17-N3 run_prequential_protocol",
+    "outer_folds": [
+      "dev-2023-Q3",
+      "dev-2023-Q4"
+    ],
+    "n_rep": 4999,
+    "seed": 20260808,
+    "block_lengths_days": [
+      3,
+      7,
+      14
+    ],
+    "joint_family_resampling": true,
+    "margin_vs_incumbent_total": 0.001635,
+    "mechanism_min_candidate_minus_control_total": 0.00357236259,
+    "target_total": 0.66,
+    "comparison_count_before": 1,
+    "comparison_count_after": 2,
+    "evidence_label": "retrospective_chronology_repaired_multiplicity_aware_not_fresh_holdout"
+  },
+  "promotion_gate": [
+    "candidate delta vs CHAMPION >=0.001635",
+    "candidate-control Total delta >=0.00357236259",
+    "candidate promotion stable for 3/7/14-day blocks",
+    "S17-N3 inference SUPPORTED",
+    "candidate outer Total >=0.660000 for goal delivery"
+  ],
+  "phases": {
+    "materialize": "12 fits, predictions/provenance/loadings/family manifest; zero score calls",
+    "freeze": "family manifest SHA must be supplied unchanged",
+    "evaluate": "one S17-N3 family protocol plus three explicit outer official point-score calls; consume comparison index 2 exactly once"
+  },
+  "outputs": {
+    "script": "scripts/run_r2_vertical_pca_prequential.py",
+    "directory": "artifacts/backtests/s17_n13_r2_vertical_pca",
+    "receipt": "reports/s17_n13_r2_vertical_pca_receipt.json"
+  },
+  "forbidden": [
+    "hyperparameter/policy/PCA component sweep",
+    "Q3/Q4 score before family freeze",
+    "future-fold training/selection",
+    "in-sample or future-fold residual calibration",
+    "2024/test/rejected ECMWF",
+    "SCADA action feature",
+    "Dacon/account",
+    "remote inference",
+    "dependency change"
+  ],
+  "pass_label": "RETROSPECTIVE_STRICT_PREQUENTIAL_SCORE_BEARING_NOT_FRESH_HOLDOUT"
+}

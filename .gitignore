@@ -25,3 +25,13 @@ artifacts/locks/
 !artifacts/registry/
 !artifacts/submissions/*.json
 !reports/
+
+# Competition ZIP is not committed (user supplies it)
+inputs/competition/*.zip
+
+# Track generated feature blocks (script-reproducible)
+!artifacts/features/
+
+# Track reports and planning
+!reports/
+!.planning/

@@ -1,0 +1,59 @@
+{
+ "node": "N516_M266_M252_BLEND",
+ "anchors": {
+  "M252": [
+   0.865903,
+   0.387853,
+   0.6268784
+  ],
+  "M261": [
+   0.857885,
+   0.415169,
+   0.6365274
+  ],
+  "M266": [
+   0.858775,
+   0.416167,
+   0.6374709
+  ]
+ },
+ "rationale": "M252 has the best 1-NMAE of all our assets (0.0038 below the top-96 minimum) and the worst FICR; M266 is the reverse. Error correlation 0.8436 makes prediction-level blending non-linear in the metric, so a blend can exceed both endpoints.",
+ "predeclaration": {
+  "H1": "some w exceeds M266 0.6374709",
+  "H2": "optimal w < 1.0",
+  "H3": "1-NMAE monotone between endpoints (linearity control)",
+  "falsifier": "all w <= 0.6374709 closes the analog-combination axis online"
+ },
+ "candidates": [
+  {
+   "kind": "uniform",
+   "w": 0.9,
+   "file": "artifacts/submissions/blends/BLEND_M266w090_M252.csv",
+   "sha256": "c1d86289b0632ca778716eec10b7b3e6897f9d2d02b371a00dd5e352677e8693",
+   "valid": true
+  },
+  {
+   "kind": "uniform",
+   "w": 0.8,
+   "file": "artifacts/submissions/blends/BLEND_M266w080_M252.csv",
+   "sha256": "106e744bd0b200c91943cd05a60b3c63ed7d113e6202b77e240db8cbe22e7a93",
+   "valid": true
+  },
+  {
+   "kind": "uniform",
+   "w": 0.7,
+   "file": "artifacts/submissions/blends/BLEND_M266w070_M252.csv",
+   "sha256": "274d88cf61e9e6d49be5b3f164ca69eef1537df7d1b74c52982c04313c87f6a0",
+   "valid": true
+  },
+  {
+   "kind": "uniform",
+   "w": 0.6,
+   "file": "artifacts/submissions/blends/BLEND_M266w060_M252.csv",
+   "sha256": "b2b7fa2cd787555b0b3c77412fa622355c24661f54e092d0e2f47c57a88c7731",
+   "valid": true
+  }
+ ],
+ "agent_upload": false,
+ "model_fits": 0
+}

@@ -1,0 +1,632 @@
+{
+ "lane": "S6_ext_B_terrain",
+ "role": "external literature research (read-only) - complex-terrain wind downscaling feature representation + public static datasets",
+ "tool": "websearch (Serper/Google) only; no PDF full-text retrieval; snippets/abstracts only",
+ "generated_at_local": "2026-08-07T07:54:34",
+ "n_queries": 103,
+ "constraints": [
+  "no repository write except research/lanes/S6_ext_B_terrain.md and this file",
+  "no model fit, no data download, no git commit, no upload",
+  "every unverified number tagged [전문미확인] in the report"
+ ],
+ "queries": [
+  {
+   "query": "Winstral Sx shelter index definition wind downscaling maximum upwind slope",
+   "ts": "2026-08-07T07:49:15",
+   "elapsed_s": 0.82,
+   "chars": 2933
+  },
+  {
+   "query": "Winstral 2017 wind downscaling terrain parameters Sx Sb wind speed RMSE improvement",
+   "ts": "2026-08-07T07:49:15",
+   "elapsed_s": 0.95,
+   "chars": 3559
+  },
+  {
+   "query": "Liston Elder MicroMet wind model curvature slope omega terrain weighting factor",
+   "ts": "2026-08-07T07:49:15",
+   "elapsed_s": 1.1,
+   "chars": 2789
+  },
+  {
+   "query": "Dujardin Lehning Wind-Topo deep learning topographic downscaling wind QJRMS 2022",
+   "ts": "2026-08-07T07:49:15",
+   "elapsed_s": 1.26,
+   "chars": 2824
+  },
+  {
+   "query": "vector ruggedness measure VRM Sappington definition formula terrain",
+   "ts": "2026-08-07T07:49:25",
+   "elapsed_s": 0.81,
+   "chars": 2899
+  },
+  {
+   "query": "Dujardin Lehning Wind-Topo RMSE improvement over COSMO-1 wind speed m/s results",
+   "ts": "2026-08-07T07:49:25",
+   "elapsed_s": 0.97,
+   "chars": 3334
+  },
+  {
+   "query": "Helbig 2017 parameterizing surface wind speed over complex topography subgrid terrain parameter",
+   "ts": "2026-08-07T07:49:25",
+   "elapsed_s": 1.06,
+   "chars": 2630
+  },
+  {
+   "query": "Le Toumelin DEVINE CNN downscaling wind ARPS complex terrain 2023 results RMSE",
+   "ts": "2026-08-07T07:49:25",
+   "elapsed_s": 1.25,
+   "chars": 2778
+  },
+  {
+   "query": "Winstral 2017 statistical downscaling gridded wind speed local topography Sx RMSE reduction percent results",
+   "ts": "2026-08-07T07:49:25",
+   "elapsed_s": 1.35,
+   "chars": 2794
+  },
+  {
+   "query": "WindNinja mass consistent model downscaling NWP complex terrain RMSE improvement Forthofer 2014",
+   "ts": "2026-08-07T07:49:26",
+   "elapsed_s": 1.96,
+   "chars": 2802
+  },
+  {
+   "query": "topographic position index TPI terrain ruggedness index TRI wind speed prediction feature importance",
+   "ts": "2026-08-07T07:49:26",
+   "elapsed_s": 2.1,
+   "chars": 3395
+  },
+  {
+   "query": "Global Wind Atlas 3 license download generalized wind climate RIX ruggedness index",
+   "ts": "2026-08-07T07:49:29",
+   "elapsed_s": 5.05,
+   "chars": 2306
+  },
+  {
+   "query": "FABDEM license non-commercial forest and buildings removed DEM",
+   "ts": "2026-08-07T07:49:39",
+   "elapsed_s": 0.57,
+   "chars": 2458
+  },
+  {
+   "query": "Global Wind Atlas 3 methodology ERA5 microscale WAsP generalized wind climate 250 m resolution",
+   "ts": "2026-08-07T07:49:39",
+   "elapsed_s": 0.84,
+   "chars": 3361
+  },
+  {
+   "query": "Copernicus DEM GLO-30 license free download resolution 30m global coverage terms",
+   "ts": "2026-08-07T07:49:39",
+   "elapsed_s": 0.83,
+   "chars": 2392
+  },
+  {
+   "query": "Global Wind Atlas license Creative Commons CC BY 4.0 World Bank ERA5 downscaling WRF",
+   "ts": "2026-08-07T07:49:39",
+   "elapsed_s": 0.9,
+   "chars": 3345
+  },
+  {
+   "query": "ALOS World 3D AW3D30 30m DEM license JAXA free download version 4",
+   "ts": "2026-08-07T07:49:39",
+   "elapsed_s": 0.96,
+   "chars": 2328
+  },
+  {
+   "query": "\"Sx\" terrain parameter \"Sb\" slope break Winstral 2009 wind speed distribute snow",
+   "ts": "2026-08-07T07:49:39",
+   "elapsed_s": 1.05,
+   "chars": 2917
+  },
+  {
+   "query": "Winstral Sx maximum upwind slope formula tan search distance 300 m wind direction sector 30 degrees",
+   "ts": "2026-08-07T07:49:39",
+   "elapsed_s": 1.21,
+   "chars": 3610
+  },
+  {
+   "query": "ESA WorldCover 10m 2021 v200 license CC BY 4.0 download global land cover",
+   "ts": "2026-08-07T07:49:40",
+   "elapsed_s": 1.55,
+   "chars": 2248
+  },
+  {
+   "query": "low level jet detection wind power forecasting feature machine learning improvement",
+   "ts": "2026-08-07T07:49:48",
+   "elapsed_s": 0.88,
+   "chars": 2698
+  },
+  {
+   "query": "hub height wind speed extrapolation power law log law comparison NWP 10m 100m error reduction wind power forecasting",
+   "ts": "2026-08-07T07:49:48",
+   "elapsed_s": 0.9,
+   "chars": 2507
+  },
+  {
+   "query": "wind veer between model levels feature machine learning wind power forecast improvement percent",
+   "ts": "2026-08-07T07:49:48",
+   "elapsed_s": 0.91,
+   "chars": 2773
+  },
+  {
+   "query": "geostrophic drag law 850 hPa wind downscaling surface wind speed forecast complex terrain",
+   "ts": "2026-08-07T07:49:48",
+   "elapsed_s": 0.95,
+   "chars": 2760
+  },
+  {
+   "query": "boundary layer height normalized hub height z/zi wind speed profile feature forecasting",
+   "ts": "2026-08-07T07:49:48",
+   "elapsed_s": 0.94,
+   "chars": 2617
+  },
+  {
+   "query": "flow dependent grid point selection numerical weather prediction wind farm advection feature machine learning",
+   "ts": "2026-08-07T07:49:48",
+   "elapsed_s": 1.23,
+   "chars": 2838
+  },
+  {
+   "query": "SHAP feature importance terrain features wind speed downscaling machine learning complex terrain",
+   "ts": "2026-08-07T07:49:49",
+   "elapsed_s": 1.35,
+   "chars": 2864
+  },
+  {
+   "query": "upstream grid point selection wind direction dependent NWP wind farm power forecasting improvement",
+   "ts": "2026-08-07T07:49:49",
+   "elapsed_s": 1.74,
+   "chars": 2517
+  },
+  {
+   "query": "가덕산 풍력발전단지 태백 유니슨 U136 베스타스 V126 제원",
+   "ts": "2026-08-07T07:50:00",
+   "elapsed_s": 0.81,
+   "chars": 1965
+  },
+  {
+   "query": "Dacon 풍력발전량 예측 경진대회 LDAPS GFS 격자 피처",
+   "ts": "2026-08-07T07:50:00",
+   "elapsed_s": 0.88,
+   "chars": 2008
+  },
+  {
+   "query": "Miralles 2022 downscaling historical wind fields Switzerland machine learning gradient boosting terrain features",
+   "ts": "2026-08-07T07:50:00",
+   "elapsed_s": 0.93,
+   "chars": 2851
+  },
+  {
+   "query": "Dupuy 2023 convolutional neural network downscaling surface wind AROME France terrain predictors improvement",
+   "ts": "2026-08-07T07:50:01",
+   "elapsed_s": 1.21,
+   "chars": 2676
+  },
+  {
+   "query": "Winstral 2017 Sx optimal search distance results Switzerland wind stations bias reduction MAE",
+   "ts": "2026-08-07T07:50:01",
+   "elapsed_s": 1.22,
+   "chars": 3472
+  },
+  {
+   "query": "Helbig 2017 downscaling wind speed parameterization valid subgrid slope Laplacian formula sigma",
+   "ts": "2026-08-07T07:50:01",
+   "elapsed_s": 1.24,
+   "chars": 2669
+  },
+  {
+   "query": "Lee 2024 day-ahead wind power forecasting feature selection upstream complex terrain Korea Energy journal",
+   "ts": "2026-08-07T07:50:01",
+   "elapsed_s": 1.31,
+   "chars": 2718
+  },
+  {
+   "query": "Korea complex terrain wind farm power forecasting LDAPS KMA machine learning improvement Gadeoksan Taebaek",
+   "ts": "2026-08-07T07:50:01",
+   "elapsed_s": 1.31,
+   "chars": 2686
+  },
+  {
+   "query": "기상청 ASOS AWS 관측자료 공개 API 기상자료개방포털 과거자료 라이선스",
+   "ts": "2026-08-07T07:50:12",
+   "elapsed_s": 0.66,
+   "chars": 1798
+  },
+  {
+   "query": "Winstral 2017 JHM Sx downscaling results \"reduced\" RMSE \"m s\" ridge crest valley terrain classes",
+   "ts": "2026-08-07T07:50:12",
+   "elapsed_s": 0.94,
+   "chars": 2765
+  },
+  {
+   "query": "MicroMet Liston Elder 2006 wind speed curvature weighting omega_s omega_c formula slope azimuth 0.5",
+   "ts": "2026-08-07T07:50:12",
+   "elapsed_s": 0.93,
+   "chars": 3212
+  },
+  {
+   "query": "\"vertical layer wind\" feature extraction wind power forecasting complex terrain Energy 2024 abstract results NMAE",
+   "ts": "2026-08-07T07:50:13",
+   "elapsed_s": 1.05,
+   "chars": 1660
+  },
+  {
+   "query": "Wind-Topo Dujardin 2022 abstract mean absolute error improvement 27% stations Switzerland",
+   "ts": "2026-08-07T07:50:13",
+   "elapsed_s": 1.24,
+   "chars": 3574
+  },
+  {
+   "query": "환경부 세분류 토지피복지도 다운로드 라이선스 공개 환경공간정보서비스",
+   "ts": "2026-08-07T07:50:13",
+   "elapsed_s": 1.37,
+   "chars": 1890
+  },
+  {
+   "query": "국토지리정보원 수치표고모델 DEM 5m 다운로드 라이선스 오픈",
+   "ts": "2026-08-07T07:50:13",
+   "elapsed_s": 1.44,
+   "chars": 1913
+  },
+  {
+   "query": "Lee Park day-ahead wind power forecasting vertical layer wind characteristics complex terrain abstract NMAE improvement Korea",
+   "ts": "2026-08-07T07:50:13",
+   "elapsed_s": 1.54,
+   "chars": 3292
+  },
+  {
+   "query": "Dujardin Lehning 2022 \"1.21\" MAE COSMO-1 bias 0.72 alpine validation stations Wind-Topo reduced",
+   "ts": "2026-08-07T07:50:26",
+   "elapsed_s": 0.83,
+   "chars": 3097
+  },
+  {
+   "query": "Le Toumelin 2023 DEVINE emulating adaptation wind fields complex terrain CNN topography 79 m ARPS speedup",
+   "ts": "2026-08-07T07:50:27",
+   "elapsed_s": 0.85,
+   "chars": 2821
+  },
+  {
+   "query": "\"speed-up\" factor ridge terrain wind acceleration WAsP linearized flow model complex terrain RIX orographic",
+   "ts": "2026-08-07T07:50:27",
+   "elapsed_s": 0.88,
+   "chars": 2797
+  },
+  {
+   "query": "terrain exposure index wind speed regression random forest feature importance topographic wind exposure ridge",
+   "ts": "2026-08-07T07:50:27",
+   "elapsed_s": 1.09,
+   "chars": 2793
+  },
+  {
+   "query": "Sx exposure index computed multiple search radii 100 500 1000 2000 m wind downscaling optimal",
+   "ts": "2026-08-07T07:50:27",
+   "elapsed_s": 1.09,
+   "chars": 2800
+  },
+  {
+   "query": "RIX ruggedness index performance indicator WAsP percentage terrain steeper than 0.3 critical slope",
+   "ts": "2026-08-07T07:50:27",
+   "elapsed_s": 1.12,
+   "chars": 2651
+  },
+  {
+   "query": "wind speed downscaling topographic parameters comparison Sx TPI curvature slope which best predictor",
+   "ts": "2026-08-07T07:50:27",
+   "elapsed_s": 1.1,
+   "chars": 3090
+  },
+  {
+   "query": "Wind-Topo Dujardin 2022 predictors list topography elevation 3km 300m derivatives wind direction sin cos",
+   "ts": "2026-08-07T07:50:27",
+   "elapsed_s": 1.32,
+   "chars": 3601
+  },
+  {
+   "query": "Reynolds 2023 HICAR 3D Sx wind downscaling terrain descriptor results",
+   "ts": "2026-08-07T07:50:37",
+   "elapsed_s": 0.76,
+   "chars": 2750
+  },
+  {
+   "query": "Fischer 2015 prediction of wind speeds digital elevation model gradient boosted regression trees TPI results",
+   "ts": "2026-08-07T07:50:38",
+   "elapsed_s": 0.99,
+   "chars": 3596
+  },
+  {
+   "query": "Hu 2023 downscaling ERA5 wind speed machine learning terrain features RMSE improvement Environmental Research Letters",
+   "ts": "2026-08-07T07:50:38",
+   "elapsed_s": 1.07,
+   "chars": 2477
+  },
+  {
+   "query": "Bhakare 2024 intercomparison machine learning models spatial wind speed downscaling feature importance Atmosphere",
+   "ts": "2026-08-07T07:50:38",
+   "elapsed_s": 1.09,
+   "chars": 2988
+  },
+  {
+   "query": "Marsh 2023 Windmapper efficient wind downscaling complex terrain library terrain parameters results",
+   "ts": "2026-08-07T07:50:38",
+   "elapsed_s": 1.12,
+   "chars": 3462
+  },
+  {
+   "query": "Mitchell 2008 comparison wind speeds numerical weather prediction topographic exposure indices windthrow mountainous",
+   "ts": "2026-08-07T07:50:38",
+   "elapsed_s": 1.39,
+   "chars": 2807
+  },
+  {
+   "query": "SRTM 30m ASTER GDEM v3 license public domain download NASA Earthdata resolution vertical accuracy",
+   "ts": "2026-08-07T07:50:40",
+   "elapsed_s": 3.41,
+   "chars": 3028
+  },
+  {
+   "query": "Tang 2018 point downscaling surface wind speed forecast complex terrain JAMC results improvement",
+   "ts": "2026-08-07T07:50:41",
+   "elapsed_s": 4.09,
+   "chars": 2718
+  },
+  {
+   "query": "topocalc python Sx gradient horizon library Winstral implementation",
+   "ts": "2026-08-07T07:50:57",
+   "elapsed_s": 0.64,
+   "chars": 2533
+  },
+  {
+   "query": "Esri 10m Annual Land Cover Sentinel-2 license CC BY 4.0 download Impact Observatory",
+   "ts": "2026-08-07T07:50:57",
+   "elapsed_s": 1.01,
+   "chars": 2328
+  },
+  {
+   "query": "Global Wind Atlas generalized wind climate GWC file download API license terms of use attribution",
+   "ts": "2026-08-07T07:50:57",
+   "elapsed_s": 0.96,
+   "chars": 3254
+  },
+  {
+   "query": "Global Wind Atlas used as predictor feature machine learning wind resource assessment bias correction study",
+   "ts": "2026-08-07T07:50:57",
+   "elapsed_s": 0.97,
+   "chars": 3583
+  },
+  {
+   "query": "roughness length z0 table land cover class forest 0.4 m WAsP corine lookup wind energy",
+   "ts": "2026-08-07T07:50:57",
+   "elapsed_s": 1.06,
+   "chars": 3168
+  },
+  {
+   "query": "wind direction sector interaction static terrain feature gradient boosting wind farm power curve directional",
+   "ts": "2026-08-07T07:50:57",
+   "elapsed_s": 1.1,
+   "chars": 2825
+  },
+  {
+   "query": "Copernicus Global Land Cover 100m license CC BY 4.0 download 2019 collection 3",
+   "ts": "2026-08-07T07:50:57",
+   "elapsed_s": 1.25,
+   "chars": 2623
+  },
+  {
+   "query": "rotor equivalent wind speed REWS improvement wind power forecast percent IEC 61400-12",
+   "ts": "2026-08-07T07:50:58",
+   "elapsed_s": 1.71,
+   "chars": 3446
+  },
+  {
+   "query": "LDAPS 국지예보모델 1.5km 산악 지역 풍속 편의 검증 논문 복잡지형",
+   "ts": "2026-08-07T07:51:12",
+   "elapsed_s": 0.83,
+   "chars": 2257
+  },
+  {
+   "query": "Boehner Antonic 2009 land surface parameters wind effect index windward leeward exposure formula",
+   "ts": "2026-08-07T07:51:12",
+   "elapsed_s": 0.95,
+   "chars": 3043
+  },
+  {
+   "query": "Domain-Adapted Power Curve Cross-Farm terrain features static vary across turbines constant over time arxiv 2607.19744",
+   "ts": "2026-08-07T07:51:12",
+   "elapsed_s": 1.05,
+   "chars": 2569
+  },
+  {
+   "query": "KMA LDAPS wind speed bias validation mountainous Korea evaluation 10m wind forecast",
+   "ts": "2026-08-07T07:51:12",
+   "elapsed_s": 1.1,
+   "chars": 3532
+  },
+  {
+   "query": "GWA 4.0 release date 2025 Global Wind Atlas version history 3.0 2019 3.1 3.3",
+   "ts": "2026-08-07T07:51:12",
+   "elapsed_s": 1.21,
+   "chars": 2413
+  },
+  {
+   "query": "trajectory upstream air parcel feature NWP wind forecast machine learning backward advection predictor",
+   "ts": "2026-08-07T07:51:12",
+   "elapsed_s": 1.27,
+   "chars": 2977
+  },
+  {
+   "query": "SAGA GIS wind exposure index wind effect Boehner Antonic definition luv lee",
+   "ts": "2026-08-07T07:51:12",
+   "elapsed_s": 1.48,
+   "chars": 2518
+  },
+  {
+   "query": "Winstral Marks 2002 maximum upwind slope Sx equation atan search distance 60 m increments 5 degree",
+   "ts": "2026-08-07T07:51:13",
+   "elapsed_s": 1.59,
+   "chars": 3080
+  },
+  {
+   "query": "국토지리정보원 수치표고모델 공공누리 제1유형 이용허락 상업적 이용 가능",
+   "ts": "2026-08-07T07:51:28",
+   "elapsed_s": 0.82,
+   "chars": 1774
+  },
+  {
+   "query": "KMAPP 지상 풍속 상세화 거칠기 보정 고도 보정 복잡지형 성능 평가 개선 RMSE",
+   "ts": "2026-08-07T07:51:28",
+   "elapsed_s": 0.89,
+   "chars": 1898
+  },
+  {
+   "query": "machine learning wind speed downscaling interaction terrain feature wind direction explicit product feature engineering",
+   "ts": "2026-08-07T07:51:28",
+   "elapsed_s": 0.88,
+   "chars": 2692
+  },
+  {
+   "query": "nocturnal low level jet Korea inland wind energy hub height 100m observation study",
+   "ts": "2026-08-07T07:51:28",
+   "elapsed_s": 0.91,
+   "chars": 2619
+  },
+  {
+   "query": "log-law interpolation between two NWP model levels hub height wind speed better than power law study",
+   "ts": "2026-08-07T07:51:28",
+   "elapsed_s": 1.02,
+   "chars": 3182
+  },
+  {
+   "query": "국가공간정보포털 오픈마켓 수치표고모델 5m 라이선스 이용 조건 저작권",
+   "ts": "2026-08-07T07:51:28",
+   "elapsed_s": 1.2,
+   "chars": 1561
+  },
+  {
+   "query": "SHAP analysis wind power forecasting XGBoost feature importance wind speed 100m direction terrain elevation",
+   "ts": "2026-08-07T07:51:28",
+   "elapsed_s": 1.37,
+   "chars": 2801
+  },
+  {
+   "query": "KMAPP surface wind downscaling 100m Korea Meteorological Administration post processing roughness elevation correction evaluation",
+   "ts": "2026-08-07T07:51:29",
+   "elapsed_s": 1.89,
+   "chars": 2646
+  },
+  {
+   "query": "Global Wind Atlas download layers list wind speed power density RIX roughness elevation available GIS",
+   "ts": "2026-08-07T07:51:42",
+   "elapsed_s": 0.9,
+   "chars": 2271
+  },
+  {
+   "query": "terrain descriptor Sx improves wind speed prediction R2 increase percentage regression mountain stations study",
+   "ts": "2026-08-07T07:51:42",
+   "elapsed_s": 0.88,
+   "chars": 3504
+  },
+  {
+   "query": "wind farm power forecasting Korea complex terrain NMAE improvement percentage benchmark KPX",
+   "ts": "2026-08-07T07:51:42",
+   "elapsed_s": 0.9,
+   "chars": 2709
+  },
+  {
+   "query": "Houndekindo 2025 machine learning statistical approaches wind resource assessment terrain predictors importance Energy Conversion Management",
+   "ts": "2026-08-07T07:51:42",
+   "elapsed_s": 1.01,
+   "chars": 2711
+  },
+  {
+   "query": "ESA WorldCover v200 2021 release date October 2022 v100 2020 accuracy 76%",
+   "ts": "2026-08-07T07:51:42",
+   "elapsed_s": 1.08,
+   "chars": 2906
+  },
+  {
+   "query": "Copernicus DEM GLO-30 2021 release date public instance COP-DEM_GLO-30-DGED free 2019 acquisition",
+   "ts": "2026-08-07T07:51:42",
+   "elapsed_s": 1.25,
+   "chars": 2494
+  },
+  {
+   "query": "Le Toumelin 2024 two-fold deep learning correct downscale winds mountains results improvement bias MAE percent",
+   "ts": "2026-08-07T07:51:43",
+   "elapsed_s": 1.8,
+   "chars": 2811
+  },
+  {
+   "query": "태백 가덕산 풍력발전단지 위치 좌표 해발고도 능선 43.2MW 43MW 준공",
+   "ts": "2026-08-07T07:51:44",
+   "elapsed_s": 3.12,
+   "chars": 1789
+  },
+  {
+   "query": "Sx wind shelter index applied to wind energy site assessment turbine hub height correlation observed wind speed",
+   "ts": "2026-08-07T07:51:59",
+   "elapsed_s": 1.07,
+   "chars": 3606
+  },
+  {
+   "query": "orographic speed-up ratio hill Jackson Hunt theory delta S = 2 h/L formula complex terrain wind",
+   "ts": "2026-08-07T07:51:59",
+   "elapsed_s": 1.23,
+   "chars": 3405
+  },
+  {
+   "query": "GWA generalized wind climate ERA5 based reanalysis derived caution using as observation independent predictor",
+   "ts": "2026-08-07T07:51:59",
+   "elapsed_s": 1.25,
+   "chars": 2431
+  },
+  {
+   "query": "Winstral 2017 downscaling regression equation wind speed Sx TPI coefficients terrain classes table results",
+   "ts": "2026-08-07T07:51:59",
+   "elapsed_s": 1.3,
+   "chars": 3235
+  },
+  {
+   "query": "WindMapper wind library number of directions sectors speed diagnostic downscaling Marsh 2023 method 8 directions",
+   "ts": "2026-08-07T07:51:59",
+   "elapsed_s": 1.31,
+   "chars": 2833
+  },
+  {
+   "query": "Jimenez Dudhia 2012 topo_wind unresolved topography correction standard deviation subgrid Laplacian wind speed bias reduction WRF",
+   "ts": "2026-08-07T07:51:59",
+   "elapsed_s": 1.33,
+   "chars": 2821
+  },
+  {
+   "query": "topographic position index multi scale TPI 500m 2000m wind speed predictor mountain ridge classification",
+   "ts": "2026-08-07T07:53:22",
+   "elapsed_s": 1.05,
+   "chars": 3341
+  },
+  {
+   "query": "Copernicus DEM GLO-30 public coverage gaps countries missing tiles Azerbaijan Armenia limited worldwide",
+   "ts": "2026-08-07T07:53:22",
+   "elapsed_s": 1.09,
+   "chars": 2458
+  },
+  {
+   "query": "Seto 2025 evaluation HRRR wind speed forecast WindNinja downscaling improvement degradation results Weather and Forecasting",
+   "ts": "2026-08-07T07:53:22",
+   "elapsed_s": 1.11,
+   "chars": 3292
+  },
+  {
+   "query": "AW3D30 JAXA license terms of use commercial use allowed attribution version 4.1 conditions",
+   "ts": "2026-08-07T07:53:22",
+   "elapsed_s": 1.13,
+   "chars": 2825
+  },
+  {
+   "query": "Wagenbrenner 2016 WindNinja downscaling improved wind direction but not speed lee side degraded conclusions ACP",
+   "ts": "2026-08-07T07:53:23",
+   "elapsed_s": 1.85,
+   "chars": 2705
+  }
+ ]
+}

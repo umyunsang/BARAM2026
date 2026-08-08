@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "artifact": "DS@v3",
+  "approved_at": "2026-08-01T00:00:00+09:00",
+  "exact_message": "DS@v3 승인",
+  "status": "APPROVED_FOR_IP_PREPARATION_ONLY",
+  "preapproval_sha256": "9872ed6e0656c6b658c2ca435e038feb2ef965fefa0e71de902d5fad4db6b6ac",
+  "approved_artifact": {
+    "path": ".planning/2026-08-01-leaderboard-top-4-loop/DS_v3.md",
+    "lines": 198,
+    "sha256": "64ace304cd91a78e4d7c3bc9e0ef8574fbda16fe19c75995c679ff8155c5e87c",
+    "state": "DESIGN_APPROVED_FOR_IP(DS@v3)"
+  },
+  "historical_research_receipt": {
+    "path": "reports/top20_module_research_receipt.json",
+    "sha256": "e12495f763ee7cb8834079874568f12fbc172e37e4d20f29ecf58e8d8070d7cf",
+    "note": "Records the preapproval DS snapshot and remains immutable historical evidence"
+  },
+  "authorized_next_action": "prepare IP@v2",
+  "not_authorized": [
+    "source implementation",
+    "model training",
+    "dependency changes",
+    "Dacon upload or account mutation",
+    "external data or pretrained weights",
+    "remote inference or compute",
+    "remote Git",
+    "new 2024 lockbox evaluation"
+  ]
+}

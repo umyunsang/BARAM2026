@@ -1,0 +1,129 @@
+{
+ "created": "2026-08-07",
+ "premise_correction": "SESSION_FINAL_2026-08-06 declared the axis closed on the claim that the bottleneck is output dispersion at fixed wind speed. Falsified 2026-08-07: a leakage-free cross-group measured-wind oracle scores 0.782630 and a zero-parameter physics map scores 0.869922 on the same local protocol. The binding constraint is NWP -> hub-height wind.",
+ "local_protocol": "pooled dev-2023 Q2+Q3+Q4, official metric once, single policy (verified: M102_TOP100 T0.5_G1.5 = 0.6298962296336882)",
+ "target": 0.66,
+ "stages": [
+  {
+   "id": "S1",
+   "name": "예측문제의 목적 파악",
+   "status": "DONE",
+   "evidence": [
+    "Total = 0.5*(1-NMAE) + 0.5*FICR; FICR is an actual-weighted step reward with a +-6%/+-8% band",
+    "deployed prediction is an ACTION maximising expected settlement, not a conditional mean"
+   ]
+  },
+  {
+   "id": "S2",
+   "name": "데이터 특성",
+   "status": "DONE",
+   "evidence": [
+    "group1=VESTAS 1-6, group2=VESTAS 7-12, group3=UNISON 1-5 (info.xlsx)",
+    "VESTAS power columns are time-scrambled (corr vs own ws = 0.02) -> unusable",
+    "VESTAS ws/wd valid (hourly mean vs label g1 corr 0.9273)",
+    "UNISON power valid; 10-min SUM reproduces the hourly label (corr 0.9966, MAE 294 kWh)",
+    "each target hour has exactly ONE forecast (no lagged-ensemble available)"
+   ]
+  },
+  {
+   "id": "S3",
+   "name": "데이터 정밀분석",
+   "status": "IN_PROGRESS",
+   "evidence": [
+    "clean cross-group oracle 0.782630; leaky own-group oracle 0.876846 (leak = +0.094)",
+    "fitted power curve per group; physics-only pc*cap = 0.869922, MAE(cf) 0.0365-0.0420",
+    "inter-group measured wind RMSE 0.78-1.16 m/s",
+    "NWP -> measured wind RMSE 1.49-1.78 m/s; NWP -> pc MAE(cf) 0.089-0.132",
+    "physics residual r = actual_cf - pc: median 0.000, IQR [-0.019,+0.008] -> clean-operation sigma is ~0.03, INSIDE the +-0.06 settlement band",
+    "heavy left tail: r<-0.10 & pc>0.15 occurs in 7.1%/7.4%/8.8% of hours (g1/g2/g3)",
+    "group-3 UNISON SCADA gives DIRECT downtime: corr(n_turbines_down, r) = -0.7854; mean r = +0.005 / -0.111 / -0.236 / -0.464 for 0 / 1 / 2 / 3+ turbines down",
+    "label = physics x availability; availability is a heavy-tailed multiplicative shock on ~8% of hours"
+   ]
+  },
+  {
+   "id": "S4",
+   "name": "평가지표의 이해",
+   "status": "DONE",
+   "evidence": [
+    "local protocol reproduced bit-exactly",
+    "FICR loss is concentrated at capacity factor 0.4-0.8 (0.33 of 0.59 total loss); hit4 only 0.17-0.24 there",
+    "deployed model is biased +0.126 at cf 0.1-0.2 and -0.099 at cf 0.9-1.0"
+   ]
+  },
+  {
+   "id": "S5",
+   "name": "데이터 전처리",
+   "status": "RESEARCH_RUNNING",
+   "research": null,
+   "nodes": [
+    {
+     "id": "S5-N1",
+     "name": "가용성 분리 학습 (outage-aware target decomposition)",
+     "hypothesis": "라벨은 physics x availability 이고 availability 충격은 예보시점에 예측 불가능하다. 원 라벨에 회귀하면 조건부 평균이 아래로 끌려가 밴드 적중을 잃는다. 청정운전 행만으로 학습하고 정지확률은 별도 혼합성분으로 두면 행동이 청정값으로 올라가 FICR 이 오른다.",
+     "measured_ceiling": "동일 입력(측정 pc)에서 물리맵 0.869922 vs LGBM 조건부평균 재적합 0.838745 = +0.031157. 이것이 이 노드의 상한이다.",
+     "gate": "pooled dev-2023 로컬 total 이 같은 특징집합의 대조군 대비 +0.005 이상 개선",
+     "risk": "청정행 필터가 고풍속 정지(cut-out)까지 지워 상단 분포를 왜곡할 수 있음"
+    }
+   ]
+  },
+  {
+   "id": "S6",
+   "name": "피처 구성",
+   "status": "BLOCKED_ON_S5",
+   "nodes": []
+  },
+  {
+   "id": "S7",
+   "name": "모델링 방법",
+   "status": "BLOCKED_ON_S6",
+   "nodes": []
+  },
+  {
+   "id": "S8",
+   "name": "검증 전략 및 예측 성능평가",
+   "status": "BLOCKED_ON_S7",
+   "nodes": []
+  },
+  {
+   "id": "S9",
+   "name": "문제 해결 접근 방식(워크플로우)",
+   "status": "BLOCKED_ON_S8",
+   "nodes": []
+  },
+  {
+   "id": "S10",
+   "name": "모델 개선 전략(워크플로우)",
+   "status": "BLOCKED_ON_S9",
+   "nodes": []
+  },
+  {
+   "id": "S11",
+   "name": "분석방법의 적절성(워크플로우)",
+   "status": "BLOCKED_ON_S10",
+   "nodes": []
+  }
+ ],
+ "defects_found": [
+  {
+   "id": "DEF-1",
+   "stage": "S7",
+   "desc": "v3 decision layer applies temperature to a UNIFORM sample weight vector, so sharpening is a no-op (all T give identical score). FICR 0.3574 vs deployed 0.4062. Must histogram the predictive samples into bins before sharpening.",
+   "status": "OPEN"
+  }
+ ],
+ "measured_runs": [
+  {
+   "id": "v3",
+   "total": 0.606311,
+   "one_minus_nmae": 0.855185,
+   "ficr": 0.357437,
+   "note": "defect DEF-1 active"
+  },
+  {
+   "id": "deployed M102_TOP100 T0.5_G1.5",
+   "total": 0.629896,
+   "one_minus_nmae": 0.854979,
+   "ficr": 0.406199
+  }
+ ]
+}

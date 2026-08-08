@@ -1,7 +1,11 @@
 """Deterministic capacity-normalized LightGBM fitting with inner stopping."""
 
+from collections.abc import Mapping
+from dataclasses import dataclass
 from itertools import product
 from pathlib import Path
+from types import MappingProxyType
+from typing import Literal
 
 import lightgbm
 import numpy as np
@@ -13,6 +17,56 @@ from baram.contracts.types import GroupId
 from baram.exceptions import ContractError, ModelError
 from baram.features.pipeline import fit_feature_pipeline, transform_features
 from baram.models.baselines import ModelBundle, _model_manifest
+
+
+@dataclass(frozen=True)
+class PointModelSpec:
+    candidate_id: str
+    family: Literal["lightgbm", "catboost"]
+    architecture: Literal["shared", "group_specific"]
+    params: Mapping[str, object]
+
+
+def load_point_v2_specs(path: Path) -> tuple[PointModelSpec, ...]:
+    """Load exactly ten named point candidates without Cartesian expansion."""
+    try:
+        raw = yaml.safe_load(path.read_text(encoding="utf-8"))
+        fixed = {
+            "lightgbm": dict(raw["fixed"]["lightgbm"]),
+            "catboost": dict(raw["fixed"]["catboost"]),
+        }
+        candidates = list(raw["candidates"])
+    except (OSError, TypeError, KeyError, yaml.YAMLError) as error:
+        raise ContractError(f"cannot read v2 point specifications: {error}") from error
+    if len(candidates) != 10:
+        raise ContractError(
+            f"v2 point specification must contain exactly ten rows, got {len(candidates)}"
+        )
+    result: list[PointModelSpec] = []
+    for candidate in candidates:
+        if not isinstance(candidate, dict):
+            raise ContractError("v2 point candidate must be a mapping")
+        candidate_id = str(candidate.get("id", ""))
+        family = str(candidate.get("family", ""))
+        architecture = str(candidate.get("architecture", ""))
+        if family not in fixed or architecture not in {"shared", "group_specific"}:
+            raise ContractError(f"invalid v2 point candidate: {candidate_id}")
+        overrides = candidate.get("params", {})
+        if not isinstance(overrides, dict):
+            raise ContractError(f"v2 point params must be a mapping: {candidate_id}")
+        result.append(
+            PointModelSpec(
+                candidate_id=candidate_id,
+                family=family,  # type: ignore[arg-type]
+                architecture=architecture,  # type: ignore[arg-type]
+                params=MappingProxyType({**fixed[family], **overrides}),
+            )
+        )
+    if len({item.candidate_id for item in result}) != 10 or any(
+        not item.candidate_id for item in result
+    ):
+        raise ContractError("v2 point candidate IDs must be ten unique nonempty values")
+    return tuple(result)
 
 
 def expand_lgbm_grid(path: Path) -> list[dict[str, object]]:
@@ -36,8 +90,17 @@ def make_lgbm(params: dict[str, object], seed: int, n_jobs: int) -> LGBMRegresso
     if n_jobs < 1:
         raise ModelError("LightGBM n_jobs must be positive")
     workers = min(n_jobs, 6)
+    objective = str(params.get("objective", "l1"))
+    if objective not in {"l1", "huber", "quantile"}:
+        raise ModelError(f"unsupported LightGBM objective: {objective}")
+    objective_params: dict[str, object] = {}
+    if objective in {"huber", "quantile"}:
+        alpha = float(params.get("alpha", 0.9))
+        if not 0.0 < alpha < 1.0:
+            raise ModelError("LightGBM Huber/quantile alpha must be in (0, 1)")
+        objective_params["alpha"] = alpha
     return LGBMRegressor(
-        objective=str(params.get("objective", "l1")),
+        objective=objective,
         n_estimators=int(params["n_estimators"]),
         learning_rate=float(params["learning_rate"]),
         num_leaves=int(params["num_leaves"]),
@@ -52,6 +115,7 @@ def make_lgbm(params: dict[str, object], seed: int, n_jobs: int) -> LGBMRegresso
         force_col_wise=True,
         subsample_freq=int(params.get("subsample_freq", 1)),
         verbosity=-1,
+        **objective_params,
     )
 
 

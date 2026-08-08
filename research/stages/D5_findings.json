@@ -1,0 +1,33 @@
+{
+ "stage": "D5",
+ "category": "개선전략",
+ "fulfilled_utc": "2026-08-06",
+ "queries_run": 2,
+ "prior_stage_carry": "D4 확정: 동결 게이트의 검출한계는 +0.000972 로 명목 0.001013 과 정합. 게이트는 크기가 아니라 월별 일관성을 본다. 진짜 이득을 버리고 있지 않다.",
+ "findings": [
+  {
+   "id": "K1",
+   "claim": "한국 재생에너지 예측정확도 기반 인센티브 모형 (6%/8% 밴드 정산)",
+   "source": "Kong et al. 2022, 'Development of an incentive model for renewable energy resources using forecasting accuracy in South Korea', Energy Sci Eng 10.1002/ese3.1020 (Cited 13)",
+   "tag": "directly_supported",
+   "relevance": "본 대회 지표의 **출처 문헌**이다. 그러나 M276 이 이미 검증한 대로 우리 결정층은 기대정산금을 정확히 최대화하고 있고, D3_H3_1 이 그 결과인 상방 편향이 최적임을 재확인했다. 인센티브 구조에서 **미착취 여유가 없다**.",
+   "proposes": []
+  },
+  {
+   "id": "K2",
+   "claim": "온라인 학습·최적화 프레임워크로 풍력 거래 의사결정",
+   "source": "DTU Orbit s10287-023-00462-2, 'Online Decision Making for Trading Wind Energy'",
+   "tag": "insufficient",
+   "relevance": "온라인 학습은 순차적 피드백을 전제하는데, 본 대회는 단일 제출 배치 평가다. 적용 불가.",
+   "proposes": []
+  },
+  {
+   "id": "K3",
+   "claim": "게임이론·진화게임의 전력시장 응용",
+   "source": "Cheng et al. 2025, Renew Sustain Energy Rev S1364032125004496 (Cited 95)",
+   "tag": "insufficient",
+   "relevance": "다자 전략 상호작용을 다루나 본 과제는 단일 에이전트 예측이다. 적용 불가.",
+   "proposes": []
+  }
+ ]
+}

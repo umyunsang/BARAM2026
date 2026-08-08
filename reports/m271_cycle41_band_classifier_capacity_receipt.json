@@ -1,0 +1,144 @@
+{
+ "dacon_upload": false,
+ "decided_utc": "2026-08-04T13:04:57.644013+00:00",
+ "external_actions": [],
+ "lane": "L3",
+ "lockbox_reopened": false,
+ "model_fits": 6,
+ "new_2024_evaluation": false,
+ "node": "C1N41_BAND_CLASSIFIER_CAPACITY",
+ "report_sha256": "0a34cdbf6869951c3fc148855f338052c33793d1a041b5c7a9dd6cbfcf783bc8",
+ "result": {
+  "by_fold": {
+   "BAND": {
+    "Q2": 0.5902997276364162,
+    "Q3": 0.5762438096352244,
+    "Q4": 0.5938263972400828
+   },
+   "CONTROL": {
+    "Q2": 0.5587815258338297,
+    "Q3": 0.5436665691912838,
+    "Q4": 0.5839778745454048
+   }
+  },
+  "changed_vs_parent": "모형 용량만 (leaves 15->31, lr 0.1->0.06, rounds 200->500)",
+  "contribution": {
+   "ficr": 0.012962486713405552,
+   "one_minus_nmae": 0.008527731418815798
+  },
+  "cycle40": {
+   "control": 0.584468,
+   "delta": 0.009772
+  },
+  "delta_band_minus_control": 0.021490218132221295,
+  "features_used": 87,
+  "fits": 6,
+  "gate_modified": false,
+  "gate_version": "M270_MONTHLY_GATE_v1_frozen_2026-08-04",
+  "gate_vs_deployed": {
+   "bootstrap_q05": -0.047120658460651,
+   "flags": {
+    "G1": false,
+    "G2": false,
+    "G3": false,
+    "G4": false
+   },
+   "min_delta": -0.07114625052466073,
+   "months_scored": 9,
+   "passed": false,
+   "positive_months": 1,
+   "sign_test_p": 0.998046875
+  },
+  "lockbox_used": false,
+  "node": "C1N41_BAND_CLASSIFIER_CAPACITY",
+  "params": {
+   "bagging_fraction": 0.8,
+   "bagging_freq": 1,
+   "deterministic": true,
+   "feature_fraction": 0.8,
+   "force_row_wise": true,
+   "learning_rate": 0.06,
+   "min_child_samples": 100,
+   "num_class": 46,
+   "num_leaves": 31,
+   "num_threads": 1,
+   "objective": "multiclass",
+   "seed": 20260804,
+   "verbose": -1
+  },
+  "parent_node": "C1N40_BAND_CLASSIFIER",
+  "predeclared_check": {
+   "H1_expectation": "BAND > CONTROL",
+   "H1_held": null,
+   "H1_measured": 0.021490218132221295,
+   "H2_expectation": "BAND 가 배포 대비 개선 + 게이트 통과",
+   "H2_held": null,
+   "H3_expectation": "BAND > 0.63031",
+   "H3_held": null,
+   "H4_expectation": "이득이 FICR 쪽",
+   "H4_held": null,
+   "H5_expectation": "처리효과 부호가 사이클 40(+0.009772)과 동일",
+   "H5_held": true,
+   "V1_expectation": "CONTROL 이 배포의 -0.03 이내",
+   "V1_held": false,
+   "V1_measured_gap": -0.06072978117934935,
+   "V2_expectation": "증량이 CONTROL 을 개선 (> 0.584468)",
+   "V2_held": false,
+   "V2_measured": -0.016593260289033962,
+   "escalation_budget": "1 회 제한 (실행 전 선언)",
+   "judged": false,
+   "verdict": "SUGGESTIVE_BUT_UNJUDGED_ESCALATION_BUDGET_SPENT"
+  },
+  "rounds": 500,
+  "scores": {
+   "BAND": {
+    "ficr": 0.3340390259115172,
+    "group_ficr": {
+     "1": 0.2990455386840018,
+     "2": 0.38834727620749376,
+     "3": 0.31472426284305605
+    },
+    "group_nmae": {
+     "1": 0.14912230532436307,
+     "2": 0.14855766153935188,
+     "3": 0.16824736381171257
+    },
+    "one_minus_nmae": 0.8446908897748575,
+    "total": 0.5893649578431873
+   },
+   "CONTROL": {
+    "ficr": 0.3081140524847061,
+    "group_ficr": {
+     "1": 0.2741086742810822,
+     "2": 0.3691371611751559,
+     "3": 0.28109632199788015
+    },
+    "group_nmae": {
+     "1": 0.16982557101077356,
+     "2": 0.16873259711805555,
+     "3": 0.17853555105949304
+    },
+    "one_minus_nmae": 0.8276354269372259,
+    "total": 0.567874739710966
+   },
+   "deployed": {
+    "ficr": 0.40246401063156667,
+    "group_ficr": {
+     "1": 0.409551299643159,
+     "2": 0.46073846269466673,
+     "3": 0.33710226955687433
+    },
+    "group_nmae": {
+     "1": 0.13617589715402054,
+     "2": 0.14227310586805572,
+     "3": 0.15731590353073155
+    },
+    "one_minus_nmae": 0.8547450311490641,
+    "total": 0.6286045208903154
+   }
+  }
+ },
+ "schema_version": 1,
+ "script_sha256": "3e41cc0895d037d8d3c5c1aaa6472e50d5ca30cc3ac7ddaabdc6c02825fb8d17",
+ "stage": "M271_P4_CYCLE41_BAND_CLASSIFIER_CAPACITY"
+}

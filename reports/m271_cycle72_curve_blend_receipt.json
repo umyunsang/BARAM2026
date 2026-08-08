@@ -1,0 +1,154 @@
+{
+  "node_id": "C1N72_CURVE_BLEND",
+  "lane": "L7",
+  "parent": "C1N69_SKILL_RESPONSE",
+  "gate_version": "M270_MONTHLY_GATE_v1_frozen_2026-08-04",
+  "method": "SHRINK_BLEND fold-out (Bates & Granger 1969; C1N14/C1N20 \uacc4\ubcf4)",
+  "surface": {
+    "spec_digest": "195531818b8ab2b7c1e59965",
+    "probability_digest": "8141403f56cd7eba",
+    "from_cache": true
+  },
+  "alpha_grid": [
+    0.0,
+    0.1,
+    0.2,
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.9,
+    1.0
+  ],
+  "endpoints": {
+    "model": {
+      "total": 0.6040430448136019,
+      "one_minus_nmae": 0.8568696301481719,
+      "ficr": 0.35121645947903196,
+      "group_ficr": {
+        "1": 0.34477162605325284,
+        "2": 0.41264102315652224,
+        "3": 0.29623672922732086
+      },
+      "group_nmae": {
+        "1": 0.136457009791002,
+        "2": 0.13493981052083334,
+        "3": 0.1579942892436492
+      }
+    },
+    "curve": {
+      "total": 0.5941826002734863,
+      "one_minus_nmae": 0.8530388636043652,
+      "ficr": 0.33532633694260744,
+      "group_ficr": {
+        "1": 0.3457235667634318,
+        "2": 0.40664826799379905,
+        "3": 0.2536071760705916
+      },
+      "group_nmae": {
+        "1": 0.14183740484329568,
+        "2": 0.13757459946993583,
+        "3": 0.1614714048736727
+      }
+    }
+  },
+  "arms": {
+    "global": {
+      "total": 0.603794023902515,
+      "one_minus_nmae": 0.8579224701150131,
+      "ficr": 0.3496655776900169,
+      "group_ficr": {
+        "1": 0.3462583706591111,
+        "2": 0.417600619428093,
+        "3": 0.28513774298284655
+      },
+      "group_nmae": {
+        "1": 0.13552473113676056,
+        "2": 0.13331168783775865,
+        "3": 0.15739617068044137
+      }
+    },
+    "group": {
+      "total": 0.6089737035311361,
+      "one_minus_nmae": 0.8579994530577031,
+      "ficr": 0.35994795400456914,
+      "group_ficr": {
+        "1": 0.35550768115283576,
+        "2": 0.4280994516335508,
+        "3": 0.29623672922732086
+      },
+      "group_nmae": {
+        "1": 0.1357842042048204,
+        "2": 0.13222314737842128,
+        "3": 0.1579942892436492
+      }
+    }
+  },
+  "chosen": {
+    "global": {
+      "dev-2023-Q2": 0.9,
+      "dev-2023-Q3": 0.5,
+      "dev-2023-Q4": 0.7
+    },
+    "group": {
+      "dev-2023-Q2": {
+        "1": 0.6,
+        "2": 0.5,
+        "3": 1.0
+      },
+      "dev-2023-Q3": {
+        "1": 0.4,
+        "2": 0.5,
+        "3": 1.0
+      },
+      "dev-2023-Q4": {
+        "1": 0.4,
+        "2": 0.5,
+        "3": 1.0
+      }
+    }
+  },
+  "mean_alpha": 0.6999999999999998,
+  "checks": {
+    "V1_model_endpoint": true,
+    "V1_gap": 4.4813601940418835e-08,
+    "V2_curve_endpoint": false,
+    "V2_gap": 0.01814839972651361
+  },
+  "hypotheses": {
+    "H1_blend_beats_both": false,
+    "H2_gate_passed": false,
+    "H3_alpha_below_half": false,
+    "H4_ficr_dominant": false,
+    "H5_group_alpha_does_not_help": false
+  },
+  "contributions": {
+    "ficr": -0.0007754408945075397,
+    "nmae": 0.0005264199834206229
+  },
+  "gate": {
+    "signature": "[-O--]",
+    "flags": {
+      "G1": false,
+      "G2": true,
+      "G3": false,
+      "G4": false
+    },
+    "positive_months": 5,
+    "months_scored": 9,
+    "sign_test_p": 0.5,
+    "median_delta": 0.0008467892707788582,
+    "bootstrap_q05": -0.00449900251075915,
+    "min_delta": -0.011575983103258802
+  },
+  "deployable": true,
+  "deployability_note": "\ub450 \ud314 \ubaa8\ub450 \ubc30\ud3ec \uac00\ub2a5\ud55c \uc785\ub825\ub9cc \uc4f4\ub2e4 \u2014 teacher \ud48d\uc18d\uc740 NWP \ud53c\ucc98\uc5d0\uc11c \ub098\uc624\uace0 \uc2e4\uce21 \ucee4\ube0c\ub294 \ud559\uc2b5\uae30\uac04\uc5d0\uc11c \uc801\ud569\ud55c \uace0\uc815 \ud568\uc218\ub2e4. `scada_ws` \ubbf8\uc0ac\uc6a9.",
+  "verdict": "ENDPOINT_REPRODUCTION_FAILED_RESULT_VOID",
+  "dacon_upload": false,
+  "external_actions": [],
+  "lockbox_used": false,
+  "generated_at": "2026-08-05T12:55:17.915277+00:00",
+  "digest": "5485576c05f55271"
+}

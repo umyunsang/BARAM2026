@@ -1,0 +1,12 @@
+# Ensure text files have LF line endings on all platforms
+*.py text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+*.toml text eol=lf
+*.csv text eol=lf
+*.sqlite binary
+*.parquet binary
+*.npz binary
+*.zip binary

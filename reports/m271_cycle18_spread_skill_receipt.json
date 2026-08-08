@@ -1,0 +1,291 @@
+{
+ "dacon_upload": false,
+ "decided_utc": "2026-08-04T07:20:28.336586+00:00",
+ "external_actions": [],
+ "lane": "L4",
+ "lockbox_reopened": false,
+ "model_fits": 0,
+ "new_2024_evaluation": false,
+ "node": "C1N18_SPREAD_SKILL",
+ "report_sha256": "469a8c4db1c65501584dbfcca5c03d9a577311f705fc5e168715e58c21ebba47",
+ "result": {
+  "combiner": "median",
+  "controlled_cells": [
+   {
+    "gap": 0.03341288782816232,
+    "group": 1,
+    "hit_high_spread": 0.548926014319809,
+    "hit_low_spread": 0.5823389021479713,
+    "pred_band": "(0.1, 0.25]",
+    "rows": 838
+   },
+   {
+    "gap": 0.026188356774078714,
+    "group": 1,
+    "hit_high_spread": 0.23658536585365852,
+    "hit_low_spread": 0.26277372262773724,
+    "pred_band": "(0.25, 0.45]",
+    "rows": 821
+   },
+   {
+    "gap": -0.027448311620973498,
+    "group": 1,
+    "hit_high_spread": 0.26126126126126126,
+    "hit_low_spread": 0.23381294964028776,
+    "pred_band": "(0.45, 0.7]",
+    "rows": 1111
+   },
+   {
+    "gap": 0.0690888682580395,
+    "group": 1,
+    "hit_high_spread": 0.30307941653160453,
+    "hit_low_spread": 0.37216828478964403,
+    "pred_band": "(0.7, 1.1]",
+    "rows": 1235
+   },
+   {
+    "gap": 0.06999999999999995,
+    "group": 2,
+    "hit_high_spread": 0.555,
+    "hit_low_spread": 0.625,
+    "pred_band": "(0.1, 0.25]",
+    "rows": 800
+   },
+   {
+    "gap": 0.005847953216374269,
+    "group": 2,
+    "hit_high_spread": 0.23976608187134502,
+    "hit_low_spread": 0.24561403508771928,
+    "pred_band": "(0.25, 0.45]",
+    "rows": 684
+   },
+   {
+    "gap": 0.02471910112359549,
+    "group": 2,
+    "hit_high_spread": 0.21123595505617979,
+    "hit_low_spread": 0.23595505617977527,
+    "pred_band": "(0.45, 0.7]",
+    "rows": 890
+   },
+   {
+    "gap": 0.14391143911439114,
+    "group": 2,
+    "hit_high_spread": 0.32718327183271834,
+    "hit_low_spread": 0.4710947109471095,
+    "pred_band": "(0.7, 1.1]",
+    "rows": 1626
+   },
+   {
+    "gap": 0.02392344497607657,
+    "group": 3,
+    "hit_high_spread": 0.562200956937799,
+    "hit_low_spread": 0.5861244019138756,
+    "pred_band": "(0.1, 0.25]",
+    "rows": 836
+   },
+   {
+    "gap": 0.007224754800386812,
+    "group": 3,
+    "hit_high_spread": 0.24736842105263157,
+    "hit_low_spread": 0.2545931758530184,
+    "pred_band": "(0.25, 0.45]",
+    "rows": 761
+   },
+   {
+    "gap": -0.00997506234413964,
+    "group": 3,
+    "hit_high_spread": 0.2144638403990025,
+    "hit_low_spread": 0.20448877805486285,
+    "pred_band": "(0.45, 0.7]",
+    "rows": 802
+   },
+   {
+    "gap": 0.1175264496022308,
+    "group": 3,
+    "hit_high_spread": 0.1853932584269663,
+    "hit_low_spread": 0.3029197080291971,
+    "pred_band": "(0.7, 1.1]",
+    "rows": 1082
+   }
+  ],
+  "controlled_gap_row_weighted": 0.04918962004805885,
+  "deciles": [
+   {
+    "decile": 0,
+    "hit_rate_6pct": 0.47693646649260224,
+    "hit_rate_8pct": 0.5935596170583116,
+    "mean_unit": 2.257615317667537,
+    "median_abs_err": 0.06336690476190546,
+    "rows": 1149,
+    "spread_hi": 0.0242523035861883,
+    "spread_lo": 2.03468036462524e-05
+   },
+   {
+    "decile": 1,
+    "hit_rate_6pct": 0.4221061792863359,
+    "hit_rate_8pct": 0.5335073977371627,
+    "mean_unit": 2.0226283724978242,
+    "median_abs_err": 0.07264328703703642,
+    "rows": 1149,
+    "spread_hi": 0.03838192508281143,
+    "spread_lo": 0.02429032500912258
+   },
+   {
+    "decile": 2,
+    "hit_rate_6pct": 0.39547038327526135,
+    "hit_rate_8pct": 0.49564459930313587,
+    "mean_unit": 1.882404181184669,
+    "median_abs_err": 0.08114991635026797,
+    "rows": 1148,
+    "spread_hi": 0.05226907898777864,
+    "spread_lo": 0.038386190467665234
+   },
+   {
+    "decile": 3,
+    "hit_rate_6pct": 0.34899912967798086,
+    "hit_rate_8pct": 0.4386422976501306,
+    "mean_unit": 1.6649260226283724,
+    "median_abs_err": 0.09758185185185143,
+    "rows": 1149,
+    "spread_hi": 0.06712082134870098,
+    "spread_lo": 0.05227191362565716
+   },
+   {
+    "decile": 4,
+    "hit_rate_6pct": 0.3336236933797909,
+    "hit_rate_8pct": 0.436411149825784,
+    "mean_unit": 1.6428571428571428,
+    "median_abs_err": 0.09385893518518526,
+    "rows": 1148,
+    "spread_hi": 0.0833188152230433,
+    "spread_lo": 0.06712657643389529
+   },
+   {
+    "decile": 5,
+    "hit_rate_6pct": 0.3217391304347826,
+    "hit_rate_8pct": 0.40869565217391307,
+    "mean_unit": 1.5478260869565217,
+    "median_abs_err": 0.10356944444444431,
+    "rows": 1150,
+    "spread_hi": 0.10000000000000009,
+    "spread_lo": 0.08333031521270869
+   },
+   {
+    "decile": 6,
+    "hit_rate_6pct": 0.3129904097646033,
+    "hit_rate_8pct": 0.3905841325196164,
+    "mean_unit": 1.4847428073234525,
+    "median_abs_err": 0.11386037037037071,
+    "rows": 1147,
+    "spread_hi": 0.12071090969153787,
+    "spread_lo": 0.1000000000000001
+   },
+   {
+    "decile": 7,
+    "hit_rate_6pct": 0.3063533507397737,
+    "hit_rate_8pct": 0.39860748476936464,
+    "mean_unit": 1.5021758050478677,
+    "median_abs_err": 0.10858571428571512,
+    "rows": 1149,
+    "spread_hi": 0.14662400728395272,
+    "spread_lo": 0.12071564807331006
+   },
+   {
+    "decile": 8,
+    "hit_rate_6pct": 0.28310104529616725,
+    "hit_rate_8pct": 0.367595818815331,
+    "mean_unit": 1.3858885017421603,
+    "median_abs_err": 0.11987937499999954,
+    "rows": 1148,
+    "spread_hi": 0.18455729935860654,
+    "spread_lo": 0.14663669803091842
+   },
+   {
+    "decile": 9,
+    "hit_rate_6pct": 0.24717145343777197,
+    "hit_rate_8pct": 0.3124456048738033,
+    "mean_unit": 1.1845082680591819,
+    "median_abs_err": 0.1485849523809527,
+    "rows": 1149,
+    "spread_hi": 0.4482448497773698,
+    "spread_lo": 0.18455777522674857
+   }
+  ],
+  "gate_modified": false,
+  "members": [
+   "M102_TOP100",
+   "M244_RARE_EVENT_CORRECTED_ANALOG_Q234",
+   "M113_LGBM_DART",
+   "M115_XGBOOST"
+  ],
+  "method_sources": [
+   {
+    "applicability": "directly_supported",
+    "cite": "Whitaker & Loughe (1998), Mon. Wea. Rev. — spread-skill relationship",
+    "claim": "완벽한 앙상블에서도 스프레드와 단일 실현 오차의 원상관은 1 보다 크게 낮다",
+    "id": "whitaker_loughe_1998",
+    "use": "원상관 판정을 금지하고 층화 비닝을 채택하는 근거"
+   },
+   {
+    "applicability": "directly_supported",
+    "cite": "ECMWF — Verifying the Relationship between Ensemble Forecast Spread and Skill",
+    "claim": "표준 진단은 스프레드 구간별 오차 조건부 분포의 층화 비닝",
+    "id": "ecmwf_spread_skill_verification",
+    "use": "십분위 층화 + 히트율 곡선 설계"
+   },
+   {
+    "applicability": "directly_supported",
+    "cite": "Pinson & Kariniotakis, Skill forecasting from ensemble predictions of wind power, Applied Energy",
+    "claim": "앙상블 스프레드로 prediction risk index 를 만들어 풍력 예보에 적용",
+    "id": "pinson_kariniotakis_skill_forecasting",
+    "use": "이 도메인에서 스프레드를 예보 위험도로 쓰는 것이 확립된 용법임을 보임"
+   }
+  ],
+  "node": "C1N18_SPREAD_SKILL",
+  "parent_node": "C1N17_METRIC_ALIGNED_COMBINER",
+  "per_group": [
+   {
+    "group": 1,
+    "hit_rate_gap": 0.18952618453865339,
+    "rows": 4005,
+    "sign_negative": true,
+    "spearman": -0.8267515394048879
+   },
+   {
+    "group": 2,
+    "hit_rate_gap": 0.26499999999999996,
+    "rows": 4000,
+    "sign_negative": true,
+    "spearman": -0.9878787878787878
+   },
+   {
+    "group": 3,
+    "hit_rate_gap": 0.21135922010341535,
+    "rows": 3481,
+    "sign_negative": true,
+    "spearman": -0.9151515151515152
+   }
+  ],
+  "policy_modified": false,
+  "predeclared_check": {
+   "H1_expectation": "최저/최고 십분위 히트율 차이 >= 15%",
+   "H1_held": true,
+   "H1_measured": 0.22976501305483027,
+   "H2_expectation": "십분위 히트율 단조 (|Spearman| >= 0.8)",
+   "H2_held": true,
+   "H2_measured": -0.9999999999999999,
+   "H3_expectation": "세 그룹 부호 일치",
+   "H3_held": true,
+   "H4_expectation": "예측대역x그룹 통제 후 잔여 차이 >= 10%",
+   "H4_held": false,
+   "H4_measured": 0.04918962004805885,
+   "verdict": "PREMISE_HOLDS_C8_STAYS_CLOSED"
+  },
+  "raw_correlation_spread_vs_abserr": 0.17156219067069287,
+  "reopens_candidate": "C1N8_POLICY_SELECTION_CONDITIONING",
+  "rows_eligible": 11486
+ },
+ "schema_version": 1,
+ "script_sha256": "09478ffd7916e090bea7c5298c94dfb86013d5fef9ec574c7cfa3f39531cd5cd",
+ "stage": "M271_P4_CYCLE18_SPREAD_SKILL"
+}

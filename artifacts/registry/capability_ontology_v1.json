@@ -1,0 +1,1069 @@
+{
+ "schema_version": 1,
+ "id": "CAPABILITY_ONTOLOGY",
+ "version": "v1.1",
+ "created": "2026-08-06",
+ "source_graph": "m271_excavation_graph.json (136 nodes / 119 edges)",
+ "note": "카테고리·서브능력을 1급 노드 엔티티로 정의한다. m271 그래프는 실험 엔티티만 가지므로 커버리지가 감사 불가였다.",
+ "subcapabilities": [
+  {
+   "id": "C1.1",
+   "category": "데이터특성",
+   "name": "라벨 특성·결측·자기상관",
+   "preconditions": [],
+   "maturity": "PARTIAL",
+   "evidence_nodes": [
+    "A1_labels",
+    "C1N12_G3_HISTORY",
+    "N0"
+   ],
+   "live": 2,
+   "pruned": 1,
+   "research_status": "자체(L0)",
+   "blocked_by": []
+  },
+  {
+   "id": "C1.2",
+   "category": "데이터특성",
+   "name": "NWP 입력 인벤토리·정보량",
+   "preconditions": [],
+   "maturity": "PARTIAL",
+   "evidence_nodes": [
+    "A2_columns",
+    "AXIS_UNUSED_COLUMNS",
+    "C1N53_SUPPLIED_EXTRACTION"
+   ],
+   "live": 1,
+   "pruned": 2,
+   "research_status": "자체(L0)",
+   "blocked_by": []
+  },
+  {
+   "id": "C1.3",
+   "category": "데이터특성",
+   "name": "공간구조(격자-터빈 기하)",
+   "preconditions": [],
+   "maturity": "PARTIAL",
+   "evidence_nodes": [
+    "A3_spatial",
+    "C1N28_PERGRID_SIGNAL",
+    "C1N55_TURBINE_CORRELATION",
+    "C1N61_GRID_BOUNDARY"
+   ],
+   "live": 1,
+   "pruned": 3,
+   "research_status": "자체(L0)",
+   "blocked_by": []
+  },
+  {
+   "id": "C1.4",
+   "category": "데이터특성",
+   "name": "시간구조(발행배치·리드타임)",
+   "preconditions": [],
+   "maturity": "PARTIAL",
+   "evidence_nodes": [
+    "A6_timing",
+    "C1N15_WALKFORWARD",
+    "C1N30_TEMPORAL_SIGNAL"
+   ],
+   "live": 1,
+   "pruned": 2,
+   "research_status": "자체(L0)",
+   "blocked_by": []
+  },
+  {
+   "id": "C1.5",
+   "category": "데이터특성",
+   "name": "예측가능성 한계(sigma_v)",
+   "preconditions": [
+    "C1.2"
+   ],
+   "maturity": "PARTIAL",
+   "evidence_nodes": [
+    "C1N10_BLEND_LOCALITY",
+    "C1N2_COLLIDER_CORRECTED",
+    "C1N46_CLOSURE_FALSIFICATION",
+    "C1N54_SCATTER_CEILING",
+    "C1N57B_VARIANCE_LAW",
+    "C1N58_TEACHER_OOF_SPLIT",
+    "C1N59_PERFECT_PROG_BOUND",
+    "C1N65_WIND_LIMITED_BOUND",
+    "C1N66_HETEROSCEDASTIC_WIND",
+    "C1N70_BASELINE_CORRECTION",
+    "C1N74_BLOCK_LENGTH",
+    "C1N83_TEACHER_SCALEUP_REJUDGED",
+    "C1N84_TEACHER_CHRONOLOGICAL",
+    "C1N87_CURTAILMENT_CLEAN_TARGET",
+    "C1N88_N2_PROBE_L5_OPEN",
+    "A4_error"
+   ],
+   "live": 9,
+   "pruned": 7,
+   "research_status": "자체(L0)",
+   "blocked_by": []
+  },
+  {
+   "id": "C1.6",
+   "category": "데이터특성",
+   "name": "레짐·이상치·curtailment",
+   "preconditions": [
+    "C1.1"
+   ],
+   "maturity": "PARTIAL",
+   "evidence_nodes": [
+    "AXIS_AVAILABILITY_RECOVERY",
+    "C1N62_MONTH_MECHANISM",
+    "C1N80_FUSION_ANOMALY",
+    "C1N87_CURTAILMENT_CLEAN_TARGET",
+    "C1N89_ANOMALY_CLEAN_TARGET"
+   ],
+   "live": 1,
+   "pruned": 4,
+   "research_status": "자체(L0)",
+   "blocked_by": []
+  },
+  {
+   "id": "C2.1",
+   "category": "평가지표",
+   "name": "공식 산식 이식·재현",
+   "preconditions": [],
+   "maturity": "PARTIAL",
+   "evidence_nodes": [
+    "C1N17_METRIC_ALIGNED_COMBINER",
+    "C1N92_METRIC_ALIGNED_LOSS"
+   ],
+   "live": 1,
+   "pruned": 1,
+   "research_status": "자체(L0)",
+   "blocked_by": []
+  },
+  {
+   "id": "C2.2",
+   "category": "평가지표",
+   "name": "적격모집단(≥10%)·선택편향",
+   "preconditions": [
+    "C2.1"
+   ],
+   "maturity": "CLOSED",
+   "evidence_nodes": [
+    "C1N1_TOPRATE_MECHANISM",
+    "C1N23_ELIGIBLE_MOS",
+    "C1N3_MASS_AXIS_WIND_SECTOR"
+   ],
+   "live": 0,
+   "pruned": 3,
+   "research_status": "자체(L0)",
+   "blocked_by": []
+  },
+  {
+   "id": "C2.3",
+   "category": "평가지표",
+   "name": "계단보상의 결정이론적 성질",
+   "preconditions": [
+    "C2.1"
+   ],
+   "maturity": "PARTIAL",
+   "evidence_nodes": [
+    "C1N37_BAND_ALIGNED_LOSS",
+    "C1N38_BAND_LOSS_FIXED",
+    "C1N4_BAND_CONDITIONAL_POLICY_ORACLE",
+    "C1N64_BAND_AVOIDANCE"
+   ],
+   "live": 1,
+   "pruned": 3,
+   "research_status": "자체(L0)",
+   "blocked_by": []
+  },
+  {
+   "id": "C2.4",
+   "category": "평가지표",
+   "name": "발전량가중 비대칭",
+   "preconditions": [
+    "C2.1"
+   ],
+   "maturity": "PARTIAL",
+   "evidence_nodes": [
+    "A7_deficit_init",
+    "C1N3_MASS_AXIS_WIND_SECTOR"
+   ],
+   "live": 1,
+   "pruned": 1,
+   "research_status": "자체(L0)",
+   "blocked_by": []
+  },
+  {
+   "id": "C2.5",
+   "category": "평가지표",
+   "name": "지표 천장·상한",
+   "preconditions": [
+    "C2.2",
+    "C2.3"
+   ],
+   "maturity": "OPEN",
+   "evidence_nodes": [
+    "C1N19_ENVELOPE_ORACLE",
+    "C1N57_FICR_CEILING",
+    "C1N63_CEILING_REBASE"
+   ],
+   "live": 3,
+   "pruned": 0,
+   "research_status": "자체(L0)",
+   "blocked_by": []
+  },
+  {
+   "id": "C2.6",
+   "category": "평가지표",
+   "name": "로컬↔온라인 지표 전이(앵커)",
+   "preconditions": [
+    "C2.1"
+   ],
+   "maturity": "CLOSED",
+   "evidence_nodes": [
+    "C1N95_RECONSTRUCTION_GAP",
+    "C1N96_GAP_REJUDGE"
+   ],
+   "live": 0,
+   "pruned": 2,
+   "research_status": "자체(L0)",
+   "blocked_by": []
+  },
+  {
+   "id": "C3.1",
+   "category": "전처리",
+   "name": "정규 스키마·키·해시 계약",
+   "preconditions": [],
+   "maturity": "OPEN",
+   "evidence_nodes": [
+    "C1N79_LEDGER_CONTRACT",
+    "C1N81_CYCLE_CONTRACT_ENFORCED"
+   ],
+   "live": 2,
+   "pruned": 0,
+   "research_status": "없음",
+   "blocked_by": []
+  },
+  {
+   "id": "C3.2",
+   "category": "전처리",
+   "name": "결측·가용성 마스크",
+   "preconditions": [
+    "C3.1"
+   ],
+   "maturity": "CLOSED",
+   "evidence_nodes": [
+    "AXIS_AVAILABILITY_RECOVERY"
+   ],
+   "live": 0,
+   "pruned": 1,
+   "research_status": "없음",
+   "blocked_by": []
+  },
+  {
+   "id": "C3.3",
+   "category": "전처리",
+   "name": "시간정렬(반개구간·배치경계)",
+   "preconditions": [
+    "C3.1",
+    "C1.4"
+   ],
+   "maturity": "PARTIAL",
+   "evidence_nodes": [
+    "C1N61_GRID_BOUNDARY",
+    "C1N83_TEACHER_SCALEUP_REJUDGED",
+    "C1N84_TEACHER_CHRONOLOGICAL"
+   ],
+   "live": 1,
+   "pruned": 2,
+   "research_status": "없음",
+   "blocked_by": []
+  },
+  {
+   "id": "C3.4",
+   "category": "전처리",
+   "name": "이상치·curtailment 타깃정제",
+   "preconditions": [
+    "C3.2",
+    "C1.6"
+   ],
+   "maturity": "CLOSED",
+   "evidence_nodes": [
+    "C1N87_CURTAILMENT_CLEAN_TARGET",
+    "C1N89_ANOMALY_CLEAN_TARGET"
+   ],
+   "live": 0,
+   "pruned": 2,
+   "research_status": "없음",
+   "blocked_by": []
+  },
+  {
+   "id": "C3.5",
+   "category": "전처리",
+   "name": "SCADA 10분→시간 집계 정합",
+   "preconditions": [
+    "C3.1"
+   ],
+   "maturity": "PARTIAL",
+   "evidence_nodes": [
+    "A5_scada",
+    "C1N39_ARCHITECTURE_GAP",
+    "C1N51_EXTERNAL_SOURCE_PROBE",
+    "C1N72_CURVE_BLEND",
+    "C1N87_CURTAILMENT_CLEAN_TARGET",
+    "C1N88_N2_PROBE_L5_OPEN"
+   ],
+   "live": 4,
+   "pruned": 2,
+   "research_status": "없음",
+   "blocked_by": []
+  },
+  {
+   "id": "C3.6",
+   "category": "전처리",
+   "name": "격자 집계·다운스케일 전처리",
+   "preconditions": [
+    "C3.1",
+    "C1.3"
+   ],
+   "maturity": "CLOSED",
+   "evidence_nodes": [
+    "C1N26_POOL_WIDTH_SCREEN",
+    "C1N5_SPATIAL_INTERPOLATION"
+   ],
+   "live": 0,
+   "pruned": 2,
+   "research_status": "없음",
+   "blocked_by": []
+  },
+  {
+   "id": "C4.1",
+   "category": "피처구성",
+   "name": "물리 파생(ws·밀도·파워커브)",
+   "preconditions": [
+    "C3.2"
+   ],
+   "maturity": "PARTIAL",
+   "evidence_nodes": [
+    "C1N101_PHYSICAL_MEMBER_PROBE",
+    "C1N56_MEASURED_POWERCURVE",
+    "C1N67_EXACT_CURVE_PROPAGATION",
+    "C1N68_EMPIRICAL_DECOMPOSITION",
+    "C1N69_SKILL_RESPONSE",
+    "C1N72_CURVE_BLEND"
+   ],
+   "live": 2,
+   "pruned": 4,
+   "research_status": "취소(L3)",
+   "blocked_by": []
+  },
+  {
+   "id": "C4.2",
+   "category": "피처구성",
+   "name": "수직 외삽(10m→허브)",
+   "preconditions": [
+    "C4.1"
+   ],
+   "maturity": "PARTIAL",
+   "evidence_nodes": [
+    "C1N20_ALPHA_ENDPOINT",
+    "C1N60_LEVEL_TEMPERATURE",
+    "C1N6_WIND50_MIDPOINT"
+   ],
+   "live": 1,
+   "pruned": 2,
+   "research_status": "취소(L3)",
+   "blocked_by": []
+  },
+  {
+   "id": "C4.3",
+   "category": "피처구성",
+   "name": "공간 표현·격자 가중",
+   "preconditions": [
+    "C3.6"
+   ],
+   "maturity": "CLOSED",
+   "evidence_nodes": [
+    "C1N28_PERGRID_SIGNAL",
+    "C1N31_SPACE_TIME",
+    "C1N61_GRID_BOUNDARY"
+   ],
+   "live": 0,
+   "pruned": 3,
+   "research_status": "취소(L3)",
+   "blocked_by": []
+  },
+  {
+   "id": "C4.4",
+   "category": "피처구성",
+   "name": "다중소스 결합·스프레드",
+   "preconditions": [
+    "C4.1"
+   ],
+   "maturity": "PARTIAL",
+   "evidence_nodes": [
+    "C1N103_EXTERNAL_NWP_MEMBER",
+    "C1N10_BLEND_LOCALITY",
+    "C1N18_SPREAD_SKILL",
+    "C1N36_SOURCE_SENSITIVITY",
+    "C1N47_EXTERNAL_NWP_REVIVED"
+   ],
+   "live": 1,
+   "pruned": 4,
+   "research_status": "취소(L3)",
+   "blocked_by": []
+  },
+  {
+   "id": "C4.5",
+   "category": "피처구성",
+   "name": "시간 파생(지연·이류·계절)",
+   "preconditions": [
+    "C3.3"
+   ],
+   "maturity": "PARTIAL",
+   "evidence_nodes": [
+    "C1N105_M244_RECIPE_READ",
+    "C1N27_RESIDUAL_SIGNAL"
+   ],
+   "live": 1,
+   "pruned": 1,
+   "research_status": "취소(L3)",
+   "blocked_by": []
+  },
+  {
+   "id": "C4.6",
+   "category": "피처구성",
+   "name": "특권정보(SCADA teacher/LUPI)",
+   "preconditions": [
+    "C3.5"
+   ],
+   "maturity": "PARTIAL",
+   "evidence_nodes": [
+    "C1N101_PHYSICAL_MEMBER_PROBE",
+    "C1N102_RETRIEVAL_MEMBER",
+    "C1N103_EXTERNAL_NWP_MEMBER",
+    "C1N104_M244_KEY_RECOVERED",
+    "C1N42_TEACHER_RESTORED",
+    "C1N53_SUPPLIED_EXTRACTION",
+    "C1N58_TEACHER_OOF_SPLIT",
+    "C1N65_WIND_LIMITED_BOUND",
+    "C1N66_HETEROSCEDASTIC_WIND",
+    "C1N67_EXACT_CURVE_PROPAGATION",
+    "C1N68_EMPIRICAL_DECOMPOSITION",
+    "C1N69_SKILL_RESPONSE",
+    "C1N70_BASELINE_CORRECTION",
+    "C1N71_TEACHER_WEIGHT",
+    "C1N72_CURVE_BLEND",
+    "C1N77_PER_SOURCE_STACK",
+    "C1N82_TEACHER_SCALEUP",
+    "C1N83_TEACHER_SCALEUP_REJUDGED",
+    "C1N84_TEACHER_CHRONOLOGICAL",
+    "C1N87_CURTAILMENT_CLEAN_TARGET",
+    "C1N89_ANOMALY_CLEAN_TARGET",
+    "C1N98_REPRODUCIBILITY_ADJUDICATION"
+   ],
+   "live": 9,
+   "pruned": 13,
+   "research_status": "취소(L3)",
+   "blocked_by": []
+  },
+  {
+   "id": "C5.1",
+   "category": "모델링",
+   "name": "점추정 회귀(GBDT)",
+   "preconditions": [
+    "C4.1"
+   ],
+   "maturity": "OPEN",
+   "evidence_nodes": [
+    "C1N39_ARCHITECTURE_GAP",
+    "C1N48_MODEL_VALIDATION"
+   ],
+   "live": 2,
+   "pruned": 0,
+   "research_status": "완료(L2)",
+   "blocked_by": []
+  },
+  {
+   "id": "C5.2",
+   "category": "모델링",
+   "name": "분포·분위수 예측",
+   "preconditions": [
+    "C5.1"
+   ],
+   "maturity": "OPEN",
+   "evidence_nodes": [
+    "M274_C52_DISTRIBUTION_AXIS"
+   ],
+   "live": 1,
+   "pruned": 0,
+   "research_status": "완료(L2)+내부판독",
+   "blocked_by": [],
+   "note": "M274로 개방. 게이트 오정렬·과대확신 2건 발견"
+  },
+  {
+   "id": "C5.3",
+   "category": "모델링",
+   "name": "밴드 분류기 표현(46-bin)",
+   "preconditions": [
+    "C5.2",
+    "C2.3"
+   ],
+   "maturity": "PARTIAL",
+   "evidence_nodes": [
+    "C1N104_M244_KEY_RECOVERED",
+    "C1N11_V2_REPRESENTATION",
+    "C1N40_BAND_CLASSIFIER",
+    "C1N41_BAND_CLASSIFIER_CAPACITY",
+    "C1N93_ORDINAL_REPRESENTATION"
+   ],
+   "live": 3,
+   "pruned": 2,
+   "research_status": "완료(L2)",
+   "blocked_by": []
+  },
+  {
+   "id": "C5.4",
+   "category": "모델링",
+   "name": "확률표현 해상도·양자화",
+   "preconditions": [
+    "C5.3"
+   ],
+   "maturity": "PARTIAL",
+   "evidence_nodes": [
+    "C1N90_WITHIN_BIN_INTEGRATION",
+    "C1N91_WITHIN_BIN_ESTABLISHED"
+   ],
+   "live": 1,
+   "pruned": 1,
+   "research_status": "완료(L2)",
+   "blocked_by": []
+  },
+  {
+   "id": "C5.5",
+   "category": "모델링",
+   "name": "앙상블·스태킹 결합",
+   "preconditions": [
+    "C5.1"
+   ],
+   "maturity": "PARTIAL",
+   "evidence_nodes": [
+    "C1N100_NOVEL_MEMBER_PROBE",
+    "C1N101_PHYSICAL_MEMBER_PROBE",
+    "C1N102_RETRIEVAL_MEMBER",
+    "C1N103_EXTERNAL_NWP_MEMBER",
+    "C1N105_M244_RECIPE_READ",
+    "C1N13_ENSEMBLE_VARIANCE",
+    "C1N14_SHRINKBLEND",
+    "C1N24_MEMBER_COUNT_REOPEN",
+    "C1N33_SINGLE_VS_ENSEMBLE",
+    "C1N77_PER_SOURCE_STACK",
+    "C1N99_ENSEMBLE_EXHAUSTIVE"
+   ],
+   "live": 4,
+   "pruned": 7,
+   "research_status": "완료(L2)",
+   "blocked_by": []
+  },
+  {
+   "id": "C5.6",
+   "category": "모델링",
+   "name": "다중타깃·그룹구조",
+   "preconditions": [
+    "C5.1"
+   ],
+   "maturity": "PARTIAL",
+   "evidence_nodes": [
+    "C1N12_G3_HISTORY",
+    "C1N57B_VARIANCE_LAW",
+    "C1N59_PERFECT_PROG_BOUND",
+    "C1N63_CEILING_REBASE",
+    "C1N64_BAND_AVOIDANCE",
+    "C1N66_HETEROSCEDASTIC_WIND",
+    "C1N70_BASELINE_CORRECTION",
+    "C1N71_TEACHER_WEIGHT",
+    "C1N73_GROUP_BLEND_GATE",
+    "C1N74_BLOCK_LENGTH",
+    "C1N84_TEACHER_CHRONOLOGICAL",
+    "C1N87_CURTAILMENT_CLEAN_TARGET",
+    "C1N88_N2_PROBE_L5_OPEN",
+    "C1N89_ANOMALY_CLEAN_TARGET"
+   ],
+   "live": 5,
+   "pruned": 9,
+   "research_status": "완료(L2)",
+   "blocked_by": []
+  },
+  {
+   "id": "C6.1",
+   "category": "검증전략",
+   "name": "시계열 분할 정합",
+   "preconditions": [
+    "C3.3"
+   ],
+   "maturity": "PARTIAL",
+   "evidence_nodes": [
+    "C1N58_TEACHER_OOF_SPLIT",
+    "C1N74_BLOCK_LENGTH",
+    "C1N76_CIRCULAR_BLOCK"
+   ],
+   "live": 1,
+   "pruned": 2,
+   "research_status": "부분(L2)",
+   "blocked_by": []
+  },
+  {
+   "id": "C6.2",
+   "category": "검증전략",
+   "name": "OOF 구성·누출차단",
+   "preconditions": [
+    "C6.1",
+    "C2.2"
+   ],
+   "maturity": "PARTIAL",
+   "evidence_nodes": [
+    "C1N58_TEACHER_OOF_SPLIT",
+    "C1N65_WIND_LIMITED_BOUND",
+    "C1N66_HETEROSCEDASTIC_WIND",
+    "C1N82_TEACHER_SCALEUP"
+   ],
+   "live": 2,
+   "pruned": 2,
+   "research_status": "부분(L2)",
+   "blocked_by": []
+  },
+  {
+   "id": "C6.3",
+   "category": "검증전략",
+   "name": "채택 게이트 설계",
+   "preconditions": [
+    "C6.2"
+   ],
+   "maturity": "PARTIAL",
+   "evidence_nodes": [
+    "C1N16_ROBUSTNESS_AUDIT",
+    "C1N73_GROUP_BLEND_GATE",
+    "C1N75_DAILY_GATE_ESTIMAND",
+    "C1N7_POLICY_FROZEN_GATE",
+    "C1N9_GATE_POWER",
+    "C1N85_C16_RECHECK"
+   ],
+   "live": 2,
+   "pruned": 4,
+   "research_status": "부분(L2)",
+   "blocked_by": []
+  },
+  {
+   "id": "C6.4",
+   "category": "검증전략",
+   "name": "적응적 과적합 통제(Ladder)",
+   "preconditions": [
+    "C6.3"
+   ],
+   "maturity": "OPEN",
+   "evidence_nodes": [
+    "C1N8_ORACLE_LADDER"
+   ],
+   "live": 1,
+   "pruned": 0,
+   "research_status": "부분(L2)",
+   "blocked_by": []
+  },
+  {
+   "id": "C6.5",
+   "category": "검증전략",
+   "name": "검증면 예산·락박스 관리",
+   "preconditions": [
+    "C6.3"
+   ],
+   "maturity": "PARTIAL",
+   "evidence_nodes": [
+    "C1N103_EXTERNAL_NWP_MEMBER",
+    "C1N32_LOCKBOX_OPERATOR",
+    "C1N74_BLOCK_LENGTH",
+    "C1N98_REPRODUCIBILITY_ADJUDICATION"
+   ],
+   "live": 1,
+   "pruned": 3,
+   "research_status": "부분(L2)",
+   "blocked_by": []
+  },
+  {
+   "id": "C6.6",
+   "category": "검증전략",
+   "name": "로컬↔온라인 눈금 보정",
+   "preconditions": [
+    "C6.5",
+    "C2.6"
+   ],
+   "maturity": "PARTIAL",
+   "evidence_nodes": [
+    "C1N83_TEACHER_SCALEUP_REJUDGED",
+    "C1N94_CDF_REJUDGE",
+    "C1N95_RECONSTRUCTION_GAP",
+    "C1N96_GAP_REJUDGE"
+   ],
+   "live": 1,
+   "pruned": 3,
+   "research_status": "부분(L2)",
+   "blocked_by": []
+  },
+  {
+   "id": "C7.1",
+   "category": "예측성능",
+   "name": "챔피언 선정·승격",
+   "preconditions": [
+    "C6.3"
+   ],
+   "maturity": "PARTIAL",
+   "evidence_nodes": [
+    "C1N29_CHAMPION_AUDIT",
+    "C1N34_SHRINK_TO_BEST"
+   ],
+   "live": 1,
+   "pruned": 1,
+   "research_status": "없음",
+   "blocked_by": []
+  },
+  {
+   "id": "C7.2",
+   "category": "예측성능",
+   "name": "재현성 검증(byte)",
+   "preconditions": [
+    "C7.1"
+   ],
+   "maturity": "OPEN",
+   "evidence_nodes": [
+    "C1N98_REPRODUCIBILITY_ADJUDICATION"
+   ],
+   "live": 1,
+   "pruned": 0,
+   "research_status": "없음",
+   "blocked_by": []
+  },
+  {
+   "id": "C7.3",
+   "category": "예측성능",
+   "name": "제출물 구성·검증",
+   "preconditions": [
+    "C7.2"
+   ],
+   "maturity": "CLOSED",
+   "evidence_nodes": [
+    "C1N45_SUBMISSION_DECISION"
+   ],
+   "live": 0,
+   "pruned": 1,
+   "research_status": "없음",
+   "blocked_by": []
+  },
+  {
+   "id": "C7.4",
+   "category": "예측성능",
+   "name": "성능주장 범위관리",
+   "preconditions": [
+    "C6.6"
+   ],
+   "maturity": "EMPTY",
+   "evidence_nodes": [],
+   "live": 0,
+   "pruned": 0,
+   "research_status": "없음",
+   "blocked_by": []
+  },
+  {
+   "id": "C8.1",
+   "category": "문제해결",
+   "name": "오라클·상한 분석",
+   "preconditions": [
+    "C2.5"
+   ],
+   "maturity": "PARTIAL",
+   "evidence_nodes": [
+    "C1N19_ENVELOPE_ORACLE",
+    "C1N4_BAND_CONDITIONAL_POLICY_ORACLE",
+    "C1N59_PERFECT_PROG_BOUND",
+    "C1N61_GRID_BOUNDARY",
+    "C1N65_WIND_LIMITED_BOUND",
+    "C1N68_EMPIRICAL_DECOMPOSITION",
+    "C1N69_SKILL_RESPONSE",
+    "C1N8_ORACLE_LADDER"
+   ],
+   "live": 6,
+   "pruned": 2,
+   "research_status": "취소(L1)",
+   "blocked_by": []
+  },
+  {
+   "id": "C8.2",
+   "category": "문제해결",
+   "name": "기여도 분해",
+   "preconditions": [
+    "C2.1"
+   ],
+   "maturity": "PARTIAL",
+   "evidence_nodes": [
+    "C1N43_EFFECT_TREND",
+    "C1N68_EMPIRICAL_DECOMPOSITION"
+   ],
+   "live": 1,
+   "pruned": 1,
+   "research_status": "취소(L1)",
+   "blocked_by": []
+  },
+  {
+   "id": "C8.3",
+   "category": "문제해결",
+   "name": "폐쇄 반증",
+   "preconditions": [
+    "C8.1"
+   ],
+   "maturity": "PARTIAL",
+   "evidence_nodes": [
+    "C1N46_CLOSURE_FALSIFICATION",
+    "C1N52_EXTERNAL_CLOSURE"
+   ],
+   "live": 1,
+   "pruned": 1,
+   "research_status": "취소(L1)",
+   "blocked_by": []
+  },
+  {
+   "id": "C8.4",
+   "category": "문제해결",
+   "name": "메커니즘 규명",
+   "preconditions": [
+    "C8.2"
+   ],
+   "maturity": "PARTIAL",
+   "evidence_nodes": [
+    "C1N1_TOPRATE_MECHANISM",
+    "C1N2_COLLIDER_CORRECTED",
+    "C1N57B_VARIANCE_LAW",
+    "C1N62_MONTH_MECHANISM",
+    "C1N80_FUSION_ANOMALY"
+   ],
+   "live": 3,
+   "pruned": 2,
+   "research_status": "취소(L1)",
+   "blocked_by": []
+  },
+  {
+   "id": "C8.5",
+   "category": "문제해결",
+   "name": "탐색편향 통제",
+   "preconditions": [
+    "C8.2"
+   ],
+   "maturity": "OPEN",
+   "evidence_nodes": [
+    "C1N78_LOOP_ENGINE_C10",
+    "C1N81_CYCLE_CONTRACT_ENFORCED",
+    "C1N86_LANE_EXPAND"
+   ],
+   "live": 3,
+   "pruned": 0,
+   "research_status": "취소(L1)",
+   "blocked_by": []
+  },
+  {
+   "id": "C9.1",
+   "category": "개선전략",
+   "name": "결정정책 최적화(T/G)",
+   "preconditions": [
+    "C5.3",
+    "C2.3"
+   ],
+   "maturity": "PARTIAL",
+   "evidence_nodes": [
+    "C1N25_ENVELOPE_LAMBDA",
+    "C1N35_FIXED_POLICY_CORRECTION",
+    "C1N44_SHARPENED_DECISION",
+    "C1N45_SUBMISSION_DECISION",
+    "C1N60_LEVEL_TEMPERATURE",
+    "C1N90_WITHIN_BIN_INTEGRATION",
+    "C1N92_METRIC_ALIGNED_LOSS",
+    "C1N93_ORDINAL_REPRESENTATION",
+    "C1N95_RECONSTRUCTION_GAP",
+    "C1N96_GAP_REJUDGE"
+   ],
+   "live": 2,
+   "pruned": 8,
+   "research_status": "취소(L1)",
+   "blocked_by": []
+  },
+  {
+   "id": "C9.2",
+   "category": "개선전략",
+   "name": "캘리브레이션",
+   "preconditions": [
+    "C5.2"
+   ],
+   "maturity": "PARTIAL",
+   "evidence_nodes": [
+    "C1N105_M244_RECIPE_READ",
+    "C1N21_MOS_BIAS_CORRECTION",
+    "C1N22_GLOBAL_SHIFT",
+    "C1N23_ELIGIBLE_MOS",
+    "C1N49_RHO_ACCEPTANCE",
+    "C1N70_BASELINE_CORRECTION"
+   ],
+   "live": 1,
+   "pruned": 5,
+   "research_status": "취소(L1)",
+   "blocked_by": []
+  },
+  {
+   "id": "C9.3",
+   "category": "개선전략",
+   "name": "용량·하이퍼파라미터",
+   "preconditions": [
+    "C5.1"
+   ],
+   "maturity": "PARTIAL",
+   "evidence_nodes": [
+    "C1N24_MEMBER_COUNT_REOPEN",
+    "C1N41_BAND_CLASSIFIER_CAPACITY",
+    "C1N82_TEACHER_SCALEUP",
+    "C1N83_TEACHER_SCALEUP_REJUDGED",
+    "C1N97_BOOSTING_ROUNDS"
+   ],
+   "live": 2,
+   "pruned": 3,
+   "research_status": "취소(L1)",
+   "blocked_by": []
+  },
+  {
+   "id": "C9.4",
+   "category": "개선전략",
+   "name": "결합자·가중 최적화",
+   "preconditions": [
+    "C5.5"
+   ],
+   "maturity": "PARTIAL",
+   "evidence_nodes": [
+    "C1N104_M244_KEY_RECOVERED",
+    "C1N105_M244_RECIPE_READ",
+    "C1N17_METRIC_ALIGNED_COMBINER",
+    "C1N50_NONNEGATIVE_WEIGHTS",
+    "C1N71_TEACHER_WEIGHT",
+    "C1N97_BOOSTING_ROUNDS"
+   ],
+   "live": 5,
+   "pruned": 1,
+   "research_status": "취소(L1)",
+   "blocked_by": []
+  },
+  {
+   "id": "C9.5",
+   "category": "개선전략",
+   "name": "실험 예산 배분",
+   "preconditions": [
+    "C8.5"
+   ],
+   "maturity": "OPEN",
+   "evidence_nodes": [
+    "C1N86_LANE_EXPAND",
+    "C1N88_N2_PROBE_L5_OPEN"
+   ],
+   "live": 2,
+   "pruned": 0,
+   "research_status": "취소(L1)",
+   "blocked_by": []
+  },
+  {
+   "id": "C10.1",
+   "category": "정합성",
+   "name": "원장·계약 강제",
+   "preconditions": [],
+   "maturity": "OPEN",
+   "evidence_nodes": [
+    "C1N79_LEDGER_CONTRACT",
+    "C1N81_CYCLE_CONTRACT_ENFORCED"
+   ],
+   "live": 2,
+   "pruned": 0,
+   "research_status": "완료(L4)",
+   "blocked_by": []
+  },
+  {
+   "id": "C10.2",
+   "category": "정합성",
+   "name": "사전확약",
+   "preconditions": [
+    "C10.1"
+   ],
+   "maturity": "EMPTY",
+   "evidence_nodes": [],
+   "live": 0,
+   "pruned": 0,
+   "research_status": "완료(L4)",
+   "blocked_by": []
+  },
+  {
+   "id": "C10.3",
+   "category": "정합성",
+   "name": "영수증·해시 감사",
+   "preconditions": [
+    "C10.1"
+   ],
+   "maturity": "OPEN",
+   "evidence_nodes": [
+    "C1N104_M244_KEY_RECOVERED",
+    "C1N105_M244_RECIPE_READ",
+    "C1N16_ROBUSTNESS_AUDIT",
+    "C1N29_CHAMPION_AUDIT",
+    "C1N81_CYCLE_CONTRACT_ENFORCED"
+   ],
+   "live": 5,
+   "pruned": 0,
+   "research_status": "완료(L4)",
+   "blocked_by": []
+  },
+  {
+   "id": "C10.4",
+   "category": "정합성",
+   "name": "전제 추적·부활조건",
+   "preconditions": [
+    "C10.1"
+   ],
+   "maturity": "PARTIAL",
+   "evidence_nodes": [
+    "AXIS_AVAILABILITY_RECOVERY",
+    "C1N104_M244_KEY_RECOVERED",
+    "C1N47_EXTERNAL_NWP_REVIVED"
+   ],
+   "live": 2,
+   "pruned": 1,
+   "research_status": "완료(L4)",
+   "blocked_by": []
+  },
+  {
+   "id": "C10.5",
+   "category": "정합성",
+   "name": "자기정정 기록",
+   "preconditions": [
+    "C10.2"
+   ],
+   "maturity": "PARTIAL",
+   "evidence_nodes": [
+    "C1N21_MOS_BIAS_CORRECTION",
+    "C1N35_FIXED_POLICY_CORRECTION",
+    "C1N64_BAND_AVOIDANCE",
+    "C1N70_BASELINE_CORRECTION",
+    "C1N72_CURVE_BLEND",
+    "C1N74_BLOCK_LENGTH",
+    "C1N75_DAILY_GATE_ESTIMAND",
+    "C1N82_TEACHER_SCALEUP",
+    "C1N93_ORDINAL_REPRESENTATION",
+    "C1N95_RECONSTRUCTION_GAP"
+   ],
+   "live": 1,
+   "pruned": 9,
+   "research_status": "완료(L4)",
+   "blocked_by": [
+    "C10.2"
+   ]
+  }
+ ],
+ "deficit_ledger_nodes": 20,
+ "updated": "2026-08-06 M274"
+}

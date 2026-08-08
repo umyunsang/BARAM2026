@@ -1,0 +1,118 @@
+{
+  "node_id": "C1N59_PERFECT_PROG_BOUND",
+  "lane": "L6",
+  "parent": "C1N57_FICR_CEILING",
+  "diagnostic_only": true,
+  "gate_version": null,
+  "method": "PERFECT_PROG (Klein/Lewis/Enger 1959; Glahn & Lowry 1972)",
+  "scada_coverage": 0.9999428073035074,
+  "model_fits": 9,
+  "chosen_temperature": {
+    "control": {
+      "dev-2023-Q2": 2.2,
+      "dev-2023-Q3": 2.2,
+      "dev-2023-Q4": 2.2
+    },
+    "maskonly": {
+      "dev-2023-Q2": 2.2,
+      "dev-2023-Q3": 2.2,
+      "dev-2023-Q4": 2.2
+    },
+    "oracle": {
+      "dev-2023-Q2": 0.6,
+      "dev-2023-Q3": 0.6,
+      "dev-2023-Q4": 0.6
+    }
+  },
+  "arms": {
+    "control": {
+      "total": 0.6040430448136019,
+      "one_minus_nmae": 0.8568696301481719,
+      "ficr": 0.35121645947903196,
+      "group_ficr": {
+        "1": 0.34477162605325284,
+        "2": 0.41264102315652224,
+        "3": 0.29623672922732086
+      },
+      "group_nmae": {
+        "1": 0.136457009791002,
+        "2": 0.13493981052083334,
+        "3": 0.1579942892436492
+      }
+    },
+    "maskonly": {
+      "total": 0.6040430448136019,
+      "one_minus_nmae": 0.8568696301481719,
+      "ficr": 0.35121645947903196,
+      "group_ficr": {
+        "1": 0.34477162605325284,
+        "2": 0.41264102315652224,
+        "3": 0.29623672922732086
+      },
+      "group_nmae": {
+        "1": 0.136457009791002,
+        "2": 0.13493981052083334,
+        "3": 0.1579942892436492
+      }
+    },
+    "oracle": {
+      "total": 0.8453396436741862,
+      "one_minus_nmae": 0.9463207678600073,
+      "ficr": 0.7443585194883653,
+      "group_ficr": {
+        "1": 0.8237654057417019,
+        "2": 0.8880642543762042,
+        "3": 0.5212458983471899
+      },
+      "group_nmae": {
+        "1": 0.039230643790169696,
+        "2": 0.03717585297453704,
+        "3": 0.0846311996552715
+      }
+    }
+  },
+  "checks": {
+    "V1_control_reproduces_c44": true,
+    "V1_gap": 4.4813601940418835e-08,
+    "V2_missingness_channel_small": true,
+    "V2_measured": 0.0
+  },
+  "wind_value": 0.2412965988605843,
+  "gap_to_target": 0.029689999999999994,
+  "hypotheses": {
+    "H1_oracle_beats_maskonly": true,
+    "H2_wind_value_spans_gap": true,
+    "H3_ficr_dominant": true,
+    "H4_group3_largest": false
+  },
+  "contributions": {
+    "ficr": 0.19657103000466666,
+    "nmae": 0.04472556885591772
+  },
+  "per_group": {
+    "1": {
+      "maskonly": 0.6041573081311253,
+      "oracle": 0.8922673809757661,
+      "delta": 0.28811007284464074
+    },
+    "2": {
+      "maskonly": 0.6388506063178444,
+      "oracle": 0.9254442007008336,
+      "delta": 0.28659359438298915
+    },
+    "3": {
+      "maskonly": 0.5691212199918358,
+      "oracle": 0.7183073493459592,
+      "delta": 0.14918612935412334
+    }
+  },
+  "best_group": "1",
+  "additivity_assumed": true,
+  "undecided_band": false,
+  "verdict": "WIND_AXIS_DIRECTION_CONFIRMED_MAGNITUDE_OPEN",
+  "dacon_upload": false,
+  "external_actions": [],
+  "lockbox_used": false,
+  "generated_at": "2026-08-05T08:59:17.953937+00:00",
+  "digest": "a04cc18e680cd39e"
+}

@@ -1,0 +1,68 @@
+{
+ "dev-2023-Q3": {
+  "training_rows": 6480,
+  "train_label_max": "2023-07-01T00:00:00",
+  "first_basis": "2023-07-01T14:00:00",
+  "pick_distribution": {
+   "D": 5428,
+   "M102_TOP100": 70,
+   "M113_LGBM_DART": 22,
+   "M115_XGBOOST": 196,
+   "BLEND": 692
+  },
+  "value_argmax_accuracy": 0.6179775280898876,
+  "deployed": {
+   "total": 0.6051356658854874,
+   "one_minus_nmae": 0.8642506686611071,
+   "ficr": 0.34602066310986773
+  },
+  "combiner_hard": {
+   "total": 0.5976433911983967,
+   "one_minus_nmae": 0.8628402855999984,
+   "ficr": 0.33244649679679505
+  },
+  "combiner_shrunk": {
+   "total": 0.6023848130070915,
+   "one_minus_nmae": 0.8649584193551922,
+   "ficr": 0.3398112066589906
+  },
+  "oracle_value_pick": {
+   "total": 0.7007164699603008,
+   "one_minus_nmae": 0.8997688922115424,
+   "ficr": 0.5016640477090591
+  }
+ },
+ "dev-2023-Q4": {
+  "training_rows": 12888,
+  "train_label_max": "2023-10-01T00:00:00",
+  "first_basis": "2023-10-01T14:00:00",
+  "pick_distribution": {
+   "D": 3940,
+   "M102_TOP100": 314,
+   "M113_LGBM_DART": 37,
+   "M115_XGBOOST": 335,
+   "BLEND": 1926
+  },
+  "value_argmax_accuracy": 0.38995726495726496,
+  "deployed": {
+   "total": 0.6418311089992913,
+   "one_minus_nmae": 0.8552521261830528,
+   "ficr": 0.4284100918155298
+  },
+  "combiner_hard": {
+   "total": 0.6383852142300629,
+   "one_minus_nmae": 0.8546937319745103,
+   "ficr": 0.42207669648561547
+  },
+  "combiner_shrunk": {
+   "total": 0.6418547456504333,
+   "one_minus_nmae": 0.8558833963748642,
+   "ficr": 0.4278260949260025
+  },
+  "oracle_value_pick": {
+   "total": 0.7396668887624758,
+   "one_minus_nmae": 0.8903598388117676,
+   "ficr": 0.5889739387131838
+  }
+ }
+}

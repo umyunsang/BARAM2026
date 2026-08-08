@@ -1,0 +1,286 @@
+{
+  "schema_version": 1,
+  "node_id": "S17-N20A_TERRAIN_SX300_H8_NO_NODATA_TAG_RECOVERY",
+  "closed_at": "2026-08-08T22:59:24.977381+09:00",
+  "predeclaration": {
+    "path": "reports/s17_n20a_terrain_sx300_no_nodata_recovery_predeclaration.json",
+    "sha256": "4aec5d6c1c07df59c70b989bf666e4b451d98e217c2e1bbd52d2220db3979f90",
+    "event_sha256": "ef962be72a11c3912f0cf565a5df36cc08339d0e6a668643f3965abc771d8c53"
+  },
+  "input_bundle_sha256": "1fa0191e690f9be6f44f72b145284dc7031a9193f96a1c4091c0906b141420f0",
+  "implementation": {
+    "path": "scripts/recover_terrain_sx300_no_nodata.py",
+    "sha256": "1b7c0ae671af85c9f15fb480e6f56ac6fe81d0b3fdbb98ceba9d43f565c1c480",
+    "py_compile": "PASS",
+    "ruff": "PASS"
+  },
+  "body": {
+    "path": "artifacts/external/copdem_s17_n20/Copernicus_DSM_COG_10_N37_00_E128_00_DEM.tif",
+    "sha256": "69036070795162395dcea060375abba2d448dc2a5b74949844784466191b707c",
+    "bytes": 45141829,
+    "new_external_requests": 0
+  },
+  "typed_recovery": {
+    "only_changed_contract_field": "nodata identification",
+    "old": "Require GeoTIFF tag 42113.",
+    "new": "Tag 42113 is explicitly absent; accept only if every full-resolution query/candidate sample used by all 8,064 rays is finite float32 and within [-500, 9000] m. No implicit fill or replacement is allowed.",
+    "prediction_or_formula_change": false,
+    "raster_semantics_change": false,
+    "refetch": false
+  },
+  "audit_artifact": {
+    "path": "artifacts/external/copdem_s17_n20/recovery_manifest.json",
+    "sha256": "5b2f6918b22e0b4f8168367b15355d6eec6603d3d08538d5989a97dae076ab0e"
+  },
+  "lookup_artifacts": {
+    "npy": {
+      "path": "artifacts/external/copdem_s17_n20/lookup.npy",
+      "sha256": "8861028407290dd536a011eac9bc80fdd1121da9742c8cf4e910d88855823ee5",
+      "bytes": 9344
+    },
+    "parquet": {
+      "path": "artifacts/external/copdem_s17_n20/lookup.parquet",
+      "sha256": "8f292c97193a15accd03d8289833a60c6b6db8d53d00ffc2a3cb86cd9b5d7996",
+      "bytes": 11627,
+      "rows": 1152
+    }
+  },
+  "reproduction": {
+    "runs": 2,
+    "npy_byte_identical": true,
+    "parquet_byte_identical": true,
+    "manifest_byte_identical": true,
+    "native_roundtrip_array_equal": true
+  },
+  "measurements": {
+    "raster": {
+      "frame": 0,
+      "size": [
+        3600,
+        3600
+      ],
+      "epsg": 4326,
+      "pixel_is_point": true,
+      "pixel_scale": [
+        0.0002777777777777778,
+        0.0002777777777777778
+      ],
+      "tie_longitude": 128.0,
+      "tie_latitude": 38.0,
+      "crop": [
+        3320,
+        2499,
+        3598,
+        2672
+      ],
+      "crop_shape": [
+        173,
+        278
+      ],
+      "crop_pixels": 48094,
+      "unique_accessed_cells": 6506,
+      "accessed_min_elevation_m": 706.4415283203125,
+      "accessed_max_elevation_m": 1214.4661865234375,
+      "accessed_all_finite": true,
+      "accessed_all_plausible": true,
+      "fills_or_replacements": 0
+    },
+    "geometry_parity": {
+      "rays": 8064,
+      "mismatched_cell_sets": 0,
+      "lookup_max_abs_error_deg": 0.0,
+      "lookup_array_equal": true
+    },
+    "lookup": {
+      "shape": [
+        16,
+        72
+      ],
+      "dtype": "float64",
+      "finite_values": 1152,
+      "min_sx_deg": -30.30604046374409,
+      "max_sx_deg": 38.883486314944896,
+      "mean_sx_deg": 6.259114645559136
+    },
+    "per_grid_direction_range_min_deg": 26.47631937028683,
+    "per_grid_direction_range_max_deg": 56.290136749781055
+  },
+  "gates": {
+    "inputs": true,
+    "metadata_only_42113_missing": true,
+    "coverage": true,
+    "geometry_parity": true,
+    "nodata_finite_plausible": true,
+    "lookup": true,
+    "roundtrip": true
+  },
+  "actions": {
+    "external_requests": 0,
+    "dem_body_bytes_new": 0,
+    "pixel_values_loaded": 48094,
+    "weather_rows": 0,
+    "label_target_scada_rows": 0,
+    "model_or_optimizer_fits": 0,
+    "official_or_component_score_calls": 0,
+    "strict_protocol_calls": 0,
+    "2024_access": false,
+    "test_access": false,
+    "rejected_ecmwf_access": false,
+    "quarantined_n10_access": false,
+    "dependency_changes": false,
+    "dacon_actions": [],
+    "recovery_runs": 2,
+    "comparison_index_consumed": false,
+    "comparison_count_remains": 3
+  },
+  "evidence_boundary": {
+    "static_lookup_reproducibility": "directly_supported",
+    "baram_model_or_score_gain": "unverified_near_match_only",
+    "authorization": "One no-fit model-family prerequisite audit only."
+  },
+  "verdict": "READY_TERRAIN_MODEL_FAMILY_PREREQUISITE_AUDIT",
+  "next_handoff": [
+    "S17-N21_TERRAIN_SX300_H8_MODEL_FAMILY_PREREQUISITE_AUDIT"
+  ],
+  "preclose_snapshot": {
+    "pending": [
+      "S17-N20A_TERRAIN_SX300_H8_NO_NODATA_TAG_RECOVERY"
+    ],
+    "closed": [
+      "S17-N10B_ISSUANCE_CUBE_2022_2023_CORRECTED_AUDIT",
+      "S17-N10_ISSUANCE_CUBE_TIMING_AND_MISSINGNESS_AUDIT",
+      "S17-N11A_FOUR_MAPPING_10MIN_SCADA_CORRECTED_DIAGNOSTIC",
+      "S17-N11_FOUR_MAPPING_TRAINING_WIND_DIAGNOSTIC",
+      "S17-N12_VERTICAL_PROFILE_TERRAIN_PREREQUISITE_AUDIT",
+      "S17-N13A_R2_NO_REFIT_TYPED_PROVENANCE_RECOVERY",
+      "S17-N13_R2_TWO_COMPONENT_VERTICAL_PCA_STRICT_PREQUENTIAL",
+      "S17-N14_R3_HEIGHT_ONLY_TERRAIN_PREREQUISITE_AUDIT",
+      "S17-N15A_R3_CORRECTED_PRIMARY_FORMULA_IDENTIFIABILITY_GATE",
+      "S17-N15_R3_COPERNICUS_GLO30_STATIC_EXTRACTION_AND_FORMULA_FREEZE",
+      "S17-N16_R4_SOURCE_SEPARATED_VS_CONCAT_PREREQUISITE_AUDIT",
+      "S17-N17_R4_NO_REFIT_STRICT_SOURCE_SEPARATION_COMPARISON",
+      "S17-N18_POST_RWA_FRONTIER_RESEARCH_INTAKE",
+      "S17-N19_TERRAIN_SX300_H8_NO_BODY_PREREQUISITE_AUDIT",
+      "S17-N20_TERRAIN_SX300_H8_STATIC_LOOKUP_EXTRACTION",
+      "S17-N2_EVENT_LEDGER_ENVELOPE",
+      "S17-N3_STRICT_PREQUENTIAL_EVALUATION_REPAIR",
+      "S17-N4_ECMWF_18Z_FIXED_LEAD_AUDIT",
+      "S17-N5_ECMWF_18Z_2023_EXTRACTION",
+      "S17-N5_ECMWF_18Z_2023_INNOVATION_PROBE",
+      "S17-N6A_FAIL_CLOSED_SCORE_CLASS_REPAIR",
+      "S17-N6_COST5_SPO_PLUS_PREQUENTIAL",
+      "S17-N7_STRICT_ACTION_PROVENANCE_RECONSTRUCTION",
+      "S17-N8_COST5_SPO_PLUS_STRICT_PREQUENTIAL_COMPARISON",
+      "S17-N9_COST5_NO_REFIT_MATERIALIZATION_RECOVERY"
+    ],
+    "legacy": [
+      "C1N100_NOVEL_MEMBER_PROBE",
+      "C1N101_PHYSICAL_MEMBER_PROBE",
+      "C1N102_RETRIEVAL_MEMBER",
+      "C1N103_EXTERNAL_NWP_MEMBER",
+      "C1N104_M244_KEY_RECOVERED",
+      "C1N105_M244_RECIPE_READ",
+      "C1N10_BLEND_LOCALITY",
+      "C1N11_V2_REPRESENTATION",
+      "C1N12_G3_HISTORY",
+      "C1N13_ENSEMBLE_VARIANCE",
+      "C1N14_SHRINKBLEND",
+      "C1N15_WALKFORWARD",
+      "C1N16_ROBUSTNESS_AUDIT",
+      "C1N17_METRIC_ALIGNED_COMBINER",
+      "C1N18_SPREAD_SKILL",
+      "C1N19_ENVELOPE_ORACLE",
+      "C1N1_TOPRATE_MECHANISM",
+      "C1N20_ALPHA_ENDPOINT",
+      "C1N21_MOS_BIAS_CORRECTION",
+      "C1N22_GLOBAL_SHIFT",
+      "C1N23_ELIGIBLE_MOS",
+      "C1N24_MEMBER_COUNT_REOPEN",
+      "C1N25_ENVELOPE_LAMBDA",
+      "C1N26_POOL_WIDTH_SCREEN",
+      "C1N27_RESIDUAL_SIGNAL",
+      "C1N28_PERGRID_SIGNAL",
+      "C1N29_CHAMPION_AUDIT",
+      "C1N2_COLLIDER_CORRECTED",
+      "C1N30_TEMPORAL_SIGNAL",
+      "C1N31_SPACE_TIME",
+      "C1N32_LOCKBOX_OPERATOR",
+      "C1N33_SINGLE_VS_ENSEMBLE",
+      "C1N34_SHRINK_TO_BEST",
+      "C1N35_FIXED_POLICY_CORRECTION",
+      "C1N36_SOURCE_SENSITIVITY",
+      "C1N37_BAND_ALIGNED_LOSS",
+      "C1N38_BAND_LOSS_FIXED",
+      "C1N39_ARCHITECTURE_GAP",
+      "C1N3_MASS_AXIS_WIND_SECTOR",
+      "C1N40_BAND_CLASSIFIER",
+      "C1N41_BAND_CLASSIFIER_CAPACITY",
+      "C1N42_TEACHER_RESTORED",
+      "C1N43_EFFECT_TREND",
+      "C1N44_SHARPENED_DECISION",
+      "C1N45_SUBMISSION_DECISION",
+      "C1N46_CLOSURE_FALSIFICATION",
+      "C1N47_EXTERNAL_NWP_REVIVED",
+      "C1N48_MODEL_VALIDATION",
+      "C1N49_RHO_ACCEPTANCE",
+      "C1N4_BAND_CONDITIONAL_POLICY_ORACLE",
+      "C1N50_NONNEGATIVE_WEIGHTS",
+      "C1N51_EXTERNAL_SOURCE_PROBE",
+      "C1N52_EXTERNAL_CLOSURE",
+      "C1N53_SUPPLIED_EXTRACTION",
+      "C1N54_SCATTER_CEILING",
+      "C1N55_TURBINE_CORRELATION",
+      "C1N56_MEASURED_POWERCURVE",
+      "C1N57B_VARIANCE_LAW",
+      "C1N57_FICR_CEILING",
+      "C1N58_TEACHER_OOF_SPLIT",
+      "C1N59_PERFECT_PROG_BOUND",
+      "C1N5_SPATIAL_INTERPOLATION",
+      "C1N60_LEVEL_TEMPERATURE",
+      "C1N61_GRID_BOUNDARY",
+      "C1N62_MONTH_MECHANISM",
+      "C1N64_BAND_AVOIDANCE",
+      "C1N65_WIND_LIMITED_BOUND",
+      "C1N66_HETEROSCEDASTIC_WIND",
+      "C1N67_EXACT_CURVE_PROPAGATION",
+      "C1N69_SKILL_RESPONSE",
+      "C1N6_WIND50_MIDPOINT",
+      "C1N70_BASELINE_CORRECTION",
+      "C1N71_TEACHER_WEIGHT",
+      "C1N72_CURVE_BLEND",
+      "C1N74_BLOCK_LENGTH",
+      "C1N75_DAILY_GATE_ESTIMAND",
+      "C1N7_POLICY_FROZEN_GATE",
+      "C1N81_CYCLE_CONTRACT_ENFORCED",
+      "C1N8_ORACLE_LADDER",
+      "C1N92_METRIC_ALIGNED_LOSS",
+      "C1N93_ORDINAL_REPRESENTATION",
+      "C1N94_CDF_REJUDGE",
+      "C1N95_RECONSTRUCTION_GAP",
+      "C1N96_GAP_REJUDGE",
+      "C1N97_BOOSTING_ROUNDS",
+      "C1N98_REPRODUCIBILITY_ADJUDICATION",
+      "C1N99_ENSEMBLE_EXHAUSTIVE",
+      "C1N9_GATE_POWER"
+    ],
+    "comparison_count": 3,
+    "stage_coverage": [
+      "S1",
+      "S2",
+      "S3",
+      "S5",
+      "S6",
+      "S7",
+      "S8",
+      "S9",
+      "S10",
+      "S11"
+    ],
+    "frontier": [
+      "S17-N20A_TERRAIN_SX300_H8_NO_NODATA_TAG_RECOVERY"
+    ],
+    "evidence_complete_cycles": 25,
+    "accounted_cycles": 114,
+    "digest": "a85a529dc925395fb94a88d8077d82710fabccaa9fe52e7cffe9c4b56ebbb004"
+  }
+}

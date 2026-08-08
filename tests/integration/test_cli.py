@@ -12,6 +12,7 @@ def test_cli_help_lists_closed_commands() -> None:
     )
     for command in (
         "audit",
+        "v2-preflight",
         "prepare",
         "split-build",
         "backtest",

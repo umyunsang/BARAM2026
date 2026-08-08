@@ -1,0 +1,190 @@
+{
+ "dacon_upload": false,
+ "decided_utc": "2026-08-04T08:04:39.386639+00:00",
+ "external_actions": [],
+ "lane": "L4",
+ "lockbox_reopened": false,
+ "model_fits": 0,
+ "new_2024_evaluation": false,
+ "node": "C1N29_CHAMPION_AUDIT",
+ "report_sha256": "174bc64fee485e2b3ab0ae894f223753756dee5303669fb36fa0b944d8ae1fc3",
+ "result": {
+  "H1_combiner_per_fold": [
+   {
+    "fold": "Q2",
+    "mean": 0.6363498637897668,
+    "median": 0.6396794805906179,
+    "median_beats_all": true,
+    "median_beats_mean": true,
+    "modal_window": 0.6376841356188103
+   },
+   {
+    "fold": "Q3",
+    "mean": 0.6063524947345168,
+    "median": 0.607751286338821,
+    "median_beats_all": true,
+    "median_beats_mean": true,
+    "modal_window": 0.6071658112324526
+   },
+   {
+    "fold": "Q4",
+    "mean": 0.6396202511253792,
+    "median": 0.6461123732018937,
+    "median_beats_all": true,
+    "median_beats_mean": true,
+    "modal_window": 0.6430083729642945
+   }
+  ],
+  "H2_alpha_per_fold": [
+   {
+    "alpha_050": 0.6377199202142738,
+    "alpha_100": 0.6396794805906179,
+    "endpoint_wins": true,
+    "fold": "Q2"
+   },
+   {
+    "alpha_050": 0.6055968221389193,
+    "alpha_100": 0.607751286338821,
+    "endpoint_wins": true,
+    "fold": "Q3"
+   },
+   {
+    "alpha_050": 0.643518723104447,
+    "alpha_100": 0.6461123732018937,
+    "endpoint_wins": true,
+    "fold": "Q4"
+   }
+  ],
+  "H3_champion_vs_deployed_per_fold": [
+   {
+    "champion": 0.6396794805906179,
+    "champion_wins": true,
+    "delta": 0.004641748718014926,
+    "deployed": 0.6350377318726029,
+    "fold": "Q2"
+   },
+   {
+    "champion": 0.607751286338821,
+    "champion_wins": true,
+    "delta": 0.011152646335317096,
+    "deployed": 0.5965986400035039,
+    "fold": "Q3"
+   },
+   {
+    "champion": 0.6461123732018937,
+    "champion_wins": true,
+    "delta": 0.009043250249954005,
+    "deployed": 0.6370691229519397,
+    "fold": "Q4"
+   }
+  ],
+  "anchors": [
+   {
+    "local": 0.629973,
+    "name": "M261",
+    "note": "배포 계열. 같은 혈통이라 오프셋이 작다",
+    "online": 0.6365274327
+   },
+   {
+    "local": 0.6057596789867304,
+    "name": "M252",
+    "note": "독립 앵커. 제출 0 회 계열이라 오프셋이 크다",
+    "online": 0.6268784092
+   }
+  ],
+  "band": {
+   "beats_current_online_best_under_both_anchors": true,
+   "champion_local": 0.6365968277630516,
+   "current_online_best": 0.6365274327,
+   "local_required_high": 0.6534455673,
+   "local_required_low": 0.6388812697867304,
+   "projected_online_high": 0.6577155579763212,
+   "projected_online_low": 0.6431512604630516,
+   "trigger_implies_online_high": 0.6811187302132696,
+   "trigger_implies_online_low": 0.6665544327,
+   "user_local_trigger": 0.66
+  },
+  "caveat": "오프셋은 방법군 의존이고 두 앵커가 3.2 배 벌어진다. 챔피언은 분류기와 analog 를 섞으므로 어느 쪽을 따를지 알 수 없다. 투영이지 예측이 아니다",
+  "champion": "M271_MEDIAN4",
+  "gate_modified": false,
+  "lockbox_opened": false,
+  "node": "C1N29_CHAMPION_AUDIT",
+  "offset_projection": [
+   {
+    "anchor": "M261",
+    "anchor_local": 0.629973,
+    "anchor_online": 0.6365274327,
+    "champion_shortfall_vs_required_local": 0.01684873953694843,
+    "local_required_for_online_target": 0.6534455673,
+    "note": "배포 계열. 같은 혈통이라 오프셋이 작다",
+    "offset": 0.006554432700000001,
+    "projected_online_for_champion": 0.6431512604630516
+   },
+   {
+    "anchor": "M252",
+    "anchor_local": 0.6057596789867304,
+    "anchor_online": 0.6268784092,
+    "champion_shortfall_vs_required_local": 0.0022844420236788343,
+    "local_required_for_online_target": 0.6388812697867304,
+    "note": "독립 앵커. 제출 0 회 계열이라 오프셋이 크다",
+    "offset": 0.0211187302132696,
+    "projected_online_for_champion": 0.6577155579763212
+   }
+  ],
+  "parent_node": "C1N20_ALPHA_ENDPOINT",
+  "per_fold_totals": {
+   "alpha=0.50": {
+    "Q2": 0.6377199202142738,
+    "Q3": 0.6055968221389193,
+    "Q4": 0.643518723104447
+   },
+   "alpha=1.00": {
+    "Q2": 0.6396794805906179,
+    "Q3": 0.607751286338821,
+    "Q4": 0.6461123732018937
+   },
+   "combiner=mean": {
+    "Q2": 0.6363498637897668,
+    "Q3": 0.6063524947345168,
+    "Q4": 0.6396202511253792
+   },
+   "combiner=median": {
+    "Q2": 0.6396794805906179,
+    "Q3": 0.607751286338821,
+    "Q4": 0.6461123732018937
+   },
+   "combiner=modal_window": {
+    "Q2": 0.6376841356188103,
+    "Q3": 0.6071658112324526,
+    "Q4": 0.6430083729642945
+   },
+   "deployed": {
+    "Q2": 0.6350377318726029,
+    "Q3": 0.5965986400035039,
+    "Q4": 0.6370691229519397
+   }
+  },
+  "pooled_totals": {
+   "alpha=0.50": 0.6343104560184054,
+   "alpha=1.00": 0.6365968277630516,
+   "combiner=mean": 0.6321430807993876,
+   "combiner=median": 0.6365968277630516,
+   "combiner=modal_window": 0.634333304205484,
+   "deployed": 0.6286045208903154
+  },
+  "predeclared_check": {
+   "H1_expectation": "median 이 세 fold 전부에서 mean 보다 높다",
+   "H1_held": true,
+   "H1_strict_beats_all_three_combiners": true,
+   "H2_expectation": "alpha=1.0 이 세 fold 전부에서 alpha=0.5 보다 높다",
+   "H2_held": true,
+   "H3_expectation": "챔피언이 세 fold 전부에서 배포 정책보다 높다",
+   "H3_held": true,
+   "selection_not_pooled_artifact": true,
+   "verdict": "CHAMPION_CHOICES_REPLICATE_PER_FOLD"
+  }
+ },
+ "schema_version": 1,
+ "script_sha256": "941781b5b87fdade3ffcde04e4b72ca7f69fbcf80845e915bf6d7f9c73744af2",
+ "stage": "M271_P4_CYCLE29_CHAMPION_AUDIT"
+}

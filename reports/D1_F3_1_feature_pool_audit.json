@@ -1,0 +1,230 @@
+{
+ "node": "D1_F3_1",
+ "stage": "D1",
+ "pool_size": 820,
+ "selected_size": 100,
+ "groups": [
+  {
+   "group": "GFS 80m u/v",
+   "pool": 18,
+   "selected": 0,
+   "verdict": "풀에 있으나 선택 탈락",
+   "sample": [
+    "gfs__heightAboveGround_80_u__mean",
+    "gfs__heightAboveGround_80_u__std"
+   ]
+  },
+  {
+   "group": "GFS 100m u/v",
+   "pool": 18,
+   "selected": 0,
+   "verdict": "풀에 있으나 선택 탈락",
+   "sample": [
+    "gfs__heightAboveGround_100_100u__mean",
+    "gfs__heightAboveGround_100_100u__std"
+   ]
+  },
+  {
+   "group": "GFS PBL u/v/VRATE",
+   "pool": 23,
+   "selected": 0,
+   "verdict": "풀에 있으나 선택 탈락",
+   "sample": [
+    "gfs__planetaryBoundaryLayer_0_u__mean",
+    "gfs__planetaryBoundaryLayer_0_u__std"
+   ]
+  },
+  {
+   "group": "GFS 850hPa",
+   "pool": 28,
+   "selected": 0,
+   "verdict": "풀에 있으나 선택 탈락",
+   "sample": [
+    "gfs__isobaricInhPa_850_t__mean",
+    "gfs__isobaricInhPa_850_t__std"
+   ]
+  },
+  {
+   "group": "GFS 700hPa",
+   "pool": 21,
+   "selected": 0,
+   "verdict": "풀에 있으나 선택 탈락",
+   "sample": [
+    "gfs__isobaricInhPa_700_t__mean",
+    "gfs__isobaricInhPa_700_t__std"
+   ]
+  },
+  {
+   "group": "GFS 500hPa",
+   "pool": 28,
+   "selected": 0,
+   "verdict": "풀에 있으나 선택 탈락",
+   "sample": [
+    "gfs__isobaricInhPa_500_gh__mean",
+    "gfs__isobaricInhPa_500_gh__std"
+   ]
+  },
+  {
+   "group": "GFS gust",
+   "pool": 9,
+   "selected": 2,
+   "verdict": "선택됨",
+   "sample": [
+    "gfs__surface_0_gust__mean",
+    "gfs__surface_0_gust__std"
+   ]
+  },
+  {
+   "group": "LDAPS 50m max/min",
+   "pool": 36,
+   "selected": 0,
+   "verdict": "풀에 있으나 선택 탈락",
+   "sample": [
+    "ldaps__heightAboveGround_50_50MUmax__mean",
+    "ldaps__heightAboveGround_50_50MUmax__std"
+   ]
+  },
+  {
+   "group": "GFS 10m u/v",
+   "pool": 14,
+   "selected": 0,
+   "verdict": "풀에 있으나 선택 탈락",
+   "sample": [
+    "gfs__heightAboveGround_10_10u__mean",
+    "gfs__heightAboveGround_10_10u__std"
+   ]
+  },
+  {
+   "group": "LDAPS 10m u/v",
+   "pool": 14,
+   "selected": 0,
+   "verdict": "풀에 있으나 선택 탈락",
+   "sample": [
+    "ldaps__heightAboveGround_10_10u__mean",
+    "ldaps__heightAboveGround_10_10u__std"
+   ]
+  }
+ ],
+ "absent_from_pool": [],
+ "present_but_deselected": [
+  "GFS 80m u/v",
+  "GFS 100m u/v",
+  "GFS PBL u/v/VRATE",
+  "GFS 850hPa",
+  "GFS 700hPa",
+  "GFS 500hPa",
+  "LDAPS 50m max/min",
+  "GFS 10m u/v",
+  "LDAPS 10m u/v"
+ ],
+ "gfs_vars_in_pool": [
+  "atmosphere_0_tcc",
+  "grid_count",
+  "heightAboveGround_100_100u",
+  "heightAboveGround_100_100v",
+  "heightAboveGround_10_10u",
+  "heightAboveGround_10_10v",
+  "heightAboveGround_2_2d",
+  "heightAboveGround_2_2r",
+  "heightAboveGround_2_2sh",
+  "heightAboveGround_2_2t",
+  "heightAboveGround_80_u",
+  "heightAboveGround_80_v",
+  "highCloudLayer_0_hcc",
+  "isobaricInhPa_500_gh",
+  "isobaricInhPa_500_t",
+  "isobaricInhPa_500_u",
+  "isobaricInhPa_500_v",
+  "isobaricInhPa_700_t",
+  "isobaricInhPa_700_u",
+  "isobaricInhPa_700_v",
+  "isobaricInhPa_850_r",
+  "isobaricInhPa_850_t",
+  "isobaricInhPa_850_u",
+  "isobaricInhPa_850_v",
+  "lowCloudLayer_0_lcc",
+  "meanSea_0_prmsl",
+  "middleCloudLayer_0_mcc",
+  "missing_cell_count",
+  "pbl_wind_dir_cos",
+  "pbl_wind_dir_sin",
+  "pbl_wind_speed",
+  "planetaryBoundaryLayer_0_VRATE",
+  "planetaryBoundaryLayer_0_u",
+  "planetaryBoundaryLayer_0_v",
+  "surface_0_dlwrf",
+  "surface_0_dswrf",
+  "surface_0_gust",
+  "surface_0_prate",
+  "surface_0_sp",
+  "surface_0_tp",
+  "wind100_dir_cos",
+  "wind100_dir_sin",
+  "wind100_speed",
+  "wind10_dir_cos",
+  "wind10_dir_sin",
+  "wind10_speed",
+  "wind500_dir_cos",
+  "wind500_dir_sin",
+  "wind500_speed",
+  "wind700_dir_cos",
+  "wind700_dir_sin",
+  "wind700_speed",
+  "wind80_dir_cos",
+  "wind80_dir_sin",
+  "wind80_speed",
+  "wind850_dir_cos",
+  "wind850_dir_sin",
+  "wind850_speed"
+ ],
+ "ldaps_vars_in_pool": [
+  "etc_0_VLCDC",
+  "etc_0_blh",
+  "etc_0_hcc",
+  "etc_0_lcc",
+  "etc_0_mcc",
+  "grid_count",
+  "heightAboveGround_10_10u",
+  "heightAboveGround_10_10v",
+  "heightAboveGround_2_SWDIF",
+  "heightAboveGround_2_SWDIR",
+  "heightAboveGround_2_dpt",
+  "heightAboveGround_2_q",
+  "heightAboveGround_2_r",
+  "heightAboveGround_2_t",
+  "heightAboveGround_50_50MUmax",
+  "heightAboveGround_50_50MUmin",
+  "heightAboveGround_50_50MVmax",
+  "heightAboveGround_50_50MVmin",
+  "heightAboveGround_5_XBLWS",
+  "heightAboveGround_5_YBLWS",
+  "meanSea_0_prmsl",
+  "missing_cell_count",
+  "surface_0_NDNLW",
+  "surface_0_NDNSW",
+  "surface_0_SNOM",
+  "surface_0_avg_lsprate",
+  "surface_0_h",
+  "surface_0_lsm",
+  "surface_0_lssrate",
+  "surface_0_ncpcp",
+  "surface_0_snol",
+  "surface_0_sp",
+  "wind10_dir_cos",
+  "wind10_dir_sin",
+  "wind10_speed",
+  "wind50max_dir_cos",
+  "wind50max_dir_sin",
+  "wind50max_speed",
+  "wind50min_dir_cos",
+  "wind50min_dir_sin",
+  "wind50min_speed",
+  "wind5_dir_cos",
+  "wind5_dir_sin",
+  "wind5_speed"
+ ],
+ "verdict": "PRESENT_BUT_DESELECTED",
+ "origin": "research://IOP-2026-3049-4753-ae4c8d + ACP-23-3181 [directly_supported]",
+ "model_fits": 0,
+ "dacon_upload": false
+}

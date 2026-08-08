@@ -1,0 +1,221 @@
+{
+  "schema_version": 1,
+  "node_id": "S17-N7_STRICT_ACTION_PROVENANCE_RECONSTRUCTION",
+  "closed_at": "2026-08-08T20:08:34.589025+09:00",
+  "predeclaration": {
+    "path": "reports/s17_n7_strict_action_reconstruction_predeclaration.json",
+    "sha256": "0ed80aa6ef0e4f321cb1a084df650e762c52b0fa3a074c853daecfca71722a16",
+    "event_sha256": "f27e3bda00f3abe70ac43d9a3bb979c7203a66efbab02ae29ee59dfc44da1d2d"
+  },
+  "implementation": {
+    "path": "scripts/reconstruct_strict_actions.py",
+    "sha256": "8d656bdb91a63b96b1e207d796e130796de47004a0c1293e5800fdffdf14abcd"
+  },
+  "input_bundle_sha256": "2aaf7db0b3a26438071ac7c1d03b7645e494f740b21c53d7087187b73872315d",
+  "outputs": {
+    "artifacts/backtests/s17_n7_strict_actions/actions.parquet": "6041a7bf6f242c4da7958dc43d3487cdc468cc39301086bf3a5e6df5fb87f290",
+    "artifacts/backtests/s17_n7_strict_actions/procedure_provenance.parquet": "12666e4e61d962e74e0168e41a40f13b13acc006808bd7bd09dd837fa6cf9cae",
+    "artifacts/backtests/s17_n7_strict_actions/family_manifest.json": "972ed2922260bec2000cb9bc0d97098ae533652ab16daf9d5ca6d90601daa046"
+  },
+  "selected_policies": {
+    "D": "T1_G1.5",
+    "M102_TOP100": "T0.5_G1.5",
+    "M113_LGBM_DART": "T0.5_G0.5",
+    "M115_XGBOOST": "T0.75_G2"
+  },
+  "fixed_iterations": {
+    "M102_TOP100": 60,
+    "M113_LGBM_DART": 140,
+    "M115_XGBOOST": 100
+  },
+  "m102_q3_source": "M102_TOP100_I60",
+  "chronology": {
+    "fit_label_available_max": {
+      "dev-2023-Q2": "2023-04-01T00:00:00",
+      "dev-2023-Q3": "2023-07-01T00:00:00",
+      "dev-2023-Q4": "2023-10-01T00:00:00"
+    },
+    "shifted_test_min_basis": {
+      "dev-2023-Q2": "2023-04-01T14:00:00",
+      "dev-2023-Q3": "2023-07-01T14:00:00",
+      "dev-2023-Q4": "2023-10-01T14:00:00"
+    },
+    "strict_inequalities_all_pass": true,
+    "selection_label_max": "2023-07-01T00:00:00",
+    "shifted_q3_basis": "2023-07-01T14:00:00"
+  },
+  "atoms": {
+    "retained_days": {
+      "dev-2023-Q2": 90,
+      "dev-2023-Q3": 89,
+      "dev-2023-Q4": 91
+    },
+    "retained_rows": 19440,
+    "post_shift_incomplete_days": {
+      "dev-2023-Q3/2023-07-10": 63,
+      "dev-2023-Q3/2023-07-12": 66
+    }
+  },
+  "actual_alignment_max_abs": {
+    "M102_TOP100": 3.637978807091713e-12,
+    "M113_LGBM_DART": 3.637978807091713e-12,
+    "M115_XGBOOST": 3.637978807091713e-12
+  },
+  "reproduction": {
+    "two_exact_runs_byte_identical": true,
+    "hashes": {
+      "actions.parquet": "6041a7bf6f242c4da7958dc43d3487cdc468cc39301086bf3a5e6df5fb87f290",
+      "procedure_provenance.parquet": "12666e4e61d962e74e0168e41a40f13b13acc006808bd7bd09dd837fa6cf9cae",
+      "family_manifest.json": "972ed2922260bec2000cb9bc0d97098ae533652ab16daf9d5ca6d90601daa046"
+    }
+  },
+  "protocol_validation": {
+    "validate_issuance_atoms_rows": 19440,
+    "days_by_fold": {
+      "dev-2023-Q2": 90,
+      "dev-2023-Q3": 89,
+      "dev-2023-Q4": 91
+    },
+    "chronological_outer_splits": 2,
+    "procedure_provenance_records": 10
+  },
+  "actions": {
+    "base_model_fits": 0,
+    "decision_model_fits": 0,
+    "q2_inner_official_total_calls": 245,
+    "q3_q4_score_or_component_calls": 0,
+    "comparison_index_consumed": false,
+    "2024_access": false,
+    "test_access": false,
+    "rejected_ecmwf_access": false,
+    "dacon_actions": [],
+    "dependency_changes": false
+  },
+  "verification": {
+    "targeted": "51 passed",
+    "full": "212 passed, 144 pre-existing warnings",
+    "ruff": "All checks passed"
+  },
+  "preclose_snapshot": {
+    "pending": [
+      "S17-N7_STRICT_ACTION_PROVENANCE_RECONSTRUCTION"
+    ],
+    "closed": [
+      "S17-N2_EVENT_LEDGER_ENVELOPE",
+      "S17-N3_STRICT_PREQUENTIAL_EVALUATION_REPAIR",
+      "S17-N4_ECMWF_18Z_FIXED_LEAD_AUDIT",
+      "S17-N5_ECMWF_18Z_2023_EXTRACTION",
+      "S17-N5_ECMWF_18Z_2023_INNOVATION_PROBE",
+      "S17-N6A_FAIL_CLOSED_SCORE_CLASS_REPAIR",
+      "S17-N6_COST5_SPO_PLUS_PREQUENTIAL"
+    ],
+    "legacy": [
+      "C1N100_NOVEL_MEMBER_PROBE",
+      "C1N101_PHYSICAL_MEMBER_PROBE",
+      "C1N102_RETRIEVAL_MEMBER",
+      "C1N103_EXTERNAL_NWP_MEMBER",
+      "C1N104_M244_KEY_RECOVERED",
+      "C1N105_M244_RECIPE_READ",
+      "C1N10_BLEND_LOCALITY",
+      "C1N11_V2_REPRESENTATION",
+      "C1N12_G3_HISTORY",
+      "C1N13_ENSEMBLE_VARIANCE",
+      "C1N14_SHRINKBLEND",
+      "C1N15_WALKFORWARD",
+      "C1N16_ROBUSTNESS_AUDIT",
+      "C1N17_METRIC_ALIGNED_COMBINER",
+      "C1N18_SPREAD_SKILL",
+      "C1N19_ENVELOPE_ORACLE",
+      "C1N1_TOPRATE_MECHANISM",
+      "C1N20_ALPHA_ENDPOINT",
+      "C1N21_MOS_BIAS_CORRECTION",
+      "C1N22_GLOBAL_SHIFT",
+      "C1N23_ELIGIBLE_MOS",
+      "C1N24_MEMBER_COUNT_REOPEN",
+      "C1N25_ENVELOPE_LAMBDA",
+      "C1N26_POOL_WIDTH_SCREEN",
+      "C1N27_RESIDUAL_SIGNAL",
+      "C1N28_PERGRID_SIGNAL",
+      "C1N29_CHAMPION_AUDIT",
+      "C1N2_COLLIDER_CORRECTED",
+      "C1N30_TEMPORAL_SIGNAL",
+      "C1N31_SPACE_TIME",
+      "C1N32_LOCKBOX_OPERATOR",
+      "C1N33_SINGLE_VS_ENSEMBLE",
+      "C1N34_SHRINK_TO_BEST",
+      "C1N35_FIXED_POLICY_CORRECTION",
+      "C1N36_SOURCE_SENSITIVITY",
+      "C1N37_BAND_ALIGNED_LOSS",
+      "C1N38_BAND_LOSS_FIXED",
+      "C1N39_ARCHITECTURE_GAP",
+      "C1N3_MASS_AXIS_WIND_SECTOR",
+      "C1N40_BAND_CLASSIFIER",
+      "C1N41_BAND_CLASSIFIER_CAPACITY",
+      "C1N42_TEACHER_RESTORED",
+      "C1N43_EFFECT_TREND",
+      "C1N44_SHARPENED_DECISION",
+      "C1N45_SUBMISSION_DECISION",
+      "C1N46_CLOSURE_FALSIFICATION",
+      "C1N47_EXTERNAL_NWP_REVIVED",
+      "C1N48_MODEL_VALIDATION",
+      "C1N49_RHO_ACCEPTANCE",
+      "C1N4_BAND_CONDITIONAL_POLICY_ORACLE",
+      "C1N50_NONNEGATIVE_WEIGHTS",
+      "C1N51_EXTERNAL_SOURCE_PROBE",
+      "C1N52_EXTERNAL_CLOSURE",
+      "C1N53_SUPPLIED_EXTRACTION",
+      "C1N54_SCATTER_CEILING",
+      "C1N55_TURBINE_CORRELATION",
+      "C1N56_MEASURED_POWERCURVE",
+      "C1N57B_VARIANCE_LAW",
+      "C1N57_FICR_CEILING",
+      "C1N58_TEACHER_OOF_SPLIT",
+      "C1N59_PERFECT_PROG_BOUND",
+      "C1N5_SPATIAL_INTERPOLATION",
+      "C1N60_LEVEL_TEMPERATURE",
+      "C1N61_GRID_BOUNDARY",
+      "C1N62_MONTH_MECHANISM",
+      "C1N64_BAND_AVOIDANCE",
+      "C1N65_WIND_LIMITED_BOUND",
+      "C1N66_HETEROSCEDASTIC_WIND",
+      "C1N67_EXACT_CURVE_PROPAGATION",
+      "C1N69_SKILL_RESPONSE",
+      "C1N6_WIND50_MIDPOINT",
+      "C1N70_BASELINE_CORRECTION",
+      "C1N71_TEACHER_WEIGHT",
+      "C1N72_CURVE_BLEND",
+      "C1N74_BLOCK_LENGTH",
+      "C1N75_DAILY_GATE_ESTIMAND",
+      "C1N7_POLICY_FROZEN_GATE",
+      "C1N81_CYCLE_CONTRACT_ENFORCED",
+      "C1N8_ORACLE_LADDER",
+      "C1N92_METRIC_ALIGNED_LOSS",
+      "C1N93_ORDINAL_REPRESENTATION",
+      "C1N94_CDF_REJUDGE",
+      "C1N95_RECONSTRUCTION_GAP",
+      "C1N96_GAP_REJUDGE",
+      "C1N97_BOOSTING_ROUNDS",
+      "C1N98_REPRODUCIBILITY_ADJUDICATION",
+      "C1N99_ENSEMBLE_EXHAUSTIVE",
+      "C1N9_GATE_POWER"
+    ],
+    "comparison_count": 0,
+    "stage_coverage": [
+      "S1",
+      "S2",
+      "S7",
+      "S11"
+    ],
+    "frontier": [
+      "S17-N7_STRICT_ACTION_PROVENANCE_RECONSTRUCTION"
+    ],
+    "evidence_complete_cycles": 7,
+    "accounted_cycles": 96,
+    "digest": "66853d409fbcb8ee94e7cf22058c94530d83ccd4eea8910f775543401754904a"
+  },
+  "verdict": "PASS_STRICT_ACTION_CUBE_ONLY_NOT_CANDIDATE_SCORE",
+  "evidence_boundary": "The reconstructed base actions and fixed champion are admissible inputs for a separately predeclared retrospective N8 comparison. This receipt contains no Q3/Q4 performance result.",
+  "next_handoff": [
+    "S17-N8_COST5_SPO_PLUS_STRICT_PREQUENTIAL_COMPARISON"
+  ]
+}

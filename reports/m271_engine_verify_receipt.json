@@ -1,0 +1,299 @@
+{
+ "checks": {
+  "11_prune_absorbing_and_multiparent": {
+   "detail": {
+    "expand_refused": true,
+    "grandchild_survived_via_other_live_ancestor": true,
+    "pruned": [
+     "child"
+    ]
+   },
+   "passed": true
+  },
+  "13_frontier_refills_from_deficit": {
+   "detail": {
+    "action": "SEND_FANOUT",
+    "condition": "C6",
+    "frontier_after_pruning_all": [],
+    "unexplained_mass": 0.3714
+   },
+   "passed": true
+  },
+  "14_gate_signature_normalised": {
+   "detail": {
+    "case": "M251 의 실제 게이트 실패 패턴(G1·G3 실패)을 그대로 넣었다",
+    "confirms": false,
+    "flat": {
+     "G1": false,
+     "G2": true,
+     "G3": false,
+     "G4": true
+    },
+    "information": 0.1356,
+    "malformed_refused": true,
+    "sign": 1
+   },
+   "passed": true
+  },
+  "15_research_guards_enforced": {
+   "detail": {
+    "out_of_lane_source_refused": true,
+    "precommitment_digest": "4d801ec54435b43d",
+    "sota_without_direction_refused": true
+   },
+   "passed": true
+  },
+  "16_materialize_creates_lineage": {
+   "detail": {
+    "all_three_edge_kinds": true,
+    "lineage": {
+     "addresses": [
+      "cell::x"
+     ],
+     "derived_from": [
+      "src1"
+     ],
+     "instantiates": [
+      "d1"
+     ]
+    },
+    "out_of_rule_spec_refused": true,
+    "predeclaration_digest": "1b48a3007354c7cd",
+    "status": "PREDECLARED"
+   },
+   "passed": true
+  },
+  "17_candidate_space_is_open": {
+   "detail": {
+    "c11_picked": "B",
+    "c11_reason": "정보가치가 높은 B 가 기대이득만 큰 A 를 이긴다",
+    "exceeded_m270_fixed_four": true,
+    "queue_growth": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "worker_budget_enforced": true
+   },
+   "passed": true
+  },
+  "1_router_deterministic": {
+   "detail": {
+    "condition": "C3",
+    "considered": [
+     "C3",
+     "C7"
+    ],
+    "reason": "C11 선택: 2 개 발화 중 가치 최대 (G1 실패 & G3 통과 — 효과 있으나 비일관)"
+   },
+   "passed": true
+  },
+  "2_reducers_order_insensitive_and_guarded": {
+   "detail": {
+    "append_order_insensitive": true,
+    "cell_ownership_enforced": true,
+    "write_once_conflict_raised": true
+   },
+   "passed": true
+  },
+  "3_gate_signature_branches": {
+   "detail": {
+    "G1fail_G3pass": {
+     "condition": "C3",
+     "kind": "regime_conditional"
+    },
+    "G3fail_G1pass": {
+     "condition": "C4",
+     "kind": "amplify"
+    },
+    "why": "같은 게이트 실패라도 서명이 다르면 다른 리서치로 가야 한다"
+   },
+   "passed": true
+  },
+  "4_dynamic_fanout_follows_state": {
+   "detail": {
+    "1": [
+     "C6",
+     1
+    ],
+    "3": [
+     "C6",
+     3
+    ]
+   },
+   "passed": true
+  },
+  "5_graph_digest_reproducible": {
+   "detail": {
+    "digest": "e35285e26d789c1d"
+   },
+   "passed": true
+  },
+  "6_langgraph_app_routes_the_decided_target": {
+   "detail": {
+    "checkpoints": 6,
+    "expected_kind": "regime_conditional",
+    "expected_lane": "L2",
+    "landed_sources": {
+     "dir::n1::regime_conditional::L2": {
+      "kind": "regime_conditional",
+      "lane": "L2"
+     }
+    },
+    "macrostep": 1,
+    "matched": true,
+    "router_condition": "C3"
+   },
+   "passed": true
+  },
+  "7_premise_flip_revives_subgraph": {
+   "detail": {
+    "after": "LIVE",
+    "before": "PRUNED",
+    "flipped": [
+     "NO_EXTERNAL_DATA"
+    ],
+    "revived": [
+     "ext"
+    ]
+   },
+   "passed": true
+  },
+  "8_ledger_is_generative": {
+   "detail": {
+    "cells_after": 109,
+    "cells_before": 108,
+    "created": [
+     "group_id=3|month=2023-12|y_band=(0.45, 0.7]|wind_sector=240",
+     "group_id=3|month=2023-12|y_band=(0.45, 0.7]|wind_sector=other"
+    ],
+    "mass_preserved": true,
+    "unexplained_after": 109
+   },
+   "passed": true
+  },
+  "9_two_stage_research_separation": {
+   "detail": {
+    "sota_without_direction_refused": true,
+    "with_direction_ok": true
+   },
+   "passed": true
+  }
+ },
+ "dacon_upload": false,
+ "decided_utc": "2026-08-05T15:43:21.219042+00:00",
+ "external_actions": [],
+ "lockbox_reopened": false,
+ "model_fits": 0,
+ "new_2024_evaluation": false,
+ "report_sha256": "6ba271ab08542d1cfb234a9ce54082dd26ba8cf7de12717ba9f7f78d6e969074",
+ "router_table": [
+  {
+   "action": "RESEARCH_DIRECTION",
+   "code": "C1",
+   "describe": "기전이 없는 결손 셀",
+   "priority": 1,
+   "research_kind": "explain"
+  },
+  {
+   "action": "RESEARCH_DIRECTION",
+   "code": "C2",
+   "describe": "증거가 기전을 반증",
+   "priority": 2,
+   "research_kind": "replace_mechanism"
+  },
+  {
+   "action": "RESEARCH_DIRECTION",
+   "code": "C3",
+   "describe": "G1 실패 & G3 통과 — 효과 있으나 비일관",
+   "priority": 3,
+   "research_kind": "regime_conditional"
+  },
+  {
+   "action": "RESEARCH_DIRECTION",
+   "code": "C4",
+   "describe": "G3 실패 & G1 통과 — 일관하나 미미",
+   "priority": 4,
+   "research_kind": "amplify"
+  },
+  {
+   "action": "RESEARCH_DIRECTION",
+   "code": "C5",
+   "describe": "사전확약과 부호가 반대",
+   "priority": 5,
+   "research_kind": "anomaly"
+  },
+  {
+   "action": "SEND_FANOUT",
+   "code": "C6",
+   "describe": "레인 기아 — 생존가설 0 이고 결손 질량이 임계 초과",
+   "priority": 6,
+   "research_kind": "lane_expand"
+  },
+  {
+   "action": "RESEARCH_DIRECTION",
+   "code": "C7",
+   "describe": "확인됨 & 잔여 질량 있음 — 같은 방향 고도화",
+   "priority": 7,
+   "research_kind": "scale_up"
+  },
+  {
+   "action": "PRUNE",
+   "code": "C8",
+   "describe": "정보량 미달 — 굴착지점 종결. 리서치 없음",
+   "priority": 8,
+   "research_kind": null
+  },
+  {
+   "action": "REVIVE",
+   "code": "C9",
+   "describe": "전제가 뒤집힘 — 체크포인트 포크로 하위그래프 부활",
+   "priority": 9,
+   "research_kind": null
+  },
+  {
+   "action": "RESEARCH_DIRECTION",
+   "code": "C10",
+   "describe": "루프 정체 — 라우터 표 자체의 SOTA 를 조사해 엔진을 제자리 개선",
+   "priority": 10,
+   "research_kind": "loop_engine"
+  },
+  {
+   "action": "REFINE_AXIS",
+   "code": "C12",
+   "describe": "새 기전이 **손실의 분할 축** — 결손 축 재분해",
+   "priority": 12,
+   "research_kind": null
+  },
+  {
+   "action": "RESEARCH_DIRECTION",
+   "code": "C13",
+   "describe": "새 기전이 구조적 사실 — 분할이 아니라 그 결과를 조사",
+   "priority": 13,
+   "research_kind": "structural_consequence"
+  },
+  {
+   "action": "CLOSE_AXIS",
+   "code": "C14",
+   "describe": "확인된 부정 — 그 축을 닫는다. C8(정보 못 냄)과 다르다",
+   "priority": 14,
+   "research_kind": null
+  },
+  {
+   "action": "SEND_FANOUT",
+   "code": "C15",
+   "describe": "원장이 세워짐 — 상위 미설명 셀에 기전 리서치를 뿌린다",
+   "priority": 15,
+   "research_kind": "explain"
+  }
+ ],
+ "router_version": "M271_ROUTER_v2_frozen_2026-08-04",
+ "schema_version": 1,
+ "script_sha256": "3b8415696ed19fd248dadb6424ca5e2b0b72dc33d0909ad1d62023e2c027bfee",
+ "stage": "M271_P2_ENGINE_VERIFY",
+ "verdict": "PASS"
+}

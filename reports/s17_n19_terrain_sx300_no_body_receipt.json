@@ -1,0 +1,342 @@
+{
+  "schema_version": 1,
+  "node_id": "S17-N19_TERRAIN_SX300_H8_NO_BODY_PREREQUISITE_AUDIT",
+  "closed_at": "2026-08-08T22:49:11.125053+09:00",
+  "predeclaration": {
+    "path": "reports/s17_n19_terrain_sx300_no_body_predeclaration.json",
+    "sha256": "d19f06510863fe259cd755b6f7524f688dae70555c7976e5047af9e41db09f02",
+    "event_sha256": "b2c77e19945d1b23f6311db3718d8a4cd42013923fe56dd248e70c096634b87e"
+  },
+  "input_bundle_sha256": "338d3c3ed73165bcbc6e1c21dc3859b7cdd6e716ce30b8d1e1cd15538151380e",
+  "formula_manifest": {
+    "path": "reports/s17_n19_terrain_sx300_formula_manifest.json",
+    "sha256": "ca1022d8236acdefa2b886c20945029a060f3dddecb4d879cb4c6e5a99cf6b80"
+  },
+  "lineage_manifest": {
+    "path": "reports/s17_n19_terrain_sx300_lineage_input_manifest.json",
+    "sha256": "cc4c01853b7dce5ae0a3b120f817b78b1a146002a9a402b9260621b6218d4099",
+    "bundle_sha256": "26dd02b9429f128ed454011e301ae1af66efc3edaa45cd39fad060ada3a125f4",
+    "files": 138
+  },
+  "implementation": {
+    "path": "scripts/audit_terrain_sx300_no_body.py",
+    "sha256": "e1b42276601cb5342c39fd52182d9123423141f108f6409d3d9f17d48097cdcb",
+    "py_compile": "PASS",
+    "ruff": "PASS"
+  },
+  "audit_artifact": {
+    "path": "artifacts/audits/s17_n19_terrain_sx300_no_body.json",
+    "sha256": "71f41840c84adf4c75ca9a480934908c033148fe38edeb51b20414a12a8c6978",
+    "reproduction_runs": 2,
+    "byte_identical": true
+  },
+  "gate_results": {
+    "source_and_schema": true,
+    "tile_head": true,
+    "formula_and_direction": true,
+    "independent_parity": true,
+    "synthetic_decoder": true,
+    "nonduplication": true
+  },
+  "tile_geometry_root_check": {
+    "buffer_extents_deg": {
+      "south": 37.25799687197342,
+      "north": 37.30590310857094,
+      "west": 128.9223173900071,
+      "east": 128.9991831381342
+    },
+    "required_tiles": [
+      "N37_E128"
+    ],
+    "east_margin_to_E129_deg": 0.0008168618657862226,
+    "east_margin_to_E129_m_approx": 72.32916235371123,
+    "N37_E129_required": false,
+    "head_identity": {
+      "tile_id": "N37_E128",
+      "method": "HEAD",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N37_00_E128_00_DEM/Copernicus_DSM_COG_10_N37_00_E128_00_DEM.tif",
+      "status": 200,
+      "content_length": 45141829,
+      "content_type": "image/tiff",
+      "etag": "\"70b5a10cfcfa45d800f3d7d8b31b026f\"",
+      "last_modified": "Mon, 09 May 2022 14:19:30 GMT",
+      "body_bytes": 0,
+      "pre_cutoff": true
+    }
+  },
+  "formula_checks": {
+    "direction": {
+      "u0_vminus1": 0.0,
+      "u1_v0": 270.0,
+      "zero_vector_is_nan": true,
+      "bin_2p5_tie_clockwise": 5,
+      "bin_357p5_wrap": 0
+    },
+    "parity": {
+      "cases": [
+        "flat",
+        "planar_slope",
+        "single_upwind_obstacle",
+        "all_negative_horizon",
+        "shared_corner_ray"
+      ],
+      "cell_sets_identical": true,
+      "max_abs_sx_deg": 0.0
+    },
+    "synthetic_geotiff": {
+      "pillow_version": "12.3.0",
+      "libtiff": true,
+      "zlib": true,
+      "dtype": "float32",
+      "shape": [
+        4,
+        5
+      ],
+      "values_exact": true,
+      "observed_tags": {
+        "33550": [
+          0.0002777777777777778,
+          0.0002777777777777778,
+          0.0
+        ],
+        "33922": [
+          0.0,
+          0.0,
+          0.0,
+          128.0,
+          38.0,
+          0.0
+        ],
+        "34735": [
+          1,
+          1,
+          0,
+          3,
+          1024,
+          0,
+          1,
+          2,
+          1025,
+          0,
+          1,
+          2,
+          2048,
+          0,
+          1,
+          4326
+        ],
+        "42113": "-9999"
+      },
+      "temporary_file_sha256": "58368c50e9273bc1bccddf41f4e3c5269821b3bb8393bbd92957aaf6d02a75f7",
+      "temporary_file_bytes": 366,
+      "temporary_file_removed": true,
+      "uv_lock_pillow_versions": [
+        "12.3.0"
+      ]
+    }
+  },
+  "nonduplication": {
+    "manifest_sha256": "cc4c01853b7dce5ae0a3b120f817b78b1a146002a9a402b9260621b6218d4099",
+    "bundle_sha256": "26dd02b9429f128ed454011e301ae1af66efc3edaa45cd39fad060ada3a125f4",
+    "files_scanned": 138,
+    "bytes_scanned": 936532,
+    "implementation_hits": [],
+    "textual_reference_hits": [
+      {
+        "path": "research/nodes/registry.json",
+        "lines": [
+          {
+            "line": 533,
+            "text": "     \"tag\": \"terrain lane candidate B (upstream_projection, research/lanes/S6_ext_B_terrain.md sec B4 candidate B) -- Gaussian-kernel-weighted upwind grid speed per turbine-group centroid (parsed from immutable info.xlsx via src/baram/data/"
+          }
+        ]
+      },
+      {
+        "path": "research/nodes/s9_n4_upwind_projection.py",
+        "lines": [
+          {
+            "line": 4,
+            "text": "BEFORE candidate A (Sx_grid) because it is far cheaper (\"cheap failure first\") and needs"
+          }
+        ]
+      }
+    ],
+    "binary_or_generated_bodies_read": 0
+  },
+  "execution_accounting": {
+    "attempts": 4,
+    "head_requests_total": 4,
+    "head_request_methods": [
+      "HEAD",
+      "HEAD",
+      "HEAD",
+      "HEAD"
+    ],
+    "dem_tile_body_bytes": 0,
+    "attempt_1": "Failed only the synthetic single-obstacle positive-sign assertion after successful metadata gates; no artifact accepted. Fixture height was increased, formula unchanged.",
+    "attempt_2": "Completed; root then identified that cutoff and uv.lock assertions were implicit rather than executable. Artifact superseded.",
+    "attempts_3_4": "Added explicit Last-Modified cutoff and uv.lock Pillow assertions; two byte-identical accepted runs.",
+    "model_or_optimizer_fits": 0,
+    "official_or_component_score_calls": 0,
+    "strict_protocol_calls": 0,
+    "comparison_index_consumed": false,
+    "comparison_count_remains": 3,
+    "weather_rows": 0,
+    "labels_targets_scada_rows": 0,
+    "2024_access": false,
+    "test_access": false,
+    "rejected_ecmwf_access": false,
+    "quarantined_n10_access": false,
+    "dependency_changes": false,
+    "dacon_actions": []
+  },
+  "evidence_boundary": {
+    "prerequisite": "directly_supported",
+    "published_formula_and_parameters": "directly_supported",
+    "baram_model_or_score_gain": "near_match_only_unverified",
+    "claim": "This pass authorizes one separately predeclared static DEM-body extraction only. It does not authorize a model fit, score, or terrain gain claim."
+  },
+  "verdict": "READY_STATIC_LOOKUP_EXTRACTION",
+  "next_handoff": [
+    "S17-N20_TERRAIN_SX300_H8_STATIC_LOOKUP_EXTRACTION"
+  ],
+  "preclose_snapshot": {
+    "pending": [
+      "S17-N19_TERRAIN_SX300_H8_NO_BODY_PREREQUISITE_AUDIT"
+    ],
+    "closed": [
+      "S17-N10B_ISSUANCE_CUBE_2022_2023_CORRECTED_AUDIT",
+      "S17-N10_ISSUANCE_CUBE_TIMING_AND_MISSINGNESS_AUDIT",
+      "S17-N11A_FOUR_MAPPING_10MIN_SCADA_CORRECTED_DIAGNOSTIC",
+      "S17-N11_FOUR_MAPPING_TRAINING_WIND_DIAGNOSTIC",
+      "S17-N12_VERTICAL_PROFILE_TERRAIN_PREREQUISITE_AUDIT",
+      "S17-N13A_R2_NO_REFIT_TYPED_PROVENANCE_RECOVERY",
+      "S17-N13_R2_TWO_COMPONENT_VERTICAL_PCA_STRICT_PREQUENTIAL",
+      "S17-N14_R3_HEIGHT_ONLY_TERRAIN_PREREQUISITE_AUDIT",
+      "S17-N15A_R3_CORRECTED_PRIMARY_FORMULA_IDENTIFIABILITY_GATE",
+      "S17-N15_R3_COPERNICUS_GLO30_STATIC_EXTRACTION_AND_FORMULA_FREEZE",
+      "S17-N16_R4_SOURCE_SEPARATED_VS_CONCAT_PREREQUISITE_AUDIT",
+      "S17-N17_R4_NO_REFIT_STRICT_SOURCE_SEPARATION_COMPARISON",
+      "S17-N18_POST_RWA_FRONTIER_RESEARCH_INTAKE",
+      "S17-N2_EVENT_LEDGER_ENVELOPE",
+      "S17-N3_STRICT_PREQUENTIAL_EVALUATION_REPAIR",
+      "S17-N4_ECMWF_18Z_FIXED_LEAD_AUDIT",
+      "S17-N5_ECMWF_18Z_2023_EXTRACTION",
+      "S17-N5_ECMWF_18Z_2023_INNOVATION_PROBE",
+      "S17-N6A_FAIL_CLOSED_SCORE_CLASS_REPAIR",
+      "S17-N6_COST5_SPO_PLUS_PREQUENTIAL",
+      "S17-N7_STRICT_ACTION_PROVENANCE_RECONSTRUCTION",
+      "S17-N8_COST5_SPO_PLUS_STRICT_PREQUENTIAL_COMPARISON",
+      "S17-N9_COST5_NO_REFIT_MATERIALIZATION_RECOVERY"
+    ],
+    "legacy": [
+      "C1N100_NOVEL_MEMBER_PROBE",
+      "C1N101_PHYSICAL_MEMBER_PROBE",
+      "C1N102_RETRIEVAL_MEMBER",
+      "C1N103_EXTERNAL_NWP_MEMBER",
+      "C1N104_M244_KEY_RECOVERED",
+      "C1N105_M244_RECIPE_READ",
+      "C1N10_BLEND_LOCALITY",
+      "C1N11_V2_REPRESENTATION",
+      "C1N12_G3_HISTORY",
+      "C1N13_ENSEMBLE_VARIANCE",
+      "C1N14_SHRINKBLEND",
+      "C1N15_WALKFORWARD",
+      "C1N16_ROBUSTNESS_AUDIT",
+      "C1N17_METRIC_ALIGNED_COMBINER",
+      "C1N18_SPREAD_SKILL",
+      "C1N19_ENVELOPE_ORACLE",
+      "C1N1_TOPRATE_MECHANISM",
+      "C1N20_ALPHA_ENDPOINT",
+      "C1N21_MOS_BIAS_CORRECTION",
+      "C1N22_GLOBAL_SHIFT",
+      "C1N23_ELIGIBLE_MOS",
+      "C1N24_MEMBER_COUNT_REOPEN",
+      "C1N25_ENVELOPE_LAMBDA",
+      "C1N26_POOL_WIDTH_SCREEN",
+      "C1N27_RESIDUAL_SIGNAL",
+      "C1N28_PERGRID_SIGNAL",
+      "C1N29_CHAMPION_AUDIT",
+      "C1N2_COLLIDER_CORRECTED",
+      "C1N30_TEMPORAL_SIGNAL",
+      "C1N31_SPACE_TIME",
+      "C1N32_LOCKBOX_OPERATOR",
+      "C1N33_SINGLE_VS_ENSEMBLE",
+      "C1N34_SHRINK_TO_BEST",
+      "C1N35_FIXED_POLICY_CORRECTION",
+      "C1N36_SOURCE_SENSITIVITY",
+      "C1N37_BAND_ALIGNED_LOSS",
+      "C1N38_BAND_LOSS_FIXED",
+      "C1N39_ARCHITECTURE_GAP",
+      "C1N3_MASS_AXIS_WIND_SECTOR",
+      "C1N40_BAND_CLASSIFIER",
+      "C1N41_BAND_CLASSIFIER_CAPACITY",
+      "C1N42_TEACHER_RESTORED",
+      "C1N43_EFFECT_TREND",
+      "C1N44_SHARPENED_DECISION",
+      "C1N45_SUBMISSION_DECISION",
+      "C1N46_CLOSURE_FALSIFICATION",
+      "C1N47_EXTERNAL_NWP_REVIVED",
+      "C1N48_MODEL_VALIDATION",
+      "C1N49_RHO_ACCEPTANCE",
+      "C1N4_BAND_CONDITIONAL_POLICY_ORACLE",
+      "C1N50_NONNEGATIVE_WEIGHTS",
+      "C1N51_EXTERNAL_SOURCE_PROBE",
+      "C1N52_EXTERNAL_CLOSURE",
+      "C1N53_SUPPLIED_EXTRACTION",
+      "C1N54_SCATTER_CEILING",
+      "C1N55_TURBINE_CORRELATION",
+      "C1N56_MEASURED_POWERCURVE",
+      "C1N57B_VARIANCE_LAW",
+      "C1N57_FICR_CEILING",
+      "C1N58_TEACHER_OOF_SPLIT",
+      "C1N59_PERFECT_PROG_BOUND",
+      "C1N5_SPATIAL_INTERPOLATION",
+      "C1N60_LEVEL_TEMPERATURE",
+      "C1N61_GRID_BOUNDARY",
+      "C1N62_MONTH_MECHANISM",
+      "C1N64_BAND_AVOIDANCE",
+      "C1N65_WIND_LIMITED_BOUND",
+      "C1N66_HETEROSCEDASTIC_WIND",
+      "C1N67_EXACT_CURVE_PROPAGATION",
+      "C1N69_SKILL_RESPONSE",
+      "C1N6_WIND50_MIDPOINT",
+      "C1N70_BASELINE_CORRECTION",
+      "C1N71_TEACHER_WEIGHT",
+      "C1N72_CURVE_BLEND",
+      "C1N74_BLOCK_LENGTH",
+      "C1N75_DAILY_GATE_ESTIMAND",
+      "C1N7_POLICY_FROZEN_GATE",
+      "C1N81_CYCLE_CONTRACT_ENFORCED",
+      "C1N8_ORACLE_LADDER",
+      "C1N92_METRIC_ALIGNED_LOSS",
+      "C1N93_ORDINAL_REPRESENTATION",
+      "C1N94_CDF_REJUDGE",
+      "C1N95_RECONSTRUCTION_GAP",
+      "C1N96_GAP_REJUDGE",
+      "C1N97_BOOSTING_ROUNDS",
+      "C1N98_REPRODUCIBILITY_ADJUDICATION",
+      "C1N99_ENSEMBLE_EXHAUSTIVE",
+      "C1N9_GATE_POWER"
+    ],
+    "comparison_count": 3,
+    "stage_coverage": [
+      "S1",
+      "S2",
+      "S3",
+      "S5",
+      "S6",
+      "S7",
+      "S8",
+      "S9",
+      "S10",
+      "S11"
+    ],
+    "frontier": [
+      "S17-N19_TERRAIN_SX300_H8_NO_BODY_PREREQUISITE_AUDIT"
+    ],
+    "evidence_complete_cycles": 23,
+    "accounted_cycles": 112,
+    "digest": "abd881b585174dffd18ad4b8dd0d984a6c8ca79ab1325bd8464d1be61bebc6ab"
+  }
+}

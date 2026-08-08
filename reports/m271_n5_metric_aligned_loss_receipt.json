@@ -1,0 +1,124 @@
+{
+  "node_id": "C1N92_METRIC_ALIGNED_LOSS",
+  "lane": "L3",
+  "parent": "C1N39_ARCHITECTURE_GAP",
+  "gate_version": "M270_MONTHLY_GATE_v1_frozen_2026-08-04",
+  "tests_premise": {
+    "node": "C1N43_EFFECT_TREND",
+    "premise": "BAND_TARGET_VANISHES_AT_FRONTIER",
+    "revival_predicate": "positive_band_effect_at_frontier_control",
+    "why_now": "C1N43 은 대조군 품질 0.5679/0.5845/0.5959 의 3 점 외삽으로 닫았고 스스로 '관측 범위 밖' 이라 기록했다. 현 대조군 0.604043 은 그 범위 밖이므로 여기서 재는 것은 외삽이 아니라 관측이다."
+  },
+  "objective": "L = alpha*CE + (1-alpha)*(-기대효용). 효용은 `bayes_decision` 이 쓰는 바로 그 식이며 결정층에만 쓰던 것을 학습에도 쓴다. 헤시안은 교차엔트로피 것을 유지한다(C1N37 의 D2 재발 방지).",
+  "model_fits": 9,
+  "arms": {
+    "ce": {
+      "total": 0.6040430448136019,
+      "one_minus_nmae": 0.8568696301481719,
+      "ficr": 0.35121645947903196,
+      "group_ficr": {
+        "1": 0.34477162605325284,
+        "2": 0.41264102315652224,
+        "3": 0.29623672922732086
+      },
+      "group_nmae": {
+        "1": 0.136457009791002,
+        "2": 0.13493981052083334,
+        "3": 0.1579942892436492
+      }
+    },
+    "util": {
+      "total": 0.5540508405936099,
+      "one_minus_nmae": 0.8119846923630085,
+      "ficr": 0.29611698882421117,
+      "group_ficr": {
+        "1": 0.313928627701649,
+        "2": 0.36498317200930336,
+        "3": 0.2094391667616811
+      },
+      "group_nmae": {
+        "1": 0.17827679635409444,
+        "2": 0.17336985461805557,
+        "3": 0.21239927193882438
+      }
+    },
+    "util_soft": {
+      "total": 0.5858400642098366,
+      "one_minus_nmae": 0.8349457557610056,
+      "ficr": 0.3367343726586675,
+      "group_ficr": {
+        "1": 0.34749405136119343,
+        "2": 0.408794912743585,
+        "3": 0.253914153871224
+      },
+      "group_nmae": {
+        "1": 0.15573460723863689,
+        "2": 0.15404132524305555,
+        "3": 0.1853868002352909
+      }
+    }
+  },
+  "gains": {
+    "ce": 0.0,
+    "util": -0.049992204219992065,
+    "util_soft": -0.01820298060376535
+  },
+  "best_arm": "util_soft",
+  "best_gain": -0.01820298060376535,
+  "gradient_scale_ratio": {
+    "ce": 1.0,
+    "util": 4.17806975393556,
+    "util_soft": 2.2712279015742243
+  },
+  "chosen_temperature": {
+    "ce": {
+      "dev-2023-Q2": 2.2,
+      "dev-2023-Q3": 2.2,
+      "dev-2023-Q4": 2.2
+    },
+    "util": {
+      "dev-2023-Q2": 2.2,
+      "dev-2023-Q3": 2.2,
+      "dev-2023-Q4": 2.2
+    },
+    "util_soft": {
+      "dev-2023-Q2": 2.2,
+      "dev-2023-Q3": 2.2,
+      "dev-2023-Q4": 2.2
+    }
+  },
+  "contributions": {
+    "nmae": -0.010961937193583127,
+    "ficr": -0.007241043410182224
+  },
+  "detection_threshold": 0.001013,
+  "checks": {
+    "V1_ce_reproduces_control": true,
+    "V1_gap": 4.4813601940418835e-08,
+    "V2_gradient_scale_ok": true,
+    "V3_probabilities_valid": true
+  },
+  "hypotheses": {
+    "H1_alignment_positive": false,
+    "H2_gain_is_nmae_side": false,
+    "H3_clears_detection": false,
+    "H4_more_utility_is_better": false
+  },
+  "gate": {
+    "signature": "[----]",
+    "flags": {
+      "G1": false,
+      "G2": false,
+      "G3": false,
+      "G4": false
+    },
+    "positive_months": 2,
+    "months_scored": 9,
+    "bootstrap_q05": -0.040994194757568304
+  },
+  "verdict": "C1N43_CONFIRMED_BY_OBSERVATION_LOSS_AXIS_CLOSES",
+  "dacon_upload": false,
+  "lockbox_used": false,
+  "generated_at": "2026-08-06T05:11:32.268134+00:00",
+  "digest": "56d7b7ef0e3e1b90"
+}

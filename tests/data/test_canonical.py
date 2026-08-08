@@ -59,3 +59,11 @@ def test_actual_weather_contract(canonical_tables: CanonicalTables) -> None:
     assert len(canonical_tables.gfs_test) == 78840
     assert len(canonical_tables.ldaps_train) == 420864
     assert len(canonical_tables.ldaps_test) == 140160
+
+
+def test_actual_canonical_turbine_contract(canonical_tables: CanonicalTables) -> None:
+    turbines = canonical_tables.turbines
+    assert len(turbines) == 17
+    assert turbines["turbine_id"].is_unique
+    assert turbines.groupby("group_id").size().to_dict() == {1: 6, 2: 6, 3: 5}
+    assert turbines["hub_height_m"].eq(117.0).all()

@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "artifact": "SK@v4",
+  "created_at": "2026-08-08T17:53:23.867278+09:00",
+  "status": "SKELETON_APPROVAL_PENDING",
+  "approval_request": "SK@v4 승인",
+  "skeleton": {
+    "path": ".planning/2026-08-01-leaderboard-top-4-loop/SK_v4.md",
+    "lines": 94,
+    "sha256": "474dfdd3912ab255b26b6988442d8107a0c1c0c9c2e7d3db8ceb43ad1ebb4530",
+    "stable_locator": ".planning/2026-08-01-leaderboard-top-4-loop/SK_v4.md"
+  },
+  "revision_base": [
+    "SK@v3",
+    "DS@v3",
+    "IP@v2"
+  ],
+  "requested_research_scope": [
+    "RWA-LOCAL",
+    "RWA-EVAL",
+    "RWA-DATA",
+    "RWA-MODEL",
+    "RWA-LOOP",
+    "RWA-EXT"
+  ],
+  "preapproval_actions": {
+    "bounded_local_authority_and_workflow_intake_audit": true,
+    "web_or_deep_research": false,
+    "subagents_spawned": 0,
+    "source_implementation": false,
+    "model_fits": 0,
+    "score_calls": 0,
+    "dependency_changes": false,
+    "external_data_retrieval": false,
+    "dacon_or_account_actions": false,
+    "new_2024_evaluation": false
+  },
+  "not_authorized_before_approval": [
+    "web/deep research",
+    "research-lane dispatch",
+    "source edits",
+    "model fitting",
+    "dependency changes",
+    "bulk external data retrieval",
+    "Dacon/account actions",
+    "remote inference/compute/Git",
+    "2024 evaluation"
+  ],
+  "field_diff": {
+    "path": "reports/sk_v4_field_diff.md",
+    "sha256": "b77082ff5d6f5427b9869121c79de2ebc93bcdb29ba42b0529f4f0fd8e016491"
+  }
+}

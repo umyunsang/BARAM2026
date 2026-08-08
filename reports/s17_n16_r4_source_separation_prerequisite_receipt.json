@@ -1,0 +1,278 @@
+{
+  "schema_version": 1,
+  "node_id": "S17-N16_R4_SOURCE_SEPARATED_VS_CONCAT_PREREQUISITE_AUDIT",
+  "closed_at": "2026-08-08T21:45:21.615111+09:00",
+  "predeclaration": {
+    "path": "reports/s17_n16_r4_source_separation_prerequisite_predeclaration.json",
+    "sha256": "6d4a0208dae9e689b66e61a9b657fe718d04d50bc7cac0fd089ca9c9ac4aca23",
+    "event_sha256": "1c7e7ba15809ebfc682ca8514684bd3bab31f6e082d397428aa2c574249fa9a8"
+  },
+  "implementation": {
+    "path": "scripts/audit_source_separation_prerequisites.py",
+    "sha256": "9e766d7c2e8db39c02903acd890e7591e8ca566dd9bf6852f6d90fcb4f1afefd"
+  },
+  "input_bundle_sha256": "27921fdf67a53bc371818d4b7a614705b8aa359b5ba83e833ec4215045b34aec",
+  "artifact": {
+    "path": "artifacts/audits/s17_n16_r4_source_separation_prerequisite.json",
+    "sha256": "03aa16308deb4bffaa695605d22413dc6e1e9ea69ec82153a963e9faa81794c8",
+    "reproduction_sha256": "03aa16308deb4bffaa695605d22413dc6e1e9ea69ec82153a963e9faa81794c8",
+    "byte_identical": true
+  },
+  "findings": {
+    "known_outcome_exposure": "The legacy registry already records DL/DG solo 0.608847/0.612159 and a negative equal-average conclusion, and root has read it. Any later strict result is retrospective confirmation, never a fresh holdout or independent discovery.",
+    "keys": {
+      "hashes": {
+        "D": "f1e647ba5eb7529f8ff9e69e818dfb7697044c19b15839e05f97e89cea83a010",
+        "DL": "f1e647ba5eb7529f8ff9e69e818dfb7697044c19b15839e05f97e89cea83a010",
+        "DG": "f1e647ba5eb7529f8ff9e69e818dfb7697044c19b15839e05f97e89cea83a010"
+      },
+      "byte_identical": true,
+      "rows": 19795,
+      "columns": [
+        "fold_id",
+        "group_id",
+        "forecast_kst_dtm",
+        "cf",
+        "mean_gen_g"
+      ]
+    },
+    "probabilities": {
+      "D": {
+        "path": "research/nodes/S7-N8_D_prob.npy",
+        "sha256": "e567109f8a86c37411e84fab0329af8465788988112ece114035753e60c52f0e",
+        "shape": [
+          19795,
+          26
+        ],
+        "finite": true,
+        "min": 6.517314021905285e-06,
+        "max": 0.9923794052953798,
+        "max_probability_sum_abs_error": 1.1102230246251565e-15,
+        "passes": true
+      },
+      "DL": {
+        "path": "research/nodes/S7-N8_DL_prob.npy",
+        "sha256": "0f34fd630ef33983cb1c7b5abfa349e53c43f5359050d3b6acfd0abbef041da6",
+        "shape": [
+          19795,
+          26
+        ],
+        "finite": true,
+        "min": 8.242292917267107e-06,
+        "max": 0.9930348974617689,
+        "max_probability_sum_abs_error": 1.1102230246251565e-15,
+        "passes": true
+      },
+      "DG": {
+        "path": "research/nodes/S7-N8_DG_prob.npy",
+        "sha256": "ccb229fd427a5760a85f7e6490d372d947150ff6b1af581b94a496ab6c5d434b",
+        "shape": [
+          19795,
+          26
+        ],
+        "finite": true,
+        "min": 8.935780218909882e-06,
+        "max": 0.9905349457173829,
+        "max_probability_sum_abs_error": 1.2212453270876722e-15,
+        "passes": true
+      }
+    },
+    "source_columns": {
+      "ldaps_count": 397,
+      "gfs_count": 458,
+      "excluded_count": 30,
+      "ldaps_forbidden": [],
+      "gfs_forbidden": []
+    },
+    "architecture_markers": {
+      "single_build_function_for_both_sources": true,
+      "outer_past_only_mask": true,
+      "same_regressor_config": true,
+      "same_classifier_config": true,
+      "source_column_split_only": true
+    },
+    "chronology": {
+      "first_operating_days": {
+        "dev-2023-Q2": "2023-04-01",
+        "dev-2023-Q3": "2023-07-01",
+        "dev-2023-Q4": "2023-10-01"
+      },
+      "raw_days_after_first_day_drop": {
+        "dev-2023-Q2": 90,
+        "dev-2023-Q3": 91,
+        "dev-2023-Q4": 91
+      },
+      "expected_before_complete_day_intersection": {
+        "dev-2023-Q2": 90,
+        "dev-2023-Q3": 91,
+        "dev-2023-Q4": 91
+      },
+      "n7_strict_inequalities": true,
+      "complete_day_intersection_still_required": true
+    },
+    "gates": {
+      "byte_identical_key_tables": true,
+      "probability_integrity": true,
+      "matched_architecture": true,
+      "source_purity": true,
+      "reconstructible_outer_chronology": true,
+      "legacy_non_score_bearing": true,
+      "no_prior_exact_s17_r4_comparison": true
+    }
+  },
+  "adjudication": "READY_NO_REFIT_STRICT_R4_MATERIALIZATION. Frozen D/DL/DG keys are byte-identical (19,795 rows); 26-class probability arrays are finite/normalized; DL has 397 source-pure columns and DG 458, with matched model code and idx<fold-start masks. Dropping each first operating day reconstructs strict fit-before-basis chronology; complete-day intersection remains mandatory. Legacy negative scores are disclosed outcome exposure and remain non-score-bearing, so any S17 result is retrospective confirmation only.",
+  "actions": {
+    "model_fits": 0,
+    "action_or_policy_calculations": 0,
+    "official_score_calls": 0,
+    "comparison_index": null,
+    "test_or_2024_access": false,
+    "dacon_actions": []
+  },
+  "verification": {
+    "compile": "pass",
+    "ruff": "All checks passed",
+    "deterministic_reproduction": true,
+    "event_chain_verified": true
+  },
+  "preclose_snapshot": {
+    "pending": [
+      "S17-N16_R4_SOURCE_SEPARATED_VS_CONCAT_PREREQUISITE_AUDIT"
+    ],
+    "closed": [
+      "S17-N10B_ISSUANCE_CUBE_2022_2023_CORRECTED_AUDIT",
+      "S17-N10_ISSUANCE_CUBE_TIMING_AND_MISSINGNESS_AUDIT",
+      "S17-N11A_FOUR_MAPPING_10MIN_SCADA_CORRECTED_DIAGNOSTIC",
+      "S17-N11_FOUR_MAPPING_TRAINING_WIND_DIAGNOSTIC",
+      "S17-N12_VERTICAL_PROFILE_TERRAIN_PREREQUISITE_AUDIT",
+      "S17-N13A_R2_NO_REFIT_TYPED_PROVENANCE_RECOVERY",
+      "S17-N13_R2_TWO_COMPONENT_VERTICAL_PCA_STRICT_PREQUENTIAL",
+      "S17-N14_R3_HEIGHT_ONLY_TERRAIN_PREREQUISITE_AUDIT",
+      "S17-N15A_R3_CORRECTED_PRIMARY_FORMULA_IDENTIFIABILITY_GATE",
+      "S17-N15_R3_COPERNICUS_GLO30_STATIC_EXTRACTION_AND_FORMULA_FREEZE",
+      "S17-N2_EVENT_LEDGER_ENVELOPE",
+      "S17-N3_STRICT_PREQUENTIAL_EVALUATION_REPAIR",
+      "S17-N4_ECMWF_18Z_FIXED_LEAD_AUDIT",
+      "S17-N5_ECMWF_18Z_2023_EXTRACTION",
+      "S17-N5_ECMWF_18Z_2023_INNOVATION_PROBE",
+      "S17-N6A_FAIL_CLOSED_SCORE_CLASS_REPAIR",
+      "S17-N6_COST5_SPO_PLUS_PREQUENTIAL",
+      "S17-N7_STRICT_ACTION_PROVENANCE_RECONSTRUCTION",
+      "S17-N8_COST5_SPO_PLUS_STRICT_PREQUENTIAL_COMPARISON",
+      "S17-N9_COST5_NO_REFIT_MATERIALIZATION_RECOVERY"
+    ],
+    "legacy": [
+      "C1N100_NOVEL_MEMBER_PROBE",
+      "C1N101_PHYSICAL_MEMBER_PROBE",
+      "C1N102_RETRIEVAL_MEMBER",
+      "C1N103_EXTERNAL_NWP_MEMBER",
+      "C1N104_M244_KEY_RECOVERED",
+      "C1N105_M244_RECIPE_READ",
+      "C1N10_BLEND_LOCALITY",
+      "C1N11_V2_REPRESENTATION",
+      "C1N12_G3_HISTORY",
+      "C1N13_ENSEMBLE_VARIANCE",
+      "C1N14_SHRINKBLEND",
+      "C1N15_WALKFORWARD",
+      "C1N16_ROBUSTNESS_AUDIT",
+      "C1N17_METRIC_ALIGNED_COMBINER",
+      "C1N18_SPREAD_SKILL",
+      "C1N19_ENVELOPE_ORACLE",
+      "C1N1_TOPRATE_MECHANISM",
+      "C1N20_ALPHA_ENDPOINT",
+      "C1N21_MOS_BIAS_CORRECTION",
+      "C1N22_GLOBAL_SHIFT",
+      "C1N23_ELIGIBLE_MOS",
+      "C1N24_MEMBER_COUNT_REOPEN",
+      "C1N25_ENVELOPE_LAMBDA",
+      "C1N26_POOL_WIDTH_SCREEN",
+      "C1N27_RESIDUAL_SIGNAL",
+      "C1N28_PERGRID_SIGNAL",
+      "C1N29_CHAMPION_AUDIT",
+      "C1N2_COLLIDER_CORRECTED",
+      "C1N30_TEMPORAL_SIGNAL",
+      "C1N31_SPACE_TIME",
+      "C1N32_LOCKBOX_OPERATOR",
+      "C1N33_SINGLE_VS_ENSEMBLE",
+      "C1N34_SHRINK_TO_BEST",
+      "C1N35_FIXED_POLICY_CORRECTION",
+      "C1N36_SOURCE_SENSITIVITY",
+      "C1N37_BAND_ALIGNED_LOSS",
+      "C1N38_BAND_LOSS_FIXED",
+      "C1N39_ARCHITECTURE_GAP",
+      "C1N3_MASS_AXIS_WIND_SECTOR",
+      "C1N40_BAND_CLASSIFIER",
+      "C1N41_BAND_CLASSIFIER_CAPACITY",
+      "C1N42_TEACHER_RESTORED",
+      "C1N43_EFFECT_TREND",
+      "C1N44_SHARPENED_DECISION",
+      "C1N45_SUBMISSION_DECISION",
+      "C1N46_CLOSURE_FALSIFICATION",
+      "C1N47_EXTERNAL_NWP_REVIVED",
+      "C1N48_MODEL_VALIDATION",
+      "C1N49_RHO_ACCEPTANCE",
+      "C1N4_BAND_CONDITIONAL_POLICY_ORACLE",
+      "C1N50_NONNEGATIVE_WEIGHTS",
+      "C1N51_EXTERNAL_SOURCE_PROBE",
+      "C1N52_EXTERNAL_CLOSURE",
+      "C1N53_SUPPLIED_EXTRACTION",
+      "C1N54_SCATTER_CEILING",
+      "C1N55_TURBINE_CORRELATION",
+      "C1N56_MEASURED_POWERCURVE",
+      "C1N57B_VARIANCE_LAW",
+      "C1N57_FICR_CEILING",
+      "C1N58_TEACHER_OOF_SPLIT",
+      "C1N59_PERFECT_PROG_BOUND",
+      "C1N5_SPATIAL_INTERPOLATION",
+      "C1N60_LEVEL_TEMPERATURE",
+      "C1N61_GRID_BOUNDARY",
+      "C1N62_MONTH_MECHANISM",
+      "C1N64_BAND_AVOIDANCE",
+      "C1N65_WIND_LIMITED_BOUND",
+      "C1N66_HETEROSCEDASTIC_WIND",
+      "C1N67_EXACT_CURVE_PROPAGATION",
+      "C1N69_SKILL_RESPONSE",
+      "C1N6_WIND50_MIDPOINT",
+      "C1N70_BASELINE_CORRECTION",
+      "C1N71_TEACHER_WEIGHT",
+      "C1N72_CURVE_BLEND",
+      "C1N74_BLOCK_LENGTH",
+      "C1N75_DAILY_GATE_ESTIMAND",
+      "C1N7_POLICY_FROZEN_GATE",
+      "C1N81_CYCLE_CONTRACT_ENFORCED",
+      "C1N8_ORACLE_LADDER",
+      "C1N92_METRIC_ALIGNED_LOSS",
+      "C1N93_ORDINAL_REPRESENTATION",
+      "C1N94_CDF_REJUDGE",
+      "C1N95_RECONSTRUCTION_GAP",
+      "C1N96_GAP_REJUDGE",
+      "C1N97_BOOSTING_ROUNDS",
+      "C1N98_REPRODUCIBILITY_ADJUDICATION",
+      "C1N99_ENSEMBLE_EXHAUSTIVE",
+      "C1N9_GATE_POWER"
+    ],
+    "comparison_count": 2,
+    "stage_coverage": [
+      "S1",
+      "S2",
+      "S3",
+      "S5",
+      "S6",
+      "S7",
+      "S8",
+      "S9",
+      "S10",
+      "S11"
+    ],
+    "frontier": [
+      "S17-N16_R4_SOURCE_SEPARATED_VS_CONCAT_PREREQUISITE_AUDIT"
+    ],
+    "evidence_complete_cycles": 20,
+    "accounted_cycles": 109,
+    "digest": "1e34df9d18fa138f50f1d745fc9223f5fe20cae4a183256904136023d136595e"
+  },
+  "verdict": "PASS_READY_NO_REFIT_STRICT_R4_MATERIALIZATION_NOT_MODEL_SCORE",
+  "next_handoff": [
+    "S17-N17_R4_NO_REFIT_STRICT_SOURCE_SEPARATION_COMPARISON"
+  ]
+}

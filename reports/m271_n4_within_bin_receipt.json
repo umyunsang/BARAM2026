@@ -1,0 +1,121 @@
+{
+  "node_id": "C1N90_WITHIN_BIN_INTEGRATION",
+  "lane": "L7",
+  "parent": "C1N68_EMPIRICAL_DECOMPOSITION",
+  "gate_version": "M270_MONTHLY_GATE_v1_frozen_2026-08-04",
+  "defect": "`bayes_decision` 이 각 구간을 중심점의 점질량으로 다룬다. 구간 폭 0.02, FICR 창 ±0.06 이므로 창 경계 근처에서 기대단위를 과대평가해 argmax 를 경계 쪽으로 미는 **체계적 편향**이 생긴다.",
+  "surface": {
+    "spec_digest": "195531818b8ab2b7c1e59965",
+    "probability_digest": "8141403f56cd7eba",
+    "from_cache": true
+  },
+  "class_width": 0.02,
+  "subgrid": 9,
+  "no_retraining": true,
+  "arms": {
+    "point": {
+      "total": 0.6040430448136019,
+      "one_minus_nmae": 0.8568696301481719,
+      "ficr": 0.35121645947903196,
+      "group_ficr": {
+        "1": 0.34477162605325284,
+        "2": 0.41264102315652224,
+        "3": 0.29623672922732086
+      },
+      "group_nmae": {
+        "1": 0.136457009791002,
+        "2": 0.13493981052083334,
+        "3": 0.1579942892436492
+      }
+    },
+    "uniform": {
+      "total": 0.605932688417657,
+      "one_minus_nmae": 0.8568574517915688,
+      "ficr": 0.35500792504374523,
+      "group_ficr": {
+        "1": 0.34852098952050414,
+        "2": 0.4184612792286646,
+        "3": 0.29804150638206695
+      },
+      "group_nmae": {
+        "1": 0.13608751254219262,
+        "2": 0.1355524449652778,
+        "3": 0.15778768711782326
+      }
+    },
+    "empirical": {
+      "total": 0.6059133493481578,
+      "one_minus_nmae": 0.8570397212101549,
+      "ficr": 0.35478697748616056,
+      "group_ficr": {
+        "1": 0.349228557592937,
+        "2": 0.41670409178512974,
+        "3": 0.29842828308041497
+      },
+      "group_nmae": {
+        "1": 0.13590901053081794,
+        "2": 0.13553345667824074,
+        "3": 0.15743836916047657
+      }
+    }
+  },
+  "gains": {
+    "point": 0.0,
+    "uniform": 0.0018896436040550801,
+    "empirical": 0.0018703045345558333
+  },
+  "best_arm": "uniform",
+  "best_gain": 0.0018896436040550801,
+  "chosen_temperature": {
+    "point": {
+      "dev-2023-Q2": 2.2,
+      "dev-2023-Q3": 2.2,
+      "dev-2023-Q4": 2.2
+    },
+    "uniform": {
+      "dev-2023-Q2": 2.2,
+      "dev-2023-Q3": 2.2,
+      "dev-2023-Q4": 2.2
+    },
+    "empirical": {
+      "dev-2023-Q2": 2.2,
+      "dev-2023-Q3": 2.2,
+      "dev-2023-Q4": 2.2
+    }
+  },
+  "detection_threshold": 0.001013,
+  "contributions": {
+    "ficr": 0.001895732782356635,
+    "nmae": -6.0891783015271095e-06
+  },
+  "checks": {
+    "V1_point_reproduces_control": true,
+    "V2_same_probability": true,
+    "V3_uniform_sums_to_one": true
+  },
+  "hypotheses": {
+    "H1_uniform_beats_point": true,
+    "H2_empirical_beats_uniform": false,
+    "H3_clears_detection": true,
+    "H4_ficr_dominant": true,
+    "H5_gate_passed": false
+  },
+  "gate": {
+    "signature": "[-O-O]",
+    "flags": {
+      "G1": false,
+      "G2": true,
+      "G3": false,
+      "G4": true
+    },
+    "positive_months": 5,
+    "months_scored": 9,
+    "bootstrap_q05": -0.0015768061055704385,
+    "min_delta": -0.005201837527583186
+  },
+  "verdict": "WITHIN_BIN_GAIN_ABOVE_DETECTION_GATE_REJECTS",
+  "dacon_upload": false,
+  "lockbox_used": false,
+  "generated_at": "2026-08-06T03:47:41.412643+00:00",
+  "digest": "263e1bf1d4aead07"
+}

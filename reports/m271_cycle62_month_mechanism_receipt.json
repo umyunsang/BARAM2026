@@ -1,0 +1,130 @@
+{
+  "node_id": "C1N62_MONTH_MECHANISM",
+  "lane": "L8",
+  "parent": "C1N60_LEVEL_TEMPERATURE",
+  "candidate": false,
+  "diagnostic_only": true,
+  "surface": {
+    "spec_digest": "994ae6dff5796332daf21a6f",
+    "probability_digest": "8141403f56cd7eba",
+    "from_cache": true
+  },
+  "method": "PRESPECIFIED_MODERATOR_DECOMPOSITION (Assmann 2000; Rothwell 2005)",
+  "level_edges": [
+    0.25,
+    0.7
+  ],
+  "months": [
+    {
+      "month": "2023-04",
+      "delta_total": 0.021646352057102525,
+      "delta_ficr": 0.044182303378110355,
+      "delta_nmae": -0.0008895992639053052,
+      "rows": 2157,
+      "M1_top_mass": 0.25498377375985165,
+      "M2_top_false_positive": 0.33454545454545453,
+      "M3_mean_rate": 0.38290090607913696
+    },
+    {
+      "month": "2023-05",
+      "delta_total": 0.00048083102507179287,
+      "delta_ficr": 0.001014144119825755,
+      "delta_nmae": -5.2482069682113774e-05,
+      "rows": 2232,
+      "M1_top_mass": 0.06362007168458782,
+      "M2_top_false_positive": 0.33098591549295775,
+      "M3_mean_rate": 0.2491439206882574
+    },
+    {
+      "month": "2023-06",
+      "delta_total": -0.006017191928739174,
+      "delta_ficr": -0.011296931497534302,
+      "delta_nmae": -0.0007374523599439353,
+      "rows": 2160,
+      "M1_top_mass": 0.08287037037037037,
+      "M2_top_false_positive": 0.4301675977653631,
+      "M3_mean_rate": 0.2146637363138105
+    },
+    {
+      "month": "2023-07",
+      "delta_total": -0.00420673816307926,
+      "delta_ficr": -0.006891678032077131,
+      "delta_nmae": -0.001521798294081278,
+      "rows": 2217,
+      "M1_top_mass": 0.05894308943089431,
+      "M2_top_false_positive": 0.4367816091954023,
+      "M3_mean_rate": 0.15559832103455404
+    },
+    {
+      "month": "2023-08",
+      "delta_total": -0.006367417419808397,
+      "delta_ficr": -0.011616280413767777,
+      "delta_nmae": -0.001118554425849072,
+      "rows": 2232,
+      "M1_top_mass": 0.056899641577060935,
+      "M2_top_false_positive": 0.7322834645669292,
+      "M3_mean_rate": 0.1459742652637917
+    },
+    {
+      "month": "2023-09",
+      "delta_total": 0.0020043515158729708,
+      "delta_ficr": 0.00431394955157377,
+      "delta_nmae": -0.0003052465198278842,
+      "rows": 2160,
+      "M1_top_mass": 0.008333333333333333,
+      "M2_top_false_positive": 0.6111111111111112,
+      "M3_mean_rate": 0.12138624359016756
+    },
+    {
+      "month": "2023-10",
+      "delta_total": 0.0016979620185204602,
+      "delta_ficr": 0.005313688802580485,
+      "delta_nmae": -0.0019177647655396202,
+      "rows": 2232,
+      "M1_top_mass": 0.041498429789143115,
+      "M2_top_false_positive": 0.5027027027027027,
+      "M3_mean_rate": 0.36681722781112847
+    },
+    {
+      "month": "2023-11",
+      "delta_total": -0.005409014347829921,
+      "delta_ficr": -0.0060736157735523655,
+      "delta_nmae": -0.004744412922107477,
+      "rows": 2160,
+      "M1_top_mass": 0.38055555555555554,
+      "M2_top_false_positive": 0.26034063260340634,
+      "M3_mean_rate": 0.5184669846842545
+    },
+    {
+      "month": "2023-12",
+      "delta_total": 0.041039430543899136,
+      "delta_ficr": 0.08175213160661188,
+      "delta_nmae": 0.0003267294811862831,
+      "rows": 2232,
+      "M1_top_mass": 0.3588709677419355,
+      "M2_top_false_positive": 0.3333333333333333,
+      "M3_mean_rate": 0.46059355756398035
+    }
+  ],
+  "spearman": {
+    "M1_top_mass": 0.08333333333333333,
+    "M2_top_false_positive": -0.2,
+    "M3_mean_rate": 0.3333333333333333
+  },
+  "false_positive_mean": {
+    "negative_months": 0.4648933260327752,
+    "positive_months": 0.4225357034371119
+  },
+  "hypotheses": {
+    "H1_false_positive_negatively_correlated": false,
+    "H2_mass_positively_correlated": true,
+    "H3_false_positive_dominates": true,
+    "H4_negative_months_higher_false_positive": true
+  },
+  "verdict": "PREDECLARED_MODERATORS_DO_NOT_EXPLAIN",
+  "no_training": true,
+  "dacon_upload": false,
+  "lockbox_used": false,
+  "generated_at": "2026-08-05T10:07:05.711238+00:00",
+  "digest": "80443288e36b6516"
+}

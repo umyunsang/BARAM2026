@@ -1,0 +1,26 @@
+{
+  "event_type": "PREDECLARED",
+  "cycle_id": "S17-N22A_M115_TERRAIN_NO_REFIT_TYPED_PROVENANCE_RECOVERY",
+  "stage_id": "S8",
+  "node_id": "S17-N22A_M115_TERRAIN_NO_REFIT_TYPED_PROVENANCE_RECOVERY",
+  "actor": "root",
+  "occurred_at": "2026-08-08T23:42:49.808488+09:00",
+  "body": {
+    "preregistration_sha256": "9bdff17b0e6eb54cf56e20b3cc563bd861e93124eff165430770db23406e7934",
+    "parent_ids": [
+      "S17-N22_M115_TERRAIN_SX300_H8_STRICT_PREQUENTIAL_COMPARISON"
+    ],
+    "mechanism": "Typed-provenance-only recovery of the immutable, exact-control-reproducing N22 prediction family; no numerical degree of freedom is reopened.",
+    "treatment": "Byte-identical N22 TERRAIN_SX300_H8_M115_REPLACED action vector.",
+    "control": "Byte-identical N22 Champion and M115 refit-zero vectors.",
+    "metric": "Unchanged S17-N3 strict prequential Total at conditional comparison index 4.",
+    "min_effect": 0.001635,
+    "score_bearing": true,
+    "novelty_signature": "N22_NO_REFIT_TYPED_PROVENANCE_RECOVERY_V1",
+    "basis_evidence_ids": [
+      "N22_PARTIAL_PREDICTIONS_IMMUTABLE",
+      "N22_CONTROL_MAX_ABS_ZERO",
+      "N22_NO_SCORE"
+    ]
+  }
+}

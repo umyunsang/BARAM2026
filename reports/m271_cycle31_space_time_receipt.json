@@ -1,0 +1,241 @@
+{
+ "dacon_upload": false,
+ "decided_utc": "2026-08-04T08:15:24.654795+00:00",
+ "external_actions": [],
+ "lane": "L2",
+ "lockbox_reopened": false,
+ "model_fit_note": "진단용 fold-외 잔차 모형. 제출 후보가 아니며 2024 행 미사용",
+ "model_fits": 3,
+ "new_2024_evaluation": false,
+ "node": "C1N31_SPACE_TIME",
+ "report_sha256": "cd1dfd621097beb81fedc84f83a3b20e49b65f8c40d8fc6b773fa3ba0b58888b",
+ "result": {
+  "design": "2x2 (공간 해상도 x 시간 해상도) 의 마지막 칸",
+  "feature_counts": {
+   "contemporaneous": 795,
+   "diff": 795,
+   "lag": 1590,
+   "lead": 1590
+  },
+  "features": {
+   "eligible_rows": 11486,
+   "join_rows_lost": 0,
+   "n_features": 4770,
+   "rows_used": 19782
+  },
+  "gap_to_target": 0.023403172236948433,
+  "gate": {
+   "bootstrap_q05": -0.03307897194800928,
+   "flags": {
+    "G1": false,
+    "G2": false,
+    "G3": false,
+    "G4": false
+   },
+   "months_scored": 9,
+   "passed": false,
+   "positive_months": 1
+  },
+  "gate_modified": false,
+  "gate_version": "M270_MONTHLY_GATE_v1_frozen_2026-08-04",
+  "grid_of_measurements": {
+   "additive_prediction": -0.024,
+   "contemporaneous_gridmean": -0.0535,
+   "contemporaneous_pergrid": -0.0453,
+   "interaction": -0.012144703029138636,
+   "observed_increment": 0.017355296970861363,
+   "space_increment": 0.008199999999999999,
+   "temporal_gridmean": -0.0322,
+   "temporal_pergrid": -0.036144703029138636,
+   "time_increment": 0.0213
+  },
+  "incumbent": "M271_MEDIAN4",
+  "model_params": {
+   "colsample_bytree": 0.15,
+   "deterministic": true,
+   "force_row_wise": true,
+   "learning_rate": 0.03,
+   "min_child_samples": 300,
+   "n_estimators": 400,
+   "n_jobs": 1,
+   "num_leaves": 15,
+   "objective": "regression_l1",
+   "random_state": 20260804,
+   "subsample": 0.8,
+   "subsample_freq": 1,
+   "verbose": -1
+  },
+  "node": "C1N31_SPACE_TIME",
+  "parent_node": "C1N30_TEMPORAL_SIGNAL",
+  "predeclared_check": {
+   "H1_expectation": "fold-외 R^2 > 0.02",
+   "H1_held": false,
+   "H1_measured": -0.036144703029138636,
+   "H2_expectation": "R^2 > 앞선 최고 (-0.0322)",
+   "H2_held": false,
+   "H3_expectation": "증분이 가법 예측 (0.0295) 초과 — 공간x시간 상호작용",
+   "H3_held": false,
+   "H3_measured_increment": 0.017355296970861363,
+   "H4_expectation": "보정이 Total 개선 + 동결 게이트 통과",
+   "H4_held": false,
+   "verdict": "SUPPLIED_NWP_CLOSED_ALL_FOUR_CELLS"
+  },
+  "promoted_total": 0.6365968277630516,
+  "residual_model": {
+   "fits": 3,
+   "oof_pearson": 0.08351694458130934,
+   "oof_r2": -0.036144703029138636,
+   "top20_by_gain": [
+    {
+     "feature": "gfs__isobaricInhPa_850_u__g1__lag3h",
+     "gain": 1695.4074726104736,
+     "temporal": true
+    },
+    {
+     "feature": "group_id",
+     "gain": 1458.8042001724243,
+     "temporal": false
+    },
+    {
+     "feature": "gfs__isobaricInhPa_850_u__g5__lag1h",
+     "gain": 893.7032871246338,
+     "temporal": true
+    },
+    {
+     "feature": "gfs__heightAboveGround_10_10v__g6__lead3h",
+     "gain": 719.8859014511108,
+     "temporal": true
+    },
+    {
+     "feature": "gfs__heightAboveGround_80_v__g4__lead3h",
+     "gain": 679.1948003768921,
+     "temporal": true
+    },
+    {
+     "feature": "gfs__heightAboveGround_10_10v__g8__lag3h",
+     "gain": 657.0606985092163,
+     "temporal": true
+    },
+    {
+     "feature": "gfs__heightAboveGround_100_100u__g2",
+     "gain": 625.0381765365601,
+     "temporal": false
+    },
+    {
+     "feature": "gfs__isobaricInhPa_700_u__g2__lag3h",
+     "gain": 599.0420999526978,
+     "temporal": true
+    },
+    {
+     "feature": "gfs__isobaricInhPa_700_u__g1__lag3h",
+     "gain": 596.7895183563232,
+     "temporal": true
+    },
+    {
+     "feature": "gfs__isobaricInhPa_700_u__g1",
+     "gain": 581.4557962417603,
+     "temporal": false
+    },
+    {
+     "feature": "gfs__surface_0_tp__g1__lag1h",
+     "gain": 533.659649848938,
+     "temporal": true
+    },
+    {
+     "feature": "gfs__surface_0_prate__g8",
+     "gain": 496.9848289489746,
+     "temporal": false
+    },
+    {
+     "feature": "gfs__surface_0_tp__g4__lag1h",
+     "gain": 489.33700942993164,
+     "temporal": true
+    },
+    {
+     "feature": "ldaps__heightAboveGround_5_XBLWS__g3__lead3h",
+     "gain": 471.90190029144287,
+     "temporal": true
+    },
+    {
+     "feature": "gfs__isobaricInhPa_850_u__g5__lag3h",
+     "gain": 468.20870780944824,
+     "temporal": true
+    },
+    {
+     "feature": "gfs__heightAboveGround_2_2d__g3__lag3h",
+     "gain": 467.0598945617676,
+     "temporal": true
+    },
+    {
+     "feature": "gfs__surface_0_tp__g5__lag3h",
+     "gain": 465.08024883270264,
+     "temporal": true
+    },
+    {
+     "feature": "gfs__heightAboveGround_100_100v__g3__lead3h",
+     "gain": 464.6161994934082,
+     "temporal": true
+    },
+    {
+     "feature": "gfs__isobaricInhPa_700_u__g3__lag3h",
+     "gain": 463.79640102386475,
+     "temporal": true
+    },
+    {
+     "feature": "gfs__surface_0_dlwrf__g4__diff1h",
+     "gain": 456.2604389190674,
+     "temporal": true
+    }
+   ]
+  },
+  "scores": {
+   "base": {
+    "ficr": 0.41320978983964385,
+    "group_ficr": {
+     "1": 0.42079521858555724,
+     "2": 0.46863045810963244,
+     "3": 0.3502036928237419
+    },
+    "group_nmae": {
+     "1": 0.13286075292051555,
+     "2": 0.13543735862877082,
+     "3": 0.151750291391336
+    },
+    "one_minus_nmae": 0.8599838656864592,
+    "total": 0.6365968277630516
+   },
+   "corrected": {
+    "ficr": 0.3667486821865744,
+    "group_ficr": {
+     "1": 0.36931759890095517,
+     "2": 0.4205337692726999,
+     "3": 0.31039467838606816
+    },
+    "group_nmae": {
+     "1": 0.13588221330160632,
+     "2": 0.13357698357305892,
+     "3": 0.15419595950922624
+    },
+    "one_minus_nmae": 0.8587816145387028,
+    "total": 0.6127651483626386
+   },
+   "delta_total": -0.023831679400412975
+  },
+  "temporal_transforms": {
+   "diffs_h": [
+    1
+   ],
+   "lags_h": [
+    1,
+    3
+   ],
+   "leads_h": [
+    1,
+    3
+   ]
+  }
+ },
+ "schema_version": 1,
+ "script_sha256": "d505adbb2d1439b0db486f2eac32a40c0e6b699827db4b665416a824c51e3403",
+ "stage": "M271_P4_CYCLE31_SPACE_TIME"
+}

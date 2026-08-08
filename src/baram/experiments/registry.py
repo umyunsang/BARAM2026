@@ -7,7 +7,7 @@ from pathlib import Path
 from typing import Any
 
 from baram.contracts.hashing import to_canonical_value
-from baram.contracts.types import RunManifest
+from baram.contracts.types import RunManifest, V2StageManifest
 from baram.exceptions import ContractError
 
 
@@ -54,3 +54,16 @@ def append_run_manifest(path: Path, manifest: RunManifest) -> str:
             if existing.get("run_id") == manifest.run_id and line != payload:
                 raise ContractError(f"run_id conflict: {manifest.run_id}")
     return append_canonical_jsonl(path, record)
+
+
+def write_v2_stage_manifest_atomic(path: Path, manifest: V2StageManifest) -> str:
+    """Write one stage once; exact retries are idempotent and rebinding fails closed."""
+    record = asdict(manifest)
+    if path.exists():
+        try:
+            existing = json.loads(path.read_text(encoding="utf-8"))
+        except json.JSONDecodeError as error:
+            raise ContractError(f"v2 stage registry contains invalid JSON: {error}") from error
+        if existing != to_canonical_value(record):
+            raise ContractError(f"v2 stage manifest conflict: {manifest.run_id}/{manifest.stage}")
+    return write_json_atomic(path, record)

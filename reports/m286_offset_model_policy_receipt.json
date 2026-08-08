@@ -1,0 +1,46 @@
+{
+ "node": "M286_OFFSET_MODEL_POLICY",
+ "v1_reproduction": true,
+ "gate_version": "M270_MONTHLY_GATE_v1_frozen_2026-08-04",
+ "deployed": [
+  0.6283370227786943,
+  0.8543941818026755,
+  0.4022798637547131
+ ],
+ "best_local": [
+  0.5,
+  0.2,
+  0.6291497858600386,
+  0.856991435178748,
+  0.40130813654132913
+ ],
+ "best_additive": [
+  0.5,
+  0.2,
+  0.6291497858600386,
+  0.856991435178748,
+  0.40130813654132913
+ ],
+ "best_multiplicative": [
+  0.5,
+  0.2,
+  0.6291497858600386,
+  0.856991435178748,
+  0.40130813654132913
+ ],
+ "ficr_multiplier": 1.0298331605240834,
+ "fold_outside_pooled": null,
+ "gate": {},
+ "hypotheses": {
+  "H1": false,
+  "H2": true,
+  "H3": false,
+  "H4": false
+ },
+ "verdict": "OFFSET_MODEL_DOES_NOT_CHANGE_POLICY",
+ "caveat": "anchor n=1; multiplicative assumption unverified",
+ "model_fits": 0,
+ "lockbox_reopened": false,
+ "dacon_upload": false,
+ "external_actions": []
+}

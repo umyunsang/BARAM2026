@@ -1,0 +1,196 @@
+{
+ "checks": {
+  "1_licenses_permissive": {
+   "detail": {
+    "closure": {
+     "langchain-core": "MIT",
+     "langgraph": "MIT",
+     "langgraph-checkpoint": "MIT",
+     "langgraph-checkpoint-sqlite": "MIT",
+     "langgraph-prebuilt": "MIT",
+     "langgraph-sdk": "MIT",
+     "langsmith": "MIT",
+     "pydantic": "MIT",
+     "xxhash": "BSD-2-Clause"
+    },
+    "installed_versions": {
+     "langchain-core": "1.5.3",
+     "langgraph": "1.2.10",
+     "langgraph-checkpoint": "4.1.1",
+     "langgraph-checkpoint-sqlite": "3.1.1",
+     "langgraph-prebuilt": "1.1.0",
+     "langgraph-sdk": "0.4.2",
+     "langsmith": "0.10.15",
+     "pydantic": "2.13.4",
+     "xxhash": "3.8.1"
+    },
+    "missing": [],
+    "non_permissive": {}
+   },
+   "passed": true
+  },
+  "2_versions_pinned": {
+   "detail": {
+    "mismatched": {},
+    "required": {
+     "langgraph": "1.2.10",
+     "langgraph-checkpoint-sqlite": "3.1.1"
+    }
+   },
+   "passed": true
+  },
+  "3_no_llm_state_and_conditional_edge": {
+   "detail": {
+    "counter_0": [
+     "start",
+     "odd"
+    ],
+    "counter_1": [
+     "start",
+     "even"
+    ]
+   },
+   "passed": true
+  },
+  "3b_no_outbound_network": {
+   "detail": {
+    "connect_attempts": [],
+    "note": "langsmith tracing is opt-in and stayed off"
+   },
+   "passed": true
+  },
+  "4a_parallel_reducer_order_stable": {
+   "detail": {
+    "distinct_orders": [
+     [
+      "root",
+      "b1",
+      "b2",
+      "b3",
+      "b4",
+      "b5",
+      "join"
+     ]
+    ],
+    "observed_order": [
+     "root",
+     "b1",
+     "b2",
+     "b3",
+     "b4",
+     "b5",
+     "join"
+    ],
+    "runs": 5,
+    "sleeps_reversed_vs_registration": {
+     "b1": 0.05,
+     "b2": 0.04,
+     "b3": 0.03,
+     "b4": 0.02,
+     "b5": 0.01
+    },
+    "verdict": "writes reduce in node-registration order, not completion order"
+   },
+   "passed": true
+  },
+  "4b_parallel_eq_sequential": {
+   "detail": {
+    "canonical_digest_equal": true,
+    "digest": "c46fcfab880f12fb",
+    "parallel": [
+     "root",
+     "b1",
+     "b2",
+     "b3",
+     "b4",
+     "b5",
+     "join"
+    ],
+    "raw_equal": true,
+    "sequential": [
+     "root",
+     "b1",
+     "b2",
+     "b3",
+     "b4",
+     "b5",
+     "join"
+    ]
+   },
+   "passed": true
+  },
+  "4c_true_concurrency": {
+   "detail": {
+    "async_elapsed_s": 0.1096,
+    "distinct_sync_workers": 5,
+    "operational_note": "sync path is a ThreadPoolExecutor, so GIL-bound Python CPU work will not parallelise. Model workers must be budgeted as (per-node num_threads x concurrent nodes) <= 6 per AGENTS.md.",
+    "sequential_budget_s": 0.5,
+    "sync_elapsed_s": 0.1128,
+    "worker_names": [
+     "ThreadPoolExecutor-11_0",
+     "ThreadPoolExecutor-11_1",
+     "ThreadPoolExecutor-11_2",
+     "ThreadPoolExecutor-11_3",
+     "ThreadPoolExecutor-11_4"
+    ]
+   },
+   "passed": true
+  },
+  "4d_send_dynamic_fanout": {
+   "detail": {
+    "one_lane": [
+     "src::L2"
+    ],
+    "three_lanes": [
+     "src::L2",
+     "src::L3",
+     "src::L7"
+    ],
+    "why": "C6 fires on an unknown number of lanes; branch count must follow state"
+   },
+   "passed": true
+  },
+  "4e_checkpoint_fork_revival": {
+   "detail": {
+    "after_premise_flip": [
+     "a",
+     "b(EXTERNAL_DATA_ALLOWED)"
+    ],
+    "checkpoints": 4,
+    "original": [
+     "a",
+     "b(NO_EXTERNAL_DATA)"
+    ]
+   },
+   "passed": true
+  }
+ },
+ "closure_licenses": {
+  "langchain-core": "MIT",
+  "langgraph": "MIT",
+  "langgraph-checkpoint": "MIT",
+  "langgraph-checkpoint-sqlite": "MIT",
+  "langgraph-prebuilt": "MIT",
+  "langgraph-sdk": "MIT",
+  "langsmith": "MIT",
+  "pydantic": "MIT",
+  "xxhash": "BSD-2-Clause"
+ },
+ "dacon_upload": false,
+ "decided_utc": "2026-08-04T00:25:07.305833+00:00",
+ "external_actions": [],
+ "lockbox_reopened": false,
+ "model_fits": 0,
+ "new_2024_evaluation": false,
+ "pins": {
+  "langgraph": "1.2.10",
+  "langgraph-checkpoint-sqlite": "3.1.1"
+ },
+ "platform": "macOS-26.5-arm64-arm-64bit",
+ "python": "3.12.0",
+ "report_sha256": "bfda21d5b0610399b99b580b4e378f160989be5d04e397e8900c9181d87f1f56",
+ "schema_version": 1,
+ "script_sha256": "2746beab78d22eb98603bc02d8d44529fc59cfb1568a4f6346bfd3b3e0e04460",
+ "stage": "M271_P0_FRAMEWORK_GATE",
+ "verdict": "PASS"
+}

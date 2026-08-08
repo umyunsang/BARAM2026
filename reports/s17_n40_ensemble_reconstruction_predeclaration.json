@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "node_id": "S17-N40_ENSEMBLE_RECONSTRUCTION",
+  "stage_id": "S8",
+  "deficit": "FD13",
+  "created_at": "2026-08-09T05:59:22.621610+09:00",
+  "score_bearing": false,
+  "question": "Is the remaining gap reachable by re-weighting the fixed champion member actions, and how much headroom exists in conditional versus unconditional combination?",
+  "method": "Exact linear decomposition of the champion, member-wise official scoring, an oracle convex-weight grid search, and an oracle per-row member pick. All ceilings are labelled oracle and none may be selected on.",
+  "degrees_of_freedom": 0,
+  "trial_budget": 1
+}

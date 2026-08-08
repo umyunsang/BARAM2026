@@ -1,0 +1,1761 @@
+{
+ "candidate_lanes": [
+  {
+   "axis": "EXTERNAL_DATA",
+   "disposition": "UNOPENED",
+   "gate_hint": "previous-day 18Z cycle only; availability proven from the S3 key path",
+   "lane": "gefs_ensemble_spread_features",
+   "rationale": "supplied GFS/LDAPS are deterministic single runs, so ensemble spread - a direct physical uncertainty covariate - is structurally absent. M269 diagnosed insufficient sharpness of the conditional distribution, which is what this signal addresses."
+  },
+  {
+   "axis": "NEW_DEPENDENCY",
+   "disposition": "UNOPENED",
+   "gate_hint": "pin versions; fix seeds and threads; reject the family if not reproducible",
+   "lane": "distributional_learning",
+   "rationale": "NGBoost / CRPS-style objectives model the conditional distribution directly rather than post-processing a 46-bin classifier whose oracle ceiling M269 measured at pooled FICR 0.4227 against a 0.44675 requirement."
+  },
+  {
+   "axis": "EXTERNAL_DATA",
+   "disposition": "REVIVED",
+   "gate_hint": "reuse the existing analog/PCA machinery; do not reopen rejected variants",
+   "lane": "ramp_weather_pattern_classification",
+   "rationale": "closed only because the competition exposed a single NWP source; public forecast archives remove that blocker. The closure carried no negative evidence."
+  },
+  {
+   "axis": "PRETRAINED_WEIGHTS",
+   "disposition": "UNOPENED",
+   "gate_hint": "Apache-2.0 models only; Moirai family is forbidden (CC-BY-NC-4.0)",
+   "lane": "pretrained_timeseries_foundation_models",
+   "rationale": "eligible under Apache-2.0 with a large margin to the 2026-07-05 cutoff, but these forecast from series history while this task is covariate-driven at 12-36h lead. Low priority until the higher-value axes are exhausted."
+  }
+ ],
+ "directed": true,
+ "graph": {},
+ "links": [
+  {
+   "kind": "references",
+   "source": "M102",
+   "target": "M258"
+  },
+  {
+   "kind": "references",
+   "source": "M102",
+   "target": "M261"
+  },
+  {
+   "kind": "references",
+   "source": "M107",
+   "target": "M251"
+  },
+  {
+   "kind": "parent",
+   "source": "M107",
+   "target": "M257"
+  },
+  {
+   "kind": "parent",
+   "source": "M107",
+   "target": "M258"
+  },
+  {
+   "kind": "references",
+   "source": "M107",
+   "target": "M261"
+  },
+  {
+   "kind": "parent",
+   "source": "M107",
+   "target": "M262"
+  },
+  {
+   "kind": "parent",
+   "source": "M107",
+   "target": "M263"
+  },
+  {
+   "kind": "references",
+   "source": "M107",
+   "target": "M265"
+  },
+  {
+   "kind": "references",
+   "source": "M113",
+   "target": "M265"
+  },
+  {
+   "kind": "parent",
+   "source": "M113",
+   "target": "M266"
+  },
+  {
+   "kind": "references",
+   "source": "M114",
+   "target": "M265"
+  },
+  {
+   "kind": "references",
+   "source": "M130",
+   "target": "M242"
+  },
+  {
+   "kind": "references",
+   "source": "M134",
+   "target": "M263"
+  },
+  {
+   "kind": "references",
+   "source": "M163",
+   "target": "M269"
+  },
+  {
+   "kind": "references",
+   "source": "M205",
+   "target": "M249"
+  },
+  {
+   "kind": "references",
+   "source": "M229",
+   "target": "M251"
+  },
+  {
+   "kind": "references",
+   "source": "M229",
+   "target": "M267"
+  },
+  {
+   "kind": "references",
+   "source": "M230",
+   "target": "M251"
+  },
+  {
+   "kind": "references",
+   "source": "M231",
+   "target": "M236"
+  },
+  {
+   "kind": "parent",
+   "source": "M231",
+   "target": "M238"
+  },
+  {
+   "kind": "parent",
+   "source": "M231",
+   "target": "M239"
+  },
+  {
+   "kind": "parent",
+   "source": "M231",
+   "target": "M240"
+  },
+  {
+   "kind": "parent",
+   "source": "M231",
+   "target": "M241"
+  },
+  {
+   "kind": "parent",
+   "source": "M231",
+   "target": "M242"
+  },
+  {
+   "kind": "parent",
+   "source": "M231",
+   "target": "M243"
+  },
+  {
+   "kind": "parent",
+   "source": "M231",
+   "target": "M244"
+  },
+  {
+   "kind": "parent",
+   "source": "M231",
+   "target": "M245"
+  },
+  {
+   "kind": "parent",
+   "source": "M231",
+   "target": "M246"
+  },
+  {
+   "kind": "parent",
+   "source": "M231",
+   "target": "M247"
+  },
+  {
+   "kind": "parent",
+   "source": "M231",
+   "target": "M248"
+  },
+  {
+   "kind": "parent",
+   "source": "M231",
+   "target": "M249"
+  },
+  {
+   "kind": "parent",
+   "source": "M231",
+   "target": "M250"
+  },
+  {
+   "kind": "references",
+   "source": "M231",
+   "target": "M251"
+  },
+  {
+   "kind": "parent",
+   "source": "M231",
+   "target": "M252"
+  },
+  {
+   "kind": "references",
+   "source": "M231",
+   "target": "M267"
+  },
+  {
+   "kind": "references",
+   "source": "M232",
+   "target": "M262"
+  },
+  {
+   "kind": "references",
+   "source": "M233",
+   "target": "M232"
+  },
+  {
+   "kind": "references",
+   "source": "M234",
+   "target": "M231"
+  },
+  {
+   "kind": "references",
+   "source": "M234",
+   "target": "M236"
+  },
+  {
+   "kind": "references",
+   "source": "M234",
+   "target": "M238"
+  },
+  {
+   "kind": "references",
+   "source": "M234",
+   "target": "M239"
+  },
+  {
+   "kind": "references",
+   "source": "M234",
+   "target": "M240"
+  },
+  {
+   "kind": "references",
+   "source": "M234",
+   "target": "M241"
+  },
+  {
+   "kind": "references",
+   "source": "M234",
+   "target": "M242"
+  },
+  {
+   "kind": "references",
+   "source": "M234",
+   "target": "M243"
+  },
+  {
+   "kind": "references",
+   "source": "M234",
+   "target": "M247"
+  },
+  {
+   "kind": "references",
+   "source": "M234",
+   "target": "M248"
+  },
+  {
+   "kind": "references",
+   "source": "M234",
+   "target": "M251"
+  },
+  {
+   "kind": "parent",
+   "source": "M234",
+   "target": "M255"
+  },
+  {
+   "kind": "references",
+   "source": "M234",
+   "target": "M257"
+  },
+  {
+   "kind": "references",
+   "source": "M234",
+   "target": "M262"
+  },
+  {
+   "kind": "references",
+   "source": "M235",
+   "target": "M241"
+  },
+  {
+   "kind": "parent",
+   "source": "M235",
+   "target": "M245"
+  },
+  {
+   "kind": "references",
+   "source": "M236",
+   "target": "M237"
+  },
+  {
+   "kind": "references",
+   "source": "M237",
+   "target": "M240"
+  },
+  {
+   "kind": "references",
+   "source": "M238",
+   "target": "M251"
+  },
+  {
+   "kind": "references",
+   "source": "M238",
+   "target": "M255"
+  },
+  {
+   "kind": "references",
+   "source": "M240",
+   "target": "M241"
+  },
+  {
+   "kind": "parent",
+   "source": "M240",
+   "target": "M243"
+  },
+  {
+   "kind": "references",
+   "source": "M240",
+   "target": "M246"
+  },
+  {
+   "kind": "parent",
+   "source": "M240",
+   "target": "M247"
+  },
+  {
+   "kind": "references",
+   "source": "M240",
+   "target": "M249"
+  },
+  {
+   "kind": "parent",
+   "source": "M240",
+   "target": "M250"
+  },
+  {
+   "kind": "references",
+   "source": "M240",
+   "target": "M260"
+  },
+  {
+   "kind": "references",
+   "source": "M241",
+   "target": "M242"
+  },
+  {
+   "kind": "parent",
+   "source": "M241",
+   "target": "M243"
+  },
+  {
+   "kind": "references",
+   "source": "M242",
+   "target": "M255"
+  },
+  {
+   "kind": "references",
+   "source": "M243",
+   "target": "M244"
+  },
+  {
+   "kind": "parent",
+   "source": "M243",
+   "target": "M260"
+  },
+  {
+   "kind": "parent",
+   "source": "M244",
+   "target": "M245"
+  },
+  {
+   "kind": "parent",
+   "source": "M244",
+   "target": "M246"
+  },
+  {
+   "kind": "references",
+   "source": "M244",
+   "target": "M247"
+  },
+  {
+   "kind": "parent",
+   "source": "M244",
+   "target": "M248"
+  },
+  {
+   "kind": "parent",
+   "source": "M244",
+   "target": "M249"
+  },
+  {
+   "kind": "parent",
+   "source": "M244",
+   "target": "M250"
+  },
+  {
+   "kind": "parent",
+   "source": "M244",
+   "target": "M251"
+  },
+  {
+   "kind": "references",
+   "source": "M244",
+   "target": "M252"
+  },
+  {
+   "kind": "references",
+   "source": "M244",
+   "target": "M257"
+  },
+  {
+   "kind": "parent",
+   "source": "M244",
+   "target": "M259"
+  },
+  {
+   "kind": "references",
+   "source": "M244",
+   "target": "M260"
+  },
+  {
+   "kind": "references",
+   "source": "M244",
+   "target": "M263"
+  },
+  {
+   "kind": "parent",
+   "source": "M245",
+   "target": "M252"
+  },
+  {
+   "kind": "references",
+   "source": "M246",
+   "target": "M250"
+  },
+  {
+   "kind": "references",
+   "source": "M250",
+   "target": "M251"
+  },
+  {
+   "kind": "references",
+   "source": "M251",
+   "target": "M263"
+  },
+  {
+   "kind": "references",
+   "source": "M252",
+   "target": "M259"
+  },
+  {
+   "kind": "parent",
+   "source": "M252",
+   "target": "M261"
+  },
+  {
+   "kind": "references",
+   "source": "M255",
+   "target": "M257"
+  },
+  {
+   "kind": "references",
+   "source": "M256",
+   "target": "M255"
+  },
+  {
+   "kind": "references",
+   "source": "M256",
+   "target": "M257"
+  },
+  {
+   "kind": "references",
+   "source": "M261",
+   "target": "M263"
+  },
+  {
+   "kind": "parent",
+   "source": "M263",
+   "target": "M264"
+  },
+  {
+   "kind": "parent",
+   "source": "M263",
+   "target": "M265"
+  },
+  {
+   "kind": "references",
+   "source": "M263",
+   "target": "M266"
+  },
+  {
+   "kind": "references",
+   "source": "M265",
+   "target": "M266"
+  },
+  {
+   "kind": "parent",
+   "source": "M265",
+   "target": "M267"
+  },
+  {
+   "kind": "parent",
+   "source": "M265",
+   "target": "M269"
+  },
+  {
+   "kind": "references",
+   "source": "M266",
+   "target": "M265"
+  },
+  {
+   "kind": "references",
+   "source": "M266",
+   "target": "M267"
+  },
+  {
+   "kind": "references",
+   "source": "M266",
+   "target": "M268"
+  },
+  {
+   "kind": "references",
+   "source": "M267",
+   "target": "M268"
+  },
+  {
+   "kind": "references",
+   "source": "M268",
+   "target": "M267"
+  },
+  {
+   "kind": "references",
+   "source": "M68",
+   "target": "M264"
+  },
+  {
+   "kind": "references",
+   "source": "M72",
+   "target": "M264"
+  },
+  {
+   "kind": "references",
+   "source": "M95",
+   "target": "M264"
+  }
+ ],
+ "multigraph": false,
+ "nodes": [
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M15",
+   "premise_match": null,
+   "progress_rows": 1,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M32",
+   "premise_match": null,
+   "progress_rows": 1,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M43",
+   "premise_match": null,
+   "progress_rows": 1,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M44",
+   "premise_match": null,
+   "progress_rows": 1,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M50",
+   "premise_match": null,
+   "progress_rows": 1,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M68",
+   "premise_match": null,
+   "progress_rows": 0,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M72",
+   "premise_match": null,
+   "progress_rows": 0,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M92",
+   "premise_match": null,
+   "progress_rows": 1,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M93",
+   "premise_match": null,
+   "progress_rows": 1,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M95",
+   "premise_match": null,
+   "progress_rows": 1,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M96",
+   "premise_match": null,
+   "progress_rows": 1,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M97",
+   "premise_match": null,
+   "progress_rows": 1,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M102",
+   "premise_match": null,
+   "progress_rows": 6,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M103",
+   "premise_match": null,
+   "progress_rows": 3,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M107",
+   "premise_match": null,
+   "progress_rows": 28,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M113",
+   "premise_match": null,
+   "progress_rows": 2,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M114",
+   "premise_match": null,
+   "progress_rows": 3,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M115",
+   "premise_match": null,
+   "progress_rows": 2,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M116",
+   "premise_match": null,
+   "progress_rows": 1,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M119",
+   "premise_match": null,
+   "progress_rows": 1,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M120",
+   "premise_match": null,
+   "progress_rows": 2,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M121",
+   "premise_match": null,
+   "progress_rows": 1,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M128",
+   "premise_match": null,
+   "progress_rows": 1,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M129",
+   "premise_match": null,
+   "progress_rows": 1,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M130",
+   "premise_match": null,
+   "progress_rows": 2,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M131",
+   "premise_match": null,
+   "progress_rows": 1,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M134",
+   "premise_match": null,
+   "progress_rows": 1,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M138",
+   "premise_match": null,
+   "progress_rows": 1,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M141",
+   "premise_match": null,
+   "progress_rows": 1,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M142",
+   "premise_match": null,
+   "progress_rows": 1,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M152",
+   "premise_match": null,
+   "progress_rows": 1,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M154",
+   "premise_match": null,
+   "progress_rows": 2,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M161",
+   "premise_match": null,
+   "progress_rows": 2,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M163",
+   "premise_match": null,
+   "progress_rows": 2,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M164",
+   "premise_match": null,
+   "progress_rows": 2,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M165",
+   "premise_match": null,
+   "progress_rows": 4,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M169",
+   "premise_match": null,
+   "progress_rows": 2,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M170",
+   "premise_match": null,
+   "progress_rows": 1,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M171",
+   "premise_match": null,
+   "progress_rows": 1,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M173",
+   "premise_match": null,
+   "progress_rows": 1,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M177",
+   "premise_match": null,
+   "progress_rows": 1,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M178",
+   "premise_match": null,
+   "progress_rows": 2,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M179",
+   "premise_match": null,
+   "progress_rows": 1,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M180",
+   "premise_match": null,
+   "progress_rows": 1,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M183",
+   "premise_match": null,
+   "progress_rows": 1,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M184",
+   "premise_match": null,
+   "progress_rows": 1,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M185",
+   "premise_match": null,
+   "progress_rows": 1,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M186",
+   "premise_match": null,
+   "progress_rows": 2,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M187",
+   "premise_match": null,
+   "progress_rows": 2,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M188",
+   "premise_match": null,
+   "progress_rows": 2,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M189",
+   "premise_match": null,
+   "progress_rows": 8,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M190",
+   "premise_match": null,
+   "progress_rows": 2,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M191",
+   "premise_match": null,
+   "progress_rows": 1,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M192",
+   "premise_match": null,
+   "progress_rows": 1,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M193",
+   "premise_match": null,
+   "progress_rows": 1,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M194",
+   "premise_match": null,
+   "progress_rows": 2,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M195",
+   "premise_match": null,
+   "progress_rows": 10,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M196",
+   "premise_match": null,
+   "progress_rows": 3,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M197",
+   "premise_match": null,
+   "progress_rows": 19,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M198",
+   "premise_match": null,
+   "progress_rows": 1,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M199",
+   "premise_match": null,
+   "progress_rows": 1,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M200",
+   "premise_match": null,
+   "progress_rows": 1,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M201",
+   "premise_match": null,
+   "progress_rows": 2,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M202",
+   "premise_match": null,
+   "progress_rows": 1,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M203",
+   "premise_match": null,
+   "progress_rows": 1,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M204",
+   "premise_match": null,
+   "progress_rows": 3,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M205",
+   "premise_match": null,
+   "progress_rows": 1,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M206",
+   "premise_match": null,
+   "progress_rows": 4,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M207",
+   "premise_match": null,
+   "progress_rows": 1,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M208",
+   "premise_match": null,
+   "progress_rows": 1,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M209",
+   "premise_match": null,
+   "progress_rows": 2,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M210",
+   "premise_match": null,
+   "progress_rows": 1,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M211",
+   "premise_match": null,
+   "progress_rows": 1,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M212",
+   "premise_match": null,
+   "progress_rows": 9,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M213",
+   "premise_match": null,
+   "progress_rows": 3,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M214",
+   "premise_match": null,
+   "progress_rows": 4,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M215",
+   "premise_match": null,
+   "progress_rows": 4,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M216",
+   "premise_match": null,
+   "progress_rows": 1,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M217",
+   "premise_match": null,
+   "progress_rows": 4,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M218",
+   "premise_match": null,
+   "progress_rows": 3,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M219",
+   "premise_match": null,
+   "progress_rows": 4,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M220",
+   "premise_match": null,
+   "progress_rows": 3,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M221",
+   "premise_match": null,
+   "progress_rows": 2,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M222",
+   "premise_match": null,
+   "progress_rows": 4,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M223",
+   "premise_match": null,
+   "progress_rows": 2,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M224",
+   "premise_match": null,
+   "progress_rows": 1,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M225",
+   "premise_match": null,
+   "progress_rows": 5,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M226",
+   "premise_match": null,
+   "progress_rows": 1,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M227",
+   "premise_match": null,
+   "progress_rows": 1,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M228",
+   "premise_match": null,
+   "progress_rows": 1,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 2,
+   "id": "M229",
+   "premise_match": null,
+   "progress_rows": 4,
+   "revivable": false,
+   "status": "promoted"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M230",
+   "premise_match": null,
+   "progress_rows": 2,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 1,
+   "id": "M231",
+   "premise_match": null,
+   "progress_rows": 25,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "UNCLASSIFIED",
+   "decision_rows": 1,
+   "id": "M232",
+   "premise_match": null,
+   "progress_rows": 3,
+   "revivable": false,
+   "status": "rejected"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M233",
+   "premise_match": null,
+   "progress_rows": 2,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 1,
+   "id": "M234",
+   "premise_match": null,
+   "progress_rows": 29,
+   "revivable": false,
+   "status": "promoted"
+  },
+  {
+   "closure_premise": "UNCLASSIFIED",
+   "decision_rows": 1,
+   "id": "M235",
+   "premise_match": null,
+   "progress_rows": 5,
+   "revivable": false,
+   "status": "rejected"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 2,
+   "id": "M236",
+   "premise_match": null,
+   "progress_rows": 5,
+   "revivable": false,
+   "status": "promoted"
+  },
+  {
+   "closure_premise": "EVIDENCE_NEGATIVE",
+   "decision_rows": 2,
+   "id": "M237",
+   "premise_match": "bootstrap positivity",
+   "progress_rows": 6,
+   "revivable": false,
+   "status": "rejected"
+  },
+  {
+   "closure_premise": "EVIDENCE_NEGATIVE",
+   "decision_rows": 2,
+   "id": "M238",
+   "premise_match": "bootstrap positivity",
+   "progress_rows": 7,
+   "revivable": false,
+   "status": "rejected"
+  },
+  {
+   "closure_premise": "EVIDENCE_NEGATIVE",
+   "decision_rows": 2,
+   "id": "M239",
+   "premise_match": "bootstrap positivity",
+   "progress_rows": 3,
+   "revivable": false,
+   "status": "rejected"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 3,
+   "id": "M240",
+   "premise_match": null,
+   "progress_rows": 17,
+   "revivable": false,
+   "status": "promoted"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 3,
+   "id": "M241",
+   "premise_match": null,
+   "progress_rows": 6,
+   "revivable": false,
+   "status": "promoted"
+  },
+  {
+   "closure_premise": "EVIDENCE_NEGATIVE",
+   "decision_rows": 2,
+   "id": "M242",
+   "premise_match": "bootstrap positivity",
+   "progress_rows": 5,
+   "revivable": false,
+   "status": "rejected"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 3,
+   "id": "M243",
+   "premise_match": null,
+   "progress_rows": 8,
+   "revivable": false,
+   "status": "promoted"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 3,
+   "id": "M244",
+   "premise_match": null,
+   "progress_rows": 28,
+   "revivable": false,
+   "status": "promoted"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 4,
+   "id": "M245",
+   "premise_match": null,
+   "progress_rows": 8,
+   "revivable": false,
+   "status": "built"
+  },
+  {
+   "closure_premise": "EVIDENCE_NEGATIVE",
+   "decision_rows": 2,
+   "id": "M246",
+   "premise_match": "bootstrap positivity",
+   "progress_rows": 3,
+   "revivable": false,
+   "status": "rejected"
+  },
+  {
+   "closure_premise": "EVIDENCE_NEGATIVE",
+   "decision_rows": 2,
+   "id": "M247",
+   "premise_match": "bootstrap positivity",
+   "progress_rows": 3,
+   "revivable": false,
+   "status": "rejected"
+  },
+  {
+   "closure_premise": "EVIDENCE_NEGATIVE",
+   "decision_rows": 2,
+   "id": "M248",
+   "premise_match": "bootstrap positivity",
+   "progress_rows": 4,
+   "revivable": false,
+   "status": "rejected"
+  },
+  {
+   "closure_premise": "EVIDENCE_NEGATIVE",
+   "decision_rows": 2,
+   "id": "M249",
+   "premise_match": "bootstrap positivity",
+   "progress_rows": 3,
+   "revivable": false,
+   "status": "rejected"
+  },
+  {
+   "closure_premise": "EVIDENCE_NEGATIVE",
+   "decision_rows": 2,
+   "id": "M250",
+   "premise_match": "bootstrap positivity",
+   "progress_rows": 4,
+   "revivable": false,
+   "status": "rejected"
+  },
+  {
+   "closure_premise": "NO_SELECTABLE_NWP",
+   "decision_rows": 3,
+   "id": "M251",
+   "premise_match": "multiple nwp configurations",
+   "progress_rows": 6,
+   "revivable": true,
+   "status": "rejected"
+  },
+  {
+   "closure_premise": "UNCLASSIFIED",
+   "decision_rows": 3,
+   "id": "M252",
+   "premise_match": null,
+   "progress_rows": 11,
+   "revivable": false,
+   "status": "rejected"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M253",
+   "premise_match": null,
+   "progress_rows": 2,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M254",
+   "premise_match": null,
+   "progress_rows": 1,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "EVIDENCE_NEGATIVE",
+   "decision_rows": 2,
+   "id": "M255",
+   "premise_match": "bootstrap positivity",
+   "progress_rows": 6,
+   "revivable": false,
+   "status": "rejected"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M256",
+   "premise_match": null,
+   "progress_rows": 3,
+   "revivable": false,
+   "status": "documented"
+  },
+  {
+   "closure_premise": "UNCLASSIFIED",
+   "decision_rows": 2,
+   "id": "M257",
+   "premise_match": null,
+   "progress_rows": 8,
+   "revivable": false,
+   "status": "rejected"
+  },
+  {
+   "closure_premise": "EVIDENCE_NEGATIVE",
+   "decision_rows": 2,
+   "id": "M258",
+   "premise_match": "bootstrap positivity",
+   "progress_rows": 10,
+   "revivable": false,
+   "status": "rejected"
+  },
+  {
+   "closure_premise": "EVIDENCE_NEGATIVE",
+   "decision_rows": 2,
+   "id": "M259",
+   "premise_match": "bootstrap positivity",
+   "progress_rows": 4,
+   "revivable": false,
+   "status": "rejected"
+  },
+  {
+   "closure_premise": "EVIDENCE_NEGATIVE",
+   "decision_rows": 2,
+   "id": "M260",
+   "premise_match": "regressed",
+   "progress_rows": 3,
+   "revivable": false,
+   "status": "rejected"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 2,
+   "id": "M261",
+   "premise_match": null,
+   "progress_rows": 8,
+   "revivable": false,
+   "status": "promoted"
+  },
+  {
+   "closure_premise": "EVIDENCE_NEGATIVE",
+   "decision_rows": 2,
+   "id": "M262",
+   "premise_match": "bootstrap positivity",
+   "progress_rows": 4,
+   "revivable": false,
+   "status": "rejected"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 4,
+   "id": "M263",
+   "premise_match": null,
+   "progress_rows": 10,
+   "revivable": false,
+   "status": "built"
+  },
+  {
+   "closure_premise": "EVIDENCE_NEGATIVE",
+   "decision_rows": 2,
+   "id": "M264",
+   "premise_match": "bootstrap positivity",
+   "progress_rows": 2,
+   "revivable": false,
+   "status": "rejected"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 2,
+   "id": "M265",
+   "premise_match": null,
+   "progress_rows": 6,
+   "revivable": false,
+   "status": "promoted"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 1,
+   "id": "M266",
+   "premise_match": null,
+   "progress_rows": 5,
+   "revivable": false,
+   "status": "promoted"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 2,
+   "id": "M267",
+   "premise_match": null,
+   "progress_rows": 3,
+   "revivable": false,
+   "status": "promoted"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 1,
+   "id": "M268",
+   "premise_match": null,
+   "progress_rows": 5,
+   "revivable": false,
+   "status": "promoted"
+  },
+  {
+   "closure_premise": "SAME_FOLD_ORACLE_ONLY",
+   "decision_rows": 3,
+   "id": "M269",
+   "premise_match": "same-fold",
+   "progress_rows": 5,
+   "revivable": false,
+   "status": "predeclared"
+  },
+  {
+   "closure_premise": "NO_SUBJECT_ROW",
+   "decision_rows": 0,
+   "id": "M270",
+   "premise_match": null,
+   "progress_rows": 3,
+   "revivable": false,
+   "status": "documented"
+  }
+ ],
+ "sources_sha256": {
+  "progress.md": "0af17761f57c57fb7bb953b4331b50d76b8e1ca70545309a4e7b038c26b25443",
+  "task_plan.md": "7bd4dedd8f6b20565c1173872b6a224e10fa1bde3046a1fefe48e876ed5e7171"
+ }
+}

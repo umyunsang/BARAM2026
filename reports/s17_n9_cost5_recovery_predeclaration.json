@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "node_id": "S17-N9_COST5_NO_REFIT_MATERIALIZATION_RECOVERY",
+  "stage": "S9_문제해결접근",
+  "kind": "score_bearing_no_refit_prediction_recovery",
+  "predeclared_at": "2026-08-08T20:18:44.614961+09:00",
+  "parents": [
+    "S17-N8_COST5_SPO_PLUS_STRICT_PREQUENTIAL_COMPARISON",
+    "S17-N7_STRICT_ACTION_PROVENANCE_RECONSTRUCTION"
+  ],
+  "evidence": [
+    {
+      "path": "reports/s17_n8_cost5_spo_plus_receipt.json",
+      "sha256": "3fd4db78eeb7ecbe71afa38ee6803928dbbaa860c005b3ee398f82a10c642754"
+    },
+    {
+      "path": "artifacts/backtests/s17_n8_cost5_spo_plus/PARTIAL_PRE_SCORE.json",
+      "sha256": "d1f0463ccb28519c1b07b8f244baea994789cc69630b970f5bb5c1f1b322a0a5"
+    },
+    {
+      "path": "reports/s17_n6a_fail_closed_score_class_receipt.json",
+      "sha256": "bda56305d9d50de0fefb4a7393df5fbc770b2ccf55c6a7c0a302f6e61a5a762a"
+    }
+  ],
+  "purpose": "Recover the already materialized, score-blind N8 candidate without any optimizer/model retry; prove predictions exactly from frozen features/preprocessing/coefficients, create typed provenance and family freeze, then run the unchanged S17-N3 comparison.",
+  "input_bundle": {
+    "sha256": "a0f4f84a2a842747a9e98bff6c61ddd1d6d3b1fbe4e3d0b37226405277e8af3c",
+    "files": {
+      "artifacts/backtests/s17_n8_cost5_spo_plus/PARTIAL_PRE_SCORE.json": "d1f0463ccb28519c1b07b8f244baea994789cc69630b970f5bb5c1f1b322a0a5",
+      "artifacts/backtests/s17_n8_cost5_spo_plus/predictions.parquet": "1422f8e375235659434055ef84a419f902008fe01c67363b6d717f08c744895d",
+      "artifacts/backtests/s17_n8_cost5_spo_plus/features.parquet": "9c050cb4a6f2c720a3d304f773ee43dfff07998e458ca7f433ef2605bfdec1a5",
+      "artifacts/backtests/s17_n8_cost5_spo_plus/coefficients.parquet": "d11bb7d20e01718f274adfa0c57ce0c10527b19e34f490eee11a5fc3e31c5268",
+      "artifacts/backtests/s17_n8_cost5_spo_plus/preprocessing.parquet": "5f7b388f3412e8137da65035989a7be01a000af888111984bcffbca5dc762192",
+      "scripts/run_cost5_spo_plus.py": "8b80b462cd103634c9ef8525bc72381cf5808b8f8c2db165a1a6574ec41f4f39",
+      "artifacts/backtests/s17_n7_strict_actions/actions.parquet": "6041a7bf6f242c4da7958dc43d3487cdc468cc39301086bf3a5e6df5fb87f290",
+      "artifacts/backtests/s17_n7_strict_actions/procedure_provenance.parquet": "12666e4e61d962e74e0168e41a40f13b13acc006808bd7bd09dd837fa6cf9cae",
+      "artifacts/backtests/s17_n7_strict_actions/family_manifest.json": "972ed2922260bec2000cb9bc0d97098ae533652ab16daf9d5ca6d90601daa046",
+      "src/baram/evaluation/prequential.py": "a4cd12d30b3cf79ac339f1a5dbcc009f5b85ba10a30ef6614346a6309703b35b",
+      "src/baram/evaluation/official.py": "5701ddfc5a6254e89cbc49451cd3f4bbddd437cff451a4596a86e7c68ff42cba"
+    }
+  },
+  "materialization_gate": {
+    "R1": "All eleven input hashes and N8 PARTIAL_PRE_SCORE status match.",
+    "R2": "For each Q3/Q4 fold, frozen preprocessing applied to frozen features and frozen coefficients reproduces every selected_action and COST5_SPO_PLUS value exactly (max abs <=1e-12).",
+    "R3": "Recomputed finite SPO+ final objective is <= zero-init objective+1e-12 on the original active training rows; coefficients/gradient finite.",
+    "R4": "Fit/selection label maxima are taken from S17-N3 splits and strictly precede shifted bases; champion provenance hashes match N7.",
+    "R5": "Provenance timestamps are uniformly serialized datetimes; family manifest is hashed before any assessment metric call.",
+    "failure_action": "Stop pre-score and close non-score with pre_score_gate_failed; never refit or mutate the frozen prediction vector."
+  },
+  "two_phase": {
+    "materialize": "write a byte-copy of frozen predictions, typed provenance, optimizer verification, family manifest; assessment score calls=0",
+    "evaluate": "new process accepts exact family SHA, verifies every output hash, calls S17-N3 and two outer point scores; predictions never change"
+  },
+  "evaluation": {
+    "protocol": "BARAM_STRICT_PREQUENTIAL_JOINT_v1",
+    "family": [
+      "CHAMPION",
+      "COST5_SPO_PLUS"
+    ],
+    "incumbent": "CHAMPION",
+    "comparison_index": 1,
+    "replicates": 4999,
+    "bootstrap_seed": 20260808,
+    "expected_block_days": [
+      3,
+      7,
+      14
+    ],
+    "primary_block_days": 7,
+    "margin_total": 0.001635,
+    "mcs_alpha": 0.1,
+    "promotion": "candidate point delta >=0.001635; stable promotion_eligible on blocks 3/7/14; Q3 and Q4 deltas positive; exact/additive sign agree; candidate in MCS and incumbent excluded.",
+    "evidence_label": "retrospective_chronology_repaired_multiplicity_aware_not_fresh_holdout"
+  },
+  "comparison_index": 1,
+  "model_fits": 0,
+  "optimizer_invocations": 0,
+  "family": [
+    "CHAMPION",
+    "COST5_SPO_PLUS"
+  ],
+  "incumbent": "CHAMPION",
+  "outputs": {
+    "script": "scripts/recover_cost5_materialization.py",
+    "dir": "artifacts/backtests/s17_n9_cost5_recovery",
+    "receipt": "reports/s17_n9_cost5_recovery_receipt.json"
+  },
+  "forbidden": [
+    "optimizer/model fit or retry",
+    "feature/policy/action/prediction change",
+    "Q3/Q4 score before family hash",
+    "2024/test/rejected ECMWF",
+    "Dacon/account",
+    "remote inference",
+    "dependency change"
+  ],
+  "pass_label": "SUPPORTED_RETROSPECTIVE only under unchanged N8 promotion gate; otherwise score-bearing REFUTED/INCONCLUSIVE"
+}

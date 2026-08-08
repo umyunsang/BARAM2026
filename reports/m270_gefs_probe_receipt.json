@@ -1,0 +1,67 @@
+{
+ "bucket": "https://noaa-gefs-pds.s3.amazonaws.com",
+ "cycle": "previous-day 18Z",
+ "dacon_upload": false,
+ "external_actions": [
+  "read-only anonymous HTTPS GET against NOAA public S3"
+ ],
+ "fetch_failures": 2,
+ "grid_points": [
+  [
+   37.5,
+   128.75
+  ],
+  [
+   37.5,
+   129.0
+  ],
+  [
+   37.5,
+   129.25
+  ],
+  [
+   37.25,
+   128.75
+  ],
+  [
+   37.25,
+   129.0
+  ],
+  [
+   37.25,
+   129.25
+  ],
+  [
+   37.0,
+   128.75
+  ],
+  [
+   37.0,
+   129.0
+  ],
+  [
+   37.0,
+   129.25
+  ]
+ ],
+ "leads": [
+  24,
+  30,
+  36,
+  42
+ ],
+ "lockbox_reopened": false,
+ "merged_rows": 414,
+ "model_fits": 0,
+ "new_2024_evaluation": false,
+ "product": "atmos/pgrb2sp25",
+ "sample_days_requested": 60,
+ "schema_version": 1,
+ "spread_rows": 238,
+ "stage": "M270_GEFS_SPREAD_CORRELATION_PROBE",
+ "variables": [
+  "UGRD:10 m above ground",
+  "VGRD:10 m above ground",
+  "GUST:surface"
+ ]
+}

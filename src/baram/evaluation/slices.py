@@ -82,11 +82,21 @@ def attach_diagnostic_bins(
     error_rate = (ordered["prediction_kwh"] - ordered["actual_kwh"]).abs() / ordered[
         "group_id"
     ].map(capacities).astype(float)
+    ordered["absolute_error_rate"] = error_rate
+    ordered["distance_to_6pct"] = (error_rate - 0.06).abs()
+    ordered["distance_to_8pct"] = (error_rate - 0.08).abs()
+    ordered["settlement_boundary_zone"] = np.select(
+        [ordered["distance_to_6pct"].le(0.005), ordered["distance_to_8pct"].le(0.005)],
+        ["near_6pct", "near_8pct"],
+        default="away",
+    )
     ordered["settlement_tier"] = np.select(
         [error_rate <= 0.06, error_rate <= 0.08],
         ["unit_4", "unit_3"],
         default="unit_0",
     )
+    if "policy_id" in ordered:
+        ordered["policy_state"] = ordered["policy_id"].astype(str)
     return ordered.sort_index()
 
 

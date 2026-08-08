@@ -1,0 +1,166 @@
+{
+  "schema_version": 1,
+  "node_id": "S17-N37_GEOM_PLANE_GRADIENT_STRICT",
+  "stage_id": "S6",
+  "deficit": "FD11",
+  "predeclared_event_sha256": "1fa267a26e738902bbda115678fabeb1dbbbcc6b9282bc93303a63b4b3806a32",
+  "comparison_index": 5,
+  "score_bearing": true,
+  "policy_id": "T0.75_G2",
+  "row_alignment_keys": [
+    "fold_id",
+    "group_id",
+    "forecast_kst_dtm"
+  ],
+  "weights_fit": "fixed",
+  "results": {
+    "CHAMPION": {
+      "pooled_outer": {
+        "total": 0.6314827308346854,
+        "one_minus_nmae": 0.8584802239958174,
+        "ficr": 0.40448523767355354
+      },
+      "per_fold": {
+        "dev-2023-Q3": {
+          "total": 0.6051356658854874,
+          "one_minus_nmae": 0.8642506686611071,
+          "ficr": 0.34602066310986773
+        },
+        "dev-2023-Q4": {
+          "total": 0.6418311089992913,
+          "one_minus_nmae": 0.8552521261830528,
+          "ficr": 0.4284100918155298
+        }
+      }
+    },
+    "M115_REFIT_ZERO": {
+      "pooled_outer": {
+        "total": 0.6314827308346854,
+        "one_minus_nmae": 0.8584802239958174,
+        "ficr": 0.40448523767355354
+      },
+      "per_fold": {
+        "dev-2023-Q3": {
+          "total": 0.6051356658854874,
+          "one_minus_nmae": 0.8642506686611071,
+          "ficr": 0.34602066310986773
+        },
+        "dev-2023-Q4": {
+          "total": 0.6418311089992913,
+          "one_minus_nmae": 0.8552521261830528,
+          "ficr": 0.4284100918155298
+        }
+      }
+    },
+    "GEOM_M115_REPLACED": {
+      "pooled_outer": {
+        "total": 0.632396625337504,
+        "one_minus_nmae": 0.8585952250102717,
+        "ficr": 0.4061980256647361
+      },
+      "per_fold": {
+        "dev-2023-Q3": {
+          "total": 0.6056350532577742,
+          "one_minus_nmae": 0.8644282568652337,
+          "ficr": 0.34684184965031467
+        },
+        "dev-2023-Q4": {
+          "total": 0.6429064795505091,
+          "one_minus_nmae": 0.8553375466132837,
+          "ficr": 0.4304754124877344
+        }
+      }
+    }
+  },
+  "raw_m115_arm": {
+    "dev-2023-Q2": {
+      "CTRL": {
+        "total": 0.6370810528809719,
+        "one_minus_nmae": 0.8582997474907056,
+        "ficr": 0.41586235827123824
+      },
+      "TREAT": {
+        "total": 0.633130745606472,
+        "one_minus_nmae": 0.8577900033855819,
+        "ficr": 0.4084714878273621
+      },
+      "delta": -0.0039503072744999645
+    },
+    "dev-2023-Q3": {
+      "CTRL": {
+        "total": 0.588386211961821,
+        "one_minus_nmae": 0.8507768872970987,
+        "ficr": 0.32599553662654324
+      },
+      "TREAT": {
+        "total": 0.5909259670511608,
+        "one_minus_nmae": 0.8512432576278324,
+        "ficr": 0.3306086764744893
+      },
+      "delta": 0.0025397550893399012
+    },
+    "dev-2023-Q4": {
+      "CTRL": {
+        "total": 0.6370609769666316,
+        "one_minus_nmae": 0.8460641940812662,
+        "ficr": 0.4280577598519968
+      },
+      "TREAT": {
+        "total": 0.6409086116802877,
+        "one_minus_nmae": 0.8464238800804501,
+        "ficr": 0.4353933432801253
+      },
+      "delta": 0.003847634713656123
+    }
+  },
+  "fold_details": {
+    "dev-2023-Q2": {
+      "feature_availability_safe": true,
+      "label_max": "2023-04-01T00:00:00",
+      "first_basis": "2023-04-01T14:00:00",
+      "training_rows": 32760,
+      "validation_rows": 6552,
+      "ctrl_vs_n7_m115_max_abs": 0.0
+    },
+    "dev-2023-Q3": {
+      "feature_availability_safe": true,
+      "label_max": "2023-07-01T00:00:00",
+      "first_basis": "2023-07-01T14:00:00",
+      "training_rows": 39312,
+      "validation_rows": 6609,
+      "ctrl_vs_n7_m115_max_abs": 0.0
+    },
+    "dev-2023-Q4": {
+      "feature_availability_safe": true,
+      "label_max": "2023-10-01T00:00:00",
+      "first_basis": "2023-10-01T14:00:00",
+      "training_rows": 45936,
+      "validation_rows": 6624,
+      "ctrl_vs_n7_m115_max_abs": 0.0
+    }
+  },
+  "delta_vs_control": 0.0009138945028185352,
+  "min_effect": 0.001,
+  "gate_passed": false,
+  "determinism": {
+    "runs": 2,
+    "identical_json": true,
+    "predictions_sha256": "83d32a5a3142f26a35c872e51a27df52952b6d210e2ba0e8c260f75546290d39"
+  },
+  "control_validity": "M115_REFIT_ZERO reproduced CHAMPION to identical Total, so the refit reproduced the frozen M115 actions exactly.",
+  "result_status": "REFUTED",
+  "interpretation": [
+    "Pooled outer Total moved +0.0009139 against a predeclared minimum effect of 0.001, so the promotion gate FAILS.",
+    "The raw M115-arm delta is positive on both outer folds (+0.002540 Q3, +0.003848 Q4) but negative on the Q2 burn-in fold (-0.003950), so the arm-level mechanism is real but unstable across folds.",
+    "The deployment rule multiplies any arm-level gain by 0.70/3 = 0.2333, so a raw arm gain of about +0.003 becomes about +0.0009 at champion level. The ensemble weight, not the feature block, is now the binding constraint.",
+    "The earlier T1 screen reported +0.013904 on Q2 with an 87-feature control that omitted the 13 sitewind features. With the true 100-feature control the Q2 sign reverses. The screen control was not the champion control and its magnitude did not transfer."
+  ],
+  "residual_deficit": "FD11 is partially relieved as a mechanism but cannot close the 0.0285 gap through a single member at weight 0.2333. The next deficit is the ensemble/action architecture: either the gradient information must enter more members, or the champion blend weights must themselves become the treatment.",
+  "spawned_children": [
+    "S17-N38_ENSEMBLE_WEIGHT_BINDING_CONSTRAINT"
+  ],
+  "selected_disposition": "BRANCH",
+  "lockbox_2024_used": false,
+  "dacon_actions": [],
+  "closed_at": "2026-08-09T05:51:45.904156+09:00"
+}

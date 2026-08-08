@@ -1,0 +1,184 @@
+{
+ "dacon_upload": false,
+ "decided_utc": "2026-08-04T14:03:45.243234+00:00",
+ "external_actions": [],
+ "lane": "L3",
+ "lockbox_reopened": false,
+ "model_fits": 78,
+ "new_2024_evaluation": false,
+ "node": "C1N42_TEACHER_RESTORED",
+ "report_sha256": "9ee0b5e8724510d0cc0f5d8f8020e8fa192d45972b96cc432631df00c715d136",
+ "result": {
+  "by_fold": {
+   "BAND": {
+    "Q2": 0.6024454953070818,
+    "Q3": 0.5813284873793089,
+    "Q4": 0.6076131153390588
+   },
+   "CONTROL": {
+    "Q2": 0.5960458867895153,
+    "Q3": 0.5688798612443797,
+    "Q4": 0.6072161821793729
+   }
+  },
+  "changed_vs_cycle40": "피처에 복원된 sitewind 파생 추가. 용량은 사이클 40 값으로 복귀",
+  "classifier_fits": 6,
+  "contribution": {
+   "ficr": 0.0027924548266073934,
+   "one_minus_nmae": 0.002034102359258827
+  },
+  "delta_band_minus_control": 0.00482655718586622,
+  "features_used": 101,
+  "gate_modified": false,
+  "gate_version": "M270_MONTHLY_GATE_v1_frozen_2026-08-04",
+  "gate_vs_deployed": {
+   "bootstrap_q05": -0.03252810228996457,
+   "flags": {
+    "G1": false,
+    "G2": false,
+    "G3": false,
+    "G4": false
+   },
+   "min_delta": -0.04950766478520097,
+   "months_scored": 9,
+   "passed": false,
+   "positive_months": 1,
+   "sign_test_p": 0.998046875
+  },
+  "leakage_discipline": "scada_ws 는 teacher 표적으로만 사용. 분류기에는 teacher 예측만 들어가며 학습행은 KFold OOF",
+  "lockbox_used": false,
+  "node": "C1N42_TEACHER_RESTORED",
+  "params": {
+   "bagging_fraction": 0.8,
+   "bagging_freq": 1,
+   "deterministic": true,
+   "feature_fraction": 0.8,
+   "force_row_wise": true,
+   "learning_rate": 0.1,
+   "min_child_samples": 100,
+   "num_class": 46,
+   "num_leaves": 15,
+   "num_threads": 1,
+   "objective": "multiclass",
+   "seed": 20260804,
+   "verbose": -1
+  },
+  "parent_node": "C1N41_BAND_CLASSIFIER_CAPACITY",
+  "predeclared_check": {
+   "H1_expectation": "BAND > CONTROL",
+   "H1_held": null,
+   "H1_measured": 0.00482655718586622,
+   "H2_expectation": "BAND 가 배포 대비 개선 + 게이트 통과",
+   "H2_held": null,
+   "H3_expectation": "BAND > 0.63031",
+   "H3_held": null,
+   "H4_expectation": "이득이 FICR 쪽",
+   "H4_held": null,
+   "H5_expectation": "처리효과 부호가 사이클 40·41(0.009772, 0.02149) 과 동일",
+   "H5_held": true,
+   "V1_expectation": "CONTROL 이 배포의 -0.03 이내",
+   "V1_held": false,
+   "V1_measured_gap": -0.032685374399389455,
+   "V3_expectation": "teacher 복원이 CONTROL 을 개선 (> 0.584468)",
+   "V3_held": true,
+   "V3_measured": 0.011451146490925934,
+   "judged": false,
+   "verdict": "TEACHER_RESTORED_STILL_UNJUDGED"
+  },
+  "prior_deltas": [
+   0.009772,
+   0.02149
+  ],
+  "rounds": 200,
+  "scores": {
+   "BAND": {
+    "ficr": 0.34755401104503586,
+    "group_ficr": {
+     "1": 0.33912568128410875,
+     "2": 0.42209109814942036,
+     "3": 0.28144525370157847
+    },
+    "group_nmae": {
+     "1": 0.13823711960743515,
+     "2": 0.13737320686342594,
+     "3": 0.1625774846034938
+    },
+    "one_minus_nmae": 0.8539373963085484,
+    "total": 0.6007457036767921
+   },
+   "CONTROL": {
+    "ficr": 0.3419691013918211,
+    "group_ficr": {
+     "1": 0.33415419429308857,
+     "2": 0.4131503456314739,
+     "3": 0.2786027642509008
+    },
+    "group_nmae": {
+     "1": 0.1430228828663245,
+     "2": 0.14025076822916666,
+     "3": 0.16711877413441675
+    },
+    "one_minus_nmae": 0.8498691915900307,
+    "total": 0.5959191464909259
+   },
+   "deployed": {
+    "ficr": 0.40246401063156667,
+    "group_ficr": {
+     "1": 0.409551299643159,
+     "2": 0.46073846269466673,
+     "3": 0.33710226955687433
+    },
+    "group_nmae": {
+     "1": 0.13617589715402054,
+     "2": 0.14227310586805572,
+     "3": 0.15731590353073155
+    },
+    "one_minus_nmae": 0.8547450311490641,
+    "total": 0.6286045208903154
+   }
+  },
+  "teacher": {
+   "derived_features": [
+    "sitewind__legacy",
+    "sitewind__allweather",
+    "sitewind__mean",
+    "sitewind__delta",
+    "sitewind__disagreement",
+    "sitewind__legacy2",
+    "sitewind__legacy3",
+    "sitewind__legacy_powercurve",
+    "sitewind__allweather2",
+    "sitewind__allweather3",
+    "sitewind__allweather_powercurve",
+    "sitewind__mean2",
+    "sitewind__mean3",
+    "sitewind__mean_powercurve"
+   ],
+   "fits": 72,
+   "params": {
+    "colsample_bytree": 0.85,
+    "deterministic": true,
+    "force_col_wise": true,
+    "learning_rate": 0.05,
+    "max_bin": 255,
+    "min_child_samples": 40,
+    "n_estimators": 400,
+    "n_jobs": 1,
+    "num_leaves": 63,
+    "random_state": 20260802,
+    "reg_alpha": 0.1,
+    "reg_lambda": 3.0,
+    "subsample": 0.9,
+    "subsample_freq": 1,
+    "verbosity": -1
+   },
+   "profiles": {
+    "allweather": 1347,
+    "legacy": 315
+   }
+  }
+ },
+ "schema_version": 1,
+ "script_sha256": "b44f9dadd87d709060dff71644912d97d7549254eb5b0c6b54d6719f6a43affc",
+ "stage": "M271_P4_CYCLE42_TEACHER_RESTORED"
+}

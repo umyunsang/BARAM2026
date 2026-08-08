@@ -1,0 +1,70 @@
+{
+ "stage": "D2",
+ "category": "피처구성",
+ "name": "feature construction",
+ "queries": [
+  "wind power forecasting feature engineering hub height extrapolation air density benchmark",
+  "multi-source NWP feature fusion wind power sister model stacking",
+  "wind power forecast spatial grid weighting turbine layout wake feature"
+ ],
+ "prior_stage_results": {
+  "D1": {
+   "emitted": 4,
+   "retired": 4,
+   "verdicts": [
+    {
+     "node": "D1_F3_1",
+     "subcapability": "C3.6",
+     "summary": "GFS 80m/100m/PBL 풍속이 후보 피처 풀에 존재했는지 감사 - 선택 탈락인가 애초 부재인가",
+     "verdict": "PRESENT_BUT_DESELECTED",
+     "detail": "GFS 80m/100m 18+18 features in the 820-feature pool, deselected by feature selection; even 10m winds were deselected in favour of teacher sitewind",
+     "origin": "research://IOP 2026 doi:10.1088/3049-4753/ae4c8d; ACP 23:3181 (2023) 'Estimating hub-height wind speed based on machine "
+    },
+    {
+     "node": "D1_F3_2",
+     "subcapability": "C3.6",
+     "summary": "허브고도 풍속 직접사용 vs power-law 외삽 vs teacher 추정 3자 비교 (D1_F3_1 결과가 '부재'일 때만)",
+     "verdict": "ADMISSION_FAILED_PREMISE_UNDERMINED",
+     "detail": "D1_F3_1 showed hub-height winds are in the pool and were deselected; the premise 'absent from pool' is false",
+     "origin": "research://IOP 2026 doi:10.1088/3049-4753/ae4c8d; ACP 23:3181 (2023) 'Estimating hub-height wind speed based on machine "
+    },
+    {
+     "node": "D1_F1_1",
+     "subcapability": "C3.2",
+     "summary": "NWP 풍속 자체의 편향보정(quantile mapping) 후 하류 점수 변화 측정",
+     "verdict": "NO_BIAS_TO_CORRECT_QMAP_WORSENS",
+     "detail": "teacher wind bias -0.0056 m/s (already unbiased); quantile mapping raises sigma 1.5866 -> 1.6273 (+2.56%)",
+     "origin": "research://Spiliotis et al. 2025, ScienceDirect S2213138825004308 (Cited 9) [near_match_only]"
+    },
+    {
+     "node": "D1_F2_1",
+     "subcapability": "C3.4",
+     "summary": "제어전략 영역(MPPT/정격/피치) 구분 필터로 teacher 표적 정제 후 재평가",
+     "verdict": "ADMISSION_FAILED_SUPERSET_ALREADY_CLOSED",
+     "detail": "{'node': 'D1_F2_1', 'stage': 'D1', 'origin': 'research://Morrison-2022 + Wang-2025-JMSE-13-410 [near_match_only]', 'prior_failures': [{'node': 'C1N87', 'method': 'hand rule (residual<-0.15 & ws>=10)', 'delta': -0.001194, 'verdict': 'CURTAIL",
+     "origin": "research://Morrison et al. 2022 Univ. Glasgow (Cited 143); Wang et al. 2025 MDPI JMSE 13(3):410 (Cited 11) [near_match_o"
+    }
+   ]
+  }
+ },
+ "contract": {
+  "each_finding_requires": [
+   "claim",
+   "source locator",
+   "evidence tag",
+   "relevance to this project"
+  ],
+  "valid_tags": [
+   "contradicts_premise",
+   "directly_supported",
+   "insufficient",
+   "near_match_only"
+  ],
+  "actionable_tags": [
+   "contradicts_premise",
+   "directly_supported",
+   "near_match_only"
+  ],
+  "note": "a finding tagged insufficient may be recorded but may not spawn a node"
+ }
+}

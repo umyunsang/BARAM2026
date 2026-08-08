@@ -1,0 +1,118 @@
+{
+ "candidate": "SYNTHETIC_k0.99",
+ "dacon_upload": false,
+ "decided_utc": "2026-08-04T06:55:50.010571+00:00",
+ "gap_remaining": 0.02917873091747225,
+ "gate": {
+  "above_detection_threshold": true,
+  "bootstrap_q05": 0.0018369884371569624,
+  "detection_threshold": 0.001013,
+  "flags": {
+   "G1": true,
+   "G2": true,
+   "G3": true,
+   "G4": true
+  },
+  "median_delta": 0.0019198683699538366,
+  "min_delta": 0.001411317928260547,
+  "months_scored": 9,
+  "passed": true,
+  "positive_months": 9,
+  "sign_test_p": 0.001953125
+ },
+ "gate_modified": false,
+ "gate_version": "M270_MONTHLY_GATE_v1_frozen_2026-08-04",
+ "leans_on_closed_axes": {},
+ "ledger_diff": {
+  "cells_compared": 108,
+  "cells_improved": 108,
+  "cells_worsened": 0,
+  "loss_added": -0.0,
+  "loss_removed": 0.0022167481922123334,
+  "net_loss_removed": 0.0022167481922123334,
+  "top_improved": [
+   {
+    "cell": "group_id=2|month=2023-12|y_band=(0.7, 1.1]",
+    "loss_removed": 0.00019821245050577127
+   },
+   {
+    "cell": "group_id=2|month=2023-11|y_band=(0.7, 1.1]",
+    "loss_removed": 0.00015840273642233997
+   },
+   {
+    "cell": "group_id=1|month=2023-11|y_band=(0.7, 1.1]",
+    "loss_removed": 9.12077875840616e-05
+   },
+   {
+    "cell": "group_id=1|month=2023-12|y_band=(0.7, 1.1]",
+    "loss_removed": 8.326051783074002e-05
+   },
+   {
+    "cell": "group_id=3|month=2023-04|y_band=(0.7, 1.1]",
+    "loss_removed": 7.41459853669333e-05
+   }
+  ],
+  "top_worsened": [
+   {
+    "cell": "group_id=2|month=2023-06|y_band=(0.7, 1.1]",
+    "loss_added": -1.5085647955246934e-06
+   },
+   {
+    "cell": "group_id=3|month=2023-09|y_band=(0.45, 0.7]",
+    "loss_added": -1.4541186851068982e-06
+   },
+   {
+    "cell": "group_id=2|month=2023-08|y_band=(0.7, 1.1]",
+    "loss_added": -1.452619347993775e-06
+   },
+   {
+    "cell": "group_id=1|month=2023-08|y_band=(0.7, 1.1]",
+    "loss_added": -1.327574193523643e-06
+   },
+   {
+    "cell": "group_id=3|month=2023-10|y_band=(0.7, 1.1]",
+    "loss_added": -9.880504370663595e-07
+   }
+  ]
+ },
+ "lockbox_reopened": false,
+ "model_fits": 0,
+ "new_2024_evaluation": false,
+ "official": {
+  "candidate": {
+   "ficr": 0.40544495732748204,
+   "group_ficr": {
+    "1": 0.41306810937817684,
+    "2": 0.46404138455250243,
+    "3": 0.33922537805176667
+   },
+   "group_nmae": {
+    "1": 0.1348141381824803,
+    "2": 0.14085037480937515,
+    "3": 0.15574274449542425
+   },
+   "one_minus_nmae": 0.8561975808375735,
+   "total": 0.6308212690825278
+  },
+  "delta_total": 0.0022167481922124033,
+  "parent": {
+   "ficr": 0.40246401063156667,
+   "group_ficr": {
+    "1": 0.409551299643159,
+    "2": 0.46073846269466673,
+    "3": 0.33710226955687433
+   },
+   "group_nmae": {
+    "1": 0.13617589715402054,
+    "2": 0.14227310586805572,
+    "3": 0.15731590353073155
+   },
+   "one_minus_nmae": 0.8547450311490641,
+   "total": 0.6286045208903154
+  }
+ },
+ "script_sha256": "87190ba52d9b37326da4199d5b6e66fd9dbc03562a58e7cb8135693ad4522233",
+ "target": 0.66,
+ "unknown_axes": [],
+ "verdict": "GATE_PASSED"
+}

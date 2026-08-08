@@ -1,0 +1,28 @@
+{
+  "event_type": "PREDECLARED",
+  "cycle_id": "S17-N18_POST_RWA_FRONTIER_RESEARCH_INTAKE",
+  "stage_id": "S10",
+  "node_id": "S17-N18_POST_RWA_FRONTIER_RESEARCH_INTAKE",
+  "actor": "root",
+  "occurred_at": "2026-08-08T22:16:43.463711+09:00",
+  "body": {
+    "preregistration_sha256": "2f00184f84f990d06125f5b89cb174a6b1f15a3afd1094d51568203deb33312f",
+    "parent_ids": [
+      "S17-N17_R4_NO_REFIT_STRICT_SOURCE_SEPARATION_COMPARISON"
+    ],
+    "mechanism": "A bounded, evidence-tagged re-entry can distinguish a nonduplicate next information/representation mechanism from already-refuted RWA axes without consuming another comparison.",
+    "treatment": "Four read-only research lanes followed by root evidence and applicability synthesis.",
+    "control": "No fits, score calls, external data bodies, weights or dependencies.",
+    "metric": "Boolean source quality, applicability, chronology, licence, nonduplication, runtime and bounded-cost gates; at most one next executable candidate.",
+    "min_effect": 0.0,
+    "score_bearing": false,
+    "novelty_signature": "POST_RWA_BOUNDED_FRONTIER_REENTRY_V1",
+    "basis_evidence_ids": [
+      "S17_N17_R4_REFUTED",
+      "S17_N15A_R3_UNIDENTIFIED",
+      "S17_N13A_R2_REFUTED",
+      "S17_N11A_R1_BELOW_GATE",
+      "S17_N9_COST5_REFUTED"
+    ]
+  }
+}

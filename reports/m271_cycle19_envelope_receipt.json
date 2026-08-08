@@ -1,0 +1,232 @@
+{
+ "dacon_upload": false,
+ "decided_utc": "2026-08-04T07:23:22.739317+00:00",
+ "external_actions": [],
+ "lane": "L5",
+ "lockbox_reopened": false,
+ "model_fits": 0,
+ "new_2024_evaluation": false,
+ "node": "C1N19_ENVELOPE_ORACLE",
+ "report_sha256": "90b657fc1d3b47bccc7cd70db378d7ce1b806853f462048c76266666b98a90fc",
+ "result": {
+  "current_combiner": {
+   "ficr": 0.41320978983964385,
+   "group_ficr": {
+    "1": 0.42079521858555724,
+    "2": 0.46863045810963244,
+    "3": 0.3502036928237419
+   },
+   "group_nmae": {
+    "1": 0.13286075292051555,
+    "2": 0.13543735862877082,
+    "3": 0.151750291391336
+   },
+   "one_minus_nmae": 0.8599838656864592,
+   "operator": "median",
+   "total": 0.6365968277630516
+  },
+  "envelopes": {
+   "members_4": {
+    "coverage_all_rows": 0.1713679102214134,
+    "coverage_eligible": 0.22636252829531603,
+    "ficr": 0.5800636925729868,
+    "group_ficr": {
+     "1": 0.5928345476163203,
+     "2": 0.6280384595561155,
+     "3": 0.519318070546525
+    },
+    "group_nmae": {
+     "1": 0.08913094774980927,
+     "2": 0.09125003627626789,
+     "3": 0.10553078537809289
+    },
+    "headroom_vs_current": 0.10578305695608015,
+    "median_envelope_width_cap": 0.08332456521787598,
+    "n_members": 4,
+    "one_minus_nmae": 0.9046960768652766,
+    "reaches_target": true,
+    "total": 0.7423798847191317
+   },
+   "members_4_plus_deployed": {
+    "coverage_all_rows": 0.17905166312809626,
+    "coverage_eligible": 0.23959602994950374,
+    "ficr": 0.5877884110863919,
+    "group_ficr": {
+     "1": 0.6016768890891513,
+     "2": 0.6349170653449069,
+     "3": 0.5267712788251175
+    },
+    "group_nmae": {
+     "1": 0.08720630614488466,
+     "2": 0.08985333532280351,
+     "3": 0.10388987257960745
+    },
+    "headroom_vs_current": 0.11047245877226175,
+    "median_envelope_width_cap": 0.0887290985605552,
+    "n_members": 5,
+    "one_minus_nmae": 0.9063501619842348,
+    "reaches_target": true,
+    "total": 0.7470692865353133
+   }
+  },
+  "gate_modified": false,
+  "is_oracle_not_candidate": true,
+  "members": [
+   "M102_TOP100",
+   "M244_RARE_EVENT_CORRECTED_ANALOG_Q234",
+   "M113_LGBM_DART",
+   "M115_XGBOOST"
+  ],
+  "method_sources": [
+   {
+    "applicability": "directly_supported",
+    "cite": "Talagrand 순위 히스토그램 (Talagrand 1997/1999)",
+    "claim": "실측의 앙상블 내 순위 분포로 분산 보정을 진단한다. 과소분산이면 U 자",
+    "id": "talagrand_rank_histogram",
+    "use": "커버리지와 이상치 비율의 표준 정의"
+   },
+   {
+    "applicability": "directly_supported",
+    "cite": "Hamill (2001), Mon. Wea. Rev. 129(3):550 — Interpretation of Rank Histograms",
+    "claim": "집계 히스토그램은 조건부 편향을 가린다. U 자는 과소분산과 조건부 편향에 모두서 나오고, 평탄해도 보정을 뜻하지 않는다",
+    "id": "hamill_2001",
+    "use": "층화 히스토그램(H4)과 이상치 대칭성 검사(H3)를 추가하는 근거"
+   }
+  ],
+  "node": "C1N19_ENVELOPE_ORACLE",
+  "parent_node": "C1N18_SPREAD_SKILL",
+  "policy_modified": false,
+  "predeclared_check": {
+   "H1_expectation": "커버리지 >= 0.50",
+   "H1_held": false,
+   "H1_measured": 0.22636252829531606,
+   "H2_expectation": "4 멤버 봉투 오라클 Total >= 0.66",
+   "H2_held": true,
+   "H2_measured": 0.7423798847191317,
+   "H3_expectation": "이상치 비대칭 >= 0.10",
+   "H3_held": true,
+   "H3_measured": 0.12449939056242382,
+   "H3_reading": "조건부 편향",
+   "H4_expectation": "모든 굵은 셀에서 커버리지 >= 0.30",
+   "H4_held": false,
+   "verdict": "ANSWER_INSIDE_ENSEMBLE_EXTRACTION_AXIS_OPENS"
+  },
+  "rank_histogram": {
+   "bins": [
+    0.4490684311335539,
+    0.12911370363921296,
+    0.037611004701375586,
+    0.05963781995472749,
+    0.32456904057113006
+   ],
+   "coverage": 0.22636252829531606,
+   "outlier_asymmetry": 0.12449939056242382,
+   "p_above_all": 0.32456904057113006,
+   "p_below_all": 0.4490684311335539,
+   "uniform_expectation": 0.2
+  },
+  "stratified_cells": [
+   {
+    "coverage": 0.3126491646778043,
+    "group": 1,
+    "p_above": 0.3221957040572792,
+    "p_below": 0.36515513126491644,
+    "pred_band": "(0.1, 0.25]",
+    "rows": 838
+   },
+   {
+    "coverage": 0.1900121802679659,
+    "group": 1,
+    "p_above": 0.3337393422655298,
+    "p_below": 0.4762484774665043,
+    "pred_band": "(0.25, 0.45]",
+    "rows": 821
+   },
+   {
+    "coverage": 0.23132313231323132,
+    "group": 1,
+    "p_above": 0.33663366336633666,
+    "p_below": 0.43204320432043203,
+    "pred_band": "(0.45, 0.7]",
+    "rows": 1111
+   },
+   {
+    "coverage": 0.20728744939271254,
+    "group": 1,
+    "p_above": 0.3748987854251012,
+    "p_below": 0.4178137651821862,
+    "pred_band": "(0.7, 1.1]",
+    "rows": 1235
+   },
+   {
+    "coverage": 0.29875,
+    "group": 2,
+    "p_above": 0.34875,
+    "p_below": 0.3525,
+    "pred_band": "(0.1, 0.25]",
+    "rows": 800
+   },
+   {
+    "coverage": 0.20029239766081872,
+    "group": 2,
+    "p_above": 0.3362573099415205,
+    "p_below": 0.46345029239766083,
+    "pred_band": "(0.25, 0.45]",
+    "rows": 684
+   },
+   {
+    "coverage": 0.22808988764044943,
+    "group": 2,
+    "p_above": 0.27191011235955054,
+    "p_below": 0.5,
+    "pred_band": "(0.45, 0.7]",
+    "rows": 890
+   },
+   {
+    "coverage": 0.2115621156211562,
+    "group": 2,
+    "p_above": 0.2742927429274293,
+    "p_below": 0.5141451414514145,
+    "pred_band": "(0.7, 1.1]",
+    "rows": 1626
+   },
+   {
+    "coverage": 0.31100478468899523,
+    "group": 3,
+    "p_above": 0.34210526315789475,
+    "p_below": 0.34688995215311,
+    "pred_band": "(0.1, 0.25]",
+    "rows": 836
+   },
+   {
+    "coverage": 0.19316688567674112,
+    "group": 3,
+    "p_above": 0.35348226018396844,
+    "p_below": 0.4533508541392904,
+    "pred_band": "(0.25, 0.45]",
+    "rows": 761
+   },
+   {
+    "coverage": 0.1745635910224439,
+    "group": 3,
+    "p_above": 0.327930174563591,
+    "p_below": 0.4975062344139651,
+    "pred_band": "(0.45, 0.7]",
+    "rows": 802
+   },
+   {
+    "coverage": 0.18391866913123844,
+    "group": 3,
+    "p_above": 0.3068391866913124,
+    "p_below": 0.5092421441774492,
+    "pred_band": "(0.7, 1.1]",
+    "rows": 1082
+   }
+  ],
+  "target": 0.66,
+  "uses_labels": true
+ },
+ "schema_version": 1,
+ "script_sha256": "65bdb4c1043a008526c1c911f8a0323147b0289744bb0622587fa0d28beab9b1",
+ "stage": "M271_P4_CYCLE19_ENVELOPE"
+}

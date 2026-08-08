@@ -1,0 +1,196 @@
+{
+ "dacon_upload": false,
+ "decided_utc": "2026-08-04T07:30:51.023920+00:00",
+ "external_actions": [],
+ "lane": "L1",
+ "lockbox_reopened": false,
+ "model_fits": 0,
+ "new_2024_evaluation": false,
+ "node": "C1N22_GLOBAL_SHIFT",
+ "report_sha256": "7aa1d0bcc867ab098d51c3d36c0666d14df8f4e040e0522ac621fedc6bc200d9",
+ "result": {
+  "closes_with_premise": "C1N21_MOS_BIAS_CORRECTION",
+  "distribution_compression": [
+   {
+    "compressed": false,
+    "group": 1,
+    "ratio": 1.152634895132623,
+    "sd_after": 0.2964691340232708,
+    "sd_before": 0.2572099242138239
+   },
+   {
+    "compressed": false,
+    "group": 2,
+    "ratio": 1.0956737833703487,
+    "sd_after": 0.30924587694976324,
+    "sd_before": 0.28224265437702367
+   },
+   {
+    "compressed": false,
+    "group": 3,
+    "ratio": 1.0864837557633418,
+    "sd_after": 0.2711524078139775,
+    "sd_before": 0.24956876379939177
+   }
+  ],
+  "gap_to_target": 0.023403172236948433,
+  "gate_modified": false,
+  "gate_version": "M270_MONTHLY_GATE_v1_frozen_2026-08-04",
+  "global_shift": {
+   "delta_vs_incumbent": -0.09969734425639576,
+   "ficr": 0.23193956587630593,
+   "gate": {
+    "bootstrap_q05": -0.110799476593633,
+    "flags": {
+     "G1": false,
+     "G2": false,
+     "G3": false,
+     "G4": false
+    },
+    "months_scored": 9,
+    "passed": false,
+    "positive_months": 0,
+    "sign_test_p": 1.0
+   },
+   "group_ficr": {
+    "1": 0.24403720481245425,
+    "2": 0.25676032540620525,
+    "3": 0.19502116741025827
+   },
+   "group_nmae": {
+    "1": 0.15071853905682833,
+    "2": 0.14812134838660315,
+    "3": 0.17558190914555163
+   },
+   "one_minus_nmae": 0.8418594011370056,
+   "per_group_by_split": {
+    "1": [
+     -0.11522,
+     -0.09353,
+     -0.11593
+    ],
+    "2": [
+     -0.11951,
+     -0.09867,
+     -0.12022
+    ],
+    "3": [
+     -0.12998,
+     -0.12125,
+     -0.13253
+    ]
+   },
+   "total": 0.5368994835066558
+  },
+  "incumbent": "M271_MEDIAN4",
+  "incumbent_score": {
+   "ficr": 0.41320978983964385,
+   "group_ficr": {
+    "1": 0.42079521858555724,
+    "2": 0.46863045810963244,
+    "3": 0.3502036928237419
+   },
+   "group_nmae": {
+    "1": 0.13286075292051555,
+    "2": 0.13543735862877082,
+    "3": 0.151750291391336
+   },
+   "one_minus_nmae": 0.8599838656864592,
+   "total": 0.6365968277630516
+  },
+  "mechanism_regression_to_mean": [
+   {
+    "group": 1,
+    "monotone_decreasing": false,
+    "n_bands": 4,
+    "p_value": 0.0,
+    "shifts_by_band_ordinal": [
+     {
+      "band_ord": 0,
+      "shift": -0.1328
+     },
+     {
+      "band_ord": 1,
+      "shift": -0.0651
+     },
+     {
+      "band_ord": 2,
+      "shift": -0.0528
+     },
+     {
+      "band_ord": 3,
+      "shift": -0.0334
+     }
+    ],
+    "spearman": 1.0
+   },
+   {
+    "group": 2,
+    "monotone_decreasing": false,
+    "n_bands": 4,
+    "p_value": 0.2000000000000001,
+    "shifts_by_band_ordinal": [
+     {
+      "band_ord": 0,
+      "shift": -0.1307
+     },
+     {
+      "band_ord": 1,
+      "shift": -0.0663
+     },
+     {
+      "band_ord": 2,
+      "shift": -0.0853
+     },
+     {
+      "band_ord": 3,
+      "shift": -0.0567
+     }
+    ],
+    "spearman": 0.7999999999999999
+   },
+   {
+    "group": 3,
+    "monotone_decreasing": false,
+    "n_bands": 4,
+    "p_value": 0.8,
+    "shifts_by_band_ordinal": [
+     {
+      "band_ord": 0,
+      "shift": -0.1419
+     },
+     {
+      "band_ord": 1,
+      "shift": -0.0469
+     },
+     {
+      "band_ord": 2,
+      "shift": -0.0704
+     },
+     {
+      "band_ord": 3,
+      "shift": -0.0874
+     }
+    ],
+    "spearman": 0.19999999999999998
+   }
+  ],
+  "node": "C1N22_GLOBAL_SHIFT",
+  "parent_node": "C1N21_MOS_BIAS_CORRECTION",
+  "predeclared_check": {
+   "H1_expectation": "층별 이동이 예측대역에 대해 단조 감소 (세 그룹 Spearman <= -0.8)",
+   "H1_held": false,
+   "H2_expectation": "사이클 21 보정이 예측 분포를 압축한다 (세 그룹 SD 감소)",
+   "H2_held": false,
+   "H3_expectation": "그룹별 전역 이동의 부호가 세 분할에서 일치",
+   "H3_held": true,
+   "H4_expectation": "전역 이동이 Total 개선 + 동결 게이트 통과",
+   "H4_held": false,
+   "verdict": "GLOBAL_SHIFT_REJECTED_MECHANISM_UNCONFIRMED"
+  },
+  "promoted_total": 0.6365968277630516
+ },
+ "schema_version": 1,
+ "script_sha256": "b0f3726ae7cbdb365b01ba7d9bfcf4fa6fd9cc6c00747dba1d4cd1a6d03de654",
+ "stage": "M271_P4_CYCLE22_GLOBAL_SHIFT"
+}

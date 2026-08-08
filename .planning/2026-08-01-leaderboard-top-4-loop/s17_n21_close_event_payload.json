@@ -1,0 +1,37 @@
+{
+  "event_type": "CLOSED",
+  "cycle_id": "S17-N21_TERRAIN_SX300_H8_MODEL_FAMILY_PREREQUISITE_AUDIT",
+  "stage_id": "S7",
+  "node_id": "S17-N21_TERRAIN_SX300_H8_MODEL_FAMILY_PREREQUISITE_AUDIT",
+  "actor": "root",
+  "occurred_at": "2026-08-08T23:18:51.535849+09:00",
+  "body": {
+    "predeclared_event_sha256": "52dae5eb072187109d526735708445b35ff831ea933433b41ad5758f050f2667",
+    "receipt_path": "reports/s17_n21_terrain_model_family_prerequisite_receipt.json",
+    "receipt_sha256": "165c67271f6cdcf37719320a595afa8fbbdcdf10c17e96b08f9bac4b98d29f61",
+    "code_sha256": "2e4f9cf9da474cd9460ecd5907f674a23fae690124921d707131012e91a65794",
+    "config_sha256": "ca1022d8236acdefa2b886c20945029a060f3dddecb4d879cb4c6e5a99cf6b80",
+    "data_sha256": "4f212b859c78e18c57d62551b0c74fd6540f9a8410ead3a66ef2d79385eb49dd",
+    "router_sha256": "80e37561a32fb2928d1a7505b652bb822f5b6989e73b6d7106afb0ae62041b43",
+    "policy_ids": [
+      "M115_TERRAIN_SX300_H8_MEAN16_PREREQUISITE"
+    ],
+    "row_alignment_keys": [
+      "fold_id",
+      "group_id",
+      "forecast_kst_dtm"
+    ],
+    "evidence_class": "diagnostic",
+    "weights_fit": "fixed",
+    "result_status": "SUPPORTED",
+    "score_bearing": false,
+    "comparison_index": null,
+    "official_total": null,
+    "stage_evidence_status": "RESEARCHED",
+    "next_handoff": [
+      "S17-N22_M115_TERRAIN_SX300_H8_STRICT_PREQUENTIAL_COMPARISON"
+    ],
+    "lockbox_2024_used": false,
+    "dacon_actions": []
+  }
+}

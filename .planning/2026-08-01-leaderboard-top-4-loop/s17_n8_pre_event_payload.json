@@ -1,0 +1,27 @@
+{
+  "event_type": "PREDECLARED",
+  "cycle_id": "S17-N8_COST5_SPO_PLUS_STRICT_PREQUENTIAL_COMPARISON",
+  "stage_id": "S10",
+  "node_id": "S17-N8_COST5_SPO_PLUS_STRICT_PREQUENTIAL_COMPARISON",
+  "actor": "root",
+  "occurred_at": "2026-08-08T20:11:26.414248+09:00",
+  "body": {
+    "preregistration_sha256": "1094074f8f4e0675526ed752429be47052921476e96de4a621c209b18981d9e8",
+    "parent_ids": [
+      "S17-N7_STRICT_ACTION_PROVENANCE_RECONSTRUCTION",
+      "S17-N3_STRICT_PREQUENTIAL_EVALUATION_REPAIR"
+    ],
+    "mechanism": "A deterministic linear SPO+ selector can exploit the 0.41-0.43 band-hit complementarity of four fixed actions plus their champion better than the fixed champion action.",
+    "treatment": "One-shot deterministic five-action linear SPO+ selector with expanding past-only outer fits.",
+    "control": "Strict shifted fixed CHAMPION action from S17-N7.",
+    "metric": "Exact official Total and S17-N3 joint issuance-day promotion gate.",
+    "min_effect": 0.001635,
+    "score_bearing": true,
+    "novelty_signature": "COST5_LINEAR_SPO_PLUS_STRICT_SHIFTED_ACTIONS_V1",
+    "basis_evidence_ids": [
+      "S17_N7_STRICT_ACTIONS",
+      "S17_N3_PROTOCOL",
+      "RWA_MODEL_COST5"
+    ]
+  }
+}

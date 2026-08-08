@@ -1,0 +1,26 @@
+{
+  "event_type": "PREDECLARED",
+  "cycle_id": "S17-N20A_TERRAIN_SX300_H8_NO_NODATA_TAG_RECOVERY",
+  "stage_id": "S7",
+  "node_id": "S17-N20A_TERRAIN_SX300_H8_NO_NODATA_TAG_RECOVERY",
+  "actor": "root",
+  "occurred_at": "2026-08-08T22:55:52.580456+09:00",
+  "body": {
+    "preregistration_sha256": "4aec5d6c1c07df59c70b989bf666e4b451d98e217c2e1bbd52d2220db3979f90",
+    "parent_ids": [
+      "S17-N20_TERRAIN_SX300_H8_STATIC_LOOKUP_EXTRACTION"
+    ],
+    "mechanism": "The exact eligible COG can be safely decoded without tag 42113 only if every actually used full-resolution value is finite/plausible and two independent geometry traversals reproduce the frozen 1,152-entry Sx lookup exactly.",
+    "treatment": "Local-only typed nodata recovery on the exact N20 body; formula, geometry, values and object identity unchanged.",
+    "control": "No refetch, fill, formula change, weather row, fit, policy, score or comparison.",
+    "metric": "Boolean input, metadata, coverage, parity, finite/plausible-value, round-trip and determinism gates.",
+    "min_effect": 0.0,
+    "score_bearing": false,
+    "novelty_signature": "TERRAIN_SX300_H8_NO_NODATA_TAG_LOCAL_RECOVERY_V1",
+    "basis_evidence_ids": [
+      "N20_ELIGIBLE_BODY_FROZEN",
+      "N20_ONLY_42113_MISSING",
+      "N19_FORMULA_PARITY"
+    ]
+  }
+}

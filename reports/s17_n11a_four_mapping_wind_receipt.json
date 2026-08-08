@@ -1,0 +1,230 @@
+{
+  "schema_version": 1,
+  "node_id": "S17-N11A_FOUR_MAPPING_10MIN_SCADA_CORRECTED_DIAGNOSTIC",
+  "closed_at": "2026-08-08T20:45:45.546482+09:00",
+  "predeclaration": {
+    "path": "reports/s17_n11a_four_mapping_10min_scada_predeclaration.json",
+    "sha256": "908c0532c2740c6bce1c4be613ccfd441acb82181a6fe85bf79ab1e71954f8fb",
+    "event_sha256": "fc272cb58f2b23796df5cc2c83b32f77e9a26f918fc45af6e96e112e0507ae42"
+  },
+  "implementation": {
+    "path": "scripts/diagnose_nwp_temporal_mapping_10min.py",
+    "sha256": "8b759fe8fea3314b2ed2c9617670086427069c551a24585e7cede7bf48b4746c"
+  },
+  "input_bundle_sha256": "40f17333839515d10f370a2eb798be9a6c395dc35b17af687797b921c68ef896",
+  "artifact": {
+    "path": "artifacts/audits/s17_n11a_four_mapping_wind.json",
+    "sha256": "48b8b80a39ae3fbf23d3e54efc55709a9a6601aca31aedc26ea819b21d5b8c7a",
+    "reproduction_sha256": "48b8b80a39ae3fbf23d3e54efc55709a9a6601aca31aedc26ea819b21d5b8c7a",
+    "byte_identical": true
+  },
+  "scope": {
+    "operating_days": 730,
+    "common_hours_per_day": 22,
+    "2024_mapped_hour_wind_materialized": false,
+    "power_columns_materialized": false
+  },
+  "scada_prefix_rows": {
+    "vestas": 105115,
+    "unison": 52559
+  },
+  "result": {
+    "candidate": "mean_t_minus_1_t",
+    "aggregate_fisher_z": {
+      "t": 0.8384334141370592,
+      "t_minus_1": 0.8396492135233018,
+      "mean_t_minus_1_t": 0.8481246175090611,
+      "mean_t_t_plus_1": 0.8404904972240549
+    },
+    "delta_fisher_z_vs_t": {
+      "t": 0.0,
+      "t_minus_1": 0.0012157993862426109,
+      "mean_t_minus_1_t": 0.00969120337200191,
+      "mean_t_t_plus_1": 0.0020570830869957035
+    },
+    "strata_wins": {
+      "t": 0,
+      "t_minus_1": 0,
+      "mean_t_minus_1_t": 12,
+      "mean_t_t_plus_1": 0
+    },
+    "family_delta": {
+      "gfs": {
+        "t": 0.0,
+        "t_minus_1": 0.004004758678903264,
+        "mean_t_minus_1_t": 0.007924699940199509,
+        "mean_t_t_plus_1": -0.0006161210934563233
+      },
+      "ldaps": {
+        "t": 0.0,
+        "t_minus_1": -0.007151078491739238,
+        "mean_t_minus_1_t": 0.014990713667409228,
+        "mean_t_t_plus_1": 0.01007669562835245
+      }
+    },
+    "simultaneous_lower": {
+      "t_minus_1": -0.0034580363159319727,
+      "mean_t_minus_1_t": 0.005017367669827327,
+      "mean_t_t_plus_1": -0.00261675261517888
+    },
+    "clear_winner_checks": {
+      "unique_largest": true,
+      "noncurrent": true,
+      "delta_at_least_0_01": false,
+      "simultaneous_lower_gt_zero": true,
+      "strata_wins_at_least_9_of_12": true,
+      "positive_in_gfs_and_ldaps": true,
+      "coverage_each_panel_year_at_least_0_95": true
+    },
+    "result_status": "INCONCLUSIVE_NO_CLEAR_WINNER"
+  },
+  "adjudication": "INCONCLUSIVE_NO_CLEAR_WINNER. mean(t-1,t) was directionally consistent (12/12 strata and simultaneous lower >0) but frozen Fisher-z delta 0.00969120337200191 is strictly below the preregistered 0.01 gate. No threshold relaxation, mapping OOF, power score, or comparison-index consumption is permitted.",
+  "actions": {
+    "model_fits": 0,
+    "training_scada_wind_access": true,
+    "power_columns_or_labels_access": false,
+    "official_score_calls": 0,
+    "comparison_index": null,
+    "lockbox_2024_performance_access": false,
+    "test_data_access": false,
+    "dacon_actions": []
+  },
+  "verification": {
+    "compile": "pass",
+    "ruff": "All checks passed",
+    "deterministic_reproduction": true,
+    "event_chain_verified": true
+  },
+  "preclose_snapshot": {
+    "pending": [
+      "S17-N11A_FOUR_MAPPING_10MIN_SCADA_CORRECTED_DIAGNOSTIC"
+    ],
+    "closed": [
+      "S17-N10B_ISSUANCE_CUBE_2022_2023_CORRECTED_AUDIT",
+      "S17-N10_ISSUANCE_CUBE_TIMING_AND_MISSINGNESS_AUDIT",
+      "S17-N11_FOUR_MAPPING_TRAINING_WIND_DIAGNOSTIC",
+      "S17-N2_EVENT_LEDGER_ENVELOPE",
+      "S17-N3_STRICT_PREQUENTIAL_EVALUATION_REPAIR",
+      "S17-N4_ECMWF_18Z_FIXED_LEAD_AUDIT",
+      "S17-N5_ECMWF_18Z_2023_EXTRACTION",
+      "S17-N5_ECMWF_18Z_2023_INNOVATION_PROBE",
+      "S17-N6A_FAIL_CLOSED_SCORE_CLASS_REPAIR",
+      "S17-N6_COST5_SPO_PLUS_PREQUENTIAL",
+      "S17-N7_STRICT_ACTION_PROVENANCE_RECONSTRUCTION",
+      "S17-N8_COST5_SPO_PLUS_STRICT_PREQUENTIAL_COMPARISON",
+      "S17-N9_COST5_NO_REFIT_MATERIALIZATION_RECOVERY"
+    ],
+    "legacy": [
+      "C1N100_NOVEL_MEMBER_PROBE",
+      "C1N101_PHYSICAL_MEMBER_PROBE",
+      "C1N102_RETRIEVAL_MEMBER",
+      "C1N103_EXTERNAL_NWP_MEMBER",
+      "C1N104_M244_KEY_RECOVERED",
+      "C1N105_M244_RECIPE_READ",
+      "C1N10_BLEND_LOCALITY",
+      "C1N11_V2_REPRESENTATION",
+      "C1N12_G3_HISTORY",
+      "C1N13_ENSEMBLE_VARIANCE",
+      "C1N14_SHRINKBLEND",
+      "C1N15_WALKFORWARD",
+      "C1N16_ROBUSTNESS_AUDIT",
+      "C1N17_METRIC_ALIGNED_COMBINER",
+      "C1N18_SPREAD_SKILL",
+      "C1N19_ENVELOPE_ORACLE",
+      "C1N1_TOPRATE_MECHANISM",
+      "C1N20_ALPHA_ENDPOINT",
+      "C1N21_MOS_BIAS_CORRECTION",
+      "C1N22_GLOBAL_SHIFT",
+      "C1N23_ELIGIBLE_MOS",
+      "C1N24_MEMBER_COUNT_REOPEN",
+      "C1N25_ENVELOPE_LAMBDA",
+      "C1N26_POOL_WIDTH_SCREEN",
+      "C1N27_RESIDUAL_SIGNAL",
+      "C1N28_PERGRID_SIGNAL",
+      "C1N29_CHAMPION_AUDIT",
+      "C1N2_COLLIDER_CORRECTED",
+      "C1N30_TEMPORAL_SIGNAL",
+      "C1N31_SPACE_TIME",
+      "C1N32_LOCKBOX_OPERATOR",
+      "C1N33_SINGLE_VS_ENSEMBLE",
+      "C1N34_SHRINK_TO_BEST",
+      "C1N35_FIXED_POLICY_CORRECTION",
+      "C1N36_SOURCE_SENSITIVITY",
+      "C1N37_BAND_ALIGNED_LOSS",
+      "C1N38_BAND_LOSS_FIXED",
+      "C1N39_ARCHITECTURE_GAP",
+      "C1N3_MASS_AXIS_WIND_SECTOR",
+      "C1N40_BAND_CLASSIFIER",
+      "C1N41_BAND_CLASSIFIER_CAPACITY",
+      "C1N42_TEACHER_RESTORED",
+      "C1N43_EFFECT_TREND",
+      "C1N44_SHARPENED_DECISION",
+      "C1N45_SUBMISSION_DECISION",
+      "C1N46_CLOSURE_FALSIFICATION",
+      "C1N47_EXTERNAL_NWP_REVIVED",
+      "C1N48_MODEL_VALIDATION",
+      "C1N49_RHO_ACCEPTANCE",
+      "C1N4_BAND_CONDITIONAL_POLICY_ORACLE",
+      "C1N50_NONNEGATIVE_WEIGHTS",
+      "C1N51_EXTERNAL_SOURCE_PROBE",
+      "C1N52_EXTERNAL_CLOSURE",
+      "C1N53_SUPPLIED_EXTRACTION",
+      "C1N54_SCATTER_CEILING",
+      "C1N55_TURBINE_CORRELATION",
+      "C1N56_MEASURED_POWERCURVE",
+      "C1N57B_VARIANCE_LAW",
+      "C1N57_FICR_CEILING",
+      "C1N58_TEACHER_OOF_SPLIT",
+      "C1N59_PERFECT_PROG_BOUND",
+      "C1N5_SPATIAL_INTERPOLATION",
+      "C1N60_LEVEL_TEMPERATURE",
+      "C1N61_GRID_BOUNDARY",
+      "C1N62_MONTH_MECHANISM",
+      "C1N64_BAND_AVOIDANCE",
+      "C1N65_WIND_LIMITED_BOUND",
+      "C1N66_HETEROSCEDASTIC_WIND",
+      "C1N67_EXACT_CURVE_PROPAGATION",
+      "C1N69_SKILL_RESPONSE",
+      "C1N6_WIND50_MIDPOINT",
+      "C1N70_BASELINE_CORRECTION",
+      "C1N71_TEACHER_WEIGHT",
+      "C1N72_CURVE_BLEND",
+      "C1N74_BLOCK_LENGTH",
+      "C1N75_DAILY_GATE_ESTIMAND",
+      "C1N7_POLICY_FROZEN_GATE",
+      "C1N81_CYCLE_CONTRACT_ENFORCED",
+      "C1N8_ORACLE_LADDER",
+      "C1N92_METRIC_ALIGNED_LOSS",
+      "C1N93_ORDINAL_REPRESENTATION",
+      "C1N94_CDF_REJUDGE",
+      "C1N95_RECONSTRUCTION_GAP",
+      "C1N96_GAP_REJUDGE",
+      "C1N97_BOOSTING_ROUNDS",
+      "C1N98_REPRODUCIBILITY_ADJUDICATION",
+      "C1N99_ENSEMBLE_EXHAUSTIVE",
+      "C1N9_GATE_POWER"
+    ],
+    "comparison_count": 1,
+    "stage_coverage": [
+      "S1",
+      "S2",
+      "S3",
+      "S5",
+      "S7",
+      "S8",
+      "S9",
+      "S10",
+      "S11"
+    ],
+    "frontier": [
+      "S17-N11A_FOUR_MAPPING_10MIN_SCADA_CORRECTED_DIAGNOSTIC"
+    ],
+    "evidence_complete_cycles": 13,
+    "accounted_cycles": 102,
+    "digest": "4d301e339b2a072474852c1d19295da465167dc197cdf8c6a0dba655a4a36e2b"
+  },
+  "verdict": "INCONCLUSIVE_FROZEN_EFFECT_GATE_FAILED_TRAINING_WIND_ONLY_NOT_MODEL_SCORE",
+  "next_handoff": [
+    "S17-N12_VERTICAL_PROFILE_TERRAIN_PREREQUISITE_AUDIT"
+  ]
+}

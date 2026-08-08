@@ -1,0 +1,235 @@
+{
+  "schema_version": 1,
+  "node_id": "S17-N12_VERTICAL_PROFILE_TERRAIN_PREREQUISITE_AUDIT",
+  "closed_at": "2026-08-08T20:52:08.387385+09:00",
+  "predeclaration": {
+    "path": "reports/s17_n12_vertical_profile_prerequisite_predeclaration.json",
+    "sha256": "2a08b6bc511de3a357bf95c8e8eb143f7a42db761032f2b2aa529d6c1ea85518",
+    "event_sha256": "1a36192ad7d4f4d3a86b1402a7cb4761b162851b98d4f31d2d386a4133705670"
+  },
+  "implementation": {
+    "path": "scripts/audit_vertical_profile_prerequisites.py",
+    "sha256": "5a760240ab9c75ddc369aff918c2c7cb71acb13a052bab7a593d9c36377e6ada"
+  },
+  "input_bundle_sha256": "70bce95ec4d6001c5e53731909376b5cdf091b6ad37dcbf83785cc8dd5ea6b23",
+  "artifact": {
+    "path": "artifacts/audits/s17_n12_vertical_profile_prerequisites.json",
+    "sha256": "e6c829a7dd77a59179b949d3fb18cda02816ee55f6a9aed4365a13b6f50d9f87",
+    "reproduction_sha256": "e6c829a7dd77a59179b949d3fb18cda02816ee55f6a9aed4365a13b6f50d9f87",
+    "byte_identical": true
+  },
+  "findings": {
+    "hub_height_m": [
+      117.0
+    ],
+    "rotor_diameter_m": [
+      126.0,
+      136.0
+    ],
+    "source_vectors": {
+      "gfs": {
+        "comparable_agl_vectors": {
+          "10": [
+            "heightAboveGround_10_10u",
+            "heightAboveGround_10_10v"
+          ],
+          "80": [
+            "heightAboveGround_80_u",
+            "heightAboveGround_80_v"
+          ],
+          "100": [
+            "heightAboveGround_100_100u",
+            "heightAboveGround_100_100v"
+          ]
+        },
+        "comparable_heights_m": [
+          10,
+          80,
+          100
+        ],
+        "brackets_117m": false,
+        "highest_comparable_height_m": 100
+      },
+      "ldaps": {
+        "comparable_agl_vectors": {
+          "5": [
+            "heightAboveGround_5_XBLWS",
+            "heightAboveGround_5_YBLWS"
+          ],
+          "10": [
+            "heightAboveGround_10_10u",
+            "heightAboveGround_10_10v"
+          ]
+        },
+        "comparable_heights_m": [
+          5,
+          10
+        ],
+        "brackets_117m": false,
+        "highest_comparable_height_m": 10
+      }
+    },
+    "ldaps_50_extrema": {
+      "ldaps_50_max": true,
+      "ldaps_50_min": true
+    },
+    "raw_vertical_feature_count": 126,
+    "vertical_pca_feature_count": 0,
+    "prior_evidence": {
+      "wind50_midpoint_result": "FEATURE_GAP_REJECTED",
+      "wind50_midpoint_score_bearing": false,
+      "strict_chronology_vertical_pca_receipt_found_in_frozen_inputs": false,
+      "research_classification": "S13 marks grid PCA/REWS as legacy-rejected, but no exact S17 strict chronology score-bearing receipt is in this audit bundle"
+    }
+  },
+  "adjudication": "READY_PCA_ONLY. Hub height 117 m is documented, but neither source brackets it (GFS highest comparable AGL vector 100 m; LDAPS comparable 5/10 m, while 50 m fields are component extrema, not a level mean), so fixed physical reconstruction is not identified. A two-component fold-local PCA is construct-valid for GFS 10/80/100 and LDAPS 5/10, is absent from current features, and lacks an exact S17 strict-chronology closure receipt.",
+  "actions": {
+    "model_fits": 0,
+    "weather_value_rows": 0,
+    "target_or_scada_access": false,
+    "official_score_calls": 0,
+    "comparison_index": null,
+    "lockbox_2024_performance_access": false,
+    "test_data_access": false,
+    "dacon_actions": []
+  },
+  "verification": {
+    "compile": "pass",
+    "ruff": "All checks passed",
+    "deterministic_reproduction": true,
+    "event_chain_verified": true
+  },
+  "preclose_snapshot": {
+    "pending": [
+      "S17-N12_VERTICAL_PROFILE_TERRAIN_PREREQUISITE_AUDIT"
+    ],
+    "closed": [
+      "S17-N10B_ISSUANCE_CUBE_2022_2023_CORRECTED_AUDIT",
+      "S17-N10_ISSUANCE_CUBE_TIMING_AND_MISSINGNESS_AUDIT",
+      "S17-N11A_FOUR_MAPPING_10MIN_SCADA_CORRECTED_DIAGNOSTIC",
+      "S17-N11_FOUR_MAPPING_TRAINING_WIND_DIAGNOSTIC",
+      "S17-N2_EVENT_LEDGER_ENVELOPE",
+      "S17-N3_STRICT_PREQUENTIAL_EVALUATION_REPAIR",
+      "S17-N4_ECMWF_18Z_FIXED_LEAD_AUDIT",
+      "S17-N5_ECMWF_18Z_2023_EXTRACTION",
+      "S17-N5_ECMWF_18Z_2023_INNOVATION_PROBE",
+      "S17-N6A_FAIL_CLOSED_SCORE_CLASS_REPAIR",
+      "S17-N6_COST5_SPO_PLUS_PREQUENTIAL",
+      "S17-N7_STRICT_ACTION_PROVENANCE_RECONSTRUCTION",
+      "S17-N8_COST5_SPO_PLUS_STRICT_PREQUENTIAL_COMPARISON",
+      "S17-N9_COST5_NO_REFIT_MATERIALIZATION_RECOVERY"
+    ],
+    "legacy": [
+      "C1N100_NOVEL_MEMBER_PROBE",
+      "C1N101_PHYSICAL_MEMBER_PROBE",
+      "C1N102_RETRIEVAL_MEMBER",
+      "C1N103_EXTERNAL_NWP_MEMBER",
+      "C1N104_M244_KEY_RECOVERED",
+      "C1N105_M244_RECIPE_READ",
+      "C1N10_BLEND_LOCALITY",
+      "C1N11_V2_REPRESENTATION",
+      "C1N12_G3_HISTORY",
+      "C1N13_ENSEMBLE_VARIANCE",
+      "C1N14_SHRINKBLEND",
+      "C1N15_WALKFORWARD",
+      "C1N16_ROBUSTNESS_AUDIT",
+      "C1N17_METRIC_ALIGNED_COMBINER",
+      "C1N18_SPREAD_SKILL",
+      "C1N19_ENVELOPE_ORACLE",
+      "C1N1_TOPRATE_MECHANISM",
+      "C1N20_ALPHA_ENDPOINT",
+      "C1N21_MOS_BIAS_CORRECTION",
+      "C1N22_GLOBAL_SHIFT",
+      "C1N23_ELIGIBLE_MOS",
+      "C1N24_MEMBER_COUNT_REOPEN",
+      "C1N25_ENVELOPE_LAMBDA",
+      "C1N26_POOL_WIDTH_SCREEN",
+      "C1N27_RESIDUAL_SIGNAL",
+      "C1N28_PERGRID_SIGNAL",
+      "C1N29_CHAMPION_AUDIT",
+      "C1N2_COLLIDER_CORRECTED",
+      "C1N30_TEMPORAL_SIGNAL",
+      "C1N31_SPACE_TIME",
+      "C1N32_LOCKBOX_OPERATOR",
+      "C1N33_SINGLE_VS_ENSEMBLE",
+      "C1N34_SHRINK_TO_BEST",
+      "C1N35_FIXED_POLICY_CORRECTION",
+      "C1N36_SOURCE_SENSITIVITY",
+      "C1N37_BAND_ALIGNED_LOSS",
+      "C1N38_BAND_LOSS_FIXED",
+      "C1N39_ARCHITECTURE_GAP",
+      "C1N3_MASS_AXIS_WIND_SECTOR",
+      "C1N40_BAND_CLASSIFIER",
+      "C1N41_BAND_CLASSIFIER_CAPACITY",
+      "C1N42_TEACHER_RESTORED",
+      "C1N43_EFFECT_TREND",
+      "C1N44_SHARPENED_DECISION",
+      "C1N45_SUBMISSION_DECISION",
+      "C1N46_CLOSURE_FALSIFICATION",
+      "C1N47_EXTERNAL_NWP_REVIVED",
+      "C1N48_MODEL_VALIDATION",
+      "C1N49_RHO_ACCEPTANCE",
+      "C1N4_BAND_CONDITIONAL_POLICY_ORACLE",
+      "C1N50_NONNEGATIVE_WEIGHTS",
+      "C1N51_EXTERNAL_SOURCE_PROBE",
+      "C1N52_EXTERNAL_CLOSURE",
+      "C1N53_SUPPLIED_EXTRACTION",
+      "C1N54_SCATTER_CEILING",
+      "C1N55_TURBINE_CORRELATION",
+      "C1N56_MEASURED_POWERCURVE",
+      "C1N57B_VARIANCE_LAW",
+      "C1N57_FICR_CEILING",
+      "C1N58_TEACHER_OOF_SPLIT",
+      "C1N59_PERFECT_PROG_BOUND",
+      "C1N5_SPATIAL_INTERPOLATION",
+      "C1N60_LEVEL_TEMPERATURE",
+      "C1N61_GRID_BOUNDARY",
+      "C1N62_MONTH_MECHANISM",
+      "C1N64_BAND_AVOIDANCE",
+      "C1N65_WIND_LIMITED_BOUND",
+      "C1N66_HETEROSCEDASTIC_WIND",
+      "C1N67_EXACT_CURVE_PROPAGATION",
+      "C1N69_SKILL_RESPONSE",
+      "C1N6_WIND50_MIDPOINT",
+      "C1N70_BASELINE_CORRECTION",
+      "C1N71_TEACHER_WEIGHT",
+      "C1N72_CURVE_BLEND",
+      "C1N74_BLOCK_LENGTH",
+      "C1N75_DAILY_GATE_ESTIMAND",
+      "C1N7_POLICY_FROZEN_GATE",
+      "C1N81_CYCLE_CONTRACT_ENFORCED",
+      "C1N8_ORACLE_LADDER",
+      "C1N92_METRIC_ALIGNED_LOSS",
+      "C1N93_ORDINAL_REPRESENTATION",
+      "C1N94_CDF_REJUDGE",
+      "C1N95_RECONSTRUCTION_GAP",
+      "C1N96_GAP_REJUDGE",
+      "C1N97_BOOSTING_ROUNDS",
+      "C1N98_REPRODUCIBILITY_ADJUDICATION",
+      "C1N99_ENSEMBLE_EXHAUSTIVE",
+      "C1N9_GATE_POWER"
+    ],
+    "comparison_count": 1,
+    "stage_coverage": [
+      "S1",
+      "S2",
+      "S3",
+      "S5",
+      "S7",
+      "S8",
+      "S9",
+      "S10",
+      "S11"
+    ],
+    "frontier": [
+      "S17-N12_VERTICAL_PROFILE_TERRAIN_PREREQUISITE_AUDIT"
+    ],
+    "evidence_complete_cycles": 14,
+    "accounted_cycles": 103,
+    "digest": "0a12bba3ba13c83fb50dbb2bbc5c5d945e7f3b59491f7777ce7226984f90e586"
+  },
+  "verdict": "PASS_READY_PCA_ONLY_PREREQUISITE_NOT_MODEL_SCORE",
+  "next_handoff": [
+    "S17-N13_R2_TWO_COMPONENT_VERTICAL_PCA_STRICT_PREQUENTIAL"
+  ]
+}

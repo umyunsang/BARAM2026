@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "node_id": "S17-N3_STRICT_PREQUENTIAL_EVALUATION_REPAIR",
+  "stage": "S11_분석방법적절성",
+  "kind": "evaluation_protocol_non_score_bearing",
+  "predeclared_at": "2026-08-08T18:45:01.985350+09:00",
+  "parent": "S17-N2_EVENT_LEDGER_ENVELOPE",
+  "evidence": [
+    {
+      "path": "research/rwa_eval_research.md",
+      "sha256": "2b418c28ecd4f9e3a27e30176d9d76298961b37cffc613447b7c36e5eb34b84c",
+      "status": "direct local contradictions plus bounded methodological migration"
+    },
+    {
+      "path": "reports/s17_n2_event_commit_receipt.json",
+      "sha256": "0b1e9c97b2a0de840c2781b7c7cf1e0548d9f477f702b09b81928e1268f7c0e3"
+    }
+  ],
+  "purpose": "Replace future-fold selection and invalid raw-row chunk inference with issuance-day past-only comparison and one joint dependent-resampling family protocol.",
+  "invariants": {
+    "P1": "operating day is (forecast_kst_dtm - 1h).normalize; every complete atom has 3x24=72 unique cells",
+    "P2": "outer selection/fit timestamps are strictly earlier than each test issuance; future folds never select past folds",
+    "P3": "daily additive loss sums to 0.5 - exact official Total within 1e-12",
+    "P4": "stationary bootstrap restarts geometrically and preserves chronological fold lengths; fixed nonoverlapping chunks are forbidden",
+    "P5": "all frozen candidates use the same joint bootstrap draws and one complete family",
+    "P6": "score-bearing evaluation requires the next EventStore comparison_index, never a per-node reset",
+    "P7": "report centered joint max-t simultaneous lower bounds and 90% T_R model-confidence set without posterior language",
+    "P8": "primary expected block length 7 days plus fixed sensitivities 3 and 14",
+    "P9": "additive-daily and resampled-exact-Total conclusions must agree or inference is INSUFFICIENT",
+    "P10": "2023 conclusion label is retrospective_chronology_repaired_multiplicity_aware only",
+    "P11": "legacy arbiter fails closed for promotion calls",
+    "P12": "targeted/full tests and Ruff pass"
+  },
+  "files": {
+    "add": [
+      "src/baram/evaluation/prequential.py",
+      "tests/evaluation/test_prequential.py"
+    ],
+    "modify": [
+      "src/baram/evaluation/__init__.py",
+      "research/engine/arbiter.py"
+    ]
+  },
+  "fixed_parameters": {
+    "seed": 20260808,
+    "replicates_contract_min": 999,
+    "expected_block_days_primary": 7,
+    "sensitivity_block_days": [
+      3,
+      14
+    ],
+    "mcs_alpha": 0.1,
+    "promotion_margin_total": 0.001635,
+    "row_alignment_keys": [
+      "fold_id",
+      "group_id",
+      "forecast_kst_dtm"
+    ]
+  },
+  "forbidden": [
+    "model fit",
+    "candidate official score",
+    "2024 access",
+    "Dacon/account action",
+    "dependency change",
+    "data acquisition",
+    "claim of fresh validation",
+    "posterior terminology"
+  ],
+  "pass_label": "PASS_EVALUATION_PROTOCOL_ONLY_NOT_CANDIDATE_SCORE"
+}

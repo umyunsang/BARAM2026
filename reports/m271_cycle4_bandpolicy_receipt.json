@@ -1,0 +1,62 @@
+{
+ "dacon_upload": false,
+ "decided_utc": "2026-08-04T06:09:36.534089+00:00",
+ "external_actions": [],
+ "lane": "L6",
+ "lockbox_reopened": false,
+ "model_fits": 0,
+ "new_2024_evaluation": false,
+ "node": "C1N4_BAND_CONDITIONAL_POLICY_ORACLE",
+ "report_sha256": "797bf50cafeebf9668259c5f771efa04c7bb0e2eadc2b5ca35f6ad1c252b6aa5",
+ "result": {
+  "band_choice": {
+   "(0.0, 0.25]": "T0.6_G1",
+   "(0.25, 0.45]": "T0.6_G0",
+   "(0.45, 0.7]": "T0.85_G0",
+   "(0.7, 1.2]": "T0.5_G0.5"
+  },
+  "band_edges_on_prediction": [
+   0.0,
+   0.25,
+   0.45,
+   0.7,
+   1.2
+  ],
+  "band_rows": {
+   "(0.0, 0.25]": 10554,
+   "(0.25, 0.45]": 2379,
+   "(0.45, 0.7]": 2698,
+   "(0.7, 1.2]": 4154
+  },
+  "deployed": {
+   "policy": "T0.5_G1.5",
+   "total": 0.6286045208903154
+  },
+  "gain_vs_deployed": 0.0027612287206094654,
+  "gain_vs_global_best": 0.001719503392014432,
+  "global_best": {
+   "policy": "T0.6_G0.2",
+   "total": 0.6296462462189104
+  },
+  "oracle_total": 0.6313657496109248,
+  "policies_considered": 63,
+  "predeclared_check": {
+   "H1_bands_differing": [
+    "(0.0, 0.25]",
+    "(0.25, 0.45]",
+    "(0.45, 0.7]",
+    "(0.7, 1.2]"
+   ],
+   "H1_expectation": "대역별 최적 정책이 전역 최적과 다르다",
+   "H1_held": true,
+   "H2_expectation": "오라클 대역조건부 Total 이 전역 최적보다 크다",
+   "H2_gain": 0.001719503392014432,
+   "H2_held": true,
+   "is_oracle": true,
+   "oracle_caveat": "대역별 최적 정책을 같은 데이터에서 골랐다. 달성 가능량이 아니라 상한이다."
+  }
+ },
+ "schema_version": 1,
+ "script_sha256": "a492626446cb276049b2a9ccd2d3a9f02823d458e29ca65cfb4bdaad0b9d4f51",
+ "stage": "M271_P4_CYCLE4_BAND_POLICY_ORACLE"
+}

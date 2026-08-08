@@ -1,0 +1,129 @@
+{
+  "schema_version": 1,
+  "node_id": "S17-N26_S4_OFFICIAL_METRIC_AND_ACTION_APPROPRIATENESS_AUDIT",
+  "created_at": "2026-08-09T01:03:26.579649+09:00",
+  "status": "SUPPORTED",
+  "stage_id": "S4",
+  "scope": "official metric and optimal-action appropriateness only; no project data or model result evaluated",
+  "source_authority": {
+    "official_notebook": {
+      "path": "inputs/notebooks/metric_official.ipynb",
+      "sha256": "0a3ab5a57dba0705dbdbda73cd723be37ef39cce388fcb22b1a220ce523a70f9",
+      "immutability_role": "canonical official scoring formula"
+    },
+    "local_official_scorer": {
+      "path": "src/baram/evaluation/official.py",
+      "sha256": "5701ddfc5a6254e89cbc49451cd3f4bbddd437cff451a4596a86e7c68ff42cba"
+    },
+    "strict_prequential_evaluator": {
+      "path": "src/baram/evaluation/prequential.py",
+      "sha256": "a4cd12d30b3cf79ac339f1a5dbcc009f5b85ba10a30ef6614346a6309703b35b"
+    }
+  },
+  "literal_official_contract": {
+    "target_groups": [
+      "kpx_group_1",
+      "kpx_group_2",
+      "kpx_group_3"
+    ],
+    "capacity_kwh": {
+      "1": 21600.0,
+      "2": 21600.0,
+      "3": 21000.0
+    },
+    "valid_row_rule": "actual_kwh >= 0.10 * group_capacity; equality is included",
+    "group_nmae": "mean(abs(prediction_kwh - actual_kwh) / group_capacity) over valid rows",
+    "settlement_units": [
+      {
+        "condition": "relative_error <= 0.06",
+        "unit": 4.0
+      },
+      {
+        "condition": "0.06 < relative_error <= 0.08",
+        "unit": 3.0
+      },
+      {
+        "condition": "relative_error > 0.08",
+        "unit": 0.0
+      }
+    ],
+    "group_ficr": "sum(actual_kwh * settlement_unit) / sum(actual_kwh * 4.0) over valid rows",
+    "cross_group_aggregation": "one_minus_nmae = 1 - arithmetic mean of the three group NMAEs; FICR = arithmetic mean of the three group FICRs",
+    "total": "0.5 * one_minus_nmae + 0.5 * FICR",
+    "intermediate_rounding": "none"
+  },
+  "equivalence_audit": {
+    "local_official_scorer": {
+      "verdict": "EQUIVALENT",
+      "facts": [
+        "settlement_unit uses inclusive <=0.06 and <=0.08 tiers with 4/3/0 units",
+        "_score_group uses the identical inclusive 10% actual filter, capacity-relative absolute error, actual-weighted FICR denominator, and rejects empty valid groups",
+        "evaluate_official computes three group components, equal-group means, and the same 0.5/0.5 Total without rounding",
+        "validation additionally rejects NaN/nonfinite values, duplicate keys, incomplete groups, and invalid capacities"
+      ]
+    },
+    "strict_prequential_exact_total": {
+      "verdict": "EQUIVALENT_ON_COMPLETE_SELECTED_DAY_SET",
+      "facts": [
+        "build_daily_metric_tensor stores, by complete issuance day and group, valid counts, actual sums, relative-error sums, and actual-weighted settlement sums",
+        "_scores_for_indices first sums those numerators and denominators over the selected day draw, then applies the exact equal-group official formula",
+        "exact_total_bootstrap recomputes these denominators on every shared bootstrap day draw rather than averaging precomputed daily Totals",
+        "run_prequential_protocol requires daily additive-loss reconstruction error below 1e-12 and uses one shared day plan for family comparisons"
+      ]
+    },
+    "synthetic_tests": {
+      "command": ".venv/bin/python -m pytest -q tests/evaluation/test_official.py tests/evaluation/test_prequential.py tests/loop/test_events.py",
+      "result": "PASS",
+      "tests_passed": 36,
+      "stdout_sha256": "d1bc7f05ba1eb6f8d6030ae65143f2018b3abd74e449f1455cb064270934a9a9",
+      "coverage_notes": [
+        "hand-derived Total",
+        "inclusive 6%/8% tiers",
+        "inclusive 10% actual threshold",
+        "strict past-only outer splits",
+        "72-cell issuance atom",
+        "exact Total reproduction",
+        "joint shared resampling",
+        "comparison-index monotonicity",
+        "event halt coverage contract"
+      ]
+    }
+  },
+  "action_appropriateness": {
+    "verdict": "SUPPORTED_NARROWLY",
+    "statements": [
+      "The evaluation output is an action, not necessarily a conditional-mean forecast.",
+      "For the NMAE component alone, expected absolute error is minimized by a conditional median, not generally by a conditional mean.",
+      "For FICR, the action controls whether capacity-relative error falls inside nested 6% and 8% bands; its expected reward depends on actual-weighted probability mass captured by those bands.",
+      "For combined Total, the optimal action generally depends on the full conditional distribution and fixed group/evaluation denominators. The official formula alone does not imply that mean, median, mode, or settlement-only optimum is universally optimal.",
+      "Any operational action rule must therefore be frozen from past-only information and evaluated through the exact combined metric; this audit selects or tunes no policy."
+    ],
+    "prohibited_overclaim": "No claim is made that a particular existing action is population-optimal, that settlement-only maximization equals Total maximization, or that retrospective 2023 evidence is a fresh holdout."
+  },
+  "contradiction_check": {
+    "official_vs_local_metric_mismatch_count": 0,
+    "official_vs_prequential_exact_total_mismatch_count": 0,
+    "unsupported_action_claim_count": 0
+  },
+  "stage_decision": {
+    "stage_evidence_status": "SUPPORTED",
+    "explicit_unknown": false,
+    "candidate_emitted": false,
+    "comparison_consumed": false,
+    "next_handoff": [],
+    "reason": "S4 was a ledger coverage omission, not an unresolved metric formula. The immutable official formula, exact local implementation, exact resampling implementation, and narrow action interpretation are consistent."
+  },
+  "scope_accounting": {
+    "project_data_bodies_read": 0,
+    "project_actual_or_label_values_read": 0,
+    "raw_2024_or_test_values_read": 0,
+    "model_result_scores_read": 0,
+    "model_fits": 0,
+    "prediction_calls": 0,
+    "project_metric_calls": 0,
+    "synthetic_unit_tests_only": true,
+    "external_sources_or_calls": 0,
+    "dependency_changes": 0,
+    "dacon_or_account_actions": []
+  }
+}

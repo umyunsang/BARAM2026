@@ -1,0 +1,54 @@
+{
+ "fold": "dev-2023-Q2",
+ "training_rows": 32760,
+ "validation_rows": 6552,
+ "seq_columns": 48,
+ "geom_columns": 54,
+ "arms": {
+  "BASE": {
+   "total": 0.5031571030570884,
+   "one_minus_nmae": 0.708249243225143,
+   "ficr": 0.2980649628890338,
+   "n_features": 87,
+   "delta_vs_base": 0.0
+  },
+  "PLUS_SEQ": {
+   "total": 0.5076549690397765,
+   "one_minus_nmae": 0.7126047906920203,
+   "ficr": 0.3027051473875327,
+   "n_features": 135,
+   "delta_vs_base": 0.004497865982688087
+  },
+  "PLUS_GEOM": {
+   "total": 0.5170606510561642,
+   "one_minus_nmae": 0.7242426824455541,
+   "ficr": 0.3098786196667741,
+   "n_features": 141,
+   "delta_vs_base": 0.013903547999075783
+  },
+  "PLUS_BOTH": {
+   "total": 0.5173289765826639,
+   "one_minus_nmae": 0.7239339296640177,
+   "ficr": 0.31072402350131006,
+   "n_features": 189,
+   "delta_vs_base": 0.014171873525575474
+  }
+ },
+ "base_feature_count": 87,
+ "dropped_sitewind": [
+  "sitewind__mean",
+  "sitewind__mean_powercurve",
+  "sitewind__allweather",
+  "sitewind__allweather_powercurve",
+  "sitewind__legacy",
+  "sitewind__legacy_powercurve",
+  "sitewind__mean2",
+  "sitewind__allweather2",
+  "sitewind__legacy2",
+  "sitewind__legacy3",
+  "sitewind__disagreement",
+  "sitewind__mean3",
+  "sitewind__delta"
+ ],
+ "new_features_sha256": "6a8e5e202a684fb07c2b40a18388df80d6257b3fff5ebcb06127000fb4ba5da9"
+}

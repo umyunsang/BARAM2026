@@ -1,0 +1,112 @@
+{
+  "node_id": "C1N85_C16_RECHECK",
+  "lane": "L8",
+  "parent": "C1N78_LOOP_ENGINE_C10",
+  "candidate": false,
+  "diagnostic_only": true,
+  "old_rule": {
+    "form": "expected_gain < 0.15 * remaining_gap -> REJECT",
+    "floor": 0.004453499999999999,
+    "status": "선언 관례. 보정된 바 없다",
+    "defects": [
+      "방향을 개별 판정하는데 완료 기준은 합산이다 — 방향들을 대체재로 가정",
+      "0.15 는 아무것도 재지 않은 값이다"
+    ]
+  },
+  "new_rule": {
+    "F1_detection": {
+      "value": 0.001013,
+      "source": "C1N9 가 잰 동결 게이트 검출문턱",
+      "meaning": "이보다 작으면 이득이 실재해도 게이트가 구분하지 못한다"
+    },
+    "F2_reachability": {
+      "form": "sum(F1 통과 방향) >= remaining_gap",
+      "meaning": "개별이 아니라 집합에 건다"
+    },
+    "note": "문턱을 낮춘 것이 아니라 성질을 바꿨다. F1 은 측정값, F2 는 산술이다"
+  },
+  "remaining_gap": 0.029689999999999994,
+  "directions": [
+    {
+      "node": "C1N71_TEACHER_WEIGHT",
+      "lane": "L2",
+      "gain": 0.001238,
+      "basis": "최적가중 fold-외, C1N69 곡선 환산",
+      "surface": "풍속 잔차층",
+      "passes_old_c16": false,
+      "passes_f1_detection": true,
+      "gain_over_gap": 0.041697541259683404
+    },
+    {
+      "node": "C1N84_TEACHER_CHRONOLOGICAL",
+      "lane": "L6",
+      "gain": 0.00016,
+      "basis": "deep 255 잎, 시간분할 test 행",
+      "surface": "test 행",
+      "passes_old_c16": false,
+      "passes_f1_detection": false,
+      "gain_over_gap": 0.00538901987201078
+    },
+    {
+      "node": "C1N70_BASELINE_CORRECTION",
+      "lane": "L2",
+      "gain": 9.8e-05,
+      "basis": "ECMWF 결합, teacher 기준선 교정 후",
+      "surface": "풍속 잔차층",
+      "passes_old_c16": false,
+      "passes_f1_detection": false,
+      "gain_over_gap": 0.003300774671606602
+    },
+    {
+      "node": "C1N77_PER_SOURCE_STACK",
+      "lane": "L3",
+      "gain": -0.000921,
+      "basis": "소스 분리 스태킹",
+      "surface": "개발 fold",
+      "passes_old_c16": false,
+      "passes_f1_detection": false,
+      "gain_over_gap": -0.031020545638262047
+    },
+    {
+      "node": "C1N80_FUSION_ANOMALY",
+      "lane": "L3",
+      "gain": -0.00248,
+      "basis": "정보량 맞춘 소스 분리",
+      "surface": "개발 fold",
+      "passes_old_c16": false,
+      "passes_f1_detection": false,
+      "gain_over_gap": -0.08352980801616708
+    },
+    {
+      "node": "C1N76_CIRCULAR_BLOCK",
+      "lane": "L4",
+      "gain": 0.0,
+      "basis": "결정층 효과가 0 과 구분 불가",
+      "surface": "일별 원형블록",
+      "passes_old_c16": false,
+      "passes_f1_detection": false,
+      "gain_over_gap": 0.0
+    }
+  ],
+  "survivors_old_c16": [],
+  "survivors_f1": [
+    "C1N71_TEACHER_WEIGHT"
+  ],
+  "revived_by_f1": [
+    "C1N71_TEACHER_WEIGHT"
+  ],
+  "sum_of_survivors": 0.001238,
+  "reachable": false,
+  "shortfall": 0.028451999999999995,
+  "hypotheses": {
+    "H1_c71_revived": true,
+    "H2_portfolio_still_short": true,
+    "H3_c84_rejected_under_f1_too": true,
+    "H4_negatives_rejected": true
+  },
+  "verdict": "C16_MISCUT_ONE_CANDIDATE_BUT_CLOSURE_HOLDS",
+  "dacon_upload": false,
+  "lockbox_used": false,
+  "generated_at": "2026-08-06T00:38:34.282196+00:00",
+  "digest": "b5f4ba221d4beb83"
+}

@@ -4,6 +4,7 @@ import json
 import os
 import platform
 import re
+import sys
 import time
 from argparse import Namespace
 from dataclasses import asdict, dataclass
@@ -19,10 +20,17 @@ import pandas as pd
 from baram.config import ProjectConfig, load_config
 from baram.constants import CAPACITIES_KWH
 from baram.contracts.hashing import canonical_sha256, sha256_dataframe, sha256_file
-from baram.contracts.types import BlendPolicy, CalibrationPolicy, FoldSpec, SourceSpec
+from baram.contracts.types import (
+    BlendPolicy,
+    CalibrationPolicy,
+    FoldSpec,
+    SourceSpec,
+    V2StageManifest,
+)
 from baram.data.archive import validate_archive
 from baram.data.canonical import load_canonical_tables
 from baram.data.quality import audit_quality
+from baram.data.turbines import group_static_metadata, validate_turbine_topology
 from baram.decisions.blend import apply_blend, fit_two_model_blend
 from baram.decisions.calibrate import (
     apply_calibration,
@@ -39,7 +47,7 @@ from baram.experiments.promotion import (
     decide_lockbox,
     decide_reproduction,
 )
-from baram.experiments.registry import write_json_atomic
+from baram.experiments.registry import write_json_atomic, write_v2_stage_manifest_atomic
 from baram.features.climatology import apply_climatology, fit_climatology
 from baram.features.physics import add_physics_features
 from baram.features.weather import build_weather_features
@@ -72,6 +80,7 @@ _NON_FEATURES = {
     "capacity_kwh",
 }
 _RF_DETERMINISTIC_JOBS = 1
+_V2_RUN_ID = re.compile(r"^baram-v2-[A-Za-z0-9._-]+$")
 
 
 @dataclass(frozen=True)
@@ -142,6 +151,198 @@ def _downcast_features(frame: pd.DataFrame) -> pd.DataFrame:
     return result
 
 
+def _load_yaml_mapping(path: Path) -> dict[str, Any]:
+    try:
+        import yaml
+
+        value = yaml.safe_load(path.read_text(encoding="utf-8"))
+    except (OSError, ValueError) as error:
+        raise ContractError(f"cannot read v2 configuration {path}: {error}") from error
+    if not isinstance(value, dict):
+        raise ContractError(f"v2 configuration root must be a mapping: {path}")
+    return value
+
+
+def _source_tree_sha256(root: Path) -> str:
+    files = sorted((root / "src" / "baram").rglob("*.py"))
+    if not files:
+        raise ContractError("v2 code identity has no Python sources")
+    return canonical_sha256(
+        {str(path.relative_to(root)): sha256_file(path) for path in files}
+    )
+
+
+def _v2_config_hashes(root: Path) -> dict[str, str]:
+    candidates = {
+        *root.glob("configs/v2/*.yaml"),
+        *root.glob("configs/features/*v2*.yaml"),
+        *root.glob("configs/models/*v2*.yaml"),
+        *root.glob("configs/decisions/*v2*.yaml"),
+    }
+    files = sorted(path for path in candidates if path.is_file())
+    required = {
+        "configs/v2/budget.yaml",
+        "configs/v2/promotion.yaml",
+    }
+    relative = {str(path.relative_to(root)): sha256_file(path) for path in files}
+    if not required.issubset(relative):
+        raise ContractError("v2 configuration identity is missing budget or promotion")
+    return relative
+
+
+def _artifact_bytes(root: Path) -> int:
+    artifact_root = root / "artifacts"
+    if not artifact_root.exists():
+        return 0
+    return sum(path.stat().st_size for path in artifact_root.rglob("*") if path.is_file())
+
+
+def _assert_closed_v2_lockbox(config: ProjectConfig, expected_sha256: str) -> Path:
+    path = config.repo_root / "artifacts" / "locks" / (
+        f"lockbox-{config.lockbox_year}.consumed.json"
+    )
+    if not path.is_file():
+        raise ContractError("v2 requires the 2024 lockbox to remain consumed")
+    if sha256_file(path) != expected_sha256:
+        raise ContractError("consumed lockbox receipt SHA-256 differs from the v2 contract")
+    return path
+
+
+def _assert_no_lockbox_year_in_development(config: ProjectConfig) -> None:
+    path = _split_manifest_path(config)
+    if not path.exists():
+        return
+    manifest = _read_json(path)
+    development = manifest.get("development")
+    if not isinstance(development, list):
+        raise ContractError("split manifest has no development folds")
+    forbidden = str(config.lockbox_year)
+    for fold in development:
+        if not isinstance(fold, dict):
+            raise ContractError("development fold receipt is invalid")
+        batches = (*fold.get("train_batches", ()), *fold.get("validation_batches", ()))
+        if any(str(batch).startswith(forbidden) for batch in batches):
+            raise ContractError("v2 development folds contain the consumed lockbox year")
+
+
+def run_v2_preflight(args: Namespace) -> WorkflowResult:
+    """Fail closed before every v2 stage and preserve a hash-stable parity receipt."""
+    started = time.perf_counter()
+    config = _config_from_args(args)
+    run_id = _run_id(args)
+    if _V2_RUN_ID.fullmatch(run_id) is None:
+        raise ContractError("v2 preflight requires a baram-v2-* run ID")
+    archive = validate_archive(config.open_zip.path, config.open_zip.sha256)
+    baseline_sha = sha256_file(config.baseline_notebook.path)
+    if baseline_sha != config.baseline_notebook.sha256:
+        raise ContractError("baseline notebook SHA-256 differs from the frozen configuration")
+    if sys.version_info[:2] != (3, 12):
+        raise ContractError("v2 requires project Python 3.12")
+
+    budget_path = config.repo_root / "configs" / "v2" / "budget.yaml"
+    promotion_path = config.repo_root / "configs" / "v2" / "promotion.yaml"
+    budget = _load_yaml_mapping(budget_path)
+    promotion = _load_yaml_mapping(promotion_path)
+    if int(budget.get("worker_cap", -1)) != 6 or config.n_jobs > 6:
+        raise ContractError("v2 worker cap differs from the approved six-worker limit")
+    if int(budget.get("artifact_budget_gib", -1)) != config.artifact_budget_gib:
+        raise ContractError("v2 artifact budget differs from the project configuration")
+    lockbox = budget.get("consumed_lockbox")
+    if not isinstance(lockbox, dict) or set(lockbox) != {"path", "sha256"}:
+        raise ContractError("v2 budget has an invalid consumed-lockbox contract")
+    expected_lock_path = config.repo_root / str(lockbox["path"])
+    actual_lock_path = _assert_closed_v2_lockbox(config, str(lockbox["sha256"]))
+    if expected_lock_path != actual_lock_path:
+        raise ContractError("v2 consumed-lockbox path differs from the project contract")
+    lock_sha = sha256_file(actual_lock_path)
+    _assert_no_lockbox_year_in_development(config)
+
+    artifact_bytes = _artifact_bytes(config.repo_root)
+    if artifact_bytes > config.artifact_budget_gib * 1024**3:
+        raise ContractError("v2 artifacts exceed the approved 10 GiB budget")
+    code_sha = _source_tree_sha256(config.repo_root)
+    metric_sha = sha256_file(config.repo_root / "src" / "baram" / "evaluation" / "official.py")
+    config_hashes = _v2_config_hashes(config.repo_root)
+    deterministic = {
+        "schema_version": 1,
+        "run_id": run_id,
+        "state": "PASS_V2_PREFLIGHT_ONLY",
+        "source_sha256": archive.source_sha256,
+        "baseline_notebook_sha256": baseline_sha,
+        "python": f"{sys.version_info.major}.{sys.version_info.minor}.{sys.version_info.micro}",
+        "worker_count": config.n_jobs,
+        "worker_cap": 6,
+        "artifact_bytes": artifact_bytes,
+        "artifact_budget_bytes": config.artifact_budget_gib * 1024**3,
+        "code_sha256": code_sha,
+        "metric_sha256": metric_sha,
+        "config_hashes": config_hashes,
+        "promotion_sha256": canonical_sha256(promotion),
+        "consumed_lockbox_sha256": lock_sha,
+        "new_2024_evaluation_allowed": False,
+        "external_actions": [],
+    }
+    manifest_path = config.repo_root / "artifacts" / "manifests" / "v2-preflight" / (
+        f"{run_id}.json"
+    )
+    if manifest_path.exists():
+        existing = _read_json(manifest_path)
+        existing_deterministic = {
+            key: value
+            for key, value in existing.items()
+            if key not in {"artifact_bytes", "observed_runtime_seconds"}
+        }
+        current_deterministic = {
+            key: value for key, value in deterministic.items() if key != "artifact_bytes"
+        }
+        if existing_deterministic != current_deterministic:
+            raise ContractError("v2 preflight manifest conflicts with current immutable evidence")
+        payload = existing
+    else:
+        payload = {
+            **deterministic,
+            "observed_runtime_seconds": round(time.perf_counter() - started, 6),
+        }
+    digest = write_json_atomic(manifest_path, payload)
+
+    slots = budget.get("stage_slots")
+    if not isinstance(slots, dict) or int(slots.get("contract_parity", -1)) != 2:
+        raise ContractError("v2 contract/parity slot budget must equal two")
+    stage = V2StageManifest(
+        run_id=run_id,
+        stage="contract_parity",
+        slot_limit=2,
+        slots_used=2,
+        slots_remaining=0,
+        input_hashes={
+            "open_zip": archive.source_sha256,
+            "baseline_notebook": baseline_sha,
+        },
+        config_sha256=canonical_sha256(config_hashes),
+        code_sha256=code_sha,
+        output_hashes={"preflight_manifest": digest},
+        runtime_seconds=float(payload["observed_runtime_seconds"]),
+        seed=config.seed,
+        worker_count=config.n_jobs,
+        lockbox_sha256=lock_sha,
+    )
+    stage_path = config.repo_root / "artifacts" / "manifests" / "v2-stages" / run_id / (
+        "contract_parity.json"
+    )
+    stage_digest = write_v2_stage_manifest_atomic(stage_path, stage)
+    report_path = config.repo_root / "reports" / "runs" / f"{run_id}-v2-preflight.json"
+    report_digest = write_json_atomic(
+        report_path,
+        {
+            "run_id": run_id,
+            "preflight_manifest_sha256": digest,
+            "stage_manifest_sha256": stage_digest,
+            "pass_scope": "immutable/runtime/budget/closed-lockbox parity only",
+        },
+    )
+    return WorkflowResult((manifest_path, stage_path, report_path), report_digest)
+
+
 def run_audit(args: Namespace) -> WorkflowResult:
     """Verify immutable sources and write a deterministic local P0 receipt."""
     config = _config_from_args(args)
@@ -175,9 +376,43 @@ def run_prepare(args: Namespace) -> WorkflowResult:
     validate_archive(config.open_zip.path, config.open_zip.sha256)
     tables = load_canonical_tables(config.open_zip.path)
     quality = audit_quality(tables, config.capacities)
+    turbine_topology = validate_turbine_topology(tables.turbines)
+    turbine_payload = {
+        "schema_version": 1,
+        "run_id": run_id,
+        "source_sha256": config.open_zip.sha256,
+        "turbine_table_sha256": sha256_dataframe(tables.turbines),
+        "topology": turbine_topology,
+        "groups": group_static_metadata(tables.turbines).to_dict(orient="records"),
+        "workbook_mutated_or_extracted": False,
+    }
+    turbine_manifest_path = (
+        config.repo_root / "artifacts" / "manifests" / "v2_turbines.json"
+    )
+    turbine_manifest_sha = write_json_atomic(turbine_manifest_path, turbine_payload)
+    data_contract_path = config.repo_root / "reports" / "v2_data_contract.json"
+    write_json_atomic(
+        data_contract_path,
+        {
+            **turbine_payload,
+            "turbine_manifest_sha256": turbine_manifest_sha,
+            "pass_scope": "immutable info.xlsx turbine topology only",
+        },
+    )
 
+    spatial_config = _load_yaml_mapping(
+        config.repo_root / "configs" / "features" / "spatial_v2.yaml"
+    )
     train_features = _downcast_features(
-        add_physics_features(build_weather_features(tables.gfs_train, tables.ldaps_train))
+        add_physics_features(
+            build_weather_features(
+                tables.gfs_train,
+                tables.ldaps_train,
+                turbines=tables.turbines,
+                spatial_config=spatial_config,
+                spatial_mode="spatial_v2",
+            )
+        )
     )
     test_features = _downcast_features(
         add_physics_features(
@@ -185,6 +420,9 @@ def run_prepare(args: Namespace) -> WorkflowResult:
                 tables.gfs_test,
                 tables.ldaps_test,
                 tables.submission_keys[["forecast_id", "forecast_kst_dtm"]],
+                turbines=tables.turbines,
+                spatial_config=spatial_config,
+                spatial_mode="spatial_v2",
             )
         )
     )
@@ -214,6 +452,8 @@ def run_prepare(args: Namespace) -> WorkflowResult:
         "quality_receipt": asdict(quality.receipt),
         "quality_findings": quality.findings,
         "feature_names": names,
+        "spatial_mode": "spatial_v2",
+        "spatial_config_sha256": canonical_sha256(spatial_config),
         "rows": {
             "train_features": len(train_features),
             "test_features": len(test_features),
@@ -227,7 +467,9 @@ def run_prepare(args: Namespace) -> WorkflowResult:
     digest = write_json_atomic(manifest_path, payload)
     run_path = config.repo_root / "reports" / "runs" / f"{run_id}-prepare.json"
     write_json_atomic(run_path, {"prepare_manifest_sha256": digest, "run_id": run_id})
-    return WorkflowResult((manifest_path, run_path), digest)
+    return WorkflowResult(
+        (manifest_path, run_path, turbine_manifest_path, data_contract_path), digest
+    )
 
 
 def _folds_payload(folds: tuple[FoldSpec, ...]) -> list[dict[str, Any]]:
@@ -1021,12 +1263,20 @@ def run_backtest(args: Namespace) -> WorkflowResult:
         return _backtest_ablation(config, run_id)
     if args.stage == "challengers":
         return _backtest_challengers(config, run_id)
+    if args.stage in {"spatial-v2", "point-v2", "distribution-v2", "decision-v2", "ensemble-v2"}:
+        from baram.v2_workflows import run_v2_backtest
+
+        return run_v2_backtest(config, run_id, str(args.stage))
     raise ContractError(f"unsupported backtest stage: {args.stage}")
 
 
 def run_select(args: Namespace) -> WorkflowResult:
     config = _config_from_args(args)
     run_id = _run_id(args)
+    if run_id == "baram-v2-20260801-01":
+        from baram.v2_workflows import run_v2_select
+
+        return run_v2_select(config, run_id)
     _, _, _, folds = _load_pipeline_inputs(config)
     controls = _read_json(_stage_manifest_path(config, "controls"))
     ablation = _read_json(_stage_manifest_path(config, "ablation"))
@@ -1443,6 +1693,8 @@ def _acquire_one_use_lock(path: Path, payload: dict[str, Any]) -> str:
 def run_lockbox(args: Namespace) -> WorkflowResult:
     config = _config_from_args(args)
     run_id = _run_id(args)
+    if _V2_RUN_ID.fullmatch(run_id) is not None:
+        raise ContractError("v2 runs cannot route to lockbox; 2024 is already consumed")
     freeze_path = Path(args.candidate_freeze)
     freeze = _read_json(freeze_path)
     if freeze.get("source_sha256") != config.open_zip.sha256:
@@ -1812,6 +2064,10 @@ def _dump_joblib_atomic(value: Any, path: Path) -> str:
 def run_fit_final(args: Namespace) -> WorkflowResult:
     config = _config_from_args(args)
     run_id = _run_id(args)
+    if run_id == "baram-v2-20260801-01":
+        from baram.v2_final import run_v2_fit_final
+
+        return run_v2_fit_final(args)
     champion_receipt_path = Path(args.champion_receipt)
     champion_receipt = _read_json(champion_receipt_path)
     if champion_receipt.get("source_sha256") != config.open_zip.sha256:
@@ -1883,6 +2139,10 @@ def _cap_modes_for_model(model: dict[str, Any]) -> dict[int, str]:
 def run_build_submission(args: Namespace) -> WorkflowResult:
     config = _config_from_args(args)
     run_id = _run_id(args)
+    if run_id == "baram-v2-20260801-01":
+        from baram.v2_final import run_v2_build_submission
+
+        return run_v2_build_submission(args)
     model_receipt_path = Path(args.model_receipt)
     model_receipt = _read_json(model_receipt_path)
     if model_receipt.get("source_sha256") != config.open_zip.sha256:
@@ -1931,6 +2191,10 @@ def run_reproduce(args: Namespace) -> WorkflowResult:
     config = _config_from_args(args)
     candidate_receipt_path = Path(args.candidate_receipt)
     candidate_receipt = _read_json(candidate_receipt_path)
+    if candidate_receipt.get("pipeline_version") == "baram-v2":
+        from baram.v2_final import run_v2_reproduce
+
+        return run_v2_reproduce(args)
     submission_receipt = candidate_receipt.get("submission_receipt")
     if not isinstance(submission_receipt, dict):
         raise ContractError("candidate receipt has no submission receipt")
@@ -2052,6 +2316,64 @@ def run_tiny_fixture_pipeline(root: Path) -> WorkflowResult:
         for group_id, capacity in CAPACITIES_KWH.items()
     )
     policy_sha = canonical_sha256(policies)
+    spatial_features = features.assign(
+        spatial_v2__fixture_proxy=features["x"] * features["z"]
+    )
+    spatial_feature_sha = sha256_dataframe(
+        spatial_features[[*_KEYS, "spatial_v2__fixture_proxy"]]
+    )
+    from baram.decisions.expected_utility import (
+        apply_expected_utility_policy,
+        fit_expected_utility_policy,
+    )
+    from baram.models.quantile import QUANTILE_LEVELS
+
+    distribution_rows: list[dict[str, object]] = []
+    for group_id, capacity in CAPACITIES_KWH.items():
+        for index in range(600):
+            timestamp = pd.Timestamp("2023-03-01 01:00") + pd.Timedelta(index, unit="h")
+            actual = capacity * (0.30 + 0.001 * (index % 100))
+            median = actual - 0.01 * capacity
+            for level, offset in zip(
+                QUANTILE_LEVELS,
+                (-0.12, -0.09, -0.04, 0.0, 0.04, 0.09, 0.12),
+                strict=True,
+            ):
+                distribution_rows.append(
+                    {
+                        "forecast_id": f"tiny-dist-{group_id}-{index}",
+                        "forecast_kst_dtm": timestamp,
+                        "group_id": group_id,
+                        "fold_id": "fixture-distribution",
+                        "actual_kwh": actual,
+                        "quantile": level,
+                        "prediction_kwh": median + offset * capacity,
+                    }
+                )
+    tiny_distribution = pd.DataFrame(distribution_rows)
+    quantile_sha = sha256_dataframe(
+        tiny_distribution[
+            [*_KEYS, "fold_id", "quantile", "prediction_kwh"]
+        ].reset_index(drop=True)
+    )
+    utility_policy = fit_expected_utility_policy(
+        tiny_distribution,
+        CAPACITIES_KWH,
+        policy_id="tiny-expected-utility",
+        metric_sha256=canonical_sha256({"metric": "official-v1"}),
+    )
+    expected_policy_sha = canonical_sha256(utility_policy)
+    utility_input = tiny_distribution.loc[
+        tiny_distribution["forecast_id"].isin(
+            ["tiny-dist-1-0", "tiny-dist-2-0", "tiny-dist-3-0"]
+        )
+    ]
+    utility_output = apply_expected_utility_policy(
+        utility_policy, utility_input, CAPACITIES_KWH
+    )
+    expected_candidate_sha = sha256_dataframe(
+        utility_output[[*_KEYS, "prediction_kwh"]].reset_index(drop=True)
+    )
     fixture_lock_path = root / "artifacts" / "fixture-locks" / "disposable-lockbox.json"
     write_json_atomic(
         fixture_lock_path,
@@ -2124,6 +2446,10 @@ def run_tiny_fixture_pipeline(root: Path) -> WorkflowResult:
     payload = {
         "manifest_sha256": manifest_sha,
         "policy_sha256": policy_sha,
+        "spatial_feature_sha256": spatial_feature_sha,
+        "quantile_sha256": quantile_sha,
+        "expected_policy_sha256": expected_policy_sha,
+        "expected_candidate_sha256": expected_candidate_sha,
         "submission_sha256": submission_sha,
     }
     receipt = root / "reports" / "tiny-reproduction.json"

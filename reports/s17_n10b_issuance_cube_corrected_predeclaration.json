@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "node_id": "S17-N10B_ISSUANCE_CUBE_2022_2023_CORRECTED_AUDIT",
+  "stage": "S3_데이터정밀분석",
+  "kind": "corrected_train_weather_metadata_audit_non_score_bearing",
+  "predeclared_at": "2026-08-08T20:34:09.251538+09:00",
+  "parent": "S17-N10_ISSUANCE_CUBE_TIMING_AND_MISSINGNESS_AUDIT",
+  "repair_basis": {
+    "rejected_manifest": {
+      "path": "artifacts/audits/rejected_s17_n10_scope_breach/SCOPE_BREACH_DO_NOT_USE.json",
+      "sha256": "425b49c6a3a03a1ea967c86fdae048e1a397d0f17290b1e289944cfeb31b7218"
+    },
+    "rule": "Never aggregate or inspect a 2024 operating-day weather value. Read exactly the frozen 2022-2023 prefix row count and assert its operating-day boundary before aggregation."
+  },
+  "input_bundle": {
+    "sha256": "224afd6558f279882e8c97784ceb18376369d4d0b369b58d4ea74e4095dd3b00",
+    "files": {
+      "inputs/competition/open_wind_236727.zip": "920be0c458d820e855bf79dd25723146f52ce1736138aedba5e6bc853f1f720b",
+      "src/baram/data/canonical.py": "868a2d460d99f1a6bd71e900b20fb977a682090ae8f1c6d31a009992ad50ad34",
+      "src/baram/data/quality.py": "5992c93bcd2a4a87b885b2ff1d4c328b3e69001d106742f04a1093619c4f71ab",
+      "research/rwa_data_feature_research.md": "16351bb387dfebf0dc7ccdc6ef0e8ec77406964bf3d0b40c52fcdc3496284504",
+      "artifacts/manifests/prepare.json": "ca4908d7f98639b13da80febcd071cd805369e8e044bb4d7b97f793d2703ca46",
+      "artifacts/audits/rejected_s17_n10_scope_breach/SCOPE_BREACH_DO_NOT_USE.json": "425b49c6a3a03a1ea967c86fdae048e1a397d0f17290b1e289944cfeb31b7218",
+      "reports/s17_n10_issuance_cube_audit_receipt.json": "c2df3f198de69fa5f21255888794f69fc60ed78400d8337ae980ab2f3643cde3"
+    }
+  },
+  "scope": {
+    "archive_members": [
+      "train/gfs_train.csv",
+      "train/ldaps_train.csv"
+    ],
+    "operating_day_min": "2022-01-01",
+    "operating_day_max": "2023-12-31",
+    "expected_days": 730,
+    "source_spec": {
+      "gfs": {
+        "grids": 9,
+        "rows": 157680
+      },
+      "ldaps": {
+        "grids": 16,
+        "rows": 280320
+      }
+    },
+    "reader": "pandas.read_csv(nrows=frozen_rows); no full-member chunk iterator",
+    "allowed_boundary_valid_timestamp": "2024-01-01 00:00:00 belongs to operating_day 2023-12-31",
+    "forbidden_operating_day": "2024-*"
+  },
+  "cube_contract": {
+    "key": [
+      "source",
+      "data_available_kst_dtm",
+      "forecast_kst_dtm",
+      "lead_hour",
+      "grid_id",
+      "variable"
+    ],
+    "derived_operating_day": "(forecast_kst_dtm-1h).normalize",
+    "basis": "operating_day-1d+14h",
+    "required_availability": "data_available_kst_dtm <= basis",
+    "expected_hours_per_issue": 24,
+    "expected_leads": "derive, do not assume",
+    "duplicate_rule": "unique source/availability/valid/grid row",
+    "missing_states": [
+      "entire source/issue absent",
+      "variable absent",
+      "grid absent",
+      "isolated nonfinite value"
+    ]
+  },
+  "audit_questions": [
+    "Does supplied metadata distinguish forecast reference/run from actual availability?",
+    "Does it define instant versus interval/accumulation support for each variable?",
+    "Are LDAPS/GFS issue timestamps and leads identical and basis-safe?",
+    "Are all expected source/issue/hour/grid rows present?",
+    "What are per-variable nonfinite rates and whole-source/issue gaps?",
+    "Does current canonical code preserve source, reference, temporal support and quality state?"
+  ],
+  "hard_gates": [
+    "all materialized operating_day in 2022-2023",
+    "exact 730 operating days and frozen row counts",
+    "unique source/valid/grid",
+    "24 valid hours and all grids per issue",
+    "availability <= D-1 14:00 KST",
+    "no nonfinite values",
+    "no cross-source issue mismatch"
+  ],
+  "tri_state": {
+    "VALIDATED": "reference/cycle and temporal support are explicit and current mapping matches",
+    "AMBIGUOUS": "availability/valid are safe but reference or temporal support is absent; hand off exactly t,t-1,mean(t-1,t),mean(t,t+1)",
+    "INVALID": "basis violation, cross-run join, duplicate, or material source/run gap invalidates current pipeline"
+  },
+  "outputs": {
+    "script": "scripts/audit_issuance_cube_2022_2023.py",
+    "report": "artifacts/audits/s17_n10b_issuance_cube_2022_2023.json",
+    "receipt": "reports/s17_n10b_issuance_cube_corrected_receipt.json"
+  },
+  "actions": {
+    "model_fits": 0,
+    "target_or_scada_access": false,
+    "official_score_calls": 0,
+    "comparison_index": null,
+    "2024_operating_day_weather_access": false
+  },
+  "forbidden": [
+    "test data",
+    "2024 operating-day weather values",
+    "power labels/SCADA",
+    "model fit/score",
+    "2024 lockbox performance",
+    "Dacon/account",
+    "remote inference",
+    "dependency change",
+    "use of rejected N10 findings"
+  ],
+  "pass_label": "PASS_CORRECTED_METADATA_AUDIT_ONLY_NOT_MODEL_SCORE"
+}

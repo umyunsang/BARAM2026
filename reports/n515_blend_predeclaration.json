@@ -1,0 +1,46 @@
+{
+ "node": "N515_BLEND_SWEEP",
+ "m263_reverse_engineered": {
+  "g1_w": 1.0,
+  "g2_w": 0.9,
+  "g3_w": 1.0,
+  "note": "analog member reaches only ~3% of the submission"
+ },
+ "anchors": {
+  "M261_w1.0": 0.6365274327,
+  "M252_w0.0": 0.6268784092
+ },
+ "predeclaration": {
+  "H1": "some w in (0,1) exceeds both endpoints",
+  "H2": "optimal w < 1.0",
+  "falsifier": "all w <= 0.6365274 closes the analog-combination axis online"
+ },
+ "candidates": [
+  {
+   "w": 0.85,
+   "file": "artifacts/submissions/blends/BLEND_M261w085_M252.csv",
+   "sha256": "aeaf69d4b7240b3b3048b6d5e1de582348daf18b1bdd40ff6449f9470c393aad",
+   "valid": true
+  },
+  {
+   "w": 0.7,
+   "file": "artifacts/submissions/blends/BLEND_M261w070_M252.csv",
+   "sha256": "3d3e7041a1d9023ca520a5538d1f2eaafae488da58d6564c93b61a02eed11bea",
+   "valid": true
+  },
+  {
+   "w": 0.55,
+   "file": "artifacts/submissions/blends/BLEND_M261w055_M252.csv",
+   "sha256": "d2590f483f6390d4660650308e822a16847f8a34f50d75e1442009e35205a47c",
+   "valid": true
+  },
+  {
+   "w": 0.4,
+   "file": "artifacts/submissions/blends/BLEND_M261w040_M252.csv",
+   "sha256": "db0be9d604040df8911839f62df2492d9700b0878a4574f13345753424baa88a",
+   "valid": true
+  }
+ ],
+ "agent_upload": false,
+ "model_fits": 0
+}

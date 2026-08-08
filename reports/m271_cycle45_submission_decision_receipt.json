@@ -1,0 +1,208 @@
+{
+ "dacon_upload": false,
+ "decided_utc": "2026-08-04T15:25:44.129905+00:00",
+ "external_actions": [],
+ "lane": "L5",
+ "lockbox_reopened": false,
+ "model_fits": 0,
+ "new_2024_evaluation": false,
+ "node": "C1N45_SUBMISSION_DECISION",
+ "report_sha256": "63fee50d3b9269b9ab3ba7b0da4ae3f3de744e92e7ac116f3ee088e2053ad390",
+ "result": {
+  "baseline_error": "사이클 35 는 배포 기준선(0.628605)과 겨뤘으나 진짜 현직은 이미 제출된 M261 의 로컬 0.629973 이다. 사이클 33 과 같은 오류 패턴",
+  "clearing_detection_threshold": [
+   {
+    "above_detection": true,
+    "fold_wins_vs_deployed": 3,
+    "gate_passed_vs_deployed": false,
+    "margin_vs_incumbent": 0.0011263045311954434,
+    "model": "M113_LGBM_DART",
+    "policy": "T0.5_G0.5",
+    "total": 0.6310993045311954
+   },
+   {
+    "above_detection": true,
+    "fold_wins_vs_deployed": 2,
+    "gate_passed_vs_deployed": false,
+    "margin_vs_incumbent": 0.001054411017702872,
+    "model": "M113_LGBM_DART",
+    "policy": "T0.5_G0.35",
+    "total": 0.6310274110177029
+   }
+  ],
+  "corrects_baseline_of": "C1N35_FIXED_POLICY_CORRECTION",
+  "cycle35_qualified_count": 1,
+  "cycle35_qualifier": {
+   "margin_vs_incumbent": 0.0003370000000000317,
+   "name": "M115_XGBOOST@T0.6_G0.2",
+   "total": 0.63031
+  },
+  "deployed_baseline": 0.628605,
+  "detection_threshold": 0.001013,
+  "gate_touched": false,
+  "incumbent": {
+   "local": 0.629973,
+   "name": "M261_FULL_HISTORY_STRICT_TEMPORAL_TOP100",
+   "offset": 0.006554,
+   "online": 0.6365274327,
+   "source": "reports/m270_second_anchor_receipt.json",
+   "surface": "2023 Q2-Q4 chronology-safe OOF"
+  },
+  "lockbox_used": false,
+  "no_training": true,
+  "node": "C1N45_SUBMISSION_DECISION",
+  "parent_node": "C1N44_SHARPENED_DECISION",
+  "predeclared_check": {
+   "H1_expectation": "사이클 35 자격 후보가 현직(0.629973) 대비 0.001013 초과",
+   "H1_held": false,
+   "H1_margin": 0.0003370000000000317,
+   "H2_count": 2,
+   "H2_expectation": "현직을 검출문턱 이상 넘는 조합이 적어도 하나",
+   "H2_held": true,
+   "H3_expectation": "그 후보가 사이클 35 게이트도 통과",
+   "H3_held": false,
+   "build_justified": false,
+   "verdict": "CLEARS_THRESHOLD_BUT_GATE_REJECTED"
+  },
+  "reranked_top15": [
+   {
+    "above_detection": true,
+    "fold_wins_vs_deployed": 3,
+    "gate_passed_vs_deployed": false,
+    "margin_vs_incumbent": 0.0011263045311954434,
+    "model": "M113_LGBM_DART",
+    "policy": "T0.5_G0.5",
+    "total": 0.6310993045311954
+   },
+   {
+    "above_detection": true,
+    "fold_wins_vs_deployed": 2,
+    "gate_passed_vs_deployed": false,
+    "margin_vs_incumbent": 0.001054411017702872,
+    "model": "M113_LGBM_DART",
+    "policy": "T0.5_G0.35",
+    "total": 0.6310274110177029
+   },
+   {
+    "above_detection": false,
+    "fold_wins_vs_deployed": 3,
+    "gate_passed_vs_deployed": false,
+    "margin_vs_incumbent": 0.0006892974810827068,
+    "model": "M115_XGBOOST",
+    "policy": "T0.6_G0.35",
+    "total": 0.6306622974810827
+   },
+   {
+    "above_detection": false,
+    "fold_wins_vs_deployed": 3,
+    "gate_passed_vs_deployed": false,
+    "margin_vs_incumbent": 0.00048254488184629185,
+    "model": "M115_XGBOOST",
+    "policy": "T0.6_G0.5",
+    "total": 0.6304555448818463
+   },
+   {
+    "above_detection": false,
+    "fold_wins_vs_deployed": 3,
+    "gate_passed_vs_deployed": false,
+    "margin_vs_incumbent": 0.0004434185686723602,
+    "model": "M113_LGBM_DART",
+    "policy": "T0.5_G0.75",
+    "total": 0.6304164185686724
+   },
+   {
+    "above_detection": false,
+    "fold_wins_vs_deployed": 2,
+    "gate_passed_vs_deployed": false,
+    "margin_vs_incumbent": 0.00035976857101815973,
+    "model": "M113_LGBM_DART",
+    "policy": "T0.4_G0.5",
+    "total": 0.6303327685710182
+   },
+   {
+    "above_detection": false,
+    "fold_wins_vs_deployed": 3,
+    "gate_passed_vs_deployed": true,
+    "margin_vs_incumbent": 0.0003374343568136595,
+    "model": "M115_XGBOOST",
+    "policy": "T0.6_G0.2",
+    "total": 0.6303104343568137
+   },
+   {
+    "above_detection": false,
+    "fold_wins_vs_deployed": 2,
+    "gate_passed_vs_deployed": false,
+    "margin_vs_incumbent": 0.00022689251871255145,
+    "model": "M113_LGBM_DART",
+    "policy": "T0.5_G0.2",
+    "total": 0.6301998925187126
+   },
+   {
+    "above_detection": false,
+    "fold_wins_vs_deployed": 3,
+    "gate_passed_vs_deployed": false,
+    "margin_vs_incumbent": 0.0001699032715390958,
+    "model": "M115_XGBOOST",
+    "policy": "T0.4_G1.25",
+    "total": 0.6301429032715391
+   },
+   {
+    "above_detection": false,
+    "fold_wins_vs_deployed": 2,
+    "gate_passed_vs_deployed": false,
+    "margin_vs_incumbent": 0.00016501482898945152,
+    "model": "M113_LGBM_DART",
+    "policy": "T0.5_G1.25",
+    "total": 0.6301380148289895
+   },
+   {
+    "above_detection": false,
+    "fold_wins_vs_deployed": 3,
+    "gate_passed_vs_deployed": false,
+    "margin_vs_incumbent": 0.00015963650643169291,
+    "model": "M113_LGBM_DART",
+    "policy": "T0.5_G1",
+    "total": 0.6301326365064317
+   },
+   {
+    "above_detection": false,
+    "fold_wins_vs_deployed": 3,
+    "gate_passed_vs_deployed": false,
+    "margin_vs_incumbent": 8.630112710039661e-05,
+    "model": "M115_XGBOOST",
+    "policy": "T0.4_G1",
+    "total": 0.6300593011271004
+   },
+   {
+    "above_detection": false,
+    "fold_wins_vs_deployed": 2,
+    "gate_passed_vs_deployed": false,
+    "margin_vs_incumbent": 7.681116469959726e-05,
+    "model": "M113_LGBM_DART",
+    "policy": "T0.5_G2",
+    "total": 0.6300498111646996
+   },
+   {
+    "above_detection": false,
+    "fold_wins_vs_deployed": 2,
+    "gate_passed_vs_deployed": false,
+    "margin_vs_incumbent": 4.310851576594388e-05,
+    "model": "M113_LGBM_DART",
+    "policy": "T0.4_G0.75",
+    "total": 0.630016108515766
+   },
+   {
+    "above_detection": false,
+    "fold_wins_vs_deployed": 2,
+    "gate_passed_vs_deployed": false,
+    "margin_vs_incumbent": 3.570634355765101e-05,
+    "model": "M113_LGBM_DART",
+    "policy": "T0.5_G1.5",
+    "total": 0.6300087063435577
+   }
+  ]
+ },
+ "schema_version": 1,
+ "script_sha256": "91f3eeb2e463ca7ecffdc2b41cbf24f2d32a82380d8cad3958d9dd8fb3b05ce8",
+ "stage": "M271_P4_CYCLE45_SUBMISSION_DECISION"
+}

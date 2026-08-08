@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "artifact": "SK@v5",
+  "created_at": "2026-08-09T04:39:08.147938+09:00",
+  "status": "SKELETON_APPROVAL_PENDING",
+  "approval_request": "SK@v5 승인",
+  "skeleton": {
+    "path": ".planning/2026-08-01-leaderboard-top-4-loop/SK_v5.md",
+    "lines": 211,
+    "sha256": "c2c813475ab5f0a741e6adbceab196d5b38447f2aeb02f9716a8f5be8973c820",
+    "stable_locator": ".planning/2026-08-01-leaderboard-top-4-loop/SK_v5.md"
+  },
+  "revision_base": {
+    "approved_historical": [
+      "SK@v3",
+      "DS@v3",
+      "IP@v2"
+    ],
+    "unapproved_withdrawn": [
+      "SK@v4"
+    ],
+    "historical_eventstore_head": {
+      "sequence": 158,
+      "event_sha256": "1f92bedddaff46aec17470ef69634967cabfbdb4ce30f57dc54a4d31ec566eee",
+      "halt": "HALT_ALLOWED_EXHAUSTED"
+    }
+  },
+  "normalized_outcome": "Repair and use a hierarchical SOTA/benchmark-to-local migration and experiment loop; success only at reproduced strict local Total >= 0.660000.",
+  "material_revision": [
+    "hypothesis generation is distinct from exact evidence confirmation",
+    "stage depth is distinct from recursive child depth",
+    "results create residual-deficit children and causal re-entry",
+    "below-target exhaustion is a pause rather than success/terminal completion"
+  ],
+  "bounded_local_evidence": {
+    "src/baram/loop/stages.py": "d7cdbe242330deb00a3021dcd5e7dac3fb137419fc2544da65dab96aa28403ab",
+    "src/baram/loop/research.py": "b8085f28c9a444eeeb4f6ac2c202f31758e2587d9c422870b275767be11416d7",
+    "src/baram/loop/graph_staged.py": "d1eedd7a79232364e8deb5e4df89d7390fa3c9bf779e3b46e2da5a5cf7f7b7a5",
+    "src/baram/loop/registry.py": "73b58b92d2eb9bce0f796a33f93d1a40a78dfac52e236dbe6cc03eaf08a1391c",
+    "src/baram/loop/router.py": "80e37561a32fb2928d1a7505b652bb822f5b6989e73b6d7106afb0ae62041b43",
+    "artifacts/registry/capability_ontology_v1.json": "e8cdb044f6cdd64d832a292870a298e52ceb76b519385fd67a88b52851854c0f",
+    "reports/sk_v4_withdrawal_receipt.json": "7f9f32ed0495a1cc2af1ce713a6b45b75fad3c8fd1ff050f6f8822de885af33d",
+    "AGENTS.md": "91a11f95f94e8de86f5c84b204e1893830b3ed5693e3d7ede7f2e351e9891e9c"
+  },
+  "requested_research_scope": [
+    "V5-ENGINE",
+    "V5-FOUNDATION",
+    "V5-DISCOVERY-SCIENCE",
+    "V5-VALIDATION",
+    "V5-PREPROCESS",
+    "V5-FEATURES",
+    "V5-MODELS",
+    "V5-BENCHMARKS",
+    "V5-EXTERNAL"
+  ],
+  "preapproval_actions": {
+    "raw_request_preserved": true,
+    "bounded_local_authority_and_workflow_audit": true,
+    "web_or_deep_research": false,
+    "research_subagents_spawned": 0,
+    "source_implementation": false,
+    "model_fits": 0,
+    "score_calls": 0,
+    "dependency_changes": false,
+    "external_data_body_retrieval": false,
+    "dacon_or_account_actions": false,
+    "new_2024_evaluation": false
+  },
+  "not_authorized_before_approval": [
+    "web/deep research",
+    "research-lane dispatch",
+    "source edits",
+    "model fitting",
+    "dependency changes",
+    "external data-body retrieval",
+    "Dacon/account actions",
+    "remote inference/compute/Git",
+    "2024 evaluation"
+  ],
+  "field_diff": {
+    "path": "reports/sk_v5_field_diff.md",
+    "sha256": "f6a95b343fec14f6be5c37f76e09d26f8849596e2f1d7ddf2f647e2c35d08c04"
+  }
+}

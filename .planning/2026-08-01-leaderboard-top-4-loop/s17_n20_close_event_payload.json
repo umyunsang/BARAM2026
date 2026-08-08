@@ -1,0 +1,37 @@
+{
+  "event_type": "CLOSED",
+  "cycle_id": "S17-N20_TERRAIN_SX300_H8_STATIC_LOOKUP_EXTRACTION",
+  "stage_id": "S7",
+  "node_id": "S17-N20_TERRAIN_SX300_H8_STATIC_LOOKUP_EXTRACTION",
+  "actor": "root",
+  "occurred_at": "2026-08-08T22:54:24.902908+09:00",
+  "body": {
+    "predeclared_event_sha256": "4af80d74c4369621d05760a7665556c8202fdc314ac17c49e427776221f63c0c",
+    "receipt_path": "reports/s17_n20_terrain_sx300_static_extraction_receipt.json",
+    "receipt_sha256": "8b4113b8df78250745c0364c0665fbaee513223a80d4e889f0fc4d4959e4f143",
+    "code_sha256": "d60bd632ee5abd6291585f02239aceda99cf2916a1feec0ddc7359a4a8bab497",
+    "config_sha256": "ca1022d8236acdefa2b886c20945029a060f3dddecb4d879cb4c6e5a99cf6b80",
+    "data_sha256": "a3695037a6d9954808e9b8feee6358754a034a359860ded302e5df883a46d5a8",
+    "router_sha256": "80e37561a32fb2928d1a7505b652bb822f5b6989e73b6d7106afb0ae62041b43",
+    "policy_ids": [
+      "TERRAIN_SX300_H8_STATIC_EXTRACTION"
+    ],
+    "row_alignment_keys": [
+      "fold_id",
+      "group_id",
+      "forecast_kst_dtm"
+    ],
+    "evidence_class": "diagnostic",
+    "weights_fit": "fixed",
+    "result_status": "INCONCLUSIVE",
+    "score_bearing": false,
+    "comparison_index": null,
+    "official_total": null,
+    "stage_evidence_status": "INSUFFICIENT",
+    "next_handoff": [
+      "S17-N20A_TERRAIN_SX300_H8_NO_NODATA_TAG_RECOVERY"
+    ],
+    "lockbox_2024_used": false,
+    "dacon_actions": []
+  }
+}

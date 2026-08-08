@@ -1,0 +1,21 @@
+{
+ "node": "N518_PERGROUP_BLEND",
+ "best_w_local": {
+  "1": 0.95,
+  "2": 0.75,
+  "3": 1.0
+ },
+ "best_w_offset_aware": {
+  "1": 0.95,
+  "2": 0.75,
+  "3": 1.0
+ },
+ "candidate": {
+  "file": "artifacts/submissions/blends/BLEND_PERGROUP_95_75_100.csv",
+  "sha256": "e1f120758f2c6509493f443c33ae3d0eed2a67d4339e12bba5e957fa35ed139d",
+  "valid": true
+ },
+ "offset_model": "w*0.006554 + (1-w)*0.021119, validated on two online anchors",
+ "model_fits": 0,
+ "dacon_upload": false
+}

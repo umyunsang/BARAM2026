@@ -1,0 +1,245 @@
+{
+  "schema_version": 1,
+  "node_id": "S17-N9_COST5_NO_REFIT_MATERIALIZATION_RECOVERY",
+  "closed_at": "2026-08-08T20:22:46.473161+09:00",
+  "predeclaration": {
+    "path": "reports/s17_n9_cost5_recovery_predeclaration.json",
+    "sha256": "de1ac99f994c0667bd81d03c91e50707c64d5b4324f4e580af5daad4996b7684",
+    "event_sha256": "22f03c3ab8a5c268ac53a8ceec9d7a07981635dd13023c633252424668f1f045"
+  },
+  "implementation": {
+    "path": "scripts/recover_cost5_materialization.py",
+    "sha256": "650c4e2aed7b91ab21fdf487647325db23eda55889f51589fff7682df6525e91"
+  },
+  "input_bundle_sha256": "a0f4f84a2a842747a9e98bff6c61ddd1d6d3b1fbe4e3d0b37226405277e8af3c",
+  "family_manifest": {
+    "path": "artifacts/backtests/s17_n9_cost5_recovery/family_manifest.json",
+    "sha256": "205d624c5d6d30a9a862a94fed1748a6d78d82e733049dc67ee0aa11c5c1b0b1"
+  },
+  "frozen_outputs": {
+    "predictions.parquet": "1422f8e375235659434055ef84a419f902008fe01c67363b6d717f08c744895d",
+    "procedure_provenance.parquet": "c7763bf65ec6c6110cf261315379a463403cdcff89344f5c3b934c6633392b65",
+    "optimizer_verification.json": "49b8da855c39cfe2b10b4c4b85a084360ed1136d20d2ff17c31fa498e5361832"
+  },
+  "evaluation": {
+    "path": "artifacts/backtests/s17_n9_cost5_recovery/evaluation.json",
+    "sha256": "7d6fc0e183a0d74647dbd3d4e1619b4dbfe03989521c137036d247f862593969"
+  },
+  "recovery_gate": {
+    "prediction_max_abs_error": 0.0,
+    "choice_exact_both_folds": true,
+    "optimizer_reinvoked": false,
+    "model_fits": 0,
+    "finite_descent_both_folds": true,
+    "typed_provenance_records": 4,
+    "family_frozen_before_score": true
+  },
+  "scores": {
+    "CHAMPION": {
+      "total": 0.6314827308346854,
+      "one_minus_nmae": 0.8584802239958174,
+      "ficr": 0.40448523767355354,
+      "group_nmae": {
+        "1": 0.13374875571118536,
+        "2": 0.13717782021604943,
+        "3": 0.1536327520853131
+      },
+      "group_ficr": {
+        "1": 0.40302241682883877,
+        "2": 0.45313004431308845,
+        "3": 0.3573032518787334
+      }
+    },
+    "COST5_SPO_PLUS": {
+      "total": 0.6195834444059027,
+      "one_minus_nmae": 0.8623551953035612,
+      "ficr": 0.3768116935082442,
+      "group_nmae": {
+        "1": 0.13266076633399013,
+        "2": 0.12968979424460944,
+        "3": 0.15058385351071693
+      },
+      "group_ficr": {
+        "1": 0.36750146550425566,
+        "2": 0.42008218440699174,
+        "3": 0.34285143061348533
+      }
+    }
+  },
+  "delta_total": -0.011899286428782685,
+  "target_total": 0.66,
+  "target_gap_from_strict_incumbent": 0.028517269165314607,
+  "promotion": {
+    "supported": false,
+    "q3_q4_deltas": {
+      "dev-2023-Q3": -0.0013546514268928979,
+      "dev-2023-Q4": -0.010544635001889846
+    },
+    "simultaneous_lower_total_by_block": {
+      "3": -0.020851650825256564,
+      "7": -0.020150690327680514,
+      "14": -0.019469608789289126
+    },
+    "mcs_included_by_block": {
+      "3": [
+        "CHAMPION"
+      ],
+      "7": [
+        "CHAMPION"
+      ],
+      "14": [
+        "CHAMPION"
+      ]
+    },
+    "additive_exact_agreement": true,
+    "inference": "SUPPORTED for direction; candidate is inferior"
+  },
+  "mechanism_diagnostic": {
+    "delta_one_minus_nmae": 0.0038749713077438352,
+    "delta_ficr": -0.027673544165309316,
+    "interpretation": "SPO+ improved continuous accuracy but destroyed more settlement reward, repeating the known action-versus-mean tradeoff."
+  },
+  "actions": {
+    "optimizer_or_model_fits_in_n9": 0,
+    "outer_point_official_calls": 2,
+    "strict_protocol_calls": 1,
+    "comparison_index": 1,
+    "lockbox_2024_access": false,
+    "test_access": false,
+    "rejected_ecmwf_access": false,
+    "dacon_actions": [],
+    "dependency_changes": false
+  },
+  "verification": {
+    "targeted": "53 passed",
+    "full": "214 passed, 144 pre-existing warnings",
+    "ruff": "All checks passed",
+    "daily_loss_reproduction_max_abs": 0.0
+  },
+  "preclose_snapshot": {
+    "pending": [
+      "S17-N9_COST5_NO_REFIT_MATERIALIZATION_RECOVERY"
+    ],
+    "closed": [
+      "S17-N2_EVENT_LEDGER_ENVELOPE",
+      "S17-N3_STRICT_PREQUENTIAL_EVALUATION_REPAIR",
+      "S17-N4_ECMWF_18Z_FIXED_LEAD_AUDIT",
+      "S17-N5_ECMWF_18Z_2023_EXTRACTION",
+      "S17-N5_ECMWF_18Z_2023_INNOVATION_PROBE",
+      "S17-N6A_FAIL_CLOSED_SCORE_CLASS_REPAIR",
+      "S17-N6_COST5_SPO_PLUS_PREQUENTIAL",
+      "S17-N7_STRICT_ACTION_PROVENANCE_RECONSTRUCTION",
+      "S17-N8_COST5_SPO_PLUS_STRICT_PREQUENTIAL_COMPARISON"
+    ],
+    "legacy": [
+      "C1N100_NOVEL_MEMBER_PROBE",
+      "C1N101_PHYSICAL_MEMBER_PROBE",
+      "C1N102_RETRIEVAL_MEMBER",
+      "C1N103_EXTERNAL_NWP_MEMBER",
+      "C1N104_M244_KEY_RECOVERED",
+      "C1N105_M244_RECIPE_READ",
+      "C1N10_BLEND_LOCALITY",
+      "C1N11_V2_REPRESENTATION",
+      "C1N12_G3_HISTORY",
+      "C1N13_ENSEMBLE_VARIANCE",
+      "C1N14_SHRINKBLEND",
+      "C1N15_WALKFORWARD",
+      "C1N16_ROBUSTNESS_AUDIT",
+      "C1N17_METRIC_ALIGNED_COMBINER",
+      "C1N18_SPREAD_SKILL",
+      "C1N19_ENVELOPE_ORACLE",
+      "C1N1_TOPRATE_MECHANISM",
+      "C1N20_ALPHA_ENDPOINT",
+      "C1N21_MOS_BIAS_CORRECTION",
+      "C1N22_GLOBAL_SHIFT",
+      "C1N23_ELIGIBLE_MOS",
+      "C1N24_MEMBER_COUNT_REOPEN",
+      "C1N25_ENVELOPE_LAMBDA",
+      "C1N26_POOL_WIDTH_SCREEN",
+      "C1N27_RESIDUAL_SIGNAL",
+      "C1N28_PERGRID_SIGNAL",
+      "C1N29_CHAMPION_AUDIT",
+      "C1N2_COLLIDER_CORRECTED",
+      "C1N30_TEMPORAL_SIGNAL",
+      "C1N31_SPACE_TIME",
+      "C1N32_LOCKBOX_OPERATOR",
+      "C1N33_SINGLE_VS_ENSEMBLE",
+      "C1N34_SHRINK_TO_BEST",
+      "C1N35_FIXED_POLICY_CORRECTION",
+      "C1N36_SOURCE_SENSITIVITY",
+      "C1N37_BAND_ALIGNED_LOSS",
+      "C1N38_BAND_LOSS_FIXED",
+      "C1N39_ARCHITECTURE_GAP",
+      "C1N3_MASS_AXIS_WIND_SECTOR",
+      "C1N40_BAND_CLASSIFIER",
+      "C1N41_BAND_CLASSIFIER_CAPACITY",
+      "C1N42_TEACHER_RESTORED",
+      "C1N43_EFFECT_TREND",
+      "C1N44_SHARPENED_DECISION",
+      "C1N45_SUBMISSION_DECISION",
+      "C1N46_CLOSURE_FALSIFICATION",
+      "C1N47_EXTERNAL_NWP_REVIVED",
+      "C1N48_MODEL_VALIDATION",
+      "C1N49_RHO_ACCEPTANCE",
+      "C1N4_BAND_CONDITIONAL_POLICY_ORACLE",
+      "C1N50_NONNEGATIVE_WEIGHTS",
+      "C1N51_EXTERNAL_SOURCE_PROBE",
+      "C1N52_EXTERNAL_CLOSURE",
+      "C1N53_SUPPLIED_EXTRACTION",
+      "C1N54_SCATTER_CEILING",
+      "C1N55_TURBINE_CORRELATION",
+      "C1N56_MEASURED_POWERCURVE",
+      "C1N57B_VARIANCE_LAW",
+      "C1N57_FICR_CEILING",
+      "C1N58_TEACHER_OOF_SPLIT",
+      "C1N59_PERFECT_PROG_BOUND",
+      "C1N5_SPATIAL_INTERPOLATION",
+      "C1N60_LEVEL_TEMPERATURE",
+      "C1N61_GRID_BOUNDARY",
+      "C1N62_MONTH_MECHANISM",
+      "C1N64_BAND_AVOIDANCE",
+      "C1N65_WIND_LIMITED_BOUND",
+      "C1N66_HETEROSCEDASTIC_WIND",
+      "C1N67_EXACT_CURVE_PROPAGATION",
+      "C1N69_SKILL_RESPONSE",
+      "C1N6_WIND50_MIDPOINT",
+      "C1N70_BASELINE_CORRECTION",
+      "C1N71_TEACHER_WEIGHT",
+      "C1N72_CURVE_BLEND",
+      "C1N74_BLOCK_LENGTH",
+      "C1N75_DAILY_GATE_ESTIMAND",
+      "C1N7_POLICY_FROZEN_GATE",
+      "C1N81_CYCLE_CONTRACT_ENFORCED",
+      "C1N8_ORACLE_LADDER",
+      "C1N92_METRIC_ALIGNED_LOSS",
+      "C1N93_ORDINAL_REPRESENTATION",
+      "C1N94_CDF_REJUDGE",
+      "C1N95_RECONSTRUCTION_GAP",
+      "C1N96_GAP_REJUDGE",
+      "C1N97_BOOSTING_ROUNDS",
+      "C1N98_REPRODUCIBILITY_ADJUDICATION",
+      "C1N99_ENSEMBLE_EXHAUSTIVE",
+      "C1N9_GATE_POWER"
+    ],
+    "comparison_count": 0,
+    "stage_coverage": [
+      "S1",
+      "S2",
+      "S7",
+      "S8",
+      "S10",
+      "S11"
+    ],
+    "frontier": [
+      "S17-N9_COST5_NO_REFIT_MATERIALIZATION_RECOVERY"
+    ],
+    "evidence_complete_cycles": 9,
+    "accounted_cycles": 98,
+    "digest": "0313147e70df3cb1400a684ed0b73a3cf282eb3bf8cee31c179de297fb491656"
+  },
+  "verdict": "REFUTED_COST5_SPO_PLUS_STRICT_RETROSPECTIVE_TOTAL_0p619583_DELTA_MINUS_0p011899",
+  "evidence_boundary": "Retrospective chronology-repaired, multiplicity-aware evidence on reused 2023 Q3-Q4 only; not a fresh holdout or 2024 estimate.",
+  "next_handoff": [
+    "S17-N10_ISSUANCE_CUBE_TIMING_AND_MISSINGNESS_AUDIT"
+  ]
+}

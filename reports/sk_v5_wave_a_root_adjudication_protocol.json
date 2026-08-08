@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "protocol_id": "SK5-WAVE-A-ROOT-ADJUDICATION",
+  "created_at": "2026-08-09T04:46:20.223749+09:00",
+  "authority": {
+    "skeleton_sha256": "c2c813475ab5f0a741e6adbceab196d5b38447f2aeb02f9716a8f5be8973c820",
+    "approval_sha256": "e827b324a23913346598d274f2ded496ffc3134243de5636033ee6a3ac387173",
+    "manifest_sha256": "4690826f4f2f629220c085ffc87883c1ec2fa8990f7f92430483ff4f975ae312"
+  },
+  "lane_artifact_checks": [
+    "path equals exclusive manifest output",
+    "artifact exists and SHA-256 is frozen before review",
+    "source/file/time bound declared and not exceeded",
+    "no shared-state or prohibited action disclosed",
+    "explicit parent reply matches on-disk hash"
+  ],
+  "claim_checks": [
+    "one stable claim ID per material claim",
+    "exactly one allowed evidence tag",
+    "primary or exact local locator and date/version",
+    "scope match states population/time/metric/topology boundary",
+    "source fact is separated from BARAM migration hypothesis and local evidence needed",
+    "near_match_only never satisfies a transfer or performance claim",
+    "contradicts_premise triggers affected-field revision",
+    "unknowns remain explicit"
+  ],
+  "independent_validation": {
+    "local_claims": "root re-read exact bounded code/metadata lines and recompute file SHA; do not adopt child conclusions from narrative alone",
+    "external_claims": "root fetch the cited primary source or official document for every design-critical claim; secondary snippets are navigation only",
+    "source_budget": "validation fetches cited sources only and adds no new candidate source unless a new bounded lane is declared",
+    "contamination": "discard any claim depending on prohibited label/2024/test/result exposure; disclose identifier-only incidents separately"
+  },
+  "fan_in_outputs": [
+    "reports/sk_v5_wave_a_synthesis.md",
+    "research/nodes/sk5_foundation_map.json",
+    "reports/DS_v5.md or active-plan DS_v5.md",
+    "reports/sk_v5_wave_a_receipt.json"
+  ],
+  "synthesis_requirements": [
+    "field-level diff from SK@v5 rather than concatenated lane reports",
+    "resolved contradiction ledger",
+    "frozen S1-S4 foundation and active causal deficit",
+    "engine alternatives with minimal schema/test delta",
+    "validation hierarchy and claim limits",
+    "Wave-B research questions frozen from Wave-A only",
+    "no implementation or fit authorization",
+    "DS@v5 fingerprint and exact approval request"
+  ],
+  "lane_dispositions": [
+    "ACCEPT_DIRECT_CLAIMS",
+    "ACCEPT_WITH_SCOPE_DOWNGRADE",
+    "QUARANTINE_SCOPE_INCIDENT",
+    "REVISION_REQUIRED",
+    "BOUND_EXHAUSTED_UNKNOWN"
+  ],
+  "implementation_boundary": "No source edit, fit, score or external data-body action until DS@v5 and IP@v3 exact approvals."
+}

@@ -1,0 +1,299 @@
+{
+  "schema_version": 1,
+  "lane_id": "V5-ENGINE",
+  "adjudicated_at": "2026-08-09T05:11:11.487076+09:00",
+  "artifact": {
+    "path": "research/lanes/v5_engine_audit.md",
+    "sha256": "7d16ba4def18ef21b879bd9cac3901157c0739261e696839a1d0e69ac9aed6b7",
+    "reported_sha256": "7d16ba4def18ef21b879bd9cac3901157c0739261e696839a1d0e69ac9aed6b7",
+    "hash_match": true
+  },
+  "bounds": {
+    "content_files": 20,
+    "unique_paths": 20,
+    "paths": [
+      "AGENTS.md",
+      ".planning/2026-08-01-leaderboard-top-4-loop/SK_v5.md",
+      "reports/sk_v5_approval_receipt.json",
+      "reports/sk_v5_wave_a_research_manifest.json",
+      "src/baram/loop/stages.py",
+      "src/baram/loop/research.py",
+      "src/baram/loop/registry.py",
+      "src/baram/loop/router.py",
+      "src/baram/loop/graph_staged.py",
+      "src/baram/loop/events.py",
+      "src/baram/loop/evaluation.py",
+      "src/baram/loop/ontology.py",
+      "tests/loop/test_evaluation_contract.py",
+      "tests/loop/test_events.py",
+      "tests/loop/test_graph_contract.py",
+      "tests/loop/test_registry.py",
+      "tests/loop/test_research_contract.py",
+      "tests/loop/test_router.py",
+      "tests/loop/test_stages.py",
+      "artifacts/registry/capability_ontology_v1.json"
+    ],
+    "hashes": {
+      "AGENTS.md": "91a11f95f94e8de86f5c84b204e1893830b3ed5693e3d7ede7f2e351e9891e9c",
+      ".planning/2026-08-01-leaderboard-top-4-loop/SK_v5.md": "c2c813475ab5f0a741e6adbceab196d5b38447f2aeb02f9716a8f5be8973c820",
+      "reports/sk_v5_approval_receipt.json": "e827b324a23913346598d274f2ded496ffc3134243de5636033ee6a3ac387173",
+      "reports/sk_v5_wave_a_research_manifest.json": "4690826f4f2f629220c085ffc87883c1ec2fa8990f7f92430483ff4f975ae312",
+      "src/baram/loop/stages.py": "d7cdbe242330deb00a3021dcd5e7dac3fb137419fc2544da65dab96aa28403ab",
+      "src/baram/loop/research.py": "b8085f28c9a444eeeb4f6ac2c202f31758e2587d9c422870b275767be11416d7",
+      "src/baram/loop/registry.py": "73b58b92d2eb9bce0f796a33f93d1a40a78dfac52e236dbe6cc03eaf08a1391c",
+      "src/baram/loop/router.py": "80e37561a32fb2928d1a7505b652bb822f5b6989e73b6d7106afb0ae62041b43",
+      "src/baram/loop/graph_staged.py": "d1eedd7a79232364e8deb5e4df89d7390fa3c9bf779e3b46e2da5a5cf7f7b7a5",
+      "src/baram/loop/events.py": "9c05e7cb40f76dcc759630ee9463dd29ffd5f8efd2d744e7b596def3390b5044",
+      "src/baram/loop/evaluation.py": "dcb05aab6bc595bc297df9680075f055a568d192bb51a73f82b6f7737df02a82",
+      "src/baram/loop/ontology.py": "16f8afdbdfd46f2d58c84a0486d157a4d8d08edac76b5f74c5167ffd76f8162a",
+      "tests/loop/test_evaluation_contract.py": "72b05efc9c276fc1307893a372f80b240e1a1db3363e84571a616809be38bb13",
+      "tests/loop/test_events.py": "3524e780398428908584cd95ed8dbf0b2c53b645463c43117b15be3e5a4b4adf",
+      "tests/loop/test_graph_contract.py": "e27b2e6fdc58e0f914541b849ded046e3b58242d686f97df23004d1a6f106246",
+      "tests/loop/test_registry.py": "27e171c7149cf8bd9c520986e2bff1eb20b85897903cb84d35c86320913389dd",
+      "tests/loop/test_research_contract.py": "1308cda0934b81e6d7e02397b07b9621557c6a5a13ca190e6013754c9cb38195",
+      "tests/loop/test_router.py": "9a17695feed266c2c4d5e263373bba7b76e539ce02a1193983a6ac318f934c6f",
+      "tests/loop/test_stages.py": "b70d0d7a3c9cc7878ab57e79fb9cadc778c316546699aeee2d46d72459968dab",
+      "artifacts/registry/capability_ontology_v1.json": "e8cdb044f6cdd64d832a292870a298e52ceb76b519385fd67a88b52851854c0f"
+    },
+    "max_files": 30,
+    "network": false,
+    "tests_run": false,
+    "prohibited_actions_observed": [],
+    "scope_correction": "The child clarified that no live shared registry/EventStore/model-outcome state was read; the 20 authorized source/test/authority files were read."
+  },
+  "root_validation": {
+    "protocol_sha256": "b3ca2c8bf8b470695bf026c5b76f1eeb601c8b2b4fe7c9e32d25be0f64927909",
+    "core_checks": {
+      "stage_depth_is_ordinal": true,
+      "direct_only_actionable": true,
+      "node_spec_no_parent": true,
+      "registry_save_schema2": true,
+      "live_registry_schema1": true,
+      "event_unique_cycle_type": true,
+      "eventstore_user_version_zero": true,
+      "state_list_add_reducers": true,
+      "legacy_graph_imports_same_state_events_registry": true
+    },
+    "checks": [
+      {
+        "id": "ENG-RV01",
+        "result": "PASS",
+        "fact": "current graph depth is exactly S1-S11 ordinal and stage scheduling is linear",
+        "locator": "src/baram/loop/graph_staged.py:59-81; src/baram/loop/stages.py:77-124"
+      },
+      {
+        "id": "ENG-RV02",
+        "result": "PASS",
+        "fact": "only directly_supported findings expand; explicit_unknown can complete empty stage emissions",
+        "locator": "src/baram/loop/research.py:12-20,98-130; src/baram/loop/stages.py:107-124"
+      },
+      {
+        "id": "ENG-RV03",
+        "result": "PASS",
+        "fact": "NodeSpec lacks parent/depth/type/migration/falsifier/child fields and lifecycle is mutable",
+        "locator": "src/baram/loop/registry.py:17-39,89-119"
+      },
+      {
+        "id": "ENG-RV04",
+        "result": "PASS",
+        "fact": "evaluation commits closure before separate registry retirement/save and creates no result-conditioned residual child",
+        "locator": "src/baram/loop/graph_staged.py:337-454,516-522"
+      },
+      {
+        "id": "ENG-RV05",
+        "result": "PASS",
+        "fact": "EventStore has one atomic SQLite events transaction while JSON registry persistence is a separate atomic file replacement",
+        "locator": "src/baram/loop/events.py:220-346; src/baram/loop/registry.py:121-136"
+      },
+      {
+        "id": "ENG-RV06",
+        "result": "PASS",
+        "fact": "same-ID registry invalidation conflicts with one-event-type-per-cycle EventStore semantics",
+        "locator": "src/baram/loop/registry.py:103-119; src/baram/loop/events.py:224-253"
+      },
+      {
+        "id": "ENG-RV07",
+        "result": "PASS",
+        "fact": "current delivery uses one target-reaching telemetry score and exhaustion maps to halt",
+        "locator": "src/baram/loop/evaluation.py:82-88; src/baram/loop/graph_staged.py:83-125"
+      },
+      {
+        "id": "ENG-RV08",
+        "result": "PASS",
+        "fact": "v1 hash-chain envelopes can be preserved by adding versioned bodies/tables without rewriting old rows",
+        "locator": "src/baram/loop/events.py:348-399"
+      }
+    ],
+    "resolved_child_unknowns": {
+      "state_py": {
+        "path": "src/baram/loop/state.py",
+        "sha256": "8dd31d5e796b48b933058fbff7d04c8c3c8b97bd2fb703611e7a6a605cfec743",
+        "finding": "ResearchState uses dict merge and list operator.add reducers; a v5 normalization/restart adapter must avoid duplicating additive lists and preserve legacy keys."
+      },
+      "graph_py": {
+        "path": "src/baram/loop/graph.py",
+        "sha256": "aac5a91400cb33af58ad8f30f0d8f70ea5c015748ed2c729729521cb99fe0b25",
+        "finding": "legacy build_graph imports the same ResearchState/EventStore/SpecRegistry and retains closure-before-registry behavior; compatibility scope must include it or explicitly retire it."
+      },
+      "live_registry_structure": {
+        "sha256": "88402768b5b1276c953d44d1b7333e2c93c39e86421f82f7a930c509f307e190",
+        "top_keys": [
+          "schema_version",
+          "specs"
+        ],
+        "schema_version": 1,
+        "spec_count": 47,
+        "spec_key_sets": [
+          [
+            "arguments",
+            "id",
+            "kind",
+            "origin",
+            "outcome",
+            "preconditions",
+            "reference",
+            "score_bearing",
+            "status",
+            "subcapability",
+            "summary",
+            "trial_budget"
+          ]
+        ],
+        "status_counts": {
+          "retired": 41,
+          "candidate": 6
+        },
+        "argument_key_sets": [
+          [],
+          [
+            "note"
+          ],
+          [
+            "stage"
+          ]
+        ],
+        "precondition_lengths": {
+          "0": 47
+        },
+        "outcome_present_count": 47
+      },
+      "eventstore_structure": {
+        "sha256": "5881b48f39ad8e8a334f11dd30abee1f893547da34aed55dc1979f1e476f0e12",
+        "user_version": 0,
+        "tables": [
+          "events",
+          "sqlite_sequence"
+        ],
+        "events_columns": [
+          {
+            "name": "sequence",
+            "type": "INTEGER",
+            "notnull": false,
+            "pk": 1
+          },
+          {
+            "name": "event_id",
+            "type": "TEXT",
+            "notnull": true,
+            "pk": 0
+          },
+          {
+            "name": "cycle_id",
+            "type": "TEXT",
+            "notnull": true,
+            "pk": 0
+          },
+          {
+            "name": "event_type",
+            "type": "TEXT",
+            "notnull": true,
+            "pk": 0
+          },
+          {
+            "name": "envelope_json",
+            "type": "TEXT",
+            "notnull": true,
+            "pk": 0
+          },
+          {
+            "name": "previous_sha256",
+            "type": "TEXT",
+            "notnull": true,
+            "pk": 0
+          },
+          {
+            "name": "event_sha256",
+            "type": "TEXT",
+            "notnull": true,
+            "pk": 0
+          },
+          {
+            "name": "score_bearing",
+            "type": "INTEGER",
+            "notnull": true,
+            "pk": 0
+          },
+          {
+            "name": "comparison_index",
+            "type": "INTEGER",
+            "notnull": false,
+            "pk": 0
+          }
+        ],
+        "events_indexes": [
+          {
+            "name": "sqlite_autoindex_events_3",
+            "unique": true
+          },
+          {
+            "name": "sqlite_autoindex_events_2",
+            "unique": true
+          },
+          {
+            "name": "sqlite_autoindex_events_1",
+            "unique": true
+          }
+        ]
+      }
+    }
+  },
+  "disposition": "ACCEPT_WITH_SCOPE_DOWNGRADE",
+  "scope_downgrades_and_repairs": [
+    {
+      "item": "NodeSpec v3, event v2, transition enums and max-parent depth rule",
+      "status": "PROPOSED_DESIGN_NOT_OBSERVED_FACT",
+      "action": "Freeze exact schema in DS@v5; test before implementation."
+    },
+    {
+      "item": "live registry migration",
+      "status": "REPAIR_REQUIRED",
+      "action": "The live file is schema_version 1 with 47 specs, whereas registry.save now emits v2. Migration must admit v1 and v2 explicitly, preserve all raw payloads, and never inspect/emit outcome values in the dry-run report."
+    },
+    {
+      "item": "ResearchState compatibility",
+      "status": "REPAIR_REQUIRED",
+      "action": "Honor dict-merge/list-add reducers and test replay/restart for duplication; state.py hash is now frozen."
+    },
+    {
+      "item": "legacy graph.py",
+      "status": "REPAIR_REQUIRED",
+      "action": "Decide and test shared adapter/retirement explicitly; it cannot remain an unaudited second mutating graph."
+    },
+    {
+      "item": "EventStore authority",
+      "status": "ACCEPT_ARCHITECTURAL_DIRECTION",
+      "action": "Keep existing event envelopes byte-compatible; add node/edge/lifecycle tables and atomic close-and-spawn only after DS/IP approval and a no-write migration dry run."
+    }
+  ],
+  "admitted_conclusion": "CURRENT_ENGINE_NOT_TRUE_NODE_DEPTH_DISCOVERY",
+  "admitted_architecture": "EventStore SQLite becomes sole authoritative node/lineage/lifecycle transaction domain; registry JSON becomes derived export/facade; immutable parent/child/event lineage; typed tri-state residual transitions; stage visits; pause/success separation.",
+  "test_matrix": {
+    "named_new_tests": 32,
+    "existing_regression_suite_row": 1,
+    "total_rows": 33,
+    "execution_status": "NOT_RUN_RESEARCH_ONLY"
+  },
+  "execution_authority": false,
+  "comparison_consumed": false,
+  "candidate_promoted": false
+}

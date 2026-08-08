@@ -1,0 +1,55 @@
+{
+ "stage": "D2",
+ "category": "피처구성",
+ "fulfilled_utc": "2026-08-06",
+ "queries_run": 3,
+ "provider": "Serper/Google",
+ "prior_stage_carry": "D1 확정: 원시 풍속(10m/80m/100m/PBL/상층)은 820 풀에 있었으나 전부 선택 탈락하고 teacher sitewind 13개가 채택됨. teacher 풍속은 무편향(-0.0056 m/s)이며 quantile mapping 은 sigma 를 악화시킴. 따라서 D2 는 풍속 정확도가 아닌 **다른 정보축**을 겨냥해야 한다.",
+ "findings": [
+  {
+   "id": "G1",
+   "claim": "NWP 소스별로 sister forecast 를 따로 학습한 뒤 스태킹으로 결합하면 예측 분산이 감소한다",
+   "source": "arXiv:2505.10367v1 (HEFTCom2024 GEB팀); Yang 2024 MDPI Sustainability 16(14):5960 (Cited 14)",
+   "tag": "directly_supported",
+   "relevance": "프로젝트의 C1N77_PER_SOURCE_STACK 이 이것을 시도해 STACK 0.603122 < POOLED 0.604043 로 실패했고 판정이 FRONT_END_FUSION_IS_NOT_THE_BOTTLENECK 이었다. 그러나 그 실험은 **피처를 소스별로 쪼개(gfs 50 / ldaps 40) 각 팔의 정보량을 줄인 것**이고, 논문의 sister model 은 각 소스에 **동일한 전체 파이프라인**을 적용한다. 구현 차이가 실재한다.",
+   "proposes": [
+    {
+     "subcapability": "C4.4",
+     "kind": "analysis",
+     "summary": "C1N77 의 소스분할이 논문 sister-model 구성과 어떻게 다른지 대조하고, 정보량 손실이 실패 원인인지 판별",
+     "score_bearing": true
+    }
+   ]
+  },
+  {
+   "id": "G2",
+   "claim": "물리 후류 모델로 방향 가중 그래프를 만들어 터빈 간 공간 상관을 피처화",
+   "source": "SPIE 14179:141790I (2025) 'GNN + physical wake model'; Zang 2025 STET (Cited 8)",
+   "tag": "near_match_only",
+   "relevance": "info.xlsx 에 터빈 좌표·허브고도·로터직경이 있고 그룹당 5~6기다. C1N3_MASS_AXIS_WIND_SECTOR 는 섹터별 손실비만 봤고(WIND_SECTOR_LOSS_IS_PROPORTIONAL 로 폐기), **후류 기하(풍향×터빈배치)** 를 피처로 만든 기록은 없다. 단 논문은 터빈 단위 예측이고 우리는 그룹 합계라 near_match.",
+   "proposes": [
+    {
+     "subcapability": "C4.3",
+     "kind": "feature",
+     "summary": "풍향 조건부 후류 기하 피처(터빈 정렬각·이격거리/로터직경) 생성 후 잔차 설명력 측정",
+     "score_bearing": true
+    }
+   ]
+  },
+  {
+   "id": "G3",
+   "claim": "램프 이벤트 예측은 시간 정렬(temporal alignment) 오차가 지배적이며 일주기 패턴을 보인다",
+   "source": "arXiv:2510.15474v1 'Evaluating the Prediction of Wind Power Ramping Events'",
+   "tag": "near_match_only",
+   "relevance": "A4_error(LIVE) 가 '층화 예보검증 — 일주기 편향, 240도 43%' 를 이미 기록했다. 램프 축은 C1N15_WALKFORWARD/C1N30_TEMPORAL_SIGNAL 이 NO_RESIDUAL_SIGNAL_IN_SUPPLIED_NWP 로 닫았으나, **일주기 조건부 정렬 오차**는 별도로 다뤄진 적이 없다.",
+   "proposes": [
+    {
+     "subcapability": "C4.5",
+     "kind": "analysis",
+     "summary": "시각(hour-of-day) 조건부 예보-실측 정렬 오차 진단 — A4_error 의 일주기 편향이 밴드 적중에 미치는 영향",
+     "score_bearing": true
+    }
+   ]
+  }
+ ]
+}

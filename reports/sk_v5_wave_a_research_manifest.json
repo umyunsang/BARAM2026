@@ -1,0 +1,154 @@
+{
+  "schema_version": 1,
+  "manifest_id": "SK5-WAVE-A",
+  "created_at": "2026-08-09T04:43:03.447243+09:00",
+  "approved_skeleton": {
+    "id": "SK@v5",
+    "path": ".planning/2026-08-01-leaderboard-top-4-loop/SK_v5.md",
+    "sha256": "c2c813475ab5f0a741e6adbceab196d5b38447f2aeb02f9716a8f5be8973c820",
+    "approval_receipt": "reports/sk_v5_approval_receipt.json",
+    "approval_sha256": "e827b324a23913346598d274f2ded496ffc3134243de5636033ee6a3ac387173"
+  },
+  "relevant_excerpt": "Repair S1-S11 into deficit -> research -> provisional migration hypothesis -> controlled experiment -> adjudication -> residual-deficit child, with stage_depth separate from node_depth.",
+  "common_contract": {
+    "read_only_except_exclusive_output_under_research": true,
+    "no_shared_write": true,
+    "no_model_fit": true,
+    "no_lockbox": true,
+    "no_dacon_or_account": true,
+    "no_dependency_change": true,
+    "evidence_tags": [
+      "directly_supported",
+      "contradicts_premise",
+      "near_match_only",
+      "insufficient"
+    ],
+    "claim_schema": [
+      "claim_id",
+      "skeleton_field_or_local_gate",
+      "finding",
+      "evidence_tag",
+      "source_locator_and_date",
+      "scope_match",
+      "implication",
+      "proposed_delta"
+    ],
+    "must_separate": [
+      "source fact",
+      "migration hypothesis",
+      "local evidence needed"
+    ],
+    "stop": "owned questions answered or bound exhausted with every material claim tagged",
+    "escalate": "exact contradiction, scope overlap, need for shared write/fit/data body/external action, or missing authority",
+    "reply_required": "send parent path, SHA-256, verdict, direct claims, unknowns, and DS@v5 implications"
+  },
+  "lanes": [
+    {
+      "lane_id": "V5-ENGINE",
+      "owner": "exclusive child lane v5-engine",
+      "output": "research/lanes/v5_engine_audit.md",
+      "questions": [
+        "Required state/code/test changes for real node_depth and parent-child lineage",
+        "migration-hypothesis node schema",
+        "result-driven re-entry",
+        "research pause vs success",
+        "atomic EventStore/registry lineage and backward compatibility"
+      ],
+      "allowed_sources": [
+        "at most 30 targeted current local source/test/ontology files named in the brief"
+      ],
+      "source_limit": 0,
+      "file_limit": 30,
+      "time_limit_minutes": 60,
+      "exclusions": [
+        "web/network",
+        "raw data bodies",
+        "label/test/2024 values",
+        "model reports/scores",
+        "fits",
+        "source edits",
+        "shared-state writes"
+      ]
+    },
+    {
+      "lane_id": "V5-FOUNDATION",
+      "owner": "exclusive child lane v5-foundation",
+      "output": "research/lanes/v5_foundation_deficit.md",
+      "questions": [
+        "Exact S1 purpose/action contract",
+        "S2 supplied data/availability facts",
+        "S3 precision-analysis coverage and missing diagnostics",
+        "S4 metric/action facts",
+        "rank remaining deficits by causal leverage without inventing scores"
+      ],
+      "allowed_sources": [
+        "at most 30 fixed local schema/code/manifests and reviewer-facing S17 receipts explicitly named in the brief"
+      ],
+      "source_limit": 0,
+      "file_limit": 30,
+      "time_limit_minutes": 60,
+      "exclusions": [
+        "web/network",
+        "raw supplied weather or label bodies",
+        "actual_kwh values",
+        "2024/test values or aggregates",
+        "new model scores",
+        "fits",
+        "metric calls",
+        "source edits",
+        "shared-state writes"
+      ]
+    },
+    {
+      "lane_id": "V5-DISCOVERY-SCIENCE",
+      "owner": "exclusive child lane v5-discovery-science",
+      "output": "research/lanes/v5_discovery_science.md",
+      "questions": [
+        "SOTA scientific discovery/hypothesis graphs",
+        "sequential experiment design and multi-fidelity allocation",
+        "falsification and result-conditioned child generation",
+        "workflow maturity/closure/revival for data science pipelines"
+      ],
+      "allowed_sources": [
+        "up to 10 primary papers or official benchmark/framework documents published no later than 2026-07-05"
+      ],
+      "source_limit": 10,
+      "file_limit": 0,
+      "time_limit_minutes": 90,
+      "exclusions": [
+        "generic blogs/listicles",
+        "model-specific BARAM recommendation",
+        "external data acquisition",
+        "code/weights",
+        "fits",
+        "repo writes outside exclusive output"
+      ]
+    },
+    {
+      "lane_id": "V5-VALIDATION",
+      "owner": "exclusive child lane v5-validation",
+      "output": "research/lanes/v5_validation_research.md",
+      "questions": [
+        "nested/prequential selection under dependent time series",
+        "adaptive repeated model search and multiplicity",
+        "block/bootstrap forecast comparison",
+        "screening vs confirmatory surfaces",
+        "honest claim scope with no fresh holdout"
+      ],
+      "allowed_sources": [
+        "up to 10 primary papers, statistical standards, or official benchmark documentation published no later than 2026-07-05"
+      ],
+      "source_limit": 10,
+      "file_limit": 0,
+      "time_limit_minutes": 90,
+      "exclusions": [
+        "generic blogs",
+        "reanalysis/data download",
+        "model fit/score",
+        "BARAM source edits",
+        "repo writes outside exclusive output"
+      ]
+    }
+  ],
+  "root_integration": "Root independently validates sources, deduplicates claims, preserves unknowns, freezes Wave-A foundation map, then decides whether Wave B can begin. No implementation/fits under SK approval."
+}

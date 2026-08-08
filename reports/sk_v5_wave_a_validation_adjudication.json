@@ -1,0 +1,318 @@
+{
+  "schema_version": 1,
+  "lane_id": "V5-VALIDATION",
+  "adjudicated_at": "2026-08-09T05:08:44.345038+09:00",
+  "artifact": {
+    "path": "research/lanes/v5_validation_research.md",
+    "sha256": "64241ec77181d7647c837d91fc14c03eaa45f6cb1732f1981d77e377e58578e5",
+    "reported_sha256": "64241ec77181d7647c837d91fc14c03eaa45f6cb1732f1981d77e377e58578e5",
+    "hash_match": true
+  },
+  "bounds": {
+    "primary_sources": 10,
+    "source_ids": [
+      "S01",
+      "S02",
+      "S03",
+      "S04",
+      "S05",
+      "S06",
+      "S07",
+      "S08",
+      "S09",
+      "S10"
+    ],
+    "max_sources": 10,
+    "cutoff": "2026-07-05",
+    "all_publication_dates_pass": true,
+    "exclusive_output_only": true,
+    "prohibited_actions_observed": []
+  },
+  "root_source_validation": {
+    "official_page_fetches": {
+      "S01": {
+        "url": "https://academic.oup.com/jrsssa/article/147/2/278/7106293",
+        "provider": "parallel",
+        "content_type": "text",
+        "length": 276,
+        "content_sha256": "1a30229b511f4d18050515e6cb9dff526823098903379e7d42fd4ae97b18008b",
+        "fetch_error": true
+      },
+      "S02": {
+        "url": "https://www.sciencedirect.com/science/article/abs/pii/S0169207000000650",
+        "provider": "exa",
+        "content_type": "text",
+        "length": 15456,
+        "content_sha256": "1f89686d5037cd421ba57c51e562635da78193b67aee99a1e7fb2303a518e8af",
+        "fetch_error": false
+      },
+      "S03": {
+        "url": "https://jmlr.org/papers/v11/cawley10a.html",
+        "provider": "exa",
+        "content_type": "text",
+        "length": 2103,
+        "content_sha256": "b50744a4576e4f56f49d39ee64f375f9092b447d06b808040823fec30c798422",
+        "fetch_error": false
+      },
+      "S04": {
+        "url": "https://www.tandfonline.com/doi/abs/10.1080/07350015.1995.10524599",
+        "provider": "exa",
+        "content_type": "text",
+        "length": 608,
+        "content_sha256": "d279e8c6d52cee6a6c8e48e65ba7b3184b457c4cb18d8fc4d802f8e3dc9faf54",
+        "fetch_error": false
+      },
+      "S05": {
+        "url": "https://www.econometricsociety.org/publications/econometrica/2006/11/01/tests-conditional-predictive-ability",
+        "provider": "exa",
+        "content_type": "text",
+        "length": 4239,
+        "content_sha256": "1593bcfbd15698d74eb8b5f3162f558efc14c255d7ba716de7c208ce069d481f",
+        "fetch_error": false
+      },
+      "S06": {
+        "url": "https://www.tandfonline.com/doi/abs/10.1080/01621459.1994.10476870",
+        "provider": "exa",
+        "content_type": "text",
+        "length": 1698,
+        "content_sha256": "c654a78cfa24f3024b63734bf45f4faf5f8487fba3d9203ed089ba567a322f35",
+        "fetch_error": false
+      },
+      "S07": {
+        "url": "https://www.econometricsociety.org/publications/econometrica/2000/09/01/reality-check-data-snooping",
+        "provider": "exa",
+        "content_type": "text",
+        "length": 2797,
+        "content_sha256": "d783554778f806cac86bed791552b30f164f8dcfc71274fafc242d8de2b534d6",
+        "fetch_error": false
+      },
+      "S08": {
+        "url": "https://www.econometricsociety.org/publications/econometrica/2011/03/01/model-confidence-set",
+        "provider": "exa",
+        "content_type": "text",
+        "length": 2905,
+        "content_sha256": "7fab4aa7dbd1296f2b470aff9d6b0006089d45ea32f2bcdcd390180c45e8e50d",
+        "fetch_error": false
+      },
+      "S09": {
+        "url": "https://repository.upenn.edu/entities/publication/61b1d001-d6d9-4775-8145-d1a7e9a03ad9",
+        "provider": "exa",
+        "content_type": "text",
+        "length": 1998,
+        "content_sha256": "82e26f27001ce0f5e981eaf4090ae189f45dd5bffbbe0ed296727339b927b5d5",
+        "fetch_error": false
+      },
+      "S10": {
+        "url": "https://pubmed.ncbi.nlm.nih.gov/26250683/",
+        "provider": "exa",
+        "content_type": "text",
+        "length": 15769,
+        "content_sha256": "eb86d96ca73e763eaee6b76a5144114934f15cf8a3108bb1fba1a64244e98234",
+        "fetch_error": false
+      }
+    },
+    "fulltext_checks": {
+      "S01": {
+        "url": "https://people.csail.mit.edu/jrennie/trg/papers/dawid-prequential-84.pdf",
+        "status": 200,
+        "content_type": "application/pdf",
+        "bytes": 1929130,
+        "pdf": true,
+        "sha256": "18e1ec7f8a8dde32578b771aed7b5387c988c0d0903579ef0095ad06cdfacc79",
+        "pages": 16,
+        "text_chars": 15
+      },
+      "S03": {
+        "url": "https://jmlr.org/papers/volume11/cawley10a/cawley10a.pdf",
+        "status": 200,
+        "content_type": "application/pdf",
+        "bytes": 759286,
+        "pdf": true,
+        "sha256": "db01ac8fabef3064a0297bfcf64fb9791bf35c4d03be7a51f5862260adfca206",
+        "pages": 29,
+        "text_chars": 81642
+      },
+      "S04": {
+        "url": "https://users.ssc.wisc.edu/~behansen/718/DieboldMariano1995.pdf",
+        "status": 200,
+        "content_type": "application/pdf",
+        "bytes": 925125,
+        "pdf": true,
+        "sha256": "7f4306f4a714562c9156460cce11b92e82fbfff0d90982a858f25b890dc27c4e",
+        "pages": 11,
+        "text_chars": 1309
+      },
+      "S05": {
+        "url": "https://econwpa.ub.uni-muenchen.de/econ-wp/em/papers/0308/0308001.pdf",
+        "status": 200,
+        "content_type": "application/pdf",
+        "bytes": 657408,
+        "pdf": true,
+        "sha256": "712ea4b631759231a36a7c6680131a4ce65d1500da5ebb7135e56989d85be2df",
+        "pages": 38,
+        "text_chars": 98563
+      },
+      "S07": {
+        "url": "https://www.ssc.wisc.edu/~bhansen/718/White2000.pdf",
+        "status": 200,
+        "content_type": "application/pdf",
+        "bytes": 259584,
+        "pdf": true,
+        "sha256": "675eb3226dee3af4dfa8089410f9bbf0a2798c7b58985c8334c42fb4983a9743",
+        "pages": 30,
+        "text_chars": 78609
+      },
+      "S08": {
+        "url": "https://www.kevinsheppard.com/files/teaching/mfe/advanced-econometrics/Hansen_Lunde_Nason.pdf",
+        "status": 200,
+        "content_type": "application/pdf",
+        "bytes": 452964,
+        "pdf": true,
+        "sha256": "42ef189384fe76d0209ae12d4a7885d5802e6798ef87a7cd64b1b1f21e2074e8",
+        "pages": 45,
+        "text_chars": 132947
+      },
+      "S09": {
+        "url": "https://deanfoster.net/research/edc.pdf",
+        "status": 200,
+        "content_type": "application/pdf",
+        "bytes": 249431,
+        "pdf": true,
+        "sha256": "e94285ff5fd779a0acbd8186b1efad3b05adefed14efdf6c21407e936dee6366",
+        "pages": 26,
+        "text_chars": 49924
+      }
+    },
+    "design_critical_checks": [
+      {
+        "claims": [
+          "V5V-C01",
+          "V5V-C02"
+        ],
+        "result": "PASS",
+        "evidence": "Dawid primary paper summary states sequential forecasts from data so far; Tashman official preview states rolling origins/recalibration/multiple periods improve individual-series evaluation."
+      },
+      {
+        "claims": [
+          "V5V-C03"
+        ],
+        "result": "PASS",
+        "evidence": "Cawley/Talbot full JMLR text explicitly compares learning-algorithm/model-selection-procedure combinations and names nested/double CV."
+      },
+      {
+        "claims": [
+          "V5V-C07"
+        ],
+        "result": "PASS",
+        "evidence": "Diebold/Mariano primary full text explicitly assumes covariance-stationary short-memory loss differential for its asymptotic test."
+      },
+      {
+        "claims": [
+          "V5V-C08"
+        ],
+        "result": "PASS",
+        "evidence": "Giacomini/White primary working paper and official record define forecasting method as model plus estimation procedure and theorem assumptions include finite maximum window, mixing, moments, positive definiteness."
+      },
+      {
+        "claims": [
+          "V5V-C09",
+          "V5V-C10"
+        ],
+        "result": "PASS",
+        "evidence": "Politis/Romano official abstract limits stationary bootstrap to weakly dependent stationary observations and geometric blocks; White and MCS full texts preserve explicit dependence assumptions."
+      },
+      {
+        "claims": [
+          "V5V-C11",
+          "V5V-C12",
+          "V5V-C15"
+        ],
+        "result": "PASS",
+        "evidence": "White official/full text targets best encountered model against benchmark; MCS official/full text is relative to an initial finite family, may retain many under uninformative data, and assumes stationary alpha-mixing loss differentials for bootstrap implementation."
+      },
+      {
+        "claims": [
+          "V5V-C13"
+        ],
+        "result": "PASS",
+        "evidence": "Foster/Stine full text defines mFDR and Eq. 10 requires conditional assigned-level control given prior rejection outcomes; tests need not be independent."
+      },
+      {
+        "claims": [
+          "V5V-C14"
+        ],
+        "result": "PASS",
+        "evidence": "Dwork et al. official PubMed abstract presents a privacy-inspired mechanism installed to safely reuse a holdout for adaptively chosen analyses, not retroactive ordinary exact-score reuse."
+      }
+    ]
+  },
+  "tag_audit": {
+    "claim_count": 18,
+    "claim_ids": [
+      "V5V-C01",
+      "V5V-C02",
+      "V5V-C03",
+      "V5V-C04",
+      "V5V-C05",
+      "V5V-C06",
+      "V5V-C07",
+      "V5V-C08",
+      "V5V-C09",
+      "V5V-C10",
+      "V5V-C11",
+      "V5V-C12",
+      "V5V-C13",
+      "V5V-C14",
+      "V5V-C15",
+      "V5V-C16",
+      "V5V-C17",
+      "V5V-C18"
+    ],
+    "allowed_tag_counts": {
+      "directly_supported": 11,
+      "contradicts_premise": 6,
+      "near_match_only": 3,
+      "insufficient": 2
+    },
+    "all_claims_tagged": true
+  },
+  "disposition": "ACCEPT_WITH_SCOPE_DOWNGRADE",
+  "scope_downgrades": [
+    {
+      "claim": "V5V-C18",
+      "from": "directly_supported",
+      "to": "derived design conclusion from S03/S07/S10 plus local exposure facts",
+      "effect": "Admit the conclusion, but do not describe its exact BARAM status vocabulary as paper-prescribed."
+    },
+    {
+      "claim": "day-block/exact-Total mapping and nested rolling origins",
+      "to": "provisional_migration_hypothesis",
+      "effect": "Requires the listed local contract tests; literature supports mechanisms, not the exact BARAM construction."
+    },
+    {
+      "claim": "RC/MCS selection adjustment",
+      "to": "recorded-family-only conditional corroboration",
+      "effect": "No whole-project adjustment while historical trials are unknown."
+    }
+  ],
+  "admitted_conclusion": {
+    "fresh_confirmation_available": false,
+    "current_maximum_claim": "chronology-correct reproducible retrospective corroboration; selection-adjusted wording only for a complete frozen recorded family under stated dependence assumptions",
+    "operational_success_rule_unchanged": "two deterministic strict local reproductions at Total >= 0.660000",
+    "independent_confirmation_count": 0,
+    "required_evidence_status": "CONFIRMATION_PENDING"
+  },
+  "ds_v5_admissions": [
+    "separate reproduction status from evidence/freshness status",
+    "full-pipeline nested prequential selector contract",
+    "72-cell issuance day as the indivisible comparison atom",
+    "exact metric recomputation for shared day resamples",
+    "exposure and complete-family trial ledger",
+    "assumption-gated dependent uncertainty and RC/MCS",
+    "15 contract gates with fail-closed or descriptive-only transitions",
+    "claim linter forbidding fresh/independent/best/future language when gates fail"
+  ],
+  "execution_authority": false,
+  "comparison_consumed": false,
+  "candidate_promoted": false
+}

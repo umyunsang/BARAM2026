@@ -1,0 +1,196 @@
+{
+  "node_id": "C1N67_EXACT_CURVE_PROPAGATION",
+  "lane": "L6",
+  "parent": "C1N66_HETEROSCEDASTIC_WIND",
+  "candidate": false,
+  "diagnostic_only": true,
+  "method": "MONTE_CARLO_PROPAGATION (JCGM 101:2008 GUM Supplement 1)",
+  "cut_in": [
+    [
+      0.0,
+      0.0
+    ],
+    [
+      3.0,
+      0.0
+    ]
+  ],
+  "sigma_v_fits": {
+    "1": {
+      "intercept": 0.8988539202218162,
+      "slope": 0.08650545840104434
+    },
+    "2": {
+      "intercept": 0.7671597604406276,
+      "slope": 0.11355114644133618
+    },
+    "3": {
+      "intercept": 0.4783062618547281,
+      "slope": 0.1965226611986422
+    }
+  },
+  "surface": {
+    "spec_digest": "1736a900bafdc14213634fba",
+    "probability_digest": "8141403f56cd7eba",
+    "from_cache": true
+  },
+  "cells": [
+    {
+      "group_id": 1,
+      "band": "(0.10,0.25]",
+      "band_index": 0,
+      "ceiling": 0.925659372884,
+      "linear_predicted": 0.293147001233204,
+      "curve_predicted": 0.3065782725602189,
+      "observed": 0.416970802919708,
+      "residual": 0.1103925303594891,
+      "match": false
+    },
+    {
+      "group_id": 1,
+      "band": "(0.25,0.45]",
+      "band_index": 1,
+      "ceiling": 0.8847921422662917,
+      "linear_predicted": 0.21629149226966138,
+      "curve_predicted": 0.21919616169022307,
+      "observed": 0.23284589426321708,
+      "residual": 0.013649732572994011,
+      "match": true
+    },
+    {
+      "group_id": 1,
+      "band": "(0.45,0.70]",
+      "band_index": 2,
+      "ceiling": 0.8360624235393016,
+      "linear_predicted": 0.2006493923755558,
+      "curve_predicted": 0.20587485392007973,
+      "observed": 0.30761421319796955,
+      "residual": 0.10173935927788982,
+      "match": false
+    },
+    {
+      "group_id": 1,
+      "band": "(0.70,1.10]",
+      "band_index": 3,
+      "ceiling": 0.6738533248076937,
+      "linear_predicted": 0.34476467000548233,
+      "curve_predicted": 0.35247606722960884,
+      "observed": 0.25507246376811593,
+      "residual": -0.0974036034614929,
+      "match": false
+    },
+    {
+      "group_id": 2,
+      "band": "(0.10,0.25]",
+      "band_index": 0,
+      "ceiling": 0.990789303734952,
+      "linear_predicted": 0.2938275065992197,
+      "curve_predicted": 0.3317721480195176,
+      "observed": 0.41754051477597715,
+      "residual": 0.08576836675645955,
+      "match": false
+    },
+    {
+      "group_id": 2,
+      "band": "(0.25,0.45]",
+      "band_index": 1,
+      "ceiling": 0.9606102870361127,
+      "linear_predicted": 0.21431019325600995,
+      "curve_predicted": 0.21614710018247715,
+      "observed": 0.195,
+      "residual": -0.021147100182477147,
+      "match": true
+    },
+    {
+      "group_id": 2,
+      "band": "(0.45,0.70]",
+      "band_index": 2,
+      "ceiling": 0.9161902924352976,
+      "linear_predicted": 0.21077005363233678,
+      "curve_predicted": 0.21472308958249903,
+      "observed": 0.24025289778714437,
+      "residual": 0.025529808204645343,
+      "match": true
+    },
+    {
+      "group_id": 2,
+      "band": "(0.70,1.10]",
+      "band_index": 3,
+      "ceiling": 0.8801844972349989,
+      "linear_predicted": 0.41555984338089325,
+      "curve_predicted": 0.441436074325638,
+      "observed": 0.40931780366056575,
+      "residual": -0.032118270665072224,
+      "match": true
+    },
+    {
+      "group_id": 3,
+      "band": "(0.10,0.25]",
+      "band_index": 0,
+      "ceiling": 0.9032236509277197,
+      "linear_predicted": 0.31298982749621795,
+      "curve_predicted": 0.31972962715699665,
+      "observed": 0.43100189035916825,
+      "residual": 0.1112722632021716,
+      "match": false
+    },
+    {
+      "group_id": 3,
+      "band": "(0.25,0.45]",
+      "band_index": 1,
+      "ceiling": 0.7516705183060364,
+      "linear_predicted": 0.19311511578028864,
+      "curve_predicted": 0.19788041344713725,
+      "observed": 0.22082810539523212,
+      "residual": 0.022947691948094873,
+      "match": true
+    },
+    {
+      "group_id": 3,
+      "band": "(0.45,0.70]",
+      "band_index": 2,
+      "ceiling": 0.6462884786959537,
+      "linear_predicted": 0.17784467211557914,
+      "curve_predicted": 0.19779248308483754,
+      "observed": 0.20395550061804696,
+      "residual": 0.006163017533209414,
+      "match": true
+    },
+    {
+      "group_id": 3,
+      "band": "(0.70,1.10]",
+      "band_index": 3,
+      "ceiling": 0.36438009469467614,
+      "linear_predicted": 0.24557371488600327,
+      "curve_predicted": 0.2710350385568377,
+      "observed": 0.2215422276621787,
+      "residual": -0.049492810894658984,
+      "match": true
+    }
+  ],
+  "checks": {
+    "V1_c66_reproduced": true,
+    "V1_max_gap": 0.0,
+    "V2_below_ceiling": true
+  },
+  "matches": 7,
+  "match_history": {
+    "c65_constant": 3,
+    "c66_hetero": 7,
+    "c67_curve": 7
+  },
+  "band_residual_spearman": -0.7773003307575548,
+  "g2_mid_residual": 0.025529808204645343,
+  "hypotheses": {
+    "H1_eight_of_twelve": false,
+    "H2_low_band_closed": false,
+    "H3_band_monotonicity_gone": false,
+    "H4_g2_mid_explained": true
+  },
+  "verdict": "CURVATURE_DOES_NOT_EXPLAIN_LOW_BAND",
+  "no_training": true,
+  "dacon_upload": false,
+  "lockbox_used": false,
+  "generated_at": "2026-08-05T11:42:34.148827+00:00",
+  "digest": "5fbec955df72ef0c"
+}

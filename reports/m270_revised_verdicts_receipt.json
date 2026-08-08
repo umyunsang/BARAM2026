@@ -1,0 +1,194 @@
+{
+ "achievable_k_multisource": 0.9536822603056972,
+ "caveat": "offset measured on the deployed policy, not the oracle; policy-independence is unverified. Shrink simulation uses actuals and is a requirement-sizing device, not an achievable result.",
+ "ceiling_local_ficr": 0.4227,
+ "ceiling_online_equivalent": 0.43472700000000003,
+ "ceiling_shortfall_vs_rank20": 0.01202299999999995,
+ "dacon_upload": false,
+ "external_actions": [],
+ "k_needed_for_target": 0.89,
+ "lockbox_reopened": false,
+ "measured_offset_ficr": 0.012027,
+ "measured_offset_total": 0.006554,
+ "model_fits": 0,
+ "new_2024_evaluation": false,
+ "online_m261": {
+  "ficr": 0.4151694923,
+  "one_minus_nmae": 0.857885373,
+  "total": 0.6365274327
+ },
+ "real_gap_online": 0.023472567300000025,
+ "schema_version": 1,
+ "shortfall_multiple": 2.3749000000000082,
+ "shrink_table": [
+  {
+   "ficr": 0.4031415153923736,
+   "k": 1.0,
+   "one_minus_nmae": 0.856805074585153,
+   "online_equiv_ficr": 0.4151685153923736,
+   "online_equiv_total": 0.6365272949887633,
+   "total": 0.6299732949887633
+  },
+  {
+   "ficr": 0.40696154424942893,
+   "k": 0.99,
+   "one_minus_nmae": 0.8582370238393014,
+   "online_equiv_ficr": 0.41898854424942894,
+   "online_equiv_total": 0.6391532840443651,
+   "total": 0.6325992840443652
+  },
+  {
+   "ficr": 0.409448366579291,
+   "k": 0.98,
+   "one_minus_nmae": 0.8596689730934499,
+   "online_equiv_ficr": 0.421475366579291,
+   "online_equiv_total": 0.6411126698363704,
+   "total": 0.6345586698363704
+  },
+  {
+   "ficr": 0.4125099051376955,
+   "k": 0.97,
+   "one_minus_nmae": 0.8611009223475984,
+   "online_equiv_ficr": 0.4245369051376955,
+   "online_equiv_total": 0.6433594137426468,
+   "total": 0.6368054137426469
+  },
+  {
+   "ficr": 0.4154705517135606,
+   "k": 0.96,
+   "one_minus_nmae": 0.8625328716017469,
+   "online_equiv_ficr": 0.42749755171356063,
+   "online_equiv_total": 0.6455557116576537,
+   "total": 0.6390017116576537
+  },
+  {
+   "ficr": 0.41803982434063297,
+   "k": 0.95,
+   "one_minus_nmae": 0.8639648208558953,
+   "online_equiv_ficr": 0.430066824340633,
+   "online_equiv_total": 0.6475563225982641,
+   "total": 0.6410023225982642
+  },
+  {
+   "ficr": 0.42113718705648456,
+   "k": 0.94,
+   "one_minus_nmae": 0.8653967701100438,
+   "online_equiv_ficr": 0.4331641870564846,
+   "online_equiv_total": 0.6498209785832642,
+   "total": 0.6432669785832642
+  },
+  {
+   "ficr": 0.42479616126154257,
+   "k": 0.93,
+   "one_minus_nmae": 0.8668287193641923,
+   "online_equiv_ficr": 0.4368231612615426,
+   "online_equiv_total": 0.6523664403128674,
+   "total": 0.6458124403128674
+  },
+  {
+   "ficr": 0.4289519852498553,
+   "k": 0.92,
+   "one_minus_nmae": 0.8682606686183407,
+   "online_equiv_ficr": 0.4409789852498553,
+   "online_equiv_total": 0.655160326934098,
+   "total": 0.648606326934098
+  },
+  {
+   "ficr": 0.43194434163858464,
+   "k": 0.91,
+   "one_minus_nmae": 0.8696926178724892,
+   "online_equiv_ficr": 0.44397134163858465,
+   "online_equiv_total": 0.6573724797555369,
+   "total": 0.650818479755537
+  },
+  {
+   "ficr": 0.43554016774731635,
+   "k": 0.9,
+   "one_minus_nmae": 0.8711245671266377,
+   "online_equiv_ficr": 0.44756716774731636,
+   "online_equiv_total": 0.6598863674369769,
+   "total": 0.653332367436977
+  },
+  {
+   "ficr": 0.4394976809984748,
+   "k": 0.89,
+   "one_minus_nmae": 0.8725565163807861,
+   "online_equiv_ficr": 0.4515246809984748,
+   "online_equiv_total": 0.6625810986896304,
+   "total": 0.6560270986896305
+  },
+  {
+   "ficr": 0.4442071396879319,
+   "k": 0.88,
+   "one_minus_nmae": 0.8739884656349346,
+   "online_equiv_ficr": 0.4562341396879319,
+   "online_equiv_total": 0.6656518026614332,
+   "total": 0.6590978026614333
+  },
+  {
+   "ficr": 0.4546413742397779,
+   "k": 0.85,
+   "one_minus_nmae": 0.87828431339738,
+   "online_equiv_ficr": 0.4666683742397779,
+   "online_equiv_total": 0.6730168438185788,
+   "total": 0.6664628438185789
+  },
+  {
+   "ficr": 0.47796895610606566,
+   "k": 0.8,
+   "one_minus_nmae": 0.8854440596681223,
+   "online_equiv_ficr": 0.48999595610606567,
+   "online_equiv_total": 0.6882605078870939,
+   "total": 0.681706507887094
+  },
+  {
+   "ficr": 0.5026516205211023,
+   "k": 0.75,
+   "one_minus_nmae": 0.8926038059388647,
+   "online_equiv_ficr": 0.5146786205211024,
+   "online_equiv_total": 0.7041817132299835,
+   "total": 0.6976277132299835
+  },
+  {
+   "ficr": 0.5281451357084178,
+   "k": 0.7,
+   "one_minus_nmae": 0.899763552209607,
+   "online_equiv_ficr": 0.5401721357084178,
+   "online_equiv_total": 0.7205083439590123,
+   "total": 0.7139543439590124
+  },
+  {
+   "ficr": 0.5528137918323688,
+   "k": 0.65,
+   "one_minus_nmae": 0.9069232984803495,
+   "online_equiv_ficr": 0.5648407918323688,
+   "online_equiv_total": 0.7364225451563591,
+   "total": 0.7298685451563591
+  },
+  {
+   "ficr": 0.583559984374872,
+   "k": 0.6,
+   "one_minus_nmae": 0.9140830447510918,
+   "online_equiv_ficr": 0.595586984374872,
+   "online_equiv_total": 0.7553755145629819,
+   "total": 0.748821514562982
+  },
+  {
+   "ficr": 0.6181228985546658,
+   "k": 0.55,
+   "one_minus_nmae": 0.9212427910218342,
+   "online_equiv_ficr": 0.6301498985546659,
+   "online_equiv_total": 0.77623684478825,
+   "total": 0.76968284478825
+  },
+  {
+   "ficr": 0.6526173437446602,
+   "k": 0.5,
+   "one_minus_nmae": 0.9284025372925765,
+   "online_equiv_ficr": 0.6646443437446602,
+   "online_equiv_total": 0.7970639405186183,
+   "total": 0.7905099405186183
+  }
+ ],
+ "stage": "M270_REVISED_VERDICTS_AFTER_ANCHOR"
+}

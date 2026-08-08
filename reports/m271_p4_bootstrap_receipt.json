@@ -1,0 +1,410 @@
+{
+ "dacon_upload": false,
+ "decided_utc": "2026-08-04T06:07:29.483413+00:00",
+ "external_actions": [],
+ "lockbox_reopened": false,
+ "model_fits": 0,
+ "new_2024_evaluation": false,
+ "report_sha256": "baeefe01030cfab704e78028a73e1429d79f486df11b70661f0980b3ca6c5833",
+ "result": {
+  "conditions_fired": [
+   "C12",
+   "C13",
+   "C14",
+   "C15"
+  ],
+  "fired": 5,
+  "graph": {
+   "digest": "36c44b227e529b5f30ace6c98c0436943db7b1cc68c06efdf894c21e8e8eba52",
+   "frontier": [
+    "A1_labels",
+    "A2_columns",
+    "A3_spatial",
+    "A4_error",
+    "A5_scada",
+    "A6_timing",
+    "A7_deficit_init",
+    "N0",
+    "group_id=1|month=2023-04|y_band=(0.1, 0.25]",
+    "group_id=1|month=2023-04|y_band=(0.25, 0.45]",
+    "group_id=1|month=2023-04|y_band=(0.45, 0.7]",
+    "group_id=1|month=2023-04|y_band=(0.7, 1.1]",
+    "group_id=1|month=2023-05|y_band=(0.1, 0.25]",
+    "group_id=1|month=2023-05|y_band=(0.25, 0.45]",
+    "group_id=1|month=2023-05|y_band=(0.45, 0.7]",
+    "group_id=1|month=2023-05|y_band=(0.7, 1.1]",
+    "group_id=1|month=2023-06|y_band=(0.1, 0.25]",
+    "group_id=1|month=2023-06|y_band=(0.25, 0.45]",
+    "group_id=1|month=2023-06|y_band=(0.45, 0.7]",
+    "group_id=1|month=2023-06|y_band=(0.7, 1.1]",
+    "group_id=1|month=2023-07|y_band=(0.1, 0.25]",
+    "group_id=1|month=2023-07|y_band=(0.25, 0.45]",
+    "group_id=1|month=2023-07|y_band=(0.45, 0.7]",
+    "group_id=1|month=2023-07|y_band=(0.7, 1.1]",
+    "group_id=1|month=2023-08|y_band=(0.1, 0.25]",
+    "group_id=1|month=2023-08|y_band=(0.25, 0.45]",
+    "group_id=1|month=2023-08|y_band=(0.45, 0.7]",
+    "group_id=1|month=2023-08|y_band=(0.7, 1.1]",
+    "group_id=1|month=2023-09|y_band=(0.1, 0.25]",
+    "group_id=1|month=2023-09|y_band=(0.25, 0.45]",
+    "group_id=1|month=2023-09|y_band=(0.45, 0.7]",
+    "group_id=1|month=2023-09|y_band=(0.7, 1.1]",
+    "group_id=1|month=2023-10|y_band=(0.1, 0.25]",
+    "group_id=1|month=2023-10|y_band=(0.25, 0.45]",
+    "group_id=1|month=2023-10|y_band=(0.45, 0.7]",
+    "group_id=1|month=2023-10|y_band=(0.7, 1.1]",
+    "group_id=1|month=2023-11|y_band=(0.1, 0.25]",
+    "group_id=1|month=2023-11|y_band=(0.25, 0.45]",
+    "group_id=1|month=2023-11|y_band=(0.45, 0.7]",
+    "group_id=1|month=2023-11|y_band=(0.7, 1.1]",
+    "group_id=1|month=2023-12|y_band=(0.1, 0.25]",
+    "group_id=1|month=2023-12|y_band=(0.25, 0.45]",
+    "group_id=1|month=2023-12|y_band=(0.45, 0.7]",
+    "group_id=1|month=2023-12|y_band=(0.7, 1.1]",
+    "group_id=2|month=2023-04|y_band=(0.1, 0.25]",
+    "group_id=2|month=2023-04|y_band=(0.25, 0.45]",
+    "group_id=2|month=2023-04|y_band=(0.45, 0.7]",
+    "group_id=2|month=2023-04|y_band=(0.7, 1.1]",
+    "group_id=2|month=2023-05|y_band=(0.1, 0.25]",
+    "group_id=2|month=2023-05|y_band=(0.25, 0.45]",
+    "group_id=2|month=2023-05|y_band=(0.45, 0.7]",
+    "group_id=2|month=2023-05|y_band=(0.7, 1.1]",
+    "group_id=2|month=2023-06|y_band=(0.1, 0.25]",
+    "group_id=2|month=2023-06|y_band=(0.25, 0.45]",
+    "group_id=2|month=2023-06|y_band=(0.45, 0.7]",
+    "group_id=2|month=2023-06|y_band=(0.7, 1.1]",
+    "group_id=2|month=2023-07|y_band=(0.1, 0.25]",
+    "group_id=2|month=2023-07|y_band=(0.25, 0.45]",
+    "group_id=2|month=2023-07|y_band=(0.45, 0.7]",
+    "group_id=2|month=2023-07|y_band=(0.7, 1.1]",
+    "group_id=2|month=2023-08|y_band=(0.1, 0.25]",
+    "group_id=2|month=2023-08|y_band=(0.25, 0.45]",
+    "group_id=2|month=2023-08|y_band=(0.45, 0.7]",
+    "group_id=2|month=2023-08|y_band=(0.7, 1.1]",
+    "group_id=2|month=2023-09|y_band=(0.1, 0.25]",
+    "group_id=2|month=2023-09|y_band=(0.25, 0.45]",
+    "group_id=2|month=2023-09|y_band=(0.45, 0.7]",
+    "group_id=2|month=2023-09|y_band=(0.7, 1.1]",
+    "group_id=2|month=2023-10|y_band=(0.1, 0.25]",
+    "group_id=2|month=2023-10|y_band=(0.25, 0.45]",
+    "group_id=2|month=2023-10|y_band=(0.45, 0.7]",
+    "group_id=2|month=2023-10|y_band=(0.7, 1.1]",
+    "group_id=2|month=2023-11|y_band=(0.1, 0.25]",
+    "group_id=2|month=2023-11|y_band=(0.25, 0.45]",
+    "group_id=2|month=2023-11|y_band=(0.45, 0.7]",
+    "group_id=2|month=2023-11|y_band=(0.7, 1.1]",
+    "group_id=2|month=2023-12|y_band=(0.1, 0.25]",
+    "group_id=2|month=2023-12|y_band=(0.25, 0.45]",
+    "group_id=2|month=2023-12|y_band=(0.45, 0.7]",
+    "group_id=2|month=2023-12|y_band=(0.7, 1.1]",
+    "group_id=3|month=2023-04|y_band=(0.1, 0.25]",
+    "group_id=3|month=2023-04|y_band=(0.25, 0.45]",
+    "group_id=3|month=2023-04|y_band=(0.45, 0.7]",
+    "group_id=3|month=2023-04|y_band=(0.7, 1.1]",
+    "group_id=3|month=2023-05|y_band=(0.1, 0.25]",
+    "group_id=3|month=2023-05|y_band=(0.25, 0.45]",
+    "group_id=3|month=2023-05|y_band=(0.45, 0.7]",
+    "group_id=3|month=2023-05|y_band=(0.7, 1.1]",
+    "group_id=3|month=2023-06|y_band=(0.1, 0.25]",
+    "group_id=3|month=2023-06|y_band=(0.25, 0.45]",
+    "group_id=3|month=2023-06|y_band=(0.45, 0.7]",
+    "group_id=3|month=2023-06|y_band=(0.7, 1.1]",
+    "group_id=3|month=2023-07|y_band=(0.1, 0.25]",
+    "group_id=3|month=2023-07|y_band=(0.25, 0.45]",
+    "group_id=3|month=2023-07|y_band=(0.45, 0.7]",
+    "group_id=3|month=2023-07|y_band=(0.7, 1.1]",
+    "group_id=3|month=2023-08|y_band=(0.1, 0.25]",
+    "group_id=3|month=2023-08|y_band=(0.25, 0.45]",
+    "group_id=3|month=2023-08|y_band=(0.45, 0.7]",
+    "group_id=3|month=2023-08|y_band=(0.7, 1.1]",
+    "group_id=3|month=2023-09|y_band=(0.1, 0.25]",
+    "group_id=3|month=2023-09|y_band=(0.25, 0.45]",
+    "group_id=3|month=2023-09|y_band=(0.45, 0.7]",
+    "group_id=3|month=2023-09|y_band=(0.7, 1.1]",
+    "group_id=3|month=2023-10|y_band=(0.1, 0.25]",
+    "group_id=3|month=2023-10|y_band=(0.25, 0.45]",
+    "group_id=3|month=2023-10|y_band=(0.45, 0.7]",
+    "group_id=3|month=2023-10|y_band=(0.7, 1.1]",
+    "group_id=3|month=2023-11|y_band=(0.1, 0.25]",
+    "group_id=3|month=2023-11|y_band=(0.25, 0.45]",
+    "group_id=3|month=2023-11|y_band=(0.45, 0.7]",
+    "group_id=3|month=2023-11|y_band=(0.7, 1.1]",
+    "group_id=3|month=2023-12|y_band=(0.1, 0.25]",
+    "group_id=3|month=2023-12|y_band=(0.25, 0.45]",
+    "group_id=3|month=2023-12|y_band=(0.45, 0.7]",
+    "group_id=3|month=2023-12|y_band=(0.7, 1.1]"
+   ],
+   "lane_census": {
+    "L1": {
+     "CHAMPION": 0,
+     "EVIDENCED": 0,
+     "LIVE": 2,
+     "PREDECLARED": 0,
+     "PROPOSED": 0,
+     "PRUNED": 0,
+     "RUNNING": 0
+    },
+    "L2": {
+     "CHAMPION": 0,
+     "EVIDENCED": 0,
+     "LIVE": 3,
+     "PREDECLARED": 0,
+     "PROPOSED": 0,
+     "PRUNED": 0,
+     "RUNNING": 0
+    },
+    "L3": {
+     "CHAMPION": 0,
+     "EVIDENCED": 0,
+     "LIVE": 1,
+     "PREDECLARED": 0,
+     "PROPOSED": 0,
+     "PRUNED": 0,
+     "RUNNING": 0
+    },
+    "L4": {
+     "CHAMPION": 0,
+     "EVIDENCED": 0,
+     "LIVE": 0,
+     "PREDECLARED": 0,
+     "PROPOSED": 0,
+     "PRUNED": 0,
+     "RUNNING": 0
+    },
+    "L5": {
+     "CHAMPION": 0,
+     "EVIDENCED": 0,
+     "LIVE": 0,
+     "PREDECLARED": 0,
+     "PROPOSED": 0,
+     "PRUNED": 0,
+     "RUNNING": 0
+    },
+    "L6": {
+     "CHAMPION": 0,
+     "EVIDENCED": 0,
+     "LIVE": 0,
+     "PREDECLARED": 0,
+     "PROPOSED": 0,
+     "PRUNED": 0,
+     "RUNNING": 0
+    },
+    "L7": {
+     "CHAMPION": 0,
+     "EVIDENCED": 0,
+     "LIVE": 0,
+     "PREDECLARED": 0,
+     "PROPOSED": 0,
+     "PRUNED": 0,
+     "RUNNING": 0
+    },
+    "L8": {
+     "CHAMPION": 0,
+     "EVIDENCED": 0,
+     "LIVE": 110,
+     "PREDECLARED": 0,
+     "PROPOSED": 0,
+     "PRUNED": 0,
+     "RUNNING": 0
+    }
+   },
+   "nodes": 116
+  },
+  "ledger": {
+   "cells": 108,
+   "gap": 0.031395479109684654,
+   "identity_ok": true,
+   "target": 0.66,
+   "total": 0.6286045208903154,
+   "unexplained_mass": 0.3713954791096846
+  },
+  "routed": [
+   {
+    "action": "RESEARCH_DIRECTION",
+    "condition": "C13",
+    "considered": [
+     "C13"
+    ],
+    "deficit_cell": null,
+    "information": 1.0,
+    "lane": "L1",
+    "node": "A1_labels",
+    "novel_mechanism": "effective_sample_size",
+    "predeclared_sign": 0,
+    "rationale": "lag-1 자기상관 0.9623 -> 유효표본 급감. 행을 이 축으로 쪼갤 수 없으므로 분할 축이 아니라 구조적 사실이다.",
+    "sign": 0,
+    "targets": [
+     {
+      "deficit_cell": null,
+      "kind": "structural_consequence",
+      "lane": "L1",
+      "operator": "RESEARCH_DIRECTION",
+      "origin_node": "A1_labels",
+      "scope": "구조적 사실 'effective_sample_size' 이 이 레인의 접근에 미치는 결과"
+     }
+    ]
+   },
+   {
+    "action": "CLOSE_AXIS",
+    "condition": "C14",
+    "considered": [
+     "C14"
+    ],
+    "deficit_cell": null,
+    "information": 0.4136,
+    "lane": "L2",
+    "node": "A2_columns",
+    "novel_mechanism": null,
+    "predeclared_sign": 0,
+    "rationale": "진짜 미사용 컬럼 평균 MI 가 선언 컬럼의 0.414 배. 정보를 냈고 그 정보가 부정이므로 확인된 부정(C14)이지 정보 미달(C8)이 아니다.",
+    "sign": 0,
+    "targets": [
+     {
+      "lane": "L2",
+      "note": "정보를 냈고 그것이 '이 축에는 없다' 이다. 전제가 뒤집히면 C9 이 부활.",
+      "operator": "CLOSE_AXIS",
+      "origin_node": "A2_columns",
+      "premise": "MEASURED_NEGATIVE"
+     }
+    ]
+   },
+   {
+    "action": "RESEARCH_DIRECTION",
+    "condition": "C13",
+    "considered": [
+     "C13"
+    ],
+    "deficit_cell": null,
+    "information": 1.0,
+    "lane": "L2",
+    "node": "A3_spatial",
+    "novel_mechanism": "grid_resolution_mismatch",
+    "predeclared_sign": 0,
+    "rationale": "17 기 전 터빈의 최근접 GFS 격자가 1 개. 격자 해상도와 단지 규모의 불일치는 기존 결손 축으로 설명되지 않는다.",
+    "sign": 0,
+    "targets": [
+     {
+      "deficit_cell": null,
+      "kind": "structural_consequence",
+      "lane": "L2",
+      "operator": "RESEARCH_DIRECTION",
+      "origin_node": "A3_spatial",
+      "scope": "구조적 사실 'grid_resolution_mismatch' 이 이 레인의 접근에 미치는 결과"
+     }
+    ]
+   },
+   {
+    "action": "HALT",
+    "condition": "NONE",
+    "considered": [],
+    "deficit_cell": null,
+    "information": 0.6,
+    "lane": "L3",
+    "node": "A5_scada",
+    "novel_mechanism": null,
+    "predeclared_sign": 0,
+    "rationale": "나셀-NWP 잔차 표준편차 최대 2.365 m/s. 직전 세션 sigma_v 를 독립 재현했다.",
+    "sign": 0,
+    "targets": []
+   },
+   {
+    "action": "HALT",
+    "condition": "NONE",
+    "considered": [],
+    "deficit_cell": null,
+    "information": 0.3,
+    "lane": "L1",
+    "node": "A6_timing",
+    "novel_mechanism": null,
+    "predeclared_sign": 1,
+    "rationale": "사전확약 유지=True. 여유는 {1.0h, 25.0h} 두 값뿐이고 위반 0 건.",
+    "sign": 1,
+    "targets": []
+   },
+   {
+    "action": "REFINE_AXIS",
+    "condition": "C12",
+    "considered": [
+     "C1",
+     "C12"
+    ],
+    "deficit_cell": "group_id=3|month=2023-12|y_band=(0.45, 0.7]",
+    "information": 0.6217,
+    "lane": "L2",
+    "node": "A4_error",
+    "novel_mechanism": "wind_sector",
+    "predeclared_sign": 1,
+    "rationale": "사전확약 HELD. 편상관 최대 0.0311. 240도 섹터가 행의 43%·최고풍속·최악오차를 동시에 차지하므로 결손 축 후보다.",
+    "sign": 1,
+    "targets": [
+     {
+      "axis": "wind_sector",
+      "cell": "group_id=3|month=2023-12|y_band=(0.45, 0.7]",
+      "operator": "REFINE_AXIS",
+      "origin_node": "A4_error"
+     }
+    ]
+   },
+   {
+    "action": "SEND_FANOUT",
+    "condition": "C15",
+    "considered": [
+     "C15"
+    ],
+    "deficit_cell": null,
+    "information": 1.0,
+    "lane": "L8",
+    "node": "A7_deficit_init",
+    "novel_mechanism": null,
+    "predeclared_sign": 1,
+    "rationale": "가법 분해 잔차 5.551e-17 (허용 1e-09). 판정 ADDITIVE_EXACT.",
+    "sign": 1,
+    "targets": [
+     {
+      "deficit_cell": "group_id=3|month=2023-12|y_band=(0.45, 0.7]",
+      "kind": "explain",
+      "lane": "L2",
+      "operator": "RESEARCH_DIRECTION",
+      "origin_node": "A7_deficit_init",
+      "scope": "결손 셀 group_id=3|month=2023-12|y_band=(0.45, 0.7] 의 물리·통계 기전"
+     },
+     {
+      "deficit_cell": "group_id=2|month=2023-11|y_band=(0.45, 0.7]",
+      "kind": "explain",
+      "lane": "L2",
+      "operator": "RESEARCH_DIRECTION",
+      "origin_node": "A7_deficit_init",
+      "scope": "결손 셀 group_id=2|month=2023-11|y_band=(0.45, 0.7] 의 물리·통계 기전"
+     },
+     {
+      "deficit_cell": "group_id=3|month=2023-07|y_band=(0.7, 1.1]",
+      "kind": "explain",
+      "lane": "L2",
+      "operator": "RESEARCH_DIRECTION",
+      "origin_node": "A7_deficit_init",
+      "scope": "결손 셀 group_id=3|month=2023-07|y_band=(0.7, 1.1] 의 물리·통계 기전"
+     },
+     {
+      "deficit_cell": "group_id=3|month=2023-11|y_band=(0.45, 0.7]",
+      "kind": "explain",
+      "lane": "L2",
+      "operator": "RESEARCH_DIRECTION",
+      "origin_node": "A7_deficit_init",
+      "scope": "결손 셀 group_id=3|month=2023-11|y_band=(0.45, 0.7] 의 물리·통계 기전"
+     },
+     {
+      "deficit_cell": "group_id=3|month=2023-10|y_band=(0.25, 0.45]",
+      "kind": "explain",
+      "lane": "L2",
+      "operator": "RESEARCH_DIRECTION",
+      "origin_node": "A7_deficit_init",
+      "scope": "결손 셀 group_id=3|month=2023-10|y_band=(0.25, 0.45] 의 물리·통계 기전"
+     }
+    ]
+   }
+  ]
+ },
+ "schema_version": 1,
+ "script_sha256": "96393170d3a555d24b8dd6fa076b50ba790993c334862cd7a9f2410978366941",
+ "stage": "M271_P4_BOOTSTRAP"
+}

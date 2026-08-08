@@ -1,0 +1,229 @@
+{
+ "dacon_upload": false,
+ "decided_utc": "2026-08-04T07:35:37.111186+00:00",
+ "external_actions": [],
+ "lane": "L7",
+ "lockbox_reopened": false,
+ "model_fits": 0,
+ "new_2024_evaluation": false,
+ "node": "C1N24_MEMBER_COUNT_REOPEN",
+ "report_sha256": "dcb172366c55a05843e00318802f9f4ce1fbb120e9a4612ab8a3e898f8f6e217",
+ "result": {
+  "gap_to_target": 0.023403172236948433,
+  "gate_modified": false,
+  "gate_version": "M270_MONTHLY_GATE_v1_frozen_2026-08-04",
+  "incumbent": "M271_MEDIAN4",
+  "incumbent_score": {
+   "ficr": 0.41320978983964385,
+   "group_ficr": {
+    "1": 0.42079521858555724,
+    "2": 0.46863045810963244,
+    "3": 0.3502036928237419
+   },
+   "group_nmae": {
+    "1": 0.13286075292051555,
+    "2": 0.13543735862877082,
+    "3": 0.151750291391336
+   },
+   "one_minus_nmae": 0.8599838656864592,
+   "total": 0.6365968277630516
+  },
+  "ladder": [
+   {
+    "ensemble": "E2_CLASSIFIER_PLUS_ANALOG",
+    "mean": {
+     "bootstrap_q05": -0.016693220656594787,
+     "delta_vs_incumbent": -0.012689300038287499,
+     "ficr": 0.38411383297553336,
+     "gate": {
+      "G1": false,
+      "G2": false,
+      "G3": false,
+      "G4": false
+     },
+     "gate_passed": false,
+     "group_ficr": {
+      "1": 0.3817267195228348,
+      "2": 0.45052657249589545,
+      "3": 0.32008820690786993
+     },
+     "group_nmae": {
+      "1": 0.1295350117604107,
+      "2": 0.13043975479011535,
+      "3": 0.14892156602748918
+     },
+     "months_scored": 9,
+     "one_minus_nmae": 0.863701222473995,
+     "positive_months": 2,
+     "sign_test_p": 0.98046875,
+     "total": 0.6239075277247641
+    },
+    "median": {
+     "bootstrap_q05": -0.016693220656594787,
+     "delta_vs_incumbent": -0.012689300038287499,
+     "ficr": 0.38411383297553336,
+     "gate": {
+      "G1": false,
+      "G2": false,
+      "G3": false,
+      "G4": false
+     },
+     "gate_passed": false,
+     "group_ficr": {
+      "1": 0.3817267195228348,
+      "2": 0.45052657249589545,
+      "3": 0.32008820690786993
+     },
+     "group_nmae": {
+      "1": 0.1295350117604107,
+      "2": 0.13043975479011535,
+      "3": 0.14892156602748918
+     },
+     "months_scored": 9,
+     "one_minus_nmae": 0.863701222473995,
+     "positive_months": 2,
+     "sign_test_p": 0.98046875,
+     "total": 0.6239075277247641
+    },
+    "n_members": 2
+   },
+   {
+    "ensemble": "E3_FOUR_FAMILY",
+    "mean": {
+     "bootstrap_q05": -0.005863382049912576,
+     "delta_vs_incumbent": -0.004453746963663963,
+     "ficr": 0.40146539495891903,
+     "gate": {
+      "G1": false,
+      "G2": false,
+      "G3": false,
+      "G4": false
+     },
+     "gate_passed": false,
+     "group_ficr": {
+      "1": 0.40521194864865573,
+      "2": 0.46312108402780044,
+      "3": 0.3360631522003009
+     },
+     "group_nmae": {
+      "1": 0.13044803926907697,
+      "2": 0.13177311529164382,
+      "3": 0.14931654551971058
+     },
+     "months_scored": 9,
+     "one_minus_nmae": 0.8628207666398562,
+     "positive_months": 3,
+     "sign_test_p": 0.91015625,
+     "total": 0.6321430807993876
+    },
+    "median": {
+     "bootstrap_q05": 0.0,
+     "delta_vs_incumbent": 0.0,
+     "ficr": 0.41320978983964385,
+     "gate": {
+      "G1": false,
+      "G2": false,
+      "G3": false,
+      "G4": true
+     },
+     "gate_passed": false,
+     "group_ficr": {
+      "1": 0.42079521858555724,
+      "2": 0.46863045810963244,
+      "3": 0.3502036928237419
+     },
+     "group_nmae": {
+      "1": 0.13286075292051555,
+      "2": 0.13543735862877082,
+      "3": 0.151750291391336
+     },
+     "months_scored": 9,
+     "one_minus_nmae": 0.8599838656864592,
+     "positive_months": 0,
+     "sign_test_p": 1.0,
+     "total": 0.6365968277630516
+    },
+    "n_members": 4
+   },
+   {
+    "ensemble": "E1_ALL_EQUAL",
+    "mean": {
+     "bootstrap_q05": -0.006368755575994683,
+     "delta_vs_incumbent": -0.004662496707165675,
+     "ficr": 0.4038525147527546,
+     "gate": {
+      "G1": false,
+      "G2": false,
+      "G3": false,
+      "G4": true
+     },
+     "gate_passed": false,
+     "group_ficr": {
+      "1": 0.40609671289652904,
+      "2": 0.4640482242990056,
+      "3": 0.3414126070627292
+     },
+     "group_nmae": {
+      "1": 0.13147121401643394,
+      "2": 0.1356450869215704,
+      "3": 0.15283525698494377
+     },
+     "months_scored": 9,
+     "one_minus_nmae": 0.8600161473590173,
+     "positive_months": 1,
+     "sign_test_p": 0.998046875,
+     "total": 0.6319343310558859
+    },
+    "median": {
+     "bootstrap_q05": -0.006078611861108512,
+     "delta_vs_incumbent": -0.003431159965564201,
+     "ficr": 0.407809340178203,
+     "gate": {
+      "G1": false,
+      "G2": false,
+      "G3": false,
+      "G4": false
+     },
+     "gate_passed": false,
+     "group_ficr": {
+      "1": 0.4125257447706237,
+      "2": 0.4628316392934869,
+      "3": 0.34807063647049824
+     },
+     "group_nmae": {
+      "1": 0.13276387161567746,
+      "2": 0.13749907354558621,
+      "3": 0.15417106858842078
+     },
+     "months_scored": 9,
+     "one_minus_nmae": 0.8585219954167719,
+     "positive_months": 2,
+     "sign_test_p": 0.98046875,
+     "total": 0.6331656677974874
+    },
+    "n_members": 12
+   }
+  ],
+  "node": "C1N24_MEMBER_COUNT_REOPEN",
+  "parent_node": "C1N23_ELIGIBLE_MOS",
+  "predeclared_check": {
+   "H1_expectation": "median 하에서 E1(12) > E3(4) — 사이클 13 부호 역전",
+   "H1_held": false,
+   "H2_expectation": "mean 하에서는 여전히 E1(12) < E3(4) — 사이클 13 재현",
+   "H2_held": true,
+   "chosen": null,
+   "combiner_dependence_established": false,
+   "promotion_rule_frozen_before_run": [
+    "R1 Total 개선",
+    "R2 동결 게이트 통과(부모=M271_MEDIAN4)",
+    "복수 자격시 멤버 수 많은 쪽"
+   ],
+   "verdict": "MEMBER_COUNT_STAYS_CLOSED"
+  },
+  "promoted_total": 0.6365968277630516,
+  "reopens": "C1N13_ENSEMBLE_VARIANCE"
+ },
+ "schema_version": 1,
+ "script_sha256": "f57d9ce4af08a9d4e4fd75ed18ae698dc7d7d2e5fb9fedd9f79029fc7d71ebde",
+ "stage": "M271_P4_CYCLE24_MEMBER_COUNT"
+}

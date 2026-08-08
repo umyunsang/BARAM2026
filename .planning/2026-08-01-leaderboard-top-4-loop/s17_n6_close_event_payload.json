@@ -1,0 +1,38 @@
+{
+  "event_type": "CLOSED",
+  "cycle_id": "S17-N6_COST5_SPO_PLUS_PREQUENTIAL",
+  "stage_id": "S7",
+  "node_id": "S17-N6_COST5_SPO_PLUS_PREQUENTIAL",
+  "actor": "root",
+  "occurred_at": "2026-08-08T19:58:53.564568+09:00",
+  "body": {
+    "predeclared_event_sha256": "549d9b4ad5a5928d9a4626d3d34491e45db8ea78c986169fb5f4e77d45dbf75f",
+    "receipt_path": "reports/s17_n6_cost5_spo_plus_receipt.json",
+    "receipt_sha256": "6577e98f92b4f7d46569f4fddf5d6bd61a680589c9972e4696da8c82207181a4",
+    "code_sha256": "27168cfecb3070db4b8b6ebe96e68f9e02c6cae4673841986f0b715a629d5f0b",
+    "config_sha256": "e7b708d25ff1de103395682698fed15ef08456c3cbf12a19e1f2641b73b3fb03",
+    "data_sha256": "136b7a0cd16485d1e877387468c39fdc07f201127b8f682f79b3c32170086fa4",
+    "router_sha256": "80e37561a32fb2928d1a7505b652bb822f5b6989e73b6d7106afb0ae62041b43",
+    "policy_ids": [
+      "S17N6_G0_STRICT_SAVED_ACTION_PROVENANCE",
+      "STOP_BEFORE_FIT_OR_SCORE"
+    ],
+    "row_alignment_keys": [
+      "fold_id",
+      "group_id",
+      "forecast_kst_dtm"
+    ],
+    "evidence_class": "diagnostic",
+    "weights_fit": "fixed",
+    "result_status": "REFUTED",
+    "score_bearing": false,
+    "comparison_index": null,
+    "stage_evidence_status": "RESEARCHED",
+    "next_handoff": [
+      "S17-N7_STRICT_ACTION_PROVENANCE_RECONSTRUCTION"
+    ],
+    "lockbox_2024_used": false,
+    "dacon_actions": [],
+    "pre_score_gate_failed": true
+  }
+}

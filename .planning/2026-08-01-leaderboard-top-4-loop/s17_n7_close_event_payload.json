@@ -1,0 +1,40 @@
+{
+  "event_type": "CLOSED",
+  "cycle_id": "S17-N7_STRICT_ACTION_PROVENANCE_RECONSTRUCTION",
+  "stage_id": "S8",
+  "node_id": "S17-N7_STRICT_ACTION_PROVENANCE_RECONSTRUCTION",
+  "actor": "root",
+  "occurred_at": "2026-08-08T20:08:34.589025+09:00",
+  "body": {
+    "predeclared_event_sha256": "f27e3bda00f3abe70ac43d9a3bb979c7203a66efbab02ae29ee59dfc44da1d2d",
+    "receipt_path": "reports/s17_n7_strict_action_reconstruction_receipt.json",
+    "receipt_sha256": "f4d56d97532fbe4d681061dfff773f951c4be01b26081dda3c0ff77720e973fc",
+    "code_sha256": "8d656bdb91a63b96b1e207d796e130796de47004a0c1293e5800fdffdf14abcd",
+    "config_sha256": "0ed80aa6ef0e4f321cb1a084df650e762c52b0fa3a074c853daecfca71722a16",
+    "data_sha256": "2aaf7db0b3a26438071ac7c1d03b7645e494f740b21c53d7087187b73872315d",
+    "router_sha256": "80e37561a32fb2928d1a7505b652bb822f5b6989e73b6d7106afb0ae62041b43",
+    "policy_ids": [
+      "D:T1_G1.5",
+      "M102_TOP100:T0.5_G1.5",
+      "M113_LGBM_DART:T0.5_G0.5",
+      "M115_XGBOOST:T0.75_G2",
+      "CHAMPION:0p30D_0p70DEPAVG"
+    ],
+    "row_alignment_keys": [
+      "fold_id",
+      "group_id",
+      "forecast_kst_dtm"
+    ],
+    "evidence_class": "diagnostic",
+    "weights_fit": "fixed",
+    "result_status": "SUPPORTED",
+    "score_bearing": false,
+    "comparison_index": null,
+    "stage_evidence_status": "RESEARCHED",
+    "next_handoff": [
+      "S17-N8_COST5_SPO_PLUS_STRICT_PREQUENTIAL_COMPARISON"
+    ],
+    "lockbox_2024_used": false,
+    "dacon_actions": []
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "event_type": "PREDECLARED",
+  "cycle_id": "S17-N10_ISSUANCE_CUBE_TIMING_AND_MISSINGNESS_AUDIT",
+  "stage_id": "S3",
+  "node_id": "S17-N10_ISSUANCE_CUBE_TIMING_AND_MISSINGNESS_AUDIT",
+  "actor": "root",
+  "occurred_at": "2026-08-08T20:24:29.681389+09:00",
+  "body": {
+    "preregistration_sha256": "f173471a2c85a8505eaba5ef809ee3d8ff3cf26971e07045f7e42c6940a38798",
+    "parent_ids": [
+      "S17-N9_COST5_NO_REFIT_MATERIALIZATION_RECOVERY"
+    ],
+    "mechanism": "A valid-time-only or temporally ambiguous NWP join can cause macroscopic representation error even when row timestamps appear aligned.",
+    "treatment": "Train-only source/issue/availability/lead/temporal-support/missingness metadata cube audit.",
+    "control": "Current canonical weather contract keyed by valid time and availability.",
+    "metric": "Metadata completeness, basis safety, duplicate/missing-state counts; no model score.",
+    "min_effect": 0.0,
+    "score_bearing": false,
+    "novelty_signature": "ISSUANCE_CUBE_TIMING_MISSINGNESS_AUDIT_V1",
+    "basis_evidence_ids": [
+      "RWA_DATA_R1",
+      "S17_N3_ISSUANCE_PROTOCOL"
+    ]
+  }
+}

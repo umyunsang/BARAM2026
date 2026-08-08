@@ -1,0 +1,382 @@
+{
+ "dacon_upload": false,
+ "decided_utc": "2026-08-04T18:26:57.648271+00:00",
+ "external_actions": [],
+ "lane": "L2",
+ "lockbox_reopened": false,
+ "model_fits": 0,
+ "new_2024_evaluation": false,
+ "node": "C1N49_RHO_ACCEPTANCE",
+ "report_sha256": "cd24f2d41ab0aab2fc955a11bcdb0ec48b49ca8b40180cd0f2bbee8d4fd36b48",
+ "result": {
+  "acceptance_frontier": {
+   "primary_local_066": [
+    {
+     "all_groups_feasible": true,
+     "binding_group": 1,
+     "binding_max_rho": 0.99,
+     "max_rho_by_group": {
+      "1": 0.99,
+      "2": 0.99,
+      "3": 0.99
+     },
+     "q": 0.6
+    },
+    {
+     "all_groups_feasible": true,
+     "binding_group": 1,
+     "binding_max_rho": 0.99,
+     "max_rho_by_group": {
+      "1": 0.99,
+      "2": 0.99,
+      "3": 0.99
+     },
+     "q": 0.65
+    },
+    {
+     "all_groups_feasible": true,
+     "binding_group": 1,
+     "binding_max_rho": 0.99,
+     "max_rho_by_group": {
+      "1": 0.99,
+      "2": 0.99,
+      "3": 0.99
+     },
+     "q": 0.7
+    },
+    {
+     "all_groups_feasible": true,
+     "binding_group": 1,
+     "binding_max_rho": 0.99,
+     "max_rho_by_group": {
+      "1": 0.99,
+      "2": 0.99,
+      "3": 0.99
+     },
+     "q": 0.75
+    },
+    {
+     "all_groups_feasible": true,
+     "binding_group": 1,
+     "binding_max_rho": 0.99,
+     "max_rho_by_group": {
+      "1": 0.99,
+      "2": 0.99,
+      "3": 0.99
+     },
+     "q": 0.8
+    },
+    {
+     "all_groups_feasible": true,
+     "binding_group": 1,
+     "binding_max_rho": 0.99,
+     "max_rho_by_group": {
+      "1": 0.99,
+      "2": 0.99,
+      "3": 0.99
+     },
+     "q": 0.85
+    },
+    {
+     "all_groups_feasible": true,
+     "binding_group": 1,
+     "binding_max_rho": 0.99,
+     "max_rho_by_group": {
+      "1": 0.99,
+      "2": 0.99,
+      "3": 0.99
+     },
+     "q": 0.9
+    },
+    {
+     "all_groups_feasible": true,
+     "binding_group": 2,
+     "binding_max_rho": 0.315,
+     "max_rho_by_group": {
+      "1": 0.585,
+      "2": 0.315,
+      "3": 0.63
+     },
+     "q": 0.95
+    },
+    {
+     "all_groups_feasible": true,
+     "binding_group": 2,
+     "binding_max_rho": 0.245,
+     "max_rho_by_group": {
+      "1": 0.5,
+      "2": 0.245,
+      "3": 0.54
+     },
+     "q": 1.0
+    },
+    {
+     "all_groups_feasible": true,
+     "binding_group": 2,
+     "binding_max_rho": 0.19,
+     "max_rho_by_group": {
+      "1": 0.43,
+      "2": 0.19,
+      "3": 0.47
+     },
+     "q": 1.05
+    },
+    {
+     "all_groups_feasible": true,
+     "binding_group": 2,
+     "binding_max_rho": 0.14,
+     "max_rho_by_group": {
+      "1": 0.375,
+      "2": 0.14,
+      "3": 0.99
+     },
+     "q": 1.1
+    },
+    {
+     "all_groups_feasible": true,
+     "binding_group": 1,
+     "binding_max_rho": 0.99,
+     "max_rho_by_group": {
+      "1": 0.99,
+      "2": 0.99,
+      "3": 0.99
+     },
+     "q": 1.15
+    },
+    {
+     "all_groups_feasible": true,
+     "binding_group": 1,
+     "binding_max_rho": 0.99,
+     "max_rho_by_group": {
+      "1": 0.99,
+      "2": 0.99,
+      "3": 0.99
+     },
+     "q": 1.2
+    },
+    {
+     "all_groups_feasible": true,
+     "binding_group": 1,
+     "binding_max_rho": 0.99,
+     "max_rho_by_group": {
+      "1": 0.99,
+      "2": 0.99,
+      "3": 0.99
+     },
+     "q": 1.25
+    },
+    {
+     "all_groups_feasible": true,
+     "binding_group": 1,
+     "binding_max_rho": 0.99,
+     "max_rho_by_group": {
+      "1": 0.99,
+      "2": 0.99,
+      "3": 0.99
+     },
+     "q": 1.3
+    }
+   ],
+   "secondary_leader_ficr": [
+    {
+     "all_groups_feasible": true,
+     "binding_group": 1,
+     "binding_max_rho": 0.99,
+     "max_rho_by_group": {
+      "1": 0.99,
+      "2": 0.99,
+      "3": 0.99
+     },
+     "q": 0.6
+    },
+    {
+     "all_groups_feasible": true,
+     "binding_group": 1,
+     "binding_max_rho": 0.99,
+     "max_rho_by_group": {
+      "1": 0.99,
+      "2": 0.99,
+      "3": 0.99
+     },
+     "q": 0.65
+    },
+    {
+     "all_groups_feasible": true,
+     "binding_group": 1,
+     "binding_max_rho": 0.99,
+     "max_rho_by_group": {
+      "1": 0.99,
+      "2": 0.99,
+      "3": 0.99
+     },
+     "q": 0.7
+    },
+    {
+     "all_groups_feasible": true,
+     "binding_group": 1,
+     "binding_max_rho": 0.99,
+     "max_rho_by_group": {
+      "1": 0.99,
+      "2": 0.99,
+      "3": 0.99
+     },
+     "q": 0.75
+    },
+    {
+     "all_groups_feasible": true,
+     "binding_group": 1,
+     "binding_max_rho": 0.99,
+     "max_rho_by_group": {
+      "1": 0.99,
+      "2": 0.99,
+      "3": 0.99
+     },
+     "q": 0.8
+    },
+    {
+     "all_groups_feasible": true,
+     "binding_group": 1,
+     "binding_max_rho": 0.99,
+     "max_rho_by_group": {
+      "1": 0.99,
+      "2": 0.99,
+      "3": 0.99
+     },
+     "q": 0.85
+    },
+    {
+     "all_groups_feasible": true,
+     "binding_group": 1,
+     "binding_max_rho": 0.99,
+     "max_rho_by_group": {
+      "1": 0.99,
+      "2": 0.99,
+      "3": 0.99
+     },
+     "q": 0.9
+    },
+    {
+     "all_groups_feasible": true,
+     "binding_group": 2,
+     "binding_max_rho": 0.24,
+     "max_rho_by_group": {
+      "1": 0.49,
+      "2": 0.24,
+      "3": 0.535
+     },
+     "q": 0.95
+    },
+    {
+     "all_groups_feasible": true,
+     "binding_group": 2,
+     "binding_max_rho": 0.175,
+     "max_rho_by_group": {
+      "1": 0.415,
+      "2": 0.175,
+      "3": 0.455
+     },
+     "q": 1.0
+    },
+    {
+     "all_groups_feasible": true,
+     "binding_group": 2,
+     "binding_max_rho": 0.12,
+     "max_rho_by_group": {
+      "1": 0.35,
+      "2": 0.12,
+      "3": 0.39
+     },
+     "q": 1.05
+    },
+    {
+     "all_groups_feasible": true,
+     "binding_group": 2,
+     "binding_max_rho": 0.075,
+     "max_rho_by_group": {
+      "1": 0.295,
+      "2": 0.075,
+      "3": 0.33
+     },
+     "q": 1.1
+    },
+    {
+     "all_groups_feasible": true,
+     "binding_group": 1,
+     "binding_max_rho": 0.99,
+     "max_rho_by_group": {
+      "1": 0.99,
+      "2": 0.99,
+      "3": 0.99
+     },
+     "q": 1.15
+    },
+    {
+     "all_groups_feasible": true,
+     "binding_group": 1,
+     "binding_max_rho": 0.99,
+     "max_rho_by_group": {
+      "1": 0.99,
+      "2": 0.99,
+      "3": 0.99
+     },
+     "q": 1.2
+    },
+    {
+     "all_groups_feasible": true,
+     "binding_group": 1,
+     "binding_max_rho": 0.99,
+     "max_rho_by_group": {
+      "1": 0.99,
+      "2": 0.99,
+      "3": 0.99
+     },
+     "q": 1.25
+    },
+    {
+     "all_groups_feasible": true,
+     "binding_group": 1,
+     "binding_max_rho": 0.99,
+     "max_rho_by_group": {
+      "1": 0.99,
+      "2": 0.99,
+      "3": 0.99
+     },
+     "q": 1.3
+    }
+   ]
+  },
+  "blocking_rule": "AGENTS.md 5 행이 외부 데이터를 금지하고 있어 수집은 하지 않는다",
+  "current_sigma": {
+   "1": 2.159,
+   "2": 2.368,
+   "3": 2.129
+  },
+  "gate_touched": false,
+  "no_collection": true,
+  "no_training": true,
+  "node": "C1N49_RHO_ACCEPTANCE",
+  "parent_node": "C1N48_MODEL_VALIDATION",
+  "predeclared_check": {
+   "H1_expectation": "q=1.0 에서 허용 rho 존재",
+   "H1_held": true,
+   "H1_max_rho": 0.245,
+   "H2_expectation": "q=0.85 에서 허용 rho >= 0.6",
+   "H2_held": true,
+   "H2_max_rho": 0.99,
+   "H3_binding_group": 1,
+   "H3_expectation": "제약이 가장 빡빡한 그룹 특정",
+   "H3_held": true,
+   "frozen": "이 수용선은 새 소스 측정 결과를 보고 변경하지 않는다",
+   "verdict": "ACCEPTANCE_REGION_FROZEN_MEASUREMENT_CAN_PROCEED"
+  },
+  "purpose": "새 소스 rho 측정의 합격선을 **재기 전에** 확정한다",
+  "requirements": {
+   "primary_local_066": 1.871,
+   "secondary_leader_ficr": 1.817,
+   "source": "사이클 46 오차 축소 역산, 사이클 48 이 검증"
+  }
+ },
+ "schema_version": 1,
+ "script_sha256": "f3befd3343dcad4908e4735c87ee3498c02a5a52edda93347516b4522558fa21",
+ "stage": "M271_P4_CYCLE49_RHO_ACCEPTANCE"
+}

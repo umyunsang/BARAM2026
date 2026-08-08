@@ -1,0 +1,131 @@
+{
+ "stages": {
+  "D1": {
+   "name": "전처리",
+   "nodes": [
+    {
+     "id": "D1_A",
+     "accepted": false,
+     "note": "-",
+     "origin": "research://IOP-3049-4753-ae4c8d + ACP-23-3181 (F3, directly_supported)"
+    },
+    {
+     "id": "D1_B",
+     "accepted": false,
+     "note": "-",
+     "origin": "research://IOP-3049-4753-ae4c8d (F3)"
+    },
+    {
+     "id": "D1_C",
+     "accepted": false,
+     "note": "-",
+     "origin": "research://Spiliotis-2025-S2213138825004308 (F1)"
+    },
+    {
+     "id": "D1_D",
+     "accepted": false,
+     "note": "-",
+     "origin": "research://Morrison-2022 + Wang-2025-JMSE-13-410 (F2)"
+    },
+    {
+     "id": "D1_F1_1",
+     "accepted": false,
+     "note": "NO_BIAS_TO_CORRECT_QMAP_WORSENS",
+     "origin": "research://Spiliotis et al. 2025, ScienceDirect S2213138825004308 (Cited 9) [near_match_only]"
+    },
+    {
+     "id": "D1_F2_1",
+     "accepted": false,
+     "note": "ADMISSION_FAILED_SUPERSET_ALREADY_CLOSED",
+     "origin": "research://Morrison et al. 2022 Univ. Glasgow (Cited 143); Wang et al. 2025 MDPI JMSE 13(3):410 (Cited 11) [near_match_only]"
+    },
+    {
+     "id": "D1_F3_1",
+     "accepted": false,
+     "note": "PRESENT_BUT_DESELECTED",
+     "origin": "research://IOP 2026 doi:10.1088/3049-4753/ae4c8d; ACP 23:3181 (2023) 'Estimating hub-height wind speed based on machine learning'; arXiv:2602.19954 [directly_supported]"
+    },
+    {
+     "id": "D1_F3_2",
+     "accepted": false,
+     "note": "ADMISSION_FAILED_PREMISE_UNDERMINED",
+     "origin": "research://IOP 2026 doi:10.1088/3049-4753/ae4c8d; ACP 23:3181 (2023) 'Estimating hub-height wind speed based on machine learning'; arXiv:2602.19954 [directly_supported]"
+    }
+   ]
+  },
+  "D2": {
+   "name": "피처구성",
+   "nodes": [
+    {
+     "id": "D2_G1_1",
+     "accepted": false,
+     "note": "IMPLEMENTATION_DIFFERS_BUT_DATA_FORBIDS_PAPER_CONSTRUCTION",
+     "origin": "research://arXiv:2505.10367v1 (HEFTCom2024 GEB팀); Yang 2024 MDPI Sustainability 16(14):5960 (Cited 14) [directly_supported]"
+    },
+    {
+     "id": "D2_G2_1",
+     "accepted": false,
+     "note": "WAKE_GEOMETRY_EXPLAINS_RESIDUAL_WEAKLY",
+     "origin": "research://SPIE 14179:141790I (2025) 'GNN + physical wake model'; Zang 2025 STET (Cited 8) [near_match_only]"
+    },
+    {
+     "id": "D2_G3_1",
+     "accepted": false,
+     "note": "DIURNAL_BIAS_TOO_SMALL_OR_UNSTABLE",
+     "origin": "research://arXiv:2510.15474v1 'Evaluating the Prediction of Wind Power Ramping Events' [near_match_only]"
+    }
+   ]
+  },
+  "D3": {
+   "name": "모델링",
+   "nodes": [
+    {
+     "id": "D3_H2_1",
+     "accepted": false,
+     "note": "SMOOTH_MEMBER_EXISTS_PREMISE_HOLDS",
+     "origin": "research://Browell et al. 2020, EEM20 Wind Power Forecasting Competition, Strathclyde 74066 (Cited 12) [near_match_only]"
+    },
+    {
+     "id": "D3_H2_2",
+     "accepted": false,
+     "note": "UNCONDITIONAL_RESIDUAL_DECISION_LAYER_HURTS",
+     "origin": "derived://D3_H2_1"
+    },
+    {
+     "id": "D3_H2_3",
+     "accepted": false,
+     "note": "REACHABILITY_SWITCH_BELOW_UNIFORM_BLEND",
+     "origin": "derived://D3_H2_2"
+    },
+    {
+     "id": "D3_H2_4",
+     "accepted": false,
+     "note": "CONDITIONAL_WEIGHT_BELOW_THRESHOLD_AND_NOT_DEPLOYABLE",
+     "origin": "derived://D3_H2_3"
+    },
+    {
+     "id": "D3_H3_1",
+     "accepted": false,
+     "note": "GLOBAL_SHIFT_NO_GAIN",
+     "origin": "research://NOAA NCEP Office Note 520 (2025) BC-Unet; ResearchGate 335482895 [near_match_only]"
+    }
+   ]
+  },
+  "D4": {
+   "name": "검증전략",
+   "nodes": [
+    {
+     "id": "D4_J1_1",
+     "accepted": false,
+     "note": "NO_SCORE",
+     "origin": "research://Hewamalage et al. 2022, 'Forecast evaluation for data scientists: common pitfalls and best practices', PMC9718476 (Cited 389) [directly_supported]"
+    }
+   ]
+  }
+ },
+ "totals": {
+  "registry_total": 47,
+  "accepted": 2,
+  "stage_nodes": 17
+ }
+}

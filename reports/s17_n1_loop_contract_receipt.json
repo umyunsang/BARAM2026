@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "node_id": "S17-N1_LOOP_CONTRACT_REPAIR",
+  "generated_at": "2026-08-08T18:24:42.146393+09:00",
+  "predeclaration": {
+    "path": "reports/s17_n1_loop_contract_predeclaration.json",
+    "sha256": "367c724831d8480bc03a3dba7347d43f203e95a519bbcbd22c81d0d273b17e96"
+  },
+  "baseline_loop_sha256": {
+    "src/baram/loop/__init__.py": "d52aeb593229ef58728bcad20160d6bdc008224608b5af45cbe63fc7cb270d05",
+    "src/baram/loop/graph.py": "d1d4a91b309edbe25615c828e269787e9f399ce834071a5371cab2701fdbe06a",
+    "src/baram/loop/graph_staged.py": "4744b98c020c548e867fff12e9f88053d4838e47e637a0e59476fa89882620c6",
+    "src/baram/loop/ontology.py": "c60cb96f477cebb2c89fbf689993a0cdb293c31f6b4db7286da4044dec0600ce",
+    "src/baram/loop/registry.py": "5f797a2247c7e5bbbaa15657748b21cbfffe1ba7d98c78649c13772a57bdcfaf",
+    "src/baram/loop/research.py": "39bf39c7091d9d788fd350d33b6191bbdb34b0763f852e9374bef624dc9e144d",
+    "src/baram/loop/router.py": "4ef1cc704852c2c9b80b2c043036f110b2361ca42649e366bd66693c2b7c1a86",
+    "src/baram/loop/stages.py": "d0eaa41263b6fd2cc38d107f33ebac50e8c1cf94e524fc8363b1fb332941719e",
+    "src/baram/loop/state.py": "f9d9a238fe02791d26d4c1e427b3b7c2986e949c7804802b503adbb970e1341e"
+  },
+  "final_loop_sha256": {
+    "src/baram/loop/__init__.py": "0b75005cdab25ddfdf347cd364915bcd86bb03b63249aa5446a7c472231ea8f5",
+    "src/baram/loop/evaluation.py": "dcb05aab6bc595bc297df9680075f055a568d192bb51a73f82b6f7737df02a82",
+    "src/baram/loop/graph.py": "2cc7df3fd31bd10b9910059106e4e282b81854472537c21ef44758ce567e62f6",
+    "src/baram/loop/graph_staged.py": "eb6a83f12854bd9325f93e9bcd767434e7bb964e4bcc065cac3d2181fe4fe31b",
+    "src/baram/loop/ontology.py": "16f8afdbdfd46f2d58c84a0486d157a4d8d08edac76b5f74c5167ffd76f8162a",
+    "src/baram/loop/registry.py": "a3911db859dc0c04f86c6c0a308d4ba98ffee4807677b99447cb74691cec7c4e",
+    "src/baram/loop/research.py": "b8085f28c9a444eeeb4f6ac2c202f31758e2587d9c422870b275767be11416d7",
+    "src/baram/loop/router.py": "80e37561a32fb2928d1a7505b652bb822f5b6989e73b6d7106afb0ae62041b43",
+    "src/baram/loop/stages.py": "d7cdbe242330deb00a3021dcd5e7dac3fb137419fc2544da65dab96aa28403ab",
+    "src/baram/loop/state.py": "f9d9a238fe02791d26d4c1e427b3b7c2986e949c7804802b503adbb970e1341e"
+  },
+  "test_sha256": {
+    "tests/loop/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tests/loop/test_evaluation_contract.py": "72b05efc9c276fc1307893a372f80b240e1a1db3363e84571a616809be38bb13",
+    "tests/loop/test_graph_contract.py": "ba3cc3015d108210ab84d84e5dfe0fb54a338e133ea6dc48b335c391acf0e00a",
+    "tests/loop/test_registry.py": "558b1bd0fc5f1caf4db0199e9b8fd06b30a0102df213e318196e8fcdec3b06bc",
+    "tests/loop/test_research_contract.py": "1308cda0934b81e6d7e02397b07b9621557c6a5a13ca190e6013754c9cb38195",
+    "tests/loop/test_router.py": "9a17695feed266c2c4d5e263373bba7b76e539ce02a1193983a6ac318f934c6f",
+    "tests/loop/test_stages.py": "b70d0d7a3c9cc7878ab57e79fb9cadc778c316546699aeee2d46d72459968dab"
+  },
+  "evidence_integrated": [
+    {
+      "path": "research/rwa_local_audit.md",
+      "sha256": "a497c3a6f4725b24dfd724e7869957a9dfff4029902e3a8d249b2dd146cfe500",
+      "role": "direct local audit"
+    },
+    {
+      "path": "research/rwa_loop_research.md",
+      "sha256": "80ea3a3ee6e34cffb5892bcf412ee4981a4368cf7d3c4218763e06e20b66a811",
+      "role": "near-match workflow guidance; no direct BARAM performance claim"
+    }
+  ],
+  "checks": {
+    "V1_only_direct_support_executes": true,
+    "V2_contradiction_revision_no_execution": true,
+    "V3_S1_S11_explicit_dependency_chain": true,
+    "V4_blocked_spec_not_dispatched": true,
+    "V5_missing_runner_preserves_candidate": true,
+    "V6_empty_evidence_not_auto_complete": true,
+    "V7_below_target_never_success_deliver": true,
+    "V8_score_evidence_contract_enforced": true,
+    "V9_deterministic_stage_and_spec_reopen": true,
+    "V10_registry_atomic_deterministic_no_overwrite": true,
+    "V11_targeted_and_full_tests": {
+      "targeted": "26 passed",
+      "full": "182 passed, 144 warnings"
+    },
+    "V12_ruff": "All checks passed on src tests"
+  },
+  "functional_tests": [
+    "no runner halts EXECUTION_REQUIRED and candidate stays candidate",
+    "only best_score >= target delivers",
+    "all stages done below target halts TARGET_NOT_REACHED",
+    "contradiction emits zero node and halts REVISION_REQUIRED"
+  ],
+  "actions": {
+    "model_fits": 0,
+    "official_score_calls": 0,
+    "lockbox_2024_access": false,
+    "dacon_actions": [],
+    "dependency_changes": false,
+    "external_data_actions": false
+  },
+  "narrow_verdict": "PASS_LOOP_CONTRACT_V1_NOT_MODEL_SCORE_NOT_FULL_LEDGER",
+  "remaining_workflow_defects": [
+    "no typed append-only CycleEnvelope/event store as sole writer",
+    "88 legacy cycle IDs not yet tombstoned/accounted separately from evidence completeness",
+    "comparison index and stage coverage not yet derived from one authoritative event log",
+    "legacy m271 app/router v2-v3 adapter mismatch remains outside this repaired package",
+    "no model candidate selected or scored by this node"
+  ],
+  "next_node": "S17-N2_EVENT_LEDGER_ENVELOPE"
+}

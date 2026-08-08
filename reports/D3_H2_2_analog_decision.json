@@ -1,0 +1,22 @@
+{
+ "node": "D3_H2_2",
+ "stage": "D3",
+ "base": [
+  0.6057596789867304,
+  0.8609327070961099,
+  0.35058665087735097
+ ],
+ "best": {
+  "T": 1.0,
+  "G": 4.0,
+  "total": 0.5811404315560438,
+  "nmae": 0.8596471725135577,
+  "ficr": 0.3026336905985299
+ },
+ "local_gain": -0.024619247430686664,
+ "predicted_online": 0.6022594315560438,
+ "verdict": "NO_GAIN",
+ "origin": "research://Browell-2020-EEM20 [near_match_only] via D3_H2_1",
+ "model_fits": 0,
+ "dacon_upload": false
+}

@@ -1,0 +1,50 @@
+{
+ "screen": "PASS",
+ "n_pass": 21,
+ "passed_cols": [
+  "fr__N_low",
+  "fr__N2_low",
+  "fr__dpdx",
+  "fr__dpdy",
+  "fr__grp__ualong_50",
+  "fr__grp__crossfrac_50",
+  "fr__grp__hhat_real",
+  "fr__grp__hhat_model",
+  "fr__grp__dhhat",
+  "fr__grp__froude",
+  "fr__grp__scorer",
+  "fr__grp__dividing_streamline",
+  "fr__grp__blocked",
+  "fr__grp__wave_window",
+  "fr__grp__ualong_g100",
+  "fr__grp__crossfrac_g100",
+  "fr__grp__ucross_850",
+  "fr__grp__ualong_850",
+  "fr__grp__crossfrac_850",
+  "fr__grp__dp_cross",
+  "fr__grp__wake_shadow"
+ ],
+ "scores": {
+  "BASE": {
+   "one_minus_nmae": 0.8659455736110439,
+   "ficr": 0.34019011346133343,
+   "total": 0.6030678435361887,
+   "group_nmae": {
+    "1": 0.13123983158670244,
+    "2": 0.12508558560365995,
+    "3": 0.14583786197650594
+   }
+  },
+  "FLOW": {
+   "one_minus_nmae": 0.865305801242458,
+   "ficr": 0.33672890133744104,
+   "total": 0.6010173512899495,
+   "group_nmae": {
+    "1": 0.13169985513868737,
+    "2": 0.12572049504866184,
+    "3": 0.14666224608527664
+   }
+  }
+ },
+ "delta_1mnmae": -0.0006397723685858114
+}

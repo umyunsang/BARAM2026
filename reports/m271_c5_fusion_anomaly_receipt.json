@@ -1,0 +1,197 @@
+{
+  "node_id": "C1N80_FUSION_ANOMALY",
+  "lane": "L3",
+  "parent": "C1N77_PER_SOURCE_STACK",
+  "triggered_by": "라우터 C5 (anomaly)",
+  "gate_version": "M270_MONTHLY_GATE_v1_frozen_2026-08-04",
+  "research": {
+    "performed_at": "2026-08-06",
+    "trigger": "라우터 C5 (부호 역전, voi=0.40 으로 표 최고)",
+    "kind": "anomaly",
+    "lane": "L3",
+    "sources": [
+      {
+        "url": "https://dl.acm.org/doi/pdf/10.1145/3589335.3652504",
+        "class": "peer_reviewed",
+        "finding": "모드 간 상관이 클 때 early fusion 우월. 따로 학습하면 피처 간 의존성이 소실된다",
+        "applicability": "directly_supported"
+      },
+      {
+        "url": "https://www.nature.com/articles/s41698-025-00917-6",
+        "class": "peer_reviewed",
+        "finding": "과적합 위험이 높은 상황에서는 late fusion 과 단순 피처선택이 적합",
+        "applicability": "near_match_only"
+      }
+    ],
+    "decision_impact": "공유 피처를 두 팔에 모두 주어 정보량을 맞추고 융합 시점만 비교"
+  },
+  "retracts": {
+    "node": "C1N77_PER_SOURCE_STACK",
+    "verdict": "FRONT_END_FUSION_IS_NOT_THE_BOTTLENECK",
+    "why": "V2 가 '서로소 분할' 을 요구해 교차·불일치 피처 20 개를 양쪽에서 버렸다. POOLED 101 vs STACK 팔 합계 88 이라 융합 시점이 아니라 정보량을 쟀다."
+  },
+  "model_fits": 9,
+  "feature_split": {
+    "gfs": 44,
+    "ldaps": 34,
+    "shared": 9
+  },
+  "arm_feature_counts": {
+    "pooled": 101,
+    "gfs_plus": 67,
+    "ldaps_plus": 57
+  },
+  "arms": {
+    "pooled": {
+      "total": 0.6040430448136019,
+      "one_minus_nmae": 0.8568696301481719,
+      "ficr": 0.35121645947903196,
+      "group_ficr": {
+        "1": 0.34477162605325284,
+        "2": 0.41264102315652224,
+        "3": 0.29623672922732086
+      },
+      "group_nmae": {
+        "1": 0.136457009791002,
+        "2": 0.13493981052083334,
+        "3": 0.1579942892436492
+      }
+    },
+    "gfs_plus": {
+      "total": 0.5997998628240355,
+      "one_minus_nmae": 0.8567335154813172,
+      "ficr": 0.3428662101667539,
+      "group_ficr": {
+        "1": 0.3351923431423894,
+        "2": 0.4037730903632462,
+        "3": 0.28963319699462614
+      },
+      "group_nmae": {
+        "1": 0.13674702747722756,
+        "2": 0.13566097422453702,
+        "3": 0.1573914518542838
+      }
+    },
+    "ldaps_plus": {
+      "total": 0.6022366246166653,
+      "one_minus_nmae": 0.8567584263648578,
+      "ficr": 0.3477148228684728,
+      "group_ficr": {
+        "1": 0.3438319389294481,
+        "2": 0.41257329133072623,
+        "3": 0.28673923834524406
+      },
+      "group_nmae": {
+        "1": 0.13675229425024274,
+        "2": 0.13534132221064815,
+        "3": 0.15763110444453562
+      }
+    },
+    "stack_fair": {
+      "total": 0.6015629861184466,
+      "one_minus_nmae": 0.857197443006811,
+      "ficr": 0.3459285292300822,
+      "group_ficr": {
+        "1": 0.3439456955833095,
+        "2": 0.4054298479530491,
+        "3": 0.2884100441538881
+      },
+      "group_nmae": {
+        "1": 0.13562561634762102,
+        "2": 0.13559916725694443,
+        "3": 0.1571828873750017
+      }
+    }
+  },
+  "chosen": {
+    "pooled": {
+      "dev-2023-Q2": {
+        "temperature": 2.2,
+        "weight": null
+      },
+      "dev-2023-Q3": {
+        "temperature": 2.2,
+        "weight": null
+      },
+      "dev-2023-Q4": {
+        "temperature": 2.2,
+        "weight": null
+      }
+    },
+    "gfs_plus": {
+      "dev-2023-Q2": {
+        "temperature": 2.2,
+        "weight": null
+      },
+      "dev-2023-Q3": {
+        "temperature": 2.2,
+        "weight": null
+      },
+      "dev-2023-Q4": {
+        "temperature": 2.2,
+        "weight": null
+      }
+    },
+    "ldaps_plus": {
+      "dev-2023-Q2": {
+        "temperature": 2.2,
+        "weight": null
+      },
+      "dev-2023-Q3": {
+        "temperature": 2.2,
+        "weight": null
+      },
+      "dev-2023-Q4": {
+        "temperature": 2.2,
+        "weight": null
+      }
+    },
+    "stack_fair": {
+      "dev-2023-Q2": {
+        "temperature": 2.2,
+        "weight": 0.0
+      },
+      "dev-2023-Q3": {
+        "temperature": 2.2,
+        "weight": 0.4
+      },
+      "dev-2023-Q4": {
+        "temperature": 2.2,
+        "weight": 0.4
+      }
+    }
+  },
+  "probability_rho": 0.9153459309052993,
+  "probability_rho_c77_lean": 0.8549664000662993,
+  "checks": {
+    "V1_pooled_reproduces": true,
+    "V2_union_equals_pooled": true,
+    "V3_arms_smaller_than_pooled": true
+  },
+  "hypotheses": {
+    "H1_late_fusion_wins_at_equal_info": false,
+    "H2_stack_beats_best_single": false,
+    "H3_rho_higher_than_lean_split": true,
+    "H4_shared_features_carried_information": false
+  },
+  "gate": {
+    "signature": "[---O]",
+    "flags": {
+      "G1": false,
+      "G2": false,
+      "G3": false,
+      "G4": true
+    },
+    "positive_months": 1,
+    "months_scored": 9,
+    "bootstrap_q05": -0.006357631213756349
+  },
+  "verdict": "EARLY_FUSION_WINS_MECHANISM_UNCONFIRMED",
+  "dacon_upload": false,
+  "external_actions": [
+    "WebSearch"
+  ],
+  "lockbox_used": false,
+  "generated_at": "2026-08-05T16:40:49.920561+00:00",
+  "digest": "6bf1d9de50452e3c"
+}

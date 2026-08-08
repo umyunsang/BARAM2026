@@ -1,0 +1,79 @@
+{
+ "node": "N502_G3_SELECTION",
+ "gate_version": "M270_MONTHLY_GATE_v1_frozen_2026-08-04",
+ "v1_reproduction": true,
+ "deployed_total": 0.628337,
+ "results": {
+  "A_all3": [
+   0.6280801997237008,
+   0.8565814621416383,
+   0.39957893730576327
+  ],
+  "B_g12": [
+   0.6283967086340299,
+   0.8555465000619691,
+   0.40124691720609057
+  ]
+ },
+ "gain": 0.000316508910329083,
+ "threshold": 0.001013,
+ "foldwise": {
+  "A_all3": {
+   "dev-2023-Q2": 0.633554283402306,
+   "dev-2023-Q3": 0.5975078708975153,
+   "dev-2023-Q4": 0.6366233494787807
+  },
+  "B_g12": {
+   "dev-2023-Q2": 0.6350366166402033,
+   "dev-2023-Q3": 0.5970606125284317,
+   "dev-2023-Q4": 0.6366233494787807
+  }
+ },
+ "policies": {
+  "A_all3": {
+   "dev-2023-Q2": [
+    0.6,
+    0.2
+   ],
+   "dev-2023-Q3": [
+    0.5,
+    0.2
+   ],
+   "dev-2023-Q4": [
+    0.5,
+    0.2
+   ]
+  },
+  "B_g12": {
+   "dev-2023-Q2": [
+    0.5,
+    1.0
+   ],
+   "dev-2023-Q3": [
+    0.5,
+    1.0
+   ],
+   "dev-2023-Q4": [
+    0.5,
+    0.2
+   ]
+  }
+ },
+ "gate": {
+  "G1 sign-test p <= 0.1 (p=0.9805, 2/9)": false,
+  "G2 median delta > 0 (median=+0.000000)": false,
+  "G3 bootstrap q05 > 0 (q05=-0.001277)": false,
+  "G4 worst month >= -0.010 (worst=-0.005448)": true
+ },
+ "hypotheses": {
+  "H1": true,
+  "H2": false,
+  "H3": false,
+  "H4": false
+ },
+ "verdict": "G3_EXCLUSION_DOES_NOT_HELP",
+ "model_fits": 0,
+ "lockbox_reopened": false,
+ "dacon_upload": false,
+ "external_actions": []
+}

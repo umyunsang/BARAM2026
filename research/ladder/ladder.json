@@ -1,0 +1,292 @@
+{
+ "created": "2026-08-07",
+ "reconciled": "2026-08-07T21:30+09:00",
+ "authoritative_live_state": "research/nodes/registry.json — this file (ladder.json) is a periodic narrative snapshot/index and can lag behind it (it did: this file was 6h stale when read at 11:xx, missing that S5-S8/S10 had already closed and S9/S11 were the real frontier). For node-level detail, read registry.json directly; this file tracks stage-level status and points there rather than duplicating node arrays, to stop the two files silently diverging again.",
+ "premise_correction": "SESSION_FINAL_2026-08-06 declared the axis closed on the claim that the bottleneck is output dispersion at fixed wind speed. Falsified 2026-08-07: a leakage-free cross-group measured-wind oracle scores 0.782630 and a zero-parameter physics map scores 0.869922 on the same local protocol. The binding constraint is NWP -> hub-height wind. (Mirrors registry.json S3_데이터정밀분석 node S3-E, verdict OVERTURNED.)",
+ "local_protocol": "pooled dev-2023 Q2+Q3+Q4, official metric once, single policy (verified: M102_TOP100 T0.5_G1.5 = 0.6298962296336882)",
+ "target": 0.66,
+ "current_best_local_fold_outside": 0.636184,
+ "remaining_gap": 0.023816,
+ "stages": [
+  {
+   "id": "S1",
+   "name": "예측문제의 목적 파악",
+   "status": "DONE",
+   "evidence": [
+    "Total = 0.5*(1-NMAE) + 0.5*FICR; FICR is an actual-weighted step reward with a +-6%/+-8% band",
+    "deployed prediction is an ACTION maximising expected settlement, not a conditional mean"
+   ]
+  },
+  {
+   "id": "S2",
+   "name": "데이터 특성",
+   "status": "DONE",
+   "evidence": [
+    "group1=VESTAS 1-6, group2=VESTAS 7-12, group3=UNISON 1-5 (info.xlsx)",
+    "VESTAS power columns are time-scrambled (corr vs own ws = 0.02) -> unusable",
+    "VESTAS ws/wd valid (hourly mean vs label g1 corr 0.9273)",
+    "UNISON power valid; 10-min SUM reproduces the hourly label (corr 0.9966, MAE 294 kWh)",
+    "each target hour has exactly ONE forecast (no lagged-ensemble available)"
+   ]
+  },
+  {
+   "id": "S3",
+   "name": "데이터 정밀분석",
+   "status": "DONE",
+   "evidence": [
+    "clean cross-group oracle 0.782630; leaky own-group oracle 0.876846 (leak = +0.094)",
+    "fitted power curve per group; physics-only pc*cap = 0.869922, MAE(cf) 0.0365-0.0420",
+    "inter-group measured wind RMSE 0.78-1.16 m/s",
+    "NWP -> measured wind RMSE 1.49-1.78 m/s; NWP -> pc MAE(cf) 0.089-0.132",
+    "S3-E OVERTURNED the prior 'output dispersion' closure claim -- see premise_correction"
+   ]
+  },
+  {
+   "id": "S4",
+   "name": "평가지표의 이해",
+   "status": "DONE",
+   "evidence": [
+    "local protocol reproduced bit-exactly",
+    "FICR loss is concentrated at capacity factor 0.4-0.8 (0.33 of 0.59 total loss); hit4 only 0.17-0.24 there",
+    "deployed model is biased +0.126 at cf 0.1-0.2 and -0.099 at cf 0.9-1.0"
+   ]
+  },
+  {
+   "id": "S5",
+   "name": "데이터 전처리",
+   "status": "DONE",
+   "note": "accepted: availability gate 0.05 + measured soft cap + production weighting, foldout_delta +0.011612 (registry.json accepted_gain_ledger). Node-level detail: registry.json S5_데이터전처리.",
+   "ceiling_from_research": {
+    "physics_teacher_dev2023": 0.868891,
+    "irrecoverable_availability_cost": 0.046908,
+    "note": "S5 단독으로 0.66 도달 불가 — 필요조건"
+   }
+  },
+  {
+   "id": "S6",
+   "name": "피처 구성",
+   "status": "CLOSED",
+   "note": "G2 grid encoding accepted (screening_delta +0.001713); rest of block-set candidates rejected/duplicated. Detail: registry.json S6_피처구성."
+  },
+  {
+   "id": "S7",
+   "name": "모델링 방법",
+   "status": "CLOSED",
+   "note": "T/gamma grid extension, cf>=0.10 argmax conditioning (0-dof metric-alignment fix), non-GBDT ensemble members all accepted. Detail: registry.json S7_모델링, accepted_gain_ledger.",
+   "defect_fixed_this_session": "DEF-1 -- see defects_found below. All S7 node scores recorded before 2026-08-07T12:4x KST (this session's DEF-1 fix) were measured with an inert decision-layer temperature parameter; they were not re-derived this session."
+  },
+  {
+   "id": "S8",
+   "name": "검증 전략 및 예측 성능평가",
+   "status": "APPLIED",
+   "note": "Detail: registry.json S8_검증전략."
+  },
+  {
+   "id": "S9",
+   "name": "문제 해결 접근 방식(워크플로우)",
+   "status": "IN_PROGRESS",
+   "research": "research/lanes/S6_ext_C_repr.md §C4 (objective/step-loss axis) -- exhaustive representation-learning SOTA survey, closes DL/foundation-model/embedding candidates as inapplicable, recommends O1 > R1 > O3 > R2 in priority order.",
+   "nodes": [
+    {
+     "id": "S9-N0",
+     "name": "control: harness DEFAULT (plain L2 teacher objective) through the DEF-1-fixed decision layer",
+     "dof": 0,
+     "status": "MEASURED",
+     "result": {
+      "best": 0.57879,
+      "best_policy": "T1.0_G2.0",
+      "one_minus_nmae": 0.852014,
+      "ficr": 0.305567,
+      "raw_point": 0.600091
+     },
+     "note": "Unaugmented harness baseline (no S5/S6/S7 accepted overrides stacked in) -- NOT comparable to current_best_local_fold_outside=0.636184. Purely a same-conditions reference for S9-N1/S9-N2's isolated deltas."
+    },
+    {
+     "id": "S9-N1",
+     "name": "O1: epsilon-insensitive (band) loss as custom LightGBM objective, eps=0.06 fixed a priori (0 dof)",
+     "dof": 0,
+     "status": "MEASURED",
+     "result": {
+      "best": 0.563012,
+      "best_policy": "T1.0_G2.0",
+      "one_minus_nmae": 0.844875,
+      "ficr": 0.28115,
+      "raw_point": 0.5886
+     },
+     "isolated_foldout_delta_vs_S9-N0": -0.015778,
+     "verdict": "REJECT",
+     "note": "Contradicts the theoretical prediction (expected: NMAE worse, FICR better). Measured: BOTH point accuracy (raw_point -0.011491) and FICR (-0.024417) got worse. Zero-gradient region inside the band likely starves the teacher of signal for the majority of well-predicted rows, degrading pc_hat itself and everything downstream (calibration + decision samples)."
+    },
+    {
+     "id": "S9-N2",
+     "name": "O3 zero-free-parameter check: is the metric-derived gamma*=1.0 decision point close to the empirical (T,G)-tuned optimum?",
+     "dof": 0,
+     "status": "MEASURED",
+     "derivation": "Total's per-row objective decomposes to argmax[-err(a) + fi(a)] with NO free trade-off weight once fi is normalised by 4*mean_gen (which harness.py already does) -- i.e. gamma*=1.0 is metric-exact, not tuned. This is exactly the T1.0_G1.0 grid point harness.py already scores on every run.",
+     "result": {
+      "S9-N0_control": {
+       "T1.0_G1.0": 0.5780023,
+       "empirical_best_T1.0_G2.0": 0.5787903,
+       "tax": 0.000788
+      },
+      "S9-N1_O1": {
+       "T1.0_G1.0": 0.5618103,
+       "empirical_best_T1.0_G2.0": 0.5630124,
+       "tax": 0.0012021
+      }
+     },
+     "verdict": "PARTIALLY_CONFIRMS",
+     "note": "The metric-derived zero-parameter point is close to optimal (within 0.0008-0.0012 of the empirical corner-max in both runs) -- the theoretical claim is largely validated; the residual empirical-tuning gain is small but nonzero and consistently favors G=2.0 (grid corner), echoing the earlier M276 DECISION_TEMPERATURE_IS_CALIBRATION finding. Separately notable: T=1.0 (mildest density-weighting, least sharpened) wins in both runs even after the DEF-1 fix made T non-inert -- sharpening (T<1) does not help within the tested grid."
+    },
+    {
+     "id": "S9-N3",
+     "name": "R2: PCA of the raw 914-column NWP grid, 70 variable-type groups, K=3 components/group fixed a priori, basis fit on TRAIN rows only, injected into harness.py's cache (research/nodes/s9_n3_grid_pca.py)",
+     "dof": 0,
+     "status": "MEASURED",
+     "result": {
+      "best": 0.580139,
+      "best_policy": "T1.0_G2.0",
+      "one_minus_nmae": 0.852106,
+      "ficr": 0.308171,
+      "raw_point": 0.600899
+     },
+     "isolated_screening_delta_vs_S9-N0": 0.001349,
+     "foldoutside_check": {
+      "script": "research/nodes/s9_n3_foldoutside.py -- 3-fold expanding window, policy chosen on the other two folds, applied to held-out fold",
+      "control": 0.578942,
+      "pca_r2": 0.57784,
+      "delta": -0.001102,
+      "note": "Control barely moves between protocols (0.578790 -> 0.578942); PCA drops sharply (0.580139 -> 0.577840). The screening gain was not real."
+     },
+     "verdict": "REJECT (fold-outside)",
+     "note": "Screening showed a small gain (+0.001349, mostly FICR), matching the source write-up's own 'low, indirect' expectation -- but it reversed to -0.001102 under this project's stricter 3-fold fold-outside gate. Reproduces this repo's own documented pattern of screening-positive multi-dof results collapsing under fold-outside testing. Closed; not promoted to accepted_gain_ledger."
+    },
+    {
+     "id": "S9-N4",
+     "name": "representation axis reopened per user instruction: terrain lane candidate B (upstream_projection, research/lanes/S6_ext_B_terrain.md sec B4) -- Gaussian-kernel-weighted upwind grid speed per turbine-group centroid (info.xlsx via src/baram/data/turbines.py), L=3km/sigma=2km fixed a priori, 0 fitted dof, purely deterministic (no per-fold refit needed at all, unlike PCA)",
+     "dof": 0,
+     "status": "MEASURED",
+     "result": {
+      "best": 0.581477,
+      "best_policy": "T1.0_G2.0",
+      "one_minus_nmae": 0.85259,
+      "ficr": 0.310364,
+      "raw_point": 0.604713
+     },
+     "isolated_screening_delta_vs_S9-N0": 0.002687,
+     "foldoutside_check": {
+      "script": "research/nodes/s9_n4_foldoutside.py",
+      "control": 0.578942,
+      "upwind_b": 0.578403,
+      "delta": -0.000539,
+      "note": "Control and upwind_b pick the IDENTICAL (T,G) policy on all 3 folds -- the screening inflation was the teacher model reading non-transferable signal from the screening window, not a decision-layer artifact."
+     },
+     "verdict": "REJECT (fold-outside)",
+     "note": "Larger screening gain than S9-N3 (+0.002687, including raw_point +0.004622 -- real point-accuracy movement, not just FICR), but it also fully reversed under fold-outside (-0.000539). Second consecutive S9 candidate to show this exact pattern."
+    },
+    {
+     "id": "S9-N5",
+     "name": "terrain lane candidate F (pbl_regime), TRIMMED after audit found z/zi and above_pbl already exist as featbuild.py::add_atm()'s atm__blh_norm/atm__blh_below_hub (always in the default baseline). Implemented instead: veer10_100_k (GFS 100m-vs-10m wind direction shear, 9 grid cells) and jet_below_100_k (u100<u80 flag, 9 grid cells) -- genuinely new, direction-based, not covered by any existing atm__ feature (all of which are speed-only)",
+     "dof": 0,
+     "status": "MEASURED",
+     "result": {
+      "best": 0.580621,
+      "best_policy": "T1.0_G2.0",
+      "one_minus_nmae": 0.852404,
+      "ficr": 0.308839,
+      "raw_point": 0.601466
+     },
+     "isolated_screening_delta_vs_S9-N0": 0.001831,
+     "foldoutside_check": {
+      "script": "research/nodes/s9_n5_foldoutside.py",
+      "control": 0.578942,
+      "veer_f": 0.578631,
+      "delta": -0.000311,
+      "note": "Control and veer_f again pick identical (T,G) policies on all 3 folds."
+     },
+     "verdict": "REJECT (fold-outside)",
+     "note": "Screening +0.001831 (raw_point/1-NMAE/FICR all improved) reversed to -0.000311 under fold-outside. THIRD consecutive S9 candidate (S9-N3, S9-N4, S9-N5) to show this exact pattern."
+    },
+    {
+     "id": "S9-N6",
+     "name": "terrain lane candidate E (rews_geom) -- rotor-equivalent wind speed, two-source (LDAPS 10/50m, GFS 80/100m) log-law profile, area-weighted over each GROUP's actual rotor swept-height range (g1/g2 vs g3 differ by ~5m only -- pre-registered concern: rews_ratio nearly constant (std 0.0002) and g1/g2 vs g3 REWS correlate 0.9999999 in a pre-run check, so weak signal was expected",
+     "dof": 0,
+     "status": "MEASURED",
+     "result": {
+      "best": 0.579418,
+      "best_policy": "T1.0_G2.0",
+      "one_minus_nmae": 0.852567,
+      "ficr": 0.306269,
+      "raw_point": 0.602013
+     },
+     "isolated_screening_delta_vs_S9-N0": 0.000628,
+     "foldoutside_check": {
+      "script": "research/nodes/s9_n6_foldoutside.py",
+      "control": 0.578942,
+      "rews_e": 0.580879,
+      "delta": 0.001937,
+      "note": "Control and rews_e pick DIFFERENT policies on fold Q2 (T1.0_G0.0 vs T1.0_G2.0). Gain is almost entirely FICR (+0.003862); 1-NMAE flat (+0.000013)."
+     },
+     "verdict": "ACCEPT (fold-outside, provisional)",
+     "note": "Weakest screening signal of the 4 candidates this session (+0.000628, matching the pre-registered weak-signal expectation) but the ONLY one whose fold-outside result held -- and grew (+0.001937), breaking the 3-in-a-row reversal pattern from S9-N3/N4/N5. 'Provisional' because it rests on a single fold-outside run and the underlying mechanism was itself flagged as likely weak; still, by this project's own admissibility bar (fold-outside gate passed, policy/protocol/row-key all stated), it qualifies as evidence and was added to registry.json.accepted_gain_ledger.",
+     "stack_check_on_G2": "research/nodes/s9_n6_stack_g2.py, four-way fold-outside comparison at the harness-BASELINE level (not the real D architecture): control=0.578942, G2-only=0.578130, REWS-only(no G2)=0.580879, G2+REWS=0.579012. Looked like G2 was a net drag (control vs G2-only -0.000812). RETRACTED after retesting on the true architecture -- see g2_retest_on_true_architecture below, which reverses this.",
+     "g2_retest_on_true_architecture": "research/nodes/s9_n13_true_d_no_g2.py: retested the 'drop G2' lead on the TRUE, verified D architecture (s7_more.py's DART classifier). D_NOG2 solo=0.626160 (tiny +0.000491 over D_REPRO's 0.625669, confirming the harness-level direction), but DEPAVG+D_NOG2=0.631367 vs DEPAVG+D_REPRO(=current_best)=0.636184 -- a LARGE blend regression (-0.004817). G2 apparently contributes ensemble DIVERSITY against DEPAVG that outweighs its tiny solo accuracy cost. CONCLUSION: G2 stays; the earlier 'drop G2' lead is RETRACTED -- it was measured on solo/isolated accuracy without checking blend value, and blend value is what actually matters for current_best. Do not act on solo-accuracy deltas as a proxy for blend value without checking both, per this project's own repeated finding that member diversity and member accuracy are different axes.",
+     "direct_test_vs_current_best": "research/nodes/s9_n7_rews_vs_current_best.py: built a from-scratch harness-default (no G2, with REWS) member through the full 3-fold fold-outside protocol, blended with the same DEPAVG as current_best using the identical 1-dof fold-outside procedure. Result: DEPAVG+REWS_MEMBER = 0.632592, vs current_best 0.636184 (delta -0.003592) -- blend weight on REWS_MEMBER was 0.0 on all 3 folds. NOT a rebuttal of REWS: the from-scratch member lacks S5 preprocessing entirely (this project's single largest accepted gain, foldout_delta +0.011612), so its solo score (0.580879) is far below D's solo score (0.625651) for a reason unrelated to REWS. The correctly-posed test -- REWS added to a member WITH S5 preprocessing -- remains undone; needs the D-generating script (missing from repo) or a from-scratch S5 reproduction. Genuine open lead, not closed.",
+     "s5_reconstruction_attempt": "research/nodes/s9_n8_s5_plus_rews.py: reconstructed S5's teacher_weight/calib_rows/soft_cap from constants surviving in s7_savemembers.py and s10_final3.py, ran S5_only/S5_G2/S5_REWS/S5_G2_REWS through the full protocol. ALL 4 underperformed current_best (-0.0045 to -0.0056), but S5_only's own solo score (0.609699) also falls far short of the real D member's solo score (0.625651) -- the reconstruction is KNOWN-INCOMPLETE, not a real measurement of REWS/G2 value on the true stack. A v2 attempt adding conditional_sigma=False/n_quantile=81 was killed mid-run; partial results (~0.6104 solo) still fell similarly short, so the gap isn't fully explained by those two params. INCONCLUSIVE -- do not cite these deltas as REWS's or G2's true value.",
+     "residual_correction_attempt": "research/nodes/s9_n9_rews_residual_correction.py: sidestepped the reconstruction problem entirely by reproducing D's ACTUAL saved prediction (ported s10_final3.py's member() function verbatim from the saved S7-N8_D_keys/prob files) instead of re-deriving it. Reproduction verified essentially exact: solo 0.625669 vs recorded 0.625651, DEPAVG+D(reproduced)=0.636184 matches current_best to 6 decimals -- this reconstruction methodology IS sound. Then fit a per-fold LightGBM L2 regressor on REWS -> (actual - D_prediction) residual, fold-outside. Result: CLEAR NEGATIVE (solo -0.054776, DEPAVG blend -0.004059 vs current_best). Identified cause, not just 'REWS fails': D's prediction is a settlement-optimal ACTION under a step reward, not a conditional mean (this project's standing finding) -- plain L2 residual correction is the wrong objective for that target, so the collapse is consistent with fitting noise rather than REWS lacking information. Closes the plain-L2-residual-correction approach; does not resolve REWS's true value on the real stack.",
+     "regime_policy_attempt": "research/nodes/s9_n10_rews_regime_policy.py: decision-theoretically consistent follow-up -- split rows into REWS-ratio terciles PER GROUP (fixed a-priori boundaries) and pick a separate fold-outside (T,G) policy per (group,regime) cell. FIRST RUN HAD A BUG (calling official_total on single-group subsets silently NaN-corrupted the 3-group average -- caught because the n_regimes=1 sanity check returned 0.618830 instead of D's true ~0.6257); the originally-reported -0.001171 delta was WRONG and is retracted. Fixed with group_partial_objective (reproduces official_total's per-group inner loop directly). CORRECTED result: DEPAVG+D_REGIME(2 or 3) = 0.635652, delta -0.000532 vs current_best -- closest of any attempt, but both the group-split step and the REWS-regime step are individually slightly negative in isolation, so this is a NULL result for REWS, not 'nearly there' -- the number improved only because the bug stopped corrupting it, not because REWS started helping. This attack line is reasonably exhausted; see registry.json for full detail.",
+     "dart_reconstruction_attempt": "research/nodes/s9_n11_dart_s5_rews.py: guessed DART applies to the regression teacher -- WRONG HALF of the pipeline (see true_reconstruction below). Result solo=0.602158/0.605075, worse than several non-DART attempts. Superseded.",
+     "true_reconstruction_and_final_verdict": "research/nodes/s9_n12_true_d_plus_rews.py: FOUND THE ACTUAL D-GENERATING SCRIPT via mtime correlation -- research/nodes/s7_more.py (docstring: 'more diverse members: DART boosting, ExtraTrees, a second MLP', MEMS=['D','X','M2']), not s7_savemembers.py (which every prior attempt modeled itself on and only builds P/L/G/Q -- a red herring for D). TRUE architecture: plain GBDT regressor -> pc_hat -> top-150 features by importance + pc_hat + group one-hot -> cf discretized into 26 classes -> a DART-boosted MULTICLASS CLASSIFIER (not a regressor+quantile-table like harness.py, which every S9-N7..N11 attempt wrongly assumed) -> predict_proba -> s10_final3.py's (T,G) policy grid. Exact reproduction verified: D_REPRO solo=0.625669 (matches recorded value exactly), DEPAVG+D_REPRO=0.636184 (matches current_best to 6 decimals) -- fully validated baseline. Added REWS to this TRUE architecture: solo -0.001904, DEPAVG blend -0.003271 vs current_best. DEFINITIVE NEGATIVE -- on the correct, verified architecture, REWS makes things worse, not better. Across all 8 integration attempts this session, none beat current_best; this final one is authoritative. REWS's isolated screening/fold-outside gain (S9-N6, measured against a much weaker unaugmented baseline) does not transfer to the real best model -- it's redundant with or conflicts with what the DART classifier already extracts. Close this line of work; do not pursue REWS further as a path to 0.66.",
+     "full_pool_blend_resweep": "research/nodes/s9_n14_full_pool_blend.py: cheap re-check (no retraining) re-scoring every saved member probability array (15 total: P,L,G,Q,D,M,X,M2,R,R1,R2,LV,S1,W2,XG) via s10_final3.py's exact member() policy selection, then every 1-dof DEPAVG blend and the top-5 solo members' pairwise 2-dof combos. Result: DEPAVG+D=0.636184 (==current_best) remains the best 1-dof blend by a clear margin (next best DEPAVG+M=0.635802); best 2-dof (DEPAVG+LV+D) is identical to 1-dof (fold-outside gate drives LV's weight to ~0). NULL but valuable: confirms no unexploited improvement is sitting in the existing member pool, including members (X, M2, R/R1/R2/LV/S1/W2/XG) that postdate the original DEPAVG+D selection. Closes the 'recombine existing assets' angle -- further gain needs a genuinely new member or structural change."
+    }
+   ],
+   "candidate_list_status": "4 candidates from the reopened terrain/representation axis tested: S9-N4 (upwind_projection) REJECT, S9-N5 (veer/jet) REJECT, S9-N6 (rews_geom) ACCEPT (provisional, +0.001937 fold-outside). Combined with S9's original C6 list (O1 REJECT, R1 already-accepted, O3 no new gain, R2 REJECT), this session's net new accepted gain is +0.001937 (S9-N6 alone), isolated against the unaugmented control -- NOT yet stacked into current_best (0.636184). Does not close S9 as a stage.",
+   "meta_note_screening_protocol": "Four S9 candidates tested against the same isolated control this session. THREE (S9-N3, S9-N4, S9-N5) showed real screening-positive results that fully reversed under fold-outside. The FOURTH (S9-N6) had the weakest screening signal of the four and was the one that held. Conclusion: screening magnitude does not predict fold-outside survival on this dataset -- do not use it to triage candidates, always run fold-outside. See registry.json.stages.S9_문제해결접근.meta_note_screening_protocol."
+  },
+  {
+   "id": "S10",
+   "name": "모델 개선 전략(워크플로우)",
+   "status": "CLOSED",
+   "note": "current_best composition (1-dof DEPAVG+D blend, 0.636184) accepted here. Detail: registry.json S10_모델개선전략, current_best.",
+   "caveat_checked_and_cleared": "Verified by reading source: current_best (S10-FINAL3) blends saved classifier-probability arrays via s10_final3.py's OWN correct, independently-written temperature scaling (q=P**(1/temp) on real non-uniform probabilities) -- not harness.py's/v3.py's buggy sample-index-vector pattern. The member-probability generator (s7_savemembers.py) contains no T/G sweep at all. current_best is NOT tainted by DEF-1 and does not need re-scoring on that account."
+  },
+  {
+   "id": "S11",
+   "name": "분석방법의 적절성(워크플로우)",
+   "status": "OPEN",
+   "note": "S11-FLOOR (registry.json): kNN conditional-MAD info-floor estimate is radius-dominated and INCONCLUSIVE -- overturns an earlier S6-lane reading. No information floor has been demonstrated; do not cite one. No new work this session (per plan: document the caveat, don't re-attempt kNN-based floor estimation)."
+  },
+  {
+   "id": "S12",
+   "name": "정확도 병목의 외부 검증",
+   "status": "CLOSED",
+   "note": "registry.json stages.S12_정확도병목_외부검증 참조"
+  }
+ ],
+ "defects_found": [
+  {
+   "id": "DEF-1",
+   "stage": "S7 (also present identically in v3.py, a separate S9-adjacent candidate pipeline)",
+   "desc": "Decision layer applied temperature to a UNIFORM sample-INDEX weight vector (np.full(n,1/n)**(1/temp)), which is mathematically invariant to temp after renormalisation -- sharpening was a complete no-op for every node ever scored through harness.py, including current_best.",
+   "status": "FIXED",
+   "fixed_2026-08-07T12:4x_KST": "Added sharpen_weights(samples, temp, n_bins) to research/scratch/lib.py -- bins each row's OWN predictive sample values, weights by bin density, applies temp to that density before renormalising per row. Applied identically in research/scratch/v3.py::act() and research/nodes/harness.py::run(). Verified: (a) unit test confirms different temps now give different weighted means, (b) py_compile clean, (c) two full harness runs (S9-N0, S9-N1) post-fix both completed and produced a real, non-degenerate T-sweep (see S9 nodes above).",
+   "scope": "DEF-1 is confined to harness.py's/v3.py's SAMPLE-based decision layer. current_best (S10-FINAL3, 0.636184) uses a separate, independently-written and verified-correct temperature-scaling path (s10_final3.py) and is not affected -- see S10 caveat_checked_and_cleared. What remains genuinely unresolved: any node scored through harness.py's run()/act() before 2026-08-07T12:4x KST (this session's fix) should not be reused for a temperature-sensitive comparison without re-running."
+  }
+ ],
+ "measured_runs_pre_DEF1_fix_do_not_reuse_for_temperature_comparisons": [
+  {
+   "id": "v3",
+   "total": 0.606311,
+   "one_minus_nmae": 0.855185,
+   "ficr": 0.357437,
+   "note": "defect DEF-1 active at measurement time"
+  },
+  {
+   "id": "deployed M102_TOP100 T0.5_G1.5",
+   "total": 0.629896,
+   "one_minus_nmae": 0.854979,
+   "ficr": 0.406199
+  }
+ ],
+ "s12_note": "S12(2026-08-07): 18개 노드 + 외부 레인 2개. current_best 불변. 진단이 바뀌었다 — S12-N11이 멤버 D의 gamma 프론티어가 평평함(1-NMAE와 FICR이 함께 상승)을 보여 결정층에 남은 트레이드가 없음을 확정했고, 외부 공개 리더보드 실측이 우리 1-NMAE가 top-100 전원 및 주최측 RF 베이스라인보다 낮음을 독립 확인했다. 유일한 구속 제약은 점예측 정확도. S12-N17이 국소지표 잡음(주변 sd 0.0096, 짝지은 sd 0.0006-0.0009)을 처음 측정했다. 상세: registry.json stages.S12_정확도병목_외부검증"
+}

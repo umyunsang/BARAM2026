@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "artifact": "SK@v5",
+  "checked_at": "2026-08-09T04:40:56.028683+09:00",
+  "state": "SKELETON_APPROVAL_PENDING",
+  "skeleton_path": ".planning/2026-08-01-leaderboard-top-4-loop/SK_v5.md",
+  "skeleton_sha256": "c2c813475ab5f0a741e6adbceab196d5b38447f2aeb02f9716a8f5be8973c820",
+  "exact_approval_phrase": "SK@v5 승인",
+  "exact_human_approval_found": false,
+  "current_user_message_authority": "Material workflow revision requested; it does not identify or approve the subsequently fingerprinted SK@v5 artifact.",
+  "blocked_actions": [
+    "web/deep research",
+    "research dispatch",
+    "source implementation",
+    "model fitting",
+    "score calls",
+    "dependency changes",
+    "external data-body retrieval",
+    "Dacon/account actions",
+    "remote inference/compute/Git",
+    "2024 evaluation"
+  ],
+  "allowed_actions_taken": [
+    "bounded local authority/workflow audit",
+    "skeleton/diff/receipt creation",
+    "planning-state update"
+  ],
+  "next_action": "Await exact human SK@v5 approval."
+}

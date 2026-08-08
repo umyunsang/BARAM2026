@@ -1,0 +1,92 @@
+{
+ "P1_energy_weight_present": true,
+ "P1_note": "Deployed utility uses gp @ (centers*units).T = sum_b p_b * z_b * u_b, so the size-biased z_b factor is ALREADY present. The edu-market P1 falsifier fires and the axis closes at zero cost.",
+ "P3_targeted_shrink": {
+  "top_10pct_by_energy": {
+   "rows_share": 0.10009392191064001,
+   "energy_share": 0.18860718307915936,
+   "ficr_at_found": 0.462597565966351,
+   "s_required": 0.45
+  },
+  "top_25pct_by_energy": {
+   "rows_share": 0.2503689789346572,
+   "energy_share": 0.43529518864140077,
+   "ficr_at_found": 0.46177565363286766,
+   "s_required": 0.73
+  },
+  "top_50pct_by_energy": {
+   "rows_share": 0.5002012612370857,
+   "energy_share": 0.743024977425034,
+   "ficr_at_found": 0.46366241374064593,
+   "s_required": 0.8
+  },
+  "top_100pct_by_energy": {
+   "rows_share": 1.0,
+   "energy_share": 1.0,
+   "ficr_at_found": 0.4624497328947992,
+   "s_required": 0.84
+  }
+ },
+ "P4_precursor_decile_table": [
+  {
+   "decile": 1,
+   "share_of_total_abs_error": 0.0911,
+   "share_of_settlement_weight": 0.0249,
+   "mean_err_rate": 0.1269
+  },
+  {
+   "decile": 2,
+   "share_of_total_abs_error": 0.0955,
+   "share_of_settlement_weight": 0.0341,
+   "mean_err_rate": 0.136
+  },
+  {
+   "decile": 3,
+   "share_of_total_abs_error": 0.1085,
+   "share_of_settlement_weight": 0.0479,
+   "mean_err_rate": 0.153
+  },
+  {
+   "decile": 4,
+   "share_of_total_abs_error": 0.1263,
+   "share_of_settlement_weight": 0.0645,
+   "mean_err_rate": 0.1786
+  },
+  {
+   "decile": 5,
+   "share_of_total_abs_error": 0.1252,
+   "share_of_settlement_weight": 0.086,
+   "mean_err_rate": 0.1761
+  },
+  {
+   "decile": 6,
+   "share_of_total_abs_error": 0.1165,
+   "share_of_settlement_weight": 0.1073,
+   "mean_err_rate": 0.1646
+  },
+  {
+   "decile": 7,
+   "share_of_total_abs_error": 0.1047,
+   "share_of_settlement_weight": 0.1288,
+   "mean_err_rate": 0.1473
+  },
+  {
+   "decile": 8,
+   "share_of_total_abs_error": 0.0929,
+   "share_of_settlement_weight": 0.1493,
+   "mean_err_rate": 0.1307
+  },
+  {
+   "decile": 9,
+   "share_of_total_abs_error": 0.07,
+   "share_of_settlement_weight": 0.1686,
+   "mean_err_rate": 0.0989
+  },
+  {
+   "decile": 10,
+   "share_of_total_abs_error": 0.0694,
+   "share_of_settlement_weight": 0.1886,
+   "mean_err_rate": 0.0978
+  }
+ ]
+}

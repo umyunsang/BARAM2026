@@ -1,4 +1,5 @@
 from baram.experiments.promotion import (
+    V2PromotionThresholds,
     decide_baseline,
     decide_challenger_activation,
     decide_contract,
@@ -7,7 +8,12 @@ from baram.experiments.promotion import (
     decide_lockbox,
     decide_reproduction,
     decide_submission,
+    decide_v2_candidate,
+    decide_v2_decision,
+    decide_v2_ensemble,
 )
+
+V2 = V2PromotionThresholds(0.0035, 0.0035, -0.001, -0.001, 0.0, 0.007, 0.995)
 
 
 def test_challenger_activation_requires_slots_shared_failure_and_unopened_lockbox() -> None:
@@ -48,3 +54,26 @@ def test_closed_promotion_gates_report_failures() -> None:
     assert decide_lockbox(0.91, 0.90).accepted
     assert not decide_reproduction({"a": "1"}, {"a": "2"}).accepted
     assert not decide_submission({"encoding": True, "keys": False}).accepted
+
+
+def test_v2_candidate_requires_material_all_fold_and_component_stability() -> None:
+    accepted = decide_v2_candidate(
+        0.0035, [0.001, 0.002], -0.001, {1: 0.0, 2: -0.001, 3: 0.001}, 0.0035, V2
+    )
+    assert accepted.accepted
+    assert not decide_v2_candidate(
+        0.0034, [0.001, 0.002], 0.0, {1: 0.0, 2: 0.0, 3: 0.0}, 0.0, V2
+    ).accepted
+    assert not decide_v2_candidate(
+        0.01, [0.001, 0.0], 0.0, {1: 0.0, 2: 0.0, 3: 0.0}, 0.0, V2
+    ).accepted
+
+
+def test_v2_decision_and_ensemble_enforce_ficr_group3_and_diversity() -> None:
+    common = (0.004, [0.002, 0.002], 0.0, {1: 0.001, 2: 0.001, 3: 0.001})
+    assert decide_v2_decision(common[0], common[1], common[2], 0.007, common[3], V2).accepted
+    assert not decide_v2_decision(
+        common[0], common[1], common[2], 0.0069, common[3], V2
+    ).accepted
+    assert decide_v2_ensemble(*common, 0.994, V2).accepted
+    assert not decide_v2_ensemble(*common, 0.995, V2).accepted

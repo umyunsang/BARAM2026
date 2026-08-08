@@ -1,0 +1,128 @@
+{
+ "dacon_upload": false,
+ "decided_utc": "2026-08-05T04:42:24.401928+00:00",
+ "external_actions": [],
+ "lane": "L2",
+ "lockbox_reopened": false,
+ "model_fits": "teacher OOF",
+ "new_2024_evaluation": false,
+ "node": "C1N53_SUPPLIED_EXTRACTION",
+ "reads_2024_scada_not_labels": true,
+ "report_sha256": "3b98f1d8b630e9c382ccd20c30b9124b81137fb633eca734f54eb1c3b5a92f44",
+ "result": {
+  "node": "C1N53_SUPPLIED_EXTRACTION",
+  "parent_node": "C1N52_EXTERNAL_CLOSURE",
+  "per_group": {
+   "1": {
+    "best_learned": "teacher_allweather",
+    "best_reduction": 0.4871462119935063,
+    "best_sigma": 1.0023489516589872,
+    "learned": {
+     "teacher_allweather": {
+      "meets_required": true,
+      "reduction_vs_idw": 0.4871462119935063,
+      "sigma": 1.0023489516589872
+     },
+     "teacher_legacy": {
+      "meets_required": true,
+      "reduction_vs_idw": 0.37350901709226014,
+      "sigma": 1.2244475806298036
+     },
+     "teacher_mean": {
+      "meets_required": true,
+      "reduction_vs_idw": 0.44795301646138885,
+      "sigma": 1.0789502352460476
+     }
+    },
+    "rho_gfs_ldaps": 0.7751844620153787,
+    "rows_usable": 8784,
+    "sigma_gfs": 2.2648314609375073,
+    "sigma_idw_from_cycle51": 1.9173908995074698,
+    "sigma_idw_mix": 1.9544536378588577,
+    "sigma_ldaps": 1.977887585932667
+   },
+   "2": {
+    "best_learned": "teacher_allweather",
+    "best_reduction": 0.4698885430941806,
+    "best_sigma": 1.1236341589745267,
+    "learned": {
+     "teacher_allweather": {
+      "meets_required": true,
+      "reduction_vs_idw": 0.4698885430941806,
+      "sigma": 1.1236341589745267
+     },
+     "teacher_legacy": {
+      "meets_required": true,
+      "reduction_vs_idw": 0.3667346828910044,
+      "sigma": 1.3422810103949894
+     },
+     "teacher_mean": {
+      "meets_required": true,
+      "reduction_vs_idw": 0.4362888420059575,
+      "sigma": 1.194852713831696
+     }
+    },
+    "rho_gfs_ldaps": 0.7512731133840492,
+    "rows_usable": 8784,
+    "sigma_gfs": 2.590624234661002,
+    "sigma_idw_from_cycle51": 2.095648267063499,
+    "sigma_idw_mix": 2.119618703457212,
+    "sigma_ldaps": 2.1321018062184027
+   },
+   "3": {
+    "best_learned": "teacher_allweather",
+    "best_reduction": 0.4600331550221991,
+    "best_sigma": 1.0516534137816178,
+    "learned": {
+     "teacher_allweather": {
+      "meets_required": true,
+      "reduction_vs_idw": 0.4600331550221991,
+      "sigma": 1.0516534137816178
+     },
+     "teacher_legacy": {
+      "meets_required": true,
+      "reduction_vs_idw": 0.35937494436464723,
+      "sigma": 1.2476979521597393
+     },
+     "teacher_mean": {
+      "meets_required": true,
+      "reduction_vs_idw": 0.42834963080619093,
+      "sigma": 1.113361066227885
+     }
+    },
+    "rho_gfs_ldaps": 0.7248252544918652,
+    "rows_usable": 8778,
+    "sigma_gfs": 2.4497738438998082,
+    "sigma_idw_from_cycle51": 1.9121661765134152,
+    "sigma_idw_mix": 1.9476259025215767,
+    "sigma_ldaps": 1.959096140368092
+   }
+  },
+  "predeclared_check": {
+   "H1_expectation": "학습형 teacher sigma < IDW 기준선 (세 그룹)",
+   "H1_held": true,
+   "H2_expectation": "감소율 >= 13.3%",
+   "H2_held": true,
+   "H3_expectation": "H2 성립시 병목은 풍속이 아니라 풍속->출력 사상",
+   "H3_held": true,
+   "H4_expectation": "allweather 가 legacy 보다 낮다 (격자·변수 폭이 기여)",
+   "H4_held": true,
+   "verdict": "SUPPLIED_DATA_ALREADY_MEETS_WIND_REQUIREMENT_BOTTLENECK_ELSEWHERE"
+  },
+  "question": "사이클 36~52 의 sigma 사슬이 공급 데이터의 **약한 표현**에 걸려 있었는가",
+  "required_reduction": 0.13329999999999997,
+  "surface": {
+   "truth": "scada_ws",
+   "uses_actual_kwh": false,
+   "uses_external_data": false,
+   "year": 2024
+  },
+  "teacher_profiles": {
+   "allweather": 1347,
+   "legacy": 315
+  }
+ },
+ "schema_version": 1,
+ "script_sha256": "b6d8268b660a80dbb4b1af8bf4d72fff58625ae0764a0467378d34f618fbdc95",
+ "stage": "M271_P4_CYCLE53_SUPPLIED_EXTRACTION"
+}

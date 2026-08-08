@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "node_id": "S17-N43_SHARPER_CONDITIONAL_DENSITY",
+  "stage_id": "S7",
+  "deficit": "FD12",
+  "score_bearing": false,
+  "comparison_index": null,
+  "result_status": "REFUTED",
+  "results": {
+    "dev-2023-Q2": {
+      "raw_quantile_total": 0.6050044174922045,
+      "raw_1_nmae": 0.8658273794108988,
+      "raw_ficr": 0.34418145557351004,
+      "pit_mean": 0.32311136157290005,
+      "pit_sd": 0.38743587528903745,
+      "iqr_median_cf": 0.08180557370809316,
+      "training_rows": 15190
+    },
+    "dev-2023-Q3": {
+      "raw_quantile_total": 0.5941363700922812,
+      "raw_1_nmae": 0.862393476561011,
+      "raw_ficr": 0.3258792636235514,
+      "pit_mean": 0.22771977606294447,
+      "pit_sd": 0.35107658047633694,
+      "iqr_median_cf": 0.06651312461635783,
+      "training_rows": 19060
+    },
+    "dev-2023-Q4": {
+      "raw_quantile_total": 0.6167688534420972,
+      "raw_1_nmae": 0.8555591204928902,
+      "raw_ficr": 0.3779785863913043,
+      "pit_mean": 0.39296884677319455,
+      "pit_sd": 0.39006281003695664,
+      "iqr_median_cf": 0.11923834185681323,
+      "training_rows": 21919
+    },
+    "pooled_outer_champion": {
+      "total": 0.6314827308346854,
+      "one_minus_nmae": 0.8584802239958174,
+      "ficr": 0.40448523767355354
+    },
+    "pooled_outer_quantile_blended": {
+      "total": 0.629207478350161,
+      "one_minus_nmae": 0.8614023651744176,
+      "ficr": 0.3970125915259044
+    }
+  },
+  "findings": [
+    "The quantile density is WORSE overall: pooled outer blended Total 0.6292075 against the champion 0.6314827, a loss of -0.0022753.",
+    "The component split is the whole story. The quantile density RAISES 1-NMAE to 0.8614024 from 0.8584802 (+0.0029221) and LOWERS FICR to 0.3970126 from 0.4044852 (-0.0074727). A better-calibrated density buys point accuracy and loses settlement.",
+    "Calibration is measurably poor in a specific direction: mean PIT is 0.227720 on Q3 and 0.392969 on Q4 against the 0.5 of a calibrated forecast, so the predicted quantiles sit systematically above the realised capacity factor.",
+    "The predicted interquartile range is 0.066513 on Q3 and 0.119238 on Q4 in capacity-fraction units, which is at or beyond the full 0.06 band half-width. The conditional distribution really is wide relative to the reward band, confirming FD12 as a measurement while refuting the proposed cure.",
+    "Fold behaviour is opposite in sign: the quantile arm gains about +0.0058 raw on Q3 and loses about -0.0203 raw on Q4 against the deployed member, so it is also unstable."
+  ],
+  "mechanism_conclusion": "This replicates N38 through a completely different route. A more faithful conditional distribution moves the action toward the conditional median, which is optimal for NMAE and actively harmful for a nested-band settlement reward. The deployed binned-softmax plus T=0.75 sharpening is not a crude approximation of a proper density; it is a deliberate anti-median device that concentrates mass for band capture, and it beats the proper density on the metric that pays.",
+  "residual_deficit": "FD12 is refuted as an improvement axis in this form. What remains untested is a density estimator trained to maximise band mass directly rather than pinball loss, which is a different object from both a classifier and a quantile function.",
+  "spawned_children": [
+    "S17-N44_BAND_MASS_OBJECTIVE"
+  ],
+  "selected_disposition": "DEEPEN_S7",
+  "lockbox_2024_used": false,
+  "dacon_actions": [],
+  "closed_at": "2026-08-09T06:11:06.676541+09:00"
+}

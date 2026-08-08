@@ -1,0 +1,328 @@
+{
+  "schema_version": 2,
+  "id": "SK5_FOUNDATION_MAP",
+  "frozen_at": "2026-08-09T05:15:54.758975+09:00",
+  "authority": {
+    "skeleton": {
+      "path": ".planning/2026-08-01-leaderboard-top-4-loop/SK_v5.md",
+      "sha256": "c2c813475ab5f0a741e6adbceab196d5b38447f2aeb02f9716a8f5be8973c820"
+    },
+    "approval": {
+      "path": "reports/sk_v5_approval_receipt.json",
+      "sha256": "e827b324a23913346598d274f2ded496ffc3134243de5636033ee6a3ac387173"
+    },
+    "manifest": {
+      "path": "reports/sk_v5_wave_a_research_manifest.json",
+      "sha256": "4690826f4f2f629220c085ffc87883c1ec2fa8990f7f92430483ff4f975ae312"
+    },
+    "agents_md_sha256": "91a11f95f94e8de86f5c84b204e1893830b3ed5693e3d7ede7f2e351e9891e9c"
+  },
+  "lane_artifacts": {
+    "V5-ENGINE": {
+      "path": "research/lanes/v5_engine_audit.md",
+      "sha256": "7d16ba4def18ef21b879bd9cac3901157c0739261e696839a1d0e69ac9aed6b7",
+      "adjudication": "reports/sk_v5_wave_a_engine_adjudication.json",
+      "adjudication_sha256": "af7935fcd1b3116f8d09c1afcfca28cb6ba3a9e6e3b1f0f727ae7023804f4201",
+      "disposition": "ACCEPT_WITH_SCOPE_DOWNGRADE"
+    },
+    "V5-FOUNDATION": {
+      "path": "research/lanes/v5_foundation_deficit.md",
+      "sha256": "b94ddbd2d61a4f03958bd917b121cce288ad1f68807b46fecdc16dff0af77c35",
+      "adjudication": "reports/sk_v5_wave_a_foundation_adjudication.json",
+      "adjudication_sha256": "11dc402ae0dfbcd7bd254017ee1f636bd22c4a2870db1113a17da5f38b66ba7f",
+      "disposition": "ACCEPT_DIRECT_CLAIMS"
+    },
+    "V5-DISCOVERY-SCIENCE": {
+      "path": "research/lanes/v5_discovery_science.md",
+      "sha256": "67aa1b3c0bafc17cd1f7999f534b33f6ea9ac4cfac915c5430434a192e7b5657",
+      "adjudication": "reports/sk_v5_wave_a_discovery_adjudication.json",
+      "adjudication_sha256": "3bf28ec448b38336fc4024b58d2385a2810e4bcfc89d086783fd8fa0442fc2b6",
+      "disposition": "ACCEPT_WITH_SCOPE_DOWNGRADE"
+    },
+    "V5-VALIDATION": {
+      "path": "research/lanes/v5_validation_research.md",
+      "sha256": "64241ec77181d7647c837d91fc14c03eaa45f6cb1732f1981d77e377e58578e5",
+      "adjudication": "reports/sk_v5_wave_a_validation_adjudication.json",
+      "adjudication_sha256": "f92b80a530cd43fe7475268f7725da8bf009ab2530b26d8e619fccd4b487888c",
+      "disposition": "ACCEPT_WITH_SCOPE_DOWNGRADE"
+    }
+  },
+  "frozen_facts": {
+    "S1_purpose": {
+      "action_unit": "one D-1 14:00 KST decision covering 72 cells (3 groups x 24 hourly targets 01:00-00:00)",
+      "estimand": "actual hourly group production",
+      "output_semantics": "action under the combined official loss, not necessarily a conditional mean",
+      "evidence": "src/baram/evaluation/prequential.py:55-115; reports/s17_n26_s4_metric_action_audit.json#/action_appropriateness"
+    },
+    "S4_metric": {
+      "capacity_kwh": {
+        "1": 21600.0,
+        "2": 21600.0,
+        "3": 21000.0
+      },
+      "valid_row_rule": "actual_kwh >= 0.10 * group_capacity (inclusive)",
+      "settlement_units": "4.0 if err<=0.06, 3.0 if err<=0.08, else 0.0",
+      "group_ficr": "sum(actual*unit)/sum(actual*4)",
+      "aggregation": "equal-group means; Total = 0.5*(1-NMAE)+0.5*FICR; no intermediate rounding",
+      "parity": "local scorer EQUIVALENT; exact-Total resampling EQUIVALENT on complete selected day sets",
+      "evidence": "reports/s17_n26_s4_metric_action_audit.json"
+    },
+    "alignment": {
+      "official_scorer_keys": [
+        "forecast_id",
+        "forecast_kst_dtm",
+        "group_id"
+      ],
+      "family_comparison_keys": [
+        "fold_id",
+        "group_id",
+        "forecast_kst_dtm"
+      ],
+      "atom": "72-cell issuance day"
+    },
+    "engine": {
+      "stage_depth_is_ordinal": true,
+      "actionable_tags": [
+        "directly_supported"
+      ],
+      "nodespec_lineage_fields": false,
+      "result_conditioned_children": false,
+      "two_store_atomicity_gap": true,
+      "live_registry_schema_version": 1,
+      "live_registry_specs": 47,
+      "eventstore_user_version": 0,
+      "eventstore_tables": [
+        "events",
+        "sqlite_sequence"
+      ],
+      "state_reducers": {
+        "dict": "merge",
+        "lists": "operator.add"
+      },
+      "legacy_graph_present": true
+    }
+  },
+  "active_deficits": [
+    {
+      "id": "FD1",
+      "stage": "S2",
+      "title": "forecast reference/run vs declared availability vs valid time vs temporal support are not separated",
+      "mechanism": "wrong run/revision/lead/accumulation contaminates all downstream transforms and can hide basis-time leakage",
+      "observable": "metadata/keys only",
+      "smallest_diagnostic": "source x forecast_reference x available_at x valid_time x variable x level x grid key/schema audit with uniqueness and join coverage",
+      "blocks": [
+        "S5",
+        "S6"
+      ]
+    },
+    {
+      "id": "FD2",
+      "stage": "S3",
+      "title": "evaluation-population and label-availability support are not stratified",
+      "mechanism": "official low-output filter plus equal-group pooling changes which population each slice represents",
+      "observable": "label presence key-observable; eligibility needs an authorized count-only projection",
+      "smallest_diagnostic": "group x month x hour/lead presence-and-eligibility count cube, values suppressed",
+      "blocks": [
+        "S8",
+        "S9"
+      ]
+    },
+    {
+      "id": "FD3",
+      "stage": "S3",
+      "title": "no consolidated diagnostic lineage/coverage registry",
+      "mechanism": "oracle, leaky, screening and deployable evidence get conflated and can close the wrong stage",
+      "observable": "receipt metadata and source hashes",
+      "smallest_diagnostic": "diagnostic index with population, keys, policy, availability class, artifact hash, contamination, status",
+      "blocks": [
+        "S9",
+        "S10"
+      ]
+    },
+    {
+      "id": "FD4",
+      "stage": "S5",
+      "title": "source/run missingness is not modeled as an operational state",
+      "mechanism": "whole-source outage vs single missing cell carry different information loss; median/renormalization hides it",
+      "observable": "presence/null mask only",
+      "smallest_diagnostic": "presence bitset plus deterministic fallback transition table",
+      "blocks": [
+        "S6"
+      ]
+    },
+    {
+      "id": "FD5",
+      "stage": "S8",
+      "title": "exact metric inference is not integrated with action-mechanism diagnostics",
+      "mechanism": "pooled Total delta hides NMAE/FICR trade-offs, equal-group effects and 6%/8% tier migration",
+      "observable": "static schema now",
+      "smallest_diagnostic": "contract test that the strict receipt exposes component/group/fold/lead/regime/boundary/tier/count/alignment/policy/fit-surface fields",
+      "blocks": [
+        "S9",
+        "S10"
+      ]
+    },
+    {
+      "id": "FD6",
+      "stage": "S6",
+      "title": "implemented representation is not active prepared lineage",
+      "mechanism": "module presence mistaken for coverage suppresses real audits",
+      "observable": "source/config/manifest hashes",
+      "evidence": "prepare manifest has 820 unique names and zero geom__/seq__/clim prefixes",
+      "smallest_diagnostic": "builder call graph plus exact feature-prefix set difference",
+      "blocks": [
+        "S6"
+      ]
+    },
+    {
+      "id": "FD7",
+      "stage": "S9",
+      "title": "the development surface is adaptively reused and cannot become a fresh holdout",
+      "mechanism": "repeated human-guided inspection creates selection dependence that refit/bootstrap/MCS cannot erase",
+      "observable": "choice logging only",
+      "smallest_diagnostic": "append-only exposure/trial/freshness ledger",
+      "blocks": [
+        "S9",
+        "S11"
+      ]
+    },
+    {
+      "id": "FD8",
+      "stage": "S1",
+      "title": "future operational state/curtailment cause is structurally unobservable at inference",
+      "mechanism": "removing or restoring curtailed production changes the estimand",
+      "observable": "not observable at inference under the supplied schema",
+      "smallest_diagnostic": "schema-only target-definition and operational-field availability receipt",
+      "blocks": [
+        "S6"
+      ]
+    },
+    {
+      "id": "FD9",
+      "stage": "S10",
+      "title": "engine cannot represent node depth, migration hypotheses, residual children, causal re-entry, pause vs success, or atomic lineage",
+      "mechanism": "stage-linear one-record-per-stage loop closes stages without residual descent and can call below-target exhaustion a terminal halt",
+      "observable": "source and live store structure",
+      "smallest_diagnostic": "contract tests over synthetic envelopes in tmp_path",
+      "blocks": [
+        "S1",
+        "S2",
+        "S3",
+        "S4",
+        "S5",
+        "S6",
+        "S7",
+        "S8",
+        "S9",
+        "S10",
+        "S11"
+      ]
+    },
+    {
+      "id": "FD10",
+      "stage": "S5",
+      "title": "temporal collapse at prepare time",
+      "mechanism": "each row is a single valid-time snapshot, so the 24 lead hours of one issuance are unlinked; no lag, lead-window, rolling, difference, trend or ramp operator exists among the 820 deployed names, and the information cannot be recovered downstream",
+      "root_verified": true,
+      "blocks": [
+        "S6",
+        "S7"
+      ],
+      "gate": "FD1 must first prove that all lead hours of one forecast_id share one data_available_kst_dtm at or before the D-1 14:00 basis time"
+    },
+    {
+      "id": "FD11",
+      "stage": "S5",
+      "title": "permutation collapse at prepare time",
+      "mechanism": "the 9 GFS and 16 LDAPS points enter only through permutation-invariant order statistics plus fixed IDW/nearest weights, so which point held which value is destroyed and a horizontal gradient is provably not a function of the 820 columns",
+      "root_verified": true,
+      "blocks": [
+        "S6"
+      ],
+      "note": "this is a new local deficit, distinct from the closed centred-scalar-MSLP-gradient exact-transfer axis"
+    }
+  ],
+  "claim_limits": {
+    "fresh_confirmation_available": false,
+    "independent_confirmation_count": 0,
+    "max_current_claim": "reproducible chronology-correct retrospective corroboration; recorded-family selection-adjusted wording only under stated dependence assumptions",
+    "lockbox_2024": "CONSUMED_UNAVAILABLE",
+    "success_exit": "two deterministic strict local official reproductions at Total >= 0.660000"
+  },
+  "contamination_ledger": [
+    {
+      "surface": "research/lanes/s17_n24_issued_schema_coverage.md",
+      "kind": "aggregate score fields rendered",
+      "use": "secondary locator only for independently reproducible schema facts"
+    },
+    {
+      "surface": "artifacts/manifests/prepare.json non-schema branches",
+      "kind": "inference-derived aggregates",
+      "use": "schema/hash/feature_names projection only"
+    },
+    {
+      "surface": "2024 operating year",
+      "kind": "consumed lockbox",
+      "use": "none"
+    }
+  ],
+  "wave_b_entry_gate": {
+    "status": "OPEN_AFTER_DS_V5_APPROVAL",
+    "required": [
+      "DS@v5 approved",
+      "engine contracts specified",
+      "no fit or score before IP@v3"
+    ]
+  },
+  "supersedes_sha256": "393ee74bf53251037547fc52bc92c554a4aa207e2288f194766d836675512b35",
+  "revised_at": "2026-08-09T05:32:35.972964+09:00",
+  "authority_update": {
+    "path": "reports/sk5_authority_update_2026-08-09.json",
+    "sha256": "681858449cb094007622982ee06a9d9c6f9fe991b4749838c83cc28167051c94",
+    "effects": [
+      "dependency freeze withdrawn",
+      "external-data year cutoff withdrawn; per-row basis-time availability governs",
+      "pretrained weights gated on 2026-07-05 release plus commercial/redistribution licence",
+      "remote API inference remains forbidden"
+    ]
+  },
+  "root_verified_representation_audit": {
+    "method": "root re-derived the projection from artifacts/manifests/prepare.json#/feature_names",
+    "total_names": 820,
+    "unique": 820,
+    "prefix_counts": {
+      "gfs__": 394,
+      "ldaps__": 296,
+      "<bare>": 14,
+      "cal__": 4,
+      "gfs_spatial__": 44,
+      "ldaps_spatial__": 50,
+      "source_disagreement__": 6,
+      "phys__": 5,
+      "phys_v2__": 7
+    },
+    "temporal_operators": 0,
+    "spatial_derivative_operators": 0,
+    "geom__": 0,
+    "seq__": 0,
+    "clim": 0,
+    "source_disagreement_columns": [
+      "source_disagreement__wind10_speed_idw",
+      "source_disagreement__wind10_speed_idw__abs",
+      "source_disagreement__wind10_speed_nearest",
+      "source_disagreement__wind10_speed_nearest__abs",
+      "source_disagreement__surface_pressure_idw",
+      "source_disagreement__surface_pressure_idw__abs"
+    ],
+    "hub_height_cross_source_disagreement": false,
+    "agreement_with_lane": "EXACT"
+  },
+  "closed_axis_reversal": {
+    "axis": "ramp / trajectory / temporal-neighbourhood features",
+    "previously": "CLOSED in research/lanes/S13_S6_features_deep.md on the premise that lag and lead windows of +/-1,2,3,6 h already carried the information",
+    "root_finding": "REVERSED — the frozen prepare lineage contains zero temporal operators of any kind; the premise does not describe the deployed representation",
+    "consequence": "the temporal axis is OPEN and is not part of the standing closed-axis list",
+    "evidence": "artifacts/manifests/prepare.json#/feature_names exhaustive token scan, reproduced by the root"
+  },
+  "mandatory_screening_rule": "Screen actual-weighted band-hit indicators 1{relative_error<=0.06} and 1{relative_error<=0.08}, never conditional MAE, when judging any FICR-motivated candidate."
+}

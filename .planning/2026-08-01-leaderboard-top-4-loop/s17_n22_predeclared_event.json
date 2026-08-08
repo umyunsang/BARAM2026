@@ -1,0 +1,27 @@
+{
+  "event_type": "PREDECLARED",
+  "cycle_id": "S17-N22_M115_TERRAIN_SX300_H8_STRICT_PREQUENTIAL_COMPARISON",
+  "stage_id": "S8",
+  "node_id": "S17-N22_M115_TERRAIN_SX300_H8_STRICT_PREQUENTIAL_COMPARISON",
+  "actor": "root",
+  "occurred_at": "2026-08-08T23:22:10.988396+09:00",
+  "body": {
+    "preregistration_sha256": "1ebd3acd2573189037d8597715ac4297988f0325ec91156fd834911a05d11046",
+    "parent_ids": [
+      "S17-N21_TERRAIN_SX300_H8_MODEL_FAMILY_PREREQUISITE_AUDIT"
+    ],
+    "mechanism": "A direction-dependent high-resolution terrain source adds information to the exact M115 representation; causal attribution is admissible only if the unchanged refit reproduces the historical M115 member and Champion algebra before any assessment actual or score.",
+    "treatment": "Append exactly terrain__sx300_h8_mean16 to the 100 M115 features, refit same 100-tree XGBoost classifier, apply fixed T0.75_G2, replace only the M115 term on Q3/Q4.",
+    "control": "Unchanged 100-feature M115 refit plus exact N7 Champion; Q2 unchanged burn-in.",
+    "metric": "S17-N3 strict prequential official Total with dependent 3/7/14-day joint bootstrap and comparison index 4, conditional on pre-score hard gates.",
+    "min_effect": 0.001635,
+    "score_bearing": true,
+    "novelty_signature": "M115_XGBOOST_PLUS_TERRAIN_SX300_H8_MEAN16_STRICT_V1",
+    "basis_evidence_ids": [
+      "N21_ONE_FAMILY_READY",
+      "N20A_STATIC_LOOKUP",
+      "N7_STRICT_ACTION_IDENTITY",
+      "N3_STRICT_EVALUATION"
+    ]
+  }
+}

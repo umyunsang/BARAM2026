@@ -1,0 +1,68 @@
+{
+ "node": "N401_CQR_DECISION",
+ "gate_version": "M270_MONTHLY_GATE_v1_frozen_2026-08-04",
+ "v1_reproduction": false,
+ "results": {
+  "D1_LGBM_SHARED_BASE": [
+   0.5902568872751109,
+   0.8462450778341377,
+   0.3342686967160841
+  ],
+  "D7_CHRONO_CONFORMAL": [
+   0.5842921828747523,
+   0.8459240330667197,
+   0.3226603326827848
+  ]
+ },
+ "gain": -0.005964704400358678,
+ "threshold": 0.001013,
+ "foldwise": {
+  "D1_LGBM_SHARED_BASE": {
+   "dev-2023-Q3": 0.5786513399633446,
+   "dev-2023-Q4": 0.5956443650029979
+  },
+  "D7_CHRONO_CONFORMAL": {
+   "dev-2023-Q3": 0.5788446341088115,
+   "dev-2023-Q4": 0.5871138345323986
+  }
+ },
+ "policies": {
+  "D1_LGBM_SHARED_BASE": {
+   "dev-2023-Q3": [
+    2.0,
+    2.0
+   ],
+   "dev-2023-Q4": [
+    1.5,
+    0.25
+   ]
+  },
+  "D7_CHRONO_CONFORMAL": {
+   "dev-2023-Q3": [
+    2.0,
+    1.0
+   ],
+   "dev-2023-Q4": [
+    1.0,
+    1.0
+   ]
+  }
+ },
+ "gate": {
+  "G1 sign-test p <= 0.1 (p=0.6562, 3/6)": false,
+  "G2 median delta > 0 (median=-0.002650)": false,
+  "G3 bootstrap q05 > 0 (q05=-0.008765)": false,
+  "G4 worst month >= -0.010 (worst=-0.016435)": false
+ },
+ "hypotheses": {
+  "H1": false,
+  "H2": false,
+  "H3": false,
+  "H4": false
+ },
+ "verdict": "CQR_DOES_NOT_BEAT_ACCEPTED",
+ "model_fits": 0,
+ "lockbox_reopened": false,
+ "dacon_upload": false,
+ "external_actions": []
+}

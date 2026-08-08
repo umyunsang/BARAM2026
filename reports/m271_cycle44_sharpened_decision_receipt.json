@@ -1,0 +1,162 @@
+{
+ "dacon_upload": false,
+ "decided_utc": "2026-08-04T15:13:58.375725+00:00",
+ "external_actions": [],
+ "lane": "L3",
+ "lockbox_reopened": false,
+ "model_fits": 6,
+ "new_2024_evaluation": false,
+ "node": "C1N44_SHARPENED_DECISION",
+ "report_sha256": "8ecef091c4bec113c1321b5cc70f0f593317cadb5d4b479fc8ce2b0ae8c3e709",
+ "result": {
+  "by_fold": {
+   "BAND": {
+    "Q2": 0.6051549136380909,
+    "Q3": 0.5882275635107512,
+    "Q4": 0.6077117353055645
+   },
+   "CONTROL": {
+    "Q2": 0.6070575243253177,
+    "Q3": 0.5874592143739396,
+    "Q4": 0.6089110840721658
+   }
+  },
+  "changed_vs_cycle42": "결정규칙에 온도 자유도 추가. **T 는 fold-외 선택**",
+  "chosen_temperature_out_of_fold": {
+   "BAND": {
+    "dev-2023-Q2": 1.7,
+    "dev-2023-Q3": 1.7,
+    "dev-2023-Q4": 1.7
+   },
+   "CONTROL": {
+    "dev-2023-Q2": 2.2,
+    "dev-2023-Q3": 2.2,
+    "dev-2023-Q4": 2.2
+   }
+  },
+  "classifier_fits": 6,
+  "contribution": {
+   "ficr": -0.0008419003325112473,
+   "one_minus_nmae": -0.00017299838485684838
+  },
+  "delta_band_minus_control": -0.0010148987173681512,
+  "features_used": 101,
+  "gate_modified": false,
+  "gate_version": "M270_MONTHLY_GATE_v1_frozen_2026-08-04",
+  "gate_vs_deployed": {
+   "bootstrap_q05": -0.029732824527033234,
+   "flags": {
+    "G1": false,
+    "G2": false,
+    "G3": false,
+    "G4": false
+   },
+   "min_delta": -0.05687159658622287,
+   "months_scored": 9,
+   "passed": false,
+   "positive_months": 1,
+   "sign_test_p": 0.998046875
+  },
+  "lockbox_used": false,
+  "node": "C1N44_SHARPENED_DECISION",
+  "parent_node": "C1N42_TEACHER_RESTORED",
+  "predeclared_check": {
+   "H1_expectation": "BAND > CONTROL",
+   "H1_held": false,
+   "H1_measured": -0.0010148987173681512,
+   "H2_expectation": "BAND 가 배포 대비 개선 + 게이트 통과",
+   "H2_held": false,
+   "H3_expectation": "BAND > 0.63031",
+   "H3_held": false,
+   "H4_expectation": "이득이 FICR 쪽",
+   "H4_held": false,
+   "H5_expectation": "처리효과 부호가 40·41·42 와 동일",
+   "H5_held": false,
+   "H6_expectation": "처리효과가 사이클 43 회귀선 예측의 ±0.006 이내",
+   "H6_held": true,
+   "H6_predicted": -0.0007547215867510504,
+   "H6_residual": -0.0002601771306171008,
+   "V1_expectation": "CONTROL 이 배포의 -0.03 이내",
+   "V1_held": true,
+   "V1_measured_gap": -0.02456147607671344,
+   "V4_expectation": "날카로움 자유도가 CONTROL 개선 (> 0.595919)",
+   "V4_held": true,
+   "V4_measured": 0.00812404481360196,
+   "judged": true,
+   "verdict": "BAND_AWARE_TRAINING_CLOSED_BY_MEASUREMENT"
+  },
+  "prior_deltas": [
+   0.009772,
+   0.02149,
+   0.004827
+  ],
+  "scores": {
+   "BAND": {
+    "ficr": 0.34953265881400947,
+    "group_ficr": {
+     "1": 0.3454915345785323,
+     "2": 0.4081693121500446,
+     "3": 0.2949371297134515
+    },
+    "group_nmae": {
+     "1": 0.13607520801544365,
+     "2": 0.1364503922800926,
+     "3": 0.15790349956908936
+    },
+    "one_minus_nmae": 0.8565236333784582,
+    "total": 0.6030281460962338
+   },
+   "CONTROL": {
+    "ficr": 0.35121645947903196,
+    "group_ficr": {
+     "1": 0.34477162605325284,
+     "2": 0.41264102315652224,
+     "3": 0.29623672922732086
+    },
+    "group_nmae": {
+     "1": 0.136457009791002,
+     "2": 0.13493981052083334,
+     "3": 0.1579942892436492
+    },
+    "one_minus_nmae": 0.8568696301481719,
+    "total": 0.6040430448136019
+   },
+   "deployed": {
+    "ficr": 0.40246401063156667,
+    "group_ficr": {
+     "1": 0.409551299643159,
+     "2": 0.46073846269466673,
+     "3": 0.33710226955687433
+    },
+    "group_nmae": {
+     "1": 0.13617589715402054,
+     "2": 0.14227310586805572,
+     "3": 0.15731590353073155
+    },
+    "one_minus_nmae": 0.8547450311490641,
+    "total": 0.6286045208903154
+   }
+  },
+  "temperature_grid": [
+   0.3,
+   0.4,
+   0.5,
+   0.6,
+   0.75,
+   1.0,
+   1.3,
+   1.7,
+   2.2
+  ],
+  "trend_check": {
+   "intercept": 0.363,
+   "observed": -0.0010148987173681512,
+   "predicted": -0.0007547215867510504,
+   "residual": -0.0002601771306171008,
+   "slope": -0.6022
+  }
+ },
+ "schema_version": 1,
+ "script_sha256": "21b2da7dcd4acfaed10204b4aa1a2119f39778f215303c4c72b3ef9fb4a32dbd",
+ "stage": "M271_P4_CYCLE44_SHARPENED_DECISION"
+}

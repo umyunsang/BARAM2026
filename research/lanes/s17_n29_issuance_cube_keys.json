@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "node_id": "S17-N29_ISSUANCE_CUBE_KEYS",
+  "stage_id": "S2",
+  "created_at": "2026-08-09T05:35:48.688555+09:00",
+  "deficit": "FD1",
+  "question": "Do all lead hours of one operating day share a single issuance/availability stamp that precedes the D-1 14:00 KST basis time, or is the supplied cube stitched from multiple runs?",
+  "method": "key-only read of forecast_kst_dtm, data_available_kst_dtm and grid_id from the four issued weather members of the frozen archive; no value column, no label, no fit, no metric call",
+  "source": {
+    "archive": "inputs/competition/open_wind_236727.zip",
+    "sha256": "920be0c458d820e855bf79dd25723146f52ce1736138aedba5e6bc853f1f720b",
+    "members": [
+      "train/gfs_train.csv",
+      "train/ldaps_train.csv",
+      "test/gfs_test.csv",
+      "test/ldaps_test.csv"
+    ],
+    "columns_read": [
+      "forecast_kst_dtm",
+      "data_available_kst_dtm",
+      "grid_id"
+    ]
+  },
+  "findings": {
+    "availability_stamps_per_operating_day": {
+      "gfs_train": {
+        "1": 1096
+      },
+      "ldaps_train": {
+        "1": 1096
+      },
+      "gfs_test": {
+        "1": 365
+      },
+      "ldaps_test": {
+        "1": 365
+      }
+    },
+    "availability_time_of_day": "13:00 KST for every row of every member",
+    "lead_hour_range": [
+      12,
+      35
+    ],
+    "lead_hour_count": 24,
+    "grids": {
+      "gfs": 9,
+      "ldaps": 16
+    },
+    "rows": {
+      "gfs_train": 236736,
+      "ldaps_train": 420864,
+      "gfs_test": 78840,
+      "ldaps_test": 140160
+    },
+    "operating_days": {
+      "train": 1096,
+      "test": 365
+    }
+  },
+  "verdict": "FD1_RESOLVED_FAVOURABLY",
+  "conclusions": [
+    "Exactly one issuance stamp covers all 24 target hours of each operating day, in both sources and both splits. There is no multi-run stitching in the supplied cube.",
+    "The stamp is 13:00 KST, one hour before the official D-1 14:00 KST basis time, so every supplied weather value is available at the basis time.",
+    "Within-issuance temporal neighbourhood operators over the 24 lead hours of one operating day are therefore chronology-legal.",
+    "Spatial operators across the fixed 9 GFS / 16 LDAPS points of one issuance are chronology-legal.",
+    "lead_hour is a deterministic function of the target hour under a single daily cycle (lead = hour + 11 for 01:00..23:00 and 35 for 00:00), so it carries no information beyond hour and is redundant with the calendar block.",
+    "The V5-PREPROCESS concern that lead_hour is a latency-shifted rather than physical lead is factually correct but harmless here, because there is exactly one cycle per day; it does not create ambiguity or leakage.",
+    "Temporal support of individual value columns remains unresolved and is deferred to N29b; it does not gate the temporal or gradient candidates."
+  ],
+  "unblocks": [
+    "FD10 temporal collapse candidates (seq__)",
+    "FD11 permutation collapse candidates (geom__)"
+  ],
+  "no_fit": true,
+  "no_score": true,
+  "labels_read": 0,
+  "comparison_consumed": false
+}

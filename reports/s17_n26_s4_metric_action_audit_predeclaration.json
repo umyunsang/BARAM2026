@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "node_id": "S17-N26_S4_OFFICIAL_METRIC_AND_ACTION_APPROPRIATENESS_AUDIT",
+  "created_at": "2026-08-09T01:01:41.917267+09:00",
+  "stage_id": "S4",
+  "trigger": {
+    "formal_halt_check_after_n25": "HALT_BLOCKED_STAGE_COVERAGE",
+    "missing_stage": [
+      "S4"
+    ],
+    "ledger_head_sequence": 152,
+    "ledger_head_sha256": "34c7baad446889d8b55cfd8835414fcc5e2489d9fcf0078a3c848e4fb3ad41fd",
+    "snapshot_digest": "4abf7fd40a69c760d1d40c398775707c18a8fcf8e5235cbc58f157805f55bdd1"
+  },
+  "objective": "Repair only the missing S4 coverage by a root-only, no-score audit of the immutable official metric, exact local implementation, strict-prequential exact-Total aggregation, and the narrow action implication of the discontinuous settlement tiers. Do not reopen model/frontier research.",
+  "fixed_inputs": {
+    "AGENTS.md": "91a11f95f94e8de86f5c84b204e1893830b3ed5693e3d7ede7f2e351e9891e9c",
+    "inputs/notebooks/metric_official.ipynb": "0a3ab5a57dba0705dbdbda73cd723be37ef39cce388fcb22b1a220ce523a70f9",
+    "src/baram/evaluation/official.py": "5701ddfc5a6254e89cbc49451cd3f4bbddd437cff451a4596a86e7c68ff42cba",
+    "src/baram/evaluation/prequential.py": "a4cd12d30b3cf79ac339f1a5dbcc009f5b85ba10a30ef6614346a6309703b35b",
+    "src/baram/loop/events.py": "9c05e7cb40f76dcc759630ee9463dd29ffd5f8efd2d744e7b596def3390b5044",
+    "tests/evaluation/test_official.py": "e7f08b2c5c188f5bcbbf6529a4d57c2e4003c1e51e63616a4c98102d6ab0b4ae",
+    "tests/evaluation/test_prequential.py": "9a5db626ec810776cfc51afa8ddf6f379dc9cf1822903b7db0cedefa2116a8d8",
+    "tests/loop/test_events.py": "3524e780398428908584cd95ed8dbf0b2c53b645463c43117b15be3e5a4b4adf",
+    "reports/s17_n3_prequential_eval_receipt.json": "6f25b5bdff627de2a1bcebe537204d91e0be0bf5be63cc8018193c1754c0a080",
+    "reports/s17_n25_tertiary_frontier_intake_receipt.json": "9c90cbc24852e66571f3794d22a31e32660ca5c29f62f37e57ef214940f6bdc0",
+    "reports/s17_n25_tertiary_frontier_intake_closed_event.json": "1368b31065fa0d2133d922856f75ad0d2ab2cbac3b3f08eea73f8a61ec22d36b"
+  },
+  "input_bundle_sha256": "0a2c9cfa52754b1a46ef8bd0f04a5b03de3974af61447cb7e3ac0835fe986c3d",
+  "allowed_reads": [
+    "the fixed files above",
+    "synthetic unit-test fixtures and test stdout",
+    "EventStore metadata/snapshot only"
+  ],
+  "forbidden_reads_or_actions": [
+    "competition data bodies",
+    "actual_kwh from project artifacts",
+    "2024/test values or aggregates",
+    "model result scores beyond already frozen champion/target metadata",
+    "fits",
+    "predictions",
+    "policy selection or tuning",
+    "new external research",
+    "Dacon/account/remote inference/dependency actions"
+  ],
+  "outputs": [
+    "reports/s17_n26_s4_metric_action_audit.json",
+    "reports/s17_n26_s4_metric_action_audit_receipt.json",
+    "reports/s17_n26_s4_metric_action_audit_closed_event.json"
+  ],
+  "success_criteria": [
+    "transcribe all official filter/capacity/NMAE/FICR/tier/aggregation semantics literally from the immutable notebook",
+    "establish source-level equivalence of evaluate_official and exact prequential sufficient-statistic recomputation, backed only by synthetic unit tests",
+    "state action implications narrowly without claiming a conditional mean is optimal under the step reward or selecting a new action",
+    "record S4 evidence as SUPPORTED only if no contradiction is found",
+    "re-run chain and halt eligibility after append; expected terminal state is HALT_ALLOWED_EXHAUSTED only if pending/frontier remain empty and all S1-S11 are covered"
+  ],
+  "failure_rule": "Any metric mismatch or unsupported action claim closes S4 as INSUFFICIENT and formal halt remains blocked. No metric or model variant may be created in this repair.",
+  "score_class": "NON_SCORE_BEARING",
+  "comparison_index": null,
+  "comparison_count_before": 4,
+  "next_score_bearing_comparison_index_if_reopened": 5,
+  "lockbox_2024_used": false,
+  "dacon_actions": [],
+  "fit_budget": 0,
+  "prediction_budget": 0,
+  "metric_call_budget_project_data": 0,
+  "external_source_budget": 0,
+  "next_handoff_on_supported": []
+}

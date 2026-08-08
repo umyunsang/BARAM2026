@@ -1,0 +1,27 @@
+{
+  "event_type": "PREDECLARED",
+  "cycle_id": "S17-N23_POST_TERRAIN_FRONTIER_RESEARCH_INTAKE",
+  "stage_id": "S1",
+  "node_id": "S17-N23_POST_TERRAIN_FRONTIER_RESEARCH_INTAKE",
+  "actor": "root",
+  "occurred_at": "2026-08-08T23:52:07.118854+09:00",
+  "body": {
+    "preregistration_sha256": "d0939ba03683d39ae6c56186323bb83888698966eb877796c2f75ae4bff52148",
+    "parent_ids": [
+      "S17-N22A_M115_TERRAIN_NO_REFIT_TYPED_PROVENANCE_RECOVERY"
+    ],
+    "mechanism": "Recursive research re-entry after a fixed high-resolution terrain signal improved only +0.000363 and failed promotion; the next node must identify genuinely new pre-cutoff information/representation rather than tune the same signal.",
+    "treatment": "Five bounded evidence-tagged research lanes; at most one exact no-fit prerequisite handoff.",
+    "control": "Closed-axis ledger, unchanged Champion 0.6314827308346854, and zero fit/score/action access.",
+    "metric": "Root source/applicability/chronology/licence/deployability audit only; no performance metric.",
+    "min_effect": 0.0,
+    "score_bearing": false,
+    "novelty_signature": "POST_TERRAIN_NEW_INFORMATION_FRONTIER_RWA_V1",
+    "basis_evidence_ids": [
+      "N22A_TERRAIN_REFUTED",
+      "N22_CONTROL_EXACT",
+      "N18_PRIOR_FRONTIER",
+      "S17_CLOSED_AXIS_LEDGER"
+    ]
+  }
+}

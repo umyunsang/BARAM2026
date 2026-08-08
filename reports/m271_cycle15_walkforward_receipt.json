@@ -1,0 +1,141 @@
+{
+ "dacon_upload": false,
+ "decided_utc": "2026-08-04T07:04:09.394455+00:00",
+ "external_actions": [],
+ "lane": "L4",
+ "lockbox_reopened": false,
+ "model_fits": 0,
+ "new_2024_evaluation": false,
+ "node": "C1N15_WALKFORWARD_ENSEMBLE",
+ "report_sha256": "75f46a6e33b8e9855a04698a5855d9f11fa6fb2f9ca9b797762b01477dad8741",
+ "result": {
+  "fold_order": [
+   "dev-2023-Q2",
+   "dev-2023-Q3",
+   "dev-2023-Q4"
+  ],
+  "gate_modified": false,
+  "gate_version": "M270_MONTHLY_GATE_v1_frozen_2026-08-04",
+  "predeclared_check": {
+   "H1_expectation": "walk-forward 가중 앙상블이 동결 게이트를 통과한다",
+   "H1_held": false,
+   "H1_which": [],
+   "H2_expectation": "walk-forward 가중이 등가중(E1)보다 pooled Total 이 높다",
+   "H2_held": false,
+   "e1_reference_total": 0.6319343310558859,
+   "verdict": "WALKFORWARD_REJECTED"
+  },
+  "reference_e1": {
+   "bootstrap_q05": 0.0015172613354885883,
+   "cells_improved": 57,
+   "cells_worsened": 51,
+   "delta_total": 0.003329810165570546,
+   "ficr": 0.4038525147527546,
+   "gate": {
+    "G1": false,
+    "G2": true,
+    "G3": true,
+    "G4": true
+   },
+   "min_delta": -0.003768760053953768,
+   "months_scored": 9,
+   "name": "E1_ALL_EQUAL_reference",
+   "one_minus_nmae": 0.8600161473590173,
+   "passed": false,
+   "positive_months": 6,
+   "sign_test_p": 0.25390625,
+   "total": 0.6319343310558859
+  },
+  "variants": [
+   {
+    "bootstrap_q05": 0.001045194858325345,
+    "cells_improved": 59,
+    "cells_worsened": 49,
+    "delta_total": 0.002817653645734941,
+    "ficr": 0.40244556609049303,
+    "gate": {
+     "G1": false,
+     "G2": true,
+     "G3": true,
+     "G4": true
+    },
+    "min_delta": -0.003768760053953768,
+    "months_scored": 9,
+    "name": "WF_RAW",
+    "one_minus_nmae": 0.8603987829816077,
+    "passed": false,
+    "positive_months": 6,
+    "sign_test_p": 0.25390625,
+    "total": 0.6314221745360503
+   },
+   {
+    "bootstrap_q05": 0.0009109673395557769,
+    "cells_improved": 64,
+    "cells_worsened": 44,
+    "delta_total": 0.002379784510430416,
+    "ficr": 0.4034945005470474,
+    "gate": {
+     "G1": false,
+     "G2": true,
+     "G3": true,
+     "G4": true
+    },
+    "min_delta": -0.0035525822824006292,
+    "months_scored": 9,
+    "name": "WF_SHRINK_a0.5",
+    "one_minus_nmae": 0.8584741102544441,
+    "passed": false,
+    "positive_months": 6,
+    "sign_test_p": 0.25390625,
+    "total": 0.6309843054007458
+   }
+  ],
+  "weights_per_fold": {
+   "dev-2023-Q2": {
+    "M102_TOP100": 0.08333333333333333,
+    "M113_LGBM_DART": 0.08333333333333333,
+    "M115_XGBOOST": 0.08333333333333333,
+    "M129_GROUP_FINETUNE": 0.08333333333333333,
+    "M244_RARE_EVENT_CORRECTED_ANALOG_Q234": 0.08333333333333333,
+    "M64B_ALLWEATHER_SITEWIND_CLASS": 0.08333333333333333,
+    "M68_SITEWIND_CLASS_ITER": 0.08333333333333333,
+    "M72_BIN020": 0.08333333333333333,
+    "M84_LEAVES031": 0.08333333333333333,
+    "M93_POWER_QUANTILE": 0.08333333333333333,
+    "M96_ORDINAL_CUMULATIVE": 0.08333333333333333,
+    "M98_ORDINAL_BIN025": 0.08333333333333333
+   },
+   "dev-2023-Q3": {
+    "M102_TOP100": 0.08367430692499586,
+    "M113_LGBM_DART": 0.08246767175074392,
+    "M115_XGBOOST": 0.08067895457944142,
+    "M129_GROUP_FINETUNE": 0.0817446825422054,
+    "M244_RARE_EVENT_CORRECTED_ANALOG_Q234": 0.12511241231953063,
+    "M64B_ALLWEATHER_SITEWIND_CLASS": 0.08534352064392793,
+    "M68_SITEWIND_CLASS_ITER": 0.08024997699345618,
+    "M72_BIN020": 0.07163561186017467,
+    "M84_LEAVES031": 0.06974216648352978,
+    "M93_POWER_QUANTILE": 0.07703417726745466,
+    "M96_ORDINAL_CUMULATIVE": 0.08033219742717562,
+    "M98_ORDINAL_BIN025": 0.08198432120736389
+   },
+   "dev-2023-Q4": {
+    "M102_TOP100": 0.08330094038833803,
+    "M113_LGBM_DART": 0.08313183162405695,
+    "M115_XGBOOST": 0.08468262118367491,
+    "M129_GROUP_FINETUNE": 0.08294120352196496,
+    "M244_RARE_EVENT_CORRECTED_ANALOG_Q234": 0.11559145407101344,
+    "M64B_ALLWEATHER_SITEWIND_CLASS": 0.08463088440660929,
+    "M68_SITEWIND_CLASS_ITER": 0.07738063399006392,
+    "M72_BIN020": 0.07964659134183247,
+    "M84_LEAVES031": 0.06609124267127375,
+    "M93_POWER_QUANTILE": 0.07548213635232852,
+    "M96_ORDINAL_CUMULATIVE": 0.08458359251504538,
+    "M98_ORDINAL_BIN025": 0.08253686793379832
+   }
+  }
+ },
+ "schema_version": 1,
+ "script_sha256": "f2afd68205cbf83d61d9c149388b02d4a91ae213473ed54091ea5410d867e5b0",
+ "stage": "M271_P4_CYCLE15_WALKFORWARD"
+}

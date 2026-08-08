@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "artifact": "SK@v4",
+  "skeleton_sha256": "474dfdd3912ab255b26b6988442d8107a0c1c0c9c2e7d3db8ceb43ad1ebb4530",
+  "decided_at": "2026-08-08T18:03:27.766297+09:00",
+  "decision": "WITHDRAWN_AS_UNNECESSARY_PREREQUISITE_NOT_APPROVED",
+  "reason": {
+    "router_bypass_1": "root request includes bounded inspection/review/diagnosis of an existing workflow",
+    "router_bypass_2": "root request explicitly asks execution of the already approved active plan without changing its hard boundaries",
+    "existing_authority": [
+      "SK@v3 approved",
+      "DS@v3 approved",
+      "IP@v2 implementation approved and active",
+      "active strict-local success override",
+      "current AGENTS.md"
+    ],
+    "error": "The first routing classified execution-continuation as new project shaping and created an avoidable human-approval deadlock."
+  },
+  "not_an_approval": true,
+  "preserved_boundaries": [
+    "no new 2024 evaluation",
+    "no Dacon/account mutation",
+    "root-only writes/fits",
+    "<=6 model workers",
+    "availability/licence rules",
+    "strict chronology"
+  ],
+  "actions_authorized_now": [
+    "bounded read-only research lanes",
+    "root integration",
+    "root-owned experiments already within approved plan"
+  ],
+  "material_new_architecture_requires_future_exact_approval": true
+}

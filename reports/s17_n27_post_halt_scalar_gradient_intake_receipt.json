@@ -1,0 +1,127 @@
+{
+  "schema_version": 1,
+  "node_id": "S17-N27_POST_HALT_ORIENTED_SCALAR_GRADIENT_RESEARCH_INTAKE",
+  "status": "CLOSED_NONE_RESTORE_EVIDENCE_EXHAUSTED",
+  "created_at": "2026-08-09T04:01:45.221178+09:00",
+  "predeclaration": {
+    "path": "reports/s17_n27_post_halt_scalar_gradient_intake_predeclaration.json",
+    "sha256": "834ec2aff52768c2f5f44bd01c6262e256d7ead00478dd7509dad30311c8ec08",
+    "event_sequence": 155,
+    "event_sha256": "747e58987d68e4f4cac681a47d56968341d158976ea3034625ad6a3cb9169663",
+    "input_bundle_sha256": "b7050f406c64d6e85ef524c3dbca9c3ba6d4f7fcba411cd6d4f0719ab25a56f6",
+    "input_hashes_reverified_unchanged": true
+  },
+  "lane_artifacts": [
+    {
+      "id": "SCALAR_GRADIENT_PHYSICS",
+      "path": "research/lanes/s17_n27_scalar_gradient_physics.md",
+      "sha256": "da5a2e16e455c51173d2285beea85522ccfe0a456e8b486f3087d9f988d599b3",
+      "verdict": "FAIL_CLOSED: exact geostrophic formula and short-horizon benefit exist; 48h WRF MSLPGrad is a target near match, but no same-treatment isolated 12-36h effect or zero-choice bridge."
+    },
+    {
+      "id": "REPOSITORY_NOVELTY",
+      "path": "research/lanes/s17_n27_scalar_gradient_repo_novelty.md",
+      "sha256": "1440230748fa34191dab57d152e753ab1461afee8df048ada519c8158cd7195c",
+      "verdict": "PASS_NOVELTY_CORE_ONLY: core production source has unordered scalar summaries, site interpolation, and u/v vector gradients, but no scalar pressure/temperature/geopotential gradient."
+    },
+    {
+      "id": "SCHEMA_FORMULA_RUNTIME",
+      "path": "research/lanes/s17_n27_scalar_gradient_schema_runtime.md",
+      "sha256": "aefae874bc1e165a9a5f1b3a0d997192c0f16241d1ef11a5facbc5acd962b673",
+      "verdict": "FAIL_CLOSED: arithmetic is locally feasible, but provider/unit/formula/domain/source/level/projection choices do not collapse to one treatment."
+    }
+  ],
+  "lane_bundle_sha256": "c01c663ea5ff7be277c7d9a7721842ab54949da4882e284865e461c0d66cd416",
+  "root_audit": {
+    "ready_executable_or_prerequisite_candidate_count": 0,
+    "selected_candidate": null,
+    "decision": "NONE_RESTORE_EVIDENCE_EXHAUSTED",
+    "decisive_reason": "Novelty is only one conjunct. Zhu 2014 and Couto 2022 support different treatments; combining the observation-network geostrophic formula with the WRF MSLPGrad day-ahead effect is a derived bridge, and the latter effect belongs to a site-selected feature suite rather than an isolated gradient.",
+    "closest_evidence": [
+      {
+        "source": "Zhu et al. 2014",
+        "direct": "literal 850 hPa geopotential-plane geostrophic construction; 5.3-8.2% MAE reduction vs best prior at 2 h",
+        "fatal": [
+          "1-6h",
+          "10m contemporaneous observations",
+          "12-station/month-centering/BIC/45-day treatment",
+          "not issued 12-36h NWP"
+        ]
+      },
+      {
+        "source": "Couto & Estanqueiro 2022",
+        "direct": "48h WRF wind-power feature suite names MSLPGrad; whole system improves RMSE 13-37%",
+        "fatal": [
+          "no isolated MSLPGrad effect",
+          "site-specific sequential feature/PC selection",
+          "exact gradient estimator/domain/output not disclosed"
+        ]
+      }
+    ],
+    "reopen_rule": "Only an exact published issued-NWP scalar-gradient implementation with isolated day-ahead effect and literal field/domain mapping can cure this closure; generic geostrophy or another analyst freeze cannot."
+  },
+  "authoritative_state": {
+    "champion_total": 0.6314827308346854,
+    "target_total": 0.66,
+    "gap": 0.0285172691653146,
+    "comparison_count_before": 4,
+    "comparison_count_after": 4,
+    "next_score_bearing_comparison_index": 5,
+    "candidate_changed": false
+  },
+  "scope_accounting": {
+    "children_spawned": 3,
+    "children_stopped": 3,
+    "delegated_durable_files": 0,
+    "root_reconstructed_lane_files": 3,
+    "scope_incidents": [
+      {
+        "lane": "REPOSITORY_NOVELTY",
+        "incident": "allowed planning-Python source search printed an actual_kwh identifier and searched broader source inventory than needed; no value/aggregate/result was exposed; delegated conclusion discarded and root rebuilt from fixed core source"
+      },
+      {
+        "lane": "ALL",
+        "incident": "children exceeded practical completion bound and returned without artifacts; transcript conclusions were not adopted as deliverables; root independently rebuilt bounded evidence"
+      }
+    ],
+    "project_data_values_read": 0,
+    "actual_or_label_values_read": 0,
+    "raw_2024_or_test_values_read": 0,
+    "model_result_scores_read": 0,
+    "fits": 0,
+    "predictions": 0,
+    "policy_calls": 0,
+    "project_metric_calls": 0,
+    "external_data_or_model_weight_bodies": 0,
+    "publication_pdf_bodies_read_in_memory": 1,
+    "publication_pdf_bytes": 646976,
+    "publication_files_retained": 0,
+    "dependency_changes": 0,
+    "dacon_or_account_actions": []
+  },
+  "validation": {
+    "event_tests": {
+      "result": "PASS",
+      "tests_passed": 11,
+      "stdout_sha256": "2b2f822a5aad4c62874a54f4ffc373443b13db874403ee1da00e7ea14833996b"
+    },
+    "ruff": {
+      "result": "PASS",
+      "stdout_sha256": "5b196eb3a6acb50d3fa398d04ca284985cc1ffec870e940264b00780bfd2c971"
+    },
+    "immutable_inputs": {
+      "competition_zip_sha256": "920be0c458d820e855bf79dd25723146f52ce1736138aedba5e6bc853f1f720b",
+      "baseline_notebook_sha256": "712b26f4d2748860c94cff1e0100c23810468c983173f8e9ef8d009fe82df48c"
+    }
+  },
+  "comparison": {
+    "score_bearing": false,
+    "comparison_index": null,
+    "official_total": null,
+    "champion_changed": false
+  },
+  "next_handoff": [],
+  "lockbox_2024_used": false,
+  "dacon_actions": [],
+  "success": false
+}

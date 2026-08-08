@@ -1,0 +1,33 @@
+{
+  "event_type": "PREDECLARED",
+  "cycle_id": "S17-N27_POST_HALT_ORIENTED_SCALAR_GRADIENT_RESEARCH_INTAKE",
+  "stage_id": "S6",
+  "node_id": "S17-N27_POST_HALT_ORIENTED_SCALAR_GRADIENT_RESEARCH_INTAKE",
+  "actor": "root",
+  "occurred_at": "2026-08-09T01:12:19.745569+09:00",
+  "body": {
+    "preregistration_sha256": "834ec2aff52768c2f5f44bd01c6262e256d7ead00478dd7509dad30311c8ec08",
+    "parent_ids": [
+      "S17-N26_S4_OFFICIAL_METRIC_AND_ACTION_APPROPRIATENESS_AUDIT"
+    ],
+    "mechanism": "Pressure and temperature scalar-field orientation may encode synoptic forcing/front structure that is discarded by unordered spatial summaries and is not contained in the existing wind-vector gradient features.",
+    "treatment": "Three bounded no-data/no-score audits of primary physics evidence, operation-level repository novelty, and literal schema/formula/runtime; at most one exact no-fit prerequisite handoff.",
+    "control": "Existing unordered scalar summaries plus existing wind-vector geometric features and the closed-axis ledger.",
+    "metric": "Direct-support/applicability/novelty/formula gate only; no project-data official Total.",
+    "min_effect": 0.0,
+    "score_bearing": false,
+    "novelty_signature": "S17N27_SUPPLIED_NWP_ORIENTED_SCALAR_GRADIENT_INTAKE_V1",
+    "basis_evidence_ids": [
+      "AGENTS.md:91a11f95f94e8de86f5c84b204e1893830b3ed5693e3d7ede7f2e351e9891e9c",
+      "artifacts/manifests/prepare.json:ca4908d7f98639b13da80febcd071cd805369e8e044bb4d7b97f793d2703ca46",
+      "src/baram/features/geometric.py:86e977ed4167c3f9229d0ef017da678cf709fdf39fe774f908a2edc1182406d4",
+      "src/baram/features/spatial.py:37c31ccb17beedc01d0b6e7e3210d821bc4dcdc6e860c76dc38fea77aa64c092",
+      "src/baram/features/physics.py:881443f644acf802c8a222fedc7a0f7062fc2345d44580b01124bbfd9a2358bf",
+      ".planning/2026-08-01-leaderboard-top-4-loop/run_classifier_iteration_sweep.py:3539eb42a83a15e59fb6cc62b37ced2d5ed4b7b7c9439afb621461c3cc4f7cd1",
+      "research/lanes/s17_n24_issued_schema_coverage.md:a7cc2db5b9ffcf39e7ada7e21d27e7c56316086579ec349a4e3baec312d708eb",
+      "reports/s17_n25_tertiary_frontier_intake_receipt.json:9c90cbc24852e66571f3794d22a31e32660ca5c29f62f37e57ef214940f6bdc0",
+      "reports/s17_n26_s4_metric_action_audit_receipt.json:1b42d6323efe92528d8a40f300d4b5ef2ef0c7a31042a68a74ca6f2c55452313",
+      "reports/s17_evidence_exhausted_target_not_reached_receipt.json:e128fce3b0211eb0330094105b41fd5c423e478b043538d2e269e1533529e6d7"
+    ]
+  }
+}

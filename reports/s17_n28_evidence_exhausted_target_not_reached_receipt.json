@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "status": "EVIDENCE_EXHAUSTED_TARGET_NOT_REACHED_AFTER_N28",
+  "created_at": "2026-08-09T04:27:26.543585+09:00",
+  "supersedes_current_state_snapshot_only": {
+    "prior_path": "reports/s17_evidence_exhausted_target_not_reached_receipt.json",
+    "prior_sha256": "e128fce3b0211eb0330094105b41fd5c423e478b043538d2e269e1533529e6d7",
+    "note": "The prior sequence-154 receipt remains immutable historical evidence; this receipt records the post-N27/N28 authoritative state."
+  },
+  "authoritative_score_state": {
+    "champion_total": 0.6314827308346854,
+    "target_total": 0.66,
+    "gap": 0.028517269165314607,
+    "target_reached": false,
+    "comparison_count": 4,
+    "next_score_bearing_comparison_index": 5,
+    "goal_complete_called": false
+  },
+  "n27_closure": {
+    "receipt_path": "reports/s17_n27_post_halt_scalar_gradient_intake_receipt.json",
+    "receipt_sha256": "3667985cef45b4d97848a51aec6f4730e7f71b986859bba9230eeed5db66f5b8",
+    "closed_event_path": "reports/s17_n27_post_halt_scalar_gradient_intake_closed_event.json",
+    "closed_event_file_sha256": "f9916fb94ee6fc2c19432d2b21b8b845e3b2ba66daaf101c6eb30a6bfb02037a",
+    "event_sequence": 156,
+    "event_sha256": "977a30203efc6fd0f1d6b14b4f74e7ccf7e9328c1d7633f2126d99071c1f2061",
+    "decision": "NONE"
+  },
+  "n28_closure": {
+    "predeclaration_path": "reports/s17_n28_traderes_fulltext_reopen_audit_predeclaration.json",
+    "predeclaration_sha256": "3ab846b5af236fadb896c6ddf6d90b02e934fe0820438a8316eacf68ded0fedf",
+    "audit_path": "research/lanes/s17_n28_traderes_fulltext_reopen_audit.md",
+    "audit_sha256": "580122f52f57786283f4daa74c7421c70c09de88eb4f91cece1df562a168d9da",
+    "receipt_path": "reports/s17_n28_traderes_fulltext_reopen_audit_receipt.json",
+    "receipt_sha256": "79b76f9c796432f9aa5f259a699bf54116644fcc23e674df963778ae9c6d7bc2",
+    "closed_event_path": "reports/s17_n28_traderes_fulltext_reopen_audit_closed_event.json",
+    "closed_event_file_sha256": "671e2cb523d66abe4166a8b0d53b68d63bedc02b688abb5e29c49533882a4502",
+    "event_sequence": 158,
+    "event_sha256": "1f92bedddaff46aec17470ef69634967cabfbdb4ce30f57dc54a4d31ec566eee",
+    "decision": "NONE",
+    "comparison_consumed": false
+  },
+  "eventstore": {
+    "path": "artifacts/registry/loop_events_s17.sqlite",
+    "sha256": "5881b48f39ad8e8a334f11dd30abee1f893547da34aed55dc1979f1e476f0e12",
+    "head_sequence": 158,
+    "head_event_sha256": "1f92bedddaff46aec17470ef69634967cabfbdb4ce30f57dc54a4d31ec566eee",
+    "previous_sha256": "d888ad931837acd363a05a878b5a83d307493502fab46eee551edfcc7891df2f",
+    "digest": "6710ac311c64532d744cf0776e8dbbcb5b6a26f90044b060077ff3f6400e4a38",
+    "verify_chain": "PASS",
+    "stage_coverage": [
+      "S1",
+      "S2",
+      "S3",
+      "S4",
+      "S5",
+      "S6",
+      "S7",
+      "S8",
+      "S9",
+      "S10",
+      "S11"
+    ],
+    "pending": [],
+    "frontier": [],
+    "halt_eligibility": "HALT_ALLOWED_EXHAUSTED"
+  },
+  "validation": {
+    "pytest": {
+      "command": ".venv/bin/pytest -q",
+      "returncode": 0,
+      "result": "217 passed, 144 warnings",
+      "elapsed_reported": "44.32s"
+    },
+    "ruff": {
+      "command": ".venv/bin/ruff check src tests scripts",
+      "returncode": 0,
+      "result": "All checks passed!"
+    },
+    "immutable_inputs": {
+      "inputs/competition/open_wind_236727.zip": {
+        "expected": "920be0c458d820e855bf79dd25723146f52ce1736138aedba5e6bc853f1f720b",
+        "actual": "920be0c458d820e855bf79dd25723146f52ce1736138aedba5e6bc853f1f720b",
+        "match": true
+      },
+      "inputs/notebooks/baseline.ipynb": {
+        "expected": "712b26f4d2748860c94cff1e0100c23810468c983173f8e9ef8d009fe82df48c",
+        "actual": "712b26f4d2748860c94cff1e0100c23810468c983173f8e9ef8d009fe82df48c",
+        "match": true
+      }
+    },
+    "n28_fixed_inputs_unchanged": true
+  },
+  "scope_and_actions": {
+    "lockbox_2024_used": false,
+    "dacon_actions": [],
+    "account_actions": [],
+    "fits": 0,
+    "predictions": 0,
+    "score_bearing_comparisons": 0,
+    "n28_identifier_only_incident_disclosed": true,
+    "raw_label_or_2024_test_values_exposed": false
+  },
+  "terminal_interpretation": "HALT_ALLOWED_EXHAUSTED is a valid unsuccessful evidence halt, not proof of impossibility and not goal success.",
+  "reopen_rule": "Reopen only on genuinely new directly supported information that cures all named treatment, chronology, mapping and target-effect blockers, or on an explicit user scope change. Any score-bearing reopen must predeclare comparison index 5."
+}

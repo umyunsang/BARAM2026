@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "node_id": "S17-N28_TRADERES_FULLTEXT_SCALAR_GRADIENT_REOPEN_AUDIT",
+  "status": "CLOSED_NONE_RESTORE_EVIDENCE_EXHAUSTED",
+  "created_at": "2026-08-09T04:25:18.341929+09:00",
+  "predeclaration": {
+    "path": "reports/s17_n28_traderes_fulltext_reopen_audit_predeclaration.json",
+    "sha256": "3ab846b5af236fadb896c6ddf6d90b02e934fe0820438a8316eacf68ded0fedf",
+    "event_path": "reports/s17_n28_traderes_fulltext_reopen_audit_predeclared_event.json",
+    "event_file_sha256": "2059bd7323618e3aad9ed8d0258e58e8c18f4b48489fb44254b1faf636ef1e98",
+    "event_sequence": 157,
+    "event_sha256": "d888ad931837acd363a05a878b5a83d307493502fab46eee551edfcc7891df2f",
+    "input_bundle_sha256": "275ea0251b87db3db7fc2af497bd04f269f68a17ed76ddd67da9cf609670045d",
+    "input_hashes_reverified_unchanged": true
+  },
+  "audit_artifact": {
+    "path": "research/lanes/s17_n28_traderes_fulltext_reopen_audit.md",
+    "sha256": "580122f52f57786283f4daa74c7421c70c09de88eb4f91cece1df562a168d9da",
+    "verdict": "FAIL_CLOSED: exact formula existence is cured, but local source/domain/output mapping and isolated validated day-ahead effect remain unresolved."
+  },
+  "new_fulltext_evidence": [
+    {
+      "id": "COUTO_ESTANQUEIRO_2022_FULLTEXT",
+      "doi": "10.1016/j.renene.2022.11.022",
+      "official_repository_url": "https://repositorio.lneg.pt/bitstream/10400.9/4016/2/RenewableEnergy_Vol.201_1076-1085.pdf",
+      "retrieval_url": "https://r.jina.ai/https://repositorio.lneg.pt/bitstream/10400.9/4016/2/RenewableEnergy_Vol.201_1076-1085.pdf",
+      "retrieved_text_bytes": 56493,
+      "sha256": "ed3d342c63eb55751f9e69bd55e048b2b24a97b178e49964d99540838a40f3dd",
+      "direct_support": "00 UTC WRF/48 h/last-24 h treatment; projected-grid centred MSLP finite difference; per-variable z-score PCA at 90% variance.",
+      "fatal_boundary": "MSLPGrad has no isolated ablation; suite uses supervised site-specific selection and does not transfer across parks."
+    },
+    {
+      "id": "TRADERES_D4_9_ED2",
+      "official_url": "https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e51750507a&appId=PPGMS",
+      "edition_date": "2024-01-26",
+      "retrieved_pdf_bytes": 3948209,
+      "sha256": "f58e65e25870ec4a1f3833b0ec3a0897bde36c8f9cb3d7c52f90f1efc220c5f6",
+      "direct_support": "centred MSLP gradient, gradient-norm tendency, fixed 2/98 percentiles and storm-event tracking constants.",
+      "fatal_boundary": "report explicitly defers ramp forecast accuracy assessment to WP5 and provides no deterministic action mapping."
+    }
+  ],
+  "root_audit": {
+    "ready_executable_or_prerequisite_candidate_count": 0,
+    "selected_candidate": null,
+    "decision": "NONE_RESTORE_EVIDENCE_EXHAUSTED",
+    "gate_results": {
+      "direct_formula_mechanism": "PASS",
+      "literal_supplied_field": "PASS_GFS_PRMSL_ONLY_WITH_TRANSFER_BOUNDARY",
+      "same_issuance_computability": "PASS_IN_PRINCIPLE",
+      "zero_choice_source_grid_projection_output": "FAIL",
+      "operation_level_novelty": "PASS_CORE_ONLY",
+      "same_treatment_target_scale_effect": "FAIL",
+      "unchanged_runtime": "PASS_ARITHMETIC_ONLY"
+    },
+    "decisive_reason": "The 2022 gain belongs to a site-selected multifeature PCA/ANN suite and the 2024 exact ramp alert is explicitly unevaluated. Neither fixes one supplied-source/domain/output mapping with an isolated day-ahead wind-power effect.",
+    "reopen_rule": "Only new direct evidence that both fixes the exact supplied-grid treatment and validates its isolated day-ahead wind-power/action effect may reopen this axis."
+  },
+  "authoritative_state": {
+    "champion_total": 0.6314827308346854,
+    "target_total": 0.66,
+    "gap": 0.028517269165314607,
+    "comparison_count_before": 4,
+    "comparison_count_after": 4,
+    "next_score_bearing_comparison_index": 5,
+    "candidate_changed": false
+  },
+  "scope_accounting": {
+    "additional_external_bodies_after_predeclaration": 0,
+    "raw_supplied_weather_values_read": false,
+    "label_values_read": false,
+    "2024_or_test_values_or_aggregates_read": false,
+    "model_result_scores_read": false,
+    "fits": 0,
+    "predictions": 0,
+    "policy_calls": 0,
+    "project_metric_calls": 0,
+    "dependency_changes": [],
+    "dacon_actions": [],
+    "account_actions": [],
+    "incident": {
+      "description": "A bounded fixed-source header print exposed the identifier actual_kwh only.",
+      "values_rows_aggregates_or_scores_exposed": false,
+      "containment": "The output was unnecessary, excluded from adjudication, and the cycle closes fail-closed with zero candidate."
+    }
+  },
+  "validation_at_close": {
+    "input_hash_reverification": "PASS",
+    "event_chain_verification": "to be performed atomically by EventStore.append",
+    "postclosure_native_tests": "pending; no tests were run inside the zero-metric audit"
+  },
+  "next_handoff": []
+}

@@ -1,0 +1,74 @@
+{
+  "node_id": "C1N87_CURTAILMENT_CLEAN_TARGET",
+  "lane": "L1",
+  "parent": "C1N86_LANE_EXPAND",
+  "rule": {
+    "wind_floor": 10.0,
+    "deviation": 0.15,
+    "frozen_before_run": true,
+    "rationale": "WIND_FLOOR 은 커브가 평탄해지는 지점(10 m/s 에서 g1 0.726 / g2 0.685 / g3 0.712), DEVIATION 은 정격의 15%. 물리와 크기에서 왔고 성능을 보고 조정하지 않았다."
+  },
+  "flag_rate": 0.02360763566168585,
+  "flag_rate_by_group": {
+    "1": 0.030534351145038167,
+    "2": 0.018663409793519332,
+    "3": 0.02064560282878978
+  },
+  "model_fits": 18,
+  "test_rows": 19783,
+  "sigma_primary_all_test_rows": {
+    "base": {
+      "g1": 1.4957083168950884,
+      "g2": 1.5947495667798688,
+      "g3": 1.6520568905485604,
+      "overall": 1.5846644918657369
+    },
+    "clean": {
+      "g1": 1.496642614064749,
+      "g2": 1.5932242547872857,
+      "g3": 1.687754373474356,
+      "overall": 1.5962045626697194
+    }
+  },
+  "sigma_secondary_non_curtailed": {
+    "base": {
+      "g1": 1.489661039624358,
+      "g2": 1.581744947509547,
+      "g3": 1.610708353934489,
+      "overall": 1.564914984732619
+    },
+    "clean": {
+      "g1": 1.4855484417529088,
+      "g2": 1.5773402465048532,
+      "g3": 1.6311347344913116,
+      "overall": 1.568297589109538
+    }
+  },
+  "reduction": -0.007282343274061409,
+  "reduction_by_group": {
+    "1": -0.0006246519853549959,
+    "2": 0.0009564586342312165,
+    "3": -0.021607901719378653
+  },
+  "implied_total_gain": -0.0011943042969460712,
+  "f1_sigma_reduction": 0.006176829268292682,
+  "detection_threshold": 0.001013,
+  "checks": {
+    "V1_base_matches_c84": true,
+    "V2_flag_rate_in_range": true,
+    "V3_same_test_rows": true
+  },
+  "hypotheses": {
+    "H1_clean_beats_base": false,
+    "H2_clears_detection": false,
+    "H3_g3_improves_most": false,
+    "H4_holds_on_non_curtailed_rows": false
+  },
+  "verdict": "CURTAILMENT_CLEANING_DOES_NOT_HELP",
+  "deployable": true,
+  "deployability_note": "감발은 예보시점에 알 수 없어 피처가 될 수 없다. 그러나 **학습 표적에서 제외**하는 것은 학습기간 SCADA 만 쓰므로 배포 가능하다 — 평가기간에는 아무것도 필요하지 않다.",
+  "dacon_upload": false,
+  "lockbox_used": false,
+  "generated_at": "2026-08-06T01:21:14.686345+00:00",
+  "digest": "0c834e8e5ae29777"
+}

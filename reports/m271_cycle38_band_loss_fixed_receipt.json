@@ -1,0 +1,151 @@
+{
+ "dacon_upload": false,
+ "decided_utc": "2026-08-04T11:07:39.407936+00:00",
+ "external_actions": [],
+ "lane": "L3",
+ "lockbox_reopened": false,
+ "model_fits": 6,
+ "new_2024_evaluation": false,
+ "node": "C1N38_BAND_LOSS_FIXED",
+ "report_sha256": "1410314b37b4dd6715ceafe301aac637d8023e0fb02dfdd568bdffa8f8b95024",
+ "result": {
+  "by_fold": {
+   "BAND": {
+    "Q2": 0.5097415871315877,
+    "Q3": 0.5184390053361213,
+    "Q4": 0.5080238113474422
+   },
+   "CONTROL": {
+    "Q2": 0.5358658436305977,
+    "Q3": 0.5431709974210894,
+    "Q4": 0.544520446913695
+   }
+  },
+  "contribution": {
+   "ficr": -0.015256869376204657,
+   "one_minus_nmae": -0.015273382142866221
+  },
+  "defects_fixed": {
+   "D1": "학습 모집단을 유효행으로 거른 것 -> 전 행으로 교정",
+   "D2": "헤시안 상수 1.0 -> 경사와 같은 척도 (1 + k*bump)"
+  },
+  "delta_band_minus_control": -0.03053025151907085,
+  "features_used": 87,
+  "fits": 6,
+  "fold_sizes": {
+   "dev-2023-Q2": {
+    "test": 6552,
+    "train": 23810
+   },
+   "dev-2023-Q3": {
+    "test": 6609,
+    "train": 30362
+   },
+   "dev-2023-Q4": {
+    "test": 6624,
+    "train": 36981
+   }
+  },
+  "gate_modified": false,
+  "gate_version": "M270_MONTHLY_GATE_v1_frozen_2026-08-04",
+  "gate_vs_deployed": {
+   "bootstrap_q05": -0.12478925546626647,
+   "flags": {
+    "G1": false,
+    "G2": false,
+    "G3": false,
+    "G4": false
+   },
+   "min_delta": -0.16235178843651582,
+   "months_scored": 9,
+   "passed": false,
+   "positive_months": 0,
+   "sign_test_p": 1.0
+  },
+  "guard_added": "V1 대조군 온전성. 기각시 손실 축을 판정하지 않는다",
+  "lockbox_used": false,
+  "node": "C1N38_BAND_LOSS_FIXED",
+  "params": {
+   "colsample_bytree": 0.8,
+   "deterministic": true,
+   "force_row_wise": true,
+   "learning_rate": 0.05,
+   "min_child_samples": 100,
+   "n_estimators": 400,
+   "num_leaves": 31,
+   "num_threads": 1,
+   "seed": 20260804,
+   "subsample": 0.8,
+   "subsample_freq": 1,
+   "verbose": -1
+  },
+  "parent_node": "C1N37_BAND_ALIGNED_LOSS",
+  "predeclared_check": {
+   "H1_expectation": "BAND > CONTROL",
+   "H1_held": null,
+   "H1_measured": -0.03053025151907085,
+   "H2_expectation": "BAND 가 배포 대비 개선 + 게이트 통과",
+   "H2_held": null,
+   "H3_expectation": "BAND > M115@T0.6_G0.2 (0.63031)",
+   "H3_held": null,
+   "H4_expectation": "이득이 FICR 쪽",
+   "H4_held": null,
+   "V1_expectation": "CONTROL 이 배포의 -0.03 이내",
+   "V1_held": false,
+   "V1_measured_gap": -0.08692704023486664,
+   "judged": false,
+   "verdict": "RECONSTRUCTION_INVALID_AXIS_NOT_JUDGED"
+  },
+  "scores": {
+   "BAND": {
+    "ficr": 0.2230806404453871,
+    "group_ficr": {
+     "1": 0.21292506617111076,
+     "2": 0.2419178218483271,
+     "3": 0.21439903331672344
+    },
+    "group_nmae": {
+     "1": 0.20227769346876986,
+     "2": 0.19143427836640178,
+     "3": 0.20864657468272257
+    },
+    "one_minus_nmae": 0.7992138178273686,
+    "total": 0.5111472291363779
+   },
+   "CONTROL": {
+    "ficr": 0.2535943791977964,
+    "group_ficr": {
+     "1": 0.23842089432678343,
+     "2": 0.2900602208483098,
+     "3": 0.23230202241829617
+    },
+    "group_nmae": {
+     "1": 0.16806435020460503,
+     "2": 0.16191490249823431,
+     "3": 0.1807390009578575
+    },
+    "one_minus_nmae": 0.829760582113101,
+    "total": 0.5416774806554487
+   },
+   "deployed": {
+    "ficr": 0.40246401063156667,
+    "group_ficr": {
+     "1": 0.409551299643159,
+     "2": 0.46073846269466673,
+     "3": 0.33710226955687433
+    },
+    "group_nmae": {
+     "1": 0.13617589715402054,
+     "2": 0.14227310586805572,
+     "3": 0.15731590353073155
+    },
+    "one_minus_nmae": 0.8547450311490641,
+    "total": 0.6286045208903154
+   }
+  },
+  "supersedes": "C1N37_BAND_ALIGNED_LOSS"
+ },
+ "schema_version": 1,
+ "script_sha256": "e11dc0717a9a357ecf1172b0f98ba3cbd3c37bc9d38e85efcaddd816e772ac6f",
+ "stage": "M271_P4_CYCLE38_BAND_LOSS_FIXED"
+}

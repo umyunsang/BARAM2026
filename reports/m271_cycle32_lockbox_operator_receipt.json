@@ -1,0 +1,234 @@
+{
+ "dacon_upload": false,
+ "decided_utc": "2026-08-04T08:42:50.096532+00:00",
+ "external_actions": [],
+ "lane": "L4",
+ "lockbox_reopened": true,
+ "lockbox_use_ordinal": 2,
+ "model_fits": 0,
+ "new_2024_evaluation": true,
+ "node": "C1N32_LOCKBOX_OPERATOR",
+ "report_sha256": "acba8389742e4a7415a392152fdfe1d7a4bd76ab6352823b6eeaf4722577823d",
+ "result": {
+  "eligible_rows": 14534,
+  "first_use": {
+   "candidates": [
+    "control-random_forest",
+    "tree-calibrated",
+    "catboost-shared-b1e92b1d786fa958"
+   ],
+   "champion": "tree-calibrated",
+   "champion_total_2024": 0.6276054065728833,
+   "freeze_id": "f25afd46c98560e7280d4625e3e7aa283c508eaa3d7966de42ad6c43299de35f",
+   "run_id": "lockbox-2024",
+   "when_utc": "2026-08-01T13:11:03Z (파일 mtime 22:11 KST)"
+  },
+  "gate": {
+   "bootstrap_q05": -0.0023951080789021916,
+   "flags": {
+    "G1": false,
+    "G2": false,
+    "G3": false,
+    "G4": true
+   },
+   "median_delta": -0.0005169662867177682,
+   "min_delta": -0.006914645307890321,
+   "months_scored": 12,
+   "passed": false,
+   "positive_months": 6,
+   "sign_test_p": 0.61279296875
+  },
+  "gate_modified": false,
+  "gate_version": "M270_MONTHLY_GATE_v1_frozen_2026-08-04",
+  "lockbox_reopened": true,
+  "lockbox_use_ordinal": 2,
+  "member_diversity": {
+   "pairwise_prediction_correlation": {
+    "catboost-shared-b1e92b1d786fa958~control-random_forest": 0.9868073010578696,
+    "tree-calibrated~catboost-shared-b1e92b1d786fa958": 0.9937678813916478,
+    "tree-calibrated~control-random_forest": 0.9865769901646195
+   },
+   "spread_median_cap": 0.06643202544966773,
+   "spread_p90_cap": 0.13206899000665448
+  },
+  "members": [
+   "tree-calibrated",
+   "catboost-shared-b1e92b1d786fa958",
+   "control-random_forest"
+  ],
+  "monthly": {
+   "2024-01": {
+    "delta": 0.0009476707505250426,
+    "mean": 0.6044307397295104,
+    "median": 0.6053784104800355
+   },
+   "2024-02": {
+    "delta": -0.0030334230031544562,
+    "mean": 0.5992852770886175,
+    "median": 0.596251854085463
+   },
+   "2024-03": {
+    "delta": 0.007926399815479934,
+    "mean": 0.6093603962900921,
+    "median": 0.617286796105572
+   },
+   "2024-04": {
+    "delta": 0.0015862624637575928,
+    "mean": 0.608725997378829,
+    "median": 0.6103122598425866
+   },
+   "2024-05": {
+    "delta": -0.0035471891035476766,
+    "mean": 0.6189188820253035,
+    "median": 0.6153716929217559
+   },
+   "2024-06": {
+    "delta": -0.0046342491745409164,
+    "mean": 0.6118619708599068,
+    "median": 0.6072277216853659
+   },
+   "2024-07": {
+    "delta": 0.0021494583785129917,
+    "mean": 0.5998148840312584,
+    "median": 0.6019643424097714
+   },
+   "2024-08": {
+    "delta": 0.000568837690418933,
+    "mean": 0.6251507482356184,
+    "median": 0.6257195859260374
+   },
+   "2024-09": {
+    "delta": 0.00022298032508560883,
+    "mean": 0.6251281122206841,
+    "median": 0.6253510925457697
+   },
+   "2024-10": {
+    "delta": -0.002063732130062279,
+    "mean": 0.6288108244161031,
+    "median": 0.6267470922860409
+   },
+   "2024-11": {
+    "delta": -0.0012569128985211453,
+    "mean": 0.5913430049294763,
+    "median": 0.5900860920309552
+   },
+   "2024-12": {
+    "delta": -0.006914645307890321,
+    "mean": 0.6555097596086017,
+    "median": 0.6485951143007114
+   },
+   "2025-01": {
+    "delta": 0.0026252526400690757,
+    "mean": 0.6278757188554299,
+    "median": 0.630500971495499
+   }
+  },
+  "node": "C1N32_LOCKBOX_OPERATOR",
+  "parent_node": "C1N29_CHAMPION_AUDIT",
+  "positive_months_raw": 7,
+  "predeclared_check": {
+   "H1_expectation": "2024 에서 median(3) > mean(3)",
+   "H1_held": false,
+   "H1_measured": -0.000729290915202907,
+   "H2_expectation": "median 이 mean 부모로 동결 게이트 통과 (12 개월)",
+   "H2_held": false,
+   "H3_expectation": "median 이 최고 단일 모델보다 높다",
+   "H3_held": false,
+   "H4_expectation": "이득이 FICR 쪽에서 나온다 (기전 확인)",
+   "H4_held": false,
+   "mechanism_confirmed": false,
+   "verdict": "OPERATOR_DOES_NOT_TRANSFER"
+  },
+  "rows": 26334,
+  "scope_established": "결합 연산자의 연도 전이",
+  "scope_not_established": "M271_MEDIAN4 자체의 2024 점수 (여전히 미측정)",
+  "scores_2024": {
+   "best_single": "tree-calibrated",
+   "delta_median_minus_best_single": -0.012354572741530956,
+   "delta_median_minus_mean": -0.000729290915202907,
+   "ficr_contribution": -0.0007815064143114892,
+   "mean": {
+    "ficr": 0.35693189031836287,
+    "group_ficr": {
+     "1": 0.3649487823321015,
+     "2": 0.41071356504292084,
+     "3": 0.2951333235800662
+    },
+    "group_nmae": {
+     "1": 0.11822058057424918,
+     "2": 0.12209446672700074,
+     "3": 0.13459987517450708
+    },
+    "one_minus_nmae": 0.8750283591747476,
+    "total": 0.6159801247465553
+   },
+   "median": {
+    "ficr": 0.3553688774897399,
+    "group_ficr": {
+     "1": 0.3623914813205635,
+     "2": 0.4030059119327405,
+     "3": 0.3007092392159156
+    },
+    "group_nmae": {
+     "1": 0.1188822134169427,
+     "2": 0.12251822308275785,
+     "3": 0.13320119298140493
+    },
+    "one_minus_nmae": 0.8751327901729649,
+    "total": 0.6152508338313524
+   },
+   "nmae_contribution": 5.22154991086099e-05,
+   "singles": {
+    "catboost-shared-b1e92b1d786fa958": {
+     "ficr": 0.3442259900592908,
+     "group_ficr": {
+      "1": 0.3520124150653507,
+      "2": 0.38684695669270913,
+      "3": 0.2938185984198126
+     },
+     "group_nmae": {
+      "1": 0.12321057246543661,
+      "2": 0.12740242824763665,
+      "3": 0.13584650722117136
+     },
+     "one_minus_nmae": 0.8711801640219184,
+     "total": 0.6077030770406047
+    },
+    "control-random_forest": {
+     "ficr": 0.3114836462332066,
+     "group_ficr": {
+      "1": 0.2944604288884239,
+      "2": 0.38619037559966757,
+      "3": 0.2538001342115283
+     },
+     "group_nmae": {
+      "1": 0.12494999225549702,
+      "2": 0.12258752146092412,
+      "3": 0.14489873193155514
+     },
+     "one_minus_nmae": 0.8691879181173412,
+     "total": 0.5903357821752739
+    },
+    "tree-calibrated": {
+     "ficr": 0.38065242062344584,
+     "group_ficr": {
+      "1": 0.4199390163491883,
+      "2": 0.4235001886041858,
+      "3": 0.2985180569169633
+     },
+     "group_nmae": {
+      "1": 0.11712329264206663,
+      "2": 0.1241090965741355,
+      "3": 0.1350924332168352
+     },
+     "one_minus_nmae": 0.8745583925223209,
+     "total": 0.6276054065728833
+    }
+   }
+  },
+  "second_use_record": "artifacts/locks/lockbox-2024.second-use.json"
+ },
+ "schema_version": 1,
+ "script_sha256": "85a1312c94e802361a02129ac3107d4e13a5bd71136ae5d891bfb891718b0716",
+ "stage": "M271_P4_CYCLE32_LOCKBOX_OPERATOR"
+}

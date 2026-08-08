@@ -1,0 +1,79 @@
+{
+ "dacon_upload": false,
+ "decided_utc": "2026-08-04T06:30:02.242737+00:00",
+ "external_actions": [],
+ "lane": "L6",
+ "lockbox_reopened": false,
+ "model_fits": 0,
+ "new_2024_evaluation": false,
+ "node": "C1N8_ORACLE_LADDER",
+ "report_sha256": "01c185452265b78acb065ce3cad11cccbf7482b7d5bf1069eae4247f29fe9d87",
+ "result": {
+  "deployed": "T0.5_G1.5",
+  "global_best": "T0.6_G0.2",
+  "predeclared_check": {
+   "H1_expectation": "행 단위 오라클 이득이 격차의 20% 를 넘는다",
+   "H1_held": true,
+   "H1_value": 3.6223439421708017,
+   "H2_expectation": "거친 조건화(대역x그룹x월)가 행 오라클의 절반을 넘지 못한다",
+   "H2_held": true,
+   "H2_value": 0.18470523925084548,
+   "is_oracle": true,
+   "verdict": "MODELLING_JUSTIFIED"
+  },
+  "rungs": [
+   {
+    "cells": 1,
+    "gain_vs_deployed": 0.0,
+    "level": 0,
+    "name": "전역 (배포)",
+    "share_of_gap": 0.0,
+    "total": 0.6286045208903154
+   },
+   {
+    "cells": 1,
+    "gain_vs_deployed": 0.0010417253285950334,
+    "level": 1,
+    "name": "전역 최적",
+    "share_of_gap": 0.03318124951728089,
+    "total": 0.6296462462189104
+   },
+   {
+    "cells": 4,
+    "gain_vs_deployed": 0.0027612287206094654,
+    "level": 2,
+    "name": "예측 대역",
+    "share_of_gap": 0.08795122537376861,
+    "total": 0.6313657496109248
+   },
+   {
+    "cells": 12,
+    "gain_vs_deployed": 0.005186065326701961,
+    "level": 3,
+    "name": "예측 대역 x 그룹",
+    "share_of_gap": 0.1651876198981354,
+    "total": 0.6337905862170173
+   },
+   {
+    "cells": 111,
+    "gain_vs_deployed": 0.021005324071385334,
+    "level": 4,
+    "name": "예측 대역 x 그룹 x 월",
+    "share_of_gap": 0.6690659044875087,
+    "total": 0.6496098449617007
+   },
+   {
+    "cells": 19785,
+    "gain_vs_deployed": 0.11372348806445232,
+    "level": 5,
+    "name": "행 단위 오라클",
+    "share_of_gap": 3.6223439421708017,
+    "total": 0.7423280089547677
+   }
+  ],
+  "target_gap": 0.031395
+ },
+ "schema_version": 1,
+ "script_sha256": "5b5c71d444457f6cc54dbc265e468755e0527a14b9983e549b8b61b244eb758e",
+ "stage": "M271_P4_CYCLE8_ORACLE_LADDER"
+}

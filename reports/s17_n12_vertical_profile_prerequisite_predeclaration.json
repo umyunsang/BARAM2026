@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "node_id": "S17-N12_VERTICAL_PROFILE_TERRAIN_PREREQUISITE_AUDIT",
+  "stage": "S6_피처구성",
+  "kind": "vertical_profile_static_prerequisite_audit_non_score_bearing",
+  "predeclared_at": "2026-08-08T20:47:51.332136+09:00",
+  "parent": "S17-N11A_FOUR_MAPPING_10MIN_SCADA_CORRECTED_DIAGNOSTIC",
+  "input_bundle": {
+    "sha256": "70bce95ec4d6001c5e53731909376b5cdf091b6ad37dcbf83785cc8dd5ea6b23",
+    "files": {
+      "inputs/competition/open_wind_236727.zip": "920be0c458d820e855bf79dd25723146f52ce1736138aedba5e6bc853f1f720b",
+      "research/rwa_data_feature_research.md": "16351bb387dfebf0dc7ccdc6ef0e8ec77406964bf3d0b40c52fcdc3496284504",
+      "research/lanes/S6_feature_research.md": "acd9a4b00cb585b13abab5a01823226afa7011cad5d40b03eb0b24b9133194aa",
+      "research/lanes/S13_S6_features_deep.md": "adff7bfc4f4d2c28bc9c859af16437f95d981aa5deaff0692564560b9bd65217",
+      "research/lanes/S15_sota_nwp.md": "ab8328f5c05b46a32ba8f3259baf1ea9f2914659eceecb3c1d4b68b85c03db3e",
+      "reports/m271_cycle6_wind50mid.md": "cacc0e171a9280c6a5fd76e73bd3f6ee27381e778cf8c8d990bdc8ee980c5910",
+      "reports/m271_cycle6_wind50mid_receipt.json": "23bfdae6787ca849e1eb14ff7c35ac9e0a8106018e5bd5cac482161cc9bc3d18",
+      "artifacts/audits/s17_n10b_issuance_cube_2022_2023.json": "0f29f2db4fc77feab0d54a91ff8da3feab932c0a16c070e7a9c3512f46990b84",
+      "reports/s17_n11a_four_mapping_wind_receipt.json": "ec536a9c0859d7b89443efdbe5129f67709cfdb6178177d858d750e1d7895341",
+      "src/baram/features/weather.py": "d65a18fdf0b025d1863c783d5997f77824a3347ab87e78a4357fe2afeb2d1905",
+      "src/baram/features/spatial.py": "37c31ccb17beedc01d0b6e7e3210d821bc4dcdc6e860c76dc38fea77aa64c092",
+      "artifacts/manifests/prepare.json": "ca4908d7f98639b13da80febcd071cd805369e8e044bb4d7b97f793d2703ca46"
+    }
+  },
+  "scope": {
+    "archive_members": [
+      "data_description.md",
+      "info.xlsx",
+      "headers only: train/gfs_train.csv, train/ldaps_train.csv"
+    ],
+    "repository_surfaces": [
+      "current feature manifest",
+      "weather feature code",
+      "prior vertical/REWS/PCA research and receipts"
+    ],
+    "weather_value_rows": 0,
+    "targets_scada_or_scores": false
+  },
+  "questions": [
+    "Is 117 m hub height and actual/site/model elevation documented immutably?",
+    "For each source, are at least two comparable u/v levels with explicit physical semantics available for a 117 m reconstruction?",
+    "Does a source bracket 117 m, or does an official rule explicitly justify extrapolation?",
+    "Can a two-component PCA be defined from comparable native levels per source without mixing extrema, layer means, or isobaric coordinates?",
+    "Are fixed-height and PCA features already present or exactly adjudicated under strict chronology?"
+  ],
+  "ready_gates": {
+    "fixed_height": "documented target height plus source-specific comparable vectors and either bracketing or documented extrapolation for both GFS and LDAPS",
+    "pca": "at least two comparable source-native vector levels for each source; component_count=2; source identity retained; no exact strict-chronology receipt already closes it",
+    "common": "same issued run and D-1 14:00 availability already proven by N10B"
+  },
+  "verdicts": [
+    "READY_FIXED_AND_PCA",
+    "READY_PCA_ONLY",
+    "NOT_READY_PHYSICAL_SEMANTICS_OR_DUPLICATE"
+  ],
+  "outputs": {
+    "script": "scripts/audit_vertical_profile_prerequisites.py",
+    "report": "artifacts/audits/s17_n12_vertical_profile_prerequisites.json",
+    "receipt": "reports/s17_n12_vertical_profile_prerequisite_receipt.json"
+  },
+  "decision": {
+    "ready": "predeclare one R2 three-cell strict prequential experiment with fixed formulas and 2 PCA components",
+    "not_ready": "close R2 without fit/score and hand off R3 height-only terrain prerequisite audit"
+  },
+  "actions": {
+    "model_fits": 0,
+    "weather_value_rows": 0,
+    "target_scada_access": false,
+    "official_score_calls": 0,
+    "comparison_index": null
+  },
+  "forbidden": [
+    "weather data rows",
+    "power/SCADA/test/2024 lockbox",
+    "model fit/score",
+    "invented interpretation of max/min as a level mean",
+    "post-hoc formulas/components",
+    "Dacon/account",
+    "remote inference",
+    "dependency change"
+  ],
+  "pass_label": "PREREQUISITE_AUDIT_ONLY_NOT_MODEL_SCORE"
+}
